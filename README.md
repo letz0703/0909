@@ -1,21 +1,16 @@
 # http://icanmart.netlify.com/
 
-- Navigation
-  https://bit.ly/3PoIuUD <- react-router-dom
-  gh:
-- CSS
-  -App.css , Index.css
+## Navigation
 
-- Detail
-  상세페이지, Dynamic Parameter
+https://bit.ly/3PoIuUD <- react-router-dom
+gh:https://bit.ly/3hnm21q
+lecture:https://bit.ly/3VXQMFs - Detail
+상세페이지, Dynamic Parameter - useParam()
+@CanItemDetail.jsx
 
-  - useParam()
-  @CanItemDetail.jsx
-  <!--  -->
-
-  ```js
-  const {itemName} = useParams()
-  ```
+```js
+const {itemName} = useParams()
+```
 
 - TOOLS
   - .gitignore
