@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+
+  "tasks": [
+    {
+      "label": "new react folder and files",
+
+      "command": "mkdir src/components/${input:dirName} && touch 'src/components/${input:dirName}/${input:dirName}.jsx' 'src/components/${input:dirName}/${input:dirName}.module.scss'",
+
+      "type": "shell",
+      "problemMatcher": [],
+      "presentation": {
+        "echo": false,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      }
+    }
+  ],
+
+  // ........................................................................................
+
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "dirName",
+      "description": "Complete my folder name",
+      "default": "jsx folder to create"
+    }
+  ]
+}
