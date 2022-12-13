@@ -6,6 +6,17 @@
 - CSS
   -App.css , Index.css
 
+- Detail
+  상세페이지, Dynamic Parameter
+
+  - useParam()
+  @CanItemDetail.jsx
+  <!--  -->
+
+  ```js
+  const {itemName} = useParams()
+  ```
+
 - TOOLS
   - .gitignore
   - .vscode

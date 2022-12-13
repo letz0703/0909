@@ -1,7 +1,7 @@
 {
   "workbench.colorTheme": "One Monokai",
   "workbench.colorCustomizations": {
-    "tab.activeBackground": "#014274"
+    "tab.activeBackground": "#480619"
   },
   "todo-tree.highlights.defaultHighlight": {
     "icon": "alert",
@@ -125,7 +125,20 @@
     // "editor.autoClosingBrackets": "never"
   },
   "editor.acceptSuggestionOnEnter": "off",
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
   // "editor.autoClosingBrackets": "never"
   // "editor.autoSurronud": "never"
+  "macros.list": {
+    "commentDown": [
+      "editor.action.copyLinesDownAction",
+      "cursorUp",
+      "editor.action.addCommentLine",
+      "cursorDown"
+    ],
+    "addSemicolon": ["cursorEnd", {"command": "type", "args": {"text": ";"}}],
+    "doMySnippet": [
+      {"command": "type", "args": {"text": "cl"}},
+      "insertSnippet"
+    ]
+  }
 }
