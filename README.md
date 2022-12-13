@@ -16,3 +16,4 @@ const {itemName} = useParams()
   - .gitignore
   - .vscode
   - yarn add react-router-dom : {CreateBrewserRouter} - https://bit.ly/3ho7XRp //2022.12.13/화
+  - yarn add tanstack-react-query: 2022.12.14/수
