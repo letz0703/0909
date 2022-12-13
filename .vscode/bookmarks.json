@@ -4,18 +4,8 @@
 			"path": "src/App.jsx",
 			"bookmarks": [
 				{
-					"line": 38,
-					"column": 0,
-					"label": ""
-				}
-			]
-		},
-		{
-			"path": "src/components/todo_list/todo_list.jsx",
-			"bookmarks": [
-				{
-					"line": 25,
-					"column": 17,
+					"line": 20,
+					"column": 24,
 					"label": ""
 				}
 			]
