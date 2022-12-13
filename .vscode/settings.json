@@ -1,7 +1,7 @@
 {
   "workbench.colorTheme": "One Monokai",
   "workbench.colorCustomizations": {
-    "tab.activeBackground": "#480619"
+    "tab.activeBackground": "#014274"
   },
   "todo-tree.highlights.defaultHighlight": {
     "icon": "alert",
@@ -25,7 +25,13 @@
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
-        "scope": ["variable.other.constant.tsx", "entity.name.function.js", "entity.name.type.alias.tsx", "entity.name.type.alias.tsx", "variable.other.readwrite.tsx"],
+        "scope": [
+          "variable.other.constant.tsx",
+          "entity.name.function.js",
+          "entity.name.type.alias.tsx",
+          "entity.name.type.alias.tsx",
+          "variable.other.readwrite.tsx"
+        ],
         "settings": {
           "foreground": "#efefef",
           "fontStyle": "italic"
@@ -52,7 +58,13 @@
         }
       },
       {
-        "scope": ["variable.object.property.tsx", "variable.other.object.tsx", "variable.other.readwrite.js", "variable.parameter.tsx", "variable.other.readwrite.tsx"],
+        "scope": [
+          "variable.object.property.tsx",
+          "variable.other.object.tsx",
+          "variable.other.readwrite.js",
+          "variable.parameter.tsx",
+          "variable.other.readwrite.tsx"
+        ],
         "settings": {
           "foreground": "#fba9bc"
         }
@@ -64,7 +76,11 @@
         }
       },
       {
-        "scope": ["entity.name.function.js.jsx", "entity.name.type.tsx", "entity.name.tag.tsx"],
+        "scope": [
+          "entity.name.function.js.jsx",
+          "entity.name.type.tsx",
+          "entity.name.tag.tsx"
+        ],
         "settings": {
           "foreground": "#81baf3",
           "fontStyle": "italic"
@@ -113,5 +129,3 @@
   // "editor.autoClosingBrackets": "never"
   // "editor.autoSurronud": "never"
 }
-
-
