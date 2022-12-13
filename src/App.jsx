@@ -5,6 +5,7 @@ import Jap from "./pages/Jap"
 import Can from "./pages/Can"
 import NotFound from "./pages/NotFound"
 import Root from "./pages/Root"
+import CanItemDetail from "./pages/CanItemDetail"
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,8 @@ const router = createBrowserRouter([
     children: [
       {index: true, element: <Home />},
       {path: "/jap", element: <Jap />},
-      {path: "/can", element: <Can />}
+      {path: "/can", element: <Can />},
+      {path: "/can/:itemName", element: <CanItemDetail />}
     ]
   }
 ])
