@@ -8,11 +8,15 @@ export default function Products() {
     isLoading,
     error,
     data: products
-  } = useQuery(["products", checked], async () => {
-    console.log("fetching...")
-    const res = await fetch(`data/${checked ? "sale_" : ""}products.json`)
-    return await res.json()
-  })
+  } = useQuery(
+    ["products", checked],
+    async () => {
+      console.log("fetching...", checked)
+      const res = await fetch(`data/${checked ? "sale_" : ""}products.json`)
+      return await res.json()
+    },
+    {staleTime: 1000 * 60 * 1}
+  )
 
   const handleChange = () => setChecked(prev => !prev)
 
