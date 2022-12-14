@@ -8,9 +8,9 @@ export default function Products() {
     isLoading,
     error,
     data: products
-  } = useQuery(["products"], async () => {
+  } = useQuery(["products", checked], async () => {
     console.log("fetching...")
-    const res = await fetch(`data/products.json`)
+    const res = await fetch(`data/${checked ? "sale_" : ""}products.json`)
     return await res.json()
   })
 
