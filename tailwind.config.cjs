@@ -1,14 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{html,js,jsx,ts,tsx}",
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
     "./public/index.html",
-    "./pages/**/*.{html,jsx,js,ts,tsx}",
-    "./components/**/*.{html,js,jsx,ts,tsx}"
+    "./pages/**/*.{jsx,js}",
+    "./components/**/*.{js,jsx}"
   ],
 
   theme: {
-    extend: {}
+    extend: {
+      colors: {
+        youtube: '#ff0000'
+      }
+    }
   },
   plugins: []
 }

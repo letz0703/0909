@@ -6,7 +6,7 @@
   padding: 0;
   scroll-behavior: smooth;
   font-size: 1rem;
-  letter-spacing: .13rem;
+  letter-spacing: 0.13rem;
 }
 
 .App {
@@ -64,7 +64,7 @@ body {
 
 li {
   list-style: none;
-  font-size: .9rem;
+  font-size: 0.9rem;
   text-align: left;
 }
 
@@ -79,8 +79,9 @@ li {
 }
 
 .scale-up-center {
-  -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-  animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  -webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
+    both;
+  animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 @-webkit-keyframes scale-up-center {
@@ -107,12 +108,12 @@ li {
   }
 }
 
-[data-notice="home"] li{
+[data-notice="home"] li {
   color: blue;
   font-size: 16px;
 }
 
-input:focus{
-  background-color:var(--color-accent);
+input:focus {
+  background-color: var(--color-accent);
   color: #eee;
 }

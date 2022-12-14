@@ -6,9 +6,10 @@
 
 ## Navigation
 
-<SearchHeader>
-el: https://bit.ly/3j0cF8k
-gh: https://bit.ly/3Pt9pyp
+- keyword change : https://bit.ly/3BAyXE8 gh
+  <SearchHeader>
+  el: https://bit.ly/3j0cF8k
+  gh: https://bit.ly/3Pt9pyp
 
 https://bit.ly/3PoIuUD <- react-router-dom
 gh:https://bit.ly/3hnm21q
@@ -20,7 +21,10 @@ lecture:https://bit.ly/3VXQMFs - Detail
 const {itemName} = useParams()
 ```
 
+### SSL OpenSSL
+
 - TOOLS
+  - yarn add -D tailwindcss
   - rapid api : youtube video https://www.youtube.com/watch?v=MTrj3tNf9jA
   - .gitignore
   - .vscode
@@ -42,3 +46,7 @@ const {itemName} = useParams()
       updated!
     </button>
     ```
+
+Tips
+
+- show color for tailwind : vscode setting -> "tailwindCSS.colorDecorators": true,
