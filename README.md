@@ -49,4 +49,10 @@ const {itemName} = useParams()
 
 Tips
 
+###### settings
+
 - show color for tailwind : vscode setting -> "tailwindCSS.colorDecorators": true,
+
+##### DESIGN
+
+https://bit.ly/3hwLpOh tailwind youtube
