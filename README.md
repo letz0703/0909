@@ -18,7 +18,7 @@ const {itemName} = useParams()
   - yarn add react-router-dom : {CreateBrewserRouter} - https://bit.ly/3ho7XRp //2022.12.13/화
   - yarn add tanstack-react-query: 2022.12.14/수
   - yarn add @tanstack/react-query-devtools
-    - gh
+    - gh : https://bit.ly/3uM0IWs <- set interval and refetch
     - option : staleTime
     - https://bit.ly/3Px8nla
       > up: import {ReactQueryDevtools} from "@tanstack/react-query-devtools"
