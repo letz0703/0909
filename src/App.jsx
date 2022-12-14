@@ -6,6 +6,10 @@ import Can from "./pages/Can"
 import NotFound from "./pages/NotFound"
 import Root from "./pages/Root"
 import CanItemDetail from "./pages/CanItemDetail"
+import MainProduct from "./components/Main_product"
+import {ReactQueryDevtools} from "@tanstack/react-query-devtools"
+import {QueryClient, QueryClientProvider} from "@tanstack/react-query"
+const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
   {
@@ -22,7 +26,16 @@ const router = createBrowserRouter([
 ])
 
 function App() {
-  return <RouterProvider router={router} />
+  return (
+    <>
+      <RouterProvider router={router} />
+      <QueryClientProvider client={queryClient}>
+        <MainProduct />
+        <ReactQueryDevtools initialIsOpen={true} />
+      </QueryClientProvider>
+      {/* </RouterProvider> */}
+    </>
+  )
 }
 
 export default App
