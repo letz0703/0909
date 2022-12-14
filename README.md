@@ -13,6 +13,7 @@ const {itemName} = useParams()
 ```
 
 - TOOLS
+  - rapid api : youtube video https://www.youtube.com/watch?v=MTrj3tNf9jA
   - .gitignore
   - .vscode
   - yarn add react-router-dom : {CreateBrewserRouter} - https://bit.ly/3ho7XRp //2022.12.13/화
