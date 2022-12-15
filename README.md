@@ -8,6 +8,12 @@ fakeYoutube : https://bit.ly/3FwoQ4v ellie lec
 ## Data
 
 - stub // mock data https://bit.ly/3uRA6DE
+- mock || real data https://bit.ly/3j4btkj
+  const youtube = new Youtube() or new FakeYoutube
+
+## ENV with VITE
+
+const {VITE_keyname} = import.meta.env
 
 ## Navigation
 
