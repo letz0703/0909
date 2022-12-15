@@ -2,13 +2,15 @@ import {useQuery} from "@tanstack/react-query"
 import {useState, useEffect, useRef} from "react"
 import {useParams} from "react-router-dom"
 import FakeYoutube from "../api/fakeYoutube"
+import Youtube from "../api/youtube"
 import VidoeCard from "../components/VidoeCard/VidoeCard"
 //import styles from './Videos.module.css'
 
 export default function Videos() {
   const {keyword} = useParams()
   const {data: videos, isLoading, error} = useQuery(["videos", keyword], () => {
-    const youtube = new FakeYoutube()
+    // const youtube = new FakeYoutube()
+    const youtube = new Youtube()
     return youtube.search(keyword)
   })
   return (
