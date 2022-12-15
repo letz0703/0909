@@ -24,6 +24,7 @@ const {itemName} = useParams()
 ### SSL OpenSSL
 
 - TOOLS
+  - yarn add axios
   - yarn add -D tailwindcss
   - rapid api : youtube video https://www.youtube.com/watch?v=MTrj3tNf9jA
   - .gitignore

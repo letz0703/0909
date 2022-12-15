@@ -1,21 +1,33 @@
+import {useQuery} from "@tanstack/react-query"
 import {useState, useEffect, useRef} from "react"
 import {useParams} from "react-router-dom"
+import VidoeCard from "../components/VidoeCard/VidoeCard"
 //import styles from './Videos.module.css'
+// move below under export default
 
 export default function Videos() {
   const {keyword} = useParams()
-  // move below under export default
   const {
     data: videos,
     isLoading,
     error
   } = useQuery(["videos", keyword], async () => {
-    const res = await fetch(`/videos/${keyword ? "search" : "popular"}.json`)
-    return await res.json()
+    return fetch(`/videos/${keyword ? "search" : "popular"}.json`)
+      .then(res => res.json())
+      .then(data => data.items)
   })
   return (
-    <h1>
+    <div>
       Videos {keyword ? `searched ${keyword}` : `no keyword so hot trend`}
-    </h1>
+      {isLoading && <p>Loading...</p>}
+      {error && <p>Something is Wrong 🥲</p>}
+      {videos && (
+        <ul>
+          {videos.map(video => (
+            <VidoeCard key={video.id} video={video} />
+          ))}
+        </ul>
+      )}
+    </div>
   )
 }
