@@ -3,7 +3,13 @@
 ## API folder
 
 youtube.js
-fakeYoutube : https://bit.ly/3FwoQ4v ellie lec
+fakeYoutube : https://bit.ly/3FwoQ4v ellie le
+
+## Context
+
+YoutubeApi
+gh: https://bit.ly/3FxXTx3
+lec: https://bit.ly/3uV3iJI
 
 ## Data
 
@@ -36,6 +42,7 @@ const {itemName} = useParams()
 
 - TOOLS
   - yarn add axios
+    > gh : https://bit.ly/3Wl2kCh replace fetch w/ axios
   - yarn add -D tailwindcss
   - rapid api : youtube video https://www.youtube.com/watch?v=MTrj3tNf9jA
   - .gitignore
