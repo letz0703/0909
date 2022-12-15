@@ -2,6 +2,7 @@ import {useQuery} from "@tanstack/react-query"
 import {useState, useEffect, useRef} from "react"
 import {useParams} from "react-router-dom"
 import VidoeCard from "../components/VidoeCard/VidoeCard"
+import axios from "axios"
 //import styles from './Videos.module.css'
 // move below under export default
 
@@ -12,9 +13,19 @@ export default function Videos() {
     isLoading,
     error
   } = useQuery(["videos", keyword], async () => {
-    return fetch(`/videos/${keyword ? "search" : "popular"}.json`)
-      .then(res => res.json())
+    return axios
+      .get(`/videos/${keyword ? "search" : "popular"}.json`)
+      .then(res => res.data.items)
+    /**
+      .then (res => {
+        console.log(res);
+        return res.data.items
+      })
+    */
+    /** fetch 사용시 axios.get 대신
+      .then(res => res.json()시
       .then(data => data.items)
+    */
   })
   return (
     <div>
