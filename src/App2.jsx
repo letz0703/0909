@@ -3,15 +3,18 @@ import SearchHeader from "./components/SearchHeader/SearchHeader"
 // import App from "./App"
 import styles from "./App2.module.css"
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query"
+import {YoutubeApiProvider} from "./context/YoutubeApi"
 const queryClient = new QueryClient()
 
 function App() {
   return (
     <>
       <SearchHeader />
-      <QueryClientProvider client={queryClient}>
-        <Outlet />
-      </QueryClientProvider>
+      <YoutubeApiProvider>
+        <QueryClientProvider client={queryClient}>
+          <Outlet />
+        </QueryClientProvider>
+      </YoutubeApiProvider>
     </>
   )
 }
