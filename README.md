@@ -4,6 +4,8 @@
 
 youtube.js
 fakeYoutube : https://bit.ly/3FwoQ4v ellie le
+refactor
+gh: https://bit.ly/3PEpEZB
 
 ## Context
 
@@ -35,7 +37,7 @@ lecture:https://bit.ly/3VXQMFs - Detail
 @CanItemDetail.jsx
 
 ```js
-const {itemName} = useParams()
+const {itemName} = useParams();
 ```
 
 ### SSL OpenSSL
@@ -59,7 +61,7 @@ const {itemName} = useParams()
     ```js
     <button
       onClick={() => {
-        client.invalidateQueries(["products", false])
+        client.invalidateQueries(['products', false]);
       }}
     >
       updated!
