@@ -2,20 +2,21 @@ import axios from "axios"
 
 const { VITE_YOUTUBE_API_KEY } = import.meta.env
 export default class Youtube {
-	constructor () {
+	constructor (apiClient) {
 		/**기본 URL과 key 설정 */
-		this.httpClient = axios.create({
-			baseURL: 'https://www.googleapis.com/youtube/v3',
-			params: {key: VITE_YOUTUBE_API_KEY}
-		})
+		this.apiClient =apiClient
+		// this.httpClient = axios.create({
+		// 	baseURL: 'https://www.googleapis.com/youtube/v3',
+		// 	params: {key: VITE_YOUTUBE_API_KEY}
+		// })
 	}
   async search(keyword) {
     return keyword ? this.#searchByKeyword(keyword) : this.#mostPopular()
   }
   async #searchByKeyword(keyword) {
 		// axios 대신 this.httpClient
-    return this.httpClient
-			.get('search', {
+    return this.apiClient
+			.search({
 				params: {
 					part: 'snippet',
 					maxResults: 25,
@@ -26,7 +27,7 @@ export default class Youtube {
       .then(items => items.map(item => ({...item, id: item.id.videoId})))
   }
   async #mostPopular() {
-    return this.httpClient.get('videos', {
+    return this.apiClient.videos({
 				params: {
 					part: 'snippet',
 					chart: 'mostPopular',
