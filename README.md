@@ -43,6 +43,15 @@ const {itemName} = useParams();
 ### SSL OpenSSL
 
 - TOOLS
+  - yarn add timeago.js
+    gh: https://bit.ly/3HGj42J
+    import \* as timeago from 'timeago.js'
+    format('2016-06-12','en_US'), format(publishedAt)
+    locale
+    import {format, register} from 'timeago.js'
+    import koLocale from 'timeago.js/lib/lang/ko'
+    register('ko', koLocale)
+    <p>{format(publishedAt, 'ko')}</p>
   - yarn add axios
     > gh : https://bit.ly/3Wl2kCh replace fetch w/ axios
   - yarn add -D tailwindcss
