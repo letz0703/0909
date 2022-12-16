@@ -1,4 +1,7 @@
 import {useState, useEffect, useRef} from 'react';
+import {formatAgo} from '../../util/date';
+// import * as timeago from 'timeago.js';
+
 //import styles from './VidoeCard.module.css'
 export default function VidoeCard({video}) {
   const {title, thumbnails, channelTitle, publishedAt} = video.snippet;
@@ -8,7 +11,8 @@ export default function VidoeCard({video}) {
       <div>
         <p>{title}</p>
         <p>{channelTitle}</p>
-        <p>{publishedAt}</p>
+        <p>{formatAgo(publishedAt)}</p>
+        {/* <p>{formatAgo(publishedAt, 'ko')}</p> */}
       </div>
     </li>
   );
