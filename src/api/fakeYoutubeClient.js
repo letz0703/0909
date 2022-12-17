@@ -13,6 +13,9 @@ export default class FakeYoutubeClient {
   async videos() {
     return axios.get('/videos/popular.json');
   }
+  async channels() {
+    return axios.get('/videos/channel.json');
+  }
   //   async search(keyword) {
   //     return keyword ? this.#searchByKeyword(keyword) : this.#mostPopular()
   //     // return axios
