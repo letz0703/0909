@@ -37,12 +37,15 @@ lecture:https://bit.ly/3VXQMFs - Detail
 @CanItemDetail.jsx
 
 ```js
-const {itemName} = useParams();
+const {itemName} = useParams()
 ```
 
 ### SSL OpenSSL
 
 - TOOLS
+
+  - yarn add -D @tailwindcss/line-clamp 2줄 이상 금지
+
   - yarn add timeago.js
     gh: https://bit.ly/3HGj42J
     import \* as timeago from 'timeago.js'
@@ -70,7 +73,7 @@ const {itemName} = useParams();
     ```js
     <button
       onClick={() => {
-        client.invalidateQueries(['products', false]);
+        client.invalidateQueries(["products", false])
       }}
     >
       updated!
