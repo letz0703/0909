@@ -1,12 +1,20 @@
 import {useState, useEffect, useRef} from "react"
+import {useNavigate} from "react-router-dom"
 import {formatAgo} from "../../util/date"
+
 // import * as timeago from 'timeago.js';
 
 //import styles from './VidoeCard.module.css'
 export default function VidoeCard({video}) {
   const {title, thumbnails, channelTitle, publishedAt} = video.snippet
+  const navigate = useNavigate()
+
   return (
-    <li>
+    <li
+      onClick={() => {
+        navigate(`videos/watch/${video.id}`, {state: {video}})
+      }}
+    >
       <img
         src={thumbnails.medium.url}
         alt={title}
