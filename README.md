@@ -19,6 +19,10 @@ lec: https://bit.ly/3uV3iJI
 - mock || real data https://bit.ly/3j4btkj
   const youtube = new Youtube() or new FakeYoutube
 
+## Detail Page
+
+youtube - https://bit.ly/3YoEZ4q
+
 ## ENV with VITE
 
 const {VITE_keyname} = import.meta.env
