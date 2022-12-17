@@ -18,7 +18,7 @@ export default function Videos() {
 
   return (
     <div>
-      Videos {keyword ? `searched ${keyword}` : `no keyword so hot trend`}
+      {keyword ? `searched ${keyword}` : ``}
       {isLoading && <p>Loading...</p>}
       {error && <p>Something is Wrong 🥲</p>}
       {videos && (
