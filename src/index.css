@@ -90,7 +90,7 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
+/*
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -102,4 +102,12 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+} */
+
+#root {
+  @apply w-full max-w-screen-2xl;
+}
+
+code {
+  font-family: sourc-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }

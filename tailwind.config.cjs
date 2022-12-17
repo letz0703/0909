@@ -10,10 +10,13 @@ module.exports = {
 
   theme: {
     extend: {
+      aspectRatio:{'16/9':'16/9', '4/3':'4/3'},
       colors: {
         youtube: '#ff0000'
       }
     }
   },
-  plugins: []
+  plugins: [
+    require('@tailwindcss/line-clamp')
+  ]
 }
