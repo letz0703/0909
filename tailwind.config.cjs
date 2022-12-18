@@ -12,7 +12,8 @@ module.exports = {
     extend: {
       aspectRatio:{'16/9':'16/9', '4/3':'4/3'},
       colors: {
-        youtube: '#ff0000'
+        youtube: '#ff0000',
+        brand:'#c10002'
       }
     }
   },
