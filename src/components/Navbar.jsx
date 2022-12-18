@@ -11,6 +11,7 @@ export default function Navbar() {
     <header className="flex justify-between border-b border-gray-300 p-2">
       <Link to="/">
         <div className="flex items-center text-brand">
+          <span>🗑️</span>
           <h1>canmart</h1>
         </div>
       </Link>
