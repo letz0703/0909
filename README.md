@@ -87,6 +87,16 @@ lecture:https://bit.ly/3VXQMFs - Detail
 const {itemName} = useParams()
 ```
 
+## Netlify
+
+Cli
+npm install netlify-cli -g
+
+https://cli.netlify.com/commands/env DOC
+
+> netlify link 먼저 해줘야 에러 안남.
+> 그런 후 netlify env:import .env
+
 ### SSL OpenSSL
 
 - TOOLS
