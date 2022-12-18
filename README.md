@@ -16,11 +16,19 @@ className={isList? 'flex gap-1 m-2' :''}
 
 ## Caching
 
+https://bit.ly/3BKkQvV
+
 const {data: url} = useQuery(
-    ["channel", id],
-    async () => youtube.channelImageURL(id),
-    {staleTime: 1000 * 60 * 5}
-  )
+["channel", id],
+async () => youtube.channelImageURL(id),
+
+```js
+{
+  staleTime: 1000 * 60 * 5
+}
+```
+
+)
 
 ## Context
 
