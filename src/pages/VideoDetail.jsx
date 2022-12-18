@@ -20,7 +20,7 @@ export default function VideoDetail() {
           type="text/html"
           width="100%"
           height="640px"
-          src={`http://www.youtube.com/embed/${video.id}`}
+          src={`https://www.youtube.com/embed/${video.id}`}
           frameborder="0"
         />
         <div className="p-8">
