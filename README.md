@@ -8,10 +8,19 @@ refactor
 gh: https://bit.ly/3PEpEZB
 
 ## Card
+
 @VideoCard
 type = 'list'
 const isList = type === 'list'
 className={isList? 'flex gap-1 m-2' :''}
+
+## Caching
+
+const {data: url} = useQuery(
+    ["channel", id],
+    async () => youtube.channelImageURL(id),
+    {staleTime: 1000 * 60 * 5}
+  )
 
 ## Context
 

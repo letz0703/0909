@@ -15,7 +15,7 @@ export default function VideoDetail() {
     <section className="flex flex-col lg:flex-row">
       <article className="basis-4/6">
         <iframe
-          title={`${video.id}`}
+          title={title}
           id="player"
           type="text/html"
           width="100%"
