@@ -14,8 +14,12 @@ export default function SearchHeader() {
     setText(keyword || "")
   }, [keyword])
 
+  const showHistory = () => {
+    window.location.replace("https://www.youtube.com/feed/history")
+  }
+
   return (
-    <header className="w-full flex p-4 text-2xl border-b border-zinc-600 mb-4">
+    <header className="w-full flex justify-around p-4 text-2xl border-b border-zinc-600 mb-4">
       <Link to="/" className="flex items-center">
         <BsYoutube className="text-4xl text-youtube" />
         <h1 className="font-bold ml-2 text-3xl">Youtube</h1>
@@ -34,6 +38,9 @@ export default function SearchHeader() {
           <BsSearch />
         </button>
       </form>
+      <button onClick={showHistory} className="bg-red-700">
+        history
+      </button>
     </header>
   )
 }
