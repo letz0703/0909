@@ -49,6 +49,7 @@ youtube - https://bit.ly/3YoEZ4q
 ## ENV with VITE
 
 const {VITE_keyname} = import.meta.env
+netlify: pic. https://share.cleanshot.com/70qb8x
 
 ## Navigation
 
