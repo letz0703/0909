@@ -5,20 +5,21 @@ import {formatAgo} from "../../util/date"
 // import * as timeago from 'timeago.js';
 
 //import styles from './VidoeCard.module.css'
-export default function VidoeCard({video}) {
+export default function VidoeCard({video, type}) {
   const {title, thumbnails, channelTitle, publishedAt} = video.snippet
   const navigate = useNavigate()
+  const isList = type === "list"
 
   return (
     <li
       onClick={() => {
-        navigate(`videos/watch/${video.id}`, {state: {video}})
+        navigate(`/videos/watch/${video.id}`, {state: {video}})
       }}
+      className={isList ? "bg-slate-800 ml-1" : ""}
     >
       <img
         src={thumbnails.medium.url}
         alt={title}
-        className="w-full aspect-[16/9]"
         // className="w-full "
       />
       <div>

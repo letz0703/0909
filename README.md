@@ -7,6 +7,12 @@ fakeYoutube : https://bit.ly/3FwoQ4v ellie le
 refactor
 gh: https://bit.ly/3PEpEZB
 
+## Card
+@VideoCard
+type = 'list'
+const isList = type === 'list'
+className={isList? 'flex gap-1 m-2' :''}
+
 ## Context
 
 YoutubeApi

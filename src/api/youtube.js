@@ -19,6 +19,17 @@ export default class Youtube {
 		.then(res => res.data.items[0].snippet.thumbnails.default.url)
 	}
 
+	async relatedVideos(id) {
+		return this.apiClient.search({
+			params: {
+				part: 'snippet',
+				maxResult: 25,
+				type: 'video',
+				relatedToVideoId: id
+			}
+		}).then(res => res.data.items.map(item => ({...item, id: item.id.videoId})))
+	}
+
   async #searchByKeyword(keyword) {
 		// axios 대신 this.httpClient
     return this.apiClient
