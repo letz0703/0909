@@ -58,6 +58,11 @@ youtube - https://bit.ly/3YoEZ4q
 const {VITE_keyname} = import.meta.env
 netlify: pic. https://share.cleanshot.com/70qb8x
 
+## Firebase
+
+npm install firebase
+src/api/firebase.js
+
 ## image
 
 cloudinary : https://bit.ly/3hD3SJd
