@@ -21,7 +21,7 @@ const app = initializeApp(firebaseConfig)
 const auth = getAuth()
 const provider = new GoogleAuthProvider()
 
-export function login() {
+export async function login() {
   return signInWithPopup(auth, provider)
     .then(result => {
       const user = result.user

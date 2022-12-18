@@ -7,13 +7,21 @@ import styles from "./Navbar.module.css"
 import {login} from "../api/firebase"
 
 export default function Navbar() {
+  const [user, setUser] = useState()
   return (
     <header className="flex justify-between border-b border-gray-300 p-2">
       <Link to="/">
-        <div className="flex items-center text-brand">
-          <span>🗑️</span>
-          <h1>canmart</h1>
-        </div>
+        <span
+          style={{
+            fontSize: "1.3rem",
+            paddingRight: ".1rem",
+            fontWeight: "bold"
+          }}
+        >
+          i.
+          {/* <img src={LogoSvg} alt="logo" style={{width: "30px"}} /> */}
+        </span>
+        <span style={{fontSize: "1.5rem"}}>canmart</span>
       </Link>
       <nav className="flex items-center gap-4 font-semibold">
         {/* <Link to="/">Home</Link> */}
