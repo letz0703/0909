@@ -7,6 +7,13 @@ fakeYoutube : https://bit.ly/3FwoQ4v ellie le
 refactor
 gh: https://bit.ly/3PEpEZB
 
+## AUTH
+
+FireBase : google auth
+Realtime DB
+yarn add firebase:
+base : https://bit.ly/3v4mzZa
+
 ## Card
 
 @VideoCard
@@ -50,6 +57,13 @@ youtube - https://bit.ly/3YoEZ4q
 
 const {VITE_keyname} = import.meta.env
 netlify: pic. https://share.cleanshot.com/70qb8x
+
+## image
+
+cloudinary : https://bit.ly/3hD3SJd
+upload presets : https://bit.ly/3je4mWq
+Upload
+https://api.clodunary.com/v1_1/<cloud name>/l<resource_type>/upload
 
 ## Navigation
 
