@@ -5,15 +5,17 @@ import {HiOutlineShoppingBag} from "react-icons/hi"
 import {login, logout, onUserStateChange} from "../api/firebase"
 import Button from "./ui/button"
 import User from "./User"
+import {useAuthContext} from "../context/Auth"
 
 export default function Navbar() {
-  const [user, setUser] = useState()
-  useEffect(() => {
-    onUserStateChange(user => {
-      // console.log(user)
-      setUser(user)
-    })
-  }, [])
+  const {user, login, logout} = useAuthContext()
+  // const [user, setUser] = useState()
+  // useEffect(() => {
+  //   onUserStateChange(user => {
+  //     // console.log(user)
+  //     setUser(user)
+  //   })
+  // }, [])
   const handleLogin = () => {
     login().then(setUser)
   }
@@ -40,9 +42,12 @@ export default function Navbar() {
         <Link to="/jap">Jap</Link>
         <Link to="/can">Can</Link>
         <Link to="/products">Products</Link>
-        <Link to="/carts">
-          <HiOutlineShoppingBag className="w-7 h-7" />
-        </Link>
+        {user && (
+          <Link to="/carts">
+            <HiOutlineShoppingBag className="w-7 h-7" />
+          </Link>
+        )}
+
         {user && user.isAdmin && (
           <Link to="/product/new" className="2xl">
             <BsFillPencilFill />

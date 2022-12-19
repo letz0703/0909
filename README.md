@@ -19,7 +19,7 @@ base : https://bit.ly/3v4mzZa
 
 ## Button
 
-gh:
+gh:https://bit.ly/3FHIz1a
 {user && <Button text={"logout"} onClick={handleLogout} />}
 @src/component/ui/button.jsx
 
@@ -97,6 +97,19 @@ cloudinary : https://bit.ly/3hD3SJd
 upload presets : https://bit.ly/3je4mWq
 Upload
 https://api.clodunary.com/v1_1/<cloud name>/l<resource_type>/upload
+
+## Route
+
+- Protect : lecture : https://academy.dream-coding.com/courses/player/react/lessons/1537
+  gh:
+
+```js //@main.jsx
+<ProtectedRoute requireAdmin>
+  <AllProducts />
+</ProtectedRoute>
+```
+
+@ProtectedRoute.jsx
 
 ## Navigation
 

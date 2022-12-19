@@ -10,6 +10,7 @@ import MyCart from "./pages/MyCart"
 import NewProduct from "./pages/NewProduct"
 import NotFound from "./pages/NotFound"
 import ProductDetail from "./pages/ProductDetail"
+import ProtectedRoute from "./pages/ProtectedRoute"
 import ShopHome from "./pages/ShopHome"
 import VideoDetail from "./pages/VideoDetail"
 import Videos from "./pages/Videos"
@@ -21,10 +22,24 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
     children: [
       {index: true, element: <ShopHome />},
-      {path: "/products", element: <AllProducts />},
+      {
+        path: "/products",
+        element: (
+          <ProtectedRoute requireAdmin>
+            <AllProducts />
+          </ProtectedRoute>
+        )
+      },
       {path: "/products/new", element: <NewProduct />},
       {path: "/products/:id", element: <ProductDetail />},
-      {path: "/carts", element: <MyCart />},
+      {
+        path: "/carts",
+        element: (
+          <ProtectedRoute>
+            <MyCart />
+          </ProtectedRoute>
+        )
+      },
       {path: "/videos", element: <Videos />},
       {path: "/videos/:keyword", element: <Videos />},
       {path: "/videos/watch/:videoId", element: <VideoDetail />}
