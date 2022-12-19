@@ -101,7 +101,7 @@ https://api.clodunary.com/v1_1/<cloud name>/l<resource_type>/upload
 ## Route
 
 - Protect : lecture : https://academy.dream-coding.com/courses/player/react/lessons/1537
-  gh:
+  gh: https://bit.ly/3HQ1JEQ
 
 ```js //@main.jsx
 <ProtectedRoute requireAdmin>
