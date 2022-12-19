@@ -20,6 +20,7 @@ export default function Navbar() {
   }
   return (
     <header className="flex justify-between border-b border-gray-300 p-2">
+      <Link to="/" className="flex items-center text-4xl text-brand">
         <span
           style={{
             fontSize: "1.3rem",
