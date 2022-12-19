@@ -1,16 +1,17 @@
 import {useState, useEffect} from "react"
 import {Link} from "react-router-dom"
-import {v4 as uuidv4} from "uuid"
 import {BsFillPencilFill} from "react-icons/bs"
 import {HiOutlineShoppingBag} from "react-icons/hi"
-import styles from "./Navbar.module.css"
 import {login, logout, onUserStateChange} from "../api/firebase"
 
 export default function Navbar() {
-  useEffect(() => {
-    onUserStateChange
-  }, [])
   const [user, setUser] = useState()
+  useEffect(() => {
+    onUserStateChange(user => {
+      console.log(user)
+      setUser(user)
+    })
+  }, [])
   const handleLogin = () => {
     login().then(setUser)
   }
@@ -19,7 +20,6 @@ export default function Navbar() {
   }
   return (
     <header className="flex justify-between border-b border-gray-300 p-2">
-      <Link to="/">
         <span
           style={{
             fontSize: "1.3rem",

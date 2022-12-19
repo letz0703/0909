@@ -65,6 +65,12 @@ netlify: pic. https://share.cleanshot.com/70qb8x
 
 npm install firebase
 src/api/firebase.js
+amdin lecture : https://bit.ly/3BO1d6h
+
+### Realtime Database
+
+https://bit.ly/3V7hFoT
+admins {"0":"uid"}
 
 ## image
 
