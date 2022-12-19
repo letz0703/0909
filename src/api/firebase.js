@@ -1,6 +1,6 @@
 import {initializeApp} from "firebase/app"
 
-import {getAuth, signInWithPopup, GoogleAuthProvider} from "firebase/auth"
+import {getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged} from "firebase/auth"
 
 const {
   VITE_FIREBASE_API_KEY,
@@ -29,4 +29,14 @@ export async function login() {
       return user;
     })
     .catch(console.error)
+}
+export async function logout() {
+  return signOut(auth).then(() => null);
+}
+
+export function onUserStateChange(callback) {
+  onAuthStateChanged(auth, user => {
+      callback(user);
+      /**Navbar서 useEffect */
+  })
 }

@@ -9,6 +9,9 @@ gh: https://bit.ly/3PEpEZB
 
 ## AUTH
 
+onAuthStateChanged : keep session.
+https://firebase.google.com/docs/auth/web/start#:~:text=%3D%20getAuth()%3B-,onAuthStateChanged(,-auth%2C%20(
+
 FireBase : google auth
 Realtime DB
 yarn add firebase:

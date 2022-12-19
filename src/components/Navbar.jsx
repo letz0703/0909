@@ -4,11 +4,19 @@ import {v4 as uuidv4} from "uuid"
 import {BsFillPencilFill} from "react-icons/bs"
 import {HiOutlineShoppingBag} from "react-icons/hi"
 import styles from "./Navbar.module.css"
-import {login} from "../api/firebase"
+import {login, logout, onUserStateChange} from "../api/firebase"
 
 export default function Navbar() {
+  useEffect(() => {
+    onUserStateChange
+  }, [])
   const [user, setUser] = useState()
-  const handleLogin = login => setLogins()
+  const handleLogin = () => {
+    login().then(setUser)
+  }
+  const handleLogout = () => {
+    logout().then(setUser)
+  }
   return (
     <header className="flex justify-between border-b border-gray-300 p-2">
       <Link to="/">
@@ -35,7 +43,8 @@ export default function Navbar() {
         <Link to="/product/new" className="2xl">
           <BsFillPencilFill />
         </Link>
-        <button onClick={handleLogin}>Login</button>
+        {!user && <button onClick={handleLogin}>Login</button>}
+        {user && <button onClick={handleLogout}>Logout</button>}
       </nav>
     </header>
   )
