@@ -17,6 +17,12 @@ Realtime DB
 yarn add firebase:
 base : https://bit.ly/3v4mzZa
 
+## Button
+
+gh:
+{user && <Button text={"logout"} onClick={handleLogout} />}
+@src/component/ui/button.jsx
+
 ## Card
 
 @VideoCard
@@ -72,6 +78,18 @@ https://github.com/letz0703/0909/commit/861381b9bbaa02838322fde7eeb66be99247ca49
 
 https://bit.ly/3V7hFoT
 admins {"0":"uid"}
+
+### show-Icons - only for Admin
+
+```js
+{
+  user && user.isAdmin && (
+    <Link to="/product/new" className="2xl">
+      <BsFillPencilFill />
+    </Link>
+  )
+}
+```
 
 ## image
 

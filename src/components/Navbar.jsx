@@ -3,12 +3,14 @@ import {Link} from "react-router-dom"
 import {BsFillPencilFill} from "react-icons/bs"
 import {HiOutlineShoppingBag} from "react-icons/hi"
 import {login, logout, onUserStateChange} from "../api/firebase"
+import Button from "./ui/button"
+import User from "./User"
 
 export default function Navbar() {
   const [user, setUser] = useState()
   useEffect(() => {
     onUserStateChange(user => {
-      console.log(user)
+      // console.log(user)
       setUser(user)
     })
   }, [])
@@ -41,11 +43,14 @@ export default function Navbar() {
         <Link to="/carts">
           <HiOutlineShoppingBag className="w-7 h-7" />
         </Link>
-        <Link to="/product/new" className="2xl">
-          <BsFillPencilFill />
-        </Link>
-        {!user && <button onClick={handleLogin}>Login</button>}
-        {user && <button onClick={handleLogout}>Logout</button>}
+        {user && user.isAdmin && (
+          <Link to="/product/new" className="2xl">
+            <BsFillPencilFill />
+          </Link>
+        )}
+        {user && <User user={user} />}
+        {!user && <Button text={"login"} onClick={handleLogin} />}
+        {user && <Button text={"logout"} onClick={handleLogout} />}
       </nav>
     </header>
   )
