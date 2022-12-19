@@ -8,6 +8,7 @@ import {login} from "../api/firebase"
 
 export default function Navbar() {
   const [user, setUser] = useState()
+  const handleLogin = login => setLogins()
   return (
     <header className="flex justify-between border-b border-gray-300 p-2">
       <Link to="/">
@@ -34,7 +35,7 @@ export default function Navbar() {
         <Link to="/product/new" className="2xl">
           <BsFillPencilFill />
         </Link>
-        <button onClick={login}>Login</button>
+        <button onClick={handleLogin}>Login</button>
       </nav>
     </header>
   )
