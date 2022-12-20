@@ -9,6 +9,7 @@ gh: https://bit.ly/3PEpEZB
 
 ## AUTH
 
+authorize domain @fireabse authentication : wizbox auth domain
 onAuthStateChanged : keep session.
 https://firebase.google.com/docs/auth/web/start#:~:text=%3D%20getAuth()%3B-,onAuthStateChanged(,-auth%2C%20(
 
