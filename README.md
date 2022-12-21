@@ -149,7 +149,9 @@ https://cli.netlify.com/commands/env DOC
 ## New Product
 
 image upload : https://bit.ly/3hLFXHx lecture 14.15
-upload image to cloudinary gh :
+upload image to cloudinary gh : https://bit.ly/3HT5Cso
+add to firebase
+@firebase.js : Add Product, uuid
 </SearchHeader>
 
 ### SSL OpenSSL

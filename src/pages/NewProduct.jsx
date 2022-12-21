@@ -1,4 +1,5 @@
 import {useState, useEffect, useRef} from "react"
+import {addNewProduct} from "../api/firebase"
 import {uploadImage} from "../api/uploader"
 import Button from "../components/ui/button"
 //import styles from './NewProduct.module.css'
@@ -17,10 +18,7 @@ export default function NewProduct() {
 
   const handleSubmit = e => {
     e.preventDefault()
-    uploadImage(file).then(
-      url => console.log(url)
-      //firebase에 추가
-    )
+    uploadImage(file).then(url => addNewProduct(product, url))
   }
 
   return (

@@ -1,4 +1,5 @@
 import {initializeApp} from "firebase/app"
+import {v4 as uuidv4} from "uuid"
 
 import {
   getAuth,
@@ -8,7 +9,7 @@ import {
   onAuthStateChanged
 } from "firebase/auth"
 
-import {getDatabase, ref, child, get} from 'firebase/database'
+import {getDatabase, ref, set, get} from 'firebase/database'
 
 const {
   VITE_FIREBASE_API_KEY,
@@ -55,4 +56,16 @@ async function adminUser(user){
     }
       return user;
   })
+}
+
+export async function addNewProduct(product, imageUrl) {
+  const id = uuid()
+  set(ref(database, `products/${id}`), {
+    ...product,
+    id,
+    price: parseInt(product.price),
+    image: imageUrl,
+    options: product.options.split(',')
+  })
+
 }
