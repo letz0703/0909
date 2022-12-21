@@ -112,6 +112,13 @@ https://api.clodunary.com/v1_1/<cloud name>/l<resource_type>/upload
 
 @ProtectedRoute.jsx
 
+## Media
+
+Cloudinary doc: https://cloudinary.com/documentation
+lecture: https://bit.ly/3hLFXHx
+netlify env : https://cli.netlify.com/commands/env/ doc
+netlify cli > netlify env:import .env
+
 ## Navigation
 
 - keyword change : https://bit.ly/3BAyXE8 gh
@@ -141,7 +148,10 @@ https://cli.netlify.com/commands/env DOC
 
 ## New Product
 
+image upload : https://bit.ly/3hLFXHx lecture 14.15
+upload image to cloudinary gh :
 </SearchHeader>
+
 ### SSL OpenSSL
 
 - TOOLS
