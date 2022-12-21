@@ -20,6 +20,10 @@ base : https://bit.ly/3v4mzZa
 
 ## Button
 
+disable button
+
+> disabled={isUploading}
+
 gh:https://bit.ly/3FHIz1a
 {user && <Button text={"logout"} onClick={handleLogout} />}
 @src/component/ui/button.jsx
@@ -155,6 +159,14 @@ add to firebase
 </SearchHeader>
 
 ### SSL OpenSSL
+
+##### Timeout
+
+```javascript
+setTimeout(() => {
+  setSuccess(null)
+}, 4000)
+```
 
 - TOOLS
 
