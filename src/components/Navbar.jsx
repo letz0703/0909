@@ -1,14 +1,14 @@
-import {useState, useEffect} from "react"
-import {Link} from "react-router-dom"
-import {BsFillPencilFill} from "react-icons/bs"
-import {HiOutlineShoppingBag} from "react-icons/hi"
-import {login, logout, onUserStateChange} from "../api/firebase"
-import Button from "./ui/button"
-import User from "./User"
-import {useAuthContext} from "../context/Auth"
+import {useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
+import {BsFillPencilFill} from 'react-icons/bs';
+import {HiOutlineShoppingBag} from 'react-icons/hi';
+import {login, logout, onUserStateChange} from '../api/firebase';
+import Button from './ui/button';
+import User from './User';
+import {useAuthContext} from '../context/Auth';
 
 export default function Navbar() {
-  const {user, login, logout} = useAuthContext()
+  const {user, login, logout} = useAuthContext();
   // const [user, setUser] = useState()
   // useEffect(() => {
   //   onUserStateChange(user => {
@@ -17,25 +17,25 @@ export default function Navbar() {
   //   })
   // }, [])
   const handleLogin = () => {
-    login().then(setUser)
-  }
+    login().then(setUser);
+  };
   const handleLogout = () => {
-    logout().then(setUser)
-  }
+    logout().then(setUser);
+  };
   return (
     <header className="flex justify-between border-b border-gray-300 p-2">
       <Link to="/" className="flex items-center text-4xl text-brand">
         <span
           style={{
-            fontSize: "1.3rem",
-            paddingRight: ".1rem",
-            fontWeight: "bold"
+            fontSize: '1.3rem',
+            paddingRight: '.1rem',
+            fontWeight: 'bold',
           }}
         >
           i.
           {/* <img src={LogoSvg} alt="logo" style={{width: "30px"}} /> */}
         </span>
-        <span style={{fontSize: "1.5rem"}}>canmart</span>
+        <span style={{fontSize: '1.5rem'}}>canmart</span>
       </Link>
       <nav className="flex items-center gap-4 font-semibold">
         {/* <Link to="/">Home</Link> */}
@@ -49,14 +49,14 @@ export default function Navbar() {
         )}
 
         {user && user.isAdmin && (
-          <Link to="/product/new" className="2xl">
+          <Link to="/products/new" className="2xl">
             <BsFillPencilFill />
           </Link>
         )}
         {user && <User user={user} />}
-        {!user && <Button text={"login"} onClick={handleLogin} />}
-        {user && <Button text={"logout"} onClick={handleLogout} />}
+        {!user && <Button text={'login'} onClick={handleLogin} />}
+        {user && <Button text={'logout'} onClick={handleLogout} />}
       </nav>
     </header>
-  )
+  );
 }
