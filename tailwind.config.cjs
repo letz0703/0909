@@ -14,6 +14,9 @@ module.exports = {
       colors: {
         youtube: '#ff0000',
         brand:'#c10002'
+      },
+      backgroundImage: {
+        banner: `url('../public/images/banner.jpg' )`,
       }
     }
   },
