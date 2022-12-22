@@ -1,0 +1,17 @@
+import {useState, useEffect, useRef} from "react"
+import Products from "./Products"
+//import styles from './ProductCard.module.css'
+export default function ProductCard({
+  product: {id, image, title, category, price}
+}) {
+  return (
+    <li>
+      <img src={image} alt={title} />
+      <div>
+        <h3>{title}</h3>
+        <p>{price}</p>
+      </div>
+      <p>{category}</p>
+    </li>
+  )
+}

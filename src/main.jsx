@@ -25,9 +25,9 @@ const router = createBrowserRouter([
       {
         path: "/products",
         element: (
-          <ProtectedRoute requireAdmin>
-            <AllProducts />
-          </ProtectedRoute>
+          // <ProtectedRoute requireAdmin>
+          <AllProducts />
+          // </ProtectedRoute>
         )
       },
       {path: "/products/new", element: <NewProduct />},

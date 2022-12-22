@@ -1,44 +1,21 @@
-import React, {useState} from "react"
 import {useQuery} from "@tanstack/react-query"
+import {useState, useEffect, useRef} from "react"
+import ProductCard from "./ProductCard"
+//import styles from './Products.module.css'
+import {getProducts} from "../api/firebase"
 
 export default function Products() {
-  const [checked, setChecked] = useState(false)
-
-  const {
-    isLoading,
-    error,
-    data: products
-  } = useQuery(
-    ["products", checked],
-    async () => {
-      console.log("fetching...", checked)
-      const res = await fetch(`data/${checked ? "sale_" : ""}products.json`)
-      return await res.json()
-    },
-    {staleTime: 1000 * 60 * 1}
-  )
-
-  const handleChange = () => setChecked(prev => !prev)
-
-  if (isLoading) return <p>Loading...</p>
-
-  if (error) return <p>{error}</p>
-
+  // move below under export default
+  const {data: products, isLoading, error} = useQuery(["products"], getProducts)
   return (
     <>
-      <label>
-        <input type="checkbox" checked={checked} onChange={handleChange} />
-        Show Only 🔥 Sale
-      </label>
+      {isLoading && <p>Loading...</p>}
+      {error && <p>{error}</p>}
       <ul>
-        {products.map(product => (
-          <li key={product.id}>
-            <article>
-              <h3>{product.name}</h3>
-              <p>{product.price}</p>
-            </article>
-          </li>
-        ))}
+        {products &&
+          products.map(product => (
+            <ProductCard key={product.id} product={product} />
+          ))}
       </ul>
     </>
   )

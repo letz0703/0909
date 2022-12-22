@@ -103,6 +103,11 @@ upload presets : https://bit.ly/3je4mWq
 Upload
 https://api.clodunary.com/v1_1/<cloud name>/l<resource_type>/upload
 
+## Query
+
+> yarn add @tanstack/react-query
+> const queryClient = new QueryClient();
+
 ## Route
 
 - Protect : lecture : https://academy.dream-coding.com/courses/player/react/lessons/1537
