@@ -18,6 +18,11 @@ Realtime DB
 yarn add firebase:
 base : https://bit.ly/3v4mzZa
 
+## Banner
+
+14.20 gh: https://bit.ly/3PJhcIE
+2022.12.22/목
+
 ## Button
 
 disable button
@@ -219,4 +224,6 @@ Tips
 
 ##### DESIGN
 
+hover
+transition-all hover:scale-105
 https://bit.ly/3hwLpOh tailwind youtube
