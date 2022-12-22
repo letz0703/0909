@@ -71,6 +71,9 @@ lec: https://bit.ly/3uV3iJI
 ## Detail Page
 
 youtube - https://bit.ly/3YoEZ4q
+base : https://bit.ly/3v7KJSS gh
+design:pic https://share.cleanshot.com/9fPLsp3d
+gh: https://bit.ly/3Wib8cz
 
 ## ENV with VITE
 
