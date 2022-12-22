@@ -70,6 +70,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   @apply flex flex-col items-center;
+  color: black;
 }
 
 h1 {
