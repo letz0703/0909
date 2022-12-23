@@ -6,7 +6,11 @@ import {getProducts} from "../api/firebase"
 
 export default function Products() {
   // move below under export default
-  const {data: products, isLoading, error} = useQuery(["products"], getProducts)
+  const {
+    data: products,
+    isLoading,
+    error
+  } = useQuery(["products"], getProducts, {staleTime: 1000 * 60})
   return (
     <>
       {isLoading && <p>Loading...</p>}

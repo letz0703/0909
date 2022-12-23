@@ -35,10 +35,12 @@ export default function NewProduct() {
 
   return (
     <section>
-      <h2>새로운 제품 등록</h2>
+      <h2 className="text-2xl my-6 flex flex-col items-center">
+        새로운 제품 등록
+      </h2>
       {success && <p>⍻{success}</p>}
       {file && <img src={URL.createObjectURL(file)} alt="local file" />}
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-2 p-2">
         <input
           type="file"
           accept="image/*"
