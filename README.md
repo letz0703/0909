@@ -58,6 +58,21 @@ async () => youtube.channelImageURL(id),
 
 # Cart
 
+CartDesign w/ border
+gh:
+
+CartItem.jsx
+
+totalprcie :
+SHIPPING
+
+const totalPrice =
+products &&
+products.reduce((prev, cur) => prev + parseInt(cur.price) \* cur.quantity, 0)
+
+````
+
+Menubar Icon : gh : https://bit.ly/3hQeaWr
 CartStatus component
 top menu icon numbering : https://bit.ly/3Wm9p5X gh
 Add to cart
@@ -115,7 +130,7 @@ admins {"0":"uid"}
     </Link>
   )
 }
-```
+````
 
 ## image
 

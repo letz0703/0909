@@ -33,7 +33,6 @@ export default function Navbar() {
           }}
         >
           i.
-          {/* <img src={LogoSvg} alt="logo" style={{width: "30px"}} /> */}
         </span>
         <span style={{fontSize: "1.5rem"}}>canmart</span>
       </Link>

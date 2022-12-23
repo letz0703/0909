@@ -1,4 +1,4 @@
-import {useState, useEffect, useRef} from "react"
+import {useState} from "react"
 import {useLocation} from "react-router-dom"
 import Button from "../components/ui/button"
 //import styles from './ProductDetail.module.css'
@@ -17,11 +17,11 @@ export default function ProductDetail() {
 
   const handleSelect = e => {
     const {value} = e.target
-    setSelected(value)
+    setSelected(e.target.value)
   }
 
   const handleClick = e => {
-    const product = {id, image, title, price, option: selected, quanity: 1}
+    const product = {id, image, title, price, option: selected, quantity: 1}
     addOrUpdateToCart(uid, product)
   }
 
