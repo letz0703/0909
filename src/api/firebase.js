@@ -80,7 +80,7 @@ export async function getProducts() {
 
 /** Shopping Cart related */
 
-async function getCart(userId) {
+export async function getCart(userId) {
   return get(ref(database, `{carts/userId}`))
     .then(snapshot => {
     const items = snapshot.val() || {}
@@ -88,10 +88,10 @@ async function getCart(userId) {
   })
 }
 
-async function addOrUpdateToCart(userId, product) {
+export async function addOrUpdateToCart(userId, product) {
   return set(ref(database, `carts/${userId}/${product.id}`), product)
 }
 
-async function removeFromCart(userId,productId) {
+export async function removeFromCart(userId,productId) {
   return remove(ref(database, `carts//${userId}/${productId}`))
 }

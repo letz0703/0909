@@ -58,10 +58,14 @@ async () => youtube.channelImageURL(id),
 
 # Cart
 
+Add to cart
+gh:
+
 @firebase.js
 afun getCart(userId)
 afun addOrUpdateToCart
 afun removeFromCart
+gh: https://bit.ly/3Gewa6f
 
 ## Context
 
