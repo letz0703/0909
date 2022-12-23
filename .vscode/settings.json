@@ -136,6 +136,11 @@
       "cursorDown"
     ],
     "addSemicolon": ["cursorEnd", {"command": "type", "args": {"text": ";"}}],
+    "classname": [
+      "classname",
+      {"command": "type", "args": {"text": "cn"}},
+      "insertSnippet"
+    ],
     "doMySnippet": [
       {"command": "type", "args": {"text": "cl"}},
       "insertSnippet"
