@@ -1,7 +1,6 @@
 import {useState, useEffect} from "react"
 import {Link} from "react-router-dom"
 import {BsFillPencilFill} from "react-icons/bs"
-import {HiOutlineShoppingBag} from "react-icons/hi"
 import {login, logout, onUserStateChange} from "../api/firebase"
 import Button from "./ui/button"
 import User from "./User"
@@ -45,7 +44,6 @@ export default function Navbar() {
         <Link to="/products">Products</Link>
         {user && (
           <Link to="/carts">
-            <HiOutlineShoppingBag className="w-7 h-7" />
             <CartStatus />
           </Link>
         )}

@@ -23,7 +23,6 @@ export default function ProductDetail() {
   const handleClick = e => {
     const product = {id, image, title, price, option: selected, quanity: 1}
     addOrUpdateToCart(uid, product)
-    console.log(uid)
   }
 
   return (
