@@ -59,7 +59,7 @@ async () => youtube.channelImageURL(id),
 # Cart
 
 CartStatus component
-
+top menu icon numbering : https://bit.ly/3Wm9p5X gh
 Add to cart
 gh: https://bit.ly/3vvrmU5
 
