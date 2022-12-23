@@ -9,9 +9,17 @@ export default function CartStatus() {
   const {uid} = useAuthContext()
   const {data: products} = useQuery(["carts"], () => getCart(uid))
   return (
-    <div>
-      <HiOutlineShoppingBag className="w-7 h-7" />
-      {products && <p>{products.length}</p>}
+    <div className="relative">
+      <HiOutlineShoppingBag className="w-10 h-10 text-4xl" />
+      {products && (
+        <p
+          className="w-6 h-6 text-center text-brand font-bold rounded-full
+        absolute -top-2 -right-2
+        "
+        >
+          {products.length}
+        </p>
+      )}
     </div>
   )
 }
