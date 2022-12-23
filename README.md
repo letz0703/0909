@@ -58,6 +58,8 @@ async () => youtube.channelImageURL(id),
 
 # Cart
 
+CartStatus component
+
 Add to cart
 gh: https://bit.ly/3vvrmU5
 

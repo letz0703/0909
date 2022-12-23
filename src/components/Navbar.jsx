@@ -6,6 +6,7 @@ import {login, logout, onUserStateChange} from "../api/firebase"
 import Button from "./ui/button"
 import User from "./User"
 import {useAuthContext} from "../context/Auth"
+import CartStatus from "./CartStatus"
 
 export default function Navbar() {
   const {user, login, logout} = useAuthContext()
@@ -45,6 +46,7 @@ export default function Navbar() {
         {user && (
           <Link to="/carts">
             <HiOutlineShoppingBag className="w-7 h-7" />
+            <CartStatus />
           </Link>
         )}
 
