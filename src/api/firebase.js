@@ -9,7 +9,7 @@ import {
   onAuthStateChanged
 } from "firebase/auth"
 
-import {getDatabase, ref, set, get} from 'firebase/database'
+import {getDatabase, ref, set, get, remove} from 'firebase/database'
 
 const {
   VITE_FIREBASE_API_KEY,
@@ -76,4 +76,22 @@ export async function getProducts() {
     }
     return [];
   })
+}
+
+/** Shopping Cart related */
+
+async function getCart(userId) {
+  return get(ref(database, `{carts/userId}`))
+    .then(snapshot => {
+    const items = snapshot.val() || {}
+    return Object.values(items)
+  })
+}
+
+async function addOrUpdateToCart(userId, product) {
+  return set(ref(database, `carts/${userId}/${product.id}`), product)
+}
+
+async function removeFromCart(userId,productId) {
+  return remove(ref(database, `carts//${userId}/${productId}`))
 }

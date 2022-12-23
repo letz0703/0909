@@ -56,6 +56,13 @@ async () => youtube.channelImageURL(id),
 
 )
 
+# Cart
+
+@firebase.js
+afun getCart(userId)
+afun addOrUpdateToCart
+afun removeFromCart
+
 ## Context
 
 YoutubeApi
