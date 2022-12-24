@@ -2,7 +2,7 @@ import {useDebugValue, useEffect, useState} from "react"
 import {useQuery, useMutation, useQueryClient} from "@tanstack/react-query"
 import {addNewProduct, getProducts as fetchProducts} from "../api/firebase"
 
-export default function UseProducts() {
+export default function useProducts() {
   const queryClient = useQueryClient()
   const productsQuery = useQuery(["products"], fetchProducts, {
     staleTime: 1000 * 60

@@ -10,7 +10,6 @@ export default function NewProduct() {
   const [file, setFile] = useState()
   const [isUploading, setIsUploading] = useState(false)
   const [success, setSuccess] = useState()
-  // const queryClient = useQueryClient()
 
   const {addProduct} = useProducts()
 
@@ -99,8 +98,8 @@ export default function NewProduct() {
         />
         <input
           type="text"
-          name="option"
-          value={product.option ?? ""}
+          name="options"
+          value={product.options ?? ""}
           placeholder="옵션들(콤마로,구분)"
           required
           onChange={handleChange}
