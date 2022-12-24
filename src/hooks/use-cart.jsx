@@ -1,0 +1,27 @@
+export default function UseCart() {
+  const {uid} = useAuthContext()
+  const queryClient = useQueryClient()
+  const cartQuery = useQuery(["cart", uid || ""], () => getCart(uid), {
+    enabled: !!uid
+    // ※ https://www.codingem.com/javascript-double-exclamation-operator/ double exclamation mark
+    // object to boolean
+  })
+
+  const addOrUpdateItem = useMutation(
+    product => addOrUpdateToCart(uid, product),
+    {
+      onSuccess: () => {
+        queryClient.invalidateQueries(["carts", uid])
+        // login사용자의 cache만 invalidate ↑
+      }
+    }
+  )
+
+  const removeItem = useMutation(id => removeFromCart(uid, id), {
+    onSuccess: () => {
+      QueryClient.invalidateQueries(["carts", uid])
+    }
+  })
+
+  return {cartQuery, addOrUpdateItem, removeItem}
+}

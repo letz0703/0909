@@ -40,6 +40,10 @@ type = 'list'
 const isList = type === 'list'
 className={isList? 'flex gap-1 m-2' :''}
 
+## Cart
+
+hook : useCart.jsx
+
 ## Caching
 
 mutate : gh https://bit.ly/3hQcg8g
@@ -160,6 +164,12 @@ https://api.clodunary.com/v1_1/<cloud name>/l<resource_type>/upload
 
 > yarn add @tanstack/react-query
 > const queryClient = new QueryClient();
+
+## React Query
+
+<!-- TODO : Read ↓ -->
+
+📃 https://tkdodo.eu/blog/practical-react-query#create-custom-hooks
 
 ## Route
 
