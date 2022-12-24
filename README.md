@@ -42,7 +42,6 @@ className={isList? 'flex gap-1 m-2' :''}
 
 ## Caching
 
-invalidate cache useMutation
 
 https://bit.ly/3BKkQvV
 
@@ -133,6 +132,10 @@ admins {"0":"uid"}
   )
 }
 ````
+
+## hooks
+
+useProduct :
 
 ## image
 
