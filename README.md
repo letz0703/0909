@@ -42,6 +42,8 @@ className={isList? 'flex gap-1 m-2' :''}
 
 ## Caching
 
+invalidate cache useMutation
+
 https://bit.ly/3BKkQvV
 
 const {data: url} = useQuery(

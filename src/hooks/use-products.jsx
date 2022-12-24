@@ -1,6 +1,16 @@
-import {useEffect, useState} from "react"
+import {useDebugValue, useEffect, useState} from "react"
+import {useQuery, useMutation, useQueryClient} from "@tanstack/react-query"
+import {getProducts} from "../api/firebase"
 
 export default function useProducts({salesOnly}) {
+  // move below under export default
+
+  const queryClient = useQueryClient()
+  // move below under export default
+  const getProducts = useQuery(["products"], getProducts, {
+    staleTime: 1000 * 60
+  })
+
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState()
   const [products, setProducts] = useState([])
@@ -21,5 +31,6 @@ export default function useProducts({salesOnly}) {
     }
   }, [salesOnly])
 
-  return [loading, error, products]
+  return [products, loading, error]
+  // return [loading, error, products]
 }
