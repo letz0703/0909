@@ -1,25 +1,23 @@
-// import {useState, useEffect, useRef} from "react"
-//import styles from './CartItem.module.css'
 import {AiOutlineMinusSquare, AiOutlinePlusSquare} from "react-icons/ai"
 import {RiDeleteBin5Fill} from "react-icons/ri"
-import {addOrUpdateToCart, removeFromCart} from "../api/firebase"
+import UseCart from "../hooks/use-cart"
 
 const ICON_BOX = "transition-all cursor-pointer hover:text-brand mx-1"
 export default function CartItem({
   product,
-  product: {id, image, title, option, quantity, price},
-  uid
+  product: {id, image, title, option, quantity, price}
 }) {
+  const {addOrUpdateItem, removeItem} = UseCart()
   const handleMinus = () => {
     if (quantity < 2) return
-    addOrUpdateToCart(uid, {...product, quantity: quantity - 1})
+    // addOrUpdateToCart(uid, {...product, quantity: quantity - 1})
+    addOrUpdateItem.mutate({...product, quantity: quantity - 1})
   }
 
   const handlePlus = () => {
-    console.log(quantity)
-    addOrUpdateToCart(uid, {...product, quantity: quantity + 1})
+    addOrUpdateItem.mutate({...product, quantity: quantity + 1})
   }
-  const handleDelete = () => removeFromCart(uid, id)
+  const handleDelete = () => removeItem.mutate(id)
 
   return (
     <li className="flex justify-between my-2 items-center">
