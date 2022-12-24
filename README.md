@@ -42,6 +42,18 @@ className={isList? 'flex gap-1 m-2' :''}
 
 ## Caching
 
+mutate : gh https://bit.ly/3hQcg8g
+
+invalidate cache useMutation for invalidate and staleTime
+
+```js
+const addProduct = useMutation(
+  ({product, url}) => addNewProduct(product, url),
+  {
+    onSuccess: () => queryClient.invalidateQueries(["products"])
+  }
+)
+```
 
 https://bit.ly/3BKkQvV
 
@@ -135,7 +147,7 @@ admins {"0":"uid"}
 
 ## hooks
 
-useProduct :
+useProduct : https://bit.ly/3BZmzOa gh
 
 ## image
 

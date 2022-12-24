@@ -1,5 +1,6 @@
 import {useDebugValue, useEffect, useState} from "react"
 import {useQuery, useMutation, useQueryClient} from "@tanstack/react-query"
+import {addNewProduct, getProducts as fetchProducts} from "../api/firebase"
 
 export default function useProducts() {
   // move below under export default
@@ -12,7 +13,20 @@ export default function useProducts() {
   const productsQuery = useQuery(["products"], fetchProducts, {
     staleTime: 1000 * 60
   })
+  // move below under export default
 
+  const {
+    data: key,
+    isLoading,
+    error
+  } = useQuery(["key"], async () => {
+    return fetch(``).then(res => res.json())
+  })
+
+  const addProduct = useMutation(
+    ({product, url}) => addNewProductProduct(product, url),
+    {
+      onSuccess: () => queryClient.invalidateQueries(["products"])
     }
   )
 
