@@ -16,7 +16,7 @@ module.exports = {
         brand:'#c10002'
       },
       backgroundImage: {
-        banner: `url('../public/images/banner.jpg' )`,
+        banner: `url('../images/banner.jpg' )`,
       }
     }
   },
