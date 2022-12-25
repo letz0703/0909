@@ -2,6 +2,7 @@ import {useState} from "react"
 import {useLocation} from "react-router-dom"
 import Button from "../components/ui/button"
 import useCart from "../hooks/use-cart"
+import FormatCurrency from "../util/formatCurrency"
 
 export default function ProductDetail() {
   const {addOrUpdateItem} = useCart()
@@ -39,7 +40,7 @@ export default function ProductDetail() {
         >
           <h2 className="text-3xl font-bold py-2 ">{title}</h2>
           <p className="text-2xl font-bold py-2 border-b border-gray-400">
-            {price}
+            {FormatCurrency(price)}
           </p>
           <p className="py-4 text-lg">{description}</p>
           <div className="flex items-center">
