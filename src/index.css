@@ -6,7 +6,8 @@
 
 :root {
   --color-accent: #c10002;
-  --color-bg: #efefef;
+  --color-bg: #fff;
+  /* --color-bg: #efefef; */
   --color-bg-dark: #040c18;
   font-family: "Poppins", -apple-system, system-ui, "Manrope", Inter, Avenir,
     Helvetica, Arial, sans-serif;
@@ -96,19 +97,6 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-/*
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
 
 #root {
   @apply w-full max-w-screen-2xl;
@@ -121,4 +109,8 @@ code {
 input {
   padding: 0.5rem;
   border-bottom: 0.1rem solid rgba(161, 24, 24, 0.87);
+}
+
+#root {
+  padding: 0;
 }
