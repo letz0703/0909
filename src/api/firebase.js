@@ -67,8 +67,27 @@ export async function addNewProduct(product, image) {
   })
 }
 
+export async function addNewOrder(product, image) {
+  const id = uuid()
+  return set(ref(database, `orders/${id}`), {
+    ...order,
+    id,
+    qty: parseInt(product.qty),
+    image
+  })
+}
+
 export async function getProducts() {
   return get(ref(database, "products")).then(snapshot => {
+    if (snapshot.exists()) {
+      return Object.values(snapshot.val())
+    }
+    return []
+  })
+}
+
+export async function getOrders() {
+  return get(ref(database, "orders")).then(snapshot => {
     if (snapshot.exists()) {
       return Object.values(snapshot.val())
     }

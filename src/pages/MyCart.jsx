@@ -4,12 +4,15 @@ import {TiEquals} from "react-icons/ti"
 import PriceCard from "../components/PriceCard"
 import Button from "../components/ui/button"
 import useCart from "../hooks/use-cart"
+import {useOrders} from "../hooks/useOrders"
+import {addNewOrder} from "../api/firebase"
 
 const SHIPPING = 3000
 
 export default function MyCart() {
   // const {uid} = useAuthContext()
   // const {data: products, isLoading} = useQuery(["carts"], () => getCart(uid))
+  const {addOrder} = useOrders()
 
   const {
     cartQuery: {isLoading, data: products}
@@ -22,6 +25,10 @@ export default function MyCart() {
   const totalPrice =
     products &&
     products.reduce((prev, cur) => prev + parseInt(cur.price) * cur.quantity, 0)
+
+  const handleOrder = () => {
+    console.log("hi")
+  }
 
   return (
     <section className="p-8 flex flex-col">
@@ -44,7 +51,7 @@ export default function MyCart() {
             <TiEquals className="shrink-0" />
             <PriceCard text="결재금액" price={totalPrice + SHIPPING} />
           </div>
-          <Button text="주문하기" />
+          <Button text="주문하기" onClick={handleOrder} />
         </>
       )}
     </section>
