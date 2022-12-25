@@ -1,13 +1,13 @@
 import {AiOutlineMinusSquare, AiOutlinePlusSquare} from "react-icons/ai"
 import {RiDeleteBin5Fill} from "react-icons/ri"
-import UseCart from "../hooks/use-cart"
+import useCart from "../hooks/use-cart"
 
 const ICON_BOX = "transition-all cursor-pointer hover:text-brand mx-1"
 export default function CartItem({
   product,
   product: {id, image, title, option, quantity, price}
 }) {
-  const {addOrUpdateItem, removeItem} = UseCart()
+  const {addOrUpdateItem, removeItem} = useCart()
   const handleMinus = () => {
     if (quantity < 2) return
     // addOrUpdateToCart(uid, {...product, quantity: quantity - 1})

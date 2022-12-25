@@ -1,7 +1,5 @@
-import {useState, useEffect, useRef} from "react"
 import {useNavigate} from "react-router-dom"
-import Products from "./Products"
-//import styles from './ProductCard.module.css'
+
 export default function ProductCard({
   product,
   product: {id, image, title, category, price}

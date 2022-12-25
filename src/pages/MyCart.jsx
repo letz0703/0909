@@ -3,7 +3,7 @@ import {BsFillPlusCircleFill} from "react-icons/bs"
 import {TiEquals} from "react-icons/ti"
 import PriceCard from "../components/PriceCard"
 import Button from "../components/ui/button"
-import UseCart from "../hooks/use-cart"
+import useCart from "../hooks/use-cart"
 
 const SHIPPING = 3000
 
@@ -13,7 +13,7 @@ export default function MyCart() {
 
   const {
     cartQuery: {isLoading, data: products}
-  } = UseCart()
+  } = useCart()
 
   if (isLoading) return <p>Loading...</p>
 

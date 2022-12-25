@@ -1,10 +1,10 @@
 import {HiOutlineShoppingBag} from "react-icons/hi"
-import UseCart from "../hooks/use-cart"
+import useCart from "../hooks/use-cart"
 
 export default function CartStatus() {
   const {
     cartQuery: {data: products}
-  } = UseCart()
+  } = useCart()
 
   return (
     <div className="relative">

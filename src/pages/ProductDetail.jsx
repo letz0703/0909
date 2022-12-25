@@ -1,10 +1,10 @@
 import {useState} from "react"
 import {useLocation} from "react-router-dom"
 import Button from "../components/ui/button"
-import UseCart from "../hooks/use-cart"
+import useCart from "../hooks/use-cart"
 
 export default function ProductDetail() {
-  const {addOrUpdateItem} = UseCart()
+  const {addOrUpdateItem} = useCart()
   const {
     state: {
       product: {id, image, title, description, category, price, options}

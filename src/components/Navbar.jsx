@@ -1,27 +1,14 @@
-import {useState, useEffect} from "react"
 import {Link} from "react-router-dom"
 import {BsFillPencilFill} from "react-icons/bs"
 import {login, logout, onUserStateChange} from "../api/firebase"
 import Button from "./ui/button"
 import User from "./User"
-import {useAuthContext} from "../context/Auth"
+import {useAuthContext} from "../context/AuthContext"
 import CartStatus from "./CartStatus"
 
 export default function Navbar() {
   const {user, login, logout} = useAuthContext()
-  // const [user, setUser] = useState()
-  // useEffect(() => {
-  //   onUserStateChange(user => {
-  //     // console.log(user)
-  //     setUser(user)
-  //   })
-  // }, [])
-  const handleLogin = () => {
-    login().then(setUser)
-  }
-  const handleLogout = () => {
-    logout().then(setUser)
-  }
+
   return (
     <header className="flex justify-between border-b border-gray-300 p-2">
       <Link to="/" className="flex items-center text-4xl text-brand">
@@ -53,8 +40,8 @@ export default function Navbar() {
           </Link>
         )}
         {user && <User user={user} />}
-        {!user && <Button text={"login"} onClick={handleLogin} />}
-        {user && <Button text={"logout"} onClick={handleLogout} />}
+        {!user && <Button text={"login"} onClick={login} />}
+        {user && <Button text={"logout"} onClick={logout} />}
       </nav>
     </header>
   )

@@ -1,5 +1,3 @@
-import {useState, useEffect, useRef} from "react"
-//import styles from './banners.module.css'
 export default function Banners() {
   return (
     <section className="h-96 relative">

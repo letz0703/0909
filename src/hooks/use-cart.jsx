@@ -1,12 +1,12 @@
 import {useMutation, useQuery, useQueryClient} from "@tanstack/react-query"
 import {addOrUpdateToCart, getCart, removeFromCart} from "../api/firebase"
-import {useAuthContext} from "../context/Auth"
+import {useAuthContext} from "../context/AuthContext"
 
-export default function UseCart() {
+export default function useCart() {
   const {uid} = useAuthContext()
   const queryClient = useQueryClient()
 
-  const cartQuery = useQuery(["cart", uid || ""], () => getCart(uid), {
+  const cartQuery = useQuery(["carts", uid || ""], () => getCart(uid), {
     enabled: !!uid
     // ※ https://www.codingem.com/javascript-double-exclamation-operator/ double exclamation mark
     // object to boolean
