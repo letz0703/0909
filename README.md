@@ -1,5 +1,8 @@
 # http://icanmart.netlify.com/
 
+[] 2022.12.26/월 : https://www.youtube.com/watch?v=lATafp15HWA&t=1905s
+
+<!-- TODO ↑NOW  router 5:00 -->
 ## API folder
 
 youtube.js
