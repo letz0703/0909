@@ -1,8 +1,10 @@
 # http://icanmart.netlify.com/
 
+shopping mall ref
 [] 2022.12.26/월 : https://www.youtube.com/watch?v=lATafp15HWA&t=1905s
 
 <!-- TODO ↑NOW  router 5:00 -->
+
 ## API folder
 
 youtube.js
@@ -29,6 +31,15 @@ base : https://bit.ly/3v4mzZa
 ## beta
 
 - 🏡 react https://beta.reactjs.org/
+  [] https://react-bootstrap.github.io/
+
+### Boot Strap
+
+🏡 https://react-bootstrap.github.io/getting-started/introduction
+
+> npm install react-bootstrap bootstrap
+
+@page : import "bootstrap/dist/css/bootstrap.min.css"
 
 ## Button
 
@@ -304,6 +315,8 @@ https://bit.ly/3hwLpOh tailwind youtube
 - higher order component
 
 ###### ref
+
+## router
 
 - react blog : https://bit.ly/3I1Rv4b
 
