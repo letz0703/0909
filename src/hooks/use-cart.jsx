@@ -1,9 +1,4 @@
-import {
-  QueryClient,
-  useMutation,
-  useQuery,
-  useQueryClient
-} from "@tanstack/react-query"
+import {useMutation, useQuery, useQueryClient} from "@tanstack/react-query"
 import {addOrUpdateToCart, getCart, removeFromCart} from "../api/firebase"
 import {useAuthContext} from "../context/Auth"
 
@@ -29,7 +24,7 @@ export default function UseCart() {
 
   const removeItem = useMutation(id => removeFromCart(uid, id), {
     onSuccess: () => {
-      QueryClient.invalidateQueries(["carts", uid])
+      queryClient.invalidateQueries(["carts", uid])
     }
   })
 

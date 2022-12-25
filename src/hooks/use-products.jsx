@@ -1,4 +1,3 @@
-import {useDebugValue, useEffect, useState} from "react"
 import {useQuery, useMutation, useQueryClient} from "@tanstack/react-query"
 import {addNewProduct, getProducts as fetchProducts} from "../api/firebase"
 

@@ -1,10 +1,8 @@
-// import {useMutation, useQueryClient} from "@tanstack/react-query"
 import {useState, useEffect, useRef} from "react"
-// import {addNewProduct} from "../api/firebase"
 import {uploadImage} from "../api/uploader"
 import Button from "../components/ui/button"
 import useProducts from "../hooks/use-products"
-//import styles from './NewProduct.module.css'
+
 export default function NewProduct() {
   const [product, setProduct] = useState({})
   const [file, setFile] = useState()

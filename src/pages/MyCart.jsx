@@ -1,4 +1,3 @@
-import {useQuery} from "@tanstack/react-query"
 import CartItem from "../components/CartItem"
 import {BsFillPlusCircleFill} from "react-icons/bs"
 import {TiEquals} from "react-icons/ti"

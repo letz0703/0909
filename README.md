@@ -23,6 +23,10 @@ base : https://bit.ly/3v4mzZa
 14.20 gh: https://bit.ly/3PJhcIE
 2022.12.22/목
 
+## beta
+
+- 🏡 react https://beta.reactjs.org/
+
 ## Button
 
 disable button
@@ -226,6 +230,10 @@ add to firebase
 @firebase.js : Add Product, uuid
 </SearchHeader>
 
+## Split : Code-Spliting https://reactjs.org/docs/code-splitting.html
+
+for slow site
+
 ### SSL OpenSSL
 
 ##### Timeout
@@ -285,3 +293,13 @@ Tips
 hover
 transition-all hover:scale-105
 https://bit.ly/3hwLpOh tailwind youtube
+
+###### study later
+
+- accessibility
+- portal for insertin child to different location in DOM
+- higher order component
+
+###### ref
+
+- react blog : https://bit.ly/3I1Rv4b
