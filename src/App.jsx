@@ -1,40 +1,24 @@
-import {createBrowserRouter, RouterProvider} from "react-router-dom"
-import "./App.css"
-import Home from "./pages/Home"
-import Jap from "./pages/Jap"
-import Can from "./pages/Can"
-import NotFound from "./pages/NotFound"
-import Root from "./pages/Root"
-import CanItemDetail from "./pages/CanItemDetail"
-import MainProduct from "./components/Main_product"
-import {ReactQueryDevtools} from "@tanstack/react-query-devtools"
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query"
+import {useState} from "react"
+import {Routes, Route, Outlet} from "react-router-dom"
+import "./App.css"
+import Navbar from "./components/Navbar"
+import {AuthContextProvider} from "./context/AuthContext"
 const queryClient = new QueryClient()
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Root />,
-    errorElement: <NotFound />,
-    children: [
-      {index: true, element: <Home />},
-      {path: "/jap", element: <Jap />},
-      {path: "/can", element: <Can />},
-      {path: "/can/:itemName", element: <CanItemDetail />}
-    ]
-  }
-])
+// import {Routes, Route} from "react-router-dom"
+import {Container} from "react-bootstrap"
+import ShopHome from "./pages/ShopHome"
 
 function App() {
   return (
-    <>
-      <RouterProvider router={router} />
+    <Container>
       <QueryClientProvider client={queryClient}>
-        <MainProduct />
-        <ReactQueryDevtools initialIsOpen={true} />
+        <AuthContextProvider>
+          <Navbar />
+          <Outlet />
+        </AuthContextProvider>
       </QueryClientProvider>
-      {/* </RouterProvider> */}
-    </>
+    </Container>
   )
 }
 

@@ -1,10 +1,10 @@
+import "bootstrap/dist/css/bootstrap.min.css"
 import React from "react"
 import ReactDOM from "react-dom/client"
 import {createBrowserRouter, RouterProvider} from "react-router-dom"
 // import App from "./App"
 // import App from "./App2"
-import App from "./App3"
-import "bootstrap/dist/css/bootstrap.min.css"
+import App from "./App"
 import "./index.css"
 import AllProducts from "./pages/AllProducts"
 import MyCart from "./pages/MyCart"
@@ -15,6 +15,8 @@ import ProtectedRoute from "./pages/ProtectedRoute"
 import ShopHome from "./pages/ShopHome"
 import VideoDetail from "./pages/VideoDetail"
 import Videos from "./pages/Videos"
+import Jap from "./pages/Jap"
+import Can from "./pages/Can"
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
     children: [
       {index: true, element: <ShopHome />},
+      {
+        path: "/jap",
+        element: <Jap />
+      },
+      {
+        path: "/can",
+        element: <Can />
+      },
       {
         path: "/products",
         element: (

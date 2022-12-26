@@ -178,6 +178,10 @@ upload presets : https://bit.ly/3je4mWq
 Upload
 https://api.clodunary.com/v1_1/<cloud name>/l<resource_type>/upload
 
+## JSON
+
+stringify : https://youtu.be/lATafp15HWA?t=1057 shopping items example
+
 ## Query
 
 > yarn add @tanstack/react-query

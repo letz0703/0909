@@ -5,12 +5,18 @@ import Button from "./ui/button"
 import User from "./User"
 import {useAuthContext} from "../context/AuthContext"
 import CartStatus from "./CartStatus"
+import {Navbar as NavbarBs} from "react-bootstrap"
+import {NavLink} from "react-router-dom"
 
 export default function Navbar() {
   const {user, login, logout} = useAuthContext()
 
   return (
-    <header className="flex justify-between border-b border-gray-300 p-2">
+    // <NavbarBs>
+    <header
+      sticky="top"
+      className="flex justify-between border-b border-gray-300 p-2"
+    >
       <Link to="/" className="flex items-center text-4xl text-brand">
         <span
           style={{
@@ -23,26 +29,26 @@ export default function Navbar() {
         </span>
         <span style={{fontSize: "1.5rem"}}>canmart</span>
       </Link>
-      <nav className="flex items-center gap-4 font-semibold">
+      <NavbarBs className="flex items-center gap-4 font-semibold">
         {/* <Link to="/">Home</Link> */}
         <Link to="/jap">Jap</Link>
         <Link to="/can">Can</Link>
         <Link to="/products">Products</Link>
-        {user && (
-          <Link to="/carts">
-            <CartStatus />
-          </Link>
-        )}
 
+        {/* {user && <User user={user} />} */}
+        {!user && <Button text={"login"} onClick={login} />}
+        {user && <Button text={"logout"} onClick={logout} />}
         {user && user.isAdmin && (
           <Link to="/products/new" className="2xl">
             <BsFillPencilFill />
           </Link>
         )}
-        {user && <User user={user} />}
-        {!user && <Button text={"login"} onClick={login} />}
-        {user && <Button text={"logout"} onClick={logout} />}
-      </nav>
+        {user && (
+          <Link to="/carts">
+            <CartStatus />
+          </Link>
+        )}
+      </NavbarBs>
     </header>
   )
 }
