@@ -236,8 +236,6 @@ for slow site
 
 ### SSL OpenSSL
 
-> yarn add react-awesome-slider
-
 ##### Timeout
 
 ```javascript
@@ -247,8 +245,8 @@ setTimeout(() => {
 ```
 
 - TOOLS
-  [] [Awesome Slide](https://github.com/rcaferati/react-awesome-slider)
-  [demo](https://fullpage.caferati.me/)
+  [] [full page](https://github.com/alvarotrigo/react-fullpage)
+  [demo](https://alvarotrigo.com/react-fullpage/)
 
   - yarn add -D @tailwindcss/line-clamp 2줄 이상 금지
 
