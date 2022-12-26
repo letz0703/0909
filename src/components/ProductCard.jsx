@@ -1,10 +1,19 @@
 import {useNavigate} from "react-router-dom"
 import FormatCurrency from "../util/formatCurrency"
 
+// type StoreItemProps = {
+//   id: number,
+//   title: string,
+//   price: number,
+//   image: string,
+//   category: string
+// }
+
 export default function ProductCard({
   product,
   product: {id, image, title, category, price}
 }) {
+  // }):StoreItemProps {
   const navigate = useNavigate()
   return (
     <li

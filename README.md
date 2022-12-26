@@ -1,5 +1,7 @@
 # http://icanmart.netlify.com/
 
+store image
+https://youtu.be/lATafp15HWA?t=1274
 shopping mall ref
 [] 2022.12.26/월 : https://www.youtube.com/watch?v=lATafp15HWA&t=1905s
 
@@ -173,6 +175,7 @@ useProduct : https://bit.ly/3BZmzOa gh
 
 ## image
 
+tailwind image : https://tailwindcss.com/docs/object-fit#resizing-to-cover-a-container
 cloudinary : https://bit.ly/3hD3SJd
 upload presets : https://bit.ly/3je4mWq
 Upload
