@@ -6,6 +6,7 @@ import useCart from "../hooks/use-cart"
 import FormatCurrency from "../util/formatCurrency"
 
 export default function ProductDetail() {
+  const {openCart, cartQuantity} = useShoppingCart()
   const {
     getItemQuantity,
     increaseCartQuantity,
@@ -43,10 +44,7 @@ export default function ProductDetail() {
       }
     })
   }
-
   const itemQty = getItemQuantity(id)
-  console.log(itemQty)
-
   return (
     <>
       <p className="mx-12 mt-4 text-gray-700">category: {category}</p>
@@ -89,13 +87,22 @@ export default function ProductDetail() {
               style={{gap: ".5rem"}}
             >
               <div className="d-flex" style={{gap: ".5rem"}}>
-                <Button text="-" onClick={() => decreaseCartQuantity(id)} />
+                <Button
+                  text="-"
+                  onClick={() => {
+                    decreaseCartQuantity(id)
+                    console.log(itemQty)
+                  }}
+                />
                 {/* <div className="text-xl font-bold m-2">{quantity}</div> */}
                 <div className="text-xl font-bold m-2">{itemQty}</div>
                 <Button text="+" onClick={() => increaseCartQuantity(id)} />
                 <span className="text-5xl" onClick={() => removeFromCart(id)}>
                   🗑️
                 </span>
+                <button onClick={openCart} className="text-white">
+                  장바구니보기
+                </button>
               </div>
             </div>
           )}

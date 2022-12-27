@@ -1,7 +1,10 @@
 # http://icanmart.netlify.com/
 
-store image
-https://youtu.be/lATafp15HWA?t=1274
+isOpen : https://youtu.be/lATafp15HWA?t=2685
+store image : https://youtu.be/lATafp15HWA?t=1274
+
+# now studying
+
 shopping mall ref
 [] 2022.12.26/월 : https://www.youtube.com/watch?v=lATafp15HWA&t=1905s
 

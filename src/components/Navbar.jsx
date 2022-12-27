@@ -7,9 +7,11 @@ import {useAuthContext} from "../context/AuthContext"
 import CartStatus from "./CartStatus"
 import {Navbar as NavbarBs} from "react-bootstrap"
 import {NavLink} from "react-router-dom"
+import {useShoppingCart} from "../context/ShoppingCart"
 
 export default function Navbar() {
   const {user, login, logout} = useAuthContext()
+  const {openCart, cartQuantity} = useShoppingCart()
 
   return (
     // <NavbarBs>
