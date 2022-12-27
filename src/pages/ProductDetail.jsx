@@ -1,10 +1,18 @@
 import {useState} from "react"
 import {useLocation} from "react-router-dom"
 import Button from "../components/ui/button"
+import {useShoppingCart} from "../context/ShoppingCart"
 import useCart from "../hooks/use-cart"
 import FormatCurrency from "../util/formatCurrency"
 
 export default function ProductDetail() {
+  const {
+    getItemQuantity,
+    increaseCartQuantity,
+    decreaseCartQuantity,
+    removeFromCart
+  } = useShoppingCart()
+
   const {addOrUpdateItem} = useCart()
   const {
     state: {
@@ -15,14 +23,19 @@ export default function ProductDetail() {
   const [success, setSuccess] = useState()
   const [selected, setSelected] = useState(options && options[0])
 
-  const quantity = 1
-
   const handleSelect = e => {
     setSelected(e.target.value)
   }
 
   const handleClick = e => {
-    const product = {id, image, title, price, option: selected, quantity: 1}
+    const product = {
+      id,
+      image,
+      title,
+      price,
+      option: selected,
+      quantity: itemQty
+    }
     addOrUpdateItem.mutate(product, {
       onSuccess: () => {
         setSuccess("장바구니에 넣으셨어요")
@@ -30,6 +43,9 @@ export default function ProductDetail() {
       }
     })
   }
+
+  const itemQty = getItemQuantity(id)
+  console.log(itemQty)
 
   return (
     <>
@@ -62,18 +78,24 @@ export default function ProductDetail() {
             </select>
           </div>
           {success && <p className="my-2">{success}</p>}
-          {quantity === 0 ? (
-            <Button text="장바구니 추가" onClick={handleClick} />
+          {itemQty === 0 ? (
+            <Button
+              text="장바구니 추가"
+              onClick={() => increaseCartQuantity(id)}
+            />
           ) : (
             <div
               className="d-flex flex-col items-center justify-center"
               style={{gap: ".5rem"}}
             >
               <div className="d-flex" style={{gap: ".5rem"}}>
-                <Button text="-" />
-                <div className="text-xl font-bold m-2">{quantity}</div>
-                <Button text="+" />
-                <span className="text-5xl">🗑️</span>
+                <Button text="-" onClick={() => decreaseCartQuantity(id)} />
+                {/* <div className="text-xl font-bold m-2">{quantity}</div> */}
+                <div className="text-xl font-bold m-2">{itemQty}</div>
+                <Button text="+" onClick={() => increaseCartQuantity(id)} />
+                <span className="text-5xl" onClick={() => removeFromCart(id)}>
+                  🗑️
+                </span>
               </div>
             </div>
           )}

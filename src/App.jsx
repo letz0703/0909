@@ -8,17 +8,20 @@ const queryClient = new QueryClient()
 // import {Routes, Route} from "react-router-dom"
 import {Container} from "react-bootstrap"
 import ShopHome from "./pages/ShopHome"
+import {ShoppingCartProvider} from "./context/ShoppingCart"
 
 function App() {
   return (
-    <Container>
-      <QueryClientProvider client={queryClient}>
-        <AuthContextProvider>
-          <Navbar />
-          <Outlet />
-        </AuthContextProvider>
-      </QueryClientProvider>
-    </Container>
+    <ShoppingCartProvider>
+      <Container>
+        <QueryClientProvider client={queryClient}>
+          <AuthContextProvider>
+            <Navbar />
+            <Outlet />
+          </AuthContextProvider>
+        </QueryClientProvider>
+      </Container>
+    </ShoppingCartProvider>
   )
 }
 
