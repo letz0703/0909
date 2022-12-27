@@ -15,6 +15,8 @@ export default function ProductDetail() {
   const [success, setSuccess] = useState()
   const [selected, setSelected] = useState(options && options[0])
 
+  const quantity = 1
+
   const handleSelect = e => {
     setSelected(e.target.value)
   }
@@ -60,7 +62,21 @@ export default function ProductDetail() {
             </select>
           </div>
           {success && <p className="my-2">{success}</p>}
-          <Button text="장바구니 추가" onClick={handleClick} />
+          {quantity === 0 ? (
+            <Button text="장바구니 추가" onClick={handleClick} />
+          ) : (
+            <div
+              className="d-flex flex-col items-center justify-center"
+              style={{gap: ".5rem"}}
+            >
+              <div className="d-flex" style={{gap: ".5rem"}}>
+                <Button text="-" />
+                <div className="text-xl font-bold m-2">{quantity}</div>
+                <Button text="+" />
+                <span className="text-5xl">🗑️</span>
+              </div>
+            </div>
+          )}
         </div>
       </section>
     </>
