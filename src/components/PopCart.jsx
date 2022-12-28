@@ -2,11 +2,12 @@ import {Offcanvas, Stack} from "react-bootstrap"
 import {OffcanvasHeader} from "react-bootstrap"
 import {useShoppingCart} from "../context/ShoppingCart"
 import CartItem from "./CartItem"
+import PopCartItem from "./PopCartItem"
 
 // type PopCartProps = {
 //   isOpen: boolean
 // }
-export function PopCart({isOpen}) {
+export function PopCart({isOpen, product}) {
   // export function PopCart({isOpen}:PopCartProps) {
   const {closeCart, cartItems} = useShoppingCart()
   return (
@@ -14,13 +15,14 @@ export function PopCart({isOpen}) {
       <Offcanvas.Header closeButton>
         <Offcanvas.Title>Cart</Offcanvas.Title>
       </Offcanvas.Header>
-      {/* <Offcanvas.Body>
+      <Offcanvas.Body>
         <Stack gap={3}>
+          {console.log(cartItems)}
           {cartItems.map(item => (
-            <CartItem key={item.id} {...item} />
+            <PopCartItem key={item.id} {...item} />
           ))}
         </Stack>
-      </Offcanvas.Body> */}
+      </Offcanvas.Body>
     </Offcanvas>
   )
 }
