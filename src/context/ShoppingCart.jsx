@@ -1,4 +1,5 @@
 import {createContext, useState, useContext} from "react"
+import {PopCart} from "../components/PopCart"
 
 // type ShoppingCartProviderProps = {
 //   children: ReactNode
@@ -91,6 +92,7 @@ export function ShoppingCartProvider({children}) {
       }}
     >
       {children}
+      <PopCart isOpen={isOpen} />
     </ShoppingCartContext.Provider>
   )
 }
