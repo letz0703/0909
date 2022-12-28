@@ -56,9 +56,9 @@ invalidate cache useMutation for invalidate and staleTime
 
 ```js
 const addProduct = useMutation(
-  ({product, url}) => addNewProduct(product, url),
+  ({ product, url }) => addNewProduct(product, url),
   {
-    onSuccess: () => queryClient.invalidateQueries(["products"])
+    onSuccess: () => queryClient.invalidateQueries(["products"]),
   }
 )
 ```
@@ -209,7 +209,7 @@ lecture:https://bit.ly/3VXQMFs - Detail
 @CanItemDetail.jsx
 
 ```js
-const {itemName} = useParams()
+const { itemName } = useParams()
 ```
 
 ## Netlify
@@ -244,43 +244,69 @@ setTimeout(() => {
 }, 4000)
 ```
 
-- TOOLS
+# TOOLS
 
-  - yarn add -D @tailwindcss/line-clamp 2줄 이상 금지
+- prettier : youtube: https://youtu.be/DqfQ4DPnRqI?t=246
 
-  - yarn add timeago.js
-    gh: https://bit.ly/3HGj42J
-    import \* as timeago from 'timeago.js'
-    format('2016-06-12','en_US'), format(publishedAt)
-    locale
-    import {format, register} from 'timeago.js'
-    import koLocale from 'timeago.js/lib/lang/ko'
-    register('ko', koLocale)
-    <p>{format(publishedAt, 'ko')}</p>
-  - yarn add axios
-    > gh : https://bit.ly/3Wl2kCh replace fetch w/ axios
-  - yarn add -D tailwindcss
-  - rapid api : youtube video https://www.youtube.com/watch?v=MTrj3tNf9jA
-  - .gitignore
-  - .vscode
-  - yarn add react-router-dom : {CreateBrewserRouter} - https://bit.ly/3ho7XRp //2022.12.13/화
-  - yarn add tanstack-react-query: 2022.12.14/수
-  - yarn add @tanstack/react-query-devtools
-    - gh : https://bit.ly/3uM0IWs <- set interval and refetch
-    - option : staleTime
-    - https://bit.ly/3Px8nla
-      > up: import {ReactQueryDevtools} from "@tanstack/react-query-devtools"
-      > down: <ReactQueryDevtools initialIsOpen={true} />
-    - invalidate query: refetch right after adding new product with tanstack
-    ```js
-    <button
-      onClick={() => {
-        client.invalidateQueries(["products", false])
-      }}
-    >
-      updated!
-    </button>
-    ```
+  - npm i --save-dev eslint-config-prettier
+
+        - npx eslint-config-prettier script.js
+        - package.json
+
+  ```json
+    "eslintConfig": {
+    "extends": "react-app",
+    "rules": {
+    "no-unused-vars": [
+    "warn",
+    {
+    "argsIgnorePattern": "^_",
+    "varsIgnorePattern": "^_"
+    }
+    ]
+    }
+    },
+  ```
+
+```
+
+```
+
+- yarn add -D @tailwindcss/line-clamp 2줄 이상 금지
+
+- yarn add timeago.js
+  gh: https://bit.ly/3HGj42J
+  import \* as timeago from 'timeago.js'
+  format('2016-06-12','en_US'), format(publishedAt)
+  locale
+  import {format, register} from 'timeago.js'
+  import koLocale from 'timeago.js/lib/lang/ko'
+  register('ko', koLocale)
+  <p>{format(publishedAt, 'ko')}</p>
+- yarn add axios
+  > gh : https://bit.ly/3Wl2kCh replace fetch w/ axios
+- yarn add -D tailwindcss
+- rapid api : youtube video https://www.youtube.com/watch?v=MTrj3tNf9jA
+- .gitignore
+- .vscode
+- yarn add react-router-dom : {CreateBrewserRouter} - https://bit.ly/3ho7XRp //2022.12.13/화
+- yarn add tanstack-react-query: 2022.12.14/수
+- yarn add @tanstack/react-query-devtools
+  - gh : https://bit.ly/3uM0IWs <- set interval and refetch
+  - option : staleTime
+  - https://bit.ly/3Px8nla
+    > up: import {ReactQueryDevtools} from "@tanstack/react-query-devtools"
+    > down: <ReactQueryDevtools initialIsOpen={true} />
+  - invalidate query: refetch right after adding new product with tanstack
+  ```js
+  <button
+    onClick={() => {
+      client.invalidateQueries(["products", false])
+    }}
+  >
+    updated!
+  </button>
+  ```
 
 Tips
 
@@ -307,3 +333,7 @@ https://bit.ly/3hwLpOh tailwind youtube
 # MUST
 
 awesome components: https://github.com/brillout/awesome-react-components
+
+```
+
+```

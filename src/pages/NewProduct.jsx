@@ -1,5 +1,5 @@
-import {useState, useEffect, useRef} from "react"
-import {uploadImage} from "../api/uploader"
+import { useState, useEffect, useRef } from "react"
+import { uploadImage } from "../api/uploader"
 import Button from "../components/ui/button"
 import useProducts from "../hooks/use-products"
 
@@ -9,7 +9,7 @@ export default function NewProduct() {
   const [isUploading, setIsUploading] = useState(false)
   const [success, setSuccess] = useState()
 
-  const {addProduct} = useProducts()
+  const { addProduct } = useProducts()
 
   // const addProduct = useMutation(
   //   ({product, url}) => addNewProduct(product, url),
@@ -18,29 +18,29 @@ export default function NewProduct() {
   //   }
   // )
 
-  const handleChange = e => {
-    const {name, value, files} = e.target
+  const handleChange = (e) => {
+    const { name, value, files } = e.target
     if (name === "file") {
       setFile(files && files[0])
       return
     }
-    setProduct(() => ({...product, [name]: value}))
+    setProduct(() => ({ ...product, [name]: value }))
   }
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     setIsUploading(true)
     uploadImage(file)
-      .then(url =>
+      .then((url) =>
         addProduct.mutate(
-          {product, url},
+          { product, url },
           {
             onSuccess: () => {
               setSuccess("제품이 추가 됐어요")
               setTimeout(() => {
                 setSuccess(null)
               }, 4000)
-            }
+            },
           }
         )
       )
