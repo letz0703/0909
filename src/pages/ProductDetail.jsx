@@ -6,7 +6,7 @@ import useCart from "../hooks/use-cart"
 import FormatCurrency from "../util/formatCurrency"
 
 export default function ProductDetail() {
-  const {openCart, cartQuantity} = useShoppingCart()
+  const {openCart} = useShoppingCart()
   const {
     getItemQuantity,
     increaseCartQuantity,
