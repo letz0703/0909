@@ -246,6 +246,10 @@ setTimeout(() => {
 
 # TOOLS
 
+- tanstack devtool
+
+  > npm install @tanstack/react-router-devtools@beta --save
+
 - prettier : youtube: https://youtu.be/DqfQ4DPnRqI?t=246
 
   - npm i --save-dev eslint-config-prettier

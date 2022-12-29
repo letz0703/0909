@@ -1,13 +1,13 @@
-import {Link} from "react-router-dom"
-import {BsFillPencilFill} from "react-icons/bs"
-import {login, logout, onUserStateChange} from "../api/firebase"
+import { Link } from "react-router-dom"
+import { BsFillPencilFill } from "react-icons/bs"
+import { login, logout, onUserStateChange } from "../api/firebase"
 import Button from "./ui/button"
 import User from "./User"
-import {useAuthContext} from "../context/AuthContext"
+import { useAuthContext } from "../context/AuthContext"
 import CartStatus from "./CartStatus"
 
 export default function Navbar() {
-  const {user, login, logout} = useAuthContext()
+  const { user, login, logout } = useAuthContext()
 
   return (
     <header className="flex justify-between border-b border-gray-300 p-2">
@@ -16,18 +16,19 @@ export default function Navbar() {
           style={{
             fontSize: "1.3rem",
             paddingRight: ".1rem",
-            fontWeight: "bold"
+            fontWeight: "bold",
           }}
         >
           i.
         </span>
-        <span style={{fontSize: "1.5rem"}}>canmart</span>
+        <span style={{ fontSize: "1.5rem" }}>canmart</span>
       </Link>
       <nav className="flex items-center gap-4 font-semibold">
         {/* <Link to="/">Home</Link> */}
         <Link to="/jap">Jap</Link>
         <Link to="/can">Can</Link>
-        <Link to="/products">Products</Link>
+        {/* <Link to="/products">Products</Link> */}
+        <Link to="/shop">Shop</Link>
         {user && (
           <Link to="/carts">
             <CartStatus />

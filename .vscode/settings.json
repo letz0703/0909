@@ -135,15 +135,20 @@
       "editor.action.addCommentLine",
       "cursorDown"
     ],
-    "addSemicolon": ["cursorEnd", {"command": "type", "args": {"text": ";"}}],
+    "addSemicolon": [
+      "cursorEnd",
+      { "command": "type", "args": { "text": ";" } }
+    ],
     "classname": [
       "classname",
-      {"command": "type", "args": {"text": "cn"}},
+      { "command": "type", "args": { "text": "cn" } },
       "insertSnippet"
     ],
     "doMySnippet": [
-      {"command": "type", "args": {"text": "cl"}},
+      { "command": "type", "args": { "text": "cl" } },
       "insertSnippet"
     ]
-  }
+  },
+  "autoimport.useSemiColon": false,
+  "prettier.semi": false
 }

@@ -880,6 +880,14 @@
     "@tanstack/query-core" "4.20.4"
     use-sync-external-store "^1.2.0"
 
+"@tanstack/react-router-devtools@^0.0.1-beta.36":
+  version "0.0.1-beta.36"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-router-devtools/-/react-router-devtools-0.0.1-beta.36.tgz#cb268f5d484d8d3b25516d6b648f4ef15c0f1fb6"
+  integrity sha512-AejhW7byY63JKnFNxG9ct2RpBFW+F0qumtEo4ThbS2mNz3acq8RkeygRPD1NFF97xkvEBwUB7DkgH/UViwoe8g==
+  dependencies:
+    "@babel/runtime" "^7.16.7"
+    date-fns "^2.29.1"
+
 "@tanstack/react-router@^0.0.1-beta.38":
   version "0.0.1-beta.38"
   resolved "https://registry.yarnpkg.com/@tanstack/react-router/-/react-router-0.0.1-beta.38.tgz#3174c0632a023af2cf040baa745a8d5182506a8a"
@@ -1139,6 +1147,11 @@ csstype@^3.0.2:
   version "3.1.1"
   resolved "https://registry.npmjs.org/csstype/-/csstype-3.1.1.tgz"
   integrity sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==
+
+date-fns@^2.29.1:
+  version "2.29.3"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.29.3.tgz#27402d2fc67eb442b511b70bbdf98e6411cd68a8"
+  integrity sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==
 
 debug@^4.1.0:
   version "4.3.4"
