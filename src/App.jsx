@@ -10,6 +10,7 @@ import CanItemDetail from "./pages/CanItemDetail"
 import MainProduct from "./components/Main_product"
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { TanStackRouterDevTools } from "@tanstack/react-router-devtools"
 import {
   Outlet,
   RouterProvider,
@@ -19,23 +20,24 @@ import {
 } from "@tanstack/react-router"
 const queryClient = new QueryClient()
 
-const rootRoute = createRouteConfig({
-  component: () => {
-    ;<>
-      <div>
-        <Link to="/jap">Jap</Link>
-        <Link to="/can">Can</Link>
-        <Link to="/shop">Shop</Link>
-        <hr />
-        <Outlet />
-      </div>
-    </>
-  },
-})
+const rootRoute = createRouteConfig()
+// {
+// component: () => {
+//   ;<>
+//     <div>
+//       <Link to="/jap">Jap</Link>
+//       <Link to="/can">Can</Link>
+//       <Link to="/shop">Shop</Link>
+//       <hr />
+//       <Outlet />
+//     </div>
+//   </>
+// },
+// }
 
 const indexRoute = rootRoute.createRoute({
   path: "/",
-  component: Home,
+  // component: Home,
 })
 const japRoute = rootRoute.createRoute({
   path: "/jap",
@@ -73,14 +75,27 @@ const router = createReactRouter({ routeConfig })
 //   },
 // ])
 
+// const TanStackRouterDevtools =
+//   process.env.NODE_ENV === "production"  ? () => null // Render nothing in production
+//     : React.lazy(() =>
+//         // Lazy load in development
+//         import("@tanstack/react-router-devtools").then((res) => ({
+//           default: res.TanStackRouterDevtools,
+//           // For Embedded Mode
+//           // default: res.TanStackRouterDevtoolsPanel
+//         }))
+//       )
+
 function App() {
   return (
     <>
-      <RouterProvider router={router} />
-      <QueryClientProvider client={queryClient}>
-        <MainProduct />
-        <ReactQueryDevtools initialIsOpen={true} />
-      </QueryClientProvider>
+      <RouterProvider router={router}>
+        {/* <TanStackRouterDevtools router={router} initialIsOpen={true} /> */}
+        <QueryClientProvider client={queryClient}>
+          <MainProduct />
+          <ReactQueryDevtools initialIsOpen={true} />
+        </QueryClientProvider>
+      </RouterProvider>
     </>
   )
 }

@@ -1,5 +1,7 @@
 # http://icanmart.netlify.com/
 
+[] https://tanstack.com/router/v1/docs/guide/route-paths
+
 ## API folder
 
 youtube.js
@@ -249,6 +251,8 @@ setTimeout(() => {
 - tanstack devtool
 
   > npm install @tanstack/react-router-devtools@beta --save
+  > import { TanStackRouterDevTools } from '@tanstack/react-router-devtools'
+  > devtool doc : https://tanstack.com/router/v1/docs/devtools
 
 - prettier : youtube: https://youtu.be/DqfQ4DPnRqI?t=246
 
