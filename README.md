@@ -1,5 +1,16 @@
 # http://icanmart.netlify.com/
 
+PopCart.jsx : https://share.cleanshot.com/gXBnGNSG
+isOpen : https://youtu.be/lATafp15HWA?t=2685
+store image : https://youtu.be/lATafp15HWA?t=1274
+
+# now studying
+
+shopping mall ref
+[] 2022.12.26/월 : https://www.youtube.com/watch?v=lATafp15HWA&t=1905s
+
+<!-- TODO ↑NOW  router 5:00 -->
+
 ## API folder
 
 youtube.js
@@ -26,6 +37,15 @@ base : https://bit.ly/3v4mzZa
 ## beta
 
 - 🏡 react https://beta.reactjs.org/
+  [] https://react-bootstrap.github.io/
+
+### Boot Strap
+
+🏡 https://react-bootstrap.github.io/getting-started/introduction
+
+> npm install react-bootstrap bootstrap
+
+@page : import "bootstrap/dist/css/bootstrap.min.css"
 
 ## Button
 
@@ -159,10 +179,15 @@ useProduct : https://bit.ly/3BZmzOa gh
 
 ## image
 
+tailwind image : https://tailwindcss.com/docs/object-fit#resizing-to-cover-a-container
 cloudinary : https://bit.ly/3hD3SJd
 upload presets : https://bit.ly/3je4mWq
 Upload
 https://api.clodunary.com/v1_1/<cloud name>/l<resource_type>/upload
+
+## JSON
+
+stringify : https://youtu.be/lATafp15HWA?t=1057 shopping items example
 
 ## Query
 
@@ -229,6 +254,16 @@ upload image to cloudinary gh : https://bit.ly/3HT5Cso
 add to firebase
 @firebase.js : Add Product, uuid
 </SearchHeader>
+
+### Offcanvas
+
+Fix: close button not showing
+paste below to index.css ↓↓
+.btn-close {
+background: transparent
+url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e")
+center/1em auto no-repeat;
+}
 
 ## Split : Code-Spliting https://reactjs.org/docs/code-splitting.html
 
@@ -327,6 +362,8 @@ https://bit.ly/3hwLpOh tailwind youtube
 - higher order component
 
 ###### ref
+
+## router
 
 - react blog : https://bit.ly/3I1Rv4b
 

@@ -27,7 +27,7 @@ export default function MyCart() {
     products.reduce((prev, cur) => prev + parseInt(cur.price) * cur.quantity, 0)
 
   const handleOrder = () => {
-    console.log("hi")
+    // console.log(addNewOrder)
   }
 
   return (
