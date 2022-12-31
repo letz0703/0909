@@ -9,15 +9,16 @@
     "preview": "vite preview"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app"
-    ],
-    "plugins": [
-      "react-hooks"
-    ],
+
+    "extends": "react-app",
     "rules": {
-      "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "warn"
+      "no-unused-vars": [
+        "warn",
+        {
+          "argsIgnorePattern": "^_",
+          "varsIgnorePattern": "^_"
+        }
+      ]
     }
   },
   "dependencies": {
@@ -42,7 +43,9 @@
     "@types/react-dom": "^18.0.9",
     "@vitejs/plugin-react": "^3.0.0",
     "autoprefixer": "^10.4.13",
+    "eslint-config-prettier": "^8.5.0",
     "postcss": "^8.4.20",
+    "prettier": "2.8.1",
     "tailwindcss": "^3.2.4",
     "vite": "^4.0.0"
   }
