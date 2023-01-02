@@ -30,7 +30,7 @@ export default function ProductDetail() {
 
   const handleClick = (e) => {
     const product = {
-      id,
+      // id,
       image,
       title,
       price,

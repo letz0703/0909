@@ -12,6 +12,7 @@ import FormatCurrency from "../util/formatCurrency"
 export default function ProductCard(props) {
   // }):StoreItemProps {
   const { id, image, title, category, price } = props
+  const product = props
   const navigate = useNavigate()
   return (
     <li

@@ -15,9 +15,11 @@ export default function Products() {
       <Row md={2} xs={1} lg={3} xl={5} className="gap-3 p-3">
         {products &&
           products.map((product) => (
+            // <ProductCard key={product.id} product={product} />
             <ProductCard key={product.id} {...product} />
           ))}
       </Row>
+      {/* </ul> */}
     </>
   )
 }
