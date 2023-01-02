@@ -1,47 +1,47 @@
-import {useState} from "react"
-import {useLocation} from "react-router-dom"
+import { useState } from "react"
+import { useLocation } from "react-router-dom"
 import Button from "../components/ui/button"
-import {useShoppingCart} from "../context/ShoppingCart"
+import { useShoppingCart } from "../context/ShoppingCart"
 import useCart from "../hooks/use-cart"
 import FormatCurrency from "../util/formatCurrency"
 
 export default function ProductDetail() {
-  const {openCart} = useShoppingCart()
+  const { openCart } = useShoppingCart()
   const {
     getItemQuantity,
     increaseCartQuantity,
     decreaseCartQuantity,
-    removeFromCart
+    removeFromCart,
   } = useShoppingCart()
 
-  const {addOrUpdateItem} = useCart()
+  const { addOrUpdateItem } = useCart()
   const {
     state: {
-      product: {id, image, title, description, category, price, options}
-    }
+      product: { id, image, title, description, category, price, options },
+    },
   } = useLocation()
 
   const [success, setSuccess] = useState()
   const [selected, setSelected] = useState(options && options[0])
 
-  const handleSelect = e => {
+  const handleSelect = (e) => {
     setSelected(e.target.value)
   }
 
-  const handleClick = e => {
+  const handleClick = (e) => {
     const product = {
       id,
       image,
       title,
       price,
       option: selected,
-      quantity: itemQty
+      quantity: itemQty,
     }
     addOrUpdateItem.mutate(product, {
       onSuccess: () => {
         setSuccess("장바구니에 넣으셨어요")
         setTimeout(() => setSuccess(null), 3000)
-      }
+      },
     })
   }
   const itemQty = getItemQuantity(id)
@@ -52,10 +52,10 @@ export default function ProductDetail() {
         <img src={image} alt={title} className="w-full px-4 basis-7/12" />
         <div
           className="w-full basis-5/12 flex flex-col p-4"
-          style={{maxWidth: "700px"}}
+          style={{ maxWidth: "700px" }}
         >
-          <h2 className="text-3xl font-bold py-2 ">{title}</h2>
-          <p className="text-2xl font-bold py-2 border-b border-gray-400">
+          <h1 className="text-3xl font-bold py-2">{title}</h1>
+          <p className="text-xl font-bold pb-3 border-b border-gray-400">
             {FormatCurrency(price)}
           </p>
           <p className="py-4 text-lg">{description}</p>
@@ -84,9 +84,9 @@ export default function ProductDetail() {
           ) : (
             <div
               className="d-flex flex-col items-center justify-center"
-              style={{gap: ".5rem"}}
+              style={{ gap: ".5rem" }}
             >
-              <div className="d-flex" style={{gap: ".5rem"}}>
+              <div className="d-flex" style={{ gap: ".5rem" }}>
                 <Button
                   text="-"
                   onClick={() => {

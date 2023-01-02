@@ -9,7 +9,6 @@
     "preview": "vite preview"
   },
   "eslintConfig": {
-
     "extends": "react-app",
     "rules": {
       "no-unused-vars": [
@@ -28,6 +27,7 @@
     "bootstrap": "^5.2.3",
     "eslint-plugin-react-hooks": "^4.6.0",
     "firebase": "^9.15.0",
+    "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",
     "react-dom": "^18.2.0",

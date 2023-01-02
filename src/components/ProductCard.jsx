@@ -1,4 +1,4 @@
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import FormatCurrency from "../util/formatCurrency"
 
 // type StoreItemProps = {
@@ -9,16 +9,14 @@ import FormatCurrency from "../util/formatCurrency"
 //   category: string
 // }
 
-export default function ProductCard({
-  product,
-  product: {id, image, title, category, price}
-}) {
+export default function ProductCard(props) {
   // }):StoreItemProps {
+  const { id, image, title, category, price } = props
   const navigate = useNavigate()
   return (
     <li
       onClick={() => {
-        navigate(`/products/${id}`, {state: {product}})
+        navigate(`/products/${id}`, { state: { product } })
       }}
       className="rounded-lg shadow-md overflow-hidden cursor-pointer transition-all hover:scale-105"
     >

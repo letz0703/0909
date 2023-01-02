@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import React from "react"
 import ReactDOM from "react-dom/client"
-import {createBrowserRouter, RouterProvider} from "react-router-dom"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
 // import App from "./App"
 // import App from "./App2"
 import App from "./App"
@@ -17,6 +17,7 @@ import VideoDetail from "./pages/VideoDetail"
 import Videos from "./pages/Videos"
 import Jap from "./pages/Jap"
 import Can from "./pages/Can"
+import "./css/app.css"
 
 const router = createBrowserRouter([
   {
@@ -24,14 +25,14 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <NotFound />,
     children: [
-      {index: true, element: <ShopHome />},
+      { index: true, element: <ShopHome /> },
       {
         path: "/jap",
-        element: <Jap />
+        element: <Jap />,
       },
       {
         path: "/can",
-        element: <Can />
+        element: <Can />,
       },
       {
         path: "/products",
@@ -39,23 +40,23 @@ const router = createBrowserRouter([
           // <ProtectedRoute requireAdmin>
           <AllProducts />
           // </ProtectedRoute>
-        )
+        ),
       },
-      {path: "/products/new", element: <NewProduct />},
-      {path: "/products/:id", element: <ProductDetail />},
+      { path: "/products/new", element: <NewProduct /> },
+      { path: "/products/:id", element: <ProductDetail /> },
       {
         path: "/carts",
         element: (
           <ProtectedRoute>
             <MyCart />
           </ProtectedRoute>
-        )
+        ),
       },
-      {path: "/videos", element: <Videos />},
-      {path: "/videos/:keyword", element: <Videos />},
-      {path: "/videos/watch/:videoId", element: <VideoDetail />}
-    ]
-  }
+      { path: "/videos", element: <Videos /> },
+      { path: "/videos/:keyword", element: <Videos /> },
+      { path: "/videos/watch/:videoId", element: <VideoDetail /> },
+    ],
+  },
 ])
 
 ReactDOM.createRoot(document.getElementById("root")).render(
