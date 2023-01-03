@@ -1,12 +1,17 @@
 import ProductCard from "./ProductCard"
 import useProducts from "../hooks/use-products"
 import { Row } from "react-bootstrap"
+import { useContext } from "react"
+import { JapitemContext } from "../App"
+import { uuidv4 } from "@firebase/util"
 
-export default function Products() {
+export default function Products({ japitems }) {
+  const { handleJapitemAdd, handleJapitemDelete } = useContext(JapitemContext)
   const {
     productsQuery: { isLoading, error, data: products },
   } = useProducts()
 
+  console.log(products)
   return (
     <>
       {isLoading && <p>Loading...</p>}
