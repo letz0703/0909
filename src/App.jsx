@@ -4,17 +4,15 @@ import { Routes, Route, Outlet } from "react-router-dom"
 import "./App.css"
 import Navbar from "./components/Navbar"
 import { AuthContextProvider } from "./context/AuthContext"
-const queryClient = new QueryClient()
-// import {Routes, Route} from "react-router-dom"
 import { Container } from "react-bootstrap"
 import ShopHome from "./pages/ShopHome"
 import { ShoppingCartProvider } from "./context/ShoppingCart"
 import { v4 as uuidv4 } from "uuid"
 import { createContext } from "react"
 
+const queryClient = new QueryClient()
 export const JapitemContext = createContext()
-
-const LOCAL_STORAGE_KEY = "0909.japitems"
+const LOCAL_STORAGE_KEY = "icanmart.japitems"
 
 function App() {
   // const [japitem, setJapitem] = useState(sampleJapitem)

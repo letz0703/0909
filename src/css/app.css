@@ -6,6 +6,7 @@
 *::before,
 *::after {
   font-family: Gotham Rounded, sans-serif;
+  box-sizing: border-box;
 }
 
 html {
