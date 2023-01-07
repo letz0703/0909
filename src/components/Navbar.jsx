@@ -8,10 +8,13 @@ import CartStatus from "./CartStatus"
 import { Navbar as NavbarBs } from "react-bootstrap"
 import { NavLink } from "react-router-dom"
 import { useShoppingCart } from "../context/ShoppingCart"
+import { JapitemContext } from "../App"
+import { useContext } from "react"
 
 export default function Navbar() {
   const { user, login, logout } = useAuthContext()
   const { openCart, cartQuantity } = useShoppingCart()
+  const { handleJapitemSearch } = useContext(JapitemContext)
 
   return (
     // <NavbarBs>
@@ -34,7 +37,10 @@ export default function Navbar() {
         <span style={{ fontSize: "1.5rem" }}>canmart</span>
       </Link>
       <form>
-        <input type="text" />
+        <input
+          type="text"
+          onChange={(e) => handleJapitemSearch(e.target.value)}
+        />
       </form>
 
       <NavbarBs className="flex items-center gap-4 font-semibold">

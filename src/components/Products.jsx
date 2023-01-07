@@ -6,12 +6,14 @@ import { JapitemContext } from "../App"
 import { uuidv4 } from "@firebase/util"
 
 export default function Products({ japitems }) {
-  const { handleJapitemAdd, handleJapitemDelete } = useContext(JapitemContext)
+  const { handleJapitemAdd, handleJapitemDelete, searchedJapitem, search } =
+    useContext(JapitemContext)
+
   const {
     productsQuery: { isLoading, error, data: products },
   } = useProducts()
+  const { handleJapitemSearch } = useContext(JapitemContext)
 
-  console.log(products)
   return (
     <>
       {isLoading && <p>Loading...</p>}

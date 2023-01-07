@@ -15,7 +15,6 @@ export const JapitemContext = createContext()
 const LOCAL_STORAGE_KEY = "icanmart.japitems"
 
 function App() {
-  // const [japitem, setJapitem] = useState(sampleJapitem)
   const [japitems, setJapitems] = useState(() => {
     const japitemJSON = localStorage.getItem(LOCAL_STORAGE_KEY)
     if (japitemJSON == null) {
@@ -25,10 +24,20 @@ function App() {
     }
   })
 
+  const [searchedJapitemId, setsearchedJapitemId] = useState()
+  const searchedJapitem = japitems.find(
+    (japitem) => japitem.id === searchedJapitemId
+  )
+  const [search, setSearch] = useState("")
+  // const [japitem, setJapitem] = useState(sampleJapitem)
+
   useEffect(() => {
-    console.log("usee render")
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(japitems))
   }, [japitems])
+
+  function handleJapitemSearch(searchText) {
+    setsearchedJapitemId(searchText)
+  }
 
   function handleJapitemAdd() {
     const newJapitem = {
@@ -43,7 +52,13 @@ function App() {
     setJapitems(japitems.filter((japitem) => japitem.id !== id))
   }
 
-  const japitemContextValue = { handleJapitemAdd, handleJapitemDelete }
+  const japitemContextValue = {
+    handleJapitemAdd,
+    handleJapitemDelete,
+    handleJapitemSearch,
+    searchedJapitem,
+    search,
+  }
 
   return (
     <JapitemContext.Provider value={japitemContextValue}>
@@ -51,8 +66,8 @@ function App() {
         <Container>
           <QueryClientProvider client={queryClient}>
             <AuthContextProvider>
-              <Navbar />
-              <Outlet japitems={japitems} />
+              <Navbar search={search} />
+              <Outlet />
             </AuthContextProvider>
           </QueryClientProvider>
         </Container>
