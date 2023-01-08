@@ -11,11 +11,10 @@ import { useShoppingCart } from "../context/ShoppingCart"
 import { JapitemContext } from "../App"
 import { useContext } from "react"
 
-export default function Navbar() {
+export default function Navbar({ search, setSearch }) {
   const { user, login, logout } = useAuthContext()
   const { openCart, cartQuantity } = useShoppingCart()
   const { handleJapitemSearch } = useContext(JapitemContext)
-
   return (
     // <NavbarBs>
     <header
@@ -39,7 +38,8 @@ export default function Navbar() {
       <form>
         <input
           type="text"
-          onChange={(e) => handleJapitemSearch(e.target.value)}
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder="search"
         />
       </form>
 

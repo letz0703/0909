@@ -265,6 +265,11 @@ url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1
 center/1em auto no-repeat;
 }
 
+## Search
+
+narrow down search: youtube https://www.youtube.com/watch?v=xAqCEBFGdYk
+gh :
+
 ## Split : Code-Spliting https://reactjs.org/docs/code-splitting.html
 
 for slow site
