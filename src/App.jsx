@@ -57,26 +57,23 @@ function App() {
   const japitemContextValue = {
     handleJapitemAdd,
     handleJapitemDelete,
+    japitems,
   }
-
-  const testContextValue = { extraData }
 
   return (
     <SearchContext.Provider value={searchContextValue}>
-      <TestContext.Provider value={testContextValue}>
-        <JapitemContext.Provider value={japitemContextValue}>
-          <ShoppingCartProvider>
-            <Container>
-              <QueryClientProvider client={queryClient}>
-                <AuthContextProvider>
-                  <Navbar search={search} setSearch={setSearch} />
-                  <Outlet />
-                </AuthContextProvider>
-              </QueryClientProvider>
-            </Container>
-          </ShoppingCartProvider>
-        </JapitemContext.Provider>
-      </TestContext.Provider>
+      <JapitemContext.Provider value={japitemContextValue}>
+        <ShoppingCartProvider>
+          <Container>
+            <QueryClientProvider client={queryClient}>
+              <AuthContextProvider>
+                <Navbar search={search} setSearch={setSearch} />
+                <Outlet />
+              </AuthContextProvider>
+            </QueryClientProvider>
+          </Container>
+        </ShoppingCartProvider>
+      </JapitemContext.Provider>
     </SearchContext.Provider>
   )
 }
@@ -85,12 +82,12 @@ const sampleJapitems = [
   {
     id: uuidv4(),
     name: "샤론파스 140매",
-    price: 14500,
+    price: 10,
   },
   {
     id: uuidv4(),
     name: "오타이산 포",
-    price: 15000,
+    price: 10,
   },
 ]
 

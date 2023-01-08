@@ -1,5 +1,6 @@
 # http://icanmart.netlify.com/
 
+next to learn: Array filter method https://www.youtube.com/watch?v=2lgiV1urWQs 2023.01.08/일
 PopCart.jsx : https://share.cleanshot.com/gXBnGNSG
 isOpen : https://youtu.be/lATafp15HWA?t=2685
 store image : https://youtu.be/lATafp15HWA?t=1274
@@ -268,7 +269,7 @@ center/1em auto no-repeat;
 ## Search
 
 narrow down search: youtube https://www.youtube.com/watch?v=xAqCEBFGdYk
-gh :
+gh : https://bit.ly/3ZjKwtD
 
 ## Split : Code-Spliting https://reactjs.org/docs/code-splitting.html
 

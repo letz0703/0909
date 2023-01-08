@@ -1,14 +1,13 @@
 import React, { useContext } from "react"
-import { SearchContext, TestContext } from "../App"
-//import styles from './SearchData.module.css'
+import { JapitemContext, SearchContext, TestContext } from "../App"
 
-const SearchData = () => {
-  const { handleSearch, search } = useContext(SearchContext)
-  const { extraData } = useContext(TestContext)
+const SearchData = (props) => {
+  const { japitems } = useContext(JapitemContext)
+  const { search } = useContext(SearchContext)
 
   return (
     <>
-      {extraData
+      {japitems
         .filter((item) => {
           return search.toLowerCase() === ""
             ? item
