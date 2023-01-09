@@ -1,36 +1,48 @@
-import {Link} from "react-router-dom"
-import {BsFillPencilFill} from "react-icons/bs"
-import {login, logout, onUserStateChange} from "../api/firebase"
+import { Link } from "react-router-dom"
+import { BsFillPencilFill } from "react-icons/bs"
+import { login, logout, onUserStateChange } from "../api/firebase"
 import Button from "./ui/button"
 import User from "./User"
-import {useAuthContext} from "../context/AuthContext"
+import { useAuthContext } from "../context/AuthContext"
 import CartStatus from "./CartStatus"
-import {Navbar as NavbarBs} from "react-bootstrap"
-import {NavLink} from "react-router-dom"
-import {useShoppingCart} from "../context/ShoppingCart"
+import { Navbar as NavbarBs } from "react-bootstrap"
+import { NavLink } from "react-router-dom"
+import { useShoppingCart } from "../context/ShoppingCart"
+import { JapitemContext } from "../App"
+import { useContext } from "react"
 
-export default function Navbar() {
-  const {user, login, logout} = useAuthContext()
-  const {openCart, cartQuantity} = useShoppingCart()
-
+export default function Navbar({ search, setSearch }) {
+  const { user, login, logout } = useAuthContext()
+  const { openCart, cartQuantity } = useShoppingCart()
+  const { handleJapitemSearch } = useContext(JapitemContext)
   return (
     // <NavbarBs>
     <header
       sticky="top"
-      className="flex justify-between border-b border-gray-300 p-2"
+      className="flex justify-between border-b border-gray-300 p-2
+      items-center
+      "
     >
       <Link to="/" className="flex items-center text-4xl text-brand">
         <span
           style={{
             fontSize: "1.3rem",
             paddingRight: ".1rem",
-            fontWeight: "bold"
+            fontWeight: "bold",
           }}
         >
           i.
         </span>
-        <span style={{fontSize: "1.5rem"}}>canmart</span>
+        <span style={{ fontSize: "1.5rem" }}>canmart</span>
       </Link>
+      <form>
+        <input
+          type="text"
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder="search"
+        />
+      </form>
+
       <NavbarBs className="flex items-center gap-4 font-semibold">
         {/* <Link to="/">Home</Link> */}
         <Link to="/jap">Jap</Link>

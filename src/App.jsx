@@ -9,13 +9,15 @@ import ShopHome from "./pages/ShopHome"
 import { ShoppingCartProvider } from "./context/ShoppingCart"
 import { v4 as uuidv4 } from "uuid"
 import { createContext } from "react"
-
+import { extraData } from "./data.js"
 const queryClient = new QueryClient()
 export const JapitemContext = createContext()
 const LOCAL_STORAGE_KEY = "icanmart.japitems"
 
+export const SearchContext = createContext()
+export const TestContext = createContext()
+
 function App() {
-  // const [japitem, setJapitem] = useState(sampleJapitem)
   const [japitems, setJapitems] = useState(() => {
     const japitemJSON = localStorage.getItem(LOCAL_STORAGE_KEY)
     if (japitemJSON == null) {
@@ -25,8 +27,17 @@ function App() {
     }
   })
 
+  const [search, setSearch] = useState("")
+  // const [searchedJapitemId, setsearchedJapitemId] = useState()
+  // const [japitem, setJapitem] = useState(sampleJapitem)
+
+  function handleSearch(e) {
+    setSearch(e.target.value)
+  }
+
+  const searchContextValue = { handleSearch, search }
+
   useEffect(() => {
-    console.log("usee render")
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(japitems))
   }, [japitems])
 
@@ -43,41 +54,40 @@ function App() {
     setJapitems(japitems.filter((japitem) => japitem.id !== id))
   }
 
-  const japitemContextValue = { handleJapitemAdd, handleJapitemDelete }
+  const japitemContextValue = {
+    handleJapitemAdd,
+    handleJapitemDelete,
+    japitems,
+  }
 
   return (
-    <JapitemContext.Provider value={japitemContextValue}>
-      <ShoppingCartProvider>
-        <Container>
-          <QueryClientProvider client={queryClient}>
-            <AuthContextProvider>
-              <Navbar />
-              <Outlet japitems={japitems} />
-            </AuthContextProvider>
-          </QueryClientProvider>
-        </Container>
-      </ShoppingCartProvider>
-    </JapitemContext.Provider>
+    <SearchContext.Provider value={searchContextValue}>
+      <JapitemContext.Provider value={japitemContextValue}>
+        <ShoppingCartProvider>
+          <Container>
+            <QueryClientProvider client={queryClient}>
+              <AuthContextProvider>
+                <Navbar search={search} setSearch={setSearch} />
+                <Outlet />
+              </AuthContextProvider>
+            </QueryClientProvider>
+          </Container>
+        </ShoppingCartProvider>
+      </JapitemContext.Provider>
+    </SearchContext.Provider>
   )
 }
 
 const sampleJapitems = [
   {
     id: uuidv4(),
-    file: "file",
     name: "샤론파스 140매",
-    price: 14500,
-    category: "love",
-    description: "wow",
-    options: "big,small,large",
+    price: 10,
   },
   {
     id: uuidv4(),
     name: "오타이산 포",
-    price: 15000,
-    category: "love",
-    description: "wow",
-    options: "big,small,large",
+    price: 10,
   },
 ]
 
