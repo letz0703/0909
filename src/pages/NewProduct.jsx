@@ -1,112 +1,86 @@
-import { useState, useEffect, useRef } from "react"
-import { uploadImage } from "../api/uploader"
-import Button from "../components/ui/button"
-import useProducts from "../hooks/use-products"
+// import { useAuthContext } from "../../context/AuthContext"
+import { v4 as uuidv4 } from "uuid"
+import { getOrders, database, db } from "../api/firebase"
+import { useEffect, useState } from "react"
+import { getDocs, addDoc, collection } from "firebase/firestore"
+import FormatCurrency from "../util/formatCurrency"
 
-export default function NewProduct() {
-  const [product, setProduct] = useState({})
-  const [file, setFile] = useState()
-  const [isUploading, setIsUploading] = useState(false)
-  const [success, setSuccess] = useState()
+export default function Customs() {
+  const [code, setCode] = useState("")
+  const [name, setName] = useState("")
+  const [price, setPrice] = useState(0)
+  const [imgUrl, setImgUrl] = useState("")
+  // const { user, uid } = useAuthContext()
+  const japitemRef = collection(db, "japitem") //customNo, userId
+  const [japitems, setJapitems] = useState([])
 
-  const { addProduct } = useProducts()
-
-  // const addProduct = useMutation(
-  //   ({product, url}) => addNewProduct(product, url),
-  //   {
-  //     onSuccess: () => queryClient.invalidateQueries(["products"])
-  //   }
-  // )
-
-  const handleChange = (e) => {
-    const { name, value, files } = e.target
-    if (name === "file") {
-      setFile(files && files[0])
-      return
+  const createJapitem = async () => {
+    await addDoc(japitemRef, {
+      code: code,
+      name: name,
+      price: price,
+      imgUrl: imgUrl,
+    })
+  }
+  useEffect(() => {
+    const getJapitems = async () => {
+      const data = await getDocs(japitemRef)
+      setJapitems(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
     }
-    setProduct(() => ({ ...product, [name]: value }))
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setIsUploading(true)
-    uploadImage(file)
-      .then((url) =>
-        addProduct.mutate(
-          { product, url },
-          {
-            onSuccess: () => {
-              setSuccess("제품이 추가 됐어요")
-              setTimeout(() => {
-                setSuccess(null)
-              }, 4000)
-            },
-          }
-        )
-      )
-      .finally(() => setIsUploading(false))
-  }
+    getJapitems()
+  }, [])
 
   return (
-    <section>
-      <h2 className="text-2xl my-6 flex flex-col items-center">
-        새로운 제품 등록
-      </h2>
-      {success && <p>⍻{success}</p>}
-      {file && <img src={URL.createObjectURL(file)} alt="local file" />}
-      <form onSubmit={handleSubmit} className="flex flex-col gap-2 p-2">
-        <input
-          type="file"
-          accept="image/*"
-          name="file"
-          required
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="title"
-          value={product.title ?? ""}
-          placeholder="제품명"
-          required
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="price"
-          value={product.price ?? ""}
-          placeholder="가격"
-          required
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="category"
-          value={product.category ?? ""}
-          placeholder="카테고리"
-          required
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="description"
-          value={product.description ?? ""}
-          placeholder="상세 설명"
-          required
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="options"
-          value={product.options ?? ""}
-          placeholder="옵션들(콤마로,구분)"
-          required
-          onChange={handleChange}
-        />
-        <Button
-          text={isUploading ? "uploading..." : "제품등록 하기"}
-          disabled={isUploading}
-        />
-      </form>
-    </section>
+    <div>
+      <input
+        type="text"
+        placeholder="아이템코드"
+        onChange={(e) => setCode(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="item name"
+        onChange={(e) => setName(e.target.value)}
+      />
+      <input
+        type="number"
+        placeholder="price"
+        onChange={(e) => setPrice(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="imgUrl"
+        onChange={(e) => setImgUrl(e.target.value)}
+      />
+      <button className="btn btn--primary" onClick={createJapitem}>
+        아이템등록
+      </button>
+      {japitems.map((japitem) => (
+        <div
+          key={uuidv4()}
+          className="new-product__list place-content-center text-center"
+        >
+          <span>code: {japitem.code}</span>
+          <span>{japitem.name}</span>
+          <span>{FormatCurrency(japitem.price)}</span>
+          <span>
+            <img src={japitem.imgUrl} className="new-product__list-image" />
+          </span>
+
+          <style>{`
+          .new-product__list{
+            display: grid;
+            grid-template-columns: repeat(4, 12rem);
+            border-bottom: 1px dashed black;
+            padding: 2rem;
+          }
+          .new-product__list-image{
+            width: 10rem;
+          }
+
+          `}</style>
+        </div>
+      ))}
+    </div>
   )
 }

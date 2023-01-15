@@ -1,8 +1,8 @@
 import React, { useContext } from "react"
 import { JapitemContext, SearchContext, TestContext } from "../App"
 
-const SearchData = (props) => {
-  const { japitems } = useContext(JapitemContext)
+const SearchData = ({ japitems }) => {
+  // const { japitems } = useContext(JapitemContext)
   const { search } = useContext(SearchContext)
 
   return (

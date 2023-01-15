@@ -1,3 +1,5 @@
+TODO: shopHome list japitem
+
 # http://icanmart.netlify.com/
 
 next to learn: Array filter method https://www.youtube.com/watch?v=2lgiV1urWQs 2023.01.08/일
