@@ -7,27 +7,31 @@ import {
   signOut,
   onAuthStateChanged,
 } from 'firebase/auth';
+import { getFirestore } from "firebase/firestore";
 import { getDatabase, ref, set, get, remove } from 'firebase/database'
 
 const {
   VITE_FIREBASE_API_KEY,
   VITE_FIREBASE_DOMAIN,
   VITE_FIREBASE_DATABASE_URL,
-  VITE_FIREBASE_PROJECTID
+  VITE_FIREBASE_PROJECTID,
+  VITE_FIREBASE_STORAGE_BUCKET
 } = import.meta.env
 
 const firebaseConfig = {
   apiKey: VITE_FIREBASE_API_KEY,
   authDomain: VITE_FIREBASE_DOMAIN,
   databaseURL: VITE_FIREBASE_DATABASE_URL,
-  projectId: VITE_FIREBASE_PROJECTID
+  projectId: VITE_FIREBASE_PROJECTID,
+  storageBucket: VITE_FIREBASE_STORAGE_BUCKET
 }
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
 const auth = getAuth(app)
 const provider = new GoogleAuthProvider()
-const database = getDatabase(app)
+export const database = getDatabase(app)
+export const db = getFirestore(app)
 
 export function login() {
   signInWithPopup(auth, provider).catch(console.error)
