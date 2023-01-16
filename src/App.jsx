@@ -10,19 +10,25 @@ import { ShoppingCartProvider } from "./context/ShoppingCart"
 import { v4 as uuidv4 } from "uuid"
 import { createContext } from "react"
 import { extraData } from "./data.js"
+import { collection, getDocs } from "firebase/firestore"
+import { db } from "./api/firebase"
 const queryClient = new QueryClient()
 export const JapitemContext = createContext()
 const LOCAL_STORAGE_KEY = "icanmart.japitems"
 
 export const SearchContext = createContext()
-export const TestContext = createContext()
 
 function App() {
+  const japitemsRef = collection(db, "japitems")
   const [japitems, setJapitems] = useState(() => {
     const japitemJSON = localStorage.getItem(LOCAL_STORAGE_KEY)
     if (japitemJSON == null) {
-      return sampleJapitems
+      setJapitems(sampleJapitems)
     } else {
+      const getJapitems = async () => {
+        const data = await getDocs(japitemsRef)
+        setJapitems(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+      }
       return JSON.parse(japitemJSON)
     }
   })
@@ -37,9 +43,9 @@ function App() {
 
   const searchContextValue = { handleSearch, search }
 
-  useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(japitems))
-  }, [japitems])
+  // useEffect(() => {
+  //   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(japitems))
+  // }, [japitems])
 
   function handleJapitemAdd() {
     const newJapitem = {
@@ -68,7 +74,7 @@ function App() {
             <QueryClientProvider client={queryClient}>
               <AuthContextProvider>
                 <Navbar search={search} setSearch={setSearch} />
-                <Outlet />
+                <Outlet japitems={japitems} />
               </AuthContextProvider>
             </QueryClientProvider>
           </Container>

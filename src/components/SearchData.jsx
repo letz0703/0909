@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { JapitemContext, SearchContext, TestContext } from "../App"
+import { JapitemContext, SearchContext } from "../App"
 
 const SearchData = ({ japitems }) => {
   // const { japitems } = useContext(JapitemContext)
