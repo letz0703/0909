@@ -2,7 +2,14 @@
 import { v4 as uuidv4 } from "uuid"
 import { getOrders, database, db } from "../api/firebase"
 import { useEffect, useState } from "react"
-import { getDocs, addDoc, collection } from "firebase/firestore"
+import {
+  getDocs,
+  addDoc,
+  collection,
+  doc,
+  updateDoc,
+  deleteDoc,
+} from "firebase/firestore"
 import FormatCurrency from "../util/formatCurrency"
 
 export default function Customs() {
@@ -12,7 +19,7 @@ export default function Customs() {
   const [imgUrl, setImgUrl] = useState("")
   const [stock, setStock] = useState(0)
   // const { user, uid } = useAuthContext()
-  const japitemRef = collection(db, "japitem") //customNo, userId
+  const japitemRef = collection(db, "japitems") //customNo, userId
   const [japitems, setJapitems] = useState([])
 
   const createJapitem = async () => {
@@ -24,6 +31,19 @@ export default function Customs() {
       stock: stock,
     })
   }
+
+  const handleUpdateStock = async (id, stock) => {
+    const japitemsDoc = doc(db, "japitems", id)
+    const stock_step = 5
+    const newFields = { stock: Number(stock) + stock_step }
+    await updateDoc(japitemsDoc, newFields)
+  }
+
+  const handleJapitemDelete = async (id) => {
+    const japitemDoc = doc(db, "japitems", id)
+    await deleteDoc(japitemDoc)
+  }
+
   useEffect(() => {
     const getJapitems = async () => {
       const data = await getDocs(japitemRef)
@@ -72,7 +92,17 @@ export default function Customs() {
         <div key={uuidv4()}>
           <div className="new-product__list place-content-center text-center">
             <span>code: {japitem.code}</span>
-            <span>{japitem.name}</span>
+            <span>
+              {japitem.name}
+              <button
+                onClick={() => {
+                  handleJapitemDelete(japitem.id)
+                }}
+                className="btn btn--danger mini"
+              >
+                del
+              </button>
+            </span>
             <span className="text-orange-500 font-bold">
               {FormatCurrency(japitem.price)}
             </span>
@@ -85,6 +115,14 @@ export default function Customs() {
             <span>&times;</span>
             <span>
               {japitem.stock}개{" "}
+              <button
+                onClick={() => {
+                  handleUpdateStock(japitem.id, japitem.stock)
+                }}
+                className="btn mini btn--primary"
+              >
+                +
+              </button>
               <span className="text-xs text-gray-500">in stock</span>
             </span>
             <span className="font-semibold">TOTAL: </span>
