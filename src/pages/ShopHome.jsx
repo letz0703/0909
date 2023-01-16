@@ -12,6 +12,7 @@ import {
 } from "firebase/firestore"
 import FormatCurrency from "../util/formatCurrency"
 import { SearchContext } from "../App"
+import { useNavigate } from "react-router-dom"
 
 export default function ShopHome() {
   const { search } = useContext(SearchContext)
@@ -23,6 +24,7 @@ export default function ShopHome() {
   // // const { user, uid } = useAuthContext()
   const japitemRef = collection(db, "japitems") //customNo, userId
   const [japitems, setJapitems] = useState([])
+  const navigate = useNavigate()
 
   // const createJapitem = async () => {
   //   await addDoc(japitemRef, {
@@ -64,7 +66,12 @@ export default function ShopHome() {
         })
         .map((japitem) => (
           <div key={uuidv4()}>
-            <div className="new-product__list place-content-center text-center card">
+            <div
+              className="new-product__list place-content-center text-center card"
+              onClick={() => {
+                navigate(`/japitems/${japitem.id}`, { state: { japitem } })
+              }}
+            >
               {/* <span>code: {japitem.code}</span> */}
               <span>
                 {japitem.name}
@@ -113,6 +120,7 @@ export default function ShopHome() {
           }
           .new-product__list-image{
             width: 10rem;
+            cursor: pointer;
           }
 
           `}</style>
