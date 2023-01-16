@@ -109,6 +109,7 @@ export default function ShopHome() {
             grid-template-columns: repeat(4, 12rem);
             border-bottom: 1px dashed black;
             padding: 2rem;
+            cursor: pointer;
           }
           .new-product__list-image{
             width: 10rem;

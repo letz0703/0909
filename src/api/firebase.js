@@ -50,6 +50,7 @@ export function onUserStateChange(callback) {
 
 async function adminUser(user) {
   return get(ref(database, "admins")) //
+  // return get(ref(db, "admins")) //
     .then(snapshot => {
       if (snapshot.exists()) {
         const admins = snapshot.val()
