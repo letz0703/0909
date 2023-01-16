@@ -82,7 +82,7 @@ export async function addNewOrder(product, image) {
 }
 
 export async function getProducts() {
-  return get(ref(database, "products")).then(snapshot => {
+  return get(ref(database, "japitems")).then(snapshot => {
     if (snapshot.exists()) {
       return Object.values(snapshot.val())
     }
