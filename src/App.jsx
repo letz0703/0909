@@ -65,8 +65,8 @@ function App() {
   }
 
   return (
-    <SearchContext.Provider value={searchContextValue}>
-      <JapitemContext.Provider value={japitemContextValue}>
+    <JapitemContext.Provider value={japitemContextValue}>
+      <SearchContext.Provider value={searchContextValue}>
         <ShoppingCartProvider>
           <Container>
             <QueryClientProvider client={queryClient}>
@@ -78,21 +78,23 @@ function App() {
             </QueryClientProvider>
           </Container>
         </ShoppingCartProvider>
-      </JapitemContext.Provider>
-    </SearchContext.Provider>
+      </SearchContext.Provider>
+    </JapitemContext.Provider>
   )
 }
 
 const sampleJapitems = [
   {
     id: uuidv4(),
-    name: "샤론파스 140매",
-    price: 10,
+    code: 1234,
+    name: "샤론파스 80매",
+    price: 10000,
   },
   {
     id: uuidv4(),
-    name: "오타이산 포",
-    price: 10,
+    code: 5678,
+    name: "동전파스 156매 2각",
+    price: 10000,
   },
 ]
 
