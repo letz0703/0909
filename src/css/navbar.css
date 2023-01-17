@@ -1,0 +1,3 @@
+.ic-navbar {
+  @apply flex items-center gap-4 font-semibold;
+}

@@ -43,7 +43,14 @@ const router = createBrowserRouter([
           // </ProtectedRoute>
         ),
       },
-      { path: "/products/new", element: <NewProduct /> },
+      {
+        path: "/products/new",
+        element: (
+          <ProtectedRoute requireAdmin>
+            <NewProduct />
+          </ProtectedRoute>
+        ),
+      },
       { path: "/products/:id", element: <ProductDetail /> },
       { path: "/japitems/:id", element: <JapitemDetail /> },
       {
@@ -54,6 +61,7 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
       },
+      { path: "/shop", element: <AllProducts /> },
       { path: "/videos", element: <Videos /> },
       { path: "/videos/:keyword", element: <Videos /> },
       { path: "/videos/watch/:videoId", element: <VideoDetail /> },

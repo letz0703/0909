@@ -1,10 +1,10 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
-import { useState, useEffect } from "react"
+import { Container } from "react-bootstrap"
+import { useState } from "react"
 import { Routes, Route, Outlet } from "react-router-dom"
 import "./App.css"
 import Navbar from "./components/Navbar"
 import { AuthContextProvider } from "./context/AuthContext"
-import { Container } from "react-bootstrap"
 import ShopHome from "./pages/ShopHome"
 import { ShoppingCartProvider } from "./context/ShoppingCart"
 import { v4 as uuidv4 } from "uuid"
@@ -34,8 +34,6 @@ function App() {
   })
 
   const [search, setSearch] = useState("")
-  // const [searchedJapitemId, setsearchedJapitemId] = useState()
-  // const [japitem, setJapitem] = useState(sampleJapitem)
 
   function handleSearch(e) {
     setSearch(e.target.value)
@@ -73,7 +71,8 @@ function App() {
           <Container>
             <QueryClientProvider client={queryClient}>
               <AuthContextProvider>
-                <Navbar search={search} setSearch={setSearch} />
+                <Navbar setSearch={setSearch} />
+                {/* <Navbar search={search} setSearch={setSearch} /> */}
                 <Outlet japitems={japitems} />
               </AuthContextProvider>
             </QueryClientProvider>

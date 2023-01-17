@@ -1,30 +1,31 @@
 import CartItem from "../components/CartItem"
-import {BsFillPlusCircleFill} from "react-icons/bs"
-import {TiEquals} from "react-icons/ti"
+import { BsFillPlusCircleFill } from "react-icons/bs"
+import { TiEquals } from "react-icons/ti"
 import PriceCard from "../components/PriceCard"
 import Button from "../components/ui/button"
 import useCart from "../hooks/use-cart"
-import {useOrders} from "../hooks/useOrders"
-import {addNewOrder} from "../api/firebase"
+import { useOrders } from "../hooks/useOrders"
+import { addNewOrder } from "../api/firebase"
 
 const SHIPPING = 3000
 
-export default function MyCart() {
-  // const {uid} = useAuthContext()
-  // const {data: products, isLoading} = useQuery(["carts"], () => getCart(uid))
-  const {addOrder} = useOrders()
+export default function MyCart(props) {
+  console.log(props)
+  const { uid } = useAuthContext()
+  const { data: japitems, isLoading } = useQuery(["carts"], () => getCart(uid))
+  const { addOrder } = useOrders()
 
-  const {
-    cartQuery: {isLoading, data: products}
-  } = useCart()
+  // const {
+  //   cartQuery: { isLoading, data: japitems },
+  // } = useCart()
 
   if (isLoading) return <p>Loading...</p>
 
-  const hasProducts = products && products.length > 0
+  const hasJapitems = japitems && japitems.length > 0
 
   const totalPrice =
-    products &&
-    products.reduce((prev, cur) => prev + parseInt(cur.price) * cur.quantity, 0)
+    japitems &&
+    japitems.reduce((prev, cur) => prev + parseInt(cur.price) * cur.quantity, 0)
 
   const handleOrder = () => {
     // console.log(addNewOrder)
@@ -35,13 +36,13 @@ export default function MyCart() {
       <h2 className="text-2xl text-center font-bold pb-4 border-b border-gray-300">
         My Cart
       </h2>
-      {!hasProducts && <p>장바구니에 상품이 없습니다.</p>}
-      {hasProducts && (
+      {/* {!hasJapitems && <p>장바구니에 상품이 없습니다.</p>} */}
+      {true && (
         <>
           <ul className="border-b border-gray-300 mb-8 p-4 px-14">
-            {products &&
-              products.map(product => (
-                <CartItem key={product.id} product={product} />
+            {japitems &&
+              japitems.map((japitem) => (
+                <CartItem key={japitem.id} japitem={japitem} />
               ))}
           </ul>
           <div className="flex justify-between items-center px-2 md:px-7 lg:px-11 mb-6">

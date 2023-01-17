@@ -1,3 +1,4 @@
+import { Nav, Navbar as NavbarBs } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import { BsFillPencilFill } from "react-icons/bs"
 import { login, logout, onUserStateChange } from "../api/firebase"
@@ -5,7 +6,6 @@ import Button from "./ui/button"
 import User from "./User"
 import { useAuthContext } from "../context/AuthContext"
 import CartStatus from "./CartStatus"
-import { Navbar as NavbarBs } from "react-bootstrap"
 import { NavLink } from "react-router-dom"
 import { useShoppingCart } from "../context/ShoppingCart"
 import { JapitemContext } from "../App"
@@ -43,24 +43,25 @@ export default function Navbar({ search, setSearch }) {
         />
       </form>
 
-      <NavbarBs className="flex items-center gap-4 font-semibold">
-        {/* <Link to="/">Home</Link> */}
-        <Link to="/jap">Jap</Link>
-        <Link to="/can">Can</Link>
-        <Link to="/products">Products</Link>
-        {user && <User user={user} />}
-        {!user && <Button text={"login"} onClick={login} />}
-        {user && <Button text={"logout"} onClick={logout} />}
-        {user && user.isAdmin && (
-          <Link to="/products/new" className="2xl">
-            <BsFillPencilFill />
-          </Link>
-        )}
-        {user && (
-          <Link to="/carts">
-            <CartStatus />
-          </Link>
-        )}
+      <NavbarBs className="ic-navbar">
+        <div className="flex justify-center items-center gap-3 me-auto">
+          <Link to="/can">Can</Link>
+          <Link to="/jap">Jap</Link>
+          <Link to="/shop">Store</Link>
+          {user && <User user={user} />}
+          {!user && <Button text={"login"} onClick={login} />}
+          {user && <Button text={"logout"} onClick={logout} />}
+          {user && user.isAdmin && (
+            <Link to="/products/new" className="2xl">
+              <BsFillPencilFill />
+            </Link>
+          )}
+          {user && (
+            <Link to="/carts">
+              <CartStatus />
+            </Link>
+          )}
+        </div>
       </NavbarBs>
     </header>
   )
