@@ -89,12 +89,14 @@ const sampleJapitems = [
     code: 1234,
     name: "샤론파스 80매",
     price: 10000,
+    imgUrl: "/imgs/shron80.jpg",
   },
   {
     id: uuidv4(),
     code: 5678,
     name: "동전파스 156매 2각",
     price: 10000,
+    imgUrl: "/imgs/donjunpas156.jpg",
   },
 ]
 
