@@ -40,10 +40,11 @@ export default function Navbar({ search, setSearch }) {
           type="text"
           onChange={(e) => setSearch(e.target.value)}
           placeholder="search"
+          autoFocus
         />
       </form>
 
-      <NavbarBs className="ic-navbar">
+      <NavbarBs className="ic-navbar" sticky="top">
         <div className="flex justify-center items-center gap-3 me-auto">
           <Link to="/can">Can</Link>
           <Link to="/jap">Jap</Link>

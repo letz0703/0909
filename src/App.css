@@ -113,6 +113,9 @@ li {
 }
 
 input:focus {
-  background-color: var(--color-accent);
-  color: #eee;
+  /* background-color: var(--color-accent); */
+  /* color: #eee; */
+  outline: none;
+  font-style: bold;
+  font-size: 1.5rem;
 }

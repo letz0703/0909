@@ -9,6 +9,9 @@
     "preview": "vite preview"
   },
   "eslintConfig": {
+    "env": {
+      "browser": false
+    },
     "extends": "react-app",
     "rules": {
       "no-unused-vars": [
