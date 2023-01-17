@@ -1,4 +1,4 @@
-export default function User({user: {photoURL, displayName}}) {
+export default function User({ user: { photoURL, displayName } }) {
   return (
     <div className="flex items-center shrink-0">
       <img

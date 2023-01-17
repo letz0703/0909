@@ -48,7 +48,6 @@ export default function Navbar({ search, setSearch }) {
         <Link to="/jap">Jap</Link>
         <Link to="/can">Can</Link>
         <Link to="/products">Products</Link>
-
         {user && <User user={user} />}
         {!user && <Button text={"login"} onClick={login} />}
         {user && <Button text={"logout"} onClick={logout} />}
