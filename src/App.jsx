@@ -22,15 +22,15 @@ function App() {
   const japitemsRef = collection(db, "japitems")
   const [japitems, setJapitems] = useState(() => {
     const japitemJSON = localStorage.getItem(LOCAL_STORAGE_KEY)
-    if (japitemJSON == null) {
-      setJapitems(sampleJapitems)
-    } else {
-      const getJapitems = async () => {
-        const data = await getDocs(japitemsRef)
-        setJapitems(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-      }
-      return JSON.parse(japitemJSON)
+    // if (japitemJSON == null) {
+    // setJapitems(sampleJapitems)
+    // } else {
+    const getJapitems = async () => {
+      const data = await getDocs(japitemsRef)
+      setJapitems(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
     }
+    return JSON.parse(japitemJSON)
+    // }
   })
 
   const [search, setSearch] = useState("")
@@ -65,21 +65,21 @@ function App() {
   }
 
   return (
-    <JapitemContext.Provider value={japitemContextValue}>
-      <SearchContext.Provider value={searchContextValue}>
-        <ShoppingCartProvider>
-          <Container>
-            <QueryClientProvider client={queryClient}>
-              <AuthContextProvider>
+    <SearchContext.Provider value={searchContextValue}>
+      <ShoppingCartProvider>
+        <Container>
+          <QueryClientProvider client={queryClient}>
+            <AuthContextProvider>
+              <JapitemContext.Provider value={japitemContextValue}>
                 <Navbar setSearch={setSearch} />
                 {/* <Navbar search={search} setSearch={setSearch} /> */}
                 <Outlet japitems={japitems} />
-              </AuthContextProvider>
-            </QueryClientProvider>
-          </Container>
-        </ShoppingCartProvider>
-      </SearchContext.Provider>
-    </JapitemContext.Provider>
+              </JapitemContext.Provider>
+            </AuthContextProvider>
+          </QueryClientProvider>
+        </Container>
+      </ShoppingCartProvider>
+    </SearchContext.Provider>
   )
 }
 
