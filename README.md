@@ -1,4 +1,4 @@
-TODO: shopHome list japitem
+TODO: detail 연결
 
 # http://icanmart.netlify.com/
 
@@ -6,7 +6,7 @@ WDS : https://www.youtube.com/watch?v=lATafp15HWA&t=1546s
 next to learn: Array filter method https://www.youtube.com/watch?v=2lgiV1urWQs 2023.01.08/일
 PopCart.jsx : https://share.cleanshot.com/gXBnGNSG
 isOpen : https://youtu.be/lATafp15HWA?t=2685
-store image : https://youtu.be/lATafp15HWA?t=1274
+store image : https://youtu.be/lATafp15HWA?t=127결
 
 # now studying
 

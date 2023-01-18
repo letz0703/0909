@@ -12,9 +12,10 @@ import {
 } from "firebase/firestore"
 import FormatCurrency from "../util/formatCurrency"
 
-export default function Customs() {
+export default function NewProduct() {
   const [code, setCode] = useState("")
   const [name, setName] = useState("")
+  const [description, setDescription] = useState("")
   const [price, setPrice] = useState(0)
   const [imgUrl, setImgUrl] = useState("")
   const [stock, setStock] = useState(0)
@@ -27,6 +28,7 @@ export default function Customs() {
       code: code,
       name: name,
       price: price,
+      description: description,
       imgUrl: imgUrl,
       stock: stock,
     })
@@ -72,6 +74,11 @@ export default function Customs() {
           type="number"
           placeholder="price"
           onChange={(e) => setPrice(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="description"
+          onChange={(e) => setDescription(e.target.value)}
         />
         <input
           type="text"

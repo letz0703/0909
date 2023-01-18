@@ -11,7 +11,8 @@ const SearchData = ({ japitems }) => {
         .filter((item) => {
           return search.toLowerCase() === ""
             ? item
-            : item.name.toLowerCase().includes(search)
+            : item.name.toLowerCase().includes(search) ||
+                item.id.includes(search)
         })
         .map((row) => {
           return (

@@ -46,13 +46,13 @@ const router = createBrowserRouter([
       {
         path: "/products/new",
         element: (
-          <ProtectedRoute requireAdmin>
-            <NewProduct />
-          </ProtectedRoute>
+          // <ProtectedRoute requireAdmin>
+          <NewProduct />
+          // </ProtectedRoute>
         ),
       },
-      { path: "/products/:id", element: <ProductDetail /> },
-      { path: "/japitems/:id", element: <JapitemDetail /> },
+      { path: "/products/:id", element: <JapitemDetail /> },
+      // { path: "/japitems/:id", element: <JapitemDetail /> },
       {
         path: "/carts",
         element: (
