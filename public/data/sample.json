@@ -4,17 +4,12 @@
   ],
   "products": {
     "07d90d98-42df-48be-926e-3010108fcc91": {
-      "category": "젤리",
+      "code": 1,
+      "name": "젤리",
+      "price" : 3800,
       "description": "오리히로 곤약제리 12개입, 6개+6개",
-      "id": "07d90d98-42df-48be-926e-3010108fcc91",
       "image": "https://gd.image-gmkt.com/li/123/272/1729272123.g_0-w-pj_g.jpg",
-      "options": [
-        "제로 칼로리",
-        "사과 포도",
-        "청포도 오렌지"
-      ],
-      "price": 4000,
-      "title": "오리히로 곤약젤리"
+      "homeUrl":""
     }
   }
 }
