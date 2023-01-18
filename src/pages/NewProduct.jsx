@@ -18,6 +18,7 @@ export default function NewProduct() {
   const [description, setDescription] = useState("")
   const [price, setPrice] = useState(0)
   const [imgUrl, setImgUrl] = useState("")
+  const [homeUrl, setHomeUrl] = useState("")
   const [stock, setStock] = useState(0)
   // const { user, uid } = useAuthContext()
   const japitemRef = collection(db, "japitems") //customNo, userId
@@ -30,6 +31,7 @@ export default function NewProduct() {
       price: price,
       description: description,
       imgUrl: imgUrl,
+      homeUrl: homeUrl,
       stock: stock,
     })
   }
@@ -84,6 +86,11 @@ export default function NewProduct() {
           type="text"
           placeholder="imgUrl"
           onChange={(e) => setImgUrl(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="homeUrl"
+          onChange={(e) => setHomeUrl(e.target.value)}
         />
         <input
           type="number"
