@@ -1,12 +1,20 @@
 import React from "react"
 import { Card } from "react-bootstrap"
 import { v4 as uuidv4 } from "uuid"
+import { useShoppingCart } from "../context/ShoppingCart"
 //import styles from './StoreItem.module.css'
 import FormatCurrency from "../util/formatCurrency"
 
 export default function StoreItem(props) {
   const { code, description, homeUrl, id, imgUrl, name, price } = props
-  const quantity = 0
+  const {
+    getItemQuantity,
+    increaseCartQuantity,
+    decreateCartQuantity,
+    removeFromCart,
+  } = useShoppingCart()
+
+  const quantity = getItemQuantity(id)
   return (
     <Card className="h-100">
       <Card.Img
@@ -22,16 +30,36 @@ export default function StoreItem(props) {
         </Card.Title>
         <div className="mt-auto">
           {quantity === 0 ? (
-            <button className="btn btn--primary w-100"> + Add To Cart</button>
+            <button
+              className="btn btn--primary w-100"
+              onClick={() => increaseCartQuantity(id)}
+            >
+              + Add To Cart
+            </button>
           ) : (
             <div className="flex items-center justify-center flex-col gap-2">
               <div className="flex gap-3">
-                <button className="btn btn--primary mini">-</button>
+                <button
+                  className="btn btn--primary mini"
+                  onClick={() => decreaseCartQuantity(id)}
+                >
+                  -
+                </button>
                 <div>
                   <span className="fs-3">{quantity}</span> 개
                 </div>
-                <button className="btn btn--primary mini">+</button>
-                <button className="btn btn--danger mini">취소</button>
+                <button
+                  className="btn btn--primary mini"
+                  onClick={() => increaseCartQuantity(id)}
+                >
+                  +
+                </button>
+                <button
+                  className="btn btn--danger mini"
+                  onClick={() => removeFromCart(id)}
+                >
+                  취소
+                </button>
               </div>
             </div>
           )}

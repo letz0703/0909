@@ -9,7 +9,7 @@ export function useShoppingCart() {
 
 export function ShoppingCartProvider({ children }) {
   const [cartItems, setCartItems] = useState([])
-  const [isOpen, setIsOpen] = useState()
+  const [isOpen, setIsOpen] = useState(false)
   const cartQuantity = cartItems.reduce(
     (quantity, item) => item.quantity + quantity,
     0
@@ -18,6 +18,7 @@ export function ShoppingCartProvider({ children }) {
   const openCart = () => setIsOpen(true)
   const closeCart = () => setIsOpen(false)
 
+  //functions
   function getItemQuantity(id) {
     return cartItems.find((item) => item.id === id)?.quantity || 0
   }

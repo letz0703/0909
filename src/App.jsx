@@ -65,7 +65,7 @@ function App() {
   }
 
   return (
-    <SearchContext.Provider>
+    <SearchContext.Provider value={searchContextValue}>
       <ShoppingCartProvider>
         <Container>
           <QueryClientProvider client={queryClient}>
