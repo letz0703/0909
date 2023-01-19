@@ -7,9 +7,9 @@ import PopCartItem from "./PopCartItem"
 // type PopCartProps = {
 //   isOpen: boolean
 // }
-export function PopCart({ isOpen, product }) {
+export function PopCart({ isOpen }) {
   // export function PopCart({isOpen}:PopCartProps) {
-  const { closeCart, cartItems } = useShoppingCart()
+  const { closeCart, openCart, cartItems } = useShoppingCart()
   return (
     <Offcanvas show={isOpen} onHide={closeCart} placement="end">
       <Offcanvas.Header closeButton>

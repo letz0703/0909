@@ -20,6 +20,7 @@ import Can from "./pages/Can"
 import "./css/app.css"
 import JapitemDetail from "./pages/JapitemDetail"
 import Store from "./pages/Store"
+import { PopCart } from "./components/PopCart"
 
 const router = createBrowserRouter([
   {
@@ -58,7 +59,7 @@ const router = createBrowserRouter([
         path: "/carts",
         element: (
           <ProtectedRoute>
-            <MyCart />
+            <PopCart />
           </ProtectedRoute>
         ),
       },
