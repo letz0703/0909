@@ -1,4 +1,5 @@
 import { createContext, useState, useContext } from "react"
+import { useNavigate } from "react-router-dom"
 import { PopCart } from "../components/PopCart"
 import { useLocalStorage } from "../hooks/use-local-storage"
 
@@ -9,15 +10,22 @@ export function useShoppingCart() {
 }
 
 export function ShoppingCartProvider({ children }) {
-  const [cartItems, setCartItems] = useLocalStorage("ic_cart", [])
+  const navigate = useNavigate()
+  const [cartItems, setCartItems] = useLocalStorage("ic-cart", [])
   const [isOpen, setIsOpen] = useState(false)
+  // console.log(cartItems)
   const cartQuantity = cartItems.reduce(
     (quantity, item) => item.quantity + quantity,
     0
   )
 
-  const openCart = () => setIsOpen(true)
-  const closeCart = () => setIsOpen(false)
+  const openCart = () => {
+    setIsOpen(true)
+  }
+  const closeCart = () => {
+    navigate("/shop")
+    setIsOpen(false)
+  }
 
   //functions
   function getItemQuantity(id) {
@@ -73,7 +81,7 @@ export function ShoppingCartProvider({ children }) {
   return (
     <ShoppingCartContext.Provider value={shoppingCartContextValue}>
       {children}
-      <PopCart isOpen={isOpen} />
+      <PopCart isOpen={isOpen} cartItems={cartItems} />
     </ShoppingCartContext.Provider>
   )
 }

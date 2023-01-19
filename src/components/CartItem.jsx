@@ -3,16 +3,20 @@ import { RiDeleteBin5Fill } from "react-icons/ri"
 import useCart from "../hooks/use-cart"
 import FormatCurrency from "../util/formatCurrency"
 import { useShoppingCart } from "../context/ShoppingCartContext"
-import storeItems from "../data/items.json"
+// import storeItems from "../data/items.json"
 import { Button, Stack } from "react-bootstrap"
+import { useJapitems } from "../hooks/use-japitems"
 
 const ICON_BOX = "transition-all cursor-pointer hover:text-brand mx-1"
-export default function CartItem({
-  id,
-  quantity,
-  // product,
-  // product: { id, image, title, option, quantity, price },
-}) {
+export default function CartItem(props) {
+  const { id, quantity } = props
+  // export default function CartItem({ id, quantity,
+  //   // product,
+  //   // product: { id, image, title, option, quantity, price },
+  // }) {
+  const [japitems, setJapitems] = useJapitems()
+
+  const storeItems = japitems
   const item = storeItems.find((i) => i.id === id)
   if (item == null) return null
 
@@ -38,7 +42,7 @@ export default function CartItem({
       <div className="me-auto">
         <div>
           {item.name}{" "}
-          {quantity > 1 && (
+          {quantity >= 1 && (
             <span className="text-muted" style={{ fontSize: ".65rem" }}>
               x{quantity}
             </span>

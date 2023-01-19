@@ -10,7 +10,7 @@ export default function StoreItem(props) {
   const {
     getItemQuantity,
     increaseCartQuantity,
-    decreateCartQuantity,
+    decreaseCartQuantity,
     removeFromCart,
   } = useShoppingCart()
 
@@ -24,9 +24,11 @@ export default function StoreItem(props) {
         style={{ objectFit: "cover" }}
       ></Card.Img>
       <Card.Body className="d-flex flex-column">
-        <Card.Title className="flex justify-between items-baseline mb-4">
-          <span className="fs-2">{name}</span>
-          <span className="ms-2 text-muted">{FormatCurrency(price)}</span>
+        <Card.Title className="flex flex-col justify-between items-center mb-4">
+          <span className="fs-5 pb-2">{name}</span>
+          <span className="ms-2 text-muted pb-0 m-0">
+            {FormatCurrency(price)}
+          </span>
         </Card.Title>
         <div className="mt-auto">
           {quantity === 0 ? (
