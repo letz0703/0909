@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useLocation } from "react-router-dom"
 import Button from "../components/ui/button"
-import { useShoppingCart } from "../context/ShoppingCart"
+import { useShoppingCart } from "../context/ShoppingCartContext"
 import useCart from "../hooks/use-cart"
 import FormatCurrency from "../util/formatCurrency"
 

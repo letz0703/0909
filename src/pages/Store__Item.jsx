@@ -1,7 +1,7 @@
 import React from "react"
 import { Card } from "react-bootstrap"
 import { v4 as uuidv4 } from "uuid"
-import { useShoppingCart } from "../context/ShoppingCart"
+import { useShoppingCart } from "../context/ShoppingCartContext"
 //import styles from './StoreItem.module.css'
 import FormatCurrency from "../util/formatCurrency"
 

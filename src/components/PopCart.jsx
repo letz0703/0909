@@ -1,6 +1,6 @@
 import { Offcanvas, Stack } from "react-bootstrap"
 import { OffcanvasHeader } from "react-bootstrap"
-import { useShoppingCart } from "../context/ShoppingCart"
+import { useShoppingCart } from "../context/ShoppingCartContext"
 import CartItem from "./CartItem"
 import PopCartItem from "./PopCartItem"
 

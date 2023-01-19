@@ -7,7 +7,7 @@ import User from "./User"
 import { useAuthContext } from "../context/AuthContext"
 import CartStatus from "./CartStatus"
 import { NavLink } from "react-router-dom"
-import { useShoppingCart } from "../context/ShoppingCart"
+import { useShoppingCart } from "../context/ShoppingCartContext"
 import { JapitemContext } from "../App"
 import { useContext } from "react"
 

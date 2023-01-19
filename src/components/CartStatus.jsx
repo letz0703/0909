@@ -1,5 +1,5 @@
 import { HiOutlineShoppingBag } from "react-icons/hi"
-import { useShoppingCart } from "../context/ShoppingCart"
+import { useShoppingCart } from "../context/ShoppingCartContext"
 import useCart from "../hooks/use-cart"
 
 export default function CartStatus() {

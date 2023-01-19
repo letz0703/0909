@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react"
 import { useLocation } from "react-router-dom"
+import { useShoppingCart } from "../context/ShoppingCartContext"
 import FormatCurrency from "../util/formatCurrency"
-import { useShoppingCart } from "../context/ShoppingCart"
+// import { useShoppingCart } from "../context/ShoppingCartContext"
 
 export default function JapitemDetail() {
   const {
