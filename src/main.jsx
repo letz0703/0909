@@ -19,6 +19,7 @@ import Jap from "./pages/Jap"
 import Can from "./pages/Can"
 import "./css/app.css"
 import JapitemDetail from "./pages/JapitemDetail"
+import Store from "./pages/Store"
 
 const router = createBrowserRouter([
   {
@@ -61,7 +62,7 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
       },
-      { path: "/shop", element: <AllProducts /> },
+      { path: "/shop", element: <Store /> },
       { path: "/videos", element: <Videos /> },
       { path: "/videos/:keyword", element: <Videos /> },
       { path: "/videos/watch/:videoId", element: <VideoDetail /> },
