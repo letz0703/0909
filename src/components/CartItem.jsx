@@ -4,7 +4,7 @@ import useCart from "../hooks/use-cart"
 import FormatCurrency from "../util/formatCurrency"
 import { useShoppingCart } from "../context/ShoppingCartContext"
 import storeItems from "../data/items.json"
-import { Stack } from "react-bootstrap"
+import { Button, Stack } from "react-bootstrap"
 
 const ICON_BOX = "transition-all cursor-pointer hover:text-brand mx-1"
 export default function CartItem({
@@ -31,55 +31,53 @@ export default function CartItem({
 
   return (
     <Stack direction="horizontal" gap={2} className="d-flex align-items-center">
-      <img src={item.imgUrl} className="cart-item__img" />
+      <img
+        src={item.imgUrl}
+        style={{ width: "125px", height: "125px", objectFit: "cover" }}
+      />
       <div className="me-auto">
-        {item.name}
-        {quantity >= 1 && (
-          <span className="text-muted font-bold" style={{ fontSize: ".75rem" }}>
-            x {quantity}개
-          </span>
-        )}
-        <div className="text-muted" style={{ fontSize: ".9rem" }}>
+        <div>
+          {item.name}{" "}
+          {quantity > 1 && (
+            <span className="text-muted" style={{ fontSize: ".65rem" }}>
+              x{quantity}
+            </span>
+          )}
+        </div>
+        <div className="text-muted" style={{ fontSize: ".75rem" }}>
           {FormatCurrency(item.price)}
         </div>
-        <div>{FormatCurrency(item.price * quantity)}</div>
-        <button
-          className="btn btn--danger mini text-ms"
-          onClick={() => removeFromCart(id)}
-        >
-          &times;
-        </button>
       </div>
-      <style>{`
-      .cart-item__img {
-        width: 200px;
-        aspect-ratio: 1/1;
-        object-fit: cover;
-
-      }
-      `}</style>
+      <div> {FormatCurrency(item.price * quantity)}</div>
+      <Button
+        variant="outline-danger"
+        size="sm"
+        onClick={() => removeFromCart(item.id)}
+      >
+        &times;
+      </Button>
     </Stack>
   )
-  //   return (
-  //     <li className="flex justify-between my-2 items-center">
-  //       <img
-  //         src={image}
-  //         alt={title}
-  //         className="w-24 md:w-48 lg:w-96 rounded-lg"
-  //       />
-  //       <div className="flex flex-1 justify-between ">
-  //         <div className="basis-3/5">
-  //           <p className="basis-3/5">{title}</p>
-  //           <p className="text-xl font-bold text-brand">{option}</p>
-  //           <p>{FormatCurrency(price)}</p>
-  //         </div>
-  //         <div className="text-2xl flex items-center">
-  //           <AiOutlineMinusSquare onClick={handleMinus} className={ICON_BOX} />
-  //           <span>{quantity}</span>
-  //           <AiOutlinePlusSquare onClick={handlePlus} className={ICON_BOX} />
-  //           <RiDeleteBin5Fill onClick={handleDelete} className={ICON_BOX} />
-  //         </div>
-  //       </div>
-  //     </li>
-  //   )
 }
+//   return (
+//     <li className="flex justify-between my-2 items-center">
+//       <img
+//         src={image}
+//         alt={title}
+//         className="w-24 md:w-48 lg:w-96 rounded-lg"
+//       />
+//       <div className="flex flex-1 justify-between ">
+//         <div className="basis-3/5">
+//           <p className="basis-3/5">{title}</p>
+//           <p className="text-xl font-bold text-brand">{option}</p>
+//           <p>{FormatCurrency(price)}</p>
+//         </div>
+//         <div className="text-2xl flex items-center">
+//           <AiOutlineMinusSquare onClick={handleMinus} className={ICON_BOX} />
+//           <span>{quantity}</span>
+//           <AiOutlinePlusSquare onClick={handlePlus} className={ICON_BOX} />
+//           <RiDeleteBin5Fill onClick={handleDelete} className={ICON_BOX} />
+//         </div>
+//       </div>
+//     </li>
+//   )
