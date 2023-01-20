@@ -53,7 +53,7 @@ const router = createBrowserRouter([
           // </ProtectedRoute>
         ),
       },
-      { path: "/products/:id", element: <JapitemDetail /> },
+      { path: "/japitems/:id", element: <JapitemDetail /> },
       // { path: "/japitems/:id", element: <JapitemDetail /> },
       {
         path: "/carts",

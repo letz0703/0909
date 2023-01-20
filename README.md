@@ -1,4 +1,4 @@
-TODO: detail 연결
+TODO: Nav
 
 # http://icanmart.netlify.com/
 
