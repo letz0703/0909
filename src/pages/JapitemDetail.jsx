@@ -7,7 +7,7 @@ import FormatCurrency from "../util/formatCurrency"
 export default function JapitemDetail() {
   const {
     state: {
-      japitem: { id, code, name, price, imgUrl, description },
+      japitem: { id, code, name, price, imgUrl, description, homeUrl },
     },
   } = useLocation()
 
@@ -22,6 +22,7 @@ export default function JapitemDetail() {
         <span className="ml-2 text-red-500 font-bold">
           {FormatCurrency(price)}
         </span>
+        <div>{homeUrl?.homeUrl || null}</div>
         <button
           className="btn btn--primary mini"
           onClick={() => increaseCartQuantity(id)}

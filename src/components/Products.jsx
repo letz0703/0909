@@ -25,7 +25,7 @@ export default function Products() {
         .map((japitem) => (
           <div key={uuidv4()}>
             <div
-              className="new-product__list place-content-center text-center card"
+              className="new-product__list place-content-center text-center card items-center pb-2"
               onClick={() => {
                 navigate(`/japitems/${japitem.id}`, { state: { japitem } })
               }}
@@ -49,6 +49,7 @@ export default function Products() {
           }
           .new-product__list-image{
             width: 10rem;
+            margin-top: .9rem;
             cursor: pointer;
           }
           @media screen and (max-width: 700px){
