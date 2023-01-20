@@ -1,4 +1,4 @@
-import { Nav, Navbar as NavbarBs } from "react-bootstrap"
+import { Nav, Navbar as NavbarBs, Row } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import { BsFillPencilFill } from "react-icons/bs"
 import { login, logout, onUserStateChange } from "../api/firebase"
@@ -19,7 +19,7 @@ export default function Navbar({ search, setSearch }) {
     // <NavbarBs>
     <header
       sticky="top"
-      className="flex justify-between border-b border-gray-300 p-2
+      className="navbar__header flex justify-between border-b border-gray-300 p-2
       items-center
       "
     >
@@ -64,6 +64,11 @@ export default function Navbar({ search, setSearch }) {
           )}
         </div>
       </NavbarBs>
+      <style>{`
+      .navbar__header {
+        // background-color: red;
+      }
+      `}</style>
     </header>
   )
 }
