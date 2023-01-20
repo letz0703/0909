@@ -8,6 +8,7 @@ import { useJapitems } from "../hooks/use-japitems"
 import { useLocalStorage } from "../hooks/use-local-storage"
 import { addDoc, collection } from "firebase/firestore"
 import { db, auth } from "../api/firebase"
+import { v4 as uuidv4 } from "uuid"
 import { useAuthState } from "react-firebase-hooks/auth"
 // type PopCartProps = {
 //   isOpen: boolean
@@ -43,6 +44,8 @@ export function PopCart({ isOpen }) {
           {cartItems.map((item) => (
             <CartItem key={item.id} {...item} />
           ))}
+          <hr />
+          <div className="ms-auto font-bold text-2xl p-3">
             Total{" "}
             {FormatCurrency(
               cartItems.reduce((total, cartItem) => {
@@ -56,6 +59,7 @@ export function PopCart({ isOpen }) {
             주문하기
           </button>
         </Stack>
+        <Stack></Stack>
       </Offcanvas.Body>
     </Offcanvas>
   )
