@@ -10,6 +10,7 @@ import {
 import { getFirestore } from "firebase/firestore";
 import { getDatabase, ref, set, get, remove } from 'firebase/database'
 
+
 const {
   VITE_FIREBASE_API_KEY,
   VITE_FIREBASE_DOMAIN,
@@ -28,7 +29,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
-const auth = getAuth(app)
+export const auth = getAuth(app)
 const provider = new GoogleAuthProvider()
 export const database = getDatabase(app)
 export const db = getFirestore(app)
