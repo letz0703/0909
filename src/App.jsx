@@ -12,6 +12,7 @@ import { createContext } from "react"
 import { extraData } from "./data.js"
 import { collection, getDocs } from "firebase/firestore"
 import { db } from "./api/firebase"
+
 const queryClient = new QueryClient()
 export const JapitemContext = createContext()
 const LOCAL_STORAGE_KEY = "icanmart.japitems"

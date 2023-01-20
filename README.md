@@ -282,6 +282,8 @@ for slow site
 
 ## Tanstack Query
 
+> npm i @tanstack/react-query @tanstack/react-query-devtools
+
 ##### Timeout
 
 ```javascript
