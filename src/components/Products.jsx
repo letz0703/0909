@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom"
 import useProducts from "../hooks/use-products"
 import { useLocalStorage } from "../hooks/use-local-storage"
 import { useJapitems } from "../hooks/use-japitems"
+import { Row } from "react-bootstrap"
 
 export default function Products() {
   const { search } = useContext(SearchContext)
@@ -41,7 +42,7 @@ export default function Products() {
             <style>{`
           .shop-home{
             display: grid;
-            grid-template-columns: repeat(4, 12rem);
+            grid-template-columns: repeat(5, auto);
             border-bottom: 1px dashed black;
             padding: 2rem;
             cursor: pointer;
@@ -49,6 +50,11 @@ export default function Products() {
           .new-product__list-image{
             width: 10rem;
             cursor: pointer;
+          }
+          @media screen and (max-width: 700px){
+            .shop-home {
+              grid-template-columns: repeat(2, auto);
+            }
           }
 
           `}</style>
