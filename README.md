@@ -280,6 +280,8 @@ for slow site
 
 ### SSL OpenSSL
 
+## Tanstack Query
+
 ##### Timeout
 
 ```javascript
