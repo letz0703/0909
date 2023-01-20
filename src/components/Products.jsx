@@ -43,16 +43,15 @@ export default function Products() {
               <span>
                 <img src={japitem.imgUrl} className="new-product__list-image" />
               </span>
-              <button
-                className="btn btn--primary mini text-xs"
-                onClick={() => {
-                  increaseCartQuantity(japitem.id)
-                }}
-              >
-                담기
-              </button>
             </div>
-
+            <button
+              className="btn btn--primary mini text-xs"
+              onClick={() => {
+                increaseCartQuantity(japitem.id)
+              }}
+            >
+              담기
+            </button>
             <style>{`
           .shop-home{
             display: grid;

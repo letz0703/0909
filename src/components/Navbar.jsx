@@ -23,18 +23,30 @@ export default function Navbar({ search, setSearch }) {
       items-center
       "
     >
-      <Link to="/" className="flex items-center text-4xl text-brand">
-        <span
-          style={{
-            fontSize: "1.3rem",
-            paddingRight: ".1rem",
-            fontWeight: "bold",
-          }}
-        >
-          i.
-        </span>
-        <span style={{ fontSize: "1.5rem" }}>canmart</span>
-      </Link>
+      <div className="navbar__left gap-1 items-center">
+        <Link to="/" className="flex items-center text-4xl text-brand">
+          <span
+            style={{
+              fontSize: "1.3rem",
+              paddingRight: ".1rem",
+              fontWeight: "bold",
+            }}
+          >
+            i.
+          </span>
+          <span style={{ fontSize: "1.5rem" }}>canmart</span>
+        </Link>
+        {user && (
+          <Link to="/carts">
+            <CartStatus />
+          </Link>
+        )}
+        {user && user.isAdmin && (
+          <Link to="/products/new" className="2xl">
+            <BsFillPencilFill />
+          </Link>
+        )}
+      </div>
       <form>
         <input
           type="text"
@@ -52,21 +64,14 @@ export default function Navbar({ search, setSearch }) {
           {user && <User user={user} />}
           {!user && <Button text={"login"} onClick={login} />}
           {user && <Button text={"logout"} onClick={logout} />}
-          {user && user.isAdmin && (
-            <Link to="/products/new" className="2xl">
-              <BsFillPencilFill />
-            </Link>
-          )}
-          {user && (
-            <Link to="/carts">
-              <CartStatus />
-            </Link>
-          )}
         </div>
       </NavbarBs>
       <style>{`
       .navbar__header {
         // background-color: red;
+      }
+      .navbar__left {
+        display: flex;
       }
       `}</style>
     </header>

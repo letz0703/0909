@@ -5,7 +5,6 @@ export default function ShopHome() {
   return (
     <div>
       <Products />
-      {/* <Store /> */}
     </div>
   )
 }
