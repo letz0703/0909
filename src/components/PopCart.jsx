@@ -58,7 +58,6 @@ export function PopCart({ isOpen }) {
             주문하기
           </button>
         </Stack>
-        <Stack></Stack>
       </Offcanvas.Body>
     </Offcanvas>
   )
