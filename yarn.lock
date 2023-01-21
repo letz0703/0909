@@ -215,6 +215,11 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     "to-fast-properties" "^2.0.0"
 
+"@esbuild/darwin-arm64@0.16.17":
+  "integrity" "sha512-/2agbUEfmxWHi9ARTX6OQ/KgXnOWfsNlTeLcoV7HSuSTv63E4DqtAc+2XqGw1KHxKMHGZgbVCZge7HXWX9Vn+w=="
+  "resolved" "https://registry.npmjs.org/@esbuild/darwin-arm64/-/darwin-arm64-0.16.17.tgz"
+  "version" "0.16.17"
+
 "@eslint/eslintrc@^1.4.1":
   "integrity" "sha512-XXrH9Uarn0stsyldqDYq8r++mROmWRI1xKMXa640Bb//SY1+ECYX6VzT6Lcx5frD0V30XieqJ0oX9I2Xj5aoMA=="
   "resolved" "https://registry.npmjs.org/@eslint/eslintrc/-/eslintrc-1.4.1.tgz"
@@ -837,7 +842,7 @@
     "superjson" "^1.10.0"
     "use-sync-external-store" "^1.2.0"
 
-"@tanstack/react-query@^4.20.4", "@tanstack/react-query@4.22.0":
+"@tanstack/react-query@^4.22.0", "@tanstack/react-query@4.22.0":
   "integrity" "sha512-P9o+HjG42uB/xHR6dMsJaPhtZydSe4v0xdG5G/cEj1oHZAXelMlm67/rYJNQGKgBamKElKogj+HYGF+NY2yHYg=="
   "resolved" "https://registry.npmjs.org/@tanstack/react-query/-/react-query-4.22.0.tgz"
   "version" "4.22.0"
