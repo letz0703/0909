@@ -48,7 +48,7 @@ export default function Navbar({ search, setSearch }) {
 
       {/* <Link to="/videos"> */}
       <BsYoutube
-        className="fs-4"
+        className="navbar__youtube-icon fs-4"
         onClick={() => window.location.replace("/videos")}
       />
       {/* </Link> */}

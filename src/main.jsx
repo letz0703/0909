@@ -21,6 +21,7 @@ import "./css/app.css"
 import JapitemDetail from "./pages/JapitemDetail"
 import Store from "./pages/Store"
 import { PopCart } from "./components/PopCart"
+import MyOrders from "./pages/MyOrders-page"
 
 const router = createBrowserRouter([
   {
@@ -64,6 +65,7 @@ const router = createBrowserRouter([
         ),
       },
       { path: "/shop", element: <Store /> },
+      { path: "/my_orders", element: <MyOrders /> },
       { path: "/videos", element: <Videos /> },
       { path: "/videos/:keyword", element: <Videos /> },
       { path: "/videos/watch/:videoId", element: <VideoDetail /> },
