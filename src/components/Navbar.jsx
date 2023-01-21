@@ -68,7 +68,13 @@ export default function Navbar({ search, setSearch }) {
           <Link to="/shop">Store</Link>
           {user && <User user={user} />}
           {!user && <Button text={"login"} onClick={login} />}
-          {user && <Button text={"logout"} onClick={logout} />}
+          {user && (
+            <Button
+              text={"logout"}
+              onClick={logout}
+              style={{ point: "cursor" }}
+            />
+          )}
         </div>
         {user && (
           <Link to="/carts">

@@ -30,22 +30,25 @@ export default function SearchHeader() {
       <form onSubmit={handleSubmit} className="w-full flex justify-center">
         <input
           type="text"
-          placeholder="search..."
+          placeholder="   search..."
           value={text}
           onChange={(e) => {
             setText(e.target.value)
           }}
-          className="w-7/12 p-2 outline-none bg-black text-gray-50"
+          className="w-7/12 p-2 px-4 outline-none border-none fs-2 bg-red-50  text-black"
         />
-        <button className="bg-zinc-600 px-4">
+        <button className="bg-white px-4">
           <BsSearch />
         </button>
       </form>
-      <button onClick={showHistory} className="bg-red-700">
-        history
-      </button>
-      <button className="btn btn--primary mini" onClick={() => navigate("/")}>
+      <button
+        className="btn btn--primary mini"
+        onClick={() => window.location.replace("https://wizbox.shop")}
+      >
         i.canmart
+      </button>
+      <button onClick={showHistory} className="btn btn--danger mini">
+        history
       </button>
     </header>
   )
