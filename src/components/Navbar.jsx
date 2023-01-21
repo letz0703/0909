@@ -56,8 +56,9 @@ export default function Navbar({ search, setSearch }) {
         <input
           type="text"
           onChange={(e) => setSearch(e.target.value)}
-          placeholder="search"
+          placeholder="🔎 search..."
           autoFocus
+          className="navbar__input text-center"
         />
       </form>
 
@@ -88,6 +89,10 @@ export default function Navbar({ search, setSearch }) {
       }
       .navbar__left {
         display: flex;
+      }
+      .navbar__input {
+        font-size: 2rem;
+        border-bottom: 1px dotted #C10002;
       }
       `}</style>
     </header>

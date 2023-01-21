@@ -109,7 +109,10 @@ code {
 
 input {
   padding: 0.5rem;
-  border-bottom: 0.1rem solid rgba(161, 24, 24, 0.87);
+  /* border-bottom: 0.1rem solid rgba(161, 24, 24, 0.87); */
+  /* background-color: var(--color-accent); */
+  /* color: #eee; */
+  outline: none;
 }
 
 #root {
