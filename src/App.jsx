@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { Container } from "react-bootstrap"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Routes, Route, Outlet } from "react-router-dom"
 import "./App.css"
 import Navbar from "./components/Navbar"
@@ -12,6 +12,12 @@ import { createContext } from "react"
 import { extraData } from "./data.js"
 import { collection, getDocs } from "firebase/firestore"
 import { db } from "./api/firebase"
+/**
+ * App2 imports
+ */
+import SearchHeader from "./components/SearchHeader/SearchHeader"
+import styles from "./App2.module.css"
+import { YoutubeApiProvider } from "./context/YoutubeApi"
 
 const queryClient = new QueryClient()
 export const JapitemContext = createContext()
@@ -54,6 +60,9 @@ function App() {
     }
     setJapitems([...japitems, newJapitem])
   }
+  useEffect(() => {
+    console.log("app1")
+  }, [location.href])
 
   function handleJapitemDelete(id) {
     setJapitems(japitems.filter((japitem) => japitem.id !== id))
@@ -64,25 +73,41 @@ function App() {
     handleJapitemDelete,
     japitems,
   }
-
-  return (
-    <SearchContext.Provider value={searchContextValue}>
-      <ShoppingCartProvider>
-        <Container>
+  if (location.pathname !== "/videos") {
+    return (
+      <>
+        <SearchContext.Provider value={searchContextValue}>
+          <ShoppingCartProvider>
+            <Container>
+              <QueryClientProvider client={queryClient}>
+                <AuthContextProvider>
+                  <JapitemContext.Provider value={japitemContextValue}>
+                    <Navbar setSearch={setSearch} search={search} />
+                    {/* <Navbar search={search} setSearch={setSearch} /> */}
+                    <Outlet japitems={japitems} />
+                  </JapitemContext.Provider>
+                </AuthContextProvider>
+              </QueryClientProvider>
+            </Container>
+          </ShoppingCartProvider>
+        </SearchContext.Provider>
+      </>
+    )
+  } else {
+    return (
+      <>
+        <SearchHeader />
+        <YoutubeApiProvider>
           <QueryClientProvider client={queryClient}>
-            <AuthContextProvider>
-              <JapitemContext.Provider value={japitemContextValue}>
-                <Navbar setSearch={setSearch} search={search} />
-                {/* <Navbar search={search} setSearch={setSearch} /> */}
-                <Outlet japitems={japitems} />
-              </JapitemContext.Provider>
-            </AuthContextProvider>
+            <Outlet />
           </QueryClientProvider>
-        </Container>
-      </ShoppingCartProvider>
-    </SearchContext.Provider>
-  )
+        </YoutubeApiProvider>
+      </>
+    )
+  }
 }
+
+export default App
 
 const sampleJapitems = [
   {
@@ -100,5 +125,3 @@ const sampleJapitems = [
     imgUrl: "/imgs/donjunpas156.jpg",
   },
 ]
-
-export default App

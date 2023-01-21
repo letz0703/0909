@@ -1,5 +1,5 @@
 import { Nav, Navbar as NavbarBs, Row } from "react-bootstrap"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { BsFillPencilFill } from "react-icons/bs"
 import { login, logout, onUserStateChange } from "../api/firebase"
 import Button from "./ui/button"
@@ -10,11 +10,13 @@ import { NavLink } from "react-router-dom"
 import { useShoppingCart } from "../context/ShoppingCartContext"
 import { JapitemContext } from "../App"
 import { useContext } from "react"
+import { BsYoutube, BsSearch } from "react-icons/bs"
 
 export default function Navbar({ search, setSearch }) {
   const { user, login, logout } = useAuthContext()
   const { openCart, cartQuantity } = useShoppingCart()
   const { handleJapitemSearch } = useContext(JapitemContext)
+  const navigate = useNavigate()
   return (
     // <NavbarBs>
     <header
@@ -43,6 +45,13 @@ export default function Navbar({ search, setSearch }) {
           <span style={{ fontSize: "1.5rem" }}>canmart</span>
         </Link>
       </div>
+
+      {/* <Link to="/videos"> */}
+      <BsYoutube
+        className="fs-4"
+        onClick={() => window.location.replace("/videos")}
+      />
+      {/* </Link> */}
       <form>
         <input
           type="text"
