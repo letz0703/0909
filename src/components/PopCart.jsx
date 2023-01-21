@@ -53,6 +53,7 @@ export function PopCart({ isOpen }) {
                 return total + (item?.price || 0) * cartItem.quantity
               }, 0)
             )}
+            <div>+ 기본택배 4,000원</div>
           </div>
           <button className="btn btn--primary" onClick={handleCart__Order}>
             주문하기
