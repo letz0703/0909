@@ -23,8 +23,12 @@ export default function Navbar({ search, setSearch }) {
       items-center
       "
     >
-      <div className="navbar__left gap-1 items-center">
-        <Link to="/" className="flex items-center text-4xl text-brand">
+      <div className="navbar__left gap-1 items-center text-brand">
+        {user && user.isAdmin ? (
+          <Link to="/products/new" className="2xl">
+            <BsFillPencilFill />
+          </Link>
+        ) : (
           <span
             style={{
               fontSize: "1.3rem",
@@ -34,13 +38,10 @@ export default function Navbar({ search, setSearch }) {
           >
             i.
           </span>
+        )}
+        <Link to="/" className="flex items-center text-4xl text-brand">
           <span style={{ fontSize: "1.5rem" }}>canmart</span>
         </Link>
-        {user && (
-          <Link to="/carts">
-            <CartStatus />
-          </Link>
-        )}
       </div>
       <form>
         <input
@@ -60,9 +61,9 @@ export default function Navbar({ search, setSearch }) {
           {!user && <Button text={"login"} onClick={login} />}
           {user && <Button text={"logout"} onClick={logout} />}
         </div>
-        {user && user.isAdmin && (
-          <Link to="/products/new" className="2xl">
-            <BsFillPencilFill />
+        {user && (
+          <Link to="/carts">
+            <CartStatus />
           </Link>
         )}
       </NavbarBs>
