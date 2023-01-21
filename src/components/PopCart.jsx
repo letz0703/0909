@@ -30,8 +30,7 @@ export function PopCart({ isOpen }) {
   }
   return (
     <Offcanvas
-      // show={isOpen} 2023.01.21/토
-      show={true}
+      show={isOpen}
       onHide={closeCart}
       placement="end"
       style={{ width: "40vw" }}

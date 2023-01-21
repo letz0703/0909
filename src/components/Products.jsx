@@ -65,12 +65,16 @@ export default function Products() {
             margin-top: .9rem;
             cursor: pointer;
           }
-          @media screen and (max-width: 700px){
+          @media screen and (max-width: 1000px){
             .shop-home {
               grid-template-columns: repeat(2, auto);
             }
           }
-
+          // @media screen and (max-width: 1000px){
+          //   .shop-home {
+          //     grid-template-columns: repeat(4, auto)
+          //   }
+          // }
           `}</style>
           </div>
         ))}
