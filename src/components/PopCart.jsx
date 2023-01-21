@@ -28,7 +28,7 @@ export function PopCart({ isOpen }) {
       orderDate: Date(),
     })
     setCartItems([])
-    window.location.replace("/my_order")
+    window.location.replace("/my_orders")
   }
   return (
     <Offcanvas
