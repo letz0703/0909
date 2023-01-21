@@ -41,11 +41,6 @@ export default function Navbar({ search, setSearch }) {
             <CartStatus />
           </Link>
         )}
-        {user && user.isAdmin && (
-          <Link to="/products/new" className="2xl">
-            <BsFillPencilFill />
-          </Link>
-        )}
       </div>
       <form>
         <input
@@ -65,6 +60,11 @@ export default function Navbar({ search, setSearch }) {
           {!user && <Button text={"login"} onClick={login} />}
           {user && <Button text={"logout"} onClick={logout} />}
         </div>
+        {user && user.isAdmin && (
+          <Link to="/products/new" className="2xl">
+            <BsFillPencilFill />
+          </Link>
+        )}
       </NavbarBs>
       <style>{`
       .navbar__header {
