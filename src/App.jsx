@@ -12,12 +12,11 @@ import { createContext } from "react"
 import { extraData } from "./data.js"
 import { collection, getDocs } from "firebase/firestore"
 import { db } from "./api/firebase"
-/**
- * App2 imports
- */
 import SearchHeader from "./components/SearchHeader/SearchHeader"
 import styles from "./App2.module.css"
 import { YoutubeApiProvider } from "./context/YoutubeApi"
+import { DetailContextProvider } from "./context/DetailContext"
+import Detail from "./components/Detail"
 
 const queryClient = new QueryClient()
 export const JapitemContext = createContext()
@@ -75,17 +74,19 @@ function App() {
       <>
         <SearchContext.Provider value={searchContextValue}>
           <ShoppingCartProvider>
-            <Container>
-              <QueryClientProvider client={queryClient}>
-                <AuthContextProvider>
-                  <JapitemContext.Provider value={japitemContextValue}>
-                    <Navbar setSearch={setSearch} search={search} />
-                    {/* <Navbar search={search} setSearch={setSearch} /> */}
-                    <Outlet japitems={japitems} />
-                  </JapitemContext.Provider>
-                </AuthContextProvider>
-              </QueryClientProvider>
-            </Container>
+            <DetailContextProvider>
+              <Container>
+                <QueryClientProvider client={queryClient}>
+                  <AuthContextProvider>
+                    <JapitemContext.Provider value={japitemContextValue}>
+                      <Navbar setSearch={setSearch} search={search} />
+                      {/* <Navbar search={search} setSearch={setSearch} /> */}
+                      <Outlet japitems={japitems} />
+                    </JapitemContext.Provider>
+                  </AuthContextProvider>
+                </QueryClientProvider>
+              </Container>
+            </DetailContextProvider>
           </ShoppingCartProvider>
         </SearchContext.Provider>
       </>

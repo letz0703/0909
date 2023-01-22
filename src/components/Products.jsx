@@ -9,8 +9,10 @@ import useProducts from "../hooks/use-products"
 import { useJapitems } from "../hooks/use-japitems"
 import { Row } from "react-bootstrap"
 import { useShoppingCart } from "../context/ShoppingCartContext"
+import { useDetail } from "../context/DetailContext"
 
 export default function Products() {
+  const { isOpen_Detail, open_Detail, close_Detail } = useDetail()
   const { search } = useContext(SearchContext)
   const [japitems, setJapitems] = useJapitems()
   const navigate = useNavigate()
@@ -20,6 +22,7 @@ export default function Products() {
     decreaseCartQuantity,
     removeFromCart,
   } = useShoppingCart()
+
   return (
     <div className="shop-home grid gap-2">
       {japitems
@@ -31,20 +34,17 @@ export default function Products() {
         .map((japitem) => (
           <div key={uuidv4()}>
             <div
+              onClick={open_Detail}
               className="new-product__list place-content-center text-center card items-center pb-2"
-              onClick={() => {
-                // navigate(`/japitems/${japitem.id}`, { state: { japitem } })
-              }}
+              // onClick={() => {
+              // navigate(`/japitems/${japitem.id}`, { state: { japitem } })
+              // }}
             >
               <span>{japitem.name}</span>
               <span className="text-orange-500 font-bold">
                 {FormatCurrency(japitem.price)}
               </span>
-              <span
-                onClick={() => {
-                  console.log("hi")
-                }}
-              >
+              <span onClick={() => {}}>
                 <img src={japitem.imgUrl} className="new-product__list-image" />
               </span>
             </div>
@@ -74,11 +74,6 @@ export default function Products() {
               grid-template-columns: repeat(2, auto);
             }
           }
-          // @media screen and (max-width: 1000px){
-          //   .shop-home {
-          //     grid-template-columns: repeat(4, auto)
-          //   }
-          // }
           `}</style>
           </div>
         ))}

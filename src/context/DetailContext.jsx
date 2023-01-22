@@ -10,21 +10,18 @@ export function useDetail() {
 export function DetailContextProvider({ children }) {
   // const [detailContext, setDetailContext] = useState(false)
   const [isOpen_Detail, setIsOpen_Detail] = useState(false)
-  // const toggleDetailContext = () => {
-  // setDetailContext((prev) => !prev)
-  // }
 
-  const openDetail = () => setIsOpen_Detail(true)
-  const closeDetail = () => setIsOpen_Detail(false)
+  const open_Detail = () => setIsOpen_Detail(true)
+  const close_Detail = () => setIsOpen_Detail(false)
 
-  const DetailContextValue = { isOpen_Detail, openDetail, closeDetail }
+  const DetailContextValue = { isOpen_Detail, open_Detail, close_Detail }
   // const DetailContextValue = { detailContext, toggleDetailContext }
 
   return (
-    <DetailContextContext.Provider value={DetailContextValue}>
+    <DetailContext.Provider value={DetailContextValue}>
       {children}
-      <Detail isOpen_Detail={true} />
-    </DetailContextContext.Provider>
+      <Detail />
+    </DetailContext.Provider>
   )
 }
 
