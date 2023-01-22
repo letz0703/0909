@@ -33,14 +33,18 @@ export default function Products() {
             <div
               className="new-product__list place-content-center text-center card items-center pb-2"
               onClick={() => {
-                navigate(`/japitems/${japitem.id}`, { state: { japitem } })
+                // navigate(`/japitems/${japitem.id}`, { state: { japitem } })
               }}
             >
               <span>{japitem.name}</span>
               <span className="text-orange-500 font-bold">
                 {FormatCurrency(japitem.price)}
               </span>
-              <span>
+              <span
+                onClick={() => {
+                  console.log("hi")
+                }}
+              >
                 <img src={japitem.imgUrl} className="new-product__list-image" />
               </span>
             </div>

@@ -1,4 +1,4 @@
-TODO: Nav
+🖥 WIP: Detail sliding
 
 # http://icanmart.netlify.com/
 
