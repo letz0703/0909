@@ -60,9 +60,6 @@ function App() {
     }
     setJapitems([...japitems, newJapitem])
   }
-  useEffect(() => {
-    console.log("app1")
-  }, [location.href])
 
   function handleJapitemDelete(id) {
     setJapitems(japitems.filter((japitem) => japitem.id !== id))
