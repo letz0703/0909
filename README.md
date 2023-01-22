@@ -1,4 +1,12 @@
-🖥 WIP: Detail sliding
+🖥 WIP...
+
+### My Orders
+
+<!-- HISTORY -->
+
+### Detail sliding
+
+2023.01.22/일 OK store open detail
 
 # http://icanmart.netlify.com/
 

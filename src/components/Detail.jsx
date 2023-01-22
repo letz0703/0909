@@ -9,7 +9,7 @@ export default function Detail() {
       <Offcanvas
         show={isOpen_Detail}
         onHide={close_Detail}
-        placement="top"
+        placement="bottom"
         className="Detail__Offcanvas"
       >
         <Offcanvas.Header closeButton>
