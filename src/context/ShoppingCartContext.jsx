@@ -13,8 +13,8 @@ export function useShoppingCart() {
 export function ShoppingCartProvider({ children }) {
   const navigate = useNavigate()
   const [cartItems, setCartItems] = useLocalStorage("ic-cart", [])
-  const [isOpen] = usePop(false)
-  // const [isOpen, setIsOpen] = useState(false)
+  // const [isOpen] = usePop(false)
+  const [isOpen, setIsOpen] = useState(false)
   // console.log(cartItems)
   const cartQuantity = cartItems.reduce(
     (quantity, item) => item.quantity + quantity,
@@ -83,8 +83,8 @@ export function ShoppingCartProvider({ children }) {
   return (
     <ShoppingCartContext.Provider value={shoppingCartContextValue}>
       {children}
-      <PopCart />
-      {/*<PopCart isOpen={isOpen} cartItems={cartItems} />*/}
+      {/* <PopCart /> */}
+      <PopCart isOpen={isOpen} cartItems={cartItems} />
     </ShoppingCartContext.Provider>
   )
 }
