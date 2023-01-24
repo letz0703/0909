@@ -17,6 +17,7 @@ import styles from "./App2.module.css"
 import { YoutubeApiProvider } from "./context/YoutubeApi"
 import { DetailContextProvider } from "./context/DetailContext"
 import Detail from "./components/Detail"
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 
 const queryClient = new QueryClient()
 export const JapitemContext = createContext()
@@ -82,6 +83,7 @@ function App() {
                       <Navbar setSearch={setSearch} search={search} />
                       {/* <Navbar search={search} setSearch={setSearch} /> */}
                       <Outlet japitems={japitems} />
+                      <ReactQueryDevtools />
                     </JapitemContext.Provider>
                   </AuthContextProvider>
                 </QueryClientProvider>

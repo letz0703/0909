@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react"
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
-import Wait from "../../util/wait"
+import Wait from "../../../util/wait"
 
 const POSTS = [
   { id: 1, title: "good1" },
