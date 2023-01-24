@@ -83,7 +83,7 @@ function App() {
                       <Navbar setSearch={setSearch} search={search} />
                       {/* <Navbar search={search} setSearch={setSearch} /> */}
                       <Outlet japitems={japitems} />
-                      <ReactQueryDevtools />
+                      {/* <ReactQueryDevtools /> */}
                     </JapitemContext.Provider>
                   </AuthContextProvider>
                 </QueryClientProvider>
