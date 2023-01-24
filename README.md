@@ -1,5 +1,9 @@
 🖥 WIP...
 
+## Slider
+
+https://youtu.be/SK9AlIbexOE?t=506 슬라이더 강의
+
 ### My Orders
 
 <!-- HISTORY -->
