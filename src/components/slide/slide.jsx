@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react"
-import ImageSlider from "../image-slider/image-slider"
+import ImageSlider from "./image-slider"
 export default function Slide() {
   const slides = [
     { url: "/imgs/price.jpg", title: "price" },
@@ -8,8 +8,9 @@ export default function Slide() {
   ]
 
   const containerStyle = {
-    width: "500px",
-    height: "280px",
+    width: "100vw",
+    aspectRatio: "16/9",
+    objectFit: "cover",
     margin: "0 auto",
     // backgroundColor: "gray",
   }
