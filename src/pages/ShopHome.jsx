@@ -5,10 +5,18 @@ import Store from "./Store"
 
 export default function ShopHome() {
   return (
-    <div>
+    <div className="shopHome">
       <Products />
-      <Slide />
+      <Slide className="shopHome__slide" />
       {/* <JorderQuery /> */}
+      <style>{`
+        .shopHome{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+      `}</style>
     </div>
   )
 }

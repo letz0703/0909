@@ -8,18 +8,22 @@ export default function Slide() {
   ]
 
   const containerStyle = {
-    width: "93vw",
-    aspectRatio: "16/9",
+    width: "70vw",
     objectFit: "cover",
-    margin: "0 auto",
-    padding: "1rem",
+    padding: "0.6rem",
+    aspectRatio: "16/9",
   }
 
   return (
     <>
-      <div style={containerStyle}>
+      <div style={containerStyle} className="slide">
         <ImageSlider slides={slides} />
       </div>
+      <style>{`
+         .slide{
+          width: 100%;
+        }
+      `}</style>
     </>
   )
 }
