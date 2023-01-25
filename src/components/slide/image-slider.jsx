@@ -1,8 +1,4 @@
 import { useState, useEffect, useRef } from "react"
-import {
-  BsFillArrowLeftCircleFill,
-  BsFillArrowRightCircleFill,
-} from "react-icons/Bs"
 
 function ImageSlider({ slides }) {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -32,6 +28,10 @@ function ImageSlider({ slides }) {
     const newIndex = isLastSlide ? 0 : currentIndex + 1
     setCurrentIndex(newIndex)
   }
+
+  const goToSlide = (slideIndex) => {
+    setCurrentIndex(slideIndex)
+  }
   return (
     <>
       <div className="h-100 relative">
@@ -43,6 +43,18 @@ function ImageSlider({ slides }) {
         <div className="arrow arrow-right" onClick={goToNext}>
           {/* {<BsFillArrowRightCircleFill />} */}
           <img src="/imgs/right.svg" />
+        </div>
+        <div className="dots-container flex flex-row justify-center">
+          {slides.map((slide, slideIndex) => (
+            <span
+              key={slideIndex}
+              className="dots"
+              onClick={() => goToSlide(slideIndex)}
+            >
+              <button className="btn  mini">{slide.title}</button>
+              {/* <img src="/imgs/circle.svg" className="w-20 px-3" /> */}
+            </span>
+          ))}
         </div>
       </div>
       <style>{`
@@ -61,6 +73,13 @@ function ImageSlider({ slides }) {
         .arrow-right{
           right: 32px;
         }
+      }
+      .dots {
+        left:0;
+        margin: 0 3px;
+        cursor: pointer;
+        font-size: 20px;
+        width: 3rem;
       }
       `}</style>
     </>
