@@ -51,7 +51,7 @@ function ImageSlider({ slides }) {
               className="dots"
               onClick={() => goToSlide(slideIndex)}
             >
-              <button className="btn  mini">{slide.title}</button>
+              <button className="btn btn--primary mini">{slide.title}</button>
               {/* <img src="/imgs/circle.svg" className="w-20 px-3" /> */}
             </span>
           ))}

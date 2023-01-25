@@ -6,9 +6,9 @@ import Store from "./Store"
 export default function ShopHome() {
   return (
     <div>
+      <Products />
       <Slide />
       {/* <JorderQuery /> */}
-      {/* <Products /> */}
     </div>
   )
 }
