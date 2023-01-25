@@ -20,14 +20,29 @@ function ImageSlider({ slides }) {
     backgroundSize: "cover",
     backgroundImage: `url(${slides[currentIndex].url})`,
   }
+
+  const goToPrevious = () => {
+    const isFirstSlide = currentIndex === 0
+    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1
+    setCurrentIndex(newIndex)
+  }
+
+  const goToNext = () => {
+    const isLastSlide = currentIndex === slides.length - 1
+    const newIndex = isLastSlide ? 0 : currentIndex + 1
+    setCurrentIndex(newIndex)
+  }
   return (
     <>
-      <h1>ImageSlider</h1>
       <div className="h-100 relative">
-        <div className="arrow arrow-left">{<BsFillArrowLeftCircleFill />}</div>
+        {/* <div className="arrow arrow-left">{<BsFillArrowLeftCircleFill />}</div> */}
+        <div className="arrow arrow-left" onClick={goToPrevious}>
+          <img src="/imgs/left.svg" />
+        </div>
         <div style={sliderStyles}></div>
-        <div className="arrow arrow-right">
-          {<BsFillArrowRightCircleFill />}
+        <div className="arrow arrow-right" onClick={goToNext}>
+          {/* {<BsFillArrowRightCircleFill />} */}
+          <img src="/imgs/right.svg" />
         </div>
       </div>
       <style>{`
@@ -35,7 +50,6 @@ function ImageSlider({ slides }) {
         position: absolute;
         font-size: 45px;
         transform: translate(0, 50%);
-        color: white;
         transform: translate(0, 50%);
         top: 50%;
         cursor: pointer;
