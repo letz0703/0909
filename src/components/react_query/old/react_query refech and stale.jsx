@@ -1,7 +1,6 @@
 import { useState } from "react"
-import Post from "./Post"
-import PostList1 from "./post-list-1"
-import PostList2 from "./post-list-2"
+import PostList1 from "../post-list-1"
+import PostList2 from "../post-list-2"
 
 export default function ReactQuery() {
   const [currentPage, setCurrentPage] = useState(<PostList1 />)
@@ -10,9 +9,6 @@ export default function ReactQuery() {
     <div>
       <button onClick={() => setCurrentPage(<PostList1 />)}>Post List 1</button>
       <button onClick={() => setCurrentPage(<PostList2 />)}>Post List 2</button>
-      <button onClick={() => setCurrentPage(<Post id={1} />)}>
-        First Post
-      </button>
       <br />
       {currentPage}
     </div>
