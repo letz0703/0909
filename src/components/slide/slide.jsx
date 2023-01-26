@@ -20,7 +20,7 @@ export default function Slide() {
         <ImageSlider slides={slides} />
       </div>
       <style>{`
-         .slide{
+        .slide{
           width: 100%;
         }
       `}</style>

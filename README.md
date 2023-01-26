@@ -177,6 +177,10 @@ https://github.com/letz0703/0909/commit/861381b9bbaa02838322fde7eeb66be99247ca49
 https://bit.ly/3V7hFoT
 admins {"0":"uid"}
 
+# Storage
+DB 선택 : https://firebase.google.com/docs/database/rtdb-vs-firestore?hl=ko
+FB vs Realtime
+
 ### show-Icons - only for Admin
 
 ```js
