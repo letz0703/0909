@@ -16,9 +16,9 @@ export default function CreatePost() {
     },
     // mutationFn: (variables) => createPost(variables),
     /**keys for useMutation
-     onSuccess:(data, varialbes, context)
-     onError:(error, varialbes, context)
-     onSettled: (data, error, variables, context)
+    onSuccess:(data, varialbes, context)
+    onError:(error, varialbes, context)
+    onSettled: (data, error, variables, context)
     onMutate: (variables) //← called before mutationFn
 
      */
