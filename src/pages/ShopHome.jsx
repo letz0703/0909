@@ -8,6 +8,7 @@ export default function ShopHome() {
   return (
     <div className="shopHome">
       <Products />
+      <Slide />
       <style>{`
         .shopHome{
           display: flex;

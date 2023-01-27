@@ -12,7 +12,7 @@ export default function SearchInput({ setSearch }) {
             className={` ${styles.input}`}
             placeholder="search..."
             aria-label="search"
-            // autoFocus
+            autoFocus
             onChange={(e) => setSearch(e.target.value)}
           />
           <button aria-label="submit" className={styles.submit}>

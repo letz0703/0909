@@ -34,7 +34,7 @@
 }
 .content {
   // background: white;
-  width: 500px;
+  min-width: 270px;
   // padding: 3rem;
   // box-shadow: 0 0 3em rgba(0, 0, 0, 0.15);
   position: relative;
@@ -48,7 +48,7 @@
   height: var(--size);
   // border-radius: 500px;
   // width: calc(var(--size) * 5);
-  width: 40%;
+  width: 70%;
   position: relative;
   &:focus-within {
     width: 500px;

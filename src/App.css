@@ -19,7 +19,7 @@ body {
 }
 
 #root {
-  /* max-width: 1280px; */
+  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -31,6 +31,7 @@ body {
   will-change: filter;
   pointer-events: none;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
