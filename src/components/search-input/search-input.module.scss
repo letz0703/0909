@@ -34,7 +34,7 @@
 }
 .content {
   // background: white;
-  min-width: 80vw;
+  width: 500px;
   // padding: 3rem;
   // box-shadow: 0 0 3em rgba(0, 0, 0, 0.15);
   position: relative;
@@ -51,9 +51,10 @@
   width: 40%;
   position: relative;
   &:focus-within {
-    max-width: 50%;
+    width: 500px;
     input {
       cursor: initial;
+      opacity: 1;
     }
     searchBar > .search_icon {
       color: red;
