@@ -11,7 +11,7 @@ export default function Post({ id }) {
   })
   const userQuery = useQuery({
     queryKey: ["users", postQuery?.data?.userId],
-    enabled: postQuery?.data?.userId != null, // enable query when
+    enabled: postQuery?.data?.userId != null, // enable query only when you want them
     queryFn: () => getUser(postQuery.data.userId),
   })
   if (postQuery.status === "loading") return <h1>Loading...</h1>
