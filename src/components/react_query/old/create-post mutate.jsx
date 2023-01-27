@@ -1,6 +1,6 @@
 import { useMutation } from "@tanstack/react-query"
 import { useRef } from "react"
-import { createPost } from "../../api/posts"
+import { createPost } from "../../../api/posts"
 
 export default function CreatePost() {
   const titleRef = useRef()
