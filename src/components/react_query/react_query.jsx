@@ -15,7 +15,9 @@ export default function ReactQuery() {
         First Post
       </button>
       <button
-        onClick={() => setCurrentPage(<CreatePost />)}
+        onClick={() =>
+          setCurrentPage(<CreatePost setCurrentPage={setCurrentPage} />)
+        }
         className="btn btn--primary"
       >
         create a POST

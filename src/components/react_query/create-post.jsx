@@ -1,16 +1,19 @@
 import { useMutation } from "@tanstack/react-query"
 import { useRef } from "react"
 import { createPost } from "../../api/posts"
+import Post from "./Post"
 
 /* TODO: render page after createPostMutation */
 
-export default function CreatePost({}) {
+export default function CreatePost({ setCurrentPage }) {
   const titleRef = useRef()
   const bodyRef = useRef()
 
   const createPostMutation = useMutation({
     mutationFn: createPost,
-    onSuccess: (data) => {},
+    onSuccess: (data) => {
+      setCurrentPage(<Post id={data.id} />)
+    },
   })
 
   const handleSubmit = (e) => {
@@ -23,7 +26,9 @@ export default function CreatePost({}) {
 
   return (
     <>
-      <div>{createPostMutation.isError && JSON.stringify(error)}</div>
+      <div>
+        {createPostMutation.isError && JSON.stringify(createPostMutation.error)}
+      </div>
       <h1>CreatePost</h1>
       <form onSubmit={handleSubmit}>
         <div className="create-post__title">
