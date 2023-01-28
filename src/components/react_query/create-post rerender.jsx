@@ -11,14 +11,10 @@ export default function CreatePost({ setCurrentPage }) {
   const createPostMutation = useMutation({
     mutationFn: createPost,
     onSuccess: (data) => {
-      /**
-       * ! manual cache update
-       * ? 포스트 작성 후 즉각 볼 수 있게
-       * * setQueryData([], data)
-       * 2023.01.28/토
-       */
-      queryClient.setQueryData(["posts", data.id], data)
       queryClient.invalidateQueries(["posts", { exact: true }])
+      /** TODO: 포스트 작성 결과 즉시 반영
+** queryClient.invalidateQueries(['posts', {exact:true}]) // posts로 시작되는 모든게 리렌더 되는 걸 방지
+render page after createPostMutation */
       setCurrentPage(<Post id={data.id} />)
     },
   })
