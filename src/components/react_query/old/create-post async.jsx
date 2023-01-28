@@ -1,17 +1,37 @@
 import { useMutation } from "@tanstack/react-query"
 import { useRef } from "react"
-import { createPost } from "../../api/posts"
+import { createPost } from "../../../api/posts"
 
-/* TODO: render page after createPostMutation */
-
-export default function CreatePost({}) {
+export default function CreatePost() {
   const titleRef = useRef()
   const bodyRef = useRef()
 
   const createPostMutation = useMutation({
     mutationFn: createPost,
-    onSuccess: (data) => {},
+    onSuccess: (data, variables, context) => {
+      console.log(context)
+    },
+    onMutate: (variables) => {
+      return { hi: "Bye" }
+    },
+    // mutationFn: (variables) => createPost(variables),
+    /**keys for useMutation
+    onSuccess:(data, varialbes, context)
+    onError:(error, varialbes, context)
+    onSettled: (data, error, variables, context)
+    onMutate: (variables) //← called before mutationFn
+
+     */
   })
+
+  /** mutation async
+   * createPostMutation.mutateAsync().then(() => {})
+   * */
+  /**
+   * ! createPostMutation.mutate() 에 직접 에러 처리
+   * ? onSuccess에서 하는 편이 낫다
+   * * createPostMuttion.mutate({},{onError})
+   */
 
   const handleSubmit = (e) => {
     e.preventDefault()
