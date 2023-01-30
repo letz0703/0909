@@ -1,52 +1,60 @@
-import { useState, useEffect, useRef } from "react"
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
-import Wait from "../../util/wait"
-
-const POSTS = [
-  { id: 1, title: "good1" },
-  { id: 2, title: "good2" },
-]
+import { useQueryClient } from "@tanstack/react-query"
+import { useState } from "react"
+import { getPost } from "../../api/posts"
+import { PostListInfinite } from "../../pages/PostListInfinite"
+import { PostListPaginated } from "../../pages/PostListPaginated"
+import CreatePost from "./create-post"
+import Post from "./Post"
+import PostList1 from "./post-list-1"
+import PostList2 from "./post-list-2"
 
 export default function ReactQuery() {
-  const queryClient = useQueryClient()
-
-  const postQuery = useQuery({
-    queryKey: ["posts"],
-    queryFn: () => Wait(1000).then(() => [...POSTS]),
-    /** simulate error ↓ */
-    // queryFn: () => Promise.reject("error message"),
-  })
-
-  const postMutation = useMutation({
-    mutationFn: async (title) => {
-      await Wait(1000)
-      return POSTS.push({ id: crypto.randomUUID(), title })
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries(["posts"])
-    },
-  })
-
-  if (postQuery.isLoading) return <h1>loading...</h1>
-  if (postQuery.isError) {
-    return <pre>{JSON.stringify(postQuery.error)}</pre>
+  const [currentPage, setCurrentPage] = useState(<PostList1 />)
+  const queryClien = useQueryClient()
+  function onHoverPostOneLink() {
+    queryClien.prefetchQuery({
+      queryKey: ["posts", 1],
+      queryFn: () => getPost(1),
+    })
   }
-
   return (
-    <>
-      <div>
-        {postQuery.data.map((post) => (
-          <div key={post.id}>{post.title}</div>
-        ))}
-      </div>
+    <div>
+      <button onClick={() => setCurrentPage(<PostList1 />)}>Post List 1</button>
+      <button onClick={() => setCurrentPage(<PostList2 />)}>Post List 2</button>
       <button
-        disabled={postMutation.isLoading}
-        onClick={() => postMutation.mutate("new post")}
-        className="btn btn--primary mini"
+        onMouseEnter={onHoverPostOneLink} /**pre load post 1 */
+        onClick={() => setCurrentPage(<Post id={1} />)}
       >
-        Add New
+        First Post
       </button>
-    </>
+      <button
+        onClick={() =>
+          setCurrentPage(<CreatePost setCurrentPage={setCurrentPage} />)
+        }
+        className="btn btn--primary"
+      >
+        create a POST
+      </button>
+      <button onClick={() => setCurrentPage(<PostListPaginated />)}>
+        Post List Paginated
+      </button>
+      <button onClick={() => setCurrentPage(<PostListInfinite />)}>
+        Post List Paginated
+      </button>
+      <br />
+      {currentPage}
+    </div>
   )
+  /**
+   * ! fetch status
+   * * postQuery.fetchStatus === "paused" // idle, fetching
+   *https://youtu.be/r8Dg0KVnfMA?list=UULFFbNIlppjAuEX4znoulh0Cw&t=1260
+   */
+
+  /**
+   * ! stale time
+   * ? prevent instantly going back to stale state
+   *https://youtu.be/r8Dg0KVnfMA?list=UULFFbNIlppjAuEX4znoulh0Cw&t=1341
+   * *
+   */
 }
