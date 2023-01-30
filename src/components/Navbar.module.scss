@@ -8,15 +8,20 @@
 
 .icNavbar {
   display: grid;
-  grid-template-columns: 300px auto 1fr;
+  grid-template-columns: reapeat(3, 1fr);
   header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    min-width: 96vw;
+    min-width: 90vw;
   }
   padding-top: 2rem;
 }
+
+.icNavbar__center (
+  // background-color: red;
+  padding-bottom: 1rem;
+)
 
 .icNavbar___sec1 {
   display: flex;
