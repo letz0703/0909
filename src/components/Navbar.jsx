@@ -74,10 +74,15 @@ export default function Navbar({ search, setSearch }) {
             </div>
             {/* <Link to="/videos"> */}
           </section>
-          <section className="sec2">
-            <div className={`${styles.nav_center} navbar__search-input`}>
-              <SearchInput setSearch={setSearch} />
-              {/* <form>
+          {!window.location.href.includes("/jap") && (
+            <section className="sec2">
+              <div className={`${styles.nav_center} navbar__search-input`}>
+                <SearchInput setSearch={setSearch} />
+              </div>
+            </section>
+          )}
+
+          {/* <form>
         <input
           type="text"
           onChange={(e) => setSearch(e.target.value)}
@@ -86,8 +91,6 @@ export default function Navbar({ search, setSearch }) {
           className="navbar__input text-center"
         />
       </form> */}
-            </div>
-          </section>
 
           <section className="sec3">
             <div>
