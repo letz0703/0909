@@ -5,8 +5,10 @@ export default function PostList1() {
   const postQuery = useQuery({
     queryKey: ["posts"],
     queryFn: getPosts,
-    refetchInterval: 1000,
+    // refetchInterval: 1000,
     // staleTime: 1000,
+    // initialData: [{ id: 1, title: "Welcome to Icanmart" }],
+    placeHolderData: { id: 1, title: "Welcome to Icanmart" },
   })
 
   // const queries = useQueries({
