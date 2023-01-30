@@ -1,5 +1,5 @@
-import { useQuery } from "@tanstack/react-query"
-import { getPosts } from "../../api/posts"
+import { useQueries, useQuery } from "@tanstack/react-query"
+import { getPost, getPosts } from "../../api/posts"
 
 export default function PostList1() {
   const postQuery = useQuery({
@@ -8,6 +8,17 @@ export default function PostList1() {
     refetchInterval: 1000,
     // staleTime: 1000,
   })
+
+  // const queries = useQueries({
+  //   queries: (postQuery?.data ?? []).map((post) => {
+  //     return {
+  //       queryKey: ["posts", post.id],
+  //       queryFn: () => getPost(post.id),
+  //     }
+  //   }),
+  // })
+  // console.log(queries.map((q) => q.data))
+
   if (postQuery.status === "loading") return <h1>Loading...</h1>
   if (postQuery.status === "error") {
     return <h1>{JSON.stringify(postQuery.error)}</h1>
