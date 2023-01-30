@@ -4,6 +4,8 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"
 import { collection, getDoc, getDocs } from "firebase/firestore"
 import { db } from "../api/firebase"
 import Wait from "../util/wait"
+import ReactQuery from "../components/react_query/react_query"
+import SpecialsQuery from "../components/react_query/specials_query"
 
 const SPECIALS = [
   { id: 1, itemId: "2301-01", name: "JP-캬베진 300정", price: 10000, limit: 5 },
@@ -51,12 +53,15 @@ export default function Jap() {
     <div className="japMain">
       <h1>스페셜 공동구매</h1>
       <pre>1월의 공동구매 아이템: 캬베진 300정, 10,000원 </pre>
+      <SpecialsQuery />
       <div>
         {specialsQuery.data.map((order) => (
-          <div key={order.id}>itemId : {order.name}</div>
+          <>
+            <div key={order.id}>itemId : {order.name}</div>
+            <div>남은 고객수: {order.limit}명</div>
+          </>
         ))}
       </div>
-      <form></form>
       <button
         disabled={specialsMutation.isLoading}
         onClick={() => specialsMutation.mutate("New Order")}

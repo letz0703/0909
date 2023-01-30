@@ -8,7 +8,7 @@ import Post from "./Post"
 import PostList1 from "./post-list-1"
 import PostList2 from "./post-list-2"
 
-export default function ReactQuery() {
+export default function SpecialsQuery() {
   const [currentPage, setCurrentPage] = useState(<PostList1 />)
   const queryClien = useQueryClient()
   function onHoverPostOneLink() {
@@ -19,7 +19,10 @@ export default function ReactQuery() {
   }
   return (
     <div>
-      <button onClick={() => setCurrentPage(<PostList1 />)}>
+      <button
+        onClick={() => setCurrentPage(<PostList1 />)}
+        className="mr-2 bg-slate-300 p-2"
+      >
         공동구매 안내
       </button>
       <button onClick={() => setCurrentPage(<PostList2 />)}>Post List 2</button>
