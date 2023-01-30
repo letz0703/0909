@@ -20,7 +20,7 @@ export default function Navbar({ search, setSearch }) {
   const { handleJapitemSearch } = useContext(JapitemContext)
   const navigate = useNavigate()
   return (
-    <div className={styles.icNavbar}>
+    <div className={`${styles.icNavbar} ${styles.icNavbar__center}`}>
       <Row>
         <header sticky="top">
           <section className="icNavbar__sec1">
