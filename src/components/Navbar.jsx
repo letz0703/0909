@@ -59,7 +59,9 @@ export default function Navbar({ search, setSearch }) {
           // />
         )}
         {!user && (
-          <span onClick={login}>login</span>
+          <span onClick={login} className="btn btn--primary mini">
+            login
+          </span>
           // <button
           //   text={"로그인"}
           //   onClick={login}
