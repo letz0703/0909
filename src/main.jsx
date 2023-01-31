@@ -29,7 +29,7 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <NotFound />,
     children: [
-      { index: true, element: <ShopHome /> },
+      { index: true, path: "/", element: <ShopHome /> },
       {
         path: "/jap",
         element: <Jap />,

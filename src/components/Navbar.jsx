@@ -21,68 +21,68 @@ export default function Navbar({ search, setSearch }) {
   const navigate = useNavigate()
   return (
     <div className={`${styles.icNavbar} ${styles.icNavbar__center}`}>
-      <Row>
-        <header sticky="top">
-          <section className="icNavbar__sec1">
-            {/* <div className=" text-brand"> */}
-            <div className="flex items-center align-items-center">
-              <div>
-                {user && user.isAdmin ? (
-                  <Link to="/products/new" className="2xl">
-                    <BsFillPencilFill />
-                  </Link>
-                ) : (
-                  <span
-                    style={{
-                      fontSize: "1.3rem",
-                      paddingRight: ".1rem",
-                      fontWeight: "bold",
-                      color: "black",
-                    }}
-                  >
-                    i.
-                  </span>
-                )}
-              </div>
-              <div>
-                <Link to="/" className="flex items-center text-4xl">
-                  <span style={{ fontSize: "1.4rem", color: "black" }}>
-                    canmart
-                  </span>
-                </Link>
-              </div>
-              {user && (
-                <Button
-                  text={"logout"}
-                  onClick={logout}
-                  style={{ point: "cursor" }}
-                />
-              )}
-              {!user && <Button text={"login"} onClick={login} />}
-            </div>
-            {/* </div> */}
-
+      {/* <Row> */}
+      <header sticky="top">
+        <section className="icNavbar__sec1">
+          {/* <div className=" text-brand"> */}
+          <div className="flex items-center align-items-center">
             <div>
               {user && user.isAdmin ? (
-                <BsYoutube
-                  className="navbar__youtube-icon fs-4"
-                  onClick={() => window.location.replace("/videos")}
-                />
+                <Link to="/products/new" className="2xl">
+                  <BsFillPencilFill />
+                </Link>
               ) : (
-                ""
+                <span
+                  style={{
+                    fontSize: "1.3rem",
+                    paddingRight: ".1rem",
+                    fontWeight: "bold",
+                    color: "black",
+                  }}
+                >
+                  i.
+                </span>
               )}
             </div>
-            {/* <Link to="/videos"> */}
-          </section>
-          {!window.location.href.includes("/jap") && (
-            <section className="sec2">
-              <div className={`${styles.nav_center} navbar__search-input`}>
-                <SearchInput setSearch={setSearch} />
-              </div>
-            </section>
-          )}
+            <div>
+              <Link to="/" className="flex items-center text-4xl">
+                <span style={{ fontSize: "1.4rem", color: "black" }}>
+                  canmart
+                </span>
+              </Link>
+            </div>
+            {user && (
+              <Button
+                text={"logout"}
+                onClick={logout}
+                style={{ point: "cursor" }}
+              />
+            )}
+            {!user && <Button text={"login"} onClick={login} />}
+          </div>
+          {/* </div> */}
 
-          {/* <form>
+          <div>
+            {user && user.isAdmin ? (
+              <BsYoutube
+                className="navbar__youtube-icon fs-4"
+                onClick={() => window.location.replace("/videos")}
+              />
+            ) : (
+              ""
+            )}
+          </div>
+          {/* <Link to="/videos"> */}
+        </section>
+        {!window.location.href.includes("/jap") && (
+          <section className="sec2">
+            <div className={`${styles.nav_center} navbar__search-input`}>
+              <SearchInput setSearch={setSearch} />
+            </div>
+          </section>
+        )}
+
+        {/* <form>
         <input
           type="text"
           onChange={(e) => setSearch(e.target.value)}
@@ -92,33 +92,33 @@ export default function Navbar({ search, setSearch }) {
         />
       </form> */}
 
-          <section className="sec3">
-            <div>
-              <NavbarBs className="ic-navbar" sticky="top">
-                <div className="flex justify-center items-center gap-3 me-auto">
-                  <Link to="/can">Can</Link>
-                  <Link to="/jap">Jap</Link>
-                  <Link to="/shop">Store</Link>
-                  {user && <User user={user} />}
-                  {/* {!user && <Button text={"login"} onClick={login} />} */}
-                  {/* {user && (
+        <section className="sec3">
+          <div>
+            <NavbarBs className="ic-navbar" sticky="top">
+              <div className="flex justify-center items-center gap-3 me-auto">
+                {/* <Link to="/can">Can</Link> */}
+                <Link to="/jap">Jap</Link>
+                <Link to="/shop">Store</Link>
+                {user && <User user={user} />}
+                {/* {!user && <Button text={"login"} onClick={login} />} */}
+                {/* {user && (
                     <Button
                       text={"logout"}
                       onClick={logout}
                       style={{ point: "cursor" }}
                     />
                   )} */}
-                </div>
-                {user && (
-                  <Link to="/carts">
-                    <CartStatus />
-                  </Link>
-                )}
-              </NavbarBs>
-            </div>
-          </section>
+              </div>
+              {user && (
+                <Link to="/carts">
+                  <CartStatus />
+                </Link>
+              )}
+            </NavbarBs>
+          </div>
+        </section>
 
-          {/* <style>{`
+        {/* <style>{`
         .navbar {
           display: flex;
           justify-content: space-evenly;
@@ -135,8 +135,8 @@ export default function Navbar({ search, setSearch }) {
       }
 
       `}</style> */}
-        </header>
-      </Row>
+      </header>
+      {/* </Row> */}
     </div>
   )
 }

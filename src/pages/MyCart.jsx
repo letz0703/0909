@@ -7,7 +7,7 @@ import useCart from "../hooks/use-cart"
 import { useOrders } from "../hooks/useOrders"
 import { addNewOrder } from "../api/firebase"
 
-const SHIPPING = 3000
+const SHIPPING = 4000
 
 export default function MyCart(props) {
   console.log(props)
