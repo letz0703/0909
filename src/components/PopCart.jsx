@@ -34,8 +34,8 @@ export function PopCart({ isOpen }) {
     <Offcanvas
       show={isOpen}
       onHide={closeCart}
-      placement="end"
-      style={{ width: "40vw" }}
+      placement="top"
+      style={{ width: "100%", height: "80%" }}
     >
       <Offcanvas.Header closeButton>
         <Offcanvas.Title>Cart</Offcanvas.Title>
