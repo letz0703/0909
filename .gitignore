@@ -2,6 +2,9 @@
 /build
 
 # Logs
+old/
+/old
+old
 logs
 *.log
 npm-debug.log*

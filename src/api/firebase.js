@@ -24,7 +24,7 @@ const firebaseConfig = {
   authDomain: VITE_FIREBASE_DOMAIN,
   databaseURL: VITE_FIREBASE_DATABASE_URL,
   projectId: VITE_FIREBASE_PROJECTID,
-  storageBucket: VITE_FIREBASE_STORAGE_BUCKET
+  // storageBucket: VITE_FIREBASE_STORAGE_BUCKET
 }
 
 // Initialize Firebase

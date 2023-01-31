@@ -87,8 +87,7 @@ export default function Navbar({ search, setSearch }) {
           </div>
         </section>
       )}
-      {/* <section className="sec3"> */}
-      <nav className="flex item-center">
+      <nav className="flex item-center font-bold">
         <div className="flex justify-center items-center gap-3 me-auto">
           {/* <Link to="/can">Can</Link> */}
           <Link to="/jap">Jap</Link>
@@ -100,7 +99,6 @@ export default function Navbar({ search, setSearch }) {
           )}
         </div>
       </nav>
-      {/* </section> */}
     </header>
   )
 }
