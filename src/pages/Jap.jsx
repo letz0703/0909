@@ -51,9 +51,10 @@ export default function Jap() {
 
   return (
     <div className="japMain">
-      <h1>스페셜 공동구매</h1>
-      <pre>1월의 공동구매 아이템: 캬베진 300정, 10,000원 </pre>
-      <SpecialsQuery />
+      <div className="jap__primary-header">
+        <h1>스페셜 공동구매</h1>
+      </div>
+      {/* <SpecialsQuery /> */}
       <div>
         {specialsQuery.data.map((order) => (
           <>
@@ -70,9 +71,6 @@ export default function Jap() {
         Add New
       </button>
       <style>{`
-			.navbar__input, .navbar__youtube-icon{
-				display: none;
-			}
 		`}</style>
     </div>
   )

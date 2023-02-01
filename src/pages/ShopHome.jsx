@@ -7,16 +7,16 @@ import Store from "./Store"
 export default function ShopHome() {
   return (
     <div className="shopHome">
-      <Products />
       <Slide />
-      <style>{`
+      <Products />
+      {/* <style>{`
         .shopHome{
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
+          min-height: 100vh;
+          min-height: 100dvh;
+          display: grid;
+          grid-template-rows: auto 1fr auto;
         }
-      `}</style>
+      `}</style> */}
     </div>
   )
 }

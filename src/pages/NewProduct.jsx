@@ -57,45 +57,58 @@ export default function NewProduct() {
   }, [])
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="new-product__Main flex flex-col justify-center items-center">
       <form
-        className="flex flex-col justify-center text-center"
-        style={{ maxWidth: "300px" }}
+        className="new-product__form flex flex-col justify-center text-center gap-2 items-center pt-2"
+        style={{ margin: "0 auto", maxWidth: "300px" }}
       >
+        {/* <div className="new-product__form-group"> */}
+        {/* <label for="itemCode" className="new-product__form-label"> */}
+        {/* barcode */}
+        {/* </label> */}
         <input
+          id="itemCode"
           type="text"
           placeholder="아이템코드"
           onChange={(e) => setCode(e.target.value)}
+          className="bg-brand  p-3"
         />
+        {/* </div> */}
         <input
           type="text"
           placeholder="item name"
           onChange={(e) => setName(e.target.value)}
+          className="bg-brand p-3"
         />
         <input
           type="number"
           placeholder="price"
           onChange={(e) => setPrice(e.target.value)}
+          className="bg-brand p-3"
         />
         <input
-          type="text"
+          type="textarea"
           placeholder="description"
           onChange={(e) => setDescription(e.target.value)}
+          className="bg-brand p-3 new-product__form-group--full-width"
         />
         <input
           type="text"
           placeholder="imgUrl"
           onChange={(e) => setImgUrl(e.target.value)}
+          className="bg-brand p-3"
         />
         <input
           type="text"
           placeholder="homeUrl"
           onChange={(e) => setHomeUrl(e.target.value)}
+          className="bg-brand p-3"
         />
         <input
           type="number"
           placeholder="stock"
           step={5}
+          className="bg-brand p-3"
           onChange={(e) => setStock(e.target.value)}
         />
       </form>
@@ -144,6 +157,25 @@ export default function NewProduct() {
           </div>
 
           <style>{`
+          .new-product__Main {
+            display: grid;
+          }
+          .new-product__form-group{
+            display: grid;
+            gap: 0.3rem;
+          }
+          .new-product__form-group--full-width{
+            grid-column: 1/ -1;
+          }
+          .new-product__form {
+            display: grid;
+            gap: 1.25rem;
+          }
+          @media (min-width: 1024px) {
+            .new-product__form {
+              grid-template-columns: repeat(4, 1fr);
+            }
+          }
           .new-product__list{
             display: grid;
             grid-template-columns: repeat(4, 12rem);

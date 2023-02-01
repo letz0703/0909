@@ -34,7 +34,7 @@ function ImageSlider({ slides }) {
   }
   return (
     <>
-      <div className="h-100 relative">
+      <div className="image-slider__main h-100 relative">
         {/* <div className="arrow arrow-left">{<BsFillArrowLeftCircleFill />}</div> */}
         <div className="arrow arrow-left" onClick={goToPrevious}>
           <img src="/imgs/left.svg" />
@@ -58,6 +58,14 @@ function ImageSlider({ slides }) {
         </div>
       </div>
       <style>{`
+      .image-slider__main {
+        display: grid;
+        grid-template-areas: "stack"
+      }
+      .image-slider__main > *{
+        grid-area: stack;
+      }
+
       .arrow {
         position: absolute;
         font-size: 45px;
