@@ -81,7 +81,6 @@ function App() {
                   <AuthContextProvider>
                     <JapitemContext.Provider value={japitemContextValue}>
                       <Navbar setSearch={setSearch} search={search} />
-                      {/* <Navbar search={search} setSearch={setSearch} /> */}
                       <Outlet japitems={japitems} />
                       {/* <ReactQueryDevtools /> */}
                     </JapitemContext.Provider>

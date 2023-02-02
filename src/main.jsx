@@ -59,9 +59,9 @@ const router = createBrowserRouter([
       {
         path: "/carts",
         element: (
-          // <ProtectedRoute>
-          <PopCart />
-          // </ProtectedRoute>
+          <ProtectedRoute>
+            <PopCart />
+          </ProtectedRoute>
         ),
       },
       { path: "/shop", element: <Store /> },
