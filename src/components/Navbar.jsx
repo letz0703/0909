@@ -16,12 +16,14 @@ import SearchInput from "./search-input/search-input"
 import styles from "./Navbar.module.css"
 
 export default function Navbar({ search, setSearch }) {
-  const { user, login, logout } = useAuthContext()
+  const { user, setUser, login, logout, isAdmin, isCustom } = useAuthContext()
   const { openCart, cartQuantity } = useShoppingCart()
   const { handleJapitemSearch } = useContext(JapitemContext)
   const navigate = useNavigate()
+  console.log("hi", isCustom)
+
   return (
-    <header className=" flex border-b justify-between p-3">
+    <header className="flex border-b justify-between p-3">
       {/* <section className="icNavbar__sec1"> */}
       {/* <div className=" text-brand"> */}
       <div className="flex items-center align-items-center">

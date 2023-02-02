@@ -45,6 +45,9 @@ export function logout() {
 export function onUserStateChange(callback) {
   onAuthStateChanged(auth, async user => {
     const updatedUser = user ? await adminUser(user) : null
+    if (!user?.isAdmin && user?.customNumber) {
+      customUser(user)
+    }
     callback(updatedUser)
   })
 }
@@ -60,6 +63,25 @@ async function adminUser(user) {
       }
       return user
     })
+}
+
+// function addCustomNumber(num){
+//   const db_custom = getDatabase()
+//   set(ref(db_custom,`users/`+userId),{...user } )
+// }
+
+async function customUser(user){
+  return get(ref(database, "customs"))//
+  .then(snapshot => {
+    if(snapshot.exists()){
+      const customs = snapshot.val()
+      const isCustom = customs.includes(user.id)
+      return {...user, isCustom}
+    } else {
+      console.log('no data')
+    }
+    return user
+  })
 }
 
 export async function addNewProduct(product, image) {
