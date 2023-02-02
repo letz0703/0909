@@ -41,45 +41,41 @@ export default function Navbar({ search, setSearch }) {
             i.
           </span>
         )}
-        <div>
-          <Link to="/" className="flex items-center text-2xl">
-            canmart
-          </Link>
+        <div className="nav-bar__text-logo">
+          <div>
+            <Link to="/" className="flex items-center text-2xl">
+              canmart
+            </Link>
+          </div>
+
+          {user && <User user={user} />}
+          {user && (
+            <span
+              onClick={logout}
+              className="text-xs p-1 bg-black text-white cursor-pointer"
+            >
+              logout
+            </span>
+            // <Button
+            //   text={"logout"}
+            //   onClick={logout}
+            //   style={{ point: "cursor" }}
+            // />
+          )}
+          {!user && (
+            <span
+              onClick={login}
+              className="btn btn--primary mini cursor-pointer"
+            >
+              login
+            </span>
+            // <button
+            //   text={"로그인"}
+            //   onClick={login}
+            //   className="btn btn--primary mini"
+            // />
+          )}
         </div>
-
-        {user && <User user={user} />}
-        {user && (
-          <span onClick={logout} className="text-xs p-1 bg-black text-white">
-            logout
-          </span>
-          // <Button
-          //   text={"logout"}
-          //   onClick={logout}
-          //   style={{ point: "cursor" }}
-          // />
-        )}
-        {!user && (
-          <span onClick={login} className="btn btn--primary mini">
-            login
-          </span>
-          // <button
-          //   text={"로그인"}
-          //   onClick={login}
-          //   className="btn btn--primary mini"
-          // />
-        )}
-        {/* </div> */}
-
-        {/* <div> */}
-        {user && user.isAdmin ? (
-          <BsYoutube
-            className="navbar__youtube-icon fs-4 pl-2"
-            style={{ width: "100%", color: "red" }}
-            onClick={() => window.location.replace("/videos")}
-          />
-        ) : (
-          ""
-        )}
       </div>
       {/* </section> */}
       {!window.location.href.includes("/jap") && (
@@ -100,7 +96,29 @@ export default function Navbar({ search, setSearch }) {
             </Link>
           )}
         </div>
+        {user && user.isAdmin ? (
+          <BsYoutube
+            className="navbar__youtube-icon fs-4 "
+            style={{ width: "100%", color: "red" }}
+            onClick={() => window.location.replace("/videos")}
+          />
+        ) : (
+          ""
+        )}
       </nav>
+      <style>{`
+      .nav-bar__text-logo{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+      }
+      @media (width < 960px){
+        .nav-bar__text-logo{
+          display: none;
+        }
+      }
+      `}</style>
     </header>
   )
 }
