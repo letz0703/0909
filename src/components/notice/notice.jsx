@@ -4,17 +4,6 @@ import { useAuthContext } from "../../context/AuthContext"
 export default function Notice() {
   const [message, setMessage] = useState("")
   const noticeRef = useRef("")
-
-  async function addNewNotice(message) {
-    const id = crypto.randomUUID()
-    const rdb = getDatabase()
-    return set(ref(rdb, `notices/${id}`), {
-      ...message,
-      id,
-      message,
-    })
-  }
-
   // async function adminUser(user) {
   //   return get(ref(database, "admins")) //
   //   // return get(ref(db, "admins")) //
