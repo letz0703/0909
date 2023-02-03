@@ -6,6 +6,7 @@ import { db } from "../api/firebase"
 import Wait from "../util/wait"
 import ReactQuery from "../components/react_query/react_query"
 import SpecialsQuery from "../components/react_query/specials_query"
+import Notice from "../components/notice/notice"
 
 const SPECIALS = [
   { id: 1, itemId: "2301-01", name: "JP-캬베진 300정", price: 10000, limit: 5 },
@@ -54,13 +55,14 @@ export default function Jap() {
       <div className="jap__primary-header">
         <h1>스페셜 공동구매</h1>
       </div>
+      <Notice />
       {/* <SpecialsQuery /> */}
       <div>
         {specialsQuery.data.map((order) => (
-          <>
-            <div key={order.id}>itemId : {order.name}</div>
+          <div key={crypto.randomUUID()}>
+            <div>itemId : {order.name}</div>
             <div>남은 고객수: {order.limit}명</div>
-          </>
+          </div>
         ))}
       </div>
       <button

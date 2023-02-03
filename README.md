@@ -308,6 +308,15 @@ setTimeout(() => {
 }, 4000)
 ```
 
+# useRef
+
+component : Notice.jsx
+const nameRef = useRef('')
+
+useEffect = () => {
+nameRef.current.focus()
+,[]}
+
 # TOOLS
 
 - prettier : youtube: https://youtu.be/DqfQ4DPnRqI?t=246
