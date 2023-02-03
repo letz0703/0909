@@ -308,7 +308,7 @@ setTimeout(() => {
 }, 4000)
 ```
 
-# useRef
+# useRef : persist value between render
 
 component : Notice.jsx
 const nameRef = useRef('')
