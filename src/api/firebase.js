@@ -33,6 +33,7 @@ export const auth = getAuth(app)
 const provider = new GoogleAuthProvider()
 export const database = getDatabase(app)
 export const db = getFirestore(app)
+// export const userId = auth.currentUser?.uid
 
 export function login() {
   signInWithPopup(auth, provider).catch(console.error)

@@ -2,11 +2,12 @@ import React from "react"
 //import styles from './Jap-page.module.css'
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"
 import { collection, getDoc, getDocs } from "firebase/firestore"
-import { db } from "../api/firebase"
+import { db, database, auth } from "../api/firebase"
 import Wait from "../util/wait"
 import ReactQuery from "../components/react_query/react_query"
 import SpecialsQuery from "../components/react_query/specials_query"
 import Notice from "../components/notice/notice"
+import { useAuthContext } from "../context/AuthContext"
 
 const SPECIALS = [
   { id: 1, itemId: "2301-01", name: "JP-캬베진 300정", price: 10000, limit: 5 },
@@ -20,19 +21,15 @@ const SPECIALS = [
 ]
 
 export default function Jap() {
-  console.log(SPECIALS)
-
   const queryClient = useQueryClient()
-
   const specialsQuery = useQuery({
     queryKey: ["specials"],
-    queryFn: () => Wait(1000).then(() => [...SPECIALS]),
+    queryFn: () => Wait(300).then(() => [...SPECIALS]),
     // queryFn: () => Promise.reject("Error"),
   })
-
   const specialsMutation = useMutation({
     mutationFn: (itemId) =>
-      Wait(500).then(() =>
+      Wait(300).then(() =>
         SPECIALS.push({
           id: crypto.randomUUID(),
           itemId: Date(),
@@ -57,21 +54,21 @@ export default function Jap() {
       </div>
       <Notice />
       {/* <SpecialsQuery /> */}
-      <div>
+      {/* <div>
         {specialsQuery.data.map((order) => (
           <div key={crypto.randomUUID()}>
             <div>itemId : {order.name}</div>
             <div>남은 고객수: {order.limit}명</div>
           </div>
         ))}
-      </div>
-      <button
+      </div> */}
+      {/* <button
         disabled={specialsMutation.isLoading}
         onClick={() => specialsMutation.mutate("New Order")}
         className="btn btn--primary"
       >
         Add New
-      </button>
+      </button> */}
       <style>{`
 		`}</style>
     </div>
