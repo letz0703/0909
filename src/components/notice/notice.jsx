@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react"
-import { getDatabase, ref, set, get } from "firebase/database"
+import { getDatabase, ref, set, get, update, remove } from "firebase/database"
 // import { auth, database } from "../../api/firebase.js"
 
 import { useAuthContext } from "../../context/AuthContext"
@@ -34,8 +34,9 @@ export default function Notice() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    const { id } = e.target
     // setIsUploading(true)
-    const id = Date() + crypto.randomUUID()
+    // xxx case : const id = Date() + crypto.randomUUID()
     const rdb = getDatabase()
     set(ref(rdb, `notices/${id}`), {
       id,
@@ -48,19 +49,69 @@ export default function Notice() {
     setMessage(e.target.value)
   }
 
+  function handleCRUD(e) {
+    e.preventDefault()
+    const { id } = e.target
+    if (id === "btn_add") {
+      addMessage()
+    }
+  }
+
+  function getAllInputs() {
+    return [message]
+  }
+  const addMessage = () => {
+    const data = getAllInputs()
+    set(ref(database, `notices/${message}`), {
+      message: message,
+      date: Date(),
+    })
+      .then(() => alert("data added"))
+      .catch((error) => alert("error", error))
+  }
+
   return (
     <>
       <div className="notice__form">
         <form onSubmit={handleSubmit}>
+          <label htmlFor="message">message: </label>
           <input
             type="text"
+            id="message"
             name="message"
             value={message ?? ""}
             ref={noticeRef}
             className="bg-red-300 p-2"
             onChange={handleChange}
           />
-          <button className="btn btn--primary mini">write notice</button>
+          <button
+            id="btn_add"
+            className="btn btn--primary mini"
+            onClick={handleCRUD}
+          >
+            add
+          </button>
+          <button
+            id="btn_update"
+            className="btn btn--primary mini"
+            onClick={handleCRUD}
+          >
+            update
+          </button>
+          <button
+            id="btn_delete"
+            className="btn btn--primary mini"
+            onClick={handleCRUD}
+          >
+            delete
+          </button>
+          <button
+            id="btn_select"
+            className="btn btn--primary mini"
+            onClick={handleCRUD}
+          >
+            select
+          </button>
         </form>
       </div>
       <h1>Notice</h1>
