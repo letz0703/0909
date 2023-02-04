@@ -60,6 +60,7 @@ export default function Notice() {
   function getAllInputs() {
     return [message]
   }
+
   const addMessage = () => {
     const data = getAllInputs()
     set(ref(database, `notices/${message}`), {
@@ -67,6 +68,12 @@ export default function Notice() {
       date: Date(),
     })
       .then(() => alert("data added"))
+      .catch((error) => alert("error", error))
+  }
+  const deleteMessage = (msg) => {
+    // const message = getAllInputs().message
+    remove(ref(database, `notices/${msg}`))
+      .then(() => alert("data deleted"))
       .catch((error) => alert("error", error))
   }
 
@@ -118,7 +125,10 @@ export default function Notice() {
       <div className="notice__message">
         {noticeList &&
           noticeList.map((r) => (
-            <div key={crypto.randomUUID()}>{r.message}</div>
+            <>
+              <div key={crypto.randomUUID()}>{r.message}</div>
+              <button onClick={() => deleteMessage(r.message)}>remove</button>
+            </>
           ))}
       </div>
       {!user?.isAdmin && (
