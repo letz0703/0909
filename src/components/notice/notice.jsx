@@ -70,6 +70,15 @@ export default function Notice() {
       .then(() => alert("data added"))
       .catch((error) => alert("error", error))
   }
+  const updateMessage = () => {
+    const data = getAllInputs()
+    update(ref(database, `notices/${message}`), {
+      message: message,
+      date: Date(),
+    })
+      .then(() => alert("data updated"))
+      .catch((error) => alert("error", error))
+  }
   const deleteMessage = (msg) => {
     // const message = getAllInputs().message
     remove(ref(database, `notices/${msg}`))
@@ -92,7 +101,7 @@ export default function Notice() {
             onChange={handleChange}
           />
           <button
-            id="btn_add"
+            id="btn_update"
             className="btn btn--primary mini"
             onClick={handleCRUD}
           >
