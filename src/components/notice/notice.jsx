@@ -1,12 +1,23 @@
 import { useState, useEffect, useRef } from "react"
-import { getDatabase, ref, set, get, update, remove } from "firebase/database"
+import {
+  getDatabase,
+  ref,
+  set,
+  get,
+  update,
+  remove,
+  child,
+} from "firebase/database"
 // import { auth, database } from "../../api/firebase.js"
+import styles from "./notice.module.css"
 
 import { useAuthContext } from "../../context/AuthContext"
 import Wait from "../../util/wait.js"
 import { database } from "../../api/firebase"
 
 export default function Notice() {
+  const [state, setState] = useState({})
+  const [messageId, setMessageId] = useState("")
   const msgJan = "깡통 알림"
   const [message, setMessage] = useState("")
   const [noticeList, setNoticeList] = useState(() => {
@@ -59,7 +70,7 @@ export default function Notice() {
     } else if (id === "btn_delete") {
       deleteMessage()
     } else {
-      return
+      selectData()
     }
   }
 
@@ -70,7 +81,8 @@ export default function Notice() {
   const addMessage = () => {
     const data = getAllInputs()
     set(ref(database, `notices/${message}`), {
-      message: message,
+      messsageId: data.messageId,
+      message: data.message,
       date: Date(),
     })
       .then(() => alert("data added"))
@@ -92,19 +104,45 @@ export default function Notice() {
       .catch((error) => alert("error", error))
   }
 
+  const selectData = () => {
+    const message = getAllInputs().message
+    get(child(ref(database), `notices/${message}`)) //
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          setState({
+            message: snapshot.val().message,
+            messageId: snapshot.val().message ?? "",
+          })
+        } else {
+          alert("no data")
+        }
+      })
+      .catch((error) => alert(error))
+  }
+
   return (
-    <>
+    <div className={styles.noticeMain}>
       <div className="notice__form">
         <form onSubmit={handleSubmit}>
-          <label htmlFor="message">message: </label>
+          <label htmlFor="messageId">message id</label>
+          <input
+            type="text"
+            id="messageId"
+            value={state.messageId}
+            onChange={() => {
+              setState({ messageId: e.target.value })
+            }}
+            className={styles.notice__input}
+          />
+          <label htmlFor="message">message</label>
           <input
             type="text"
             id="message"
             name="message"
             value={message ?? ""}
             ref={noticeRef}
-            className="bg-red-300 p-2"
             onChange={handleChange}
+            className={styles.notice__input}
           />
           <button
             id="btn_update"
@@ -151,6 +189,6 @@ export default function Notice() {
         display:none;
       }`}</style>
       )}
-    </>
+    </div>
   )
 }
