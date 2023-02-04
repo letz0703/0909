@@ -54,6 +54,12 @@ export default function Notice() {
     const { id } = e.target
     if (id === "btn_add") {
       addMessage()
+    } else if (id === "btn_update") {
+      updateMessage()
+    } else if (id === "btn_delete") {
+      deleteMessage()
+    } else {
+      return
     }
   }
 
@@ -134,10 +140,10 @@ export default function Notice() {
       <div className="notice__message">
         {noticeList &&
           noticeList.map((r) => (
-            <>
-              <div key={crypto.randomUUID()}>{r.message}</div>
-              <button onClick={() => deleteMessage(r.message)}>remove</button>
-            </>
+            <div key={crypto.randomUUID()}>
+              <div>{r.message}</div>
+              <button onClick={() => deleteMessage(r.message)}>-</button>
+            </div>
           ))}
       </div>
       {!user?.isAdmin && (
