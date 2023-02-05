@@ -17,7 +17,7 @@ import { database } from "../../api/firebase"
 import RdCustomer from "../rd-customer/rd-customer"
 
 export default function Notice() {
-  const _notice = ""
+  let _notice = ""
   const [state, setState] = useState({})
   const [messageId, setMessageId] = useState("")
   const msgJan = "깡통 알림"

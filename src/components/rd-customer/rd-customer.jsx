@@ -1,9 +1,5 @@
 /**
- * 1 Make rd-customer database
- * 2 input for uid and cell and createdatabase,`customers/${data.uid}
-` * 3 read from database,`customers/${data.uid}` - customers
- * ! database,`customers/${data.uid}` add for customNo
- *
+ * ! React table
  */
 import { database } from "../../api/firebase"
 import { useState, useEffect, useRef } from "react"
@@ -142,13 +138,13 @@ export default function RdCustomer({ _notice }) {
           </button>
         )}
 
-        {/* <button
+        <button
           id="btnSelect"
           className="btn btn--primary mini"
           onClick={handleSubmit}
         >
           select
-        </button> */}
+        </button>
       </form>
     </div>
   )
