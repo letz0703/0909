@@ -18,27 +18,44 @@ import {
   child, //
 } from "firebase/database"
 export default function RdCustomer({ _notice }) {
+  const [state, setState] = useState(() => {
+    return {
+      uid: "",
+      cell: "",
+      customNo: "",
+    }
+  })
+
   const { user } = useAuthContext()
   const [customer, setCustomer] = useState([])
   const [cell, setCell] = useState("")
   const [customNo, setCustomNo] = useState("")
 
+  function getAllInputs() {
+    return {
+      uid: user?.uid,
+      cell: (state.cell && state.cell) || "",
+      name: user.displayName,
+      customNo: (state.customNo && state.customNo) || "",
+    }
+  }
   const create_rdb_customers = (e) => {
-    const collecionName = user.uid
+    const data = getAllInputs()
+
     !user
       ? alert("login!")
-      : set(ref(database, `customers/${user?.uid}`), {
+      : set(ref(database, `customers/${data.uid}`), {
           name: user.displayName,
           uid: user.uid,
-          cell: cell,
-          customNo: customNo,
+          cell: state.cell,
+          customNo: data.customNo,
         })
           .then(() => alert("data created"))
           .catch((error) => console.log(error))
   }
 
   const read_rdb_customer = () => {
-    get(child(ref(database), `customers/${user.uid}`)) //
+    get(child(ref(database), `customers/${user?.uid}`)) //
       .then((snapshot) => {
         if (snapshot.exists()) {
           setCustomer(snapshot.val())
@@ -59,45 +76,55 @@ export default function RdCustomer({ _notice }) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (e.target.id == "btn_createRDB-cell") {
+    const id = e.target.id
+    if (id == "btnCreate") {
       create_rdb_customers()
-    } else if (e.target.id == "btn_select") {
-      read_rdb_customer()
     }
+    // else if (id == "btnSelect") {
+    // read_rdb_customer()
+    // }
   }
+
   return (
     <div>
       <form>
-        <label htmlFor="cell">phone : </label>
+        {console.log(state)}
+        <label>phone : </label>
         <input
           type="text"
-          id="cell"
-          placeholder={customer.cell || ""}
+          id="userbox"
+          value={state.cell}
+          // value={state.cell ? state.cell : ""}
+          // placeholder={customer.cell || ""}
           // value={customer.cell || ""}
-          onChange={handleChange_cell}
+          onChange={(e) => {
+            setState({ cell: e.target.value })
+          }}
         />
-        <label htmlFor="customNo">개인통관 번호 : </label>
+        <br />
+        <br />
+        {/* <label htmlFor="customNo">개인통관 번호 : </label>
         <input
           type="text"
           id="customNo"
           placeholder={customer.customNo || ""}
           onChange={handleChange_customNo}
-        />
+        /> */}
         <button
-          id="btn_createRDB-cell"
+          id="btnCreate"
           type="submit"
           className="btn btn--primary"
           onClick={handleSubmit}
         >
           write
         </button>
-        <button
-          id="btn_select"
+        {/* <button
+          id="btnSelect"
           className="btn btn--primary mini"
           onClick={handleSubmit}
         >
           select
-        </button>
+        </button> */}
       </form>
     </div>
   )
