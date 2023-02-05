@@ -21,6 +21,7 @@ export default function RdCustomer({ _notice }) {
   const { user } = useAuthContext()
   const [customer, setCustomer] = useState([])
   const [cell, setCell] = useState("")
+  const [customNo, setCustomNo] = useState("")
 
   const create_rdb_customers = (e) => {
     const collecionName = user.uid
@@ -30,6 +31,7 @@ export default function RdCustomer({ _notice }) {
           name: user.displayName,
           uid: user.uid,
           cell: cell,
+          customNo: customNo,
         })
           .then(() => alert("data created"))
           .catch((error) => console.log(error))
@@ -51,6 +53,9 @@ export default function RdCustomer({ _notice }) {
   function handleChange_cell(e) {
     setCell(e.target.value)
   }
+  function handleChange_customNo(e) {
+    setCustomNo(e.target.value)
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -70,6 +75,13 @@ export default function RdCustomer({ _notice }) {
           placeholder={customer.cell || ""}
           // value={customer.cell || ""}
           onChange={handleChange_cell}
+        />
+        <label htmlFor="customNo">개인통관 번호 : </label>
+        <input
+          type="text"
+          id="customNo"
+          placeholder={customer.customNo || ""}
+          onChange={handleChange_customNo}
         />
         <button
           id="btn_createRDB-cell"
