@@ -14,8 +14,10 @@ import styles from "./notice.module.css"
 import { useAuthContext } from "../../context/AuthContext"
 import Wait from "../../util/wait.js"
 import { database } from "../../api/firebase"
+import RdCustomer from "../rd-customer/rd-customer"
 
 export default function Notice() {
+  const _notice = ""
   const [state, setState] = useState({})
   const [messageId, setMessageId] = useState("")
   const msgJan = "깡통 알림"
@@ -25,13 +27,28 @@ export default function Notice() {
       .then((result) => setNoticeList(result))
   })
   const noticeRef = useRef("")
-  const { user, uid } = useAuthContext()
+  const { user } = useAuthContext()
 
   async function getNotices() {
     return get(ref(database, "notices")).then((snapshot) => {
       const data = snapshot.exists() ? Object.values(snapshot.val()) : []
       return data
     })
+  }
+
+  const getAllIputs_customers = () => {
+    return [{ uid: user && user.uid }]
+  }
+
+  async function db_collection_Customers() {
+    const data = getAllInputs()
+    set(ref(database, `notices/${message}`), {
+      messsageId: data.messageId,
+      message: data.message,
+      date: Date(),
+    })
+      .then(() => alert("data added"))
+      .catch((error) => alert("error", error))
   }
 
   useEffect(() => {
@@ -122,6 +139,7 @@ export default function Notice() {
 
   return (
     <div className={styles.noticeMain}>
+      <RdCustomer _notice={_notice} />
       <div className="notice__form">
         <form onSubmit={handleSubmit}>
           <label htmlFor="messageId">message id</label>
