@@ -1,4 +1,7 @@
 🖥 WIP...
+thinkwise: https://web.thinkwise.co.kr/map/49720/41480
+firebase rdb : https://bit.ly/3jziZ7i
+ellie : https://academy.dream-coding.com/courses/player/react/lessons/1536 form 입력
 
 ## Slider
 
