@@ -1,7 +1,8 @@
 /**
  * 1 Make rd-customer database
  * 2 input for uid and cell and create rdb
- * ! 3 read from rdb - customers
+ * 3 read from rdb - customers
+ * ! rdb add for customNo
  *
  */
 import { database } from "../../api/firebase"
