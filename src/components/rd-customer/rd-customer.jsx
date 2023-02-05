@@ -67,7 +67,8 @@ export default function RdCustomer({ _notice }) {
         <input
           type="text"
           id="cell"
-          value={customer.cell || ""}
+          placeholder={customer.cell || ""}
+          // value={customer.cell || ""}
           onChange={handleChange_cell}
         />
         <button
