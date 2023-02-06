@@ -13,6 +13,7 @@ import {
 import FormatCurrency from "../util/formatCurrency"
 
 export default function NewProduct() {
+  const [product, setProduct] = useState({})
   const [code, setCode] = useState("")
   const [name, setName] = useState("")
   const [description, setDescription] = useState("")
@@ -24,6 +25,8 @@ export default function NewProduct() {
   const japitemRef = collection(db, "japitems") //customNo, userId
   const [japitems, setJapitems] = useState([])
 
+  const [file, setFile] = useState()
+
   const createJapitem = async () => {
     await addDoc(japitemRef, {
       code: code,
@@ -33,7 +36,25 @@ export default function NewProduct() {
       imgUrl: imgUrl,
       homeUrl: homeUrl,
       stock: stock,
+      file: file || "",
     })
+  }
+
+  function handleChange(e) {
+    const { name, id, value, files } = e.target
+    if (name === "file") {
+      // console.log(files[0])
+      setFile(files && files[0])
+      return
+    }
+    setProduct((product) => ({ ...product, [name]: value }))
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    /** cloudinary upload & and new product to FB */
+
+    return
   }
 
   const handleUpdateStock = async (id, stock) => {
@@ -61,6 +82,7 @@ export default function NewProduct() {
       <form
         className="new-product__form flex flex-col justify-center text-center gap-2 items-center pt-2"
         style={{ margin: "0 auto", maxWidth: "300px" }}
+        onSubmit={handleSubmit}
       >
         {/* <div className="new-product__form-group"> */}
         {/* <label for="itemCode" className="new-product__form-label"> */}
@@ -106,16 +128,41 @@ export default function NewProduct() {
         />
         <input
           type="number"
+          name="stock"
+          value={product.stock ?? Number(0)}
+          placeholder="product stock"
+          required
+          onChange={handleChange}
+        />
+        {/* <input
+          type="number"
           placeholder="stock"
           step={5}
           className="bg-brand p-3"
           onChange={(e) => setStock(e.target.value)}
+        /> */}
+        <input
+          type="file"
+          accept="image/*"
+          name="file"
+          placeholder=""
+          className="bg-brand p-3"
+          onChange={handleChange}
         />
       </form>
+
+      {file && (
+        <img
+          src={URL.createObjectURL(file)}
+          alt="local file"
+          style={{ maxWidth: "50vw", padding: "3em" }}
+        />
+      )}
       <button className="btn btn--primary" onClick={createJapitem}>
         아이템등록
       </button>
-      {japitems.map((japitem) => (
+
+      {/* {japitems.map((japitem) => (
         <div key={uuidv4()}>
           <div className="new-product__list place-content-center text-center">
             <span>code: {japitem.code}</span>
@@ -188,7 +235,7 @@ export default function NewProduct() {
 
           `}</style>
         </div>
-      ))}
+      ))} */}
     </div>
   )
 }

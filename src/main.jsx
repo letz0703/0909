@@ -49,9 +49,9 @@ const router = createBrowserRouter([
       {
         path: "/products/new",
         element: (
-          <ProtectedRoute requireAdmin>
-            <NewProduct />
-          </ProtectedRoute>
+          // <ProtectedRoute requireAdmin>
+          <NewProduct />
+          // </ProtectedRoute>
         ),
       },
       { path: "/japitems/:id", element: <JapitemDetail /> },
