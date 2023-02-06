@@ -138,13 +138,13 @@ export default function RdCustomer({ _notice }) {
           </button>
         )}
 
-        <button
+        {/* <button
           id="btnSelect"
           className="btn btn--primary mini"
           onClick={handleSubmit}
         >
           select
-        </button>
+        </button> */}
       </form>
     </div>
   )
