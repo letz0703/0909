@@ -1,6 +1,8 @@
 🖥 WIP...
 thinkwise: https://web.thinkwise.co.kr/map/49720/41480
 firebase rdb : https://bit.ly/3jziZ7i
+onenote(web): https://bit.ly/3wWYK6O
+
 ellie : 14.16 cloudinary image file to FB
 dones
 ⌣⌣⌣⌣
