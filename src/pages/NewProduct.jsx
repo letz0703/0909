@@ -12,6 +12,7 @@ import {
 } from "firebase/firestore"
 import FormatCurrency from "../util/formatCurrency"
 import { uploadImage } from "../api/uploader"
+import { useJapitems } from "../hooks/use-japitems"
 
 export default function NewProduct() {
   const [product, setProduct] = useState({})
@@ -24,9 +25,9 @@ export default function NewProduct() {
   const [stock, setStock] = useState(0)
   // const { user, uid } = useAuthContext()
   const japitemRef = collection(db, "japitems") //customNo, userId
-  const [japitems, setJapitems] = useState([])
+  // const [japitems, setJapitems] = useState([])
 
-  const [file, setFile] = useState()
+  const [japitems] = useJapitems()
 
   const createJapitem = async () => {
     await addDoc(japitemRef, {
@@ -37,25 +38,6 @@ export default function NewProduct() {
       imgUrl: imgUrl,
       homeUrl: homeUrl,
       stock: stock,
-      // file: file || "",
-    })
-  }
-
-  function handleChange(e) {
-    const { name, id, value, files } = e.target
-    if (name === "file") {
-      // console.log(files[0])
-      setFile(files && files[0])
-      return
-    }
-    setProduct((product) => ({ ...product, [name]: value }))
-  }
-
-  function handle_CloudinarySubmit(e) {
-    e.preventDefault()
-    /** cloudinary upload & and new product to FB */
-    uploadImage(file).then((url) => {
-      setFile(url)
     })
   }
 
@@ -71,20 +53,19 @@ export default function NewProduct() {
     await deleteDoc(japitemDoc)
   }
 
-  useEffect(() => {
-    const getJapitems = async () => {
-      const data = await getDocs(japitemRef)
-      setJapitems(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-    }
-    getJapitems()
-  }, [japitems])
+  // useEffect(() => {
+  //   const getJapitems = async () => {
+  //     const data = await getDocs(japitemRef)
+  //     setJapitems(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+  //   }
+  //   getJapitems()
+  // }, [])
 
   return (
     <div className="new-product__Main flex flex-col justify-center items-center">
       <form
         className="new-product__form flex flex-col justify-center text-center gap-2 items-center pt-2"
         style={{ margin: "0 auto", maxWidth: "300px" }}
-        onSubmit={handle_CloudinarySubmit}
       >
         {/* <div className="new-product__form-group"> */}
         {/* <label for="itemCode" className="new-product__form-label"> */}
@@ -134,7 +115,7 @@ export default function NewProduct() {
           value={product.stock ?? Number(0)}
           placeholder="product stock"
           required
-          onChange={handleChange}
+          onChange={handleUpdateStock}
         />
         {/* <input
           type="number"
@@ -145,33 +126,6 @@ export default function NewProduct() {
         /> */}
         <button className="btn btn--primary" onClick={createJapitem}>
           아이템등록
-        </button>
-      </form>
-      <form
-        className="new-product__form flex flex-col justify-center text-center gap-2 items-center pt-2"
-        style={{ margin: "0 auto", maxWidth: "300px" }}
-        onSubmit={handle_CloudinarySubmit}
-      >
-        <input
-          type="file"
-          accept="image/*"
-          name="file"
-          placeholder=""
-          className="bg-brand p-3"
-          onChange={handleChange}
-        />
-        {file && (
-          <>
-            <img
-              src={URL.createObjectURL(file)}
-              alt="local file"
-              style={{ maxWidth: "50vw", padding: "3em" }}
-            />
-          </>
-        )}
-
-        <button className="btn btn--primary" onClick={handle_CloudinarySubmit}>
-          cloudinary upload
         </button>
       </form>
 
