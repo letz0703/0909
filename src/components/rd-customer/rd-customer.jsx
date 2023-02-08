@@ -97,28 +97,32 @@ export default function RdCustomer({ _notice }) {
   }
 
   return (
-    <div>
-      <form>
-        <label>phone</label>
-        <input
-          type="text"
-          id="userbox"
-          value={state.cell}
-          onChange={(e) => {
-            setState({ ...state, cell: e.target.value })
-          }}
-          className="bg-slate-300"
-        />
-        <label>개인통관 번호</label>
-        <input
-          type="text"
-          id="userbox"
-          value={state.customNo}
-          onChange={(e) => {
-            setState({ ...state, customNo: e.target.value })
-          }}
-          className="bg-slate-300"
-        />
+    <div className="rdc">
+      <form className="rdc__form">
+        <div>
+          <label>phone</label>
+          <input
+            type="text"
+            id="userbox"
+            value={state.cell}
+            onChange={(e) => {
+              setState({ ...state, cell: e.target.value })
+            }}
+          />
+        </div>
+
+        <div>
+          <label>개인통관 번호</label>
+          <input
+            type="text"
+            id="userbox"
+            value={state.customNo}
+            onChange={(e) => {
+              setState({ ...state, customNo: e.target.value })
+            }}
+          />
+        </div>
+
         <button
           id="btnCreate"
           type="submit"

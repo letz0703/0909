@@ -148,5 +148,7 @@
       { "command": "type", "args": { "text": "cl" } },
       "insertSnippet"
     ]
-  }
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "emmet.showSuggestionsAsSnippets": true
 }
