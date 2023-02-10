@@ -49,15 +49,11 @@ export default function Jap() {
     return <pre>{JSON.stringify(specialsQuery.error)}</pre>
 
   return (
-    <div className="japMain">
+    <div className="japMain flex flex-col align-items-center">
       <div className="jap__primary-header">
         <h1>스페셜 공동구매</h1>
       </div>
-      <div className="jap__form09">
-        <Jap09Form />
-      </div>
-      {/* <Notice /> */}
-      {/* <SpecialsQuery /> */}
+      <Jap09Form />
       {/* <div>
         {specialsQuery.data.map((order) => (
           <div key={crypto.randomUUID()}>
@@ -73,8 +69,6 @@ export default function Jap() {
       >
         Add New
       </button> */}
-      <style>{`
-		`}</style>
     </div>
   )
 }

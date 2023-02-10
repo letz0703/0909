@@ -26,7 +26,6 @@ export function useMultiStepForm(steps) {
     return
   }
 
-  function name() {}
   return {
     currentStepIndex,
     step: steps[currentStepIndex],
