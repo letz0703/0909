@@ -8,7 +8,7 @@ import ReactQuery from "../components/react_query/react_query"
 import SpecialsQuery from "../components/react_query/specials_query"
 import Notice from "../components/notice/notice"
 import { useAuthContext } from "../context/AuthContext"
-import JapForm09 from "../components/jap-form09/jap-form09"
+import Jap09Form from "../components/jap09-form/jap09-form"
 
 const SPECIALS = [
   { id: 1, itemId: "2301-01", name: "JP-캬베진 300정", price: 10000, limit: 5 },
@@ -54,7 +54,7 @@ export default function Jap() {
         <h1>스페셜 공동구매</h1>
       </div>
       <div className="jap__form09">
-        <JapForm09 />
+        <Jap09Form />
       </div>
       {/* <Notice /> */}
       {/* <SpecialsQuery /> */}

@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react"
 import { useMultiStepForm } from "../../hooks/multi-step-form"
+import AddressForm from "./address-form"
+import SpecialSelected from "./special-selected"
+import UserForm from "./user-form"
 
-export default function JapForm09() {
-  let JapForm09 = "jap-form09.jsx"
-  const { steps, currentStepIndex, step, isFirstStep } = useMultiStepForm([
-    <div>One</div>,
-    <div>Two</div>,
-  ])
+export default function Jap09Form() {
+  const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
+    useMultiStepForm([<UserForm />, <AddressForm />, <SpecialSelected />])
 
   return (
     <>
@@ -15,15 +15,25 @@ export default function JapForm09() {
           {currentStepIndex + 1}/{steps.length}
         </div>
         {step}
-        <div className="text-2xl">일본 공동구매 동의서</div>
         <div className="buttons flex gap-0.5g flex-end justify-end">
           {!isFirstStep && (
             <div className="buttons">
-              <button>back</button>
+              <button onClick={back} className="btn btn--primary mini">
+                back
+              </button>
             </div>
           )}
-          <button className="btn btn--primary mini">next</button>
+          <button
+            type="button"
+            className="btn btn--primary mini"
+            onClick={next}
+          >
+            {!isLastStep ? "next" : "Finished"}
+          </button>
         </div>
+        {/* <UserForm /> */}
+        {/* <AddressForm />
+        <SpecialSelected /> */}
         <div>
           고객님의 개인통관 번호로 이달의 아이템이 함께 주문-통관 됩니다
         </div>
