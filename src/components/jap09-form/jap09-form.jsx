@@ -9,34 +9,36 @@ const INITIAL_DATA = {
   jName: "",
   jCell: "",
   jCsNo: "",
-  jProduct: "",
-  jDeleiveryTo: "",
-}
-
-function updateFields(fields) {
-  setData((prev) => {
-    return { ...prev, ...fields }
-  })
+  jProduct: "캬베진 300정 1만원",
+  jDeliveryTo: "",
+  jEtc: "",
 }
 
 export default function Jap09Form() {
   const [data, setData] = useState(INITIAL_DATA)
   const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
     useMultiStepForm([
-      <UserForm {...data} updateFiled={updateFields} />,
-      <AddressForm {...data} updateFiled={updateFields} />,
-      <SpecialSelected {...data} updateFiled={updateFields} />,
-      <CustomInfo {...data} updateFiled={updateFields} />,
+      <UserForm {...data} updateFields={updateFields} />,
+      <AddressForm {...data} updateFields={updateFields} />,
+      <SpecialSelected {...data} updateFields={updateFields} />,
+      <CustomInfo {...data} updateFields={updateFields} />,
     ])
+  function updateFields(fields) {
+    setData((prev) => {
+      return { ...prev, ...fields }
+    })
+  }
 
   function onSubmit(e) {
     e.preventDefault()
-    next()
+    if (!isLastStep) return next()
+    console.log(data)
+    alert("주문이 완료 되었습니다.")
   }
 
   return (
     <div className="jap09FormJSX">
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} style={{ maxWidth: "max-content" }}>
         <div style={{ position: "absolute", top: ".5rem", right: ".5rem" }}>
           {currentStepIndex + 1}/{steps.length}
         </div>

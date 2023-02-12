@@ -1,7 +1,12 @@
 import { useState, useEffect, useRef } from "react"
 // import { useAuthContext } from "../../context/AuthContext"
 import FormWrapper from "./form-wrapper"
-export default function AddressForm({ jProduct, jDeliveryTo, jEtc }) {
+export default function AddressForm({
+  jProduct,
+  jDeliveryTo,
+  jEtc,
+  updateFields,
+}) {
   let UserForm = "user-form.jsx"
   // const { user } = useAuthContext()
 
@@ -18,11 +23,12 @@ export default function AddressForm({ jProduct, jDeliveryTo, jEtc }) {
         <input
           type="text"
           autoFocus
+          value={jDeliveryTo}
           onChange={(e) => updateFields({ jDeliveryTo: e.target.value })}
         />
         <label>기타 요청사항</label>
         <input
-          type="textarea"
+          type="text"
           value={jEtc}
           onChange={(e) => updateFields({ jEtc: e.target.value })}
         />
