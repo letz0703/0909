@@ -7,7 +7,7 @@ export default function CustomInfo() {
     <div className="special-selected">
       <FormWrapper title="통관 상세 안내"></FormWrapper>
       <h3 className="text-2xl">일주일에서 10일 후 통관 됩니다</h3>
-      <div>제품을 미리 발송 해드렸으므로</div>
+      <div>제품을 미리 발송 합니다. 이후</div>
       <div className="font-bold underline">
         통관된 공동 구매 상품의 소유권은 저희에게 있습니다
       </div>

@@ -5,18 +5,38 @@ import CustomInfo from "./custom_info"
 import SpecialSelected from "./special-selected"
 import UserForm from "./user-form"
 
+const INITIAL_DATA = {
+  jName: "",
+  jCell: "",
+  jCsNo: "",
+  jProduct: "",
+  jDeleiveryTo: "",
+}
+
+function updateFields(fields) {
+  setData((prev) => {
+    return { ...prev, ...fields }
+  })
+}
+
 export default function Jap09Form() {
+  const [data, setData] = useState(INITIAL_DATA)
   const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
     useMultiStepForm([
-      <UserForm />,
-      <AddressForm />,
-      <SpecialSelected />,
-      <CustomInfo />,
+      <UserForm {...data} updateFiled={updateFields} />,
+      <AddressForm {...data} updateFiled={updateFields} />,
+      <SpecialSelected {...data} updateFiled={updateFields} />,
+      <CustomInfo {...data} updateFiled={updateFields} />,
     ])
+
+  function onSubmit(e) {
+    e.preventDefault()
+    next()
+  }
 
   return (
     <div className="jap09FormJSX">
-      <form>
+      <form onSubmit={onSubmit}>
         <div style={{ position: "absolute", top: ".5rem", right: ".5rem" }}>
           {currentStepIndex + 1}/{steps.length}
         </div>
@@ -30,24 +50,16 @@ export default function Jap09Form() {
           }}
         >
           {!isFirstStep && (
-            <div className="buttons">
-              <button onClick={back} className="btn btn--primary mini">
-                back
-              </button>
-            </div>
+            <button onClick={back} className="btn btn--primary mini">
+              back
+            </button>
           )}
-          <button
-            type="button"
-            className="btn btn--primary mini"
-            onClick={next}
-          >
+          <button className="btn btn--primary mini">
             {!isLastStep ? "next" : "동의 및 주문"}
           </button>
         </div>
-
-        {/* <div>통관된 물품의 소유권은 저희에게 있습니다</div> */}
-
-        <style>{`
+      </form>
+      <style>{`
         .jap09FormJSX {
           position: relative;
           background: white;
@@ -59,7 +71,6 @@ export default function Jap09Form() {
           max-width: max-content;
         }
       `}</style>
-      </form>
     </div>
   )
 }
