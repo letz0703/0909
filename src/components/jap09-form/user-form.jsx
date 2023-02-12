@@ -18,7 +18,6 @@ export default function UserForm({ jName, jCell, jCsNo, updateFields }) {
         <label>핸드폰 번호</label>
         <input
           type="text"
-          autoFocus
           required
           min={7}
           className="w-5/6"
@@ -28,7 +27,6 @@ export default function UserForm({ jName, jCell, jCsNo, updateFields }) {
         <label>개인 통관번호</label>
         <input
           type="text"
-          autoFocus
           required
           className="w-5/6"
           value={jCsNo}
