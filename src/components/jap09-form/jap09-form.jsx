@@ -54,18 +54,20 @@ export default function Jap09Form() {
     create_rdb_jorders(data)
     /** save data to RDB 2023.02.13/월 */
     alert("주문이 완료 되었습니다.")
-    navigate("/")
+    navigate("/jap")
   }
   const create_rdb_jorders = (data) => {
     user &&
-      set(ref(database, `customers/${data.uid}`), {
+      set(ref(database, `customers/jorders/${data.uid}`), {
         name: user?.displayName,
         uid: user?.uid,
-        cell: Number(state.cell),
-        customNo: data.customNo,
-        jorders: (prev) => [...prev, { ...data }],
+        cell: Number(data.jCell),
+        customNo: data.jCsNo,
+        jProduct: data.jProduct,
+        orderDate: Date(),
+        deliverd: false,
       })
-        .then(() => alert("data saved"))
+        // .then(() => alert("data saved"))
         .catch((error) => console.log(error))
   }
 
