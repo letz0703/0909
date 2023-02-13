@@ -9,6 +9,7 @@ import SpecialsQuery from "../components/react_query/specials_query"
 import Notice from "../components/notice/notice"
 import { useAuthContext } from "../context/AuthContext"
 import Jap09Form from "../components/jap09-form/jap09-form"
+import JapEsp from "../components/jap___esp/jap___esp"
 
 const SPECIALS = [
   { id: 1, itemId: "2301-01", name: "JP-캬베진 300정", price: 10000, limit: 5 },
@@ -52,8 +53,14 @@ export default function Jap() {
     <div className="japMain flex flex-col align-items-center">
       <div className="jap__primary-header">
         <h1>스페셜 공동구매</h1>
+        <div>저희가 수입 주문 시 함께 주문을 넣기 때문에</div>
+        <div>
+          소수의 분들께만 제공 합니다
+          <br /> 오프라인 시장에서 뵈었던 분들께만 제공하는 특별가 서비스 입니다
+        </div>
       </div>
       <Jap09Form />
+      <JapEsp />
       {/* <div>
         {specialsQuery.data.map((order) => (
           <div key={crypto.randomUUID()}>

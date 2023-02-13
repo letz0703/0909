@@ -65,7 +65,7 @@ export default function Jap09Form() {
         customNo: data.jCsNo,
         jProduct: data.jProduct,
         orderDate: Date(),
-        deliverd: false,
+        delivery: "not yet",
       })
         // .then(() => alert("data saved"))
         .catch((error) => console.log(error))

@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { Col, Row } from "react-bootstrap"
 import { SearchContext } from "../App"
-import storeItems from "../data/items.json"
+// import storeItems from "../data/items.json"
 import { useJapitems } from "../hooks/use-japitems"
 import StoreItem from "./Store__Item"
 

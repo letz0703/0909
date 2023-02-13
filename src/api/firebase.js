@@ -8,7 +8,7 @@ import {
   onAuthStateChanged,
 } from 'firebase/auth';
 import { getFirestore } from "firebase/firestore";
-import { getDatabase, ref, set, get, remove } from 'firebase/database'
+import { getDatabase, ref, set, get, remove, child } from 'firebase/database'
 
 
 const {
