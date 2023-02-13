@@ -1,4 +1,7 @@
 🖥 WIP...
+2023.02.13/월
+[] jOrder RealTime DB
+
 thinkwise: https://web.thinkwise.co.kr/map/49720/41480
 firebase rdb : https://bit.ly/3jziZ7i
 onenote(web): https://bit.ly/3wWYK6O

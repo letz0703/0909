@@ -5,17 +5,33 @@ import CustomInfo from "./custom_info"
 import SpecialSelected from "./special-selected"
 import UserForm from "./user-form"
 
-const INITIAL_DATA = {
-  jName: "",
-  jCell: "",
-  jCsNo: "",
-  jProduct: "캬베진 300정 1만원",
-  jDeliveryTo: "",
-  jEtc: "",
-}
+/**import for RDB */
+import {
+  getDatabase,
+  ref,
+  set,
+  get,
+  update,
+  remove,
+  child, //
+} from "firebase/database"
+import { database } from "../../api/firebase"
+import { useAuthContext } from "../../context/AuthContext"
+import { useNavigate } from "react-router-dom"
 
 export default function Jap09Form() {
+  const { user } = useAuthContext()
+  const INITIAL_DATA = {
+    uid: user?.uid || "",
+    jName: "",
+    jCell: "",
+    jCsNo: "",
+    jProduct: "캬베진 300정 1만원",
+    jDeliveryTo: "",
+    jEtc: "",
+  }
   const [data, setData] = useState(INITIAL_DATA)
+
   const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
     useMultiStepForm([
       <UserForm {...data} updateFields={updateFields} />,
@@ -23,6 +39,8 @@ export default function Jap09Form() {
       <SpecialSelected {...data} updateFields={updateFields} />,
       <CustomInfo {...data} updateFields={updateFields} />,
     ])
+
+  const navigate = useNavigate()
   function updateFields(fields) {
     setData((prev) => {
       return { ...prev, ...fields }
@@ -32,8 +50,23 @@ export default function Jap09Form() {
   function onSubmit(e) {
     e.preventDefault()
     if (!isLastStep) return next()
-    console.log(data)
+    // console.log(data)
+    create_rdb_jorders(data)
+    /** save data to RDB 2023.02.13/월 */
     alert("주문이 완료 되었습니다.")
+    navigate("/")
+  }
+  const create_rdb_jorders = (data) => {
+    user &&
+      set(ref(database, `customers/${data.uid}`), {
+        name: user?.displayName,
+        uid: user?.uid,
+        cell: Number(state.cell),
+        customNo: data.customNo,
+        jorders: (prev) => [...prev, { ...data }],
+      })
+        .then(() => alert("data saved"))
+        .catch((error) => console.log(error))
   }
 
   return (
