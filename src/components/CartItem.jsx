@@ -1,7 +1,7 @@
 import { AiOutlineMinusSquare, AiOutlinePlusSquare } from "react-icons/ai"
 import { RiDeleteBin5Fill } from "react-icons/ri"
 import useCart from "../hooks/use-cart"
-import FormatCurrency from "../util/formatCurrency"
+
 import { useShoppingCart } from "../context/ShoppingCartContext"
 // import storeItems from "../data/items.json"
 import { Button, Stack } from "react-bootstrap"

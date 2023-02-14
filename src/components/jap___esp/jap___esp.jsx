@@ -3,10 +3,13 @@ import { useAuthContext } from "../../context/AuthContext"
 import { ref, get, child } from "firebase/database"
 import { database } from "../../api/firebase"
 import Wait from "../../util/wait"
+import moment from "moment-timezone"
+import FormatTime from "../../util/formatTime"
 
 export default function JapEsp() {
   let JapEsp = "jap___esp.jsx"
   const [state, setState] = useState({})
+
   /**
    * 1. 불러온다. 리얼타임 데이터 베이스를
    * 2. 뿌린다. map
@@ -49,8 +52,8 @@ export default function JapEsp() {
           cell: <span>{r.cell}</span>
           product: <span>{r.product}</span>
           개인통관번호: <span>{r.customNo}</span>
-          주문일: <span>{r.orderDate}</span>
-          배송여부: <span>{r.delivery}</span>
+          주문일: <span>{FormatTime(r.orderDate)}</span>
+          배송여부: <span>{r.deleivery}</span>
         </div>
       ))}
 
