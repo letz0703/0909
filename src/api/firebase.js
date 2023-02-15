@@ -97,7 +97,7 @@ export async function addNewProduct(product, image) {
 }
 
 export async function addNewOrder(product, image) {
-  const id = uuid()
+  const id = crypto.randomUUID()
   return set(ref(database, `orders/${id}`), {
     ...order,
     id,
