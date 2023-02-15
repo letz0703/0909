@@ -25,7 +25,7 @@ export default function JapEsp() {
    * get(ref, user's uid)
    * data.map(row=>row.uid)
    */
-  const { user } = useAuthContext()
+  const { user, isAdmin } = useAuthContext()
 
   const [jorderList, setJorderList] = useState(() => {
     read_rdb_jorders()
@@ -42,26 +42,75 @@ export default function JapEsp() {
       .catch((error) => alert(error))
   }
 
-  return (
-    <div className="jap___esp">
-      <p>letz go!!</p>
-      {console.log(jorderList)}
-      {jorderList?.map((r) => (
-        <div key={crypto.randomUUID()}>
-          name: <span>{r.name}</span>
-          cell: <span>{r.cell}</span>
-          product: <span>{r.product}</span>
-          개인통관번호: <span>{r.customNo}</span>
-          주문일: <span>{FormatTime(r.orderDate)}</span>
-          배송여부: <span>{r.deleivery}</span>
-        </div>
-      ))}
+  if (isAdmin) {
+    return (
+      <div className="jap___esp">
+        {/* <h2>Order List</h2> */}
+        {jorderList?.map((r) => (
+          <div
+            key={crypto.randomUUID()}
+            className="jap__orderList flex items-center w-100"
+          >
+            {console.log(r)}
+            <table className="jap__esp-table">
+              <thead>
+                <tr>
+                  <th scope="row">name</th>
+                  <th>cell</th>
+                  <th>product</th>
+                  <th>개인통관번호</th>
+                  <th>주문일</th>
+                  <th>배송단계</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr></tr>
+              </tfoot>
+              <tbody>
+                <tr>
+                  <td>{r.name}</td>
+                  <td>{r.cell}</td>
+                  <td>{r.jProduct}</td>
+                  <td>{r.customNo}</td>
+                  <td>{FormatTime(r.orderDate)}</td>
+                  <td>{r.delivery}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        ))}
 
-      {/* <style>{`
-				.jap___esp {
-					background-color: powderblue; color: black
+        <style>{`
+      .jap___esp{
+        width: 100vw;
+      }
+				.jap__orderList {
+          width: 1fr;
+          padding: 1rem;
+          gap: 2em;
+          margin-right: 1rem;
 				}
-			`}</style> */}
-    </div>
-  )
+        .jap__esp-table {
+          border-collapse: collapse;
+          text-align: left;
+          line-height: 1.5;
+          margin : 20px 10px;
+        }
+        .jap__esp-table th {
+          width: 150px;
+          padding: 10px;
+          font-weight: bold;
+          vertical-align: top;
+          border: 1px solid #ccc;
+        }
+        .jap__esp-table td {
+          width: 350px;
+          padding: 10px;
+          vertical-align: top;
+          border: 1px solid #ccc;
+        }
+			`}</style>
+      </div>
+    )
+  }
 }
