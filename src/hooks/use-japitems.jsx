@@ -54,8 +54,9 @@ export const useJapitems = () => {
   useEffect(() => {
     get(ref(database,"japitems")).then(snapshot => {
       if(snapshot.exists()){
-        const data =  Object.values(snapshot.val())
-        setJapitems(prev => [...prev, ...data])
+      setJapitems(Object.values(snapshot.val()))
+        // const data =  Object.values(snapshot.val())
+        // setJapitems(prev => [...prev, ...data])
       }
       return [japitems]
     })

@@ -52,7 +52,7 @@ export default function NewProduct() {
       price: data.price,
       imgUrl: data.imgUrl,
       homeUrl: data.homeUrl || '',
-      qty: Number(qty) ||0
+      qty: Number(data.qty) ||0
     }).then(() => {
     alert('data saved')
     }
