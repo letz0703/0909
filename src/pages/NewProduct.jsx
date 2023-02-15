@@ -16,26 +16,28 @@ import { useJapitems } from "../hooks/use-japitems"
 import { getDatabase, ref, set, get, remove, child } from 'firebase/database'
 import {useLocalStorage} from "../hooks/use-local-storage"
 const INITIAL_PRODUCT = {
+  id:'',
   code: '',
   name: '',
   description: '',
   price: '',
   imgUrl: '',
   homeUrl: '',
-  qty: 0,
+  qty: 0
 }
 
 export default function NewProduct() {
   const [products, setProducts] = useState({});
   const [product, setProduct] = useState(INITIAL_PRODUCT);
+  const [japitems, setJapitems]= useJapitems()
   const [newProduct, setNewProduct] = useState(INITIAL_PRODUCT);
   const [successMsg, setSuccessMsg] = useState("success!!!");
   const [qty, setQty] = useState(0);
+  const [addedJapitem, setAddedJapitem] = useState(INITIAL_PRODUCT);
 
-  const [japitems, setJapitems, addedItems] = useJapitems()
 
   function updateFields(fields){
-    setProduct(prev => {
+    setNewProduct(prev => {
       return {...prev, ...fields}
     })
   }
@@ -44,12 +46,12 @@ export default function NewProduct() {
     const id = crypto.randomUUID()
     set(ref(database,`japitems/${id}` ),{
       id:id,
-      code: product.code ||'',
-      name: product.name,
-      description: product.description,
-      price: product.price,
-      imgUrl: product.imgUrl,
-      homeUrl: product.homeUrl || '',
+      code: data.code ||'',
+      name: data.name,
+      description: data.description,
+      price: data.price,
+      imgUrl: data.imgUrl,
+      homeUrl: data.homeUrl || '',
       qty: Number(qty) ||0
     }).then(() => {
     alert('data saved')
@@ -89,10 +91,12 @@ export default function NewProduct() {
   //   getJapitems()
   // }, [])
 
- function onSubmit(e){
-  e.preventDefault()
-  createJapitem(newProduct)
- }
+  function onSubmit(e){
+    e.preventDefault()
+    createJapitem(newProduct)
+    setAddedJapitem(newProduct)
+  }
+
   return (
     <div className="new-product__Main  w-full text-center flex flex-col justify-center items-center">
       <form
@@ -144,7 +148,7 @@ export default function NewProduct() {
           placeholder="product qty"
           // step={5}
           // required
-          onChange={(e) => setQty(e.target.value)}
+          onChange={(e) => updateFields({qty:Number(e.target.value)})}
         />
         {/* <input
           type="number"
@@ -153,22 +157,22 @@ export default function NewProduct() {
           className="bg-brand p-3"
           onChange={(e) => setStock(e.target.value)}
         /> */}
-        <button className="btn btn--primary" onClick={createJapitem}>
+        <button className="btn btn--primary" >
           아이템등록
         </button>
       </form>
 
       {/* {successMsg && <p>{successMsg}</p>} */}
 
-      {addedItems?.map((japitem) => (
-        <div key={uuidv4()}>
+      {/* {japitems.map((japitem) => ( */}
+        {/* <div key={`${Date()}-${japitem}`}> */}
           <div className="new-product__list place-content-center text-center w-full">
-            <span>code: {japitem.code}</span>
+            <span>code: {addedJapitem.code}</span>
             <span>
-              {japitem.name}
+              {addedJapitem.name}
               <button
                 onClick={() => {
-                  handleJapitemDelete(japitem.id)
+                  handleJapitemDelete(addedJapitem.id)
                 }}
                 className="btn btn--danger mini"
               >
@@ -176,11 +180,11 @@ export default function NewProduct() {
               </button>
             </span>
             <span className="text-orange-500 font-bold">
-              {FormatCurrency(japitem.price)}
+              {FormatCurrency(addedJapitem.price)}
             </span>
 
             <img
-              src={japitem.imgUrl}
+              src={addedJapitem.imgUrl}
               className="new-product__list-image mx-auto"
               style={{ width: "96px" }}
             />
@@ -188,10 +192,10 @@ export default function NewProduct() {
             {/* <div className="new-product__list place-content-center"> */}
             <span>&times;</span>
             <span>
-              {japitem.qty}개{" "}
+              {addedJapitem.qty}개{" "}
               <button
                 onClick={() => {
-                  handleUpdateStock(japitem.id, japitem.qty)
+                  handleUpdateStock(addedJapitem.id, addedJapitem.qty)
                 }}
                 className="btn mini btn--primary"
               >
@@ -201,7 +205,7 @@ export default function NewProduct() {
             </span>
           </div>
           <span className="font-semibold">
-            TOTAL: {FormatCurrency(japitem.qty * japitem.price)}
+            TOTAL: {FormatCurrency(addedJapitem.qty * addedJapitem.price)}
           </span>
           {/* </div> */}
 
@@ -241,8 +245,8 @@ export default function NewProduct() {
           }
 
           `}</style>
-        </div>
-      ))}
+        {/* </div> */}
+      {/* ))} */}
     </div>
   )
 }

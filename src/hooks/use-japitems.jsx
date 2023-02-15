@@ -21,7 +21,6 @@ export const useJapitems = () => {
   // const japitemRef = collection(db, "japitems") //customNo, userId
   // const [japitems, setJapitems] = useState([])
   const [japitems, setJapitems] = useLocalStorage("japitems", [])
-  const [addedItems, setAddedItems] = useState();
 
   // const createJapitem = async () => {
   //   await addDoc(japitemRef, {
@@ -56,12 +55,12 @@ export const useJapitems = () => {
     get(ref(database,"japitems")).then(snapshot => {
       if(snapshot.exists()){
         const data =  Object.values(snapshot.val())
-        setAddedItems(data)
+        setJapitems(prev => [...prev, ...data])
       }
-      return []
+      return [japitems]
     })
 
   }, []);
 
-  return [japitems, setJapitems, addedItems]
+  return [japitems, setJapitems]
 }
