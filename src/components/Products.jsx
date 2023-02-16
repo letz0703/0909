@@ -34,11 +34,11 @@ export default function Products() {
         .map((japitem) => (
           <div key={uuidv4()}>
             <div
-              onClick={open_Detail}
+              // onClick={open_Detail}
               className="new-product__list place-content-center text-center card items-center pb-2"
-              // onClick={() => {
-              // navigate(`/japitems/${japitem.id}`, { state: { japitem } })
-              // }}
+              onClick={() => {
+                navigate(`/japitems/${japitem.id}`, { state: { japitem } })
+              }}
             >
               <span>{japitem.name}</span>
               <span className="text-orange-500 font-bold">

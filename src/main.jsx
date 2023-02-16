@@ -55,7 +55,6 @@ const router = createBrowserRouter([
         ),
       },
       { path: "/japitems/:id", element: <JapitemDetail /> },
-      // { path: "/japitems/:id", element: <JapitemDetail /> },
       {
         path: "/carts",
         element: (
