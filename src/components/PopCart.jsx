@@ -43,7 +43,7 @@ export function PopCart({ isOpen }) {
       <Offcanvas.Body>
         <Stack gap={3}>
           {cartItems.map((item) => (
-            <CartItem key={item.id} {...item} />
+            <CartItem key={crypto.randomUUID()} {...item} />
           ))}
           <hr />
           <div className="ms-auto font-bold text-2xl p-3">
