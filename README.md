@@ -1,4 +1,6 @@
 🖥 WIP...
+
+
 2023.02.13/월
 [] jOrder RealTime DB
 
@@ -20,6 +22,9 @@ https://youtu.be/SK9AlIbexOE?t=506 슬라이더 강의
 ### My Orders
 
 <!-- HISTORY -->
+
+## Detail : item detail 디테일
+gh : https://github.com/letz0703/0909/commit/a8c952bb3dac45bd6ea3c4fca022b66059682f2d
 
 ### Detail sliding
 
