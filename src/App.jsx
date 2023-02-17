@@ -25,6 +25,7 @@ const LOCAL_STORAGE_KEY = "icanmart.japitems"
 
 export const SearchContext = createContext()
 
+function name(){}
 function App() {
   const japitemsRef = collection(db, "japitems")
   const [japitems, setJapitems] = useState(() => {

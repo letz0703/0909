@@ -5,6 +5,8 @@
 @tailwind utilities;
 
 :root {
+  --color-primary-blue: #0091c8;
+  --color-primary-green: #007207;
   --color-accent: #c10002;
   --color-bg: #fff;
   /* --color-bg: #efefef; */

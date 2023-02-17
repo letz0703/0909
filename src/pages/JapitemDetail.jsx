@@ -15,7 +15,7 @@ export default function JapitemDetail() {
 
   return (
     <div className="japitem-detail">
-      <h1>{name}</h1>
+      <h1 className="japitemDetail__name">{name}</h1>
       <div>
         <img src={imgUrl} />
         <span>{description}</span>
@@ -34,12 +34,11 @@ export default function JapitemDetail() {
 			.japitem-detail {
 				display: grid;
 				place-items:center;
+        color: var(--color-primary-green);
 			}
 			.japitem-detail>img{
 				width: 30rem;
 			}
-
-
 			`}</style>
     </div>
   )
