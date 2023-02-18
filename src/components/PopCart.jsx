@@ -8,8 +8,8 @@ import { useJapitems } from "../hooks/use-japitems"
 import { useLocalStorage } from "../hooks/use-local-storage"
 import { addDoc, collection } from "firebase/firestore"
 import { db, auth } from "../api/firebase"
-import { v4 as uuidv4 } from "uuid"
 import { useAuthState } from "react-firebase-hooks/auth"
+import {useState} from "react"
 // type PopCartProps = {
 //   isOpen: boolean
 // }
@@ -17,19 +17,25 @@ export function PopCart({ isOpen }) {
   // export function PopCart({isOpen}:PopCartProps) {
   const [japitems, setJapitems] = useJapitems()
   const { closeCart, openCart, cartItems } = useShoppingCart()
-  const [local__icCart, setCartItems] = useLocalStorage("ic-cart", [])
-  const cartRef = collection(db, "carts")
+  const [local__icCart, setCartItems] = useLocalStorage("ic-cart", {...cartItems})
   const [user] = useAuthState(auth)
+  const cartRef = collection(db, "carts")
+  // const [cartItem, setCartItem] = useState({});
 
+  // console.log("local",local__icCart)
   const handleCart__Order = async () => {
+
     await addDoc(cartRef, {
-      cartId: uuidv4(),
+      cartId: crypto.randomUUID(),
       userId: user.uid,
       orderDate: Date(),
+      cartItems:local__icCart
     })
+
     setCartItems([])
-    // window.location.replace("/my_orders")
+    window.location.replace("/shop")
   }
+  console.log(cartItems)
   return (
     <Offcanvas
       show={isOpen}

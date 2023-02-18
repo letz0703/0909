@@ -22,19 +22,16 @@ export default function CartItem(props) {
 
   // const { addOrUpdateItem, removeItem } = useCart()
   const {increaseCartQuantity, decreaseCartQuantity, handleDecreaseCartQty, removeFromCart } = useShoppingCart()
-  const handleMinus = () => {
-    if (quantity < 2) return
+  // const handleMinus = () => {
+    // if (quantity < 2) return
     // addOrUpdateToCart(uid, {...product, quantity: quantity - 1})
-    addOrUpdateItem.mutate({ ...product, quantity: quantity - 1 })
-  }
+    // addOrUpdateItem.mutate({ ...product, quantity: quantity - 1 })
+  // }
 
-  const handlePlus = () => {
-    addOrUpdateItem.mutate({ ...product, quantity: quantity + 1 })
-  }
-  const handleDelete = () => removeItem.mutate(id)
-  function handleDecrease(){
-
-  }
+  // const handlePlus = () => {
+    // addOrUpdateItem.mutate({ ...product, quantity: quantity + 1 })
+  // }
+  // const handleDelete = () => removeItem.mutate(id)
 
   return (
     <Stack direction="horizontal" gap={2} className="d-flex align-items-center">
@@ -44,7 +41,7 @@ export default function CartItem(props) {
       />
       <div className="me-auto">
         <div>
-          {item.name}{" "}
+          {item.name}
           {quantity >= 1 && (
             <span className="text-muted" style={{ fontSize: ".65rem" }}>
               x{quantity}
