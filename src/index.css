@@ -348,7 +348,7 @@ button[class*="btn"] {
 }
 
 .btn.red {
-  box-shadow: 0px 4px 0px #e04342;
+  box-shadow: 0px 2px 0px #e04342;
 }
 .btn.red:active {
   box-shadow: 0 0 #ff4c4b;

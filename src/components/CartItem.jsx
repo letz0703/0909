@@ -51,6 +51,10 @@ export default function CartItem(props) {
         <div className="text-muted" style={{ fontSize: ".75rem" }}>
           {FormatCurrency(item.price)}
         </div>
+        <div>
+        <button className="btn-gradient red mini ">-</button>
+        <button className="btn-gradient blue mini ">+</button>
+        </div>
       </div>
       <div> {FormatCurrency(item.price * quantity)}</div>
       <Button

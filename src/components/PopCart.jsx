@@ -32,7 +32,8 @@ export function PopCart({ isOpen }) {
   }
   return (
     <Offcanvas
-      show={isOpen}
+      // show={isOpen}
+      show={true}
       onHide={closeCart}
       placement="top"
       style={{ width: "100%", height: "80%" }}

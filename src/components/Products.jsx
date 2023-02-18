@@ -12,7 +12,7 @@ import { useShoppingCart } from "../context/ShoppingCartContext"
 import { useDetail } from "../context/DetailContext"
 
 export default function Products() {
-  const { isOpen_Detail, open_Detail, close_Detail } = useDetail()
+  // const { isOpen_Detail, open_Detail, close_Detail } = useDetail()
   const { search } = useContext(SearchContext)
   const [japitems, setJapitems] = useJapitems()
   const navigate = useNavigate()
@@ -56,6 +56,7 @@ export default function Products() {
             >
               담기
             </button>
+
             <style>{`
           .shop-home{
             display: grid;
