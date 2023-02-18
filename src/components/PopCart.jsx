@@ -28,12 +28,12 @@ export function PopCart({ isOpen }) {
       orderDate: Date(),
     })
     setCartItems([])
-    window.location.replace("/my_orders")
+    // window.location.replace("/my_orders")
   }
   return (
     <Offcanvas
-      // show={isOpen}
-      show={true}
+      show={isOpen}
+      // show={true}
       onHide={closeCart}
       placement="top"
       style={{ width: "100%", height: "80%" }}

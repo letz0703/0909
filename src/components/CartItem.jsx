@@ -21,7 +21,7 @@ export default function CartItem(props) {
   if (item == null) return null
 
   // const { addOrUpdateItem, removeItem } = useCart()
-  const { removeFromCart } = useShoppingCart()
+  const {increaseCartQuantity, decreaseCartQuantity, handleDecreaseCartQty, removeFromCart } = useShoppingCart()
   const handleMinus = () => {
     if (quantity < 2) return
     // addOrUpdateToCart(uid, {...product, quantity: quantity - 1})
@@ -32,6 +32,9 @@ export default function CartItem(props) {
     addOrUpdateItem.mutate({ ...product, quantity: quantity + 1 })
   }
   const handleDelete = () => removeItem.mutate(id)
+  function handleDecrease(){
+
+  }
 
   return (
     <Stack direction="horizontal" gap={2} className="d-flex align-items-center">
@@ -52,8 +55,8 @@ export default function CartItem(props) {
           {FormatCurrency(item.price)}
         </div>
         <div>
-        <button className="btn-gradient red mini ">-</button>
-        <button className="btn-gradient blue mini ">+</button>
+        <button className="btn-gradient red mini" onClick={()=>decreaseCartQuantity(item.id)}>-</button>
+        <button className="btn-gradient blue mini" onClick={()=>increaseCartQuantity(item.id)}>+</button>
         </div>
       </div>
       <div> {FormatCurrency(item.price * quantity)}</div>
