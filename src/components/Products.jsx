@@ -24,7 +24,7 @@ export default function Products() {
   } = useShoppingCart()
 
   return (
-    <div className="shop-home grid gap-2">
+    <div className="shop-home grid grid-cols-5 gap-3">
       {japitems
         .filter((item) => {
           return search.toLowerCase() === ""
@@ -32,15 +32,16 @@ export default function Products() {
             : item.name.toLowerCase().includes(search)
         })
         .map((japitem) => (
-          <div key={uuidv4()}>
+          <div key={uuidv4()} >
             <div
               // onClick={open_Detail}
-              className="new-product__list place-content-center text-center card items-center pb-2"
+              className="product__ flex justify-center space-around align-items-center pb-2 card"
+              // className="new-product__list place-content-center text-center card items-center pb-2"
               onClick={() => {
                 navigate(`/japitems/${japitem.id}`, { state: { japitem } })
               }}
             >
-              <span>{japitem.name}</span>
+              <span className="max-w-[80%] truncate">{japitem.name}</span>
               <span className="text-orange-500 font-bold">
                 {FormatCurrency(japitem.price)}
               </span>
@@ -58,15 +59,20 @@ export default function Products() {
             </button>
 
             <style>{`
+            .product__{
+              max-content: max-width;
+            }
           .shop-home{
-            display: grid;
-            grid-template-columns: repeat(5, auto);
-            border-bottom: 1px dashed black;
-            padding: 2rem;
-            cursor: pointer;
+            // max-width: max-content;
+
+            // display: grid;
+            // grid-template-columns: repeat(5, auto);
+            // border-bottom: 1px dashed black;
+            // padding: 2rem;
+            // cursor: pointer;
           }
           .new-product__list-image{
-            width: 10rem;
+            max-width: 10rem;
             margin-top: .9rem;
             cursor: pointer;
           }
