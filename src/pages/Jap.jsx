@@ -65,20 +65,27 @@ export default function Jap() {
   }
 
   return (
-    <div className="japMain flex flex-col align-items-center justify-center">
+    <div className="jap__ flex flex-col align-items-start justify-start">
       <div className="jap__primary-header">
-        <div className="w-full h-full bg-cover">
-          <h1>스페셜 공동구매</h1>
-          <h3 className="text-2xl text-green-700">
+        <div className="w-full h-full align-top bg-pink-100">
+          <h1 className="pt-3">스페셜 공동구매</h1>
+          <h3 className="text-2xl text-green-700 pb-1">
             2023년 3월 캬베진 300정:만원
           </h3>
-          <p className="font-semibold ">공동구매 상품: 곤약젤리, 동전파스</p>
-          <div className="09info bg-yellow-100 p-3 text-left">
-            <div>특별가 상품으로 1회 주문당 1개만 주문 가능합니다</div>
-            <div>재주문은 이전주문이 도착한 후 가능합니다(7~10일 소요) </div>
+          <p className="font-semibold mb-2">
+            공동구매 상품: 곤약젤리, 동전파스
+          </p>
+          <div className="jap__info  p-3 text-left mb-2">
             <div>
-              재고가 많을 경우, 주문을 받지 않으며, 재개 시 선착순 문자드립니다
+              - 특별가 상품(jap)으로 1개만 주문 가능합니다(특가+무료배송)
             </div>
+            <div>
+              - 재 주문은 이전 주문이 도착한 후 가능합니다(7~10일 소요){" "}
+            </div>
+            <div>
+              - 깡통시장 상품(store)은 상시 구매 가능합니다(기본배송비: 4000원)
+            </div>
+            <div>- 저희 재고가 많으면 해외주문이 일시중단 후 재개 됩니다.</div>
           </div>
         </div>
         {user || icUser ? (
@@ -111,6 +118,20 @@ export default function Jap() {
       >
         Add New
       </button> */}
+      <style>{`
+      .jap__{
+        background-image:url('/imgs/bg_jap.jpg');
+        background-repeat: no-repeat;
+
+        max-height:max-content;
+        min-height:100vw;
+        width: 100vw;
+
+      }
+        .jap__info {
+        }
+
+      `}</style>
     </div>
   )
 }
