@@ -50,16 +50,18 @@ export default function Jap() {
     return <pre>{JSON.stringify(specialsQuery.error)}</pre>
 
   return (
-    <div className="japMain flex flex-col align-items-center">
-      <div className="jap__primary-header">
+    <div className="japMain flex flex-col align-items-center justify-center">
+      {/* <div className="jap__primary-header"> */}
+      <div className="w-full h-full bg-cover bg-banner ">
         <h1>스페셜 공동구매</h1>
         <div>저희가 수입 주문 시 함께 주문을 넣기 때문에</div>
         <div>
           소수의 분들께만 제공 합니다
           <br /> 오프라인 시장에서 뵈었던 분들께만 제공하는 특별가 서비스 입니다
         </div>
+        {/* </div> */}
+        <Jap09Form />
       </div>
-      <Jap09Form />
       <JapEsp />
       {/* <div>
         {specialsQuery.data.map((order) => (
