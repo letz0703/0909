@@ -19,10 +19,10 @@ import { database } from "../../api/firebase"
 import { useAuthContext } from "../../context/AuthContext"
 import { useNavigate } from "react-router-dom"
 
-export default function Jap09Form() {
+export default function Jap09Form({ icUser }) {
   const { user } = useAuthContext()
   const INITIAL_DATA = {
-    uid: user?.uid || "",
+    uid: user?.uid || crypto.randomUUID(),
     jName: "",
     jCell: "",
     jCsNo: "",
@@ -57,18 +57,21 @@ export default function Jap09Form() {
     window.location.replace("/jap")
   }
   const create_rdb_jorders = (data) => {
-    user &&
-      set(ref(database, `customers/jorders/${data.uid}`), {
-        name: user?.displayName,
-        uid: user?.uid,
-        cell: Number(data.jCell),
-        customNo: data.jCsNo,
-        jProduct: data.jProduct,
-        orderDate: Date(),
-        delivery: "not yet",
-      })
-        // .then(() => alert("data saved"))
-        .catch((error) => console.log(error))
+    // if (user || icUser) {
+    set(ref(database, `customers/jorders/${data.uid}`), {
+      name: data.jName,
+      // user?.displayName,
+      uid: user?.uid,
+      // uid: data.uid,
+      cell: Number(data.jCell),
+      customNo: data.jCsNo,
+      jProduct: data.jProduct,
+      orderDate: Date(),
+      delivery: "not yet",
+    })
+      // .then(() => alert("data saved"))
+      .catch((error) => console.log(error))
+    // }
   }
 
   return (

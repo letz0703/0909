@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 //import styles from './Jap-page.module.css'
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"
 import { collection, getDoc, getDocs } from "firebase/firestore"
@@ -10,6 +10,7 @@ import Notice from "../components/notice/notice"
 import { useAuthContext } from "../context/AuthContext"
 import Jap09Form from "../components/jap09-form/jap09-form"
 import JapEsp from "../components/jap___esp/jap___esp"
+import { login } from "../api/firebase"
 
 const SPECIALS = [
   { id: 1, itemId: "2301-01", name: "JP-캬베진 300정", price: 10000, limit: 5 },
@@ -23,6 +24,9 @@ const SPECIALS = [
 ]
 
 export default function Jap() {
+  const { user, isAdmin } = useAuthContext()
+  const [icUser, setIcUser] = useState(false)
+
   const queryClient = useQueryClient()
   const specialsQuery = useQuery({
     queryKey: ["specials"],
@@ -49,6 +53,17 @@ export default function Jap() {
   if (specialsQuery.isError)
     return <pre>{JSON.stringify(specialsQuery.error)}</pre>
 
+  async function passUser() {
+    const passCode = ["0909"]
+    const userCode = prompt("enter your code")
+    if (userCode.includes(passCode)) {
+      setIcUser(true)
+    } else {
+      alert("코드가 없습니다")
+      setIcUser(false)
+    }
+  }
+
   return (
     <div className="japMain flex flex-col align-items-center justify-center">
       <div className="jap__primary-header">
@@ -66,9 +81,21 @@ export default function Jap() {
             </div>
           </div>
         </div>
-        <Jap09Form />
+        {user || icUser ? (
+          <Jap09Form icUser={icUser} />
+        ) : (
+          <>
+            <button className="btn btn--primary" onClick={login}>
+              google 로그인
+            </button>
+            {/* <span>or</span> */}
+            {/* <button className="btn btn--primary" onClick={passUser}>
+              현장방문 시 수령한 코드입력
+            </button> */}
+          </>
+        )}
+        {/* <Jap09Form /> */}
       </div>
-      <JapEsp />
       {/* <div>
         {specialsQuery.data.map((order) => (
           <div key={crypto.randomUUID()}>
