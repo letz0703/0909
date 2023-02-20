@@ -54,7 +54,7 @@ export default function Jap09Form() {
     create_rdb_jorders(data)
     /** save data to RDB 2023.02.13/월 */
     alert("주문이 완료 되었습니다.")
-    navigate("/jap")
+    window.location.replace("/jap")
   }
   const create_rdb_jorders = (data) => {
     user &&

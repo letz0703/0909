@@ -3,7 +3,7 @@ export default function FormWrapper({ title, children }) {
   let FormWrapper = "form-wrapper.jsx"
 
   return (
-    <div className="formWrapper__">
+    <div className="formWrapper__ mt-4">
       <h2 className="formWrapper__title">{title}</h2>
       <div className="formWrapper__children">{children}</div>
       <style>{`
