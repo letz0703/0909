@@ -150,5 +150,11 @@
     ]
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "emmet.showSuggestionsAsSnippets": true
+  "emmet.showSuggestionsAsSnippets": true,
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnPaste": false,
+  "bookmarks.useWorkaroundForFormatters": false,
+  "eslint.format.enable": false
 }

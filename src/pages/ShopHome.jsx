@@ -9,17 +9,9 @@ import Store from "./Store"
 export default function ShopHome() {
   const { search } = useContext(SearchContext)
   return (
-    <div className="shopHome">
+    <div className="bg-banner">
       {!search && <Slide />}
       <Products />
-      {/* <style>{`
-        .shopHome{
-          min-height: 100vh;
-          min-height: 100dvh;
-          display: grid;
-          grid-template-rows: auto 1fr auto;
-        }
-      `}</style> */}
     </div>
   )
 }

@@ -44,17 +44,28 @@ function ImageSlider({ slides }) {
           {/* {<BsFillArrowRightCircleFill />} */}
           <img src="/imgs/right.svg" />
         </div>
-        <div className="dots-container flex flex-row justify-center">
+        <div className="dots-container flex flex-row justify-center relative">
           {slides.map((slide, slideIndex) => (
             <span
               key={slideIndex}
-              className="dots"
+              className="dots top-30 "
               onClick={() => goToSlide(slideIndex)}
             >
-              <button className="btn btn--primary mini">{slide.title}</button>
+              <button className="btn border-bottom btn--jap__primary-header absolute top-20  ">
+                {slide.title}
+              </button>
               {/* <img src="/imgs/circle.svg" className="w-20 px-3" /> */}
+              <div className="">{slide.para}</div>
             </span>
           ))}
+        </div>
+        <div className="imageSlider__para w-96 relative">
+          <div className="w-full h-full bg-cover bg-banner"></div>
+          <div className=" absolute w-full top-40 left-20">
+            <h1 className="text-5xl">인터넷 깡통시장</h1>
+            <p className="text-2xl">깡통시장 구매 대행 - store</p>
+            <p className="text-3xl">일본 현지 공동 구매 - jap</p>
+          </div>
         </div>
       </div>
       <style>{`
@@ -64,6 +75,10 @@ function ImageSlider({ slides }) {
       }
       .image-slider__main > *{
         grid-area: stack;
+      }
+
+      .imageSlider__para{
+
       }
 
       .arrow {

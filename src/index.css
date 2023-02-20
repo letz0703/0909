@@ -173,6 +173,9 @@ h2 {
 .color .blue {
   background: #6698cb;
 }
+.color .black {
+  background: #000000;
+}
 .color .purple {
   background: #cb99c5;
 }
@@ -284,6 +287,10 @@ button[class*="btn"] {
 }
 
 /* Colors for .btn and .btn-two */
+.btn.black,
+.btn-two.black {
+  background-color: #181818;
+}
 .btn.gray,
 .btn-two.gray {
   background-color: #efefef;
