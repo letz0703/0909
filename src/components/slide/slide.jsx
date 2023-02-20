@@ -3,14 +3,14 @@ import ImageSlider from "./image-slider"
 export default function Slide() {
   const slides = [
     {
-      url: "/imgs/price_ori.jpg",
-      title: "JAP",
-      para: "일본현지",
-    },
-    {
       url: "/imgs/cart_ori.jpg",
       title: "STORE",
       para: "깡통시장",
+    },
+    {
+      url: "/imgs/price_ori.jpg",
+      title: "JAP",
+      para: "일본현지",
     },
     // { url: "/imgs/promise.jpg", title: "스페셜(promise)" },
   ]
@@ -29,8 +29,7 @@ export default function Slide() {
 
       <style>{`
         .slide__{
-
-
+          overflow: hidden;
         }
         .slide{
         }

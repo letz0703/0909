@@ -9,7 +9,7 @@ import Store from "./Store"
 export default function ShopHome() {
   const { search } = useContext(SearchContext)
   return (
-    <div className="bg-banner">
+    <div>
       {!search && <Slide />}
       <Products />
     </div>

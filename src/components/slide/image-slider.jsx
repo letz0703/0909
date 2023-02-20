@@ -36,14 +36,14 @@ function ImageSlider({ slides }) {
     <>
       <div className="image-slider__main h-100 relative">
         {/* <div className="arrow arrow-left">{<BsFillArrowLeftCircleFill />}</div> */}
-        <div className="arrow arrow-left" onClick={goToPrevious}>
+        {/* <div className="arrow arrow-left" onClick={goToPrevious}>
           <img src="/imgs/left.svg" />
-        </div>
+        </div> */}
         <div style={sliderStyles}></div>
-        <div className="arrow arrow-right" onClick={goToNext}>
-          {/* {<BsFillArrowRightCircleFill />} */}
-          <img src="/imgs/right.svg" />
-        </div>
+        {/* <div className="arrow arrow-right" onClick={goToNext}> */}
+        {/* {<BsFillArrowRightCircleFill />} */}
+        {/* <img src="/imgs/right.svg" /> */}
+        {/* </div> */}
         <div className="dots-container flex flex-row justify-center relative">
           {slides.map((slide, slideIndex) => (
             <span
@@ -60,7 +60,7 @@ function ImageSlider({ slides }) {
           ))}
         </div>
         <div className="imageSlider__para w-96 relative">
-          <div className="w-full h-full bg-cover bg-banner"></div>
+          <div className="w-full h-full bg-cover"></div>
           <div className=" absolute w-full top-40 left-20">
             <h1 className="text-5xl">인터넷 깡통시장</h1>
             <p className="text-2xl">깡통시장 구매 대행 - store</p>

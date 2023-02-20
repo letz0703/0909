@@ -10,15 +10,15 @@ import { useJapitems } from "../hooks/use-japitems"
 import { Row } from "react-bootstrap"
 import { useShoppingCart } from "../context/ShoppingCartContext"
 import { useDetail } from "../context/DetailContext"
-import {useAuthContext} from "../context/AuthContext"
-import {signInWithPopup} from "firebase/auth"
-import {login} from "../api/firebase"
+import { useAuthContext } from "../context/AuthContext"
+import { signInWithPopup } from "firebase/auth"
+import { login } from "../api/firebase"
 
 export default function Products() {
   // const { isOpen_Detail, open_Detail, close_Detail } = useDetail()
   const { search } = useContext(SearchContext)
   const [japitems, setJapitems] = useJapitems()
-  const {user} =  useAuthContext()
+  const { user } = useAuthContext()
   const navigate = useNavigate()
   const {
     getItemQuantity,
@@ -36,7 +36,7 @@ export default function Products() {
             : item.name.toLowerCase().includes(search)
         })
         .map((japitem) => (
-          <div key={uuidv4()} >
+          <div key={uuidv4()}>
             <div
               // onClick={open_Detail}
               className="product__ flex justify-center space-around align-items-center pb-2 card"
@@ -49,7 +49,7 @@ export default function Products() {
               <span className="text-orange-500 font-bold">
                 {FormatCurrency(japitem.price)}
               </span>
-              <span >
+              <span>
                 <img src={japitem.imgUrl} className="new-product__list-image" />
               </span>
             </div>
