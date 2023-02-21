@@ -2,15 +2,15 @@ import { useState, useEffect, useRef } from "react"
 import ImageSlider from "./image-slider"
 export default function Slide() {
   const slides = [
+    // {
+    //   url: "/imgs/cart_ori.jpg",
+    //   title: "STORE",
+    //   para: "깡통시장",
+    // },
     {
       url: "/imgs/cart_ori.jpg",
-      title: "STORE",
-      para: "깡통시장",
-    },
-    {
-      url: "/imgs/price_ori.jpg",
-      title: "JAP",
-      para: "일본현지",
+      title: "Jap",
+      para: "일본현지 공동구매 / 선배송 후 구매",
     },
     // { url: "/imgs/promise.jpg", title: "스페셜(promise)" },
   ]
@@ -26,14 +26,6 @@ export default function Slide() {
       <div style={containerStyle} className="slide">
         <ImageSlider slides={slides} />
       </div>
-
-      <style>{`
-        .slide__{
-          overflow: hidden;
-        }
-        .slide{
-        }
-      `}</style>
     </section>
   )
 }

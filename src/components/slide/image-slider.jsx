@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react"
+import { useNavigate, useNavigationType } from "react-router-dom"
 
 function ImageSlider({ slides }) {
+  const navigate = useNavigate()
   const [currentIndex, setCurrentIndex] = useState(0)
   // const { url, title } = slides
 
@@ -30,7 +32,8 @@ function ImageSlider({ slides }) {
   }
 
   const goToSlide = (slideIndex) => {
-    setCurrentIndex(slideIndex)
+    // setCurrentIndex(slideIndex)
+    navigate("/jap")
   }
   return (
     <>
@@ -51,7 +54,8 @@ function ImageSlider({ slides }) {
               className="dots top-30 "
               onClick={() => goToSlide(slideIndex)}
             >
-              <button className="btn border-bottom btn--jap__primary-header absolute top-20  ">
+              <button className="btn gray mini top-20">
+                {/* <button className="btn border-bottom btn--jap__primary-header absolute top-20  "> */}
                 {slide.title}
               </button>
               {/* <img src="/imgs/circle.svg" className="w-20 px-3" /> */}
@@ -65,6 +69,15 @@ function ImageSlider({ slides }) {
             <h1 className="text-5xl">인터넷 깡통시장</h1>
             <p className="text-2xl">깡통시장 구매 대행 - store</p>
             <p className="text-3xl">일본 현지 공동 구매 - jap</p>
+            <p className="btn red px-3 py-2" onClick={() => navigate("/jap")}>
+              3월 일본 현지구매(Jap)
+            </p>
+            <div className="text-3xl bg-black p-2 px-1 text-white m-2">
+              캬베진 300정 1만원
+            </div>
+            <p>국내외 배송비 무료, 다음날 수령</p>
+            <button className="btn mini red">상세보기</button>
+            <p>로그인 후 새로고침 하시면 제품 검색이 가능합니다</p>
           </div>
         </div>
       </div>

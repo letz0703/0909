@@ -34,7 +34,7 @@
 #root {
   /* padding: 0; */
   /** max width 지정 */
-  @apply w-full max-w-screen-xl;
+  /* @apply w-full max-w-screen-xl; */
 }
 
 .header {

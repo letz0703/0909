@@ -77,15 +77,23 @@ export default function Jap() {
           </p>
           <div className="jap__info  p-3 text-left mb-2">
             <div>
-              - 특별가 상품(jap)으로 1개만 주문 가능합니다(특가+무료배송)
+              - 특별가 상품(jap)으로 주문당 1개만 구입 가능합니다(특가+무료배송)
             </div>
             <div>
-              - 재 주문은 이전 주문이 도착한 후 가능합니다(7~10일 소요){" "}
+              {" "}
+              - 다음 주문은 이전 주문이 저희쪽에 도착 후 가능 합니다(7~10일
+              소요){" "}
             </div>
             <div>
               - 깡통시장 상품(store)은 상시 구매 가능합니다(기본배송비: 4000원)
             </div>
-            <div>- 저희 재고가 많으면 해외주문이 일시중단 후 재개 됩니다.</div>
+            <div>
+              - 깡통시장 제품을 다음날 바로 받거나 통관 후 받으셔도 됩니다
+            </div>
+            <div>
+              - 저희 재고가 많으면 해외주문이 일시중단 되며, 신청순으로 가능
+              시점에 개별 문자 드립니다.
+            </div>
           </div>
         </div>
         {user || icUser ? (
@@ -93,7 +101,7 @@ export default function Jap() {
         ) : (
           <>
             <button className="btn btn--primary" onClick={login}>
-              google 로그인
+              google 로그인 및 신청
             </button>
             {/* <span>or</span> */}
             {/* <button className="btn btn--primary" onClick={passUser}>
@@ -126,7 +134,7 @@ export default function Jap() {
         background-size: cover;
         max-height:max-content;
         min-height:50vw;
-        width: 100vw;
+        width: 95vw;
       }
         .jap__info {
         }
