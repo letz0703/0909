@@ -18,12 +18,17 @@ export default function JapitemDetail() {
   return (
     <div className="japitem-detail">
       <h1>{name}</h1>
-      <div>
+      <div className="transition-all hover:scale-105">
         <img src={imgUrl} />
         <span>{description}</span>
-        <br/>
-        <span className="btn btn--primary blue mini" onClick={() => window.location.replace(`${homeUrl}`)}>상세 설명</span>
-        <br/>
+        <br />
+        <span
+          className="btn btn--primary blue mini"
+          onClick={() => window.location.replace(`${homeUrl}`)}
+        >
+          상세 설명
+        </span>
+        <br />
         <span className="ml-2 text-red-500 font-bold">
           {FormatCurrency(price)}
         </span>
