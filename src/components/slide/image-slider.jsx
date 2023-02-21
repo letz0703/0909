@@ -76,7 +76,9 @@ function ImageSlider({ slides }) {
               캬베진 300정 1만원
             </div>
             <p>국내외 배송비 무료, 다음날 수령</p>
-            <button className="btn mini red">상세보기</button>
+            <button className="btn mini red" onClick={() => navigate("/jap")}>
+              상세보기
+            </button>
             <p>로그인 후 새로고침 하시면 제품 검색이 가능합니다</p>
           </div>
         </div>

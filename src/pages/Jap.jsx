@@ -130,11 +130,11 @@ export default function Jap() {
       .jap__{
         background-image:url('/imgs/bg_jap.jpg');
         background-repeat: no-repeat;
-        background-position: start;
+        background-position: center;
         background-size: cover;
         max-height:max-content;
         min-height:50vw;
-        width: 95vw;
+        width: 97.2vw;
       }
         .jap__info {
         }
