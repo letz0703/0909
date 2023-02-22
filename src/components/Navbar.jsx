@@ -19,7 +19,7 @@ export default function Navbar({ search, setSearch }) {
   const { user, setUser, login, logout, isAdmin, isCustom } = useAuthContext()
   const { openCart, cartQuantity } = useShoppingCart()
   const { handleJapitemSearch } = useContext(JapitemContext)
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
   return (
     <header className="flex border-b justify-between p-3">
