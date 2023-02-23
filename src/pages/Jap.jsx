@@ -11,6 +11,7 @@ import { useAuthContext } from "../context/AuthContext"
 import Jap09Form from "../components/jap09-form/jap09-form"
 import JapEsp from "../components/jap___esp/jap___esp"
 import { login } from "../api/firebase"
+import { useNavigate, Navigate } from "react-router-dom"
 
 const SPECIALS = [
   { id: 1, itemId: "2301-01", name: "JP-캬베진 300정", price: 10000, limit: 5 },
@@ -26,6 +27,7 @@ const SPECIALS = [
 export default function Jap() {
   const { user, isAdmin } = useAuthContext()
   const [icUser, setIcUser] = useState(false)
+  const navigate = useNavigate()
 
   const queryClient = useQueryClient()
   const specialsQuery = useQuery({
@@ -111,6 +113,11 @@ export default function Jap() {
         )}
         {/* <Jap09Form /> */}
       </div>
+      {isAdmin ? (
+        <button onClick={() => navigate("/jap/ic")}>admin page</button>
+      ) : (
+        ""
+      )}
       {/* <div>
         {specialsQuery.data.map((order) => (
           <div key={crypto.randomUUID()}>

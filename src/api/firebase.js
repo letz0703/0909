@@ -8,8 +8,7 @@ import {
   onAuthStateChanged,
 } from 'firebase/auth';
 import { getFirestore } from "firebase/firestore";
-import { getDatabase, ref, set, get, remove, child } from 'firebase/database'
-
+import { getDatabase, ref, set, get, remove, child, onValue } from 'firebase/database'
 
 const {
   VITE_FIREBASE_API_KEY,
@@ -127,6 +126,13 @@ export async function getOrders() {
 
 export async function getCart(userId) {
   return get(ref(database, `carts/${userId}`)) //
+    .then(snapshot => {
+      const items = snapshot.val() || {}
+      return Object.values(items)
+    })
+}
+export async function getJorders() {
+   get(ref(database, `customers/jorders`)) //
     .then(snapshot => {
       const items = snapshot.val() || {}
       return Object.values(items)

@@ -22,6 +22,7 @@ import JapitemDetail from "./pages/JapitemDetail"
 import Store from "./pages/Store"
 import { PopCart } from "./components/PopCart"
 import MyOrders from "./pages/MyOrders-page"
+import JapAdmin from "./components/jap-admin/jap-admin"
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/jap",
         element: <Jap />,
+      },
+      {
+        path: "/jap/ic",
+        element: <JapAdmin />,
       },
       {
         path: "/can",
