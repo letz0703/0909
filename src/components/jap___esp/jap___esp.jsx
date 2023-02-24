@@ -41,8 +41,9 @@ export default function JapEsp() {
 
   const [deliveryS, setDeliveryS] = useState()
 
-  async function handleUpdateDelivery() {
-    set(ref(database, `customers/jorders/${uid}/delivery`), {
+  async function handleUpdateDelivery(prev) {
+    set(ref(database, `customers/jorders/${uid}`), {
+      ...prev,
       delivery: deliveryS,
     })
     alert("updated")
@@ -80,23 +81,20 @@ export default function JapEsp() {
                 <td>{r.customNo}</td>
                 <td>{FormatTime(r.orderDate)}</td>
                 <td className="flex">
-                  <input
-                    type="text"
-                    id="deliveryS"
-                    name="deliveryS"
-                    defaultValue={deliveryS}
-                    autoFocus
-                    onChange={(e) => {
-                      setDeliveryS(e.target.value)
-                    }}
-                  />
-                  <button
-                    type="submit"
-                    onClick={handleUpdateDelivery}
-                    className="btn blue mini"
-                  >
-                    up
-                  </button>
+                    <input
+                      type="text"
+                      id="deliveryS"
+                      name="deliveryS"
+                      defaultValue={deliveryS}
+                      onChange={(e) => {
+                        setDeliveryS(e.target.value)
+                      }}
+                    <button
+                      type="submit"
+                      onClick={() => handleUpdateDelivery(r)}
+                    >
+                      up
+                    </button>
                 </td>
                 {/* <td>{r.delivery}</td> */}
               </tr>
