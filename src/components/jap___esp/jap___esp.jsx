@@ -41,13 +41,14 @@ export default function JapEsp() {
 
   return (
     <div className="jap___esp">
-      {/* <h2>Order List</h2> */}
+      <h2 className="mt-4">현지구매 요청 List</h2>
       {jorderList?.map((r) => (
         <div
           key={crypto.randomUUID()}
           className="jap__orderList flex items-center w-100"
         >
-          {console.log(r)}
+          {/* {console.log(r)} */}
+          <br />
           <table className="jap__esp-table">
             <thead>
               <tr>
