@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { useAuthContext } from "../../context/AuthContext"
-import { ref, get, child } from "firebase/database"
+import { ref, get, set, child } from "firebase/database"
 import { database } from "../../api/firebase"
 import Wait from "../../util/wait"
 import FormatTime from "../../util/formatTime"
@@ -22,7 +22,7 @@ export default function JapEsp() {
    * get(ref, user's uid)
    * data.map(row=>row.uid)
    */
-  const { user } = useAuthContext()
+  const { user, uid } = useAuthContext()
 
   const [jorderList, setJorderList] = useState(() => {
     read_rdb_jorders()
@@ -37,6 +37,15 @@ export default function JapEsp() {
         }
       })
       .catch((error) => alert(error))
+  }
+
+  const [deliveryS, setDeliveryS] = useState()
+
+  async function handleUpdateDelivery() {
+    set(ref(database, `customers/jorders/${uid}/delivery`), {
+      delivery: deliveryS,
+    })
+    alert("updated")
   }
 
   return (
@@ -70,7 +79,26 @@ export default function JapEsp() {
                 <td>{r.jProduct}</td>
                 <td>{r.customNo}</td>
                 <td>{FormatTime(r.orderDate)}</td>
-                <td>{r.delivery}</td>
+                <td className="flex">
+                  <input
+                    type="text"
+                    id="deliveryS"
+                    name="deliveryS"
+                    defaultValue={deliveryS}
+                    autoFocus
+                    onChange={(e) => {
+                      setDeliveryS(e.target.value)
+                    }}
+                  />
+                  <button
+                    type="submit"
+                    onClick={handleUpdateDelivery}
+                    className="btn blue mini"
+                  >
+                    up
+                  </button>
+                </td>
+                {/* <td>{r.delivery}</td> */}
               </tr>
             </tbody>
           </table>
