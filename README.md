@@ -1,8 +1,19 @@
 🖥 WIP...
 [] store page 수정( 수량, 디테일 페이지 링크 )
 
+[x] fix order date
+
+---
+
+# done & next
+
+2023.02.25/토: list jorders
+read and update delivery status
+gh: https://bit.ly/3KASD06
+→ 사용자가 자기 주문 보기
+
 2023.02.13/월
-[] jOrder RealTime DB
+jOrder RealTime DB
 
 thinkwise: https://web.thinkwise.co.kr/map/49720/41480
 firebase rdb : https://bit.ly/3jziZ7i
@@ -24,6 +35,7 @@ https://youtu.be/SK9AlIbexOE?t=506 슬라이더 강의
 <!-- HISTORY -->
 
 ## Detail : item detail 디테일
+
 gh : https://github.com/letz0703/0909/commit/a8c952bb3dac45bd6ea3c4fca022b66059682f2d
 
 ### Detail sliding

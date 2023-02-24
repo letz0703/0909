@@ -81,25 +81,41 @@ export default function JapEsp() {
                 <td>{r.customNo}</td>
                 <td>{FormatTime(r.orderDate)}</td>
                 <td className="flex">
+                  <div className="flex flex-row justify-between">
+                    <div className="text-red-500">현재 :{r.delivery}</div>
+                    {/* <div className="flex flex-row"> */}
                     <input
                       type="text"
                       id="deliveryS"
                       name="deliveryS"
                       defaultValue={deliveryS}
+                      autoFocus
                       onChange={(e) => {
                         setDeliveryS(e.target.value)
                       }}
+                      className="japESP__input"
+                    />
                     <button
                       type="submit"
                       onClick={() => handleUpdateDelivery(r)}
+                      className="btn blue mini"
                     >
                       up
                     </button>
+                    {/* </div> */}
+                  </div>
                 </td>
                 {/* <td>{r.delivery}</td> */}
               </tr>
             </tbody>
           </table>
+          <style>{`
+            .japESP__input {
+              background-color: powderblue; color: black
+              width: 1rem;
+            }
+
+          `}</style>
         </div>
       ))}
 
