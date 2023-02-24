@@ -57,7 +57,6 @@ export default function JapEsp() {
           key={crypto.randomUUID()}
           className="jap__orderList flex items-center w-100"
         >
-          {/* {console.log(r)} */}
           <br />
           <table className="jap__esp-table">
             <thead>
