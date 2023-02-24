@@ -32,8 +32,8 @@ export default function JapEsp() {
     return get(ref(database, "customers/jorders"))
       .then((snapshot) => {
         if (snapshot.exists()) {
-          const data = snapshot.val()
-          setJorderList([{ ...data }])
+          const data = Object.values(snapshot.val())
+          setJorderList(data)
         }
       })
       .catch((error) => alert(error))
@@ -78,7 +78,7 @@ export default function JapEsp() {
 
       <style>{`
       .jap___esp{
-        width: 100vw;
+        // width: 100vw;
       }
 				.jap__orderList {
           width: 1fr;

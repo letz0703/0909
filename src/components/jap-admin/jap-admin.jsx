@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { useState } from "react"
 import { getJorders, database } from "../../api/firebase"
+import JapEsp from "../jap___esp/jap___esp"
 export default function JapAdmin() {
   let JapAdmin = "jap-admin.jsx"
   const [customerEsp, setCustomerEsp] = useState()
@@ -11,10 +12,9 @@ export default function JapAdmin() {
 
   return (
     <div className="jap-admin">
-      <p>{customerEsp}</p>
+      <JapEsp />
       <style>{`
 				.jap-admin {
-					background-color: powderblue; color: black
 				}
 			`}</style>
     </div>
