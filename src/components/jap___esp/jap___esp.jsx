@@ -6,7 +6,6 @@ import Wait from "../../util/wait"
 import FormatTime from "../../util/formatTime"
 export default function JapEsp() {
   let JapEsp = "jap___esp.jsx"
-  const [state, setState] = useState({})
   /**
    * 1. 불러온다. 리얼타임 데이터 베이스를
    * 2. 뿌린다. map
@@ -39,12 +38,12 @@ export default function JapEsp() {
       .catch((error) => alert(error))
   }
 
-  const [deliveryS, setDeliveryS] = useState()
+  const [deliveryStatus, setDeliveryStatus] = useState()
 
   async function handleUpdateDelivery(prev) {
     set(ref(database, `customers/jorders/${uid}`), {
       ...prev,
-      delivery: deliveryS,
+      delivery: deliveryStatus,
     })
     alert("updated")
   }
@@ -85,12 +84,12 @@ export default function JapEsp() {
                     {/* <div className="flex flex-row"> */}
                     <input
                       type="text"
-                      id="deliveryS"
-                      name="deliveryS"
-                      defaultValue={deliveryS}
+                      id="deliveryStatus"
+                      name="deliveryStatus"
+                      defaultValue={deliveryStatus}
                       autoFocus
                       onChange={(e) => {
-                        setDeliveryS(e.target.value)
+                        setDeliveryStatus(e.target.value)
                       }}
                       className="japESP__input"
                     />
