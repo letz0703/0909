@@ -66,20 +66,24 @@ function ImageSlider({ slides }) {
         <div className="imageSlider__para w-96 relative">
           <div className="w-full h-full bg-cover"></div>
           <div className=" absolute w-full top-40 left-20">
-            <h1 className="text-5xl">인터넷 깡통시장</h1>
-            <p className="text-2xl">깡통시장 구매 대행 - store</p>
-            <p className="text-3xl">일본 현지 공동 구매 - jap</p>
-            <p className="btn red px-3 py-2" onClick={() => navigate("/jap")}>
-              3월 일본 현지구매(Jap)
-            </p>
+            <div className="text-4xl mb-3">아주 특별한 가격</div>
+            <div className="text-2xl mb-3">개인통관번호만 있으면</div>
+            <div className="text-2xl">배송비 무료(해외,국내)</div>
+            <div className="text-2xl">익일 수령</div>
             <div className="text-3xl bg-black p-2 px-1 text-white m-2">
-              캬베진 300정 1만원
+              곤약젤리 복숭아 2개(컵형)
+              <br />
+              5,000원
             </div>
-            <p>국내외 배송비 무료, 다음날 수령</p>
-            <button className="btn mini red" onClick={() => navigate("/jap")}>
+            <p>최소 향후 일주일간 해외주문 계획이 없으신 분들만 신청하세요</p>
+            <button
+              className="btn mini red mb-3"
+              onClick={() => navigate("/jap")}
+            >
               상세보기
             </button>
-            <p>로그인 후 새로고침 하시면 제품 검색이 가능합니다</p>
+            <p>깡통시장 제품들을 보시려면 로그인 후</p>
+            <p>새로고침 하세요</p>
           </div>
         </div>
       </div>

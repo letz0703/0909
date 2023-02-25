@@ -26,7 +26,7 @@ export default function Jap09Form({ icUser }) {
     jName: "",
     jCell: "",
     jCsNo: "",
-    jProduct: "캬베진 300정 1만원",
+    jProduct: "곤약 복숭아 2개(컵형)",
     jDeliveryTo: "",
     jEtc: "",
   }

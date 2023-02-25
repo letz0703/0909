@@ -70,31 +70,33 @@ export default function Jap() {
     <div className="jap__ flex flex-col align-items-start justify-start">
       <div className="jap__primary-header">
         <div className="w-full h-full align-top bg-pink-100">
-          <h1 className="pt-3">스페셜 공동구매</h1>
+          <h1 className="pt-3">해외 공동구매 안내</h1>
           <h3 className="text-2xl text-green-700 pb-1">
-            2023년 3월 캬베진 300정:만원
+            곤약젤리 복숭아(컵형) 2개를 특별가(5000원)에 드립니다.
           </h3>
           <p className="font-semibold mb-2">
-            공동구매 상품: 곤약젤리, 동전파스
+            공동구매상품(해외주문시 같이 주문): 곤약젤리, 동전파스
           </p>
           <div className="jap__info  p-3 text-left mb-2">
             <div>
-              - 특별가 상품(jap)으로 주문당 1개만 구입 가능합니다(특가+무료배송)
+              <li>- 개인당 수입 시 무관세(미화150불) 한도가 있기 때문에</li>
+              <li>- 고객님의 개인통관번호를 사용해서 해외공동구매를 합니다</li>
+              <li>- 이렇게 공동구매로 절감된 해외운임으로</li>
+              <li>
+                - 개인통관번호를 제공하신 고객님께는 특별가를 제공 합니다.
+              </li>
             </div>
             <div>
-              {" "}
-              - 다음 주문은 이전 주문이 저희쪽에 도착 후 가능 합니다(7~10일
+              - 깡통시장 제품을 먼저 보내 드립니다(결재 당일 발송, 평균 다음날
+              수령)
+            </div>
+            <div>
+              - 다음 주문은 이전 해외주문이 저희쪽에 도착 후 가능 합니다(7~10일
               소요){" "}
             </div>
             <div>
-              - 깡통시장 상품(store)은 상시 구매 가능합니다(기본배송비: 4000원)
-            </div>
-            <div>
-              - 깡통시장 제품을 다음날 바로 받거나 통관 후 받으셔도 됩니다
-            </div>
-            <div>
-              - 저희 재고가 많으면 해외주문이 일시중단 되며, 신청순으로 가능
-              시점에 개별 문자 드립니다.
+              - 재고가 많을 경우 해외주문이 일시 중단 되며, 신청순으로 가능
+              시점에 개별 연락 드립니다.
             </div>
           </div>
         </div>
