@@ -37,7 +37,7 @@ export default function UserForm({ jName, jCell, jCsNo, updateFields }) {
       </FormWrapper>
       <div className="user-form__info">
         <div>
-          고객님의 개인통관 번호는(
+          고객님의 개인통관 번호는
           <span
             onClick={() => {
               window.location.href =
@@ -45,9 +45,9 @@ export default function UserForm({ jName, jCell, jCsNo, updateFields }) {
             }}
             className="cursor-pointer underline"
           >
-            관세청 즉시 발급
+            관세청 홈페이지
           </span>
-          ) 받을 수 있습니다
+          에서 즉시 발급 됩니다
         </div>
         <div>미화 150불 한도내에서 공동구매 상품만 1회 수입 합니다.</div>
       </div>
