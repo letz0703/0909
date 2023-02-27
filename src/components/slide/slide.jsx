@@ -1,9 +1,7 @@
 import { useState, useEffect, useRef } from "react"
 import ImageSlider from "./image-slider"
-import { useAuthContext } from "../../context/AuthContext"
 
 export default function Slide() {
-  const { user } = useAuthContext()
   const slides = [
     // {
     //   url: "/imgs/cart_ori.jpg",
@@ -26,11 +24,9 @@ export default function Slide() {
 
   return (
     <section className="slide__">
-      {!user && (
-        <div style={containerStyle} className="slide">
-          <ImageSlider slides={slides} />
-        </div>
-      )}
+      <div style={containerStyle} className="slide">
+        {!user && <ImageSlider slides={slides} />}
+      </div>
     </section>
   )
 }

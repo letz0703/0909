@@ -8,7 +8,7 @@ export default function Store() {
   const [japitems, setJapitems] = useJapitems()
   return (
     <>
-      <h1>Store</h1>
+      <div>STORE</div>
       <Products />
     </>
   )
