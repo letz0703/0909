@@ -13,51 +13,50 @@ import { useEffect, useState } from "react"
 import FormatCurrency from "../util/formatCurrency"
 import { uploadImage } from "../api/uploader"
 import { useJapitems } from "../hooks/use-japitems"
-import { getDatabase, ref, set, get, remove, child } from 'firebase/database'
-import {useLocalStorage} from "../hooks/use-local-storage"
+import { getDatabase, ref, set, get, remove, child } from "firebase/database"
+import { useLocalStorage } from "../hooks/use-local-storage"
 const INITIAL_PRODUCT = {
-  id:'',
-  code: '',
-  name: '',
-  description: '',
-  price: '',
-  imgUrl: '',
-  homeUrl: '',
-  qty: 0
+  id: "",
+  code: "",
+  name: "",
+  description: "",
+  price: "",
+  imgUrl: "",
+  homeUrl: "",
+  qty: 0,
 }
 
 export default function NewProduct() {
-  const [products, setProducts] = useState({});
-  const [product, setProduct] = useState(INITIAL_PRODUCT);
-  const [japitems, setJapitems]= useJapitems()
-  const [newProduct, setNewProduct] = useState(INITIAL_PRODUCT);
-  const [successMsg, setSuccessMsg] = useState("success!!!");
-  const [qty, setQty] = useState(0);
-  const [addedJapitem, setAddedJapitem] = useState(INITIAL_PRODUCT);
+  const [products, setProducts] = useState({})
+  const [product, setProduct] = useState(INITIAL_PRODUCT)
+  const [japitems, setJapitems] = useJapitems()
+  const [newProduct, setNewProduct] = useState(INITIAL_PRODUCT)
+  const [successMsg, setSuccessMsg] = useState("success!!!")
+  const [qty, setQty] = useState(0)
+  const [addedJapitem, setAddedJapitem] = useState(INITIAL_PRODUCT)
 
-
-  function updateFields(fields){
-    setNewProduct(prev => {
-      return {...prev, ...fields}
+  function updateFields(fields) {
+    setNewProduct((prev) => {
+      return { ...prev, ...fields }
     })
   }
 
   const createJapitem = async (data) => {
     const id = crypto.randomUUID()
-    set(ref(database,`japitems/${id}` ),{
-      id:id,
-      code: data.code ||'',
+    set(ref(database, `japitems/${id}`), {
+      id: id,
+      code: data.code || "",
       name: data.name,
       description: data.description,
       price: data.price,
       imgUrl: data.imgUrl,
-      homeUrl: data.homeUrl || '',
-      qty: Number(data.qty) ||0
-    }).then(() => {
-    alert('data saved')
-    }
-    )
-    .catch(error => console.log(error))
+      homeUrl: data.homeUrl || "",
+      qty: Number(data.qty) || 0,
+    })
+      .then(() => {
+        alert("data saved")
+      })
+      .catch((error) => console.log(error))
   }
 
   // const handleUpdateStock = async (id, qty) => {
@@ -73,9 +72,9 @@ export default function NewProduct() {
   // }
 
   const handleJapitemDelete = async (id) => {
-    remove(ref(database,`japitems/${id}`))
-    .then(() => console.log("data deleted"))
-    .catch((error) => alert("error", error))
+    remove(ref(database, `japitems/${id}`))
+      .then(() => console.log("data deleted"))
+      .catch((error) => alert("error", error))
   }
 
   // const handleJapitemDelete = async (id) => {
@@ -91,81 +90,116 @@ export default function NewProduct() {
   //   getJapitems()
   // }, [])
 
-  function onSubmit(e){
+  function onSubmit(e) {
     e.preventDefault()
     createJapitem(newProduct)
     setAddedJapitem(newProduct)
   }
 
   return (
-    <div className="new-product__Main  w-full text-center flex flex-col justify-center items-center">
-      <form
-        className="new-product__form flex flex-col justify-center text-center gap-2 items-center pt-2"
-        style={{ margin: "0 auto", maxWidth: "300px" }}
-        onSubmit={onSubmit}
-      >
-        {/* <div className="new-product__form-group"> */}
-        {/* <label for="itemCode" className="new-product__form-label"> */}
-        {/* barcode */}
-        {/* </label> */}
-        <input
-          id="code"
-          type="text"
-          placeholder="아이템코드"
-          onChange={(e) => updateFields({code:e.target.value})}
-        />
-        {/* </div> */}
-        <input
-          type="text"
-          placeholder="item name"
-          onChange={(e) => updateFields({name:e.target.value})}
-        />
-        <input
-          type="number"
-          placeholder="price"
-          onChange={(e) => updateFields({price:e.target.value})}
-        />
-        <input
-          type="textarea"
-          placeholder="description"
-          onChange={(e) => updateFields({description:e.target.value})}
-        />
-        <input
-          type="text"
-          placeholder="imgUrl"
-          onChange={(e) => updateFields({imgUrl:e.target.value})}
-        />
-        <input
-          type="text"
-          placeholder="homeUrl"
-          onChange={(e) => updateFields({homeUrl:e.target.value})}
-        />
-        <input
-          type="number"
-          // name="qty"
-          // value={qty}
-          // value={product.qty ?? Number(0)}
-          placeholder="product qty"
-          // step={5}
-          // required
-          onChange={(e) => updateFields({qty:Number(e.target.value)})}
-        />
-        {/* <input
+    <form
+      className="new-product__form flex flex-col justify-center text-center gap-2 items-center pt-2 "
+      style={{ margin: "0 auto", maxWidth: "300px" }}
+      onSubmit={onSubmit}
+    >
+      <div>
+        <table className="newProduct__table">
+          <thead>
+            <tr>
+              <th scope="row">item code</th>
+              <th scope="row">name</th>
+              <th scope="row">price</th>
+              <th scope="row">description</th>
+              <th scope="row">imgUrl</th>
+              <th scope="row">homeUrl</th>
+              <th scope="row">qty</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input
+                  id="code"
+                  type="text"
+                  placeholder="아이템코드"
+                  onChange={(e) => updateFields({ code: e.target.value })}
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="item name"
+                  onChange={(e) => updateFields({ name: e.target.value })}
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="price"
+                  onChange={(e) => updateFields({ price: e.target.value })}
+                />
+              </td>
+              <td>
+                <input
+                  type="textarea"
+                  placeholder="description"
+                  onChange={(e) =>
+                    updateFields({ description: e.target.value })
+                  }
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="imgUrl"
+                  onChange={(e) => updateFields({ imgUrl: e.target.value })}
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="homeUrl"
+                  onChange={(e) => updateFields({ homeUrl: e.target.value })}
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  // name="qty"
+                  // value={qty}
+                  // value={product.qty ?? Number(0)}
+                  placeholder="product qty"
+                  step={5}
+                  // required
+                  onChange={(e) =>
+                    updateFields({ qty: Number(e.target.value) })
+                  }
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button className="btn btn--primary">아이템등록</button>
+        <div className="new-product__Main  w-full text-center flex flex-col justify-center items-center">
+          {/* <div className="new-product__form-group"> */}
+          {/* <label for="itemCode" className="new-product__form-label"> */}
+          {/* barcode */}
+          {/* </label> */}
+
+          {/* </div> */}
+
+          {/* <input
           type="number"
           placeholder="qty"
           step={5}
           className="bg-brand p-3"
           onChange={(e) => setStock(e.target.value)}
         /> */}
-        <button className="btn btn--primary" >
-          아이템등록
-        </button>
-      </form>
 
-      {/* {successMsg && <p>{successMsg}</p>} */}
+          {/* {successMsg && <p>{successMsg}</p>} */}
 
-      {/* {japitems.map((japitem) => ( */}
-        {/* <div key={`${Date()}-${japitem}`}> */}
+          {/* {japitems.map((japitem) => ( */}
+          {/* <div key={`${Date()}-${japitem}`}> */}
           <div className="new-product__list place-content-center text-center w-full">
             <span>code: {addedJapitem.code}</span>
             <span>
@@ -210,6 +244,13 @@ export default function NewProduct() {
           {/* </div> */}
 
           <style>{`
+        .newProduct__table{
+          // border-collapse: collapse;
+          // text-align: left;
+          // line-height: 1.5;
+          // margin : 20px 10px;
+        }
+
           .new-product__Main input {
             background-color: #c10002;
             padding: 1.2em;
@@ -245,8 +286,10 @@ export default function NewProduct() {
           }
 
           `}</style>
-        {/* </div> */}
-      {/* ))} */}
-    </div>
+          {/* </div> */}
+          {/* ))} */}
+        </div>
+      </div>
+    </form>
   )
 }
