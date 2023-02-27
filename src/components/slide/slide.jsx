@@ -10,7 +10,7 @@ export default function Slide() {
     {
       url: "/imgs/cart_ori.jpg",
       title: "Jap",
-      para: "일본현지 공동구매 / 선배송 후 구매",
+      para: "일본현지 공동구매",
     },
     // { url: "/imgs/promise.jpg", title: "스페셜(promise)" },
   ]
