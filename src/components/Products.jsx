@@ -28,7 +28,7 @@ export default function Products() {
   } = useShoppingCart()
 
   return (
-    <div className="shop-home grid grid-cols-5 gap-3">
+    <div className="shop-home grid grid-cols-1 lg:grid-cols-5 gap-2">
       {japitems
         .filter((item) => {
           return search.toLowerCase() === ""
