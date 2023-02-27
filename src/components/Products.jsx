@@ -28,7 +28,7 @@ export default function Products() {
   } = useShoppingCart()
 
   return (
-    <div className="shop-home grid grid-cols-1 lg:grid-cols-5 gap-2">
+    <div className="shop-home grid grid-cols-1 lg:grid-cols-5 gap-2 ">
       {japitems
         .filter((item) => {
           return search.toLowerCase() === ""
@@ -64,28 +64,28 @@ export default function Products() {
             </button>
 
             <style>{`
-            .product__{
-              max-content: max-width;
-            }
-          .shop-home{
-            // max-width: max-content;
+          //   .product__{
+          //     max-content: max-width;
+          //   }
+          // .shop-home{
+          //   // max-width: max-content;
 
-            // display: grid;
-            // grid-template-columns: repeat(5, auto);
-            // border-bottom: 1px dashed black;
-            // padding: 2rem;
-            // cursor: pointer;
-          }
-          .new-product__list-image{
-            max-width: 10rem;
-            margin-top: .9rem;
-            cursor: pointer;
-          }
-          @media screen and (max-width: 1000px){
-            .shop-home {
-              grid-template-columns: repeat(2, auto);
-            }
-          }
+          //   // display: grid;
+          //   // grid-template-columns: repeat(5, auto);
+          //   // border-bottom: 1px dashed black;
+          //   // padding: 2rem;
+          //   // cursor: pointer;
+          // }
+          // .new-product__list-image{
+          //   max-width: 10rem;
+          //   margin-top: .9rem;
+          //   cursor: pointer;
+          // }
+          // @media screen and (max-width: 1000px){
+          //   .shop-home {
+          //     grid-template-columns: repeat(2, auto);
+          //   }
+          // }
           `}</style>
           </div>
         ))}

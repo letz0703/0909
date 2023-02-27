@@ -63,8 +63,8 @@ function ImageSlider({ slides }) {
             </span>
           ))}
         </div>
-        <div className="imageSlider__para w-96 relative">
-          <div className="w-full h-full bg-cover"></div>
+        <div className="imageSlider__para w-96%  relative">
+          {/* <div className="w-full h-full bg-cover"></div> */}
           <div className=" absolute w-full top-40 left-20">
             <div className="text-4xl mb-3">해외 공동구매</div>
             <div className="text-2xl mb-3">개인통관번호만 있으면</div>
