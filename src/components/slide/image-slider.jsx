@@ -78,12 +78,12 @@ function ImageSlider({ slides }) {
               향후 10일간 해외주문 계획이 없으신 분들만
               <br /> 신청하세요
             </p>
-            <butto간
+            <button
               className="btn mini red mb-3"
               onClick={() => navigate("/jap")}
             >
               상세보기
-            </butto간>
+            </button>
             <p>깡통시장 제품들을 보시려면 로그인 후</p>
             <p>새로고침 하세요</p>
           </div>

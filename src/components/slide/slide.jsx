@@ -26,9 +26,11 @@ export default function Slide() {
 
   return (
     <section className="slide__">
-      <div style={containerStyle} className="slide">
-        {!user && <ImageSlider slides={slides} />}
-      </div>
+      {!user && (
+        <div style={containerStyle} className="slide">
+          <ImageSlider slides={slides} />
+        </div>
+      )}
     </section>
   )
 }
