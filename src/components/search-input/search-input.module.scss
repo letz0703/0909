@@ -48,10 +48,10 @@
   height: var(--size);
   // border-radius: 500px;
   // width: calc(var(--size) * 5);
-  width: 70%;
+  /* width: 3%; */
   position: relative;
   &:focus-within {
-    width: 500px;
+    width: 33vw;
     input {
       cursor: initial;
       opacity: 1;
@@ -62,7 +62,7 @@
   }
   overflow: hidden;
 
-  transition: width 400ms cubic-bezier(0.18, 0.89, 0.32, 1.25);
+  /* transition: width 400ms cubic-bezier(0.18, 0.89, 0.32, 1.25); */
 }
 
 .search_icon {
@@ -78,7 +78,7 @@
   width: 100%;
   line-height: calc(var(--size) - 0.3em);
   // background: rgba(lightblue, 1);
-  background: #c10002;
+  /* background: #c10002; */
   padding: 0 0.5rem;
   flex-grow: 1;
   font-size: 1.5rem;
