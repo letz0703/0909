@@ -50,8 +50,7 @@ export default function Jap09Form({ icUser }) {
   function onSubmit(e) {
     e.preventDefault()
     if (!isLastStep) return next()
-    // console.log(data)
-    create_rdb_jorders(data)
+    // console.log(data) create_rdb_jorders(data)
     /** save data to RDB 2023.02.13/월 */
     alert("주문이 완료 되었습니다.")
     window.location.replace("/jap")

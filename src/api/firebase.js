@@ -95,6 +95,21 @@ export async function addNewProduct(product, image) {
   })
 }
 
+export async function updateQuantity(prev, itemQty) {
+  set(ref(database, `/japitems/${prev.id}`), {
+    ...prev,
+    qty: itemQty,
+  })
+  alert("data qty updated")
+}
+export async function updateFBPrice(prev, itemPrice) {
+  set(ref(database, `/japitems/${prev.id}`), {
+    ...prev,
+    price: itemPrice,
+  })
+  alert("data price updated")
+}
+
 export async function addNewOrder(product, image) {
   const id = crypto.randomUUID()
   return set(ref(database, `orders/${id}`), {

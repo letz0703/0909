@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid"
 import { getOrders, database, db } from "../api/firebase"
-import { getDatabase, ref, set, get, remove, child } from 'firebase/database'
+import { getDatabase, ref, set, get, remove, child } from "firebase/database"
 import { useContext, useEffect, useState } from "react"
 // import {
 //   getDocs,
@@ -15,7 +15,6 @@ import { SearchContext } from "../App"
 import { useNavigate } from "react-router-dom"
 import useProducts from "../hooks/use-products"
 import { useLocalStorage } from "../hooks/use-local-storage"
-
 
 export const useJapitems = () => {
   // const japitemRef = collection(db, "japitems") //customNo, userId
@@ -52,16 +51,15 @@ export const useJapitems = () => {
   //   getJapitems()
   // }, [])
   useEffect(() => {
-    get(ref(database,"japitems")).then(snapshot => {
-      if(snapshot.exists()){
-      setJapitems(Object.values(snapshot.val()))
+    get(ref(database, "japitems")).then((snapshot) => {
+      if (snapshot.exists()) {
+        setJapitems(Object.values(snapshot.val()))
         // const data =  Object.values(snapshot.val())
         // setJapitems(prev => [...prev, ...data])
       }
       return [japitems]
     })
-
-  }, []);
+  }, [])
 
   return [japitems, setJapitems]
 }
