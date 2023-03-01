@@ -47,50 +47,37 @@ function ImageSlider({ slides }) {
         {/* {<BsFillArrowRightCircleFill />} */}
         {/* <img src="/imgs/right.svg" /> */}
         {/* </div> */}
-        <div className="dots-container flex flex-row justify-center relative">
-          {slides.map((slide, slideIndex) => (
-            <span
-              key={slideIndex}
-              className="dots top-30 "
-              onClick={() => goToSlide(slideIndex)}
-            >
-              <button className="btn gray mini top-20">
-                {/* <button className="btn border-bottom btn--jap__primary-header absolute top-20  "> */}
-                {slide.title}
+
+        <div className="imageSlider__para relative">
+          <div className=" bg-cover">
+            <div className=" absolute  left-20">
+              <div className="text-4xl pt-2 m-4">해외 공동구매</div>
+              <div className="text-2xl mb-3">개인통관번호만 있으면</div>
+              <div className="text-2xl bg-black p-3 text-white m-2 p">
+                곤약젤리 복숭아 2개
+                <br />
+                컵타입
+                <br />
+                5,000원
+              </div>
+              <div className="text-2xl">배송비 무료/익일 수령</div>
+              <p>
+                향후 10일간 해외주문 계획이 없으신 분들만
+                <br /> 신청하세요
+              </p>
+              <button
+                className="btn mini red mb-3"
+                onClick={() => navigate("/jap")}
+              >
+                상세보기
               </button>
-              {/* <img src="/imgs/circle.svg" className="w-20 px-3" /> */}
-              <div className="">{slide.para}</div>
-            </span>
-          ))}
-        </div>
-        <div className="imageSlider__para w-full relative">
-          {/* <div className="w-full h-full bg-cover"></div> */}
-          <div className=" absolute top-40 left-20">
-            <div className="text-4xl mb-3">해외 공동구매</div>
-            <div className="text-2xl mb-3">개인통관번호만 있으면</div>
-            <div className="text-2xl bg-black p-3 text-white m-2 p">
-              곤약젤리 복숭아 2개
-              <br />
-              컵타입
-              <br />
-              5,000원
+              <p>깡통시장 제품들을 보시려면 로그인 후</p>
+              <p>새로고침 하세요</p>
             </div>
-            <div className="text-2xl">배송비 무료/익일 수령</div>
-            <p>
-              향후 10일간 해외주문 계획이 없으신 분들만
-              <br /> 신청하세요
-            </p>
-            <button
-              className="btn mini red mb-3"
-              onClick={() => navigate("/jap")}
-            >
-              상세보기
-            </button>
-            <p>깡통시장 제품들을 보시려면 로그인 후</p>
-            <p>새로고침 하세요</p>
           </div>
         </div>
       </div>
+      {/* </div> */}
       <style>{`
       .image-slider__main {
         display: grid;
