@@ -130,13 +130,15 @@ export async function addNewOrder(product, image) {
   })
 }
 
-export async function addNewCart(local__icCart) {
-  return set(ref(database, `carts/${user.uid}`), {
-    userId: user.uid,
-    cartId: crypto.randomUUID(),
+export async function addNewCart(userId,cartId,local__icCart) {
+  return set(ref(database, `carts/${userId}/${cartId}`),
+  {
+    userId,
+    cartId,
     orderDate: Date(),
     cartItems: local__icCart,
-  })
+  }
+  )
 }
 
 export async function getProducts() {

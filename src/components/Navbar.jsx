@@ -89,8 +89,10 @@ export default function Navbar({ search, setSearch }) {
       <nav className="flex item-center font-bold">
         <div className="flex justify-center items-center gap-3 me-auto">
           {/* <Link to="/can">Can</Link> */}
+          <Link to="/my_orders" style={{ width: "70px" }}>
+            주문내역
+          </Link>
           <Link to="/jap">Jap</Link>
-          <Link to="/my_orders">myOrders</Link>
           <Link to="/shop">Store</Link>
           {user && (
             <Link to="/carts">

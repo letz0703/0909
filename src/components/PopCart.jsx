@@ -28,7 +28,7 @@ export function PopCart({ isOpen }) {
 
   // console.log("local",local__icCart)
   const handleCart__Order = async () => {
-    await addNewCart(local__icCart)
+    await addNewCart(user.uid, crypto.randomUUID(), local__icCart)
     // await addDoc(cartRef, {
     //   userId: user.uid,
     //   cartId: crypto.randomUUID(),
