@@ -9,27 +9,30 @@ import { useLocalStorage } from "../hooks/use-local-storage"
 import { addDoc, collection } from "firebase/firestore"
 import { db, auth } from "../api/firebase"
 import { useAuthState } from "react-firebase-hooks/auth"
-import {useState} from "react"
+import { useState } from "react"
 // type PopCartProps = {
 //   isOpen: boolean
 // }
+
+const deleiveryCost = parseInt(4000)
 export function PopCart({ isOpen }) {
   // export function PopCart({isOpen}:PopCartProps) {
   const [japitems, setJapitems] = useJapitems()
   const { closeCart, openCart, cartItems } = useShoppingCart()
-  const [local__icCart, setCartItems] = useLocalStorage("ic-cart", {...cartItems})
+  const [local__icCart, setCartItems] = useLocalStorage("ic-cart", {
+    ...cartItems,
+  })
   const [user] = useAuthState(auth)
   const cartRef = collection(db, "carts")
   // const [cartItem, setCartItem] = useState({});
 
   // console.log("local",local__icCart)
   const handleCart__Order = async () => {
-
     await addDoc(cartRef, {
       cartId: crypto.randomUUID(),
       userId: user.uid,
       orderDate: Date(),
-      cartItems:local__icCart
+      cartItems: local__icCart,
     })
 
     setCartItems([])
@@ -62,7 +65,16 @@ export function PopCart({ isOpen }) {
                 return total + (item?.price || 0) * cartItem.quantity
               }, 0)
             )}
-            <div>+ 기본택배 4,000원</div>
+            <div>+ 기본택배 {<span>{deleiveryCost}</span>}원</div>
+            <p className="text-blue-400">
+              <span
+                onClick={() => window.location.replace("/jap")}
+                className="p-2 bg-pink-200"
+              >
+                현지 구매대행
+              </span>
+              신청고객은 택배비 빼고 송금하시면 됩니다
+            </p>
           </div>
           <button className="btn btn--primary" onClick={handleCart__Order}>
             주문하기
