@@ -1,21 +1,29 @@
-import { initializeApp } from 'firebase/app';
-import { v4 as uuid } from 'uuid';
+import { initializeApp } from "firebase/app"
+import { v4 as uuid } from "uuid"
 import {
   getAuth,
   signInWithPopup,
   GoogleAuthProvider,
   signOut,
   onAuthStateChanged,
-} from 'firebase/auth';
-import { getFirestore } from "firebase/firestore";
-import { getDatabase, ref, set, get, remove, child, onValue } from 'firebase/database'
+} from "firebase/auth"
+import { getFirestore } from "firebase/firestore"
+import {
+  getDatabase,
+  ref,
+  set,
+  get,
+  remove,
+  child,
+  onValue,
+} from "firebase/database"
 
 const {
   VITE_FIREBASE_API_KEY,
   VITE_FIREBASE_DOMAIN,
   VITE_FIREBASE_DATABASE_URL,
   VITE_FIREBASE_PROJECTID,
-  VITE_FIREBASE_STORAGE_BUCKET
+  VITE_FIREBASE_STORAGE_BUCKET,
 } = import.meta.env
 
 const firebaseConfig = {
@@ -43,7 +51,7 @@ export function logout() {
 }
 
 export function onUserStateChange(callback) {
-  onAuthStateChanged(auth, async user => {
+  onAuthStateChanged(auth, async (user) => {
     const updatedUser = user ? await adminUser(user) : null
     if (!user?.isAdmin && user?.customNumber) {
       customUser(user)
@@ -53,16 +61,18 @@ export function onUserStateChange(callback) {
 }
 
 async function adminUser(user) {
-  return get(ref(database, "admins")) //
-  // return get(ref(db, "admins")) //
-    .then(snapshot => {
-      if (snapshot.exists()) {
-        const admins = snapshot.val()
-        const isAdmin = admins.includes(user.uid)
-        return {...user, isAdmin}
-      }
-      return user
-    })
+  return (
+    get(ref(database, "admins")) //
+      // return get(ref(db, "admins")) //
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          const admins = snapshot.val()
+          const isAdmin = admins.includes(user.uid)
+          return { ...user, isAdmin }
+        }
+        return user
+      })
+  )
 }
 
 // function addCustomNumber(num){
@@ -70,18 +80,18 @@ async function adminUser(user) {
 //   set(ref(db_custom,`users/`+userId),{...user } )
 // }
 
-async function customUser(user){
-  return get(ref(database, "customs"))//
-  .then(snapshot => {
-    if(snapshot.exists()){
-      const customs = snapshot.val()
-      const isCustom = customs.includes(user.id)
-      return {...user, isCustom}
-    } else {
-      console.log('no data')
-    }
-    return user
-  })
+async function customUser(user) {
+  return get(ref(database, "customs")) //
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        const customs = snapshot.val()
+        const isCustom = customs.includes(user.id)
+        return { ...user, isCustom }
+      } else {
+        console.log("no data")
+      }
+      return user
+    })
 }
 
 export async function addNewProduct(product, image) {
@@ -91,7 +101,7 @@ export async function addNewProduct(product, image) {
     id,
     price: parseInt(product.price),
     image,
-    options: product.options.split(",")
+    options: product.options.split(","),
   })
 }
 
@@ -116,13 +126,22 @@ export async function addNewOrder(product, image) {
     ...order,
     id,
     qty: parseInt(product.qty),
-    image
+    image,
+  })
+}
+
+export async function addNewCart(local__icCart) {
+  return set(ref(database, `carts/${user.uid}`), {
+    userId: user.uid,
+    cartId: crypto.randomUUID(),
+    orderDate: Date(),
+    cartItems: local__icCart,
   })
 }
 
 export async function getProducts() {
   // return get(ref(database, "japitems")).then(snapshot => {
-  return get(ref(database, "products")).then(snapshot => {
+  return get(ref(database, "products")).then((snapshot) => {
     if (snapshot.exists()) {
       return Object.values(snapshot.val())
     }
@@ -131,7 +150,7 @@ export async function getProducts() {
 }
 
 export async function getOrders() {
-  return get(ref(database, "orders")).then(snapshot => {
+  return get(ref(database, "orders")).then((snapshot) => {
     if (snapshot.exists()) {
       return Object.values(snapshot.val())
     }
@@ -141,14 +160,21 @@ export async function getOrders() {
 
 export async function getCart(userId) {
   return get(ref(database, `carts/${userId}`)) //
-    .then(snapshot => {
+    .then((snapshot) => {
       const items = snapshot.val() || {}
       return Object.values(items)
     })
 }
 export async function getJorders() {
-   get(ref(database, `customers/jorders`)) //
-    .then(snapshot => {
+  get(ref(database, `customers/jorders`)) //
+    .then((snapshot) => {
+      const items = snapshot.val() || {}
+      return Object.values(items)
+    })
+}
+export async function getJorder(uid) {
+  get(ref(database, `customers/jorders/${uid}`)) //
+    .then((snapshot) => {
       const items = snapshot.val() || {}
       return Object.values(items)
     })

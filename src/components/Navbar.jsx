@@ -90,6 +90,7 @@ export default function Navbar({ search, setSearch }) {
         <div className="flex justify-center items-center gap-3 me-auto">
           {/* <Link to="/can">Can</Link> */}
           <Link to="/jap">Jap</Link>
+          <Link to="/my_orders">myOrders</Link>
           <Link to="/shop">Store</Link>
           {user && (
             <Link to="/carts">

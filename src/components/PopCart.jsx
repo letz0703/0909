@@ -7,7 +7,7 @@ import CartItem from "./CartItem"
 import { useJapitems } from "../hooks/use-japitems"
 import { useLocalStorage } from "../hooks/use-local-storage"
 import { addDoc, collection } from "firebase/firestore"
-import { db, auth } from "../api/firebase"
+import { db, auth, addNewCart } from "../api/firebase"
 import { useAuthState } from "react-firebase-hooks/auth"
 import { useState } from "react"
 // type PopCartProps = {
@@ -28,15 +28,21 @@ export function PopCart({ isOpen }) {
 
   // console.log("local",local__icCart)
   const handleCart__Order = async () => {
-    await addDoc(cartRef, {
-      cartId: crypto.randomUUID(),
-      userId: user.uid,
-      orderDate: Date(),
-      cartItems: local__icCart,
-    })
+    await addNewCart(local__icCart)
+    // await addDoc(cartRef, {
+    //   userId: user.uid,
+    //   cartId: crypto.randomUUID(),
+    //   orderDate: Date(),
+    //   cartItems: local__icCart,
+    // })
 
     setCartItems([])
     window.location.replace("/shop")
+  }
+
+  async function handleResetCart() {
+    setCartItems([])
+    window.location.replace(".")
   }
   console.log(cartItems)
   return (
@@ -80,6 +86,11 @@ export function PopCart({ isOpen }) {
             주문하기
           </button>
         </Stack>
+        <div className="flex justify-center">
+          <button className="btn red" onClick={() => handleResetCart()}>
+            reset
+          </button>
+        </div>
       </Offcanvas.Body>
     </Offcanvas>
   )

@@ -13,7 +13,7 @@ export default function MyCart(props) {
   console.log(props)
   const { uid } = useAuthContext()
   const { data: japitems, isLoading } = useQuery(["carts"], () => getCart(uid))
-  const { addOrder } = useOrders()
+  const { addNewCart } = useOrders()
 
   // const {
   //   cartQuery: { isLoading, data: japitems },
@@ -29,6 +29,7 @@ export default function MyCart(props) {
 
   const handleOrder = () => {
     // console.log(addNewOrder)
+    addNewOrder()
   }
 
   return (
