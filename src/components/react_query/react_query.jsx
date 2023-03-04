@@ -10,9 +10,9 @@ import PostList2 from "./post-list-2"
 
 export default function ReactQuery() {
   const [currentPage, setCurrentPage] = useState(<PostList1 />)
-  const queryClien = useQueryClient()
+  const queryClient = useQueryClient()
   function onHoverPostOneLink() {
-    queryClien.prefetchQuery({
+    queryClient.prefetchQuery({
       queryKey: ["posts", 1],
       queryFn: () => getPost(1),
     })

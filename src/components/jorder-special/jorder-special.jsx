@@ -9,12 +9,12 @@ const POSTS = [{ id: 1, name: "캬베진 300정", price: 10000 }]
 export default function JorderQuery() {
   const queryClient = useQueryClient()
 
-  const jorderQuery = useQuery({
-    queryKey: ["jorder"],
-    queryFn: () => Wait(1000).then(() => [...POSTS]),
-    /** simulate error ↓ */
-    // queryFn: () => Promise.reject("error message"),
-  })
+  // const jorderQuery = useQuery({
+  // queryKey: ["jorder"],
+  // queryFn: () => Wait(1000).then(() => [...POSTS]),
+  /** simulate error ↓ */
+  // queryFn: () => Promise.reject("error message"),
+  // })
 
   const jorderMutation = useMutation({
     mutationFn: async (name, price) => {
