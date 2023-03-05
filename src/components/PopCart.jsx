@@ -82,13 +82,13 @@ export function PopCart({ isOpen }) {
               신청고객은 택배비 빼고 송금하시면 됩니다
             </p>
           </div>
-          <button className="btn btn--primary" onClick={handleCart__Order}>
-            주문하기
-          </button>
         </Stack>
         <div className="flex justify-center">
+          <button className="btn blue" onClick={handleCart__Order}>
+            주문하기
+          </button>
           <button className="btn red" onClick={() => handleResetCart()}>
-            reset
+            지우기
           </button>
         </div>
       </Offcanvas.Body>
