@@ -10,6 +10,7 @@ import { addDoc, collection } from "firebase/firestore"
 import { db, auth, addNewCart } from "../api/firebase"
 import { useAuthState } from "react-firebase-hooks/auth"
 import { useState } from "react"
+import { useEffect } from "react"
 // type PopCartProps = {
 //   isOpen: boolean
 // }
@@ -36,7 +37,7 @@ export function PopCart({ isOpen }) {
     //   cartItems: local__icCart,
     // })
 
-    setCartItems([])
+    // setCartItems([])
     window.location.replace("/shop")
   }
 
@@ -45,6 +46,7 @@ export function PopCart({ isOpen }) {
     window.location.replace(".")
   }
   console.log(cartItems)
+
   return (
     <Offcanvas
       show={isOpen}

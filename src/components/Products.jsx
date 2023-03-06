@@ -25,8 +25,12 @@ export default function Products() {
     increaseCartQuantity,
     decreaseCartQuantity,
     removeFromCart,
+    setCartItems,
   } = useShoppingCart()
 
+  useEffect(() => {
+    setCartItems([])
+  }, [])
   return (
     <div className="shop-home grid grid-cols-1 lg:grid-cols-5 gap-2 ">
       {japitems
