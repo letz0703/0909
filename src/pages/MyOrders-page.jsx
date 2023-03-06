@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react"
-//import styles from './MySpecails-page.module.css'
+import { use, useEffect, useState } from "react"
 import { useQuery, useMutation } from "@tanstack/react-query"
 import { collection, getDoc, getDocs } from "firebase/firestore"
-import { db, getJorder } from "../api/firebase"
+import { database, db, getJorder } from "../api/firebase"
 import Wait from "../util/wait"
 import { useAuthContext } from "../context/AuthContext"
 import { useLocation } from "react-router-dom"
+import { get, ref } from "firebase/database"
+import FormatTIME from "../util/formatTime"
 
 // const SPECIALS = [
 //   { id: 1, itemId: "2301-01", name: "JP-캬베진 300정", price: 10000 },
@@ -14,16 +15,26 @@ import { useLocation } from "react-router-dom"
 
 export default function MyOrders() {
   const { uid } = useAuthContext()
+  const [orders, setOrders] = useState([])
   // console.log(SPECIALS)
-  const [myOrders, setMyOrders] = useState([])
+  // const [myOrders, setMyOrders] = useState([])
 
   // const { uid } = useAuthContext()
 
-  async function getMyOrders(uid) {
-    // getJorder(uid)
-    // const data = doc(db, "japitems", id)
-    // console.log(data)
+  async function get_rdb_my_orders(userId) {
+    return get(ref(database, `carts/${userId}`)).then((snapshot) => {
+      if (snapshot.exists()) {
+        const data = Object.values(snapshot.val())
+        console.log("data", data)
+        setOrders((prev) => [...prev, ...data])
+      }
+      // return []
+    })
   }
+
+  useEffect(() => {
+    get_rdb_my_orders(uid)
+  }, [uid])
 
   // const specailsQuery = useQuery({
   //   queryKey: ["specails"],
@@ -46,12 +57,10 @@ export default function MyOrders() {
   // if (specailsQuery.isLoading) return <h1>Loading...</h1>
   // if (specailsQuery.isError)
   //   return <pre>{JSON.stringify(specailsQuery.error)}</pre>
-  useEffect(() => {
-    getMyOrders()
-  }, [])
   return (
     <>
-      <h1>hi</h1>
+      <h1>주문 내역</h1>
+      <div>{orders.map((r) => FormatTIME(r.orderDate))}</div>
     </>
     // <div>
     //   <h1>Monlty JAP items</h1>

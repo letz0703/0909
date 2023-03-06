@@ -27,17 +27,6 @@ export default function JapEsp() {
     read_rdb_jorders()
   })
 
-  async function read_rdb_jorders() {
-    return get(ref(database, "customers/jorders"))
-      .then((snapshot) => {
-        if (snapshot.exists()) {
-          const data = Object.values(snapshot.val())
-          setJorderList(data)
-        }
-      })
-      .catch((error) => alert(error))
-  }
-
   const [deliveryStatus, setDeliveryStatus] = useState()
 
   async function handleUpdateDelivery(prev) {
