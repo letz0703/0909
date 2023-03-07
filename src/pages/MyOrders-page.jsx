@@ -60,7 +60,13 @@ export default function MyOrders() {
   return (
     <>
       <h1>주문 내역</h1>
-      <div>{orders.map((r) => FormatTIME(r.orderDate))}</div>
+      <div>
+        {orders.map((r) => (
+          <div key={crypto.randomUUID()}>
+            <div>{FormatTIME(r.orderDate)}</div>
+          </div>
+        ))}
+      </div>
     </>
     // <div>
     //   <h1>Monlty JAP items</h1>
