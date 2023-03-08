@@ -14,7 +14,7 @@ import FormatTIME from "../util/formatTime"
 // ]
 
 export default function MyOrders() {
-  const { uid } = useAuthContext()
+  const { uid, login } = useAuthContext()
   const [orders, setOrders] = useState([])
   // console.log(SPECIALS)
   // const [myOrders, setMyOrders] = useState([])
@@ -60,6 +60,16 @@ export default function MyOrders() {
   return (
     <>
       <h1>주문 내역</h1>
+      <p>
+        {!uid && (
+          <span
+            onClick={login}
+            className="btn btn--primary mini cursor-pointer"
+          >
+            login
+          </span>
+        )}
+      </p>
       <div>
         {orders.map((r) => (
           <div key={crypto.randomUUID()}>
