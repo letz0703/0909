@@ -21,7 +21,7 @@ const FormatTIME = (timestamp) => {
 export default function MyOrders() {
   const { uid, login } = useAuthContext()
   const [orders, setOrders] = useState([])
-  // const [itemsInCart, setItemsInCart] = useState(null)
+  const [itemsInCart, setItemsInCart] = useState(null)
   // console.log(SPECIALS)
   // const [myOrders, setMyOrders] = useState([])
 
@@ -31,12 +31,12 @@ export default function MyOrders() {
     return get(ref(database, `carts/${userId}`)).then((snapshot) => {
       if (snapshot.exists()) {
         const data = Object.values(snapshot.val())
-        // setItemsInCart(
-        //   data.map((cart) => {
-        //     return cart.cartItems
-        //   })
-        // )
-        setOrders(data)
+        setItemsInCart(
+          data.map((cart) => {
+            return cart.cartItems
+          })
+        )
+        setOrders((prev) => [...prev, ...data])
       }
     })
   }
@@ -44,7 +44,29 @@ export default function MyOrders() {
   useEffect(() => {
     get_rdb_my_orders(uid)
   }, [uid])
+  // console.log("itemsInCart:", itemsInCart)
 
+  // const specailsQuery = useQuery({
+  //   queryKey: ["specails"],
+  //   queryFn: () => Wait(1000).then(() => [...SPECIALS]),
+  //   // queryFn: () => Promise.reject("Error"),
+  // })
+
+  // const specailsMutation = useMutation({
+  //   mutationFn: (itemId) =>
+  //     Wait(1000).then(() =>
+  //       SPECIALS.push({
+  //         id: crypto.randomUUID(),
+  //         itemId: Date(),
+  //         name: "New Name",
+  //         price: 10000,
+  //       })
+  //     ),
+  // })
+
+  // if (specailsQuery.isLoading) return <h1>Loading...</h1>
+  // if (specailsQuery.isError)
+  //   return <pre>{JSON.stringify(specailsQuery.error)}</pre>
   return (
     <>
       <h1>주문 내역</h1>
@@ -59,42 +81,32 @@ export default function MyOrders() {
         )}
       </p>
       <div>
-        {orders.map((order) => (
-          <div key={order.orderDate}>
-            <div>{FormatTIME(order.orderDate)}</div>
+        {orders.map((r) => (
+          <div key={r.orderDate}>
+            <div>{FormatTIME(r.orderDate)}</div>
             <hr />
-            <div className="p-2 mb-4">
-              {
-                order.cartItems.map((row) => (
-                  <div
-                    key={crypto.randomUUID()}
-                    className="flex flex-row justify-center"
-                  >
-                    <span className="mx-4">id:{row.id}</span>
-                    <span>qty: {row.quantity}</span>
-                  </div>
-                ))
-                // orders.cartItems.map((item) => {
-                //   return item.map((row) => {
-                //     const res_item = { id: row.id, quantity: row.quantity }
-                //     // const { id, quantity } = res_item
-                //     return (
-                //       <div
-                //         key={res_item.id}
-                //         className="bg-blue-100 grid  grid-cols-2 "
-                //       >
-                //         <div>id:{res_item.id}</div>
-                //         <div>qty:{res_item.quantity}</div>
-                //       </div>
-                //     )
-                //   })
-                // return {
-                //   ...item,
-                //   id: item.id,
-                //   quanity: item.quantity,
-                // }
-              }
-              {/* )} */}
+            <div>
+              {itemsInCart &&
+                itemsInCart.map((item) => {
+                  return item.map((row) => {
+                    const res_item = { id: row.id, quantity: row.quantity }
+                    // const { id, quantity } = res_item
+                    return (
+                      <div
+                        key={res_item.id}
+                        className="bg-blue-100 grid  grid-cols-2 "
+                      >
+                        <div>id:{res_item.id}</div>
+                        <div>qty:{res_item.quantity}</div>
+                      </div>
+                    )
+                  })
+                  // return {
+                  //   ...item,
+                  //   id: item.id,
+                  //   quanity: item.quantity,
+                  // }
+                })}
               {/* <span>{id}</span> */}
             </div>
           </div>
