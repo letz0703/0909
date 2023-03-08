@@ -28,8 +28,10 @@ export function PopCart({ isOpen }) {
   // const [cartItem, setCartItem] = useState({});
 
   // console.log("local",local__icCart)
-  const handleCart__Order = async () => {
-    await addNewCart(user.uid, crypto.randomUUID(), local__icCart)
+  const handleCart__Order = async (cartItems) => {
+    // console.log(cartItems)
+    await addNewCart(user.uid, crypto.randomUUID(), cartItems)
+    // await addNewCart(user.uid, crypto.randomUUID(), local__icCart)
     // await addDoc(cartRef, {
     //   userId: user.uid,
     //   cartId: crypto.randomUUID(),
@@ -37,7 +39,7 @@ export function PopCart({ isOpen }) {
     //   cartItems: local__icCart,
     // })
 
-    // setCartItems([])
+    setCartItems([])
     window.location.replace("/shop")
   }
 
@@ -45,7 +47,6 @@ export function PopCart({ isOpen }) {
     setCartItems([])
     window.location.replace(".")
   }
-  console.log(cartItems)
 
   return (
     <Offcanvas
@@ -86,7 +87,10 @@ export function PopCart({ isOpen }) {
           </div>
         </Stack>
         <div className="flex justify-center">
-          <button className="btn blue" onClick={handleCart__Order}>
+          <button
+            className="btn blue"
+            onClick={() => handleCart__Order(cartItems)}
+          >
             주문하기
           </button>
           <button className="btn red" onClick={() => handleResetCart()}>
