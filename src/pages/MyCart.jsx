@@ -53,7 +53,7 @@ export default function MyCart(props) {
             <TiEquals className="shrink-0" />
             <PriceCard text="결재금액" price={totalPrice + SHIPPING} />
           </div>
-          <Button text="주문하기" onClick={handleOrder} />
+          {/* <Button text="주문하기" onClick={handleOrder} /> */}
         </>
       )}
     </section>
