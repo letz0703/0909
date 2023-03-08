@@ -42,9 +42,7 @@ export default function Products() {
         .map((japitem) => (
           <div key={uuidv4()}>
             <div
-              // onClick={open_Detail}
               className="product__ flex justify-center space-around align-items-center pb-2 card"
-              // className="new-product__list place-content-center text-center card items-center pb-2"
               onClick={() => {
                 navigate(`/japitems/${japitem.id}`, { state: { japitem } })
               }}
@@ -66,31 +64,6 @@ export default function Products() {
             >
               담기
             </button>
-
-            <style>{`
-          //   .product__{
-          //     max-content: max-width;
-          //   }
-          // .shop-home{
-          //   // max-width: max-content;
-
-          //   // display: grid;
-          //   // grid-template-columns: repeat(5, auto);
-          //   // border-bottom: 1px dashed black;
-          //   // padding: 2rem;
-          //   // cursor: pointer;
-          // }
-          // .new-product__list-image{
-          //   max-width: 10rem;
-          //   margin-top: .9rem;
-          //   cursor: pointer;
-          // }
-          // @media screen and (max-width: 1000px){
-          //   .shop-home {
-          //     grid-template-columns: repeat(2, auto);
-          //   }
-          // }
-          `}</style>
           </div>
         ))}
     </div>
