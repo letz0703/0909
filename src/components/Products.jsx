@@ -58,7 +58,7 @@ export default function Products() {
               <span className="text-orange-500 font-bold">
                 {FormatCurrency(japitem.price)}
               </span>
-              <span className="transition-all hover:scale-150">
+              <span className="transition-all hover:scale-110">
                 <img src={japitem.imgUrl} className="new-product__list-image" />
               </span>
             </div>
