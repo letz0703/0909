@@ -1,5 +1,5 @@
 import { Nav, Navbar as NavbarBs, Col, Row } from "react-bootstrap"
-import { Link, useNavigate } from "react-router-dom"
+import { Link, Navigate, useNavigate } from "react-router-dom"
 import { BsFillPencilFill } from "react-icons/bs"
 import { HiLogin, HiLogout } from "react-icons/hi"
 import { login, logout, onUserStateChange } from "../api/firebase"
@@ -19,6 +19,7 @@ export default function Navbar({ search, setSearch }) {
   const { user, setUser, login, logout, isAdmin, isCustom } = useAuthContext()
   const { openCart, cartQuantity } = useShoppingCart()
   const { handleJapitemSearch } = useContext(JapitemContext)
+  const navigate = useNavigate()
   // const navigate = useNavigate()
 
   return (
@@ -38,6 +39,7 @@ export default function Navbar({ search, setSearch }) {
               fontWeight: "bold",
               color: "black",
             }}
+            onClick={() => navigate("/")}
           >
             i.
           </span>
