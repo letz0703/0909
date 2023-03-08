@@ -1,21 +1,27 @@
 import { use, useEffect, useState } from "react"
-import { useQuery, useMutation } from "@tanstack/react-query"
-import { collection, getDoc, getDocs } from "firebase/firestore"
+// import { useQuery, useMutation } from "@tanstack/react-query"
+// import { collection, getDoc, getDocs } from "firebase/firestore"
 import { database, db, getJorder } from "../api/firebase"
 import Wait from "../util/wait"
 import { useAuthContext } from "../context/AuthContext"
-import { useLocation } from "react-router-dom"
+// import { useLocation } from "react-router-dom"
 import { get, ref } from "firebase/database"
-import FormatTIME from "../util/formatTime"
+// import FormatTIME from "../util/formatTime"
 
-// const SPECIALS = [
-//   { id: 1, itemId: "2301-01", name: "JP-캬베진 300정", price: 10000 },
-//   { id: 2, itemId: "2301-02", name: "동전파스 156매 3개", price: 10000 },
-// ]
+const FormatTIME = (timestamp) => {
+  const date = new Date(timestamp)
+  const year = date.getFullYear()
+  const month = date.getMonth() + 1
+  const day = date.getDate()
+  const hours = date.getHours()
+  const minutes = date.getMinutes()
+  return `${year}-${month}-${day} ${hours}:${minutes}`
+}
 
 export default function MyOrders() {
   const { uid, login } = useAuthContext()
   const [orders, setOrders] = useState([])
+  const [itemsInCart, setItemsInCart] = useState(null)
   // console.log(SPECIALS)
   // const [myOrders, setMyOrders] = useState([])
 
@@ -25,16 +31,20 @@ export default function MyOrders() {
     return get(ref(database, `carts/${userId}`)).then((snapshot) => {
       if (snapshot.exists()) {
         const data = Object.values(snapshot.val())
-        console.log("data", data)
+        setItemsInCart(
+          data.map((cart) => {
+            return cart.cartItems
+          })
+        )
         setOrders((prev) => [...prev, ...data])
       }
-      // return []
     })
   }
 
   useEffect(() => {
     get_rdb_my_orders(uid)
   }, [uid])
+  // console.log("itemsInCart:", itemsInCart)
 
   // const specailsQuery = useQuery({
   //   queryKey: ["specails"],
@@ -72,11 +82,35 @@ export default function MyOrders() {
       </p>
       <div>
         {orders.map((r) => (
-          <div key={crypto.randomUUID()}>
+          <div key={r.orderDate}>
             <div>{FormatTIME(r.orderDate)}</div>
+            <hr />
+            <div>
+              {itemsInCart &&
+                itemsInCart.map((item) => {
+                  return item.map((row) => {
+                    const res_item = { id: row.id, quantity: row.quantity }
+                    const { id, quantity } = res_item
+                    return (
+                      <div key={id} className="bg-blue-100">
+                        <div>id:{id}</div>
+                        <div>qty:{quantity}</div>
+                      </div>
+                    )
+                  })
+                  // return {
+                  //   ...item,
+                  //   id: item.id,
+                  //   quanity: item.quantity,
+                  // }
+                })}
+              {/* <span>{id}</span> */}
+            </div>
           </div>
         ))}
       </div>
+
+      {/* <div>{console.log(Array.isArray(itemsInCart))}</div> */}
     </>
     // <div>
     //   <h1>Monlty JAP items</h1>

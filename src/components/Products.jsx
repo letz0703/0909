@@ -18,7 +18,7 @@ export default function Products() {
   // const { isOpen_Detail, open_Detail, close_Detail } = useDetail()
   const { search } = useContext(SearchContext)
   const [japitems, setJapitems] = useJapitems()
-  const { user } = useAuthContext()
+  const { user, uid } = useAuthContext()
   const navigate = useNavigate()
   const {
     // getItemQuantity,
@@ -34,6 +34,10 @@ export default function Products() {
   useEffect(() => {
     setCartItems([])
   }, [])
+
+  useEffect(() => {
+    navigate("/")
+  }, [uid])
   return (
     <div className="shop-home grid grid-cols-1 lg:grid-cols-5 gap-2 ">
       {japitems
