@@ -21,13 +21,16 @@ export default function Products() {
   const { user } = useAuthContext()
   const navigate = useNavigate()
   const {
-    getItemQuantity,
+    // getItemQuantity,
     increaseCartQuantity,
-    decreaseCartQuantity,
-    removeFromCart,
+    // decreaseCartQuantity,
+    // removeFromCart,
     setCartItems,
   } = useShoppingCart()
 
+  /**
+   * cart reset 하기
+   */
   useEffect(() => {
     setCartItems([])
   }, [])

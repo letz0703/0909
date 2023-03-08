@@ -1,5 +1,8 @@
 🖥 WIP...
-[] store page 수정( 수량, 디테일 페이지 링크 )
+이전 페이지 prev page
+
+> window.location.replace(document.referrer)
+> [] store page 수정( 수량, 디테일 페이지 링크 )
 
 [x] fix order date
 
