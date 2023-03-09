@@ -36,7 +36,7 @@ export default function Products() {
   }, [])
 
   useEffect(() => {
-    navigate("/")
+    return navigate("/")
   }, [uid])
   return (
     <div className="shop-home grid grid-cols-1 lg:grid-cols-5 gap-2 ">

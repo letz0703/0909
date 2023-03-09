@@ -58,6 +58,7 @@ export default function MyOrders() {
           </span>
         )}
       </p>
+      {orders.length === 0 && <div className="bg-red-100">no orders</div>}
       <div>
         {orders.map((order) => (
           <div key={order.orderDate}>
