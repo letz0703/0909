@@ -29,11 +29,14 @@ export default function JapitemDetail() {
   }
 
   return (
-    <div className="japitem-detail">
+    <div className="japitem-detail flex justify-center">
       <h1>{name}</h1>
-      <div className="transition-all hover:scale-105">
-        <img src={imgUrl} />
-        <span>{description}</span>
+      <div className="transition-all hover:scale-105 flex flex-col">
+        {/* <img src={imgUrl} className="japitem-detail__imageDetail " /> */}
+        <div className="align-self-center">
+          <img src={imgUrl} className="japitem-detail__imageDetail " />
+        </div>
+        <div>{description}</div>
         <br />
         <span
           className="btn btn--primary blue mini"
@@ -41,30 +44,35 @@ export default function JapitemDetail() {
         >
           상세 설명
         </span>
-        <div>재고:{itemQty}</div>
-        {isAdmin && (
-          <>
-            <input type="number" onChange={(e) => setItemQty(e.target.value)} />
-            <button
-              className="btn blue mini"
-              type="submit"
-              onClick={() => updateQty(japitem)}
-            >
-              up quantity
-            </button>
-            <input
-              type="number"
-              onChange={(e) => setItemPrice(e.target.value)}
-            />
-            <button
-              className="btn blue mini"
-              type="submit"
-              onClick={() => updatePrice(japitem)}
-            >
-              up Price
-            </button>
-          </>
-        )}
+        <div>
+          <div className="mt-4">재고:{itemQty}</div>
+          {isAdmin && (
+            <>
+              <input
+                type="number"
+                onChange={(e) => setItemQty(e.target.value)}
+              />
+              <button
+                className="btn red mini"
+                type="submit"
+                onClick={() => updateQty(japitem)}
+              >
+                up Quantity
+              </button>
+              <input
+                type="number"
+                onChange={(e) => setItemPrice(e.target.value)}
+              />
+              <button
+                className="btn red mini"
+                type="submit"
+                onClick={() => updatePrice(japitem)}
+              >
+                up Price
+              </button>
+            </>
+          )}
+        </div>
 
         <br />
         <span className="ml-2 text-red-500 font-bold">
@@ -85,8 +93,11 @@ export default function JapitemDetail() {
         color: var(--color-primary-green);
 			}
 			.japitem-detail>img{
-				width: 30rem;
+				// width: 30rem;
 			}
+      .japitem-detail__imageDetail {
+        width: 500px;
+      }
 			`}</style>
     </div>
   )
