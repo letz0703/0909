@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { SearchContext } from "../App"
 import JorderQuery from "../components/jorder-special/jorder-special"
 import Products from "../components/Products"
@@ -10,6 +10,7 @@ import Store from "./Store"
 export default function ShopHome() {
   const { user } = useAuthContext()
   const { search } = useContext(SearchContext)
+  useEffect(() => {}, [user])
   return (
     <div>
       {!user && !search && <Slide />}
