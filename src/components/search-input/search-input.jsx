@@ -3,13 +3,15 @@ import styles from "./search-input.module.css"
 import { BiSearch } from "react-icons/bi"
 export default function SearchInput({ setSearch }) {
   return (
-    <div className={` ${styles.searchInput}`}>
-      <div className={styles.content}>
+    // <div className={` ${styles.searchInput}`}>
+    <div className="">
+      {/* <div className={styles.searchInput__content}> */}
+      <div>
         <div className={styles.search_bar}>
           {/* <form> */}
           <input
             type="text"
-            className={` ${styles.input}`}
+            className={` ${styles.input} text-xl mx-2`}
             placeholder="search..."
             aria-label="search"
             autoFocus
@@ -17,7 +19,7 @@ export default function SearchInput({ setSearch }) {
           />
           <button aria-label="submit" className={styles.submit}>
             {/* <div className="search_icon pr-2"> */}
-            <div className={`${styles.search_icon}`}>
+            <div className={`${styles.search_icon} hidden md:block`}>
               <BiSearch />
             </div>
           </button>

@@ -30,12 +30,12 @@ export default function SearchHeader() {
       <form onSubmit={handleSubmit} className="w-full flex justify-center">
         <input
           type="text"
-          placeholder="   search..."
+          placeholder="search..."
           value={text}
           onChange={(e) => {
             setText(e.target.value)
           }}
-          className="w-7/12 p-2 px-4 outline-none border-none fs-2 bg-red-50  text-black"
+          className="sm:hidden w-7/12 p-2 px-4 outline-none border-none fs-2 bg-red-50  text-black"
         />
         <button className="bg-white px-4">
           <BsSearch />

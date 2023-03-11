@@ -1,6 +1,9 @@
 🖥 WIP...
 이전 페이지 prev page
 
+> hide div
+> className="hidden md:block"
+
 > window.location.replace(document.referrer)
 > [] store page 수정( 수량, 디테일 페이지 링크 )
 

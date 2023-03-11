@@ -9,7 +9,6 @@ import { useJapitems } from "../hooks/use-japitems"
 import Store from "./Store"
 
 export default function ShopHome() {
-  const _ShopHome = ""
   const { user } = useAuthContext()
   const { search } = useContext(SearchContext)
   const [japitems, setJapitems] = useJapitems()
@@ -18,7 +17,7 @@ export default function ShopHome() {
     <div>
       {/* {!user && !search && <Slide />} */}
       <Slide />
-      <Products japitems={japitems} _ShopHome={_ShopHome} />
+      <Products />
     </div>
   )
 }

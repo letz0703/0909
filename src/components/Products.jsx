@@ -14,10 +14,10 @@ import { useAuthContext } from "../context/AuthContext"
 import { signInWithPopup } from "firebase/auth"
 import { login } from "../api/firebase"
 
-export default function Products({ japitems, _ShopHome }) {
+export default function Products() {
   // const { isOpen_Detail, open_Detail, close_Detail } = useDetail()
   const { search } = useContext(SearchContext)
-  // const [japitems, setJapitems] = useJapitems()
+  const [japitems, setJapitems] = useJapitems()
   const { user, uid } = useAuthContext()
   const navigate = useNavigate()
   const {
