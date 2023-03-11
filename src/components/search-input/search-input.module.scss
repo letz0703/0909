@@ -43,11 +43,10 @@
 .search_bar {
   @media (width>960px) {
     --size: 60px;
-
     display: flex;
-    border: 2px solid var(--clr-primary);
-    align-items: center;
-    justify-content: center;
+    border: 1px solid var(--clr-primary);
+    // align-items: center;
+    // justify-content: center;
     height: var(--size);
     // border-radius: 500px;
     // width: calc(var(--size) * 5);
@@ -71,7 +70,7 @@
 
 .search_icon {
   color: #333;
-  transform: scale(2.5);
+  transform: scale(2);
   padding-right: 0.5rem;
   &:focus-within {
     color: blue;

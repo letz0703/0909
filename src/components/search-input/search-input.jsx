@@ -9,20 +9,22 @@ export default function SearchInput({ setSearch }) {
       <div>
         <div className={styles.search_bar}>
           {/* <form> */}
-          <input
-            type="text"
-            className={` ${styles.input} text-xl mx-2`}
-            placeholder="search..."
-            aria-label="search"
-            autoFocus
-            onChange={(e) => setSearch(e.target.value)}
-          />
-          <button aria-label="submit" className={styles.submit}>
-            {/* <div className="search_icon pr-2"> */}
-            <div className={`${styles.search_icon} hidden md:block`}>
-              <BiSearch />
-            </div>
-          </button>
+          <div className="flex">
+            <input
+              type="text"
+              className={` ${styles.input} text-xl -mr-8 w-full ml-2`}
+              placeholder="search..."
+              aria-label="search"
+              autoFocus
+              onChange={(e) => setSearch(e.target.value)}
+            />
+            <button aria-label="submit" className={styles.submit}>
+              {/* <div className="search_icon pr-2"> */}
+              <div className={`${styles.search_icon} mr-2`}>
+                <BiSearch />
+              </div>
+            </button>
+          </div>
           {/* </form> */}
         </div>
       </div>
