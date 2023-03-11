@@ -71,8 +71,8 @@ function ImageSlider({ slides }) {
               >
                 상세보기
               </button>
-              <p>깡통시장 제품들을 보시려면 로그인 후</p>
-              <p>새로고침 하세요</p>
+              <p className="text-xl">깡통시장 제품들을 보시려면 로그인 후</p>
+              <p className="text-xl">새로고침 하세요</p>
             </div>
           </div>
         </div>

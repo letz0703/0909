@@ -44,7 +44,7 @@
   @media (width>960px) {
     --size: 60px;
     display: flex;
-    border: 1px solid var(--clr-primary);
+    // border: 1px solid var(--clr-primary);
     // align-items: center;
     // justify-content: center;
     height: var(--size);
@@ -52,7 +52,7 @@
     // width: calc(var(--size) * 5);
     /* width: 3%; */
     position: relative;
-    width: 33vw;
+
     &:focus-within {
       input {
         cursor: initial;
@@ -98,6 +98,9 @@
 
 .input:focus {
   outline: 0;
+  @media (width>960px) {
+    width: 33vw;
+  }
 }
 
 .submit {

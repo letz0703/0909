@@ -12,7 +12,7 @@ export default function SearchInput({ setSearch }) {
           <div className="flex">
             <input
               type="text"
-              className={` ${styles.input} text-xl -mr-8 w-full ml-2`}
+              className={` ${styles.input} text-xl -mr-8 ml-2  `}
               placeholder="search..."
               aria-label="search"
               autoFocus
