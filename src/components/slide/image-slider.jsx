@@ -50,7 +50,23 @@ function ImageSlider({ slides }) {
 
         <div className="imageSlider__para relative">
           <div className=" bg-cover">
-            <div className=" absolute  left-20">
+            <div className="lg:hidden">
+              <div className="px-3 p-3 pb-0 text-xl ">현지 공동구매</div>
+              <div className="p-3 text-sm ">
+                1만원 할인 + 배송비 무료(국내외)
+              </div>
+              <div className="grid grid-cols-3">
+                <button
+                  className="px-3 btn left-10 mini red mb-3"
+                  onClick={() => navigate("/jap")}
+                >
+                  상세보기
+                </button>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+            <div className=" absolute  left-20 hidden md:block">
               <div className="text-4xl pt-2 m-4">해외 공동구매</div>
               <div className="text-2xl mb-3">개인통관번호만 있으면</div>
               <div className="text-2xl bg-black p-3 text-white m-2 p">
@@ -65,12 +81,7 @@ function ImageSlider({ slides }) {
                 향후 10일간 해외주문 계획이 없으신 분들만
                 <br /> 신청하세요
               </p>
-              <button
-                className="btn mini red mb-3"
-                onClick={() => navigate("/jap")}
-              >
-                상세보기
-              </button>
+
               <p className="text-xl">깡통시장 제품들을 보시려면 로그인 후</p>
               <p className="text-xl">새로고침 하세요</p>
             </div>
