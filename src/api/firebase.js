@@ -43,7 +43,7 @@ export const db = getFirestore(app)
 // export const userId = auth.currentUser?.uid
 
 export function login() {
-  signInWithPopup(auth, provider).catch(console.error)
+  signInWithPopup(auth, provider).then(()=>window.location.replace(document.referrer)).catch(console.error)
 }
 
 export function logout() {
