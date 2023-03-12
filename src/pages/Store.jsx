@@ -8,7 +8,7 @@ export default function Store() {
   const [japitems, setJapitems] = useJapitems()
   return (
     <>
-      <div>STORE</div>
+      <h1 className="text-red-600">깡통시장 구매 대행(shop)</h1>
       <Products />
     </>
   )

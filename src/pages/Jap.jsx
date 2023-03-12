@@ -74,7 +74,7 @@ export default function Jap() {
     <div className="jap__ flex flex-col align-items-start justify-start">
       <div className="jap__primary-header">
         <div className=" bg-pink-100 rounded-full">
-          <h1 className="pt-5">해외 공동구매 안내</h1>
+          <h1 className="pt-5">해외 공동구매 안내(japan09)</h1>
           <h3 className="text-2xl text-green-700 p-2 mx-3 my-0">
             2023년 3월 : 곤약젤리 3개 5000원
           </h3>

@@ -98,17 +98,17 @@ export default function Navbar({ search, setSearch }) {
                 home
               </Link> */}
               <Link to="/jap" className="hidden md:block">
-                현지공동구매
+                japan09
               </Link>
               <Link to="/shop" className="ml-2">
-                깡통대행
+                shop
               </Link>
             </>
           )}
 
           {user && (
             <Link to="/my_orders" style={{ width: "70px" }}>
-              내주문
+              my orders
             </Link>
           )}
           {user && (

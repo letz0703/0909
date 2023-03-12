@@ -15,7 +15,6 @@ export default function ShopHome() {
   useEffect(() => {}, [user])
   return (
     <div>
-      {/* {!user && !search && <Slide />} */}
       <Slide />
       {user && <Products />}
     </div>
