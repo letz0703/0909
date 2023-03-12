@@ -1,6 +1,10 @@
 🖥 WIP...
 이전 페이지 prev page
 
+### public image
+
+<img src="./imgs/ic_barcode.svg"
+
 > hide div
 > className="hidden md:block"
 

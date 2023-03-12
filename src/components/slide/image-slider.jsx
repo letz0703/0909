@@ -121,10 +121,7 @@ function ImageSlider({ slides }) {
                   </div>
                 </div>
                 <div className="my-4 flex justify-center ">
-                  <img
-                    src="../public/imgs/ic_barcode.svg"
-                    style={{ width: "10rem" }}
-                  />
+                  <img src="./imgs/ic_barcode.svg" style={{ width: "10rem" }} />
                 </div>
                 {/* <div className="text-xl"> */}
                 {/* 깡통시장 제품들을 보시려면 로그인 하세요 */}
