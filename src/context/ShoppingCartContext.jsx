@@ -26,7 +26,7 @@ export function ShoppingCartProvider({ children }) {
   }
   const closeCart = () => {
     setIsOpen(false)
-    navigate("/shop", { cartItems })
+    navigate("/", { cartItems })
   }
 
   //functions
