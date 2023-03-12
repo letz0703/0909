@@ -30,7 +30,9 @@ export default function JapitemDetail() {
 
   return (
     <div className="japitem-detail flex justify-center mt-[7vh]">
-      <h1>{name}</h1>
+      <div className="">
+        <h1>{name}</h1>
+      </div>
       <div className="transition-all hover:scale-105 flex flex-col">
         {/* <img src={imgUrl} className="japitem-detail__imageDetail " /> */}
         <div className="align-self-center">
@@ -83,12 +85,20 @@ export default function JapitemDetail() {
           {FormatCurrency(price)}
         </span>
         <div>{homeUrl?.homeUrl || null}</div>
-        <button
-          className="btn btn--primary mini"
-          onClick={() => increaseCartQuantity(japitem.id)}
-        >
-          담기
-        </button>
+        <div>
+          <button
+            className="btn btn--primary mini"
+            onClick={() => increaseCartQuantity(japitem.id)}
+          >
+            담기
+          </button>
+          <button
+            className="btn red mini text-white"
+            onClick={() => window.location.replace(document.referrer)}
+          >
+            x
+          </button>
+        </div>
       </div>
       <style>{`
 			.japitem-detail {
