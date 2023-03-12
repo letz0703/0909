@@ -67,10 +67,10 @@ export default function Jap() {
   }
 
   const comment =
-    "깡통시장 물건을 먼저 보내드립니다. 고객님의 통관 번호로 공동 구매합니다.만원 할인된 가격및 무료배송 혜택. 통관되는 물건은 저희 소유 입니다.입금 후 10일간 해외주문 금지"
+    "깡통시장 물건 다음날 수령(선배송). 공동구매 품목 해외주문(고객님의개인통관 번호 사용). 만원 할인된 가격 및 무료배송 (통관번호제공의 혜택). 일주일 후 통관(소유권=icanmart). 입금 후 10일간 해외주문 금지"
   const arr_jap_order_info = comment.split(".")
 
-  return (
+  return [
     <div className="jap__ flex flex-col align-items-start justify-start">
       <div className="jap__primary-header">
         <div className=" bg-pink-100 rounded-full">
@@ -90,23 +90,10 @@ export default function Jap() {
                 </li>
               )
             })}
-            {/* <li> 물건부터 받는 해외주문 서비스 입니다</li>
-            <li>
-              추가 비용 없습니다. 단, 일주일간 다른 해외주문을 하시면 절대
-              안됩니다
-            </li>
-            <li>깡통시장 제품을 먼저 보내 드리며, 평균 다음날 도착 합니다.</li>
-            <li>나중에(일주일 전후) 통관되는 물건은 저희 소유가 됩니다</li>
-            <li>고객님의 개인통관고유번호로 공동구매 품목을 통관 합니다</li>
-            <li>대신 고객님께는 특별가 + 운임무료 혜택을 드립니다</li>
-            <li>다른 깡통 제품을 추가 하셔도 기본 택배비는 무료 입니다</li>
-            <li>입금 안내 → 입금 확인 → 해외 주문 → 깡통제품 택배발송</li> */}
           </div>
-          <div className="p-3">
-            다음 주문은 공동구매 제품 통관 후 가능합니다
+          <div className="p-2 bg-blue-200 md:text-xl">
+            다음 주문은 = 제품 통관 후 가능(7-10일)
           </div>
-
-          <div className="pb-3">7~10일 후</div>
         </div>
         {user || icUser ? (
           <Jap09Form icUser={icUser} />
@@ -162,6 +149,6 @@ export default function Jap() {
         }
 
       `}</style>
-    </div>
-  )
+    </div>,
+  ]
 }

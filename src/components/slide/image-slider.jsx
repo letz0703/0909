@@ -1,9 +1,12 @@
 import { useState, useEffect, useRef } from "react"
 import { useNavigate, useNavigationType } from "react-router-dom"
+import { useAuthContext } from "../../context/AuthContext"
+import { FcGoogle } from "react-icons/fc"
 
 function ImageSlider({ slides }) {
   const navigate = useNavigate()
   const [currentIndex, setCurrentIndex] = useState(0)
+  const { login, user } = useAuthContext()
   // const { url, title } = slides
 
   const slideContainerStyle = {
@@ -66,31 +69,68 @@ function ImageSlider({ slides }) {
                 <div></div>
               </div>
             </div>
-            <div className=" absolute  left-20 hidden md:block bg-white p-3 rounded-b-2xl">
-              <div className="text-4xl pt-2 m-4">공동구매</div>
-              {/* <div className="text-2xl mb-3">개인통관번호만 있으면</div> */}
-              <div className="text-2xl bg-black p-3 text-white m-2 rounded-full font-bold">
-                {/* 곤약젤리 복숭아 2개 */}
-                1만원 할인
-              </div>
-              <div className="mb-3 text-2xl">배송비 무료/익일 수령</div>
-              <div className="mb-5">
-                향후 10일간 해외주문 계획이 없으신 분들만
-                <br /> 신청하세요
-                <button
-                  className="px-3 btn left-10 mini red mb-3"
-                  onClick={() => navigate("/jap")}
-                >
-                  상세보기
-                </button>
-                <div></div>
-                <div></div>
-              </div>
+            {user && (
+              <div className=" absolute  left-20 hidden md:block bg-red-400 p-3 rounded-b-2xl">
+                <div className="text-4xl font-semibold pt-2 m-4">
+                  공 동 구 매
+                </div>
+                {/* <div className="text-2xl mb-3">개인통관번호만 있으면</div> */}
+                <div className="text-2xl bg-black p-3 text-white m-2 rounded-full font-bold">
+                  {/* 곤약젤리 복숭아 2개 */}
+                  1만원 할인
+                </div>
+                <div className="mb-3 text-2xl">배송비 무료/익일 수령</div>
+                <div className="mb-5">
+                  향후 10일간 해외주문 계획이 없으신 분들만
+                  <br /> 신청하세요
+                  <button
+                    className="px-3 btn left-10 mini yellow"
+                    onClick={() => navigate("/jap")}
+                  >
+                    상세보기
+                  </button>
+                  <div></div>
+                  <div></div>
+                </div>
 
-              <div className="text-xl">
-                깡통시장 제품들을 보시려면 로그인 하세요
+                {/* <div className="text-xl"> */}
+                {/* 깡통시장 제품들을 보시려면 로그인 하세요 */}
+                {/* </div> */}
               </div>
-            </div>
+            )}
+            {!user && (
+              <div className=" absolute  left-20 hidden md:block bg-white p-3 rounded-b-2xl">
+                <div className="text-4xl pt-2 m-4">canmart</div>
+                {/* <div className="text-2xl mb-3">개인통관번호만 있으면</div> */}
+                <div className="text-2xl bg-black p-3 text-white m-2 rounded-full font-bold">
+                  {/* 곤약젤리 복숭아 2개 */}
+                  price info
+                </div>
+                {/* <div className="mb-3 text-2xl">제품 검색</div> */}
+                <div className="flex flex-row items-center justify-center">
+                  <div className="text-xl grid">
+                    <FcGoogle style={{ fontSize: "20px" }} />
+                  </div>
+                  <div>
+                    <button
+                      className="btn red text-white"
+                      onClick={() => login()}
+                    >
+                      로그인
+                    </button>
+                  </div>
+                </div>
+                <div className="my-4 flex justify-center ">
+                  <img
+                    src="../public/imgs/ic_barcode.svg"
+                    style={{ width: "10rem" }}
+                  />
+                </div>
+                {/* <div className="text-xl"> */}
+                {/* 깡통시장 제품들을 보시려면 로그인 하세요 */}
+                {/* </div> */}
+              </div>
+            )}
           </div>
         </div>
       </div>

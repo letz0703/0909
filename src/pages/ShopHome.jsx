@@ -16,8 +16,8 @@ export default function ShopHome() {
   return (
     <div>
       {/* {!user && !search && <Slide />} */}
-      <Slide />
-      <Products />
+      <Slide user={user} />
+      {user && <Products />}
     </div>
   )
 }

@@ -84,22 +84,29 @@ export default function Navbar({ search, setSearch }) {
       {!window.location.href.includes("/jap") && (
         <section className="sec2">
           {/* <div className={`${styles.nav_center} navbar__search-input`}> */}
-          <SearchInput setSearch={setSearch} />
+          {user && <SearchInput setSearch={setSearch} />}
         </section>
       )}
       <nav className="flex item-center font-bold">
         <div className="flex justify-center items-center gap-3 me-auto">
           {/* <Link to="/can">Can</Link> */}
 
-          <Link to="/jap" className="hidden md:block">
-            Jap
-          </Link>
-          <Link to="/shop" className="hidden md:block">
-            Store
-          </Link>
-          <Link to="/my_orders" style={{ width: "70px" }}>
-            내주문
-          </Link>
+          {user && (
+            <>
+              <Link to="/jap" className="hidden md:block">
+                Jap
+              </Link>
+              <Link to="/shop" className="hidden md:block">
+                Store
+              </Link>
+            </>
+          )}
+
+          {user && (
+            <Link to="/my_orders" style={{ width: "70px" }}>
+              내주문
+            </Link>
+          )}
           {user && (
             <Link to="/carts">
               <CartStatus />
