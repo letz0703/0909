@@ -11,6 +11,8 @@ import { db, auth, addNewCart } from "../api/firebase"
 import { useAuthState } from "react-firebase-hooks/auth"
 import { useState } from "react"
 import { useEffect } from "react"
+import { RiWindowLine } from "react-icons/ri"
+import { useNavigate } from "react-router-dom"
 // type PopCartProps = {
 //   isOpen: boolean
 // }
@@ -25,6 +27,7 @@ export function PopCart({ isOpen }) {
   })
   const [user] = useAuthState(auth)
   const cartRef = collection(db, "carts")
+  const navigate = useNavigate()
   // const [cartItem, setCartItem] = useState({});
 
   // console.log("local",local__icCart)

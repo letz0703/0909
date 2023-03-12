@@ -51,7 +51,7 @@ export default function Navbar({ search, setSearch }) {
             </Link>
           </div>
 
-          {user && <User user={user} />}
+          {user && <User user={user} className="hidden md:block" />}
           {user && (
             <span
               onClick={logout}
@@ -93,12 +93,13 @@ export default function Navbar({ search, setSearch }) {
 
           {user && (
             <>
+              <Link to="/" className="md:hidden">
+                home
+              </Link>
               <Link to="/jap" className="hidden md:block">
                 Jap
               </Link>
-              <Link to="/shop" className="hidden md:block">
-                Store
-              </Link>
+              <Link to="/shop">Store</Link>
             </>
           )}
 

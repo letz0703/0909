@@ -31,9 +31,9 @@ export default function Products() {
   /**
    * cart reset 하기
    */
-  useEffect(() => {
-    setCartItems([])
-  }, [])
+  // useEffect(() => {
+  // setCartItems([])
+  // }, [])
 
   useEffect(() => {
     return navigate("/")
