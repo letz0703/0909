@@ -25,7 +25,7 @@ export default function Slide() {
   }
 
   return (
-    <section className="slide__">
+    <section style={{ marginTop: "100px" }}>
       <div style={containerStyle} className="slide">
         <ImageSlider slides={slides} />
       </div>

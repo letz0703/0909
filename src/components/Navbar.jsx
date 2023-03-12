@@ -23,7 +23,7 @@ export default function Navbar({ search, setSearch }) {
   // const navigate = useNavigate()
 
   return (
-    <header className="flex border-b justify-between p-3">
+    <header className="Navbarjsx__header flex border-b justify-between p-3">
       {/* <section className="icNavbar__sec1"> */}
       {/* <div className=" text-brand"> */}
       <div className="flex items-center align-items-center">
@@ -132,6 +132,15 @@ export default function Navbar({ search, setSearch }) {
         )}
       </nav>
       <style>{`
+      .Navbarjsx__header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index:1;
+      }
       .nav-bar__text-logo{
         display: flex;
         justify-content: space-between;
