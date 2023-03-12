@@ -75,13 +75,18 @@ function ImageSlider({ slides }) {
               )}
             </div>
             {user && (
-              <div
-                className="cursor-pointer absolute md:hidden left-20 bg-red-400 p-3 rounded-b-2xl"
-                style={{ height: "100%" }}
-                onClick={openCart}
-              >
-                카트보기
-              </div>
+              <>
+                <div
+                  className="cursor-pointer absolute md:hidden left-20 bg-red-400 p-3 rounded-b-2xl"
+                  // style={{ height: "100%" }}
+                  onClick={openCart}
+                >
+                  카트보기
+                </div>
+                <div className="cursor-pointer absolute md:hidden left-20 top-16 bg-lime-600 p-3 rounded-full ">
+                  주문내역
+                </div>
+              </>
             )}
             {user && (
               <div className=" absolute  left-20 hidden md:block bg-red-400 p-3 rounded-b-2xl">

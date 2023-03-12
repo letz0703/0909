@@ -46,7 +46,7 @@ export default function MyOrders() {
   }, [uid])
 
   return (
-    <>
+    <div className="mt-[8.5vh] lg:mt-[7.5vh]">
       <h1>주문 내역</h1>
       <p>
         {!uid && (
@@ -103,7 +103,7 @@ export default function MyOrders() {
       </div>
 
       {/* <div>{console.log(Array.isArray(itemsInCart))}</div> */}
-    </>
+    </div>
     // <div>
     //   <h1>Monlty JAP items</h1>
     //   <pre>1월의 공동구매 아이템: 캬베진 300정, 10,000원 </pre>
