@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react"
 import { useNavigate, useNavigationType } from "react-router-dom"
 import { useAuthContext } from "../../context/AuthContext"
 import { FcGoogle } from "react-icons/fc"
+import { useShoppingCart } from "../../context/ShoppingCartContext"
 
 function ImageSlider({ slides }) {
   const navigate = useNavigate()
@@ -38,6 +39,8 @@ function ImageSlider({ slides }) {
     // setCurrentIndex(slideIndex)
     navigate("/jap")
   }
+
+  const { openCart } = useShoppingCart()
   return (
     <>
       <div className="image-slider__main h-100 relative">
@@ -51,24 +54,35 @@ function ImageSlider({ slides }) {
         {/* <img src="/imgs/right.svg" /> */}
         {/* </div> */}
 
-        <div className="imageSlider__para relative">
-          <div className=" bg-cover">
+        <div className="모바일 imageSlider__para relative">
+          <div className="bg-cover">
             <div className="lg:hidden">
-              <div className="px-3 p-3 pb-0 text-xl ">현지 공동구매</div>
-              <div className="p-3 text-sm ">
-                1만원 할인 + 배송비 무료(국내외)
-              </div>
-              <div className="grid grid-cols-3">
-                <button
-                  className="px-3 btn left-10 mini red mb-3"
-                  onClick={() => navigate("/jap")}
-                >
-                  상세보기
-                </button>
-                <div></div>
-                <div></div>
-              </div>
+              {!user && (
+                <>
+                  <div className="px-3 p-3 pb-0 text-xl ">CanMart Busan</div>
+                  <div className="p-3 text-sm ">login for price info.</div>
+                  <div className="grid grid-cols-3">
+                    <button
+                      className="px-3 btn left-10 mini red mb-3"
+                      onClick={() => login()}
+                    >
+                      login
+                    </button>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </>
+              )}
             </div>
+            {user && (
+              <div
+                className="cursor-pointer absolute md:hidden left-20 bg-red-400 p-3 rounded-b-2xl"
+                style={{ height: "100%" }}
+                onClick={openCart}
+              >
+                카트보기
+              </div>
+            )}
             {user && (
               <div className=" absolute  left-20 hidden md:block bg-red-400 p-3 rounded-b-2xl">
                 <div className="text-4xl font-semibold pt-2 m-4">

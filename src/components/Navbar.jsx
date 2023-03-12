@@ -100,15 +100,19 @@ export default function Navbar({ search, setSearch }) {
               <Link to="/jap" className="hidden md:block">
                 japan09
               </Link>
-              <Link to="/shop" className="ml-2">
+              <Link to="/shop" className="ml-2 hidden md:block">
                 shop
               </Link>
             </>
           )}
 
           {user && (
-            <Link to="/my_orders" style={{ width: "70px" }}>
-              my orders
+            <Link
+              to="/my_orders"
+              className="hidden md:block"
+              style={{ width: "70px" }}
+            >
+              My Orders
             </Link>
           )}
           {user && (
