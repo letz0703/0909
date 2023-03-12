@@ -29,12 +29,16 @@ export default function JapitemDetail() {
   }
 
   return (
-    <div className="japitem-detail flex justify-center">
+    <div className="japitem-detail flex justify-center mt-[7vh]">
       <h1>{name}</h1>
       <div className="transition-all hover:scale-105 flex flex-col">
         {/* <img src={imgUrl} className="japitem-detail__imageDetail " /> */}
         <div className="align-self-center">
-          <img src={imgUrl} className="japitem-detail__imageDetail " />
+          <img
+            src={imgUrl}
+            className="japitem-detail__imageDetail "
+            style={{ width: "300px" }}
+          />
         </div>
         <div>{description}</div>
         <br />
