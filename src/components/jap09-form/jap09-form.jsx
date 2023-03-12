@@ -26,7 +26,7 @@ export default function Jap09Form({ icUser }) {
     jName: "",
     jCell: "",
     jCsNo: "",
-    jProduct: "곤약 복숭아 2개(컵형)",
+    jProduct: "곤약 복숭아 1(컵형) + 곤약젤리 랜던2(짜먹는)",
     jDeliveryTo: "",
     jEtc: "",
   }

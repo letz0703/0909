@@ -32,6 +32,7 @@ export default function CustomInfo() {
         스팸에 주의 하세요.
       </div>
       <div className="bg-blue-200 p-2">이에 대한 고객문의는 받지 않습니다</div>
+      <div className="bg-blue-200 p-2">기타 문의는 twitter로 트윗해주세요</div>
 
       <style>{`
         .special-selected {

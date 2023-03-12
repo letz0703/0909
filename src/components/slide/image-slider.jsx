@@ -100,9 +100,9 @@ function ImageSlider({ slides }) {
             )}
             {!user && (
               <div className=" absolute  left-20 hidden md:block bg-white p-3 rounded-b-2xl">
-                <div className="text-4xl pt-2 m-4">canmart</div>
+                <div className="text-4xl pt-2 m-4 font-semibold">i.canmart</div>
                 {/* <div className="text-2xl mb-3">개인통관번호만 있으면</div> */}
-                <div className="text-2xl bg-black p-3 text-white m-2 rounded-full font-bold">
+                <div className="text-2xl bg-black p-3 text-white m-2 rounded-full  ">
                   {/* 곤약젤리 복숭아 2개 */}
                   price info
                 </div>
@@ -116,7 +116,7 @@ function ImageSlider({ slides }) {
                       className="btn red text-white"
                       onClick={() => login()}
                     >
-                      로그인
+                      login
                     </button>
                   </div>
                 </div>
