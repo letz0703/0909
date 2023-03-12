@@ -4,13 +4,13 @@ export default function CustomInfo() {
   let SpecialSelected = "special-selected.jsx"
 
   return (
-    <div className="special-selected">
+    <div className="bg-blue-100 p-4 rounded-b-xl">
       <FormWrapper title="통관 상세 안내"></FormWrapper>
       <h2 className="text-xl mb-3 bg-red-200 text-black p-3 font-bold">
         필수 조항: 일주일간 해외주문 금지
       </h2>
       <p>개인 무관세 한도(150불)이하로 공동구매 하기 때문에</p>
-      <p>고객님이 다른 해외주문을 하고 통관시점이 겹칠 경우</p>
+      <p>고객님의 다른 해외주문과 통관시점이 겹칠 경우</p>
       <p>
         불필요한 관세(10만원 전후)가 발생 합니다. <br />
         이는 명백한 고객님의 귀책 사유로 고객님께서 부담하셔야 합니다.
@@ -32,7 +32,7 @@ export default function CustomInfo() {
         스팸에 주의 하세요.
       </div>
       <div className="bg-blue-200 p-2">이에 대한 고객문의는 받지 않습니다</div>
-      <div className="bg-blue-200 p-2">기타 문의는 twitter로 트윗해주세요</div>
+      {/* <div className="bg-blue-200 p-2">기타 문의는 twitter로 트윗해주세요</div> */}
 
       <style>{`
         .special-selected {

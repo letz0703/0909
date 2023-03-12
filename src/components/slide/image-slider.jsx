@@ -7,7 +7,7 @@ import { useShoppingCart } from "../../context/ShoppingCartContext"
 function ImageSlider({ slides }) {
   const navigate = useNavigate()
   const [currentIndex, setCurrentIndex] = useState(0)
-  const { login, user } = useAuthContext()
+  const { login, logout, user } = useAuthContext()
   // const { url, title } = slides
 
   const slideContainerStyle = {
@@ -88,6 +88,12 @@ function ImageSlider({ slides }) {
                   onClick={() => navigate("/my_orders")}
                 >
                   주문내역
+                </div>
+                <div
+                  className="cursor-pointer absolute md:hidden left-20 top-[14vh] bg-blue-600 text-white p-3 rounded-full "
+                  onClick={logout}
+                >
+                  logout
                 </div>
               </>
             )}

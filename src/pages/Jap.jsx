@@ -67,7 +67,7 @@ export default function Jap() {
   // }
 
   const comment =
-    "깡통시장 당일 발송(선배송). 해외주문(공동 구매 품목만, 고객님의개인통관 번호 사용). 만원 할인된 가격 및 무료배송 (통관번호제공 혜택). 일주일 후 통관(소유권=icanmart). 입금 후 10일간 해외주문 금지"
+    "깡통시장 당일 발송(선배송). 해외주문(공동 주문 품목만, 고객님의개인통관 번호 사용). 만원 할인된 가격 및 무료배송 (통관번호제공 혜택). 일주일 후 통관(소유권=icanmart). 입금 후 10일간 해외주문 금지"
   const arr_jap_order_info = comment.split(".")
 
   return [
@@ -79,8 +79,8 @@ export default function Jap() {
             2023년 3월 : 곤약젤리 3개 5000원
           </h3>
           <p className="mb-3">컵타입 복숭아 1봉지 + 짜먹는 타입 2봉지(랜덤)</p>
-          <div className="font-semibold mb-2 p-2 text-xl bg-white">
-            :공동구매품목:<div>곤약젤리 12개 + 동전파스 20개</div>
+          <div className="font-bold mb-2 p-2 text-xl bg-white">
+            공동 주문 품목<div>곤약젤리 12개 + 동전파스 20개</div>
           </div>
           <div className="jap__info  p-3  mb-2 flex flex-col text-xl font-semibold ">
             {arr_jap_order_info.map((r) => {
