@@ -99,34 +99,41 @@ function ImageSlider({ slides }) {
               </div>
             )}
             {!user && (
-              <div className=" absolute  left-20 hidden md:block bg-white p-3 rounded-b-2xl">
-                <div className="text-4xl pt-2 m-4 font-semibold">i.canmart</div>
-                {/* <div className="text-2xl mb-3">개인통관번호만 있으면</div> */}
-                <div className="text-2xl bg-black p-3 text-white m-2 rounded-full  ">
-                  {/* 곤약젤리 복숭아 2개 */}
-                  price info
-                </div>
-                {/* <div className="mb-3 text-2xl">제품 검색</div> */}
-                <div className="flex flex-row items-center justify-center">
-                  <div className="text-xl grid">
-                    <FcGoogle style={{ fontSize: "20px" }} />
+              <>
+                <div className=" absolute  left-20 hidden md:block bg-white p-3 rounded-b-2xl">
+                  <div className="text-4xl pt-2 m-4 font-semibold">
+                    i.canmart
                   </div>
-                  <div>
-                    <button
-                      className="btn red text-white"
-                      onClick={() => login()}
-                    >
-                      login
-                    </button>
+                  {/* <div className="text-2xl mb-3">개인통관번호만 있으면</div> */}
+                  <div className="text-2xl bg-black p-3 text-white m-2 rounded-full  ">
+                    {/* 곤약젤리 복숭아 2개 */}
+                    price info
+                  </div>
+                  {/* <div className="mb-3 text-2xl">제품 검색</div> */}
+                  <div className="flex flex-row items-center justify-center">
+                    <div className="text-xl grid">
+                      <FcGoogle style={{ fontSize: "20px" }} />
+                    </div>
+                    <div>
+                      <button
+                        className="btn red text-white"
+                        onClick={() => login()}
+                      >
+                        login
+                      </button>
+                    </div>
+                  </div>
+                  {/* <div className="text-xl"> */}
+                  {/* 깡통시장 제품들을 보시려면 로그인 하세요 */}
+                  {/* </div> */}
+                  <div className="my-4 flex justify-center ">
+                    <img
+                      src="./imgs/ic_barcode.svg"
+                      style={{ width: "10rem" }}
+                    />
                   </div>
                 </div>
-                <div className="my-4 flex justify-center ">
-                  <img src="./imgs/ic_barcode.svg" style={{ width: "10rem" }} />
-                </div>
-                {/* <div className="text-xl"> */}
-                {/* 깡통시장 제품들을 보시려면 로그인 하세요 */}
-                {/* </div> */}
-              </div>
+              </>
             )}
           </div>
         </div>
