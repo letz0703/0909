@@ -11,7 +11,7 @@ export default function AddressForm({
   // const { user } = useAuthContext()
 
   return (
-    <div>
+    <div className="bg-blue-100 p-4 rounded-b-xl">
       <FormWrapper title="배송 정보">
         <label>상품명</label>
         <input

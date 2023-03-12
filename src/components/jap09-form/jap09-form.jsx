@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react"
 import { useMultiStepForm } from "../../hooks/multi-step-form"
-import AddressForm from "./address-form"
-import CustomInfo from "./custom_info"
-import SpecialSelected from "./special-selected"
 import UserForm from "./user-form"
+import AddressForm from "./address-form"
+import SpecialSelected from "./special-selected"
+import CustomInfo from "./custom_info"
 
 /**import for RDB */
 import {
@@ -89,7 +89,7 @@ export default function Jap09Form({ icUser }) {
           }}
         >
           {!isFirstStep && (
-            <button onClick={back} className="btn btn--primary mini">
+            <button className="btn btn--primary mini" onClick={back}>
               back
             </button>
           )}

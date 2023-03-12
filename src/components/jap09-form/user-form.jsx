@@ -6,9 +6,9 @@ export default function UserForm({ jName, jCell, jCsNo, updateFields }) {
   let UserForm = "user-form.jsx"
 
   return (
-    <div>
+    <div className="bg-blue-100 p-4 rounded-b-xl">
       <div className="user-form">
-        <FormWrapper title="신청서">
+        <FormWrapper title="구매대행 신청서">
           <label>이름</label>
           <input
             type="text"

@@ -35,36 +35,36 @@ export default function Jap() {
     queryFn: () => Wait(300).then(() => [...SPECIALS]),
     // queryFn: () => Promise.reject("Error"),
   })
-  const specialsMutation = useMutation({
-    mutationFn: (itemId) =>
-      Wait(300).then(() =>
-        SPECIALS.push({
-          id: crypto.randomUUID(),
-          itemId: Date(),
-          name: "New Name",
-          price: 10000,
-          limit: 10,
-        })
-      ),
-    onSuccess: () => {
-      queryClient.invalidateQueries(["specials"])
-    },
-  })
+  // const specialsMutation = useMutation({
+  //   mutationFn: (itemId) =>
+  //     Wait(300).then(() =>
+  //       SPECIALS.push({
+  //         id: crypto.randomUUID(),
+  //         itemId: Date(),
+  //         name: "New Name",
+  //         price: 10000,
+  //         limit: 10,
+  //       })
+  //     ),
+  //   onSuccess: () => {
+  //     queryClient.invalidateQueries(["specials"])
+  //   },
+  // })
 
   if (specialsQuery.isLoading) return <h1>Loading...</h1>
   if (specialsQuery.isError)
     return <pre>{JSON.stringify(specialsQuery.error)}</pre>
 
-  async function passUser() {
-    const passCode = ["0909"]
-    const userCode = prompt("enter your code")
-    if (userCode.includes(passCode)) {
-      setIcUser(true)
-    } else {
-      alert("코드가 없습니다")
-      setIcUser(false)
-    }
-  }
+  // async function passUser() {
+  //   const passCode = ["0909"]
+  //   const userCode = prompt("enter your code")
+  //   if (userCode.includes(passCode)) {
+  //     setIcUser(true)
+  //   } else {
+  //     alert("코드가 없습니다")
+  //     setIcUser(false)
+  //   }
+  // }
 
   const comment =
     "깡통시장 당일 발송(선배송). 해외주문(공동 구매 품목만, 고객님의개인통관 번호 사용). 만원 할인된 가격 및 무료배송 (통관번호제공 혜택). 일주일 후 통관(소유권=icanmart). 입금 후 10일간 해외주문 금지"
