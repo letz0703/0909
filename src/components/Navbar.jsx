@@ -40,6 +40,7 @@ export default function Navbar({ search, setSearch }) {
               color: "black",
             }}
             onClick={() => navigate("/")}
+            className="cursor-pointer"
           >
             i.
           </span>
@@ -93,19 +94,21 @@ export default function Navbar({ search, setSearch }) {
 
           {user && (
             <>
-              <Link to="/" className="md:hidden">
+              {/* <Link to="/" className="md:hidden">
                 home
-              </Link>
+              </Link> */}
               <Link to="/jap" className="hidden md:block">
                 Jap
               </Link>
-              <Link to="/shop">Store</Link>
+              <Link to="/shop" className="ml-2">
+                Store
+              </Link>
             </>
           )}
 
           {user && (
             <Link to="/my_orders" style={{ width: "70px" }}>
-              내주문
+              주문내역
             </Link>
           )}
           {user && (

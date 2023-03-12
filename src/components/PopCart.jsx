@@ -87,6 +87,7 @@ export function PopCart({ isOpen }) {
               </span>
               신청고객은 택배비 빼고 송금하시면 됩니다
             </p>
+            <p>계좌번호는 문자로 안내 드립니다</p>
           </div>
         </Stack>
         <div className="flex justify-center">

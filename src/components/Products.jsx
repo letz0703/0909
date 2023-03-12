@@ -67,6 +67,7 @@ export default function Products() {
               onClick={() => {
                 !user && login()
                 increaseCartQuantity(japitem.id)
+                alert("제품이 담겼습니다. 상단 쇼핑백 아이콘을 누르세요")
               }}
             >
               담기
