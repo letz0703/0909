@@ -81,7 +81,7 @@ export function PopCart({ isOpen }) {
             <p className="text-blue-400">
               <span
                 onClick={() => window.location.replace("/jap")}
-                className="p-2 bg-pink-200"
+                className="p-2 bg-pink-200 cursor-pointer"
               >
                 현지 구매대행
               </span>

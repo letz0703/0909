@@ -71,7 +71,7 @@ export default function Jap() {
   const arr_jap_order_info = comment.split(".")
 
   return [
-    <div className="jap__ flex flex-col align-items-start justify-start">
+    <div className="jap__ flex flex-col align-items-start justify-start mt-[7vh]">
       <div className="jap__primary-header">
         <div className=" bg-pink-100 rounded-full">
           <h1 className="pt-5">해외 공동구매 안내(japan09)</h1>
