@@ -66,24 +66,30 @@ function ImageSlider({ slides }) {
                 <div></div>
               </div>
             </div>
-            <div className=" absolute  left-20 hidden md:block">
-              <div className="text-4xl pt-2 m-4">해외 공동구매</div>
-              <div className="text-2xl mb-3">개인통관번호만 있으면</div>
-              <div className="text-2xl bg-black p-3 text-white m-2 p">
-                곤약젤리 복숭아 2개
-                <br />
-                컵타입
-                <br />
-                5,000원
+            <div className=" absolute  left-20 hidden md:block bg-white p-3 rounded-b-2xl">
+              <div className="text-4xl pt-2 m-4">공동구매</div>
+              {/* <div className="text-2xl mb-3">개인통관번호만 있으면</div> */}
+              <div className="text-2xl bg-black p-3 text-white m-2 rounded-full font-bold">
+                {/* 곤약젤리 복숭아 2개 */}
+                1만원 할인
               </div>
-              <div className="text-2xl">배송비 무료/익일 수령</div>
-              <p>
+              <div className="mb-3 text-2xl">배송비 무료/익일 수령</div>
+              <div className="mb-5">
                 향후 10일간 해외주문 계획이 없으신 분들만
                 <br /> 신청하세요
-              </p>
+                <button
+                  className="px-3 btn left-10 mini red mb-3"
+                  onClick={() => navigate("/jap")}
+                >
+                  상세보기
+                </button>
+                <div></div>
+                <div></div>
+              </div>
 
-              <p className="text-xl">깡통시장 제품들을 보시려면 로그인 후</p>
-              <p className="text-xl">새로고침 하세요</p>
+              <div className="text-xl">
+                깡통시장 제품들을 보시려면 로그인 하세요
+              </div>
             </div>
           </div>
         </div>
