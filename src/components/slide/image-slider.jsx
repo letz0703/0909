@@ -83,7 +83,10 @@ function ImageSlider({ slides }) {
                 >
                   카트보기
                 </div>
-                <div className="cursor-pointer absolute md:hidden left-20 top-16 bg-lime-600 p-3 rounded-full ">
+                <div
+                  className="cursor-pointer absolute md:hidden left-20 top-16 bg-lime-600 p-3 rounded-full "
+                  onClick={() => navigate("/my_orders")}
+                >
                   주문내역
                 </div>
               </>
