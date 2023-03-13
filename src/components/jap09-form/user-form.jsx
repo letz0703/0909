@@ -8,7 +8,7 @@ export default function UserForm({ jName, jCell, jCsNo, updateFields }) {
   return (
     <div className="bg-blue-100 p-2 md:p-4 rounded-b-xl">
       <div>
-        <FormWrapper title="구매대행 신청서">
+        <FormWrapper title="구매대행 동의서">
           <label>이름</label>
           <input
             type="text"

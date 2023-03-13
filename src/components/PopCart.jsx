@@ -33,7 +33,8 @@ export function PopCart({ isOpen }) {
   // console.log("local",local__icCart)
   const handleCart__Order = async (cartItems) => {
     // console.log(cartItems)
-    await addNewCart(user.uid, crypto.randomUUID(), cartItems)
+    const deliveryTo = prompt("배송지 입력")
+    await addNewCart(user.uid, crypto.randomUUID(), cartItems, deliveryTo)
     // await addNewCart(user.uid, crypto.randomUUID(), local__icCart)
     // await addDoc(cartRef, {
     //   userId: user.uid,
@@ -85,8 +86,10 @@ export function PopCart({ isOpen }) {
               >
                 현지 구매대행
               </span>
-              신청고객은 택배비 빼고 송금하시면 됩니다
+              신청고객은 택배비무료+만원할인 <br /> = 14000원 차감 후 송금하시면
+              됩니다
             </p>
+            <p>0원 이하는 0원으로 계산됩니다</p>
             <p>계좌번호는 문자로 안내 드립니다</p>
           </div>
         </Stack>

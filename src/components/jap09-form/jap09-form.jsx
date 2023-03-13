@@ -18,6 +18,9 @@ import {
 import { database } from "../../api/firebase"
 import { useAuthContext } from "../../context/AuthContext"
 import { useNavigate } from "react-router-dom"
+import PromiseForm from "./promise-form"
+import OwnerForm from "./owner-form"
+import ClearanceForm from "./clearance-form"
 
 export default function Jap09Form({ icUser }) {
   const { user } = useAuthContext()
@@ -26,8 +29,8 @@ export default function Jap09Form({ icUser }) {
     jName: "",
     jCell: "",
     jCsNo: "",
-    jProduct: "곤약 복숭아 1(컵형) + 곤약젤리 랜던2(짜먹는)",
-    jDeliveryTo: "",
+    jProduct: "곤약젤리+동전파스",
+    // jDeliveryTo: "",
     jEtc: "",
   }
   const [data, setData] = useState(INITIAL_DATA)
@@ -36,7 +39,10 @@ export default function Jap09Form({ icUser }) {
     useMultiStepForm([
       <UserForm {...data} updateFields={updateFields} />,
       <AddressForm {...data} updateFields={updateFields} />,
-      <SpecialSelected {...data} updateFields={updateFields} />,
+      <PromiseForm />,
+      <OwnerForm />,
+      <ClearanceForm />,
+      // <SpecialSelected {...data} updateFields={updateFields} />,
       <CustomInfo {...data} updateFields={updateFields} />,
     ])
 
@@ -50,27 +56,46 @@ export default function Jap09Form({ icUser }) {
   function onSubmit(e) {
     e.preventDefault()
     if (!isLastStep) return next()
-    // console.log(data) create_rdb_jorders(data)
+    console.log("data:", data)
+    create_rdb_jorders(data)
+    // create_rdb_customers(data)
     /** save data to RDB 2023.02.13/월 */
-    alert("주문이 완료 되었습니다.")
-    window.location.replace("/jap")
+    alert("동의 하셨습니다.")
+    window.location.replace("/")
   }
+
   const create_rdb_jorders = (data) => {
     // if (user || icUser) {
-    set(ref(database, `customers/jorders/${data.uid}`), {
+    set(ref(database, `jorders/${data.uid}`), {
       name: data.jName,
       // user?.displayName,
-      uid: user?.uid,
+      uid: data.uid,
       // uid: data.uid,
-      cell: Number(data.jCell),
+      cell: data.jCell,
       customNo: data.jCsNo,
-      jProduct: data.jProduct,
+      jProduct: "곤약젤리+동전파스",
+      // jProduct: data.jProduct,
       orderDate: Date(),
+      // deliveryTo: data.jDeliveryTo,
       delivery: "not yet",
     })
       // .then(() => alert("data saved"))
       .catch((error) => console.log(error))
     // }
+  }
+
+  const create_rdb_customers = (e) => {
+    // const data = getAllInputs()
+    user &&
+      set(ref(database, `customers/${data?.uid}`), {
+        jname: data.jName,
+        uid: user.uid,
+        jcell: data.jCell,
+        jCsNo: data.jCsNo,
+        jDeliveryTo: data.jDeliveryTo,
+      })
+        .then(() => alert("data saved"))
+        .catch((error) => console.log(error))
   }
 
   return (
@@ -94,7 +119,7 @@ export default function Jap09Form({ icUser }) {
             </button>
           )}
           <button className="btn btn--primary mini">
-            {!isLastStep ? "next" : "동의 및 주문"}
+            {!isLastStep ? "next" : "동의 및 신청"}
           </button>
         </div>
       </form>
