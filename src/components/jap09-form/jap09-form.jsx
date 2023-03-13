@@ -75,7 +75,7 @@ export default function Jap09Form({ icUser }) {
 
   return (
     <div className="jap09-formjsx ">
-      <form onSubmit={onSubmit} style={{ maxWidth: "max-content" }}>
+      <form onSubmit={onSubmit}>
         <div style={{ position: "absolute", top: ".5rem", right: ".5rem" }}>
           {currentStepIndex + 1}/{steps.length}
         </div>
