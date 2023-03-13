@@ -67,7 +67,7 @@ export default function Jap() {
   // }
 
   const comment =
-    "깡통시장 당일 발송(선배송). 해외주문(공동 주문 품목만, 고객님의개인통관 번호 사용). 만원 할인된 가격 및 무료배송 (통관번호제공 혜택). 일주일 후 통관(소유권=icanmart). 입금 후 10일간 해외주문 금지"
+    "깡통시장 제품 당일 선발송.  만원 할인 된 가격 및 무료배송 (통관번호제공 혜택). 일주일 후 통관. 통관 물품의 소유권 = icanmart. 입금 후 10일간 해외주문 금지"
   const arr_jap_order_info = comment.split(".")
 
   return [
@@ -76,11 +76,10 @@ export default function Jap() {
         <div className=" bg-pink-100 rounded-full">
           <h1 className="pt-5">해외 공동구매 안내(japan09)</h1>
           <h3 className="text-2xl text-green-700 p-2 mx-3 my-0">
-            2023년 3월 : 곤약젤리 3개 5000원
+            고객님의 개인통관 번호로 공동구매 합니다
           </h3>
-          <p className="mb-3">컵타입 복숭아 1봉지 + 짜먹는 타입 2봉지(랜덤)</p>
           <div className="font-bold mb-2 p-2 text-xl bg-white">
-            공동 주문 품목<div>곤약젤리 12개 + 동전파스 20개</div>
+            공동 구매 품목<div>곤약젤리 + 동전파스(미화 150불 이하)</div>
           </div>
           <div className="jap__info  p-3  mb-2 flex flex-col text-xl font-semibold ">
             {arr_jap_order_info.map((r) => {
@@ -92,7 +91,7 @@ export default function Jap() {
             })}
           </div>
           <div className="p-2 bg-blue-200 md:text-xl">
-            다음 주문은 = 제품 통관 후 가능(7-10일)
+            다음 주문은 제품 통관 후 가능(7-10일)
           </div>
         </div>
         {user || icUser ? (
