@@ -23,7 +23,7 @@ export default function Navbar({ search, setSearch }) {
   // const navigate = useNavigate()
 
   return (
-    <header className="Navbarjsx__header flex border-b justify-between p-3">
+    <header className="Navbarjsx__header flex border-b justify-evenly p-3">
       {/* <section className="icNavbar__sec1"> */}
       {/* <div className=" text-brand"> */}
       <div className="flex items-center align-items-center">
