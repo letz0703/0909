@@ -6,6 +6,7 @@ import Wait from "../util/wait"
 import { useAuthContext } from "../context/AuthContext"
 // import { useLocation } from "react-router-dom"
 import { get, ref } from "firebase/database"
+import { useJapitems } from "../hooks/use-japitems"
 // import FormatTIME from "../util/formatTime"
 
 const FormatTIME = (timestamp) => {
@@ -21,6 +22,7 @@ const FormatTIME = (timestamp) => {
 export default function MyOrders() {
   const { uid, login } = useAuthContext()
   const [orders, setOrders] = useState([])
+  const [japitems] = useJapitems()
   // const [itemsInCart, setItemsInCart] = useState(null)
   // console.log(SPECIALS)
   // const [myOrders, setMyOrders] = useState([])
@@ -41,19 +43,21 @@ export default function MyOrders() {
     })
   }
 
-  async function getJorderInfo(id) {
-    const snapshot = await get(ref(database, `jorders/${id}`))
-    if (snapshot.exists()) {
-      console.log("snapshot.val():", snapshot.val())
-      // return snapshot.val().name
-    } else {
-      throw new Error("order not found.")
-    }
+  function getItemInfo(itemId) {
+    const { name, imgUrl } = japitems.find((r) => r.id == itemId).name
   }
+  // async function getJorderInfo(id) {
+  //   const snapshot = await get(ref(database, `jorders/${id}`))
+  //   if (snapshot.exists()) {
+  //     console.log("snapshot.val():", snapshot.val())
+  //     // return snapshot.val().name
+  //   } else {
+  //     throw new Error("order not found.")
+  //   }
+  // }
 
   useEffect(() => {
     get_rdb_my_orders(uid)
-    getJorderInfo(uid)
   }, [uid])
 
   return (
@@ -80,8 +84,14 @@ export default function MyOrders() {
                 order.cartItems.map((row) => (
                   <div
                     key={crypto.randomUUID()}
-                    className="flex flex-row justify-center"
+                    className="flex flex-row items-center m-2 justify-start"
                   >
+                    <img
+                      src={japitems.find((r) => r.id == row.id).imgUrl}
+                      className="w-20 mr-3"
+                      // width="100px"
+                    />
+                    {japitems.find((r) => r.id == row.id).name}
                     <span className="mx-4">id:{row.id}</span>
                     <span>qty: {row.quantity}</span>
                   </div>

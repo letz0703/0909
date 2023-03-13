@@ -1,6 +1,10 @@
 🖥 WIP...
 이전 페이지 prev page
 
+<!-- TODO -->
+
+[] 주문상태 표시 : 결재와료등 status가 내주문 내역에서 status가 안보임
+
 ### public image
 
 <img src="./imgs/ic_barcode.svg"
@@ -10,8 +14,6 @@
 
 > window.location.replace(document.referrer)
 > [] store page 수정( 수량, 디테일 페이지 링크 )
-
-[x] fix order date
 
 ---
 
@@ -59,13 +61,6 @@ next to learn: Array filter method https://www.youtube.com/watch?v=2lgiV1urWQs 2
 PopCart.jsx : https://share.cleanshot.com/gXBnGNSG
 isOpen : https://youtu.be/lATafp15HWA?t=2685
 store image : https://youtu.be/lATafp15HWA?t=127결
-
-# now studying
-
-shopping mall ref
-[] 2022.12.26/월 : https://www.youtube.com/watch?v=lATafp15HWA&t=1905s
-
-<!-- TODO ↑NOW  router 5:00 -->
 
 ## API folder
 
