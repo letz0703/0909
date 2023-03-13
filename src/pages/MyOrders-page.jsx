@@ -61,7 +61,7 @@ export default function MyOrders() {
   }, [uid])
 
   return (
-    <div className="내주문 mt-[10.5vh] lg:mt-[7.5vh]">
+    <div className="내주문 mt-[10.5vh] lg:m-[8.5vh]">
       <h1>주문 내역</h1>
       <p>
         {!uid && (
@@ -92,8 +92,10 @@ export default function MyOrders() {
                       // width="100px"
                     />
                     {japitems.find((r) => r.id == row.id).name}
-                    <span className="mx-4">id:{row.id}</span>
-                    <span>qty: {row.quantity}</span>
+                    {/* <span className="mx-4">id:{row.id}</span> */}
+                    <span className="ml-2 text-blue-500 font-semibold">
+                      {row.quantity} 개
+                    </span>
                   </div>
                 ))
                 // orders.cartItems.map((item) => {
