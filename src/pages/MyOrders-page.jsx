@@ -41,12 +41,23 @@ export default function MyOrders() {
     })
   }
 
+  async function getJorderInfo(id) {
+    const snapshot = await get(ref(database, `jorders/${id}`))
+    if (snapshot.exists()) {
+      console.log("snapshot.val():", snapshot.val())
+      // return snapshot.val().name
+    } else {
+      throw new Error("order not found.")
+    }
+  }
+
   useEffect(() => {
     get_rdb_my_orders(uid)
+    getJorderInfo(uid)
   }, [uid])
 
   return (
-    <div className="mt-[10.5vh] lg:mt-[7.5vh]">
+    <div className="내주문 mt-[10.5vh] lg:mt-[7.5vh]">
       <h1>주문 내역</h1>
       <p>
         {!uid && (
