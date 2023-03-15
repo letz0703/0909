@@ -24,6 +24,7 @@ import { useNavigate } from "react-router-dom"
 // }
 
 const deleiveryCost = parseInt(4000)
+
 export function PopCart({ isOpen }) {
   // export function PopCart({isOpen}:PopCartProps) {
   const [japitems, setJapitems] = useJapitems()
@@ -34,7 +35,7 @@ export function PopCart({ isOpen }) {
   const [user] = useAuthState(auth)
   const cartRef = collection(db, "carts")
   const navigate = useNavigate()
-  const [deliveryTo, setDeliveryTo] = useState()
+  const [currentAddress, setCurrentAddress] = useState("")
 
   // const [cartItem, setCartItem] = useState({});
 
@@ -55,6 +56,7 @@ export function PopCart({ isOpen }) {
 
     if (("a:", a.deliveryTo === undefined || a.deliveryTo === "")) {
       const newAddress = prompt("배송지 입력")
+      setCurrentAddress(newAddress)
       await updateRDB_user(newAddress)
     }
 
@@ -74,14 +76,14 @@ export function PopCart({ isOpen }) {
     // updateRDB_user(newAddress)
     // }
 
-    // await addNewCart(user.uid, crypto.randomUUID(), cartItems, deliveryTo)
-    // await addNewCart(user.uid, crypto.randomUUID(), local__icCart)
-    // await addDoc(cartRef, {
-    //   userId: user.uid,
-    //   cartId: crypto.randomUUID(),
-    //   orderDate: Date(),
-    //   cartItems: local__icCart,
-    // })
+    await addNewCart(user.uid, crypto.randomUUID(), cartItems, deliveryTo)
+    await addNewCart(user.uid, crypto.randomUUID(), local__icCart)
+    await addDoc(cartRef, {
+      userId: user.uid,
+      cartId: crypto.randomUUID(),
+      orderDate: Date(),
+      cartItems: local__icCart,
+    })
 
     // setCartItems([])
     // window.location.replace("/")
@@ -95,15 +97,30 @@ export function PopCart({ isOpen }) {
   async function changeAddress() {
     const newAddress = prompt("배송지 입력")
     // console.log("newAddress:", newAddress)
-    setDeliveryTo(newAddress)
+    // setCurrentAddress(newAddress)
+    // setDeliveryTo(newAddress)
     // console.log("deliveryTo:", deliveryTo)
     await updateRDB_user(newAddress)
+    setCurrentAddress(newAddress)
+    alert("주소가 변경되었습니다")
   }
+
+  async function getCurrentUserAddress() {
+    const userAddress = await getRDB_users().then((res) => {
+      const data = Object.values(res)
+      return data.find((row) => row.uid === user.uid).deliveryTo
+    })
+    setCurrentAddress(userAddress)
+  }
+
+  useEffect(() => {
+    getCurrentUserAddress()
+  }, [])
 
   return (
     <Offcanvas
-      // show={isOpen}
-      show={true}
+      show={isOpen}
+      // show={true}
       onHide={closeCart}
       placement="top"
       style={{ width: "100%", height: "80%" }}
@@ -152,9 +169,10 @@ export function PopCart({ isOpen }) {
             지우기
           </button>
           <button className="btn green" onClick={changeAddress}>
-            주소변경
+            배송지변경
           </button>
         </div>
+        <div className="flex justify-center pt-2">배송지:{currentAddress}</div>
       </Offcanvas.Body>
     </Offcanvas>
   )
