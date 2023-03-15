@@ -36,6 +36,7 @@ export function PopCart({ isOpen }) {
   const cartRef = collection(db, "carts")
   const navigate = useNavigate()
   const [currentAddress, setCurrentAddress] = useState("")
+  const [deliveryTo, setDeliveryTo] = useState("")
 
   // const [cartItem, setCartItem] = useState({});
 
@@ -50,11 +51,12 @@ export function PopCart({ isOpen }) {
       //   }
       // })
       return data.find((row) => {
+        console.log("row:", row)
         return row.uid === user.uid
       })
     })
 
-    if (("a:", a.deliveryTo === undefined || a.deliveryTo === "")) {
+    if (a.deliveryTo === undefined || a.deliveryTo === "") {
       const newAddress = prompt("배송지 입력")
       setCurrentAddress(newAddress)
       await updateRDB_user(newAddress)
@@ -76,8 +78,8 @@ export function PopCart({ isOpen }) {
     // updateRDB_user(newAddress)
     // }
 
-    await addNewCart(user.uid, crypto.randomUUID(), cartItems, deliveryTo)
-    await addNewCart(user.uid, crypto.randomUUID(), local__icCart)
+    await addNewCart(user.uid, crypto.randomUUID(), cartItems)
+    // await addNewCart(user.uid, crypto.randomUUID(), local__icCart)
     await addDoc(cartRef, {
       userId: user.uid,
       cartId: crypto.randomUUID(),
@@ -85,8 +87,8 @@ export function PopCart({ isOpen }) {
       cartItems: local__icCart,
     })
 
-    // setCartItems([])
-    // window.location.replace("/")
+    setCartItems([])
+    window.location.replace("/")
   }
 
   async function handleResetCart() {
@@ -101,7 +103,7 @@ export function PopCart({ isOpen }) {
     // setDeliveryTo(newAddress)
     // console.log("deliveryTo:", deliveryTo)
     await updateRDB_user(newAddress)
-    setCurrentAddress(newAddress)
+    setDeliveryTo(newAddress)
     alert("주소가 변경되었습니다")
   }
 
