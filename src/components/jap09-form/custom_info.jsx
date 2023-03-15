@@ -7,7 +7,7 @@ export default function CustomInfo() {
     <div className="bg-blue-100 p-4 rounded-b-xl">
       {/* <FormWrapper title="통관 상세 안내"></FormWrapper> */}
       <h2 className="text-xl mb-3 bg-red-200 text-black p-3 font-bold">
-        다음 주문 안내
+        감사 합니다
       </h2>
       <p>본 상품은 오프라인 방문 고객분들을 위한 서비스 상품입니다.</p>
       <p>신청 → 개인통관번호 확인 → 주문 가능시점에 개별 통보 드립니다.</p>
