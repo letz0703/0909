@@ -52,14 +52,15 @@ export function logout() {
 }
 
 
-export function updateRDB_user(){
+export function updateRDB_user(deliveryTo){
   const fbUser = {
   // return {
     name: auth.currentUser?.displayName ||'',
     uid: auth.currentUser.uid || crypto.randomUUID(),
     email: auth.currentUser.email,
     phoneNumber: auth.currentUser.phoneNumber || '',
-    photoUrl: auth.currentUser.photoURL
+    photoUrl: auth.currentUser.photoURL,
+    deliveryTo:deliveryTo ||''
   }
 
   return update(ref(database, `users/${fbUser.uid}`),{...fbUser})
@@ -71,12 +72,12 @@ export async function getRDB_users() {
       .then((snapshot) => {
         if (snapshot.exists()) {
           const users = snapshot.val()
-          console.log('users:',users)
-          return { ...users }
+          // console.log('users:',users)
+          return users
+          // return { ...users }
         } else {
           console.log('no user');
         }
-        return
       })
 }
 export function onUserStateChange(callback) {
