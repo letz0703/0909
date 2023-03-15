@@ -12,6 +12,7 @@ import {
   getDatabase,
   ref,
   set,
+  update,
   get,
   remove,
   child,
@@ -50,6 +51,19 @@ export function logout() {
   signOut(auth).catch(console.error)
 }
 
+
+export function updateRDB_user(){
+  const fbUser = {
+  // return {
+   name: auth.currentUser?.displayName ||'',
+   uid: auth.currentUser.uid || crypto.randomUUID(),
+   email: auth.currentUser.email,
+   phoneNumber: auth.currentUser.phoneNumber || '',
+   photoUrl: auth.currentUser.photoURL
+  }
+
+  return update(ref(database, `user/${fbUser.uid}`),{...fbUser})
+}
 export function onUserStateChange(callback) {
   onAuthStateChanged(auth, async (user) => {
     const updatedUser = user ? await adminUser(user) : null

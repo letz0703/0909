@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom"
 import { usePop } from "../components/pop/pop"
 import { PopCart } from "../components/PopCart"
 import { useLocalStorage } from "../hooks/use-local-storage"
+import { useAuthContext } from "./AuthContext"
+import { updateRDB_users } from "../api/firebase"
 
 const ShoppingCartContext = createContext({})
 
@@ -20,10 +22,17 @@ export function ShoppingCartProvider({ children }) {
     (quantity, item) => item.quantity + quantity,
     0
   )
+  // async function addNewUser(user) {
+  // return [...user]
+  // }
 
   const openCart = () => {
     setIsOpen(true)
+    // const userInfo = Object.values(fbUser)
+    // console.log("userInfo:", userInfo)
+    // addNewUser(user)
   }
+
   const closeCart = () => {
     setIsOpen(false)
     navigate("/", { cartItems })
