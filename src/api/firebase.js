@@ -55,14 +55,29 @@ export function logout() {
 export function updateRDB_user(){
   const fbUser = {
   // return {
-   name: auth.currentUser?.displayName ||'',
-   uid: auth.currentUser.uid || crypto.randomUUID(),
-   email: auth.currentUser.email,
-   phoneNumber: auth.currentUser.phoneNumber || '',
-   photoUrl: auth.currentUser.photoURL
+    name: auth.currentUser?.displayName ||'',
+    uid: auth.currentUser.uid || crypto.randomUUID(),
+    email: auth.currentUser.email,
+    phoneNumber: auth.currentUser.phoneNumber || '',
+    photoUrl: auth.currentUser.photoURL
   }
 
-  return update(ref(database, `user/${fbUser.uid}`),{...fbUser})
+  return update(ref(database, `users/${fbUser.uid}`),{...fbUser})
+}
+
+export async function getRDB_users() {
+    return get(ref(database, `users`)) //
+    //   // return get(ref(db, "admins")) //
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          const users = snapshot.val()
+          console.log('users:',users)
+          return { ...users }
+        } else {
+          console.log('no user');
+        }
+        return
+      })
 }
 export function onUserStateChange(callback) {
   onAuthStateChanged(auth, async (user) => {

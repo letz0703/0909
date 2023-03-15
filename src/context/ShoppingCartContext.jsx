@@ -4,7 +4,7 @@ import { usePop } from "../components/pop/pop"
 import { PopCart } from "../components/PopCart"
 import { useLocalStorage } from "../hooks/use-local-storage"
 import { useAuthContext } from "./AuthContext"
-import { updateRDB_users } from "../api/firebase"
+import { updateRDB_user, getRDB_users } from "../api/firebase"
 
 const ShoppingCartContext = createContext({})
 
@@ -28,6 +28,7 @@ export function ShoppingCartProvider({ children }) {
 
   const openCart = () => {
     setIsOpen(true)
+    getRDB_users()
     // const userInfo = Object.values(fbUser)
     // console.log("userInfo:", userInfo)
     // addNewUser(user)
@@ -36,6 +37,7 @@ export function ShoppingCartProvider({ children }) {
   const closeCart = () => {
     setIsOpen(false)
     navigate("/", { cartItems })
+    updateRDB_user()
   }
 
   //functions
