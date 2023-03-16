@@ -13,6 +13,7 @@ import { useDetail } from "../context/DetailContext"
 import { useAuthContext } from "../context/AuthContext"
 import { signInWithPopup } from "firebase/auth"
 import { login } from "../api/firebase"
+import { useLogger } from "../hooks/use-logger"
 
 export default function Products() {
   // const { isOpen_Detail, open_Detail, close_Detail } = useDetail()

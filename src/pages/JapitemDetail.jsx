@@ -94,7 +94,8 @@ export default function JapitemDetail() {
           </button>
           <button
             className="btn red mini text-white"
-            onClick={() => window.location.replace(document.referrer)}
+            onClick={() => window.history.back()}
+            // onClick={() => window.location.replace(document.referrer)}
           >
             x
           </button>

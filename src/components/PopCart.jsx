@@ -51,7 +51,6 @@ export function PopCart({ isOpen }) {
       //   }
       // })
       return data.find((row) => {
-        console.log("row:", row)
         return row.uid === user.uid
       })
     })
@@ -116,7 +115,7 @@ export function PopCart({ isOpen }) {
   }
 
   useEffect(() => {
-    getCurrentUserAddress()
+    user && getCurrentUserAddress()
   }, [])
 
   return (
