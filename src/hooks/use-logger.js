@@ -1,10 +1,12 @@
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react"
 
-export function useLogger(){
-	const [value, setValue] = useState()
+export function useLogger() {
+  const [value, setValue] = useState()
 
-		useEffect(() => {
-			console.log('value:',value)
-		}, [value]);
-	return { value, setValue }
-};
+  $1
+
+  useEffect(() => {
+    console.log("value:", value)
+  }, [value])
+  return { value, setValue }
+}

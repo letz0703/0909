@@ -1,21 +1,22 @@
 import { useState, useEffect } from "react"
 
+function getSavedValue(key, initialValue) {
+  const savedValue = JSON.parse(localStorage.getItem(key))
+  if (savedValue) return savedValue
+
+  if (typeof initialValue === "function") return initialValue()
+  // if (initialValue instanceof Function) return initialValue()
+  return initialValue
+}
+
 export const useLocalStorage = (key, initialValue) => {
   const [value, setValue] = useState(() => {
-    const jsonValue = localStorage.getItem(key)
-
-    if (jsonValue != null) return JSON.parse(jsonValue)
-
-    if (typeof initialValue === "function") {
-      return initialValue()
-    } else {
-      return initialValue
-    }
+    return getSavedValue(key, initialValue)
   })
 
   useEffect(() => {
     localStorage.setItem(key, JSON.stringify(value))
-  }, [key, value])
+  }, [value])
 
   return [value, setValue]
 }
