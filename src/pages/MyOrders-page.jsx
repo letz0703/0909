@@ -62,7 +62,7 @@ export default function MyOrders() {
 
   return (
     <div className="내주문 mt-[10.5vh]  lg:mt-[8.5vh]">
-      <h1 className="md:mt-[14vh]">주문 내역</h1>
+      <h1 className="md:mt-[14vh] lg:mt-[9vh]">주문 내역</h1>
       <p>
         {!uid && (
           <span

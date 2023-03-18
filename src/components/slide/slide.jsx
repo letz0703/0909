@@ -26,7 +26,7 @@ export default function Slide() {
 
   return (
     // <section style={{ marginTop: "100px" }}>
-    <section className="mt-[8.5vh] lg:mt-[11vh]">
+    <section className="mt-[8.5vh] md:mt-[11vh] lg:mt-[6.5vh]">
       <div style={containerStyle} className="slide">
         <ImageSlider slides={slides} />
       </div>
