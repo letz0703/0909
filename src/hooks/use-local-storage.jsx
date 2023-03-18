@@ -1,3 +1,4 @@
+import { useDeferredValue } from "react"
 import { useState, useEffect } from "react"
 
 function getSavedValue(key, initialValue) {
@@ -14,9 +15,11 @@ export const useLocalStorage = (key, initialValue) => {
     return getSavedValue(key, initialValue)
   })
 
-  useEffect(() => {
-    localStorage.setItem(key, JSON.stringify(value))
-  }, [value])
+  const value_def = useDeferredValue(value)
 
-  return [value, setValue]
+  useEffect(() => {
+    localStorage.setItem(key, JSON.stringify(value_def))
+  }, [value, value_def])
+
+  return [value_def, setValue]
 }
