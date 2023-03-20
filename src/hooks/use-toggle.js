@@ -11,6 +11,7 @@ export default function useToggle(initialValue) {
       typeof value === "boolean" ? value : !currentValue
     )
   }
+
   return [value, toggleValue]
 }
 

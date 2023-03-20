@@ -1,4 +1,5 @@
 {
+  "editor.fontWeight": "450",
   "workbench.colorTheme": "One Monokai",
   "workbench.colorCustomizations": {
     "tab.activeBackground": "#770b29"
@@ -157,5 +158,5 @@
   "editor.formatOnPaste": false,
   "bookmarks.useWorkaroundForFormatters": false,
   "eslint.format.enable": false,
-  "git-blame.gitWebUrl": ""
+  "git-blame.gitWebUrl": "https://github.com/letz0703/0909/commit/$ID"
 }
