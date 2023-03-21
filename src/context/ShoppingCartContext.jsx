@@ -5,6 +5,7 @@ import { PopCart } from "../components/PopCart"
 import { useLocalStorage } from "../hooks/use-local-storage"
 import { useAuthContext } from "./AuthContext"
 import { updateRDB_user, getRDB_users } from "../api/firebase"
+import { useJapitems } from "../hooks/use-japitems"
 
 const ShoppingCartContext = createContext({})
 
@@ -40,14 +41,25 @@ export function ShoppingCartProvider({ children }) {
     updateRDB_user()
   }
 
+  const [japitems] = useJapitems()
   //functions
   function getItemQuantity(id) {
     return cartItems.find((item) => item.id === id)?.quantity || 0
   }
   function increaseCartQuantity(id) {
+    const res = japitems?.find((row) => row.id === id)
     setCartItems((currItems) => {
       if (currItems.find((item) => item.id === id) == null) {
-        return [...currItems, { id, quantity: 1 }]
+        return [
+          ...currItems,
+          {
+            id,
+            quantity: 1,
+            name: res.name,
+            quantity: res.qty,
+            price: res.price,
+          },
+        ]
       } else {
         return currItems.map((item) => {
           if (item.id === id) {

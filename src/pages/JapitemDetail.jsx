@@ -27,7 +27,10 @@ export default function JapitemDetail() {
   async function updatePrice(prev) {
     updateFBPrice(prev, itemPrice)
   }
-
+  const handleDamGi = () => {
+    increaseCartQuantity(japitem.id)
+    window.history.back()
+  }
   return (
     <div className="japitem-detail flex justify-center mt-[7vh]">
       <div className="">
@@ -87,10 +90,7 @@ export default function JapitemDetail() {
         </span>
         <div>{homeUrl?.homeUrl || null}</div>
         <div>
-          <button
-            className="btn btn--primary mini"
-            onClick={() => increaseCartQuantity(japitem.id)}
-          >
+          <button className="btn btn--primary mini" onClick={handleDamGi}>
             담기
           </button>
           <button
