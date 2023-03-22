@@ -18,4 +18,5 @@ export function useTimeout(callback, delay) {
   const clear = useCallback(() => {
     return [value, setValue]
   })
+
 }
