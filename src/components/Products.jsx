@@ -50,7 +50,7 @@ export default function Products() {
         .map((japitem) => (
           <div key={uuidv4()}>
             <div
-              className="product__ flex justify-center space-around align-items-center pb-2 card"
+              className="product__ flex justify-center space-around align-items-center  card h-100"
               onClick={() => {
                 navigate(`/japitems/${japitem.id}`, { state: { japitem } })
               }}
@@ -59,8 +59,9 @@ export default function Products() {
               <span className="text-orange-500 font-bold">
                 {FormatCurrency(japitem.price)}
               </span>
-              <span className="transition-all hover:scale-110">
-                <img src={japitem.imgUrl} className="new-product__list-image" />
+              <span className="transition-all hover:scale-110 mt-auto">
+                <img src={japitem.imgUrl} className="max-h-[150px]" />
+                {/* <img src={japitem.imgUrl} className="new-product__list-image" /> */}
               </span>
             </div>
             <button
