@@ -42,7 +42,7 @@ export default function JapitemDetail() {
           <img
             src={imgUrl}
             className="japitem-detail__imageDetail "
-            style={{ width: "300px" }}
+            style={{ minWidth: "300px" }}
           />
         </div>
         <div>{description}</div>
