@@ -56,7 +56,6 @@ export function ShoppingCartProvider({ children }) {
             id,
             quantity: 1,
             name: res.name,
-            quantity: res.qty,
             price: res.price,
           },
         ]
