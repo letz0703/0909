@@ -19,7 +19,7 @@ export const useLocalStorage = (key, initialValue) => {
 
   useEffect(() => {
     localStorage.setItem(key, JSON.stringify(value_def))
-  }, [value, value_def])
+  }, [value_def])
 
   return [value_def, setValue]
 }
