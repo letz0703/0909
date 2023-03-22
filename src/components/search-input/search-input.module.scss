@@ -95,13 +95,16 @@
     padding-left: 1rem;
   }
 }
-
+.input {
+  width: 33vw;
+}
+/*
 .input:focus {
   outline: 0;
   @media (width>960px) {
     width: 33vw;
   }
-}
+} */
 
 .submit {
   font-size: 3rem;
