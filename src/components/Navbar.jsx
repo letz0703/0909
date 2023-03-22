@@ -23,7 +23,7 @@ export default function Navbar({ search, setSearch }) {
   // const navigate = useNavigate()
 
   return (
-    <header className="Navbarjsx__header flex border-b justify-evenly p-3">
+    <header className="Navbarjsx__header flex border-b justify-evenly p-1">
       {/* <section className="icNavbar__sec1"> */}
       {/* <div className=" text-brand"> */}
       <div className="flex items-center align-items-center">
@@ -85,7 +85,7 @@ export default function Navbar({ search, setSearch }) {
       {!window.location.href.includes("/jap") && (
         <section className="sec2">
           {/* <div className={`${styles.nav_center} navbar__search-input`}> */}
-          {user && <SearchInput setSearch={setSearch} />}
+          {user && <SearchInput setSearch={setSearch} className="검색폼" />}
         </section>
       )}
       <nav className="flex item-center font-bold">
