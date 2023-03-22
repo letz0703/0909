@@ -1,5 +1,6 @@
 {
-  "editor.fontWeight": "450",
+  "tailwind-fold.autoFold": true,
+  "editor.fontWeight": "400",
   "workbench.colorTheme": "One Monokai",
   "workbench.colorCustomizations": {
     "tab.activeBackground": "#770b29"
@@ -147,6 +148,10 @@
     ],
     "doMySnippet": [
       { "command": "type", "args": { "text": "cl" } },
+      "insertSnippet"
+    ],
+    "callbackSnippet": [
+      { "command": "type", "args": { "text": "nn" } },
       "insertSnippet"
     ]
   },
