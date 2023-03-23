@@ -1,6 +1,5 @@
 // import { useAuthContext } from "../../context/AuthContext"
-import { v4 as uuidv4 } from "uuid"
-import { useContext, useEffect, useState } from "react"
+import { useContext, useEffect, useState, useCallback } from "react"
 import FormatCurrency from "../util/formatCurrency"
 import { SearchContext } from "../App"
 import { useNavigate } from "react-router-dom"
@@ -29,6 +28,13 @@ export default function Products() {
     setCartItems,
   } = useShoppingCart()
 
+  const increseCartQuantity_mem = useCallback(
+    (id) => {
+      increaseCartQuantity(id)
+    },
+    [increaseCartQuantity]
+  )
+
   /**
    * cart reset 하기
    */
@@ -48,7 +54,7 @@ export default function Products() {
             : item.name.toLowerCase().includes(search)
         })
         .map((japitem) => (
-          <div key={uuidv4()}>
+          <div key={crypto.randomUUID()}>
             <div className="product__ flex justify-center space-around align-items-center  card h-100">
               <span className="max-w-[80%] truncate">{japitem.name}</span>
               <span className="text-orange-500 font-bold">
@@ -68,7 +74,7 @@ export default function Products() {
                 className="btn btn--primary mini text-xs"
                 onClick={() => {
                   !user && login()
-                  increaseCartQuantity(japitem.id)
+                  increseCartQuantity_mem(japitem.id)
                 }}
               >
                 담기
