@@ -151,7 +151,7 @@
       "insertSnippet"
     ],
     "callbackSnippet": [
-      { "command": "type", "args": { "text": "nn" } },
+      { "command": "type", "args": { "text": "nj" } },
       "insertSnippet"
     ]
   },

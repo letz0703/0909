@@ -16,8 +16,8 @@ export default function ShopHome() {
   return (
     <div>
       <Slide />
-      {/* <Test /> */}
-      {user && <Products />}
+      <Test />
+      {/* {user && <Products />} */}
     </div>
   )
 }

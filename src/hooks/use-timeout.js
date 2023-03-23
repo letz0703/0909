@@ -1,12 +1,10 @@
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect, useCallback, useRef } from "react"
 
 //function here
 
-export function useTimeout(callback, delay) {
+export default function useTimeout(callback, delay) {
   const callback_ref = useRef(callback)
   const timeout_ref = useRef()
-
-
 
   useEffect(() => {
     callback_ref.current = callback
@@ -16,7 +14,19 @@ export function useTimeout(callback, delay) {
     timeout_ref.current = setTimeout(() => callback_ref.current(), delay)
   }, [delay])
   const clear = useCallback(() => {
-    return [value, setValue]
-  })
+    timeout_ref.current && clearTimeout(timeout_ref.current)
+  }, [])
 
+  useEffect(() => {
+      set()
+      return clear()
+  }, [set,clear, delay]);
+
+  const reset = useCallback(() => {
+    clear()
+    set()
+  },[clear, set])
+
+  return {reset, clear}
 }
+

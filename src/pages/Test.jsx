@@ -1,33 +1,17 @@
-import React from "react"
-import { v4 as uuidv4 } from "uuid"
-import useToggle from "../hooks/use-toggle"
+import React, { useState } from "react"
+import useTimeout from "../hooks/use-timeout"
 //import styles from './Test.module.css'
 
 export default function Test() {
-  const [value, toggleValue] = useToggle(false)
+  const [count, setCount] = useState(10)
+  const { clear, reset } = useTimeout(() => setCount(0), 1000)
   return (
-    <div>
-      <button
-        onClick={() => {
-          toggleValue()
-        }}
-      >
-        토글
-      </button>
-      <button
-        onClick={() => {
-          toggleValue(true)
-        }}
-      >
-        트루화
-      </button>
-      <button
-        onClick={() => {
-          toggleValue(false)
-        }}
-      >
-        폴스화
-      </button>
-    </div>
+    <>
+      <div>use타임아웃</div>
+      <button>{count}</button>
+      <button onClick={() => setCount((prev) => prev + 1)}>증가</button>
+      <button onClick={clear}>Clear</button>
+      <button onClick={reset}>Reset</button>
+    </>
   )
 }
