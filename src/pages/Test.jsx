@@ -4,14 +4,12 @@ import useTimeout from "../hooks/use-timeout"
 
 export default function Test() {
   const [count, setCount] = useState(10)
-  const { clear, reset } = useTimeout(() => setCount(0), 1000)
+  useDebounce(() => alert(count), 1000, [count])
+
   return (
-    <>
-      <div>use타임아웃</div>
-      <button>{count}</button>
-      <button onClick={() => setCount((prev) => prev + 1)}>증가</button>
-      <button onClick={clear}>Clear</button>
-      <button onClick={reset}>Reset</button>
-    </>
+    <div>
+      <div>{count}</div>
+      <button onClick={() => setCount((c) => c + 1)}>증가</button>
+    </div>
   )
 }
