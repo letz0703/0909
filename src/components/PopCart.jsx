@@ -37,6 +37,7 @@ export function PopCart({ isOpen }) {
   const navigate = useNavigate()
   const [currentAddress, setCurrentAddress] = useState("")
   const [deliveryTo, setDeliveryTo] = useState("")
+  const [total, setTotal] = useState(0)
 
   // const [cartItem, setCartItem] = useState({});
 
@@ -84,6 +85,7 @@ export function PopCart({ isOpen }) {
       cartId: crypto.randomUUID(),
       orderDate: Date(),
       cartItems: local__icCart,
+      total: total,
     })
 
     setCartItems([])
@@ -136,7 +138,7 @@ export function PopCart({ isOpen }) {
           ))}
           <hr />
           <div className="ms-auto font-bold text-2xl p-3">
-            Total{" "}
+            Total {/* TODO:total 표시 */}
             {FormatCurrency(
               cartItems.reduce((total, cartItem) => {
                 // const item = storeItems.find((i) => i.id === cartItem.id)

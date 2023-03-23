@@ -43,9 +43,9 @@ export default function MyOrders() {
     })
   }
 
-  function getItemInfo(itemId) {
-    const { name, imgUrl } = japitems.find((r) => r.id == itemId).name
-  }
+  // function getItemInfo(itemId) {
+  //   const { name, imgUrl, price } = japitems.find((r) => r.id == itemId)
+  // }
   // async function getJorderInfo(id) {
   //   const snapshot = await get(ref(database, `jorders/${id}`))
   //   if (snapshot.exists()) {
@@ -91,10 +91,13 @@ export default function MyOrders() {
                       className="w-20 mr-3"
                       // width="100px"
                     />
-                    {japitems.find((r) => r.id == row.id).name}
+                    {row.name}
                     {/* <span className="mx-4">id:{row.id}</span> */}
                     <span className="ml-2 text-blue-500 font-semibold">
                       {row.quantity} 개
+                    </span>
+                    <span className="ml-2 text-blue-500 font-semibold">
+                      @{row.price}원
                     </span>
                   </div>
                 ))

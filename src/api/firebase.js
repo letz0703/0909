@@ -80,6 +80,19 @@ export async function getRDB_users() {
         }
       })
 }
+
+export async function getRDB_user(userId) {
+    return get(ref(database, `users/${userId}`)) //
+    //   // return get(ref(db, "admins")) //
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          const user = snapshot.val()
+          return user
+        } else {
+          console.log('no user');
+        }
+      })
+}
 export function onUserStateChange(callback) {
   onAuthStateChanged(auth, async (user) => {
     const updatedUser = user ? await adminUser(user) : null
@@ -160,7 +173,7 @@ export async function addNewOrder(product, image) {
   })
 }
 
-export async function addNewCart(userId,cartId,local__icCart) {
+export async function addNewCart(userId,cartId,local__icCart,total) {
   return set(ref(database, `carts/${userId}/${cartId}`),
   // return set(ref(database, `carts/${userId}/${cartId}`),
   {
@@ -168,6 +181,7 @@ export async function addNewCart(userId,cartId,local__icCart) {
     cartId,
     orderDate: Date(),
     cartItems: local__icCart,
+    total:total,
     status: ''
   }
   )
