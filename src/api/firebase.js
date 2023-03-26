@@ -173,16 +173,18 @@ export async function addNewOrder(product, image) {
   })
 }
 
-export async function addNewCart(userId,cartId,local__icCart,total) {
+export async function addNewCart(userId,cartId,local__icCart, deliveryTo,total ) {
+  updateRDB_user(deliveryTo ||'배송지요함')
   return set(ref(database, `carts/${userId}/${cartId}`),
   // return set(ref(database, `carts/${userId}/${cartId}`),
   {
     userId,
     cartId,
-    orderDate: Date(),
     cartItems: local__icCart,
+    deliveryTo: deliveryTo ||'배송지요함',
     total:total||0,
-    status: ''
+    status: '',
+    orderDate: Date(),
   }
   )
 }

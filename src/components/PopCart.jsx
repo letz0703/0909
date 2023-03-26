@@ -13,6 +13,7 @@ import {
   auth,
   addNewCart,
   updateRDB_user,
+  getRDB_user,
 } from "../api/firebase"
 import { useAuthState } from "react-firebase-hooks/auth"
 import { useState } from "react"
@@ -26,35 +27,26 @@ import { useNavigate } from "react-router-dom"
 const deleiveryCost = parseInt(4000)
 
 export function PopCart({ isOpen }) {
-  // export function PopCart({isOpen}:PopCartProps) {
-  const [japitems, setJapitems] = useJapitems()
+  const [japitems] = useJapitems()
   const { closeCart, openCart, cartItems } = useShoppingCart()
   const [local__icCart, setCartItems] = useLocalStorage("ic-cart", {
     ...cartItems,
   })
   const [user] = useAuthState(auth)
-  const cartRef = collection(db, "carts")
-  const navigate = useNavigate()
-  const [currentAddress, setCurrentAddress] = useState("")
-  const [deliveryTo, setDeliveryTo] = useState("")
+  const [currentAddress, setCurrentAddress] = useState("배송지요함")
+  const [deliveryTo, setDeliveryTo] = useState(() => {
+    const a = getRDB_user(user?.uid)
+    console.log(Object.values(a))
+  })
   const [total, setTotal] = useState(0)
 
-  // const [cartItem, setCartItem] = useState({});
-
-  // console.log("local",local__icCart)
   const handleCart__Order = async (cartItems) => {
-    console.log(cartItems)
-    // const a = getRDB_users().then((res) => {
-    //   const data = Object.values(res)
-    //   // data.map((row) => {
-    //   //   if (row.deliveryTo != undefined) {
-    //   //     console.log("delivery to exist")
-    //   //   }
-    //   // })
-    //   return data.find((row) => {
-    //     return row.uid === user.uid
-    //   })
-    // })
+    // console.log(cartItems)
+    const a = getRDB_users(user?.uid) //
+      .then((res) => {
+        const data = Object.values(res)
+        return data.find((r) => r.uid === user?.uid)
+      })
 
     // if (a.deliveryTo === undefined || a.deliveryTo === "") {
     //   const newAddress = prompt("배송지 입력")
@@ -78,15 +70,21 @@ export function PopCart({ isOpen }) {
     // updateRDB_user(newAddress)
     // }
 
-    await addNewCart(user.uid, crypto.randomUUID(), cartItems)
+    await addNewCart(
+      user.uid,
+      crypto.randomUUID(),
+      cartItems,
+      currentAddress,
+      total
+    )
     // await addNewCart(user.uid, crypto.randomUUID(), local__icCart)
-    await addDoc(cartRef, {
-      userId: user.uid,
-      cartId: crypto.randomUUID(),
-      orderDate: Date(),
-      cartItems: local__icCart,
-      total: total,
-    })
+    // await addDoc(cartRef, {
+    //   userId: user.uid,
+    //   cartId: crypto.randomUUID(),
+    //   orderDate: Date(),
+    //   cartItems: local__icCart,
+    //   total: total,
+    // })
 
     // setCartItems([])
     // window.location.replace("/")
@@ -104,21 +102,22 @@ export function PopCart({ isOpen }) {
     // setDeliveryTo(newAddress)
     // console.log("deliveryTo:", deliveryTo)
     await updateRDB_user(newAddress)
-    setDeliveryTo(newAddress)
+    setCurrentAddress(newAddress)
     alert("주소가 변경되었습니다")
   }
 
   async function getCurrentUserAddress() {
     const userAddress = await getRDB_users().then((res) => {
       const data = Object.values(res)
-      return data.find((row) => row.uid === user.uid).deliveryTo
+      return data.find((row) => row.uid === user.uid)
     })
-    setCurrentAddress(userAddress)
+    const { deliveryTo } = userAddress
+    setCurrentAddress(deliveryTo)
   }
 
-  // useEffect(() => {
-  //   user && getCurrentUserAddress()
-  // }, [])
+  useEffect(() => {
+    getCurrentUserAddress()
+  }, [user])
 
   return (
     <Offcanvas
