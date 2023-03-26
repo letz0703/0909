@@ -35,18 +35,19 @@ export function PopCart({ isOpen }) {
   const [user] = useAuthState(auth)
   const [currentAddress, setCurrentAddress] = useState("배송지요함")
   const [deliveryTo, setDeliveryTo] = useState(() => {
-    const a = getRDB_user(user?.uid)
-    console.log(Object.values(a))
+    getRDB_user(user?.uid)
+    // console.log(Object.values(a))
   })
   const [total, setTotal] = useState(0)
 
   const handleCart__Order = async (cartItems) => {
     // console.log(cartItems)
-    const a = getRDB_users(user?.uid) //
+    getRDB_users(user?.uid) //
       .then((res) => {
         const data = Object.values(res)
         return data.find((r) => r.uid === user?.uid)
       })
+      .catch((error) => alert(error))
 
     // if (a.deliveryTo === undefined || a.deliveryTo === "") {
     //   const newAddress = prompt("배송지 입력")
@@ -76,7 +77,7 @@ export function PopCart({ isOpen }) {
       cartItems,
       currentAddress,
       total
-    )
+    ).catch((error) => alert(error))
     // await addNewCart(user.uid, crypto.randomUUID(), local__icCart)
     // await addDoc(cartRef, {
     //   userId: user.uid,
@@ -86,38 +87,41 @@ export function PopCart({ isOpen }) {
     //   total: total,
     // })
 
-    // setCartItems([])
-    // window.location.replace("/")
+    setCartItems([])
+    window.location.replace("/")
   }
 
-  async function handleResetCart() {
+  function handleResetCart() {
     setCartItems([])
     window.location.replace(".")
   }
 
-  async function changeAddress() {
+  function changeAddress() {
     const newAddress = prompt("배송지 입력")
     // console.log("newAddress:", newAddress)
     // setCurrentAddress(newAddress)
     // setDeliveryTo(newAddress)
     // console.log("deliveryTo:", deliveryTo)
-    await updateRDB_user(newAddress)
+    updateRDB_user(newAddress)
     setCurrentAddress(newAddress)
     alert("주소가 변경되었습니다")
   }
 
   async function getCurrentUserAddress() {
-    const userAddress = await getRDB_users().then((res) => {
-      const data = Object.values(res)
-      return data.find((row) => row.uid === user.uid)
-    })
+    const userAddress = await getRDB_users()
+      .then((res) => {
+        const data = Object.values(res)
+        return data.find((row) => row.uid === user.uid)
+      })
+      .catch((error) => alert("getCurrentUserAddress", error))
     const { deliveryTo } = userAddress
-    setCurrentAddress(deliveryTo)
+    setCurrentAddress(deliveryTo).catch((error) => alert(error))
   }
 
-  useEffect(() => {
-    getCurrentUserAddress()
-  }, [user])
+  // useEffect(() => {
+  //   // getCurrentUserAddress()
+  //   getRDB_user()
+  // }, [user])
 
   return (
     <Offcanvas

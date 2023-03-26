@@ -76,9 +76,9 @@ export async function getRDB_users() {
           return users
           // return { ...users }
         } else {
-          console.log('no user');
+          console.log('get users');
         }
-      })
+      }).catch((error) => alert(error))
 }
 
 export async function getRDB_user(userId) {
@@ -89,9 +89,9 @@ export async function getRDB_user(userId) {
           const user = snapshot.val()
           return user
         } else {
-          console.log('no user');
+          console.log('not rdb user');
         }
-      })
+      }).catch((error) => alert(error))
 }
 export function onUserStateChange(callback) {
   onAuthStateChanged(auth, async (user) => {
@@ -114,7 +114,7 @@ async function adminUser(user) {
           return { ...user, isAdmin }
         }
         return user
-      })
+      }).catch((error) => alert(error))
   )
 }
 
@@ -134,7 +134,7 @@ async function customUser(user) {
         console.log("no data")
       }
       return user
-    })
+    }).catch((error) => alert(error))
 }
 
 export async function addNewProduct(product, image) {
@@ -145,7 +145,7 @@ export async function addNewProduct(product, image) {
     price: parseInt(product.price),
     image,
     options: product.options.split(","),
-  })
+  }).catch((error) => alert(error))
 }
 
 export async function updateQuantity(prev, itemQty) {
@@ -196,7 +196,7 @@ export async function getProducts() {
       return Object.values(snapshot.val())
     }
     return []
-  })
+  }).catch((error) => alert(error))
 }
 
 export async function getOrders() {
@@ -205,7 +205,7 @@ export async function getOrders() {
       return Object.values(snapshot.val())
     }
     return []
-  })
+  }).catch((error) => alert(error))
 }
 
 export async function getCart(userId) {
@@ -213,21 +213,21 @@ export async function getCart(userId) {
     .then((snapshot) => {
       const items = snapshot.val() || {}
       return Object.values(items)
-    })
+    }).catch((error) => alert(error))
 }
 export async function getJorders() {
   get(ref(database, `customers/jorders`)) //
     .then((snapshot) => {
       const items = snapshot.val() || {}
       return Object.values(items)
-    })
+    }).catch((error) => alert(error))
 }
 export async function getJorder(uid) {
   get(ref(database, `customers/jorders/${uid}`)) //
     .then((snapshot) => {
       const items = snapshot.val() || {}
       return Object.values(items)
-    })
+    }).catch((error) => alert(error))
 }
 
 export async function addOrUpdateToCart(userId, product) {

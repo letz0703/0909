@@ -62,11 +62,7 @@ const router = createBrowserRouter([
       { path: "/japitems/:id", element: <JapitemDetail /> },
       {
         path: "/carts",
-        element: (
-          <ProtectedRoute>
-            <PopCart />
-          </ProtectedRoute>
-        ),
+        element: <PopCart />,
       },
       { path: "/shop", element: <Store /> },
       { path: "/my_orders", element: <MyOrders /> },
