@@ -181,7 +181,7 @@ export async function addNewCart(userId,cartId,local__icCart,total) {
     cartId,
     orderDate: Date(),
     cartItems: local__icCart,
-    total:total,
+    total:total||0,
     status: ''
   }
   )

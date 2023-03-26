@@ -43,24 +43,24 @@ export function PopCart({ isOpen }) {
 
   // console.log("local",local__icCart)
   const handleCart__Order = async (cartItems) => {
-    // console.log(cartItems)
-    const a = await getRDB_users().then((res) => {
-      const data = Object.values(res)
-      // data.map((row) => {
-      //   if (row.deliveryTo != undefined) {
-      //     console.log("delivery to exist")
-      //   }
-      // })
-      return data.find((row) => {
-        return row.uid === user.uid
-      })
-    })
+    console.log(cartItems)
+    // const a = getRDB_users().then((res) => {
+    //   const data = Object.values(res)
+    //   // data.map((row) => {
+    //   //   if (row.deliveryTo != undefined) {
+    //   //     console.log("delivery to exist")
+    //   //   }
+    //   // })
+    //   return data.find((row) => {
+    //     return row.uid === user.uid
+    //   })
+    // })
 
-    if (a.deliveryTo === undefined || a.deliveryTo === "") {
-      const newAddress = prompt("배송지 입력")
-      setCurrentAddress(newAddress)
-      await updateRDB_user(newAddress)
-    }
+    // if (a.deliveryTo === undefined || a.deliveryTo === "") {
+    //   const newAddress = prompt("배송지 입력")
+    //   setCurrentAddress(newAddress)
+    //   await updateRDB_user(newAddress)
+    // }
 
     // if (a.deliveryTo === "") {
     //   const newAddress = prompt("배송지 입력")
@@ -88,8 +88,8 @@ export function PopCart({ isOpen }) {
       total: total,
     })
 
-    setCartItems([])
-    window.location.replace("/")
+    // setCartItems([])
+    // window.location.replace("/")
   }
 
   async function handleResetCart() {
@@ -116,9 +116,9 @@ export function PopCart({ isOpen }) {
     setCurrentAddress(userAddress)
   }
 
-  useEffect(() => {
-    user && getCurrentUserAddress()
-  }, [])
+  // useEffect(() => {
+  //   user && getCurrentUserAddress()
+  // }, [])
 
   return (
     <Offcanvas
