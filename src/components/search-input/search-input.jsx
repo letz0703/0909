@@ -3,7 +3,7 @@ import styles from "./search-input.module.css"
 import { BiSearch } from "react-icons/bi"
 import useDebounce from "../../hooks/use-debounce"
 
-export default function SearchInput() {
+export default function SearchInput({ setSearch }) {
   return (
     // <div className={` ${styles.searchInput}`}>
     <div className="">
@@ -18,8 +18,8 @@ export default function SearchInput() {
               placeholder="search..."
               aria-label="search"
               autoFocus
-              onChange={(e) => console.log(e.target.value)}
-              // onChange={(e) => setSearch(e.target.value)}
+              // onChange={(e) => console.log(e.target.value)}
+              onChange={(e) => setSearch(e.target.value)}
             />
             <button aria-label="submit" className={styles.submit}>
               {/* <div className="search_icon pr-2"> */}

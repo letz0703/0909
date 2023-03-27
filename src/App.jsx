@@ -18,7 +18,6 @@ import { YoutubeApiProvider } from "./context/YoutubeApi"
 import { DetailContextProvider } from "./context/DetailContext"
 import Detail from "./components/Detail"
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
-import { useJapitems } from "./hooks/use-japitems"
 
 const queryClient = new QueryClient()
 export const JapitemContext = createContext()
@@ -28,20 +27,19 @@ export const SearchContext = createContext()
 
 function name() {}
 function App() {
-  // const japitemsRef = collection(db, "japitems")
-  const [japitems, setJapitems] = useJapitems()
-  // const [japitems, setJapitems] = useState(() => {
-  // const japitemJSON = localStorage.getItem(LOCAL_STORAGE_KEY)
-  // if (japitemJSON == null) {
-  // setJapitems(sampleJapitems)
-  // } else {
-  // const getJapitems = async () => {
-  //   const data = await getDocs(japitemsRef)
-  //   setJapitems(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-  // }
-  // return JSON.parse(japitemJSON)
-  // }
-  // })
+  const japitemsRef = collection(db, "japitems")
+  const [japitems, setJapitems] = useState(() => {
+    const japitemJSON = localStorage.getItem(LOCAL_STORAGE_KEY)
+    // if (japitemJSON == null) {
+    // setJapitems(sampleJapitems)
+    // } else {
+    const getJapitems = async () => {
+      const data = await getDocs(japitemsRef)
+      setJapitems(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+    }
+    return JSON.parse(japitemJSON)
+    // }
+  })
 
   const [search, setSearch] = useState("")
 
@@ -73,7 +71,6 @@ function App() {
     handleJapitemDelete,
     japitems,
   }
-
   if (location.pathname !== "/videos") {
     return (
       <>
@@ -84,8 +81,8 @@ function App() {
                 <QueryClientProvider client={queryClient}>
                   <AuthContextProvider>
                     <JapitemContext.Provider value={japitemContextValue}>
-                      <Navbar />
-                      <Outlet />
+                      <Navbar setSearch={setSearch} search={search} />
+                      <Outlet japitems={japitems} />
                       {/* <ReactQueryDevtools /> */}
                     </JapitemContext.Provider>
                   </AuthContextProvider>
