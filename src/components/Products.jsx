@@ -13,6 +13,7 @@ import { useAuthContext } from "../context/AuthContext"
 import { signInWithPopup } from "firebase/auth"
 import { login } from "../api/firebase"
 import { useLogger } from "../hooks/use-logger"
+import useDebounce from "../hooks/use-debounce"
 
 export default function Products() {
   // const { isOpen_Detail, open_Detail, close_Detail } = useDetail()
@@ -35,16 +36,13 @@ export default function Products() {
     [increaseCartQuantity]
   )
 
-  /**
-   * cart reset 하기
-   */
-  // useEffect(() => {
-  // setCartItems([])
-  // }, [])
-
-  useEffect(() => {
-    // return navigate("/")
-  }, [uid])
+  useDebounce(
+    () => {
+      console.log("hi")
+    },
+    1000,
+    [user]
+  )
   return (
     <div className="shop-home grid grid-cols-2 lg:grid-cols-5 gap-2 md:mt-[1vh]">
       {japitems
