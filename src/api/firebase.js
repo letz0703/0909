@@ -78,7 +78,7 @@ export async function getRDB_users() {
         } else {
           console.log('get users');
         }
-      }).catch((error) => alert(error))
+      }).catch((error) => console.log(error))
 }
 
 export async function getRDB_user(userId) {
@@ -91,7 +91,7 @@ export async function getRDB_user(userId) {
         } else {
           console.log('not rdb user');
         }
-      }).catch((error) => alert(error))
+      }).catch((error) => console.log(error))
 }
 export function onUserStateChange(callback) {
   onAuthStateChanged(auth, async (user) => {
@@ -114,7 +114,7 @@ async function adminUser(user) {
           return { ...user, isAdmin }
         }
         return user
-      }).catch((error) => alert(error))
+      }).catch((error) => console.log(error))
   )
 }
 
@@ -134,7 +134,7 @@ async function customUser(user) {
         console.log("no data")
       }
       return user
-    }).catch((error) => alert(error))
+    }).catch((error) => console.log(error))
 }
 
 export async function addNewProduct(product, image) {
@@ -145,7 +145,7 @@ export async function addNewProduct(product, image) {
     price: parseInt(product.price),
     image,
     options: product.options.split(","),
-  }).catch((error) => alert(error))
+  }).catch((error) => console.log(error))
 }
 
 export async function updateQuantity(prev, itemQty) {
@@ -153,14 +153,14 @@ export async function updateQuantity(prev, itemQty) {
     ...prev,
     qty: itemQty,
   })
-  alert("data qty updated")
+  console.log("data qty updated")
 }
 export async function updateFBPrice(prev, itemPrice) {
   set(ref(database, `/japitems/${prev.id}`), {
     ...prev,
     price: itemPrice,
   })
-  alert("data price updated")
+  console.log("data price updated")
 }
 
 export async function addNewOrder(product, image) {
@@ -196,7 +196,7 @@ export async function getProducts() {
       return Object.values(snapshot.val())
     }
     return []
-  }).catch((error) => alert(error))
+  }).catch((error) => console.log(error))
 }
 
 export async function getOrders() {
@@ -205,7 +205,7 @@ export async function getOrders() {
       return Object.values(snapshot.val())
     }
     return []
-  }).catch((error) => alert(error))
+  }).catch((error) => console.log(error))
 }
 
 export async function getCart(userId) {
@@ -213,21 +213,21 @@ export async function getCart(userId) {
     .then((snapshot) => {
       const items = snapshot.val() || {}
       return Object.values(items)
-    }).catch((error) => alert(error))
+    }).catch((error) => console.log(error))
 }
 export async function getJorders() {
   get(ref(database, `customers/jorders`)) //
     .then((snapshot) => {
       const items = snapshot.val() || {}
       return Object.values(items)
-    }).catch((error) => alert(error))
+    }).catch((error) => console.log(error))
 }
 export async function getJorder(uid) {
   get(ref(database, `customers/jorders/${uid}`)) //
     .then((snapshot) => {
       const items = snapshot.val() || {}
       return Object.values(items)
-    }).catch((error) => alert(error))
+    }).catch((error) => console.log(error))
 }
 
 export async function addOrUpdateToCart(userId, product) {

@@ -47,7 +47,7 @@ export function PopCart({ isOpen }) {
         const data = Object.values(res)
         return data.find((r) => r.uid === user?.uid)
       })
-      .catch((error) => alert(error))
+    // .catch((error) => alert(error))
 
     // if (a.deliveryTo === undefined || a.deliveryTo === "") {
     //   const newAddress = prompt("배송지 입력")
@@ -77,7 +77,8 @@ export function PopCart({ isOpen }) {
       cartItems,
       currentAddress,
       total
-    ).catch((error) => alert(error))
+    )
+    // .catch((error) => alert(error))
     // await addNewCart(user.uid, crypto.randomUUID(), local__icCart)
     // await addDoc(cartRef, {
     //   userId: user.uid,
@@ -107,16 +108,16 @@ export function PopCart({ isOpen }) {
     alert("주소가 변경되었습니다")
   }
 
-  async function getCurrentUserAddress() {
-    const userAddress = await getRDB_users()
-      .then((res) => {
-        const data = Object.values(res)
-        return data.find((row) => row.uid === user.uid)
-      })
-      .catch((error) => alert("getCurrentUserAddress", error))
-    const { deliveryTo } = userAddress
-    setCurrentAddress(deliveryTo).catch((error) => alert(error))
-  }
+  // async function getCurrentUserAddress() {
+  //   const userAddress = await getRDB_users()
+  //     .then((res) => {
+  //       const data = Object.values(res)
+  //       return data.find((row) => row.uid === user.uid)
+  //     })
+  //     .catch((error) => alert("getCurrentUserAddress", error))
+  //   const { deliveryTo } = userAddress
+  //   setCurrentAddress(deliveryTo).catch((error) => alert(error))
+  // }
 
   // useEffect(() => {
   //   // getCurrentUserAddress()

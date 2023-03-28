@@ -26,10 +26,10 @@ export default function JorderQuery() {
     },
   })
 
-  if (jorderQuery.isLoading) return <h1>loading...</h1>
-  if (jorderQuery.isError) {
-    return <pre>{JSON.stringify(jorderQuery.error)}</pre>
-  }
+  // if (jorderQuery.isLoading) return <h1>loading...</h1>
+  // if (jorderQuery.isError) {
+  //   return <pre>{JSON.stringify(jorderQuery.error)}</pre>
+  // }
 
   return (
     <>

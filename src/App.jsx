@@ -33,10 +33,10 @@ function App() {
     // if (japitemJSON == null) {
     // setJapitems(sampleJapitems)
     // } else {
-    const getJapitems = async () => {
-      const data = await getDocs(japitemsRef)
-      setJapitems(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-    }
+    // const getJapitems = async () => {
+    //   const data = await getDocs(japitemsRef)
+    //   setJapitems(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+    // }
     return JSON.parse(japitemJSON)
     // }
   })

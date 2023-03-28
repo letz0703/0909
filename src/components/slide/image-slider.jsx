@@ -41,6 +41,7 @@ function ImageSlider({ slides }) {
   }
 
   const { openCart } = useShoppingCart()
+
   return (
     <>
       <div className="image-slider__main h-100 relative sm:mt-[1.2em]">

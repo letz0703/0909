@@ -3,7 +3,7 @@ import ImageSlider from "./image-slider"
 import { useAuthContext } from "../../context/AuthContext"
 
 export default function Slide() {
-  const { user } = useAuthContext()
+  // const { user } = useAuthContext()
   const slides = [
     // {
     //   url: "/imgs/cart_ori.jpg",
@@ -25,8 +25,7 @@ export default function Slide() {
   }
 
   return (
-    // <section style={{ marginTop: "100px" }}>
-    <section className="mt-[8.5vh] md:mt-[11vh] lg:mt-[6.5vh]">
+    <section className="mt-[8.5vh] md:mt-[11vh] lg:mt-[4vh]">
       <div style={containerStyle} className="slide">
         <ImageSlider slides={slides} />
       </div>

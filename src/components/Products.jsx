@@ -36,15 +36,15 @@ export default function Products() {
     [increaseCartQuantity]
   )
 
-  useDebounce(
-    () => {
-      console.log("hi")
-    },
-    1000,
-    [user]
-  )
+  // useDebounce(
+  //   () => {
+  //     console.log("hi")
+  //   },
+  //   1000,
+  //   [user]
+  // )
   return (
-    <div className="shop-home grid grid-cols-2 lg:grid-cols-5 gap-2 md:mt-[10vh]">
+    <div className="shop-home grid grid-cols-2 lg:grid-cols-5 gap-2 md:mt-[10vh] lg:mt-[0px]">
       {japitems
         .filter((item) => {
           return search.toLowerCase() === ""

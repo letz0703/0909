@@ -67,7 +67,7 @@ export default function Jap() {
   // }
 
   const comment =
-    "깡통시장 제품 당일 선발송.  만원 할인 된 가격 및 무료배송 (통관번호제공 혜택). 일주일 후 통관. 통관 물품의 소유권 = icanmart. 입금 후 10일간 해외주문 금지"
+    "주문 상품들은 당일발송(깡통시장제품).  만원 할인 + 무료배송 (통관번호제공 혜택). 일주일 후 통관. 통관 물품의 소유권 = icanmart. 입금 시점에서  10일간 해외주문 금지"
   const arr_jap_order_info = comment.split(".")
 
   return [

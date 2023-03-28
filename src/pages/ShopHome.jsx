@@ -15,7 +15,11 @@ import { useAuthContext } from "../context/AuthContext"
 
 export default function ShopHome() {
   const { user, uid } = useAuthContext()
-
+  const a = localStorage.getItem("ic-user")
+  if (!a) {
+    localStorage.setItem("ic-user", JSON.stringify({ name: "guest" }))
+  }
+  console.log(a)
   useEffect(() => {
     user &&
       localStorage.setItem(
@@ -32,11 +36,9 @@ export default function ShopHome() {
   return (
     <div>
       <Slide className=".slide" />
-      {/* <Test /> */}
       <Products />
-      {/* {user && <Products />} */}
       <style>{`
-          @media screen and (width> 1024px){
+          @media screen and (1280px>width> 768px){
           .slide{
               display:none;
             }
