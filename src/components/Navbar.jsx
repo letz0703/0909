@@ -85,7 +85,8 @@ export default function Navbar({ search, setSearch }) {
       {!window.location.href.includes("/jap") && (
         <section className="sec2">
           {/* <div className={`${styles.nav_center} navbar__search-input`}> */}
-          {user && <SearchInput setSearch={setSearch} className="검색폼" />}
+          {/* {user && <SearchInput setSearch={setSearch} className="검색폼" />} */}
+          {<SearchInput setSearch={setSearch} className="검색폼" />}
         </section>
       )}
       <nav className="flex item-center font-bold">

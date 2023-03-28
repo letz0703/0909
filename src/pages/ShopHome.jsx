@@ -15,10 +15,19 @@ export default function ShopHome() {
   // const { user } = useAuthContext()
   return (
     <div>
-      <Slide />
+      <Slide className=".slide" />
       {/* <Test /> */}
       <Products />
       {/* {user && <Products />} */}
+      <style>{`
+          @media screen and (width> 1024px){
+          .slide{
+              display:none;
+            }
+          }
+        }
+
+      `}</style>
     </div>
   )
 }
