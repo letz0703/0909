@@ -66,22 +66,31 @@ export default function Jap() {
   //   }
   // }
 
-  const comment =
-    "주문 상품들은 당일발송(깡통시장제품).  만원 할인 + 무료배송 (통관번호제공 혜택). 일주일 후 통관. 통관 물품의 소유권 = icanmart. 입금 시점에서  10일간 해외주문 금지"
-  const arr_jap_order_info = comment.split(".")
+  // const comment =
+  //   "주문 상품들은 당일발송(깡통시장제품).  만원 할인 + 무료배송 (통관번호제공 혜택). 일주일 후 통관. 통관 물품의 소유권 = icanmart. 입금 시점에서  10일간 해외주문 금지"
+  // const arr_jap_order_info = comment.split(".")
 
   return [
     <div className="jap__ flex flex-col align-items-start justify-start mt-[7vh]">
       <div className="jap__primary-header">
         <div className=" bg-pink-100 rounded-full">
-          <h1 className="pt-5">해외 공동구매 안내(japan09)</h1>
-          <h3 className="text-2xl text-green-700 p-2 mx-3 my-0">
-            고객님의 개인통관 번호로 공동구매 합니다
-          </h3>
+          <div className="text-2xl pt-5">공동구매</div>
+          <p>- japan 09 -</p>
+          <h3 className="text-2xl text-green-700 p-2 mx-3 my-0"></h3>
           <div className="font-bold mb-2 p-2 text-xl bg-white">
-            공동 구매 품목<div>곤약젤리 + 동전파스(미화 150불 이하)</div>
+            공동 구매 품목<div className="">곤약젤리 + 동전파스</div>
           </div>
-          <div className="jap__info  p-3  mb-2 flex flex-col text-xl font-semibold ">
+          <div>
+            주문 하신 깡통시장 상품 + 동전파스1개(무료)를 당일 발송해 드립니다
+          </div>
+          <div>(동전파스 대신 짜먹는 곤약 2개를 선택하셔도 됩니다)</div>
+
+          <div className="underline">
+            고객님의 개인통관 번호로 해외 공동 구매진행 합니다
+          </div>
+          <div>단, 공동구매 진행시에만 가능합니다(2023년 3월 현재 진행중)</div>
+          <div className="mb-3">신청순으로 개별 문자 드립니다.</div>
+          {/* <div className="jap__info  p-3  mb-2 flex flex-col text-xl font-semibold ">
             {arr_jap_order_info.map((r) => {
               return (
                 <li key={r} className="md:ml-40">
@@ -89,7 +98,7 @@ export default function Jap() {
                 </li>
               )
             })}
-          </div>
+          </div> */}
           <div className="p-2 bg-blue-200 md:text-xl">
             다음 주문은 제품 통관 후 가능(7-10일)
           </div>
