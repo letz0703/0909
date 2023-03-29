@@ -12,7 +12,17 @@ export default function JapitemDetail() {
   const {
     state: {
       japitem,
-      japitem: { id, code, name, price, imgUrl, description, homeUrl, qty },
+      japitem: {
+        id,
+        code,
+        name,
+        price,
+        imgUrl,
+        description,
+        homeUrl,
+        qty,
+        comment,
+      },
     },
   } = useLocation()
   const navigate = useNavigate()
@@ -47,6 +57,19 @@ export default function JapitemDetail() {
         </div>
         <div>{description}</div>
         <br />
+        <span
+          className="btn btn--primary red mini"
+          // onClick={() =>
+          //   window.open(
+          //     "https://twitter.com/icanmart/status/1636579089107783680/photo/1",
+          //     `_blank`
+          //   )
+          // }
+          onClick={() => window.open(`${comment}`, `_blank`)}
+          // onClick={() => window.location.replace(`${homeUrl}`)}
+        >
+          제품 평가(twitter)
+        </span>
         <span
           className="btn btn--primary blue mini"
           onClick={() => window.open(`${homeUrl}`, `_blank`)}
