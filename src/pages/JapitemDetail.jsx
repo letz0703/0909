@@ -41,6 +41,7 @@ export default function JapitemDetail() {
     increaseCartQuantity(japitem.id)
     window.history.back()
   }
+
   return (
     <div className="japitem-detail flex justify-center mt-[7vh]">
       <div className="">
@@ -50,7 +51,7 @@ export default function JapitemDetail() {
         {/* <img src={imgUrl} className="japitem-detail__imageDetail " /> */}
         <div className="align-self-center">
           <img
-            src={imgUrl}
+            src={imgUrl.includes("https") ? imgUrl : "../" + imgUrl}
             className="japitem-detail__imageDetail "
             style={{ minWidth: "300px" }}
           />
