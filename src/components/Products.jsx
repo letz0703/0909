@@ -21,7 +21,7 @@ export default function Products() {
   const [japitems, setJapitems] = useJapitems()
   const { user, uid } = useAuthContext()
   const navigate = useNavigate()
-  const display_item = useRef(japitems)
+  // const display_item = useRef(japitems)
   const {
     // getItemQuantity,
     increaseCartQuantity,
@@ -44,12 +44,12 @@ export default function Products() {
   //   1000,
   //   [user]
   // )
-  useEffect(() => {
-    // console.log(display_item.current)
-  }, [japitems])
+  // // useEffect(() => {
+  //   // console.log(display_item.current)
+  // }, [japitems])
   return (
     <div className="shop-home grid grid-cols-2 lg:grid-cols-5 gap-2 md:mt-[10vh] lg:mt-[0px]">
-      {display_item.current
+      {japitems
         .filter((item) => {
           return search.toLowerCase() === ""
             ? item
