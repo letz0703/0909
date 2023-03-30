@@ -29,7 +29,7 @@ export default function ShopHome() {
   // get uid from localstorage
 
   useEffect(() => {
-    user ?? alert("안녕 하세요! 구글 계정으로 로그인 하세요")
+    // user ?? alert("안녕 하세요! 구글 계정으로 로그인 하세요")
     user &&
       localStorage.setItem(
         "ic-user",
