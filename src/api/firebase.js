@@ -56,14 +56,14 @@ export function updateRDB_user(deliveryTo){
   const fbUser = {
   // return {
     name: auth.currentUser?.displayName ||'',
-    uid: auth.currentUser.uid || crypto.randomUUID(),
-    email: auth.currentUser.email,
-    phoneNumber: auth.currentUser.phoneNumber || '',
-    photoUrl: auth.currentUser.photoURL,
+    uid: auth.currentUser?.uid || crypto.randomUUID(),
+    email: auth.currentUser?.email,
+    phoneNumber: auth.currentUser?.phoneNumber || '',
+    photoUrl: auth.currentUser?.photoURL || '',
     deliveryTo:deliveryTo ||''
   }
 
-  return update(ref(database, `users/${fbUser.uid}`),{...fbUser})
+  return update(ref(database, `users/${fbUser?.uid}`),{...fbUser})
 }
 
 export async function getRDB_users() {
@@ -110,7 +110,7 @@ async function adminUser(user) {
       .then((snapshot) => {
         if (snapshot.exists()) {
           const admins = snapshot.val()
-          const isAdmin = admins.includes(user.uid)
+          const isAdmin = admins.includes(user?.uid)
           return { ...user, isAdmin }
         }
         return user
@@ -128,7 +128,7 @@ async function customUser(user) {
     .then((snapshot) => {
       if (snapshot.exists()) {
         const customs = snapshot.val()
-        const isCustom = customs.includes(user.id)
+        const isCustom = customs.includes(user?.id)
         return { ...user, isCustom }
       } else {
         console.log("no data")
