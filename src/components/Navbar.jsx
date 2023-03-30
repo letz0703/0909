@@ -101,9 +101,9 @@ export default function Navbar({ search, setSearch }) {
               <Link to="/jap" className="hidden md:block">
                 japan09
               </Link>
-              <Link to="/shop" className="ml-2 hidden md:block">
+              {/* <Link to="/shop" className="ml-2 hidden md:block">
                 shop
-              </Link>
+              </Link> */}
             </>
           )}
 
