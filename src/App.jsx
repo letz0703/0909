@@ -49,10 +49,6 @@ function App() {
 
   const searchContextValue = { handleSearch, search }
 
-  // useEffect(() => {
-  //   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(japitems))
-  // }, [japitems])
-
   function handleJapitemAdd() {
     const newJapitem = {
       id: uuidv4(),
