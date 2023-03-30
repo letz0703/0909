@@ -156,13 +156,9 @@ export function PopCart({ isOpen }) {
                 onClick={() => window.location.replace("/jap")}
                 className="p-2 bg-pink-200 cursor-pointer"
               >
-                현지 구매대행
+                택배비 없애기(공동구매 신청)
               </span>
-              신청고객은 택배비무료+만원할인 <br /> = 14000원 차감 후 송금하시면
-              됩니다
             </p>
-            <p>0원 이하는 0원으로 계산됩니다</p>
-            <p>계좌번호는 문자로 안내 드립니다</p>
           </div>
         </Stack>
         <div className="flex justify-center">
