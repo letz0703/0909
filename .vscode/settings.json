@@ -164,4 +164,8 @@
   "bookmarks.useWorkaroundForFormatters": false,
   "eslint.format.enable": true,
   "git-blame.gitWebUrl": "https://github.com/letz0703/0909/commit/$ID"
+  // "github.copilot.inlineSuggest.enable": true
+  // "github.copilot.advanced": {
+
+  // }
 }

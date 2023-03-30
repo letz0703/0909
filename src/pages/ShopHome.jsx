@@ -16,11 +16,20 @@ import { useAuthContext } from "../context/AuthContext"
 export default function ShopHome() {
   const { user, uid } = useAuthContext()
   const a = localStorage.getItem("ic-user")
+  // if (!a) {
+  //   localStorage.setItem("ic-user", JSON.stringify({ name: "guest" }))
+  // }
+  // if (!a) {
+  //   localStorage.getItem("ic-user", JSON.stringify({ name: "guest" }))
+  // }
   if (!a) {
     localStorage.setItem("ic-user", JSON.stringify({ name: "guest" }))
   }
-  console.log(a)
+
+  // get uid from localstorage
+
   useEffect(() => {
+    user ?? alert("안녕 하세요! 구글 계정으로 로그인 하세요")
     user &&
       localStorage.setItem(
         "ic-user",
