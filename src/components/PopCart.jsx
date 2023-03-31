@@ -1,36 +1,36 @@
-import { Offcanvas, Stack } from "react-bootstrap"
+import {Offcanvas, Stack} from "react-bootstrap"
 // import storeItems from "../data/items.json"
-import { OffcanvasHeader } from "react-bootstrap"
-import { useShoppingCart } from "../context/ShoppingCartContext"
+import {OffcanvasHeader} from "react-bootstrap"
+import {useShoppingCart} from "../context/ShoppingCartContext"
 import FormatCurrency from "../util/formatCurrency"
 import CartItem from "./CartItem"
-import { useJapitems } from "../hooks/use-japitems"
-import { useLocalStorage } from "../hooks/use-local-storage"
-import { addDoc, collection } from "firebase/firestore"
+import {useJapitems} from "../hooks/use-japitems"
+import {useLocalStorage} from "../hooks/use-local-storage"
+import {addDoc, collection} from "firebase/firestore"
 import {
   getRDB_users,
   db,
   auth,
   addNewCart,
   updateRDB_user,
-  getRDB_user,
+  getRDB_user
 } from "../api/firebase"
-import { useAuthState } from "react-firebase-hooks/auth"
-import { useState } from "react"
-import { useEffect } from "react"
-import { RiWindowLine } from "react-icons/ri"
-import { useNavigate } from "react-router-dom"
+import {useAuthState} from "react-firebase-hooks/auth"
+import {useState} from "react"
+import {useEffect} from "react"
+import {RiWindowLine} from "react-icons/ri"
+import {useNavigate} from "react-router-dom"
 // type PopCartProps = {
 //   isOpen: boolean
 // }
 
 const deleiveryCost = parseInt(4000)
 
-export function PopCart({ isOpen }) {
+export function PopCart({isOpen}) {
   const [japitems] = useJapitems()
-  const { closeCart, openCart, cartItems } = useShoppingCart()
+  const {closeCart, openCart, cartItems} = useShoppingCart()
   const [local__icCart, setCartItems] = useLocalStorage("ic-cart", {
-    ...cartItems,
+    ...cartItems
   })
   const [user] = useAuthState(auth)
   const [currentAddress, setCurrentAddress] = useState("배송지요함")
@@ -40,12 +40,12 @@ export function PopCart({ isOpen }) {
   })
   const [total, setTotal] = useState(0)
 
-  const handleCart__Order = async (cartItems) => {
+  const handleCart__Order = async cartItems => {
     // console.log(cartItems)
     getRDB_users(user?.uid) //
-      .then((res) => {
+      .then(res => {
         const data = Object.values(res)
-        return data.find((r) => r.uid === user?.uid)
+        return data.find(r => r.uid === user?.uid)
       })
     // .catch((error) => alert(error))
 
@@ -89,12 +89,12 @@ export function PopCart({ isOpen }) {
     // })
 
     setCartItems([])
-    window.location.replace("/")
+    window.location.replace("./shop")
   }
 
   function handleResetCart() {
     setCartItems([])
-    window.location.replace(".")
+    window.location.replace("./shop")
   }
 
   function changeAddress() {
@@ -130,14 +130,14 @@ export function PopCart({ isOpen }) {
       // show={true}
       onHide={closeCart}
       placement="top"
-      style={{ width: "100%", height: "100%" }}
+      style={{width: "100%", height: "100%"}}
     >
       <Offcanvas.Header closeButton>
         <Offcanvas.Title>Cart</Offcanvas.Title>
       </Offcanvas.Header>
       <Offcanvas.Body>
         <Stack gap={3}>
-          {cartItems.map((item) => (
+          {cartItems.map(item => (
             <CartItem key={crypto.randomUUID()} {...item} />
           ))}
           <hr />
@@ -146,7 +146,7 @@ export function PopCart({ isOpen }) {
             {FormatCurrency(
               cartItems.reduce((total, cartItem) => {
                 // const item = storeItems.find((i) => i.id === cartItem.id)
-                const item = japitems.find((i) => i.id === cartItem.id)
+                const item = japitems.find(i => i.id === cartItem.id)
                 return total + (item?.price || 0) * cartItem.quantity
               }, 0)
             )}

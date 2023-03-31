@@ -54,6 +54,15 @@ export default function Navbar({ search, setSearch }) {
 
           {user && <User user={user} className="hidden md:block" />}
           {user && (
+            <Link
+              to="/my_orders"
+              className="hidden md:block"
+              style={{ width: "70px" }}
+            >
+              My Orders
+            </Link>
+          )}
+          {user && (
             <span
               onClick={logout}
               className="text-xs p-1 bg-black text-white cursor-pointer"
@@ -66,6 +75,7 @@ export default function Navbar({ search, setSearch }) {
             //   style={{ point: "cursor" }}
             // />
           )}
+
           {!user && (
             <span
               onClick={login}
@@ -101,21 +111,13 @@ export default function Navbar({ search, setSearch }) {
               <Link to="/jap" className="hidden md:block">
                 japan09
               </Link>
-              {/* <Link to="/shop" className="ml-2 hidden md:block">
+              <Link to="/shop" className="ml-2 hidden md:block">
                 shop
-              </Link> */}
+              </Link>
             </>
           )}
 
-          {user && (
-            <Link
-              to="/my_orders"
-              className="hidden md:block"
-              style={{ width: "70px" }}
-            >
-              My Orders
-            </Link>
-          )}
+
           {user && (
             <Link to="/carts">
               <CartStatus />
