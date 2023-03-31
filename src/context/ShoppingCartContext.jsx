@@ -57,12 +57,13 @@ export function ShoppingCartProvider({ children }) {
             quantity: 1,
             name: res.name,
             price: res.price,
+            amount: res.price*1,
           },
         ]
       } else {
         return currItems.map((item) => {
           if (item.id === id) {
-            return { ...item, quantity: item.quantity + 1 }
+            return { ...item, quantity: item.quantity + 1, amount: (item.quantity+1)*item.price}
           } else {
             return item
           }
@@ -91,6 +92,12 @@ export function ShoppingCartProvider({ children }) {
       return currItems.filter((item) => item.id !== id)
     })
   }
+
+  const getTotal = () => {
+    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0)
+  }
+  // console.log('total', getTotal())
+
   const shoppingCartContextValue = {
     getItemQuantity,
     increaseCartQuantity,
@@ -101,6 +108,7 @@ export function ShoppingCartProvider({ children }) {
     cartItems,
     cartQuantity,
     setCartItems,
+    getTotal
   }
 
   return (

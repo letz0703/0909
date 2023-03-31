@@ -13,10 +13,11 @@ import {
   auth,
   addNewCart,
   updateRDB_user,
-  getRDB_user
+  getRDB_user,
+  updateCartTotal
 } from "../api/firebase"
 import {useAuthState} from "react-firebase-hooks/auth"
-import {useState} from "react"
+import {useRef, useState} from "react"
 import {useEffect} from "react"
 import {RiWindowLine} from "react-icons/ri"
 import {useNavigate} from "react-router-dom"
@@ -28,7 +29,7 @@ const deleiveryCost = parseInt(4000)
 
 export function PopCart({isOpen}) {
   const [japitems] = useJapitems()
-  const {closeCart, openCart, cartItems} = useShoppingCart()
+  const {closeCart, openCart, cartItems, getTotal} = useShoppingCart()
   const [local__icCart, setCartItems] = useLocalStorage("ic-cart", {
     ...cartItems
   })
@@ -76,7 +77,7 @@ export function PopCart({isOpen}) {
       crypto.randomUUID(),
       cartItems,
       currentAddress,
-      total
+      getTotal()
     )
     // .catch((error) => alert(error))
     // await addNewCart(user.uid, crypto.randomUUID(), local__icCart)
@@ -87,7 +88,10 @@ export function PopCart({isOpen}) {
     //   cartItems: local__icCart,
     //   total: total,
     // })
-
+    localStorage.setItem("cart-total", (prev)=>{
+    JSON.stringify({...cartItems,total:total_ref.current})
+    }
+    )
     setCartItems([])
     window.location.replace("./shop")
   }
@@ -124,6 +128,17 @@ export function PopCart({isOpen}) {
   //   getRDB_user()
   // }, [user])
 
+  const total_ref = useRef(0);
+
+  useEffect(() => {
+   console.log("total_ref.current", total_ref.current)
+  }, [total_ref.current]);
+
+
+  useEffect(() => {
+      total_ref.current && updateCartTotal(cartItems, total_ref.current)
+  }, [total_ref.current]);
+
   return (
     <Offcanvas
       show={isOpen}
@@ -147,7 +162,9 @@ export function PopCart({isOpen}) {
               cartItems.reduce((total, cartItem) => {
                 // const item = storeItems.find((i) => i.id === cartItem.id)
                 const item = japitems.find(i => i.id === cartItem.id)
-                return total + (item?.price || 0) * cartItem.quantity
+                const amount = total + (item?.price || 0) * cartItem.quantity
+                total_ref.current = amount
+                return amount
               }, 0)
             )}
             <div>+ 기본택배 {<span>{deleiveryCost}</span>}원</div>

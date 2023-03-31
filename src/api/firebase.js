@@ -169,6 +169,15 @@ export async function updateFBPrice(prev, itemPrice) {
   console.log("data price updated")
 }
 
+export async function updateCartTotal(prev, value) {
+  return
+  prev &&
+    set(ref(database, `/carts/${prev.userId}/${prev.cartId}`), {
+      ...prev,
+      total: value
+    })
+}
+
 export async function addNewOrder(product, image) {
   const id = crypto.randomUUID()
   return set(ref(database, `orders/${id}`), {

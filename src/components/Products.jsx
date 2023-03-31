@@ -30,12 +30,12 @@ export default function Products() {
     setCartItems,
   } = useShoppingCart()
 
-  const increseCartQuantity_mem = useCallback(
-    (id) => {
-      increaseCartQuantity(id)
-    },
-    [increaseCartQuantity]
-  )
+  // const increseCartQuantity_mem = useCallback(
+    // (id) => {
+      // increaseCartQuantity(id)
+    // }
+  //   [increaseCartQuantity]
+  // )
 
   // useDebounce(
   //   () => {
@@ -76,7 +76,7 @@ export default function Products() {
                 className="btn btn--primary mini text-xs"
                 onClick={() => {
                   !user && login()
-                  increseCartQuantity_mem(japitem.id)
+                  increaseCartQuantity(japitem.id)
                 }}
               >
                 담기
