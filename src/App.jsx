@@ -77,8 +77,9 @@ function App() {
                 <QueryClientProvider client={queryClient}>
                   <AuthContextProvider>
                     <JapitemContext.Provider value={japitemContextValue}>
-                      <Navbar setSearch={setSearch} search={search} />
-                      <Outlet japitems={japitems} />
+                      <ShopHome/>
+                      {/* <Navbar setSearch={setSearch} search={search} />
+                      <Outlet japitems={japitems} /> */}
                       {/* <ReactQueryDevtools /> */}
                     </JapitemContext.Provider>
                   </AuthContextProvider>

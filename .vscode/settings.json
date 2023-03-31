@@ -159,7 +159,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "emmet.showSuggestionsAsSnippets": true,
   "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "svipas.prettier-plus"
   },
   "editor.formatOnPaste": false,
   "bookmarks.useWorkaroundForFormatters": false,

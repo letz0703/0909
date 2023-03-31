@@ -1,38 +1,38 @@
-import React, { useState } from "react"
+import React, {useState} from "react"
 //import styles from './Jap-page.module.css'
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"
-import { collection, getDoc, getDocs } from "firebase/firestore"
-import { db, database, auth } from "../api/firebase"
+import {useQuery, useMutation, useQueryClient} from "@tanstack/react-query"
+import {collection, getDoc, getDocs} from "firebase/firestore"
+import {db, database, auth} from "../api/firebase"
 import Wait from "../util/wait"
 import ReactQuery from "../components/react_query/react_query"
 import SpecialsQuery from "../components/react_query/specials_query"
 import Notice from "../components/notice/notice"
-import { useAuthContext } from "../context/AuthContext"
+import {useAuthContext} from "../context/AuthContext"
 import Jap09Form from "../components/jap09-form/jap09-form"
 import JapEsp from "../components/jap___esp/jap___esp"
-import { login } from "../api/firebase"
-import { useNavigate, Navigate } from "react-router-dom"
+import {login} from "../api/firebase"
+import {useNavigate, Navigate} from "react-router-dom"
 
 const SPECIALS = [
-  { id: 1, itemId: "2301-01", name: "JP-캬베진 300정", price: 10000, limit: 5 },
+  {id: 1, itemId: "2301-01", name: "JP-캬베진 300정", price: 10000, limit: 5},
   {
     id: 2,
     itemId: "2301-02",
     name: "동전파스 156매 3개",
     price: 10000,
-    limit: 30,
-  },
+    limit: 30
+  }
 ]
 
 export default function Jap() {
-  const { user, isAdmin } = useAuthContext()
+  const {user, isAdmin} = useAuthContext()
   const [icUser, setIcUser] = useState(false)
   const navigate = useNavigate()
 
   const queryClient = useQueryClient()
   const specialsQuery = useQuery({
     queryKey: ["specials"],
-    queryFn: () => Wait(300).then(() => [...SPECIALS]),
+    queryFn: () => Wait(300).then(() => [...SPECIALS])
     // queryFn: () => Promise.reject("Error"),
   })
   // const specialsMutation = useMutation({
@@ -157,6 +157,6 @@ export default function Jap() {
         }
 
       `}</style>
-    </div>,
+    </div>
   ]
 }
