@@ -35,7 +35,7 @@ export function PopCart({isOpen}) {
   })
   const [user] = useAuthState(auth)
 
-  localStorage.getItem("ic-user")
+  // localStorage.getItem("ic-user")
   const [currentAddress, setCurrentAddress] = useState()
 
   // useEffect(() => {
@@ -158,6 +158,16 @@ export function PopCart({isOpen}) {
   useEffect(() => {
     total_ref.current && updateCartTotal(cartItems, total_ref.current)
   }, [total_ref.current])
+  // local storage 에 sendTo 가 있는지 확인 한다
+  useEffect(() => {
+    const a = localStorage.getItem("ic-cart")
+    a.sentTo
+      ? setCurrentAddress(a?.sendTo)
+      : () => {
+          setCurrentAddress("배송지 없음")
+          localStorage.setItem("ic-user", JSON.stringify(""))
+        }
+  }, [user])
 
   return [
     <Offcanvas
