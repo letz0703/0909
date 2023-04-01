@@ -117,15 +117,16 @@ export function PopCart({isOpen}) {
     // setCurrentAddress(newAddress)
     // setDeliveryTo(newAddress)
     // console.log("deliveryTo:", deliveryTo)
-    console.log("newAddress:", newAddress)
     newAddress &&
       localStorage.setItem(
         "ic-cart",
         JSON.stringify({...cartItems, sendTo: newAddress})
       )
-    // updateRDB_user(newAddress)
-    // setCurrentAddress(newAddress)
-    // alert("주소가 변경되었습니다")
+    updateRDB_user(newAddress)
+    setCurrentAddress(newAddress)
+    if (newAddress != "") {
+      alert("주소가 변경되었습니다")
+    }
   }
 
   // async function getCurrentUserAddress() {
@@ -139,10 +140,10 @@ export function PopCart({isOpen}) {
   //   setCurrentAddress(deliveryTo).catch((error) => alert(error))
   // }
 
-  // useEffect(() => {
-  //   // getCurrentUserAddress()
-  //   getRDB_user()
-  // }, [user])
+  useEffect(() => {
+    //   // getCurrentUserAddress()
+    getRDB_user()
+  }, [user])
 
   const total_ref = useRef(0)
 

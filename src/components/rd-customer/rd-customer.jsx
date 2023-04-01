@@ -1,9 +1,9 @@
 /**
  * !. input form
  */
-import { database } from "../../api/firebase"
-import { useState, useEffect, useRef } from "react"
-import { useAuthContext } from "../../context/AuthContext"
+import {database} from "../../api/firebase"
+import {useState, useEffect, useRef} from "react"
+import {useAuthContext} from "../../context/AuthContext"
 import styles from "./rd-customer.module.css"
 import {
   getDatabase,
@@ -12,18 +12,18 @@ import {
   get,
   update,
   remove,
-  child, //
+  child //
 } from "firebase/database"
-export default function RdCustomer({ _notice }) {
+export default function RdCustomer({_notice}) {
   const [state, setState] = useState(() => {
     return {
       uid: "",
       cell: "",
-      customNo: "",
+      customNo: ""
     }
   })
 
-  const { user } = useAuthContext()
+  const {user} = useAuthContext()
   // const [customer, setCustomer] = useState([])
   // const [cell, setCell] = useState("")
   // const [customNo, setCustomNo] = useState("")
@@ -39,12 +39,12 @@ export default function RdCustomer({ _notice }) {
       return {
         uid: user?.uid,
         cell: (state.cell && state.cell) || "",
-        name: user.displayName,
-        customNo: (state.customNo && state.customNo) || "",
+        name: user?.displayName,
+        customNo: (state.customNo && state.customNo) || ""
       }
     }
   }
-  const create_rdb_customers = (e) => {
+  const create_rdb_customers = e => {
     const data = getAllInputs()
 
     user &&
@@ -52,10 +52,10 @@ export default function RdCustomer({ _notice }) {
         name: user?.displayName,
         uid: user?.uid,
         cell: Number(state.cell),
-        customNo: data.customNo,
+        customNo: data.customNo
       })
         .then(() => alert("data saved"))
-        .catch((error) => console.log(error))
+        .catch(error => console.log(error))
   }
 
   function delete_rdb_customer() {
@@ -64,27 +64,27 @@ export default function RdCustomer({ _notice }) {
       .then(() => {
         alert("data removed")
       })
-      .catch((error) => console.log(error))
+      .catch(error => console.log(error))
   }
 
   const read_rdb_customer = () => {
     get(child(ref(database), `customers/${user?.uid}`)) //
-      .then((snapshot) => {
+      .then(snapshot => {
         if (snapshot.exists()) {
           setState({
             uid: snapshot.val().uid,
             cell: snapshot.val().cell,
-            customNo: snapshot.val().customNo || "",
+            customNo: snapshot.val().customNo || ""
           })
         }
         // else {
         //   alert("no data")
         // }
       })
-      .catch((error) => alert(error))
+      .catch(error => alert(error))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault()
     const id = e.target.id
     if (id == "btnCreate") {
@@ -105,8 +105,8 @@ export default function RdCustomer({ _notice }) {
             type="text"
             id="userbox"
             value={state.cell}
-            onChange={(e) => {
-              setState({ ...state, cell: e.target.value })
+            onChange={e => {
+              setState({...state, cell: e.target.value})
             }}
           />
         </div>
@@ -117,8 +117,8 @@ export default function RdCustomer({ _notice }) {
             type="text"
             id="userbox"
             value={state.customNo}
-            onChange={(e) => {
-              setState({ ...state, customNo: e.target.value })
+            onChange={e => {
+              setState({...state, customNo: e.target.value})
             }}
           />
         </div>

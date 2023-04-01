@@ -26,19 +26,17 @@ export default function ShopHome() {
 
   // get uid from localstorage
 
-  const ref_icUser = useRef({})
-
   useEffect(() => {
     // user ?? alert("안녕 하세요! 구글 계정으로 로그인 하세요")
-    user &&
-      localStorage.setItem(
-        "ic-user",
-        JSON.stringify({
-          id: uid,
-          name: user.displayName,
-          phoneNumber: user.phoneNumber || "없음"
-        })
-      )
+    const a = localStorage.getItem("ic-user")
+    localStorage.setItem(
+      "ic-user",
+      JSON.stringify({
+        id: uid,
+        name: user?.displayName,
+        phoneNumber: user?.phoneNumber || "없음"
+      })
+    )
   }, [user])
 
   return (
