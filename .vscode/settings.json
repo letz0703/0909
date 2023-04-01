@@ -164,7 +164,10 @@
   "editor.formatOnPaste": false,
   "bookmarks.useWorkaroundForFormatters": false,
   "eslint.format.enable": true,
-  "git-blame.gitWebUrl": "https://github.com/letz0703/0909/commit/$ID"
+  "git-blame.gitWebUrl": "https://github.com/letz0703/0909/commit/$ID",
+  "[jsonc]": {
+    "editor.defaultFormatter": "svipas.prettier-plus"
+  }
   // "github.copilot.inlineSuggest.enable": true
   // "github.copilot.advanced": {
 
