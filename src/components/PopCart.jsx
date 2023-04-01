@@ -56,7 +56,7 @@ export function PopCart({isOpen}) {
         const data = Object.values(res)
         return data.find(r => r.uid === user?.uid)
       })
-    // .catch((error) => alert(error))
+      .catch(error => alert(error))
 
     // if (a.deliveryTo === undefined || a.deliveryTo === "") {
     //   const newAddress = prompt("배송지 입력")
@@ -85,7 +85,7 @@ export function PopCart({isOpen}) {
       crypto.randomUUID(),
       cartItems,
       currentAddress,
-      getTotal()
+      total_ref.current
     )
     // .catch((error) => alert(error))
     // await addNewCart(user.uid, crypto.randomUUID(), local__icCart)
@@ -96,9 +96,9 @@ export function PopCart({isOpen}) {
     //   cartItems: local__icCart,
     //   total: total,
     // })
-    localStorage.setItem("cart-total", prev => {
-      JSON.stringify({...cartItems, total: total_ref.current})
-    })
+    // localStorage.setItem("cart-total", prev => {
+    //   return JSON.stringify({...cartItems, total: total_ref.current})
+    // })
     setCartItems([])
     window.location.replace("./shop")
   }
@@ -118,15 +118,19 @@ export function PopCart({isOpen}) {
     // setCurrentAddress(newAddress)
     // setDeliveryTo(newAddress)
     // console.log("deliveryTo:", deliveryTo)
-    newAddress &&
-      localStorage.setItem(
-        "ic-cart",
-        JSON.stringify({...cartItems, sendTo: newAddress})
-      )
+    newAddress && localStorage
     localStorage.setItem(
-      "ic-user",
-      JSON.stringify({...icUser, sendTo: newAddress})
+      "ic-cart",
+      JSON.stringify({...cartItems, sendTo: newAddress})
     )
+    setCurrentAddress(newAddress)
+    // localStorage.setItem (
+    //   "ic-user",
+    //   JSON.stringify((prev) => {
+    //     return {...prev, sendTo: newAddress}
+    //   }
+    // )
+
     updateRDB_user(newAddress)
     setCurrentAddress(newAddress)
     if (newAddress != "") {
@@ -134,26 +138,15 @@ export function PopCart({isOpen}) {
     }
   }
 
-  // async function getCurrentUserAddress() {
-  //   const userAddress = await getRDB_users()
-  //     .then((res) => {
-  //       const data = Object.values(res)
-  //       return data.find((row) => row.uid === user.uid)
-  //     })
-  //     .catch((error) => alert("getCurrentUserAddress", error))
-  //   const { deliveryTo } = userAddress
-  //   setCurrentAddress(deliveryTo).catch((error) => alert(error))
-  // }
-
   useEffect(() => {
     getRDB_user()
   }, [user])
 
   const total_ref = useRef(0)
 
-  useEffect(() => {
-    console.log("total_ref.current", total_ref.current)
-  }, [total_ref.current])
+  // useEffect(() => {
+  //   console.log("total_ref.current", total_ref.current)
+  // }, [total_ref.current])
 
   useEffect(() => {
     total_ref.current && updateCartTotal(cartItems, total_ref.current)
@@ -169,6 +162,20 @@ export function PopCart({isOpen}) {
         }
   }, [user])
 
+  function calTotal() {
+    return cartItems.reduce((total, cartItem) => {
+      // const item = storeItems.find((i) => i.id === cartItem.id)
+      const item = japitems.find(i => i.id === cartItem.id)
+      const amount = total + (item?.price || 0) * cartItem.quantity
+      total_ref.current = amount
+      return amount
+    }, 0)
+  }
+  const [remit, setRemit] = useState(calTotal)
+  console.log("remit", remit)
+  useEffect(() => {
+    localStorage.setItem("total", JSON.stringify({total: total_ref.current}))
+  }, [total_ref.current])
   return [
     <Offcanvas
       show={isOpen}
@@ -188,15 +195,7 @@ export function PopCart({isOpen}) {
           <hr />
           <div className="ms-auto font-bold text-2xl p-3">
             Total {/* TODO:total 표시 */}
-            {FormatCurrency(
-              cartItems.reduce((total, cartItem) => {
-                // const item = storeItems.find((i) => i.id === cartItem.id)
-                const item = japitems.find(i => i.id === cartItem.id)
-                const amount = total + (item?.price || 0) * cartItem.quantity
-                total_ref.current = amount
-                return amount
-              }, 0)
-            )}
+            {FormatCurrency(calTotal())}
             <div>+ 기본택배 {<span>{deleiveryCost}</span>}원</div>
             <p className="text-blue-400">
               <span
