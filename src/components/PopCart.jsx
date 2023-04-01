@@ -34,12 +34,23 @@ export function PopCart({isOpen}) {
     ...cartItems
   })
   const [user] = useAuthState(auth)
-  const [currentAddress, setCurrentAddress] = useState("배송지요함")
-  const [deliveryTo, setDeliveryTo] = useState(() => {
-    getRDB_user(user?.uid)
-    // console.log(Object.values(a))
-  })
-  const [total, setTotal] = useState(0)
+
+  const localInfo = localStorage.getItem("ic-user")
+
+  const [currentAddress, setCurrentAddress] = useState(
+    localInfo?.sendTo ? localInfo.sendTo : "주소없음"
+  )
+
+  // useEffect(() => {
+  //   const a = localStorage.getItem("ic-cart")
+  //   setCurrentAddress(a?.sendTo)
+  // }, [])
+
+  // const [deliveryTo, setDeliveryTo] = useState(() => {
+  //   getRDB_user(user?.uid)
+  //   // console.log(Object.values(a))
+  // })
+  // const [total, setTotal] = useState(0)
 
   const handleCart__Order = async cartItems => {
     // console.log(cartItems)
@@ -88,10 +99,9 @@ export function PopCart({isOpen}) {
     //   cartItems: local__icCart,
     //   total: total,
     // })
-    localStorage.setItem("cart-total", (prev)=>{
-    JSON.stringify({...cartItems,total:total_ref.current})
-    }
-    )
+    localStorage.setItem("cart-total", prev => {
+      JSON.stringify({...cartItems, total: total_ref.current})
+    })
     setCartItems([])
     window.location.replace("./shop")
   }
@@ -107,9 +117,15 @@ export function PopCart({isOpen}) {
     // setCurrentAddress(newAddress)
     // setDeliveryTo(newAddress)
     // console.log("deliveryTo:", deliveryTo)
-    updateRDB_user(newAddress)
-    setCurrentAddress(newAddress)
-    alert("주소가 변경되었습니다")
+    console.log("newAddress:", newAddress)
+    newAddress &&
+      localStorage.setItem(
+        "ic-cart",
+        JSON.stringify({...cartItems, sendTo: newAddress})
+      )
+    // updateRDB_user(newAddress)
+    // setCurrentAddress(newAddress)
+    // alert("주소가 변경되었습니다")
   }
 
   // async function getCurrentUserAddress() {
@@ -128,18 +144,17 @@ export function PopCart({isOpen}) {
   //   getRDB_user()
   // }, [user])
 
-  const total_ref = useRef(0);
+  const total_ref = useRef(0)
 
   useEffect(() => {
-   console.log("total_ref.current", total_ref.current)
-  }, [total_ref.current]);
-
+    console.log("total_ref.current", total_ref.current)
+  }, [total_ref.current])
 
   useEffect(() => {
-      total_ref.current && updateCartTotal(cartItems, total_ref.current)
-  }, [total_ref.current]);
+    total_ref.current && updateCartTotal(cartItems, total_ref.current)
+  }, [total_ref.current])
 
-  return (
+  return [
     <Offcanvas
       show={isOpen}
       // show={true}
@@ -195,5 +210,5 @@ export function PopCart({isOpen}) {
         <div className="flex justify-center pt-2">배송지:{currentAddress}</div>
       </Offcanvas.Body>
     </Offcanvas>
-  )
+  ]
 }

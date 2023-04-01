@@ -1,11 +1,11 @@
-import { useContext, useEffect, useState } from "react"
-import { getRDB_user, getRDB_users } from "../api/firebase"
+import {useContext, useEffect, useRef, useState} from "react"
+import {getRDB_user, getRDB_users} from "../api/firebase"
 // import { SearchContext } from "../App"
 // import JorderQuery from "../components/jorder-special/jorder-special"
 import Products from "../components/Products"
 // import SearchInput from "../components/search-input/search-input"
 import Slide from "../components/slide/slide"
-import { useAuthContext } from "../context/AuthContext"
+import {useAuthContext} from "../context/AuthContext"
 import useUpdatedEffect from "../hooks/use-updated-effect"
 // import { useAuthContext } from "../context/AuthContext"
 // import { useJapitems } from "../hooks/use-japitems"
@@ -15,7 +15,7 @@ import useUpdatedEffect from "../hooks/use-updated-effect"
 // import Test from "./Test"
 
 export default function ShopHome() {
-  const { user, uid } = useAuthContext()
+  const {user, uid} = useAuthContext()
   const a = localStorage.getItem("ic-user")
   // if (!a) {
   //   localStorage.setItem("ic-user", JSON.stringify({ name: "guest" }))
@@ -23,11 +23,10 @@ export default function ShopHome() {
   // if (!a) {
   //   localStorage.getItem("ic-user", JSON.stringify({ name: "guest" }))
   // }
-  if (!a) {
-    localStorage.setItem("ic-user", JSON.stringify({ name: "guest" }))
-  }
 
   // get uid from localstorage
+
+  const ref_icUser = useRef({})
 
   useEffect(() => {
     // user ?? alert("안녕 하세요! 구글 계정으로 로그인 하세요")
@@ -37,8 +36,7 @@ export default function ShopHome() {
         JSON.stringify({
           id: uid,
           name: user.displayName,
-          phoneNumber: user.phoneNumber,
-          deliveryTo: "받으실 곳",
+          phoneNumber: user.phoneNumber || "없음"
         })
       )
   }, [user])
