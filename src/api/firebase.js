@@ -45,7 +45,9 @@ export const db = getFirestore(app)
 
 export function login() {
   signInWithPopup(auth, provider)
-    .then(() => window.location.replace("/shop"))
+    .then(result =>
+      localStorage.setItem("ic-user", JSON.stringify(result.user))
+    )
     .catch(console.error)
 }
 
