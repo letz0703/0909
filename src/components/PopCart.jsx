@@ -6,7 +6,7 @@ import FormatCurrency from "../util/formatCurrency"
 import CartItem from "./CartItem"
 import {useJapitems} from "../hooks/use-japitems"
 import {useLocalStorage} from "../hooks/use-local-storage"
-import {addDoc, collection} from "firebase/firestore"
+// import {addDoc, collection} from "firebase/firestore"
 import {
   getRDB_users,
   db,
@@ -51,12 +51,13 @@ export function PopCart({isOpen}) {
 
   const handleCart__Order = async cartItems => {
     // console.log(cartItems)
-    getRDB_users(user?.uid) //
-      .then(res => {
-        const data = Object.values(res)
-        return data.find(r => r.uid === user?.uid)
-      })
-      .catch(error => alert(error))
+    // getRDB_users(user?.uid) //
+    //   .then(res => {
+    //     const data = Object.values(res)
+    //     return data.find(r => r.uid === user?.uid)
+    //   })
+    // .catch(error => alert(error))
+    getRDB_user(user?.uid)
 
     // if (a.deliveryTo === undefined || a.deliveryTo === "") {
     //   const newAddress = prompt("배송지 입력")
@@ -108,9 +109,7 @@ export function PopCart({isOpen}) {
     window.location.replace("./shop")
   }
 
-  const [icUser, setIcUser] = useState(() => {
-    return localStorage.getItem("ic-user")
-  })
+  const [addressTo, setAddressTo] = useLocalStorage("ic-user", {})
 
   function changeAddress() {
     const newAddress = prompt("배송지 입력")
@@ -118,12 +117,11 @@ export function PopCart({isOpen}) {
     // setCurrentAddress(newAddress)
     // setDeliveryTo(newAddress)
     // console.log("deliveryTo:", deliveryTo)
-    newAddress && localStorage
-    localStorage.setItem(
-      "ic-cart",
-      JSON.stringify({...cartItems, sendTo: newAddress})
-    )
-    setCurrentAddress(newAddress)
+    // setAddressTo(prev => {
+    //   return {...prev, sendTo: newAddress}
+    // })
+    console.log("addressTo:", newAddress)
+
     // localStorage.setItem (
     //   "ic-user",
     //   JSON.stringify((prev) => {

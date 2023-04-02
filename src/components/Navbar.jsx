@@ -1,26 +1,35 @@
-import { Nav, Navbar as NavbarBs, Col, Row } from "react-bootstrap"
-import { Link, Navigate, useNavigate } from "react-router-dom"
-import { BsFillPencilFill } from "react-icons/bs"
-import { HiLogin, HiLogout } from "react-icons/hi"
-import { login, logout, onUserStateChange } from "../api/firebase"
+import {Nav, Navbar as NavbarBs, Col, Row} from "react-bootstrap"
+import {Link, Navigate, useNavigate} from "react-router-dom"
+import {BsFillPencilFill} from "react-icons/bs"
+import {HiLogin, HiLogout} from "react-icons/hi"
+import {login, logout, onUserStateChange} from "../api/firebase"
 import Button from "./ui/button"
 import User from "./User"
-import { useAuthContext } from "../context/AuthContext"
+import {useAuthContext} from "../context/AuthContext"
 import CartStatus from "./CartStatus"
-import { NavLink } from "react-router-dom"
-import { useShoppingCart } from "../context/ShoppingCartContext"
-import { JapitemContext } from "../App"
-import { useContext } from "react"
-import { BsYoutube, BsSearch } from "react-icons/bs"
+import {NavLink} from "react-router-dom"
+import {useShoppingCart} from "../context/ShoppingCartContext"
+import {JapitemContext} from "../App"
+import {useContext, useEffect} from "react"
+import {BsYoutube, BsSearch} from "react-icons/bs"
 import SearchInput from "./search-input/search-input"
 import styles from "./Navbar.module.css"
+import {useLocalStorage} from "../hooks/use-local-storage"
 
-export default function Navbar({ search, setSearch }) {
-  const { user, setUser, login, logout, isAdmin, isCustom } = useAuthContext()
-  const { openCart, cartQuantity } = useShoppingCart()
-  const { handleJapitemSearch } = useContext(JapitemContext)
+export default function Navbar({search, setSearch}) {
+  const {user, setUser, login, logout, isAdmin, isCustom} = useAuthContext()
+  const {openCart, cartQuantity} = useShoppingCart()
+  const {handleJapitemSearch} = useContext(JapitemContext)
   const navigate = useNavigate()
   // const navigate = useNavigate()
+
+  const [icUser, setIcUser] = useLocalStorage("ic-user", {})
+
+  useEffect(() => {
+    onUserStateChange(user => {
+      setIcUser({...user})
+    })
+  }, [user])
 
   return (
     <header className="Navbarjsx__header flex border-b justify-evenly p-1">
@@ -37,7 +46,7 @@ export default function Navbar({ search, setSearch }) {
               fontSize: "1.3rem",
               paddingRight: ".1rem",
               fontWeight: "bold",
-              color: "black",
+              color: "black"
             }}
             onClick={() => navigate("/")}
             className="cursor-pointer"
@@ -57,7 +66,7 @@ export default function Navbar({ search, setSearch }) {
             <Link
               to="/my_orders"
               className="hidden md:block"
-              style={{ width: "70px" }}
+              style={{width: "70px"}}
             >
               My Orders
             </Link>
@@ -117,7 +126,6 @@ export default function Navbar({ search, setSearch }) {
             </>
           )}
 
-
           {user && (
             <Link to="/carts">
               <CartStatus />
@@ -127,7 +135,7 @@ export default function Navbar({ search, setSearch }) {
         {user && user.isAdmin ? (
           <BsYoutube
             className="navbar__youtube-icon fs-4 "
-            style={{ width: "100%", color: "red" }}
+            style={{width: "100%", color: "red"}}
             onClick={() => window.location.replace("/videos")}
           />
         ) : (
