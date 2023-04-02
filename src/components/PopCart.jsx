@@ -36,7 +36,16 @@ export function PopCart({isOpen}) {
   const [user] = useAuthState(auth)
 
   // localStorage.getItem("ic-user")
-  const [currentAddress, setCurrentAddress] = useState()
+  const [currentAddress, setCurrentAddress] = useState("배송지 요망")
+  useEffect(() => {
+    const a = localStorage.getItem("addressTo")
+
+    setCurrentAddress(a)
+    // if (a) {
+    //   setCurrentAddress(a)
+    // }
+    // setCurrentAddress(a?.addressTo)
+  }, [localStorage.addressTo])
 
   // useEffect(() => {
   //   const a = localStorage.getItem("ic-cart")
@@ -109,18 +118,11 @@ export function PopCart({isOpen}) {
     window.location.replace("./shop")
   }
 
-  const [addressTo, setAddressTo] = useLocalStorage("ic-user", {})
+  // const [addressTo, setAddressTo] = useLocalStorage("ic-user", {})
 
   function changeAddress() {
     const newAddress = prompt("배송지 입력")
-    // console.log("newAddress:", newAddress)
-    // setCurrentAddress(newAddress)
-    // setDeliveryTo(newAddress)
-    // console.log("deliveryTo:", deliveryTo)
-    // setAddressTo(prev => {
-    //   return {...prev, sendTo: newAddress}
-    // })
-    console.log("addressTo:", newAddress)
+    localStorage.setItem("addressTo", JSON.stringify(newAddress))
 
     // localStorage.setItem (
     //   "ic-user",
@@ -174,6 +176,11 @@ export function PopCart({isOpen}) {
   useEffect(() => {
     localStorage.setItem("total", JSON.stringify({total: total_ref.current}))
   }, [total_ref.current])
+  useEffect(() => {
+    const a = getRDB_user(user?.uid).deliveryTo
+    console.log(a)
+  }, [])
+
   return [
     <Offcanvas
       show={isOpen}

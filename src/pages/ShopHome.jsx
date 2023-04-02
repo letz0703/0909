@@ -17,21 +17,21 @@ import useUpdatedEffect from "../hooks/use-updated-effect"
 export default function ShopHome() {
   const {user, uid} = useAuthContext()
 
-  useEffect(() => {
-    user &&
-      localStorage.setItem(
-        "ic-user",
-        JSON.stringify({
-          id: uid,
-          name: user?.displayName,
-          phoneNumber: user.phoneNumber
-        })
-      )
-  }, [user])
+  // useEffect(() => {
+  //   user &&
+  //     localStorage.setItem(
+  //       "ic-user",
+  //       JSON.stringify({
+  //         id: uid,
+  //         name: user?.displayName,
+  //         phoneNumber: user.phoneNumber
+  //       })
+  //     )
+  // }, [user])
 
   return (
     <div>
-      <Slide className=".slide" />
+      {!user && <Slide />}
       <Products />
       <style>{`
           @media screen and (1280px>width> 768px){

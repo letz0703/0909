@@ -48,6 +48,7 @@ export function login() {
     .then(result =>
       localStorage.setItem("ic-user", JSON.stringify(result.user))
     )
+    .then(() => window.location.replace("/"))
     .catch(console.error)
 }
 
