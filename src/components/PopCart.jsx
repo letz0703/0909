@@ -14,7 +14,8 @@ import {
   addNewCart,
   updateRDB_user,
   getRDB_user,
-  updateCartTotal
+  updateCartTotal,
+  setRDB_user
 } from "../api/firebase"
 import {useAuthState} from "react-firebase-hooks/auth"
 import {useRef, useState} from "react"
@@ -35,17 +36,29 @@ export function PopCart({isOpen}) {
   })
   const [user] = useAuthState(auth)
 
+  const icUserInPopCart = localStorage.getItem("ic-user")
   // localStorage.getItem("ic-user")
   const [currentAddress, setCurrentAddress] = useState("배송지 요망")
+  const [phoneNumber, setPhoneNumber] = useState("연락처요함")
   useEffect(() => {
     const a = localStorage.getItem("addressTo")
 
     setCurrentAddress(a)
-    // if (a) {
-    //   setCurrentAddress(a)
-    // }
-    // setCurrentAddress(a?.addressTo)
+    if (a) {
+      setCurrentAddress(a)
+    } else {
+      setCurrentAddress("배송지 요망")
+    }
   }, [localStorage.addressTo])
+  useEffect(() => {
+    const a = localStorage.getItem("phoneNumber")
+    setPhoneNumber(a)
+    if (a) {
+      setPhoneNumber(a)
+    } else {
+      setPhoneNumber("연락처 요망")
+    }
+  }, [localStorage.phoneNumber])
 
   // useEffect(() => {
   //   const a = localStorage.getItem("ic-cart")
@@ -59,56 +72,19 @@ export function PopCart({isOpen}) {
   // const [total, setTotal] = useState(0)
 
   const handleCart__Order = async cartItems => {
-    // console.log(cartItems)
-    // getRDB_users(user?.uid) //
-    //   .then(res => {
-    //     const data = Object.values(res)
-    //     return data.find(r => r.uid === user?.uid)
-    //   })
-    // .catch(error => alert(error))
-    getRDB_user(user?.uid)
-
-    // if (a.deliveryTo === undefined || a.deliveryTo === "") {
-    //   const newAddress = prompt("배송지 입력")
-    //   setCurrentAddress(newAddress)
-    //   await updateRDB_user(newAddress)
-    // }
-
-    // if (a.deliveryTo === "") {
-    //   const newAddress = prompt("배송지 입력")
-    //   setDeliveryTo(newAddress)
-    // } else {
-    //   console.log(a.deliveryTo)
-    // }
-
-    // if (a.deliveryTo) {
-    //   return
-    // }
-    // if (a.deliveryTo !== "") {
-    //   return
-    // } else {
-    // updateRDB_user(newAddress)
-    // }
+    const a = localStorage.getItem("ic-user")
+    const parsed_a = JSON.parse(a)
+    setRDB_user(parsed_a.uid, parsed_a)
 
     await addNewCart(
       user.uid,
       crypto.randomUUID(),
       cartItems,
       currentAddress,
+      phoneNumber,
       total_ref.current
     )
-    // .catch((error) => alert(error))
-    // await addNewCart(user.uid, crypto.randomUUID(), local__icCart)
-    // await addDoc(cartRef, {
-    //   userId: user.uid,
-    //   cartId: crypto.randomUUID(),
-    //   orderDate: Date(),
-    //   cartItems: local__icCart,
-    //   total: total,
-    // })
-    // localStorage.setItem("cart-total", prev => {
-    //   return JSON.stringify({...cartItems, total: total_ref.current})
-    // })
+
     setCartItems([])
     window.location.replace("./shop")
   }
@@ -135,6 +111,24 @@ export function PopCart({isOpen}) {
     setCurrentAddress(newAddress)
     if (newAddress != "") {
       alert("주소가 변경되었습니다")
+    }
+  }
+
+  function changeNumber() {
+    const newPhoneNumber = prompt("전화번호 입력")
+    localStorage.setItem("phoneNumber", JSON.stringify(newPhoneNumber))
+
+    // localStorage.setItem (
+    //   "ic-user",
+    //   JSON.stringify((prev) => {
+    //     return {...prev, sendTo: newAddress}
+    //   }
+    // )
+
+    setPhoneNumber(newPhoneNumber)
+    updateRDB_user(phoneNumber)
+    if (phoneNumber != "") {
+      alert("전화번호가 변경되었습니다")
     }
   }
 
@@ -178,7 +172,6 @@ export function PopCart({isOpen}) {
   }, [total_ref.current])
   useEffect(() => {
     const a = getRDB_user(user?.uid).deliveryTo
-    console.log(a)
   }, [])
 
   return [
@@ -222,11 +215,27 @@ export function PopCart({isOpen}) {
           <button className="btn red" onClick={() => handleResetCart()}>
             지우기
           </button>
-          <button className="btn green" onClick={changeAddress}>
-            배송지변경
+        </div>
+        <div className="flex justify-center items-center pt-2">
+          배송지:{currentAddress}
+          <button className="btn green h-[1.8em]" onClick={changeAddress}>
+            수정
           </button>
         </div>
-        <div className="flex justify-center pt-2">배송지:{currentAddress}</div>
+        <div className="flex justify-center items-center pt-2">
+          연락처:{phoneNumber}
+          <button className="btn green h-[1.8em]" onClick={changeNumber}>
+            수정
+          </button>
+        </div>
+        <style>{`
+            body {
+              background-color: powderblue; color: black
+            }
+            .btn {
+              display: inline-block;
+            }
+          `}</style>
       </Offcanvas.Body>
     </Offcanvas>
   ]

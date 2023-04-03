@@ -27,7 +27,13 @@ export default function Navbar({search, setSearch}) {
 
   useEffect(() => {
     onUserStateChange(user => {
-      setIcUser({...user, addressTo: "배송지 요함", mobile: "전화번호 요함"})
+      const a = localStorage.getItem("addressTo")
+      const b = localStorage.getItem("phoneNumber")
+      setIcUser({
+        ...user,
+        addressTo: a || "배송지 요함",
+        phoneNumber: b || "전화번호 요함"
+      })
     })
   }, [user])
 

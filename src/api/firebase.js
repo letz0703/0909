@@ -56,16 +56,19 @@ export function logout() {
   signOut(auth).catch(console.error)
 }
 
-export function updateRDB_user(deliveryTo) {
-  const fbUser = {
-    // return {
-    name: auth.currentUser?.displayName || "",
-    uid: auth.currentUser?.uid || crypto.randomUUID(),
-    email: auth.currentUser?.email,
-    phoneNumber: auth.currentUser?.phoneNumber || "",
-    photoUrl: auth.currentUser?.photoURL || "",
-    deliveryTo: deliveryTo || ""
+export function updateRDB_user(value) {
+  const fbUser = prev => {
+    return {
+      ...prev,
+      // name: auth.currentUser?.displayName || "",
+      // uid: auth.currentUser?.uid || crypto.randomUUID(),
+      // email: auth.currentUser?.email,
+      // phoneNumber: auth.currentUser?.phoneNumber || "",
+      // photoUrl: auth.currentUser?.photoURL || "",
+      value
+    }
   }
+  // localStorage.setItem("ic-user", JSON.stringify(fbUser))
 
   return update(ref(database, `users/${fbUser?.uid}`), {...fbUser})
 }
@@ -195,10 +198,11 @@ export async function addNewCart(
   userId,
   cartId,
   local__icCart,
-  deliveryTo,
+  addressTo,
+  phoneNumber,
   total
 ) {
-  updateRDB_user(deliveryTo || "배송지요함")
+  updateRDB_user(addressTo || "배송지요함")
   return set(
     ref(database, `carts/${userId}/${cartId}`),
     // return set(ref(database, `carts/${userId}/${cartId}`),
@@ -206,7 +210,7 @@ export async function addNewCart(
       userId,
       cartId,
       cartItems: local__icCart,
-      deliveryTo: deliveryTo || "배송지요함",
+      addressTo: addressTo || "배송지요함",
       total: total || 0,
       status: "",
       orderDate: Date()
@@ -268,4 +272,10 @@ export async function addOrUpdateToCart(userId, product) {
 
 export async function removeFromCart(userId, productId) {
   return remove(ref(database, `carts/${userId}/${productId}`))
+}
+
+export async function setRDB_user(userID, cartUser) {
+  set(ref(database, `users/{${userID}}`), {
+    ...cartUser
+  })
 }
