@@ -33,6 +33,7 @@ export default function ShopHome() {
     <div>
       {!user && <Slide />}
       <Products />
+
       <style>{`
           @media screen and (1280px>width> 768px){
           .slide{

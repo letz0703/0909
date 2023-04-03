@@ -27,7 +27,7 @@ export default function Navbar({search, setSearch}) {
 
   useEffect(() => {
     onUserStateChange(user => {
-      setIcUser({...user})
+      setIcUser({...user, addressTo: "배송지 요함", mobile: "전화번호 요함"})
     })
   }, [user])
 
