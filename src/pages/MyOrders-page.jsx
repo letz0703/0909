@@ -121,6 +121,7 @@ export default function MyOrders() {
                 //   quanity: item.quantity,
                 // }
               }
+              <div>total : {order.total}</div>
               {/* )} */}
               {/* <span>{id}</span> */}
             </div>
