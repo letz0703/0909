@@ -18,6 +18,7 @@ import {YoutubeApiProvider} from "./context/YoutubeApi"
 import {DetailContextProvider} from "./context/DetailContext"
 import Detail from "./components/Detail"
 import {ReactQueryDevtools} from "@tanstack/react-query-devtools"
+import {useDeferredValue} from "react"
 
 const queryClient = new QueryClient()
 export const JapitemContext = createContext()
@@ -67,7 +68,11 @@ function App() {
     handleJapitemDelete,
     japitems
   }
+
+  const search_def = useDeferredValue(search)
+
   if (location.pathname !== "/videos") {
+    const search_def = useDeferredValue(search)
     return (
       <>
         <SearchContext.Provider value={searchContextValue}>
@@ -77,7 +82,7 @@ function App() {
                 <QueryClientProvider client={queryClient}>
                   <AuthContextProvider>
                     <JapitemContext.Provider value={japitemContextValue}>
-                      <Navbar setSearch={setSearch} search={search} />
+                      <Navbar setSearch={setSearch} search={search_def} />
                       <Outlet japitems={japitems} />
                       {/* <ReactQueryDevtools /> */}
                     </JapitemContext.Provider>
