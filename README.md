@@ -239,11 +239,15 @@ useProduct : https://bit.ly/3BZmzOa gh
 
 ## image
 
+
 tailwind image : https://tailwindcss.com/docs/object-fit#resizing-to-cover-a-container
 cloudinary : https://bit.ly/3hD3SJd
 upload presets : https://bit.ly/3je4mWq
 Upload
 https://api.clodunary.com/v1_1/<cloud name>/l<resource_type>/upload
+
+## Intl
+wds : https://youtu.be/4oGWpTAY_hc?t=136
 
 ## JSON
 
