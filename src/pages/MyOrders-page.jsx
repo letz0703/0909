@@ -8,6 +8,7 @@ import {useAuthContext} from "../context/AuthContext"
 import {get, ref} from "firebase/database"
 import {useJapitems} from "../hooks/use-japitems"
 // import FormatTIME from "../util/formatTime"
+import FormatCurrency from "../util/formatCurrency"
 
 const FormatTIME = timestamp => {
   const date = new Date(timestamp)
@@ -53,32 +54,34 @@ export default function MyOrders() {
       {orders.length === 0 && <div className="bg-red-100">no orders</div>}
       <div>
         {orders.map(order => (
-          <div key={order.orderDate} className="p-5">
+          <div key={order.cartId} className="p-5">
+            {console.log(order)}
             <div>{FormatTIME(order.orderDate)}</div>
             <hr />
             <div className="p-2 mb-4">
               {order.cartItems.map(row => (
-                <>
-                  <div
-                    key={crypto.randomUUID()}
-                    className="flex flex-row items-center m-2 justify-start"
-                  >
-                    <img
-                      src={japitems.find(r => r.id == row.id).imgUrl}
-                      className="w-20 mr-3"
-                    />
-                    {row.name}
-                    {/* <span className="mx-4">id:{row.id}</span> */}
-                    <span className="ml-2 text-blue-500 font-semibold">
-                      {row.quantity} 개
-                    </span>
-                    <span className="ml-2 text-blue-500 font-semibold">
-                      @{row.price}원
-                    </span>
-                  </div>
-                </>
+                <div
+                  key={row.id}
+                  className="flex flex-row items-center m-2 justify-start"
+                >
+                  <img
+                    src={japitems.find(r => r.id == row.id).imgUrl}
+                    className="w-20 mr-3"
+                  />
+                  {row.name}
+                  {/* <span className="mx-4">id:{row.id}</span> */}
+                  <span className="ml-2 text-blue-500 font-semibold">
+                    {row.quantity} 개
+                  </span>
+                  <span className="ml-2 text-blue-500 font-semibold">
+                    @{row.price}원
+                  </span>
+                </div>
               ))}
-              <div>total : {order.total}</div>
+              <div className="font-semibold text-blue-500 text-2xl">
+                total : {FormatCurrency(order.total)}
+              </div>
+
               {/* )} */}
               {/* <span>{id}</span> */}
             </div>
