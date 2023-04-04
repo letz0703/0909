@@ -23,21 +23,11 @@ export default function MyOrders() {
   const {uid, login} = useAuthContext()
   const [orders, setOrders] = useState([])
   const [japitems] = useJapitems()
-  // const [itemsInCart, setItemsInCart] = useState(null)
-  // console.log(SPECIALS)
-  // const [myOrders, setMyOrders] = useState([])
-
-  // const { uid } = useAuthContext()
 
   async function get_rdb_my_orders(userId) {
     return get(ref(database, `carts/${userId}`)).then(snapshot => {
       if (snapshot.exists()) {
         const data = Object.values(snapshot.val())
-        // setItemsInCart(
-        //   data.map((cart) => {
-        //     return cart.cartItems
-        //   })
-        // )
         setOrders(data)
       }
     })
@@ -95,25 +85,6 @@ export default function MyOrders() {
           </div>
         ))}
       </div>
-
-      {/* <div>{console.log(Array.isArray(itemsInCart))}</div> */}
     </div>
-    // <div>
-    //   <h1>Monlty JAP items</h1>
-    //   <pre>1월의 공동구매 아이템: 캬베진 300정, 10,000원 </pre>
-    //   <div>
-    //     {specailsQuery.data.map((order) => (
-    //       <div key={order.id}>itemId : {order.name}</div>
-    //     ))}
-    //   </div>
-    //   <button onClick={() => specailsMutation.mutate("New Order")}>
-    //     Add New Order
-    //   </button>
-    //   <style>{`
-    // 	.navbar__input, .navbar__youtube-icon{
-    // 		display: none;
-    // 	}
-    // `}</style>
-    // </div>
   )
 }

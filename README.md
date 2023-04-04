@@ -1,4 +1,5 @@
 🖥 WIP...
+[] https://www.notion.so/AI-ca797d27af4f4a1db59f5a40fabc1a59?pvs=4 ai 연습 ,,ai
 [] input for addressTo, cellPhone
 [] useRef적용
 
