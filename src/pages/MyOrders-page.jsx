@@ -1,15 +1,15 @@
-import { use, useEffect, useState } from "react"
+import {use, useEffect, useState} from "react"
 // import { useQuery, useMutation } from "@tanstack/react-query"
 // import { collection, getDoc, getDocs } from "firebase/firestore"
-import { database, db, getJorder } from "../api/firebase"
+import {database, db, getJorder} from "../api/firebase"
 import Wait from "../util/wait"
-import { useAuthContext } from "../context/AuthContext"
+import {useAuthContext} from "../context/AuthContext"
 // import { useLocation } from "react-router-dom"
-import { get, ref } from "firebase/database"
-import { useJapitems } from "../hooks/use-japitems"
+import {get, ref} from "firebase/database"
+import {useJapitems} from "../hooks/use-japitems"
 // import FormatTIME from "../util/formatTime"
 
-const FormatTIME = (timestamp) => {
+const FormatTIME = timestamp => {
   const date = new Date(timestamp)
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -20,7 +20,7 @@ const FormatTIME = (timestamp) => {
 }
 
 export default function MyOrders() {
-  const { uid, login } = useAuthContext()
+  const {uid, login} = useAuthContext()
   const [orders, setOrders] = useState([])
   const [japitems] = useJapitems()
   // const [itemsInCart, setItemsInCart] = useState(null)
@@ -30,7 +30,7 @@ export default function MyOrders() {
   // const { uid } = useAuthContext()
 
   async function get_rdb_my_orders(userId) {
-    return get(ref(database, `carts/${userId}`)).then((snapshot) => {
+    return get(ref(database, `carts/${userId}`)).then(snapshot => {
       if (snapshot.exists()) {
         const data = Object.values(snapshot.val())
         // setItemsInCart(
@@ -42,19 +42,6 @@ export default function MyOrders() {
       }
     })
   }
-
-  // function getItemInfo(itemId) {
-  //   const { name, imgUrl, price } = japitems.find((r) => r.id == itemId)
-  // }
-  // async function getJorderInfo(id) {
-  //   const snapshot = await get(ref(database, `jorders/${id}`))
-  //   if (snapshot.exists()) {
-  //     console.log("snapshot.val():", snapshot.val())
-  //     // return snapshot.val().name
-  //   } else {
-  //     throw new Error("order not found.")
-  //   }
-  // }
 
   useEffect(() => {
     get_rdb_my_orders(uid)
@@ -75,21 +62,20 @@ export default function MyOrders() {
       </p>
       {orders.length === 0 && <div className="bg-red-100">no orders</div>}
       <div>
-        {orders.map((order) => (
-          <div key={order.orderDate}>
+        {orders.map(order => (
+          <div key={order.orderDate} className="p-5">
             <div>{FormatTIME(order.orderDate)}</div>
             <hr />
             <div className="p-2 mb-4">
-              {
-                order.cartItems.map((row) => (
+              {order.cartItems.map(row => (
+                <>
                   <div
                     key={crypto.randomUUID()}
                     className="flex flex-row items-center m-2 justify-start"
                   >
                     <img
-                      src={japitems.find((r) => r.id == row.id).imgUrl}
+                      src={japitems.find(r => r.id == row.id).imgUrl}
                       className="w-20 mr-3"
-                      // width="100px"
                     />
                     {row.name}
                     {/* <span className="mx-4">id:{row.id}</span> */}
@@ -100,27 +86,8 @@ export default function MyOrders() {
                       @{row.price}원
                     </span>
                   </div>
-                ))
-                // orders.cartItems.map((item) => {
-                //   return item.map((row) => {
-                //     const res_item = { id: row.id, quantity: row.quantity }
-                //     // const { id, quantity } = res_item
-                //     return (
-                //       <div
-                //         key={res_item.id}
-                //         className="bg-blue-100 grid  grid-cols-2 "
-                //       >
-                //         <div>id:{res_item.id}</div>
-                //         <div>qty:{res_item.quantity}</div>
-                //       </div>
-                //     )
-                //   })
-                // return {
-                //   ...item,
-                //   id: item.id,
-                //   quanity: item.quantity,
-                // }
-              }
+                </>
+              ))}
               <div>total : {order.total}</div>
               {/* )} */}
               {/* <span>{id}</span> */}
