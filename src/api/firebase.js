@@ -74,21 +74,18 @@ export function updateRDB_user(value) {
 }
 
 export async function getRDB_users() {
-  return (
-    get(ref(database, `users`)) //
-      //   // return get(ref(db, "admins")) //
-      .then(snapshot => {
-        if (snapshot.exists()) {
-          const users = snapshot.val()
-          // console.log('users:',users)
-          return users
-          // return { ...users }
-        } else {
-          console.log("get users")
-        }
-      })
-      .catch(error => console.log(error))
-  )
+  return get(ref(database, `users`))
+    .then(snapshot => {
+      if (snapshot.exists()) {
+        const users = snapshot.val()
+        // console.log('users:',users)
+        return users
+        // return { ...users }
+      } else {
+        console.log("get users")
+      }
+    })
+    .catch(error => console.log(error))
 }
 
 export async function getRDB_user(userId) {
@@ -167,6 +164,13 @@ export async function updateQuantity(prev, itemQty) {
   })
   console.log("data qty updated")
 }
+
+export async function updateJapitemQty(prev, qty) {
+  update(ref(database, `japitems/{$prev.id}`), {
+    qty
+  }).catch(error => console.log(error))
+}
+
 export async function updateFBPrice(prev, itemPrice) {
   set(ref(database, `/japitems/${prev.id}`), {
     ...prev,
@@ -265,6 +269,20 @@ export async function getJorder(uid) {
     })
     .catch(error => console.log(error))
 }
+
+export async function getRDB_Japitem(JapitemID) {
+  const snapshot = await get(ref(database, `japitems/${JapitemID}`))
+  const japitem = snapshot.val() || {}
+  return Object.values(japitem)
+}
+
+// export async function getRDB_Japitem(JapitemID) {
+//   return get(ref(database, `japitems/${JapitemID}`)) //
+//     .then(snapshot => {
+//       const japitems = snapshot.val() || {}
+//       return Object.values(japitems)
+//     })
+// }
 
 export async function addOrUpdateToCart(userId, product) {
   return set(ref(database, `carts/${userId}/${product.id}`), product)

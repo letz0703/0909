@@ -15,7 +15,8 @@ import {
   updateRDB_user,
   getRDB_user,
   updateCartTotal,
-  setRDB_user
+  setRDB_user,
+  updateJapitemQty
 } from "../api/firebase"
 import {useAuthState} from "react-firebase-hooks/auth"
 import {useRef, useState} from "react"
