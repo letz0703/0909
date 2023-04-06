@@ -195,7 +195,7 @@ export default function NewProduct() {
               {FormatCurrency(addedJapitem.price)}
             </span>
             <img
-              src={addedJapitem.imgUrl}
+              src={addedJapitem?.imgUrl || null}
               className="new-product__list-image mx-auto"
               style={{width: "96px"}}
             />

@@ -65,7 +65,7 @@ export default function MyOrders() {
                   className="flex flex-row items-center m-2 justify-start"
                 >
                   <img
-                    src={japitems.find(r => r.id == row.id).imgUrl}
+                    src={japitems.find(r => r.id == row.id)?.imgUrl}
                     className="w-20 mr-3"
                   />
                   {row.name}
