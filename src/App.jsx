@@ -22,7 +22,7 @@ import {useDeferredValue} from "react"
 
 const queryClient = new QueryClient()
 export const JapitemContext = createContext()
-const LOCAL_STORAGE_KEY = "icanmart.japitems"
+const LOCAL_STORAGE_KEY = "icanmcartItemIDart.japitems"
 
 export const SearchContext = createContext()
 

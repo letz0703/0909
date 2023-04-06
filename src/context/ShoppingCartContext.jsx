@@ -72,7 +72,7 @@ export function ShoppingCartProvider({children}) {
         ]
       } else {
         return currItems.map(item => {
-          if (item.id === cartItemID) {
+          if (item.id === crypto.randomUUID()) {
             return {
               ...item,
               quantity: item.quantity + 1,

@@ -245,6 +245,12 @@ export async function getOrders() {
     .catch(error => console.log(error))
 }
 
+export async function getCarts() {
+  const snapshot = await get(ref(database, `carts/`))
+  const carts = snapshot.val() || []
+  return Object.values(carts)
+}
+
 export async function getCart(userId) {
   return get(ref(database, `carts/${userId}`)) //
     .then(snapshot => {

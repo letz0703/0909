@@ -55,7 +55,7 @@ export default function MyOrders() {
       <div>
         {orders.map(order => (
           <div key={order.cartId} className="p-5">
-            {console.log(order)}
+            {/* {console.log(order)} */}
             <div>{FormatTIME(order.orderDate)}</div>
             <hr />
             <div className="p-2 mb-4">
