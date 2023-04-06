@@ -215,7 +215,7 @@ export default function NewProduct() {
           <span className="font-semibold">
             TOTAL: {FormatCurrency(addedJapitem.qty * addedJapitem.price)}
           </span>
-          {/* </div> */}
+          <h1>전체 주문</h1>
 
           <style>{`
         .newProduct__table{
