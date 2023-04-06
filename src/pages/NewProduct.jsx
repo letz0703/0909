@@ -15,6 +15,7 @@ import {uploadImage} from "../api/uploader"
 import {useJapitems} from "../hooks/use-japitems"
 import {getDatabase, ref, set, get, remove, child} from "firebase/database"
 import {useLocalStorage} from "../hooks/use-local-storage"
+import IcORders from "../components/IcORders"
 const INITIAL_PRODUCT = {
   id: "",
   code: "",
@@ -216,6 +217,7 @@ export default function NewProduct() {
             TOTAL: {FormatCurrency(addedJapitem.qty * addedJapitem.price)}
           </span>
           <h1>전체 주문</h1>
+          <IcORders />
 
           <style>{`
         .newProduct__table{
