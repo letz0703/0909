@@ -258,7 +258,6 @@ export default function NewProduct() {
           .new-product__list-image{
             width: 10rem;
           }
-
           `}</style>
           {/* </div> */}
           {/* ))} */}
