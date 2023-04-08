@@ -162,7 +162,6 @@ export function PopCart({isOpen}) {
       // const item = storeItems.find((i) => i.id === cartItem.id)
       const item = japitems.find(i => i.id === cartItem.id)
       const amount = total + (item?.price || 0) * cartItem.quantity
-      total_ref.current = amount
       return amount
     }, 0)
   }
