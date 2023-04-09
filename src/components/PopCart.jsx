@@ -170,6 +170,7 @@ export function PopCart({isOpen}) {
   useEffect(() => {
     localStorage.setItem("total", JSON.stringify({total: total_ref.current}))
   }, [total_ref.current])
+
   useEffect(() => {
     const a = getRDB_user(user?.uid).deliveryTo
   }, [])
