@@ -138,21 +138,18 @@
       "editor.action.addCommentLine",
       "cursorDown"
     ],
-    "addSemicolon": [
-      "cursorEnd",
-      { "command": "type", "args": { "text": ";" } }
-    ],
+    "addSemicolon": ["cursorEnd", {"command": "type", "args": {"text": ";"}}],
     "classname": [
       "classname",
-      { "command": "type", "args": { "text": "cn" } },
+      {"command": "type", "args": {"text": "cn"}},
       "insertSnippet"
     ],
     "doMySnippet": [
-      { "command": "type", "args": { "text": "cl" } },
+      {"command": "type", "args": {"text": "cl"}},
       "insertSnippet"
     ],
     "callbackSnippet": [
-      { "command": "type", "args": { "text": "nj" } },
+      {"command": "type", "args": {"text": "nj"}},
       "insertSnippet"
     ]
   },
@@ -165,10 +162,12 @@
   "bookmarks.useWorkaroundForFormatters": false,
   "eslint.format.enable": true,
   "git-blame.gitWebUrl": "https://github.com/letz0703/0909/commit/$ID",
+
+  "github.copilot.inlineSuggest.enable": false,
+
   "[jsonc]": {
     "editor.defaultFormatter": "svipas.prettier-plus"
   }
-  // "github.copilot.inlineSuggest.enable": true
   // "github.copilot.advanced": {
 
   // }

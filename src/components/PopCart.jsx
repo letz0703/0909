@@ -157,13 +157,20 @@ export function PopCart({isOpen}) {
         }
   }, [user])
 
+  const [remitems, setRemitems] = useState(() => {
+    return JSON.parse(localStorage.getItem("ic-cart"))
+  })
+
   function calTotal() {
-    return cartItems.reduce((total, cartItem) => {
-      // const item = storeItems.find((i) => i.id === cartItem.id)
-      const item = japitems.find(i => i.id === cartItem.id)
-      const amount = (item?.price || 0) * cartItem.quantity + total
-      return amount
+    const totalAmount = remitems?.reduce((acc, item) => {
+      return acc + item.amount
     }, 0)
+    //return remitem?.reduce((total, cartItem) => {
+    //  const item = remitem?.find(i => i.id === cartItem.id)
+    //  //const item = japitems.find(i => i.id === cartItem.id)
+    //  const amount = (item?.price || 0) * remitem?.quantity + total
+    //  return amount
+    //}, 0)
   }
   const [remit, setRemit] = useState(calTotal)
   console.log("remit", remit)
