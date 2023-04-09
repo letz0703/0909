@@ -139,10 +139,6 @@ export function PopCart({isOpen}) {
 
   const total_ref = useRef(0)
 
-  // useEffect(() => {
-  //   console.log("total_ref.current", total_ref.current)
-  // }, [total_ref.current])
-
   useEffect(() => {
     total_ref.current && updateCartTotal(cartItems, total_ref.current)
   }, [total_ref.current])
@@ -165,18 +161,12 @@ export function PopCart({isOpen}) {
     const totalAmount = remitems?.reduce((acc, item) => {
       return acc + item.amount
     }, 0)
-    //return remitem?.reduce((total, cartItem) => {
-    //  const item = remitem?.find(i => i.id === cartItem.id)
-    //  //const item = japitems.find(i => i.id === cartItem.id)
-    //  const amount = (item?.price || 0) * remitem?.quantity + total
-    //  return amount
-    //}, 0)
+    return totalAmount
   }
-  const [remit, setRemit] = useState(calTotal)
-  console.log("remit", remit)
-  useEffect(() => {
-    localStorage.setItem("total", JSON.stringify({total: total_ref.current}))
-  }, [total_ref.current])
+
+  const setTotalAmount = () => {
+    localStorage.setItem("total", JSON.stringify({total: 1000}))
+  }
 
   useEffect(() => {
     const a = getRDB_user(user?.uid).deliveryTo

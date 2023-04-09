@@ -163,7 +163,8 @@
   "eslint.format.enable": true,
   "git-blame.gitWebUrl": "https://github.com/letz0703/0909/commit/$ID",
 
-  "github.copilot.inlineSuggest.enable": false,
+  //"github.copilot.inlineSuggest.enable": false,
+  "github.copilot.inlineSuggest.enable": true,
 
   "[jsonc]": {
     "editor.defaultFormatter": "svipas.prettier-plus"

@@ -95,7 +95,7 @@ export async function getRDB_user(userId) {
         const user = snapshot.val()
         return user
       } else {
-        console.log("not rdb user")
+        //console.log("not rdb user")
       }
     })
     .catch(error => console.log(error))

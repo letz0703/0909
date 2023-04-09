@@ -51,15 +51,12 @@ export function ShoppingCartProvider({children}) {
     const res = japitems?.find(row => row.id === cartItemID)
     console.log("cartItemID?", cartItemID)
     setCartItems(currItems => {
-      // if (true) {
-      const cur_qty = getRDB_Japitem(cartItemID)
+      const japitem = getRDB_Japitem(cartItemID)
 
       if (currItems.find(item => item.id === cartItemID) == null) {
-        getRDB_Japitem(cartItemID).then(data => {
-          console.log(data)
-        })
-        console.log("currentJapitemQty", cur_qty)
-        // updateRDB_cartQty(cartItemID)
+        //getRDB_Japitem(cartItemID).then(data => {
+        //  console.log(data)
+        //})
         return [
           ...currItems,
           {
