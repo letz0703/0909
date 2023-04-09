@@ -73,7 +73,6 @@ function App() {
     timeoutMs: 1000,
     timeToFallback: 2000
   })
-  console.log("search", search, "search_def", search_def)
 
   if (location.pathname !== "/videos") {
     const search_def = useDeferredValue(search)

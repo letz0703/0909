@@ -34,7 +34,7 @@ export function PopCart({isOpen}) {
   })
   const [user] = useAuthState(auth)
 
-  const icUserInPopCart = localStorage.getItem("ic-user")
+  //const icUserInPopCart = localStorage.getItem("ic-user")
   const [currentAddress, setCurrentAddress] = useState("배송지 요망")
   const [phoneNumber, setPhoneNumber] = useState("연락처요함")
   useEffect(() => {
@@ -57,17 +57,6 @@ export function PopCart({isOpen}) {
       setPhoneNumber("연락처 요망")
     }
   }, [localStorage.phoneNumber])
-
-  // useEffect(() => {
-  //   const a = localStorage.getItem("ic-cart")
-  //   setCurrentAddress(a?.sendTo)
-  // }, [])
-
-  // const [deliveryTo, setDeliveryTo] = useState(() => {
-  //   getRDB_user(user?.uid)
-  //   // console.log(Object.values(a))
-  // })
-  // const [total, setTotal] = useState(0)
 
   const handleCart__Order = async cartItems => {
     const a = localStorage.getItem("ic-user")
@@ -161,14 +150,13 @@ export function PopCart({isOpen}) {
 
   const loc_total = localStorage.getItem("total")
 
-  console.log(loc_total)
-
   const [totalAmountToPay, setTotalAmountToPay] = useState(() => {
     return localStorage.getItem("total")
   })
 
   const setTotalAmount = () => {
     localStorage.setItem("total", JSON.stringify({total: calTotal()}))
+    setTotalAmountToPay(calTotal())
   }
 
   useEffect(() => {
@@ -198,7 +186,7 @@ export function PopCart({isOpen}) {
           <hr />
           <div className="ms-auto font-bold text-2xl p-3">
             Total {/* TODO:total 표시 */}
-            {FormatCurrency(calTotal())}
+            {FormatCurrency(getTotal())}
             <div>+ 기본택배 {<span>{deleiveryCost}</span>}원</div>
             <p className="text-blue-400">
               <span
