@@ -49,14 +49,10 @@ export function ShoppingCartProvider({children}) {
   }
   function increaseCartQuantity(cartItemID) {
     const res = japitems?.find(row => row.id === cartItemID)
-    console.log("cartItemID?", cartItemID)
     setCartItems(currItems => {
       const japitem = getRDB_Japitem(cartItemID)
 
       if (currItems.find(item => item.id === cartItemID) == null) {
-        //getRDB_Japitem(cartItemID).then(data => {
-        //  console.log(data)
-        //})
         return [
           ...currItems,
           {

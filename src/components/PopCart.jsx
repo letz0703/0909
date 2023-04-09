@@ -23,9 +23,6 @@ import {useRef, useState} from "react"
 import {useEffect} from "react"
 import {RiWindowLine} from "react-icons/ri"
 import {useNavigate} from "react-router-dom"
-// type PopCartProps = {
-//   isOpen: boolean
-// }
 
 const deleiveryCost = parseInt(4000)
 
@@ -137,11 +134,6 @@ export function PopCart({isOpen}) {
     getRDB_user()
   }, [user])
 
-  const total_ref = useRef(0)
-
-  useEffect(() => {
-    total_ref.current && updateCartTotal(cartItems, total_ref.current)
-  }, [total_ref.current])
   // local storage 에 sendTo 가 있는지 확인 한다
   useEffect(() => {
     const a = localStorage.getItem("ic-cart")
@@ -156,6 +148,9 @@ export function PopCart({isOpen}) {
   const [remitems, setRemitems] = useState(() => {
     return JSON.parse(localStorage.getItem("ic-cart"))
   })
+  useEffect(() => {
+    remitems && updateCartTotal(cartItems)
+  }, [remitems])
 
   function calTotal() {
     const totalAmount = remitems?.reduce((acc, item) => {
@@ -164,9 +159,21 @@ export function PopCart({isOpen}) {
     return totalAmount
   }
 
+  const loc_total = localStorage.getItem("total")
+
+  console.log(loc_total)
+
+  const [totalAmountToPay, setTotalAmountToPay] = useState(() => {
+    return localStorage.getItem("total")
+  })
+
   const setTotalAmount = () => {
-    localStorage.setItem("total", JSON.stringify({total: 1000}))
+    localStorage.setItem("total", JSON.stringify({total: calTotal()}))
   }
+
+  useEffect(() => {
+    setTotalAmount()
+  }, [loc_total])
 
   useEffect(() => {
     const a = getRDB_user(user?.uid).deliveryTo
