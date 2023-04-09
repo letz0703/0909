@@ -38,7 +38,6 @@ export function PopCart({isOpen}) {
   const [user] = useAuthState(auth)
 
   const icUserInPopCart = localStorage.getItem("ic-user")
-  // localStorage.getItem("ic-user")
   const [currentAddress, setCurrentAddress] = useState("배송지 요망")
   const [phoneNumber, setPhoneNumber] = useState("연락처요함")
   useEffect(() => {
@@ -51,6 +50,7 @@ export function PopCart({isOpen}) {
       setCurrentAddress("배송지 요망")
     }
   }, [localStorage.addressTo])
+
   useEffect(() => {
     const a = localStorage.getItem("phoneNumber")
     setPhoneNumber(a)
@@ -161,7 +161,7 @@ export function PopCart({isOpen}) {
     return cartItems.reduce((total, cartItem) => {
       // const item = storeItems.find((i) => i.id === cartItem.id)
       const item = japitems.find(i => i.id === cartItem.id)
-      const amount = total + (item?.price || 0) * cartItem.quantity
+      const amount = (item?.price || 0) * cartItem.quantity + total
       return amount
     }, 0)
   }
