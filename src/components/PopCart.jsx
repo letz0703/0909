@@ -1,11 +1,11 @@
-import {Offcanvas, Stack} from "react-bootstrap"
+import { Offcanvas, Stack } from "react-bootstrap"
 // import storeItems from "../data/items.json"
-import {OffcanvasHeader} from "react-bootstrap"
-import {useShoppingCart} from "../context/ShoppingCartContext"
+import { OffcanvasHeader } from "react-bootstrap"
+import { useShoppingCart } from "../context/ShoppingCartContext"
 import FormatCurrency from "../util/formatCurrency"
 import CartItem from "./CartItem"
-import {useJapitems} from "../hooks/use-japitems"
-import {useLocalStorage} from "../hooks/use-local-storage"
+import { useJapitems } from "../hooks/use-japitems"
+import { useLocalStorage } from "../hooks/use-local-storage"
 // import {addDoc, collection} from "firebase/firestore"
 import {
   getRDB_users,
@@ -16,21 +16,21 @@ import {
   getRDB_user,
   updateCartTotal,
   setRDB_user,
-  updateJapitemQty
+  updateJapitemQty,
 } from "../api/firebase"
-import {useAuthState} from "react-firebase-hooks/auth"
-import {useRef, useState} from "react"
-import {useEffect} from "react"
-import {RiWindowLine} from "react-icons/ri"
-import {useNavigate} from "react-router-dom"
+import { useAuthState } from "react-firebase-hooks/auth"
+import { useRef, useState } from "react"
+import { useEffect } from "react"
+import { RiWindowLine } from "react-icons/ri"
+import { useNavigate } from "react-router-dom"
 
 const deleiveryCost = parseInt(4000)
 
-export function PopCart({isOpen}) {
+export function PopCart({ isOpen }) {
   const [japitems] = useJapitems()
-  const {closeCart, openCart, cartItems, getTotal} = useShoppingCart()
+  const { closeCart, openCart, cartItems, getTotal } = useShoppingCart()
   const [local__icCart, setCartItems] = useLocalStorage("ic-cart", {
-    ...cartItems
+    ...cartItems,
   })
   const [user] = useAuthState(auth)
 
@@ -60,7 +60,7 @@ export function PopCart({isOpen}) {
   /**
    * 카트 주문 처리
    */
-  const handleCart__Order = async cartItems => {
+  const handleCart__Order = async (cartItems) => {
     const a = localStorage.getItem("ic-user")
     const parsed_a = JSON.parse(a)
     setRDB_user(parsed_a.uid, parsed_a)
@@ -160,7 +160,7 @@ export function PopCart({isOpen}) {
   })
 
   const setTotalAmount = () => {
-    localStorage.setItem("total", JSON.stringify({total: calTotal()}))
+    localStorage.setItem("total", JSON.stringify({ total: calTotal() }))
     setTotalAmountToPay(calTotal())
   }
 
@@ -178,14 +178,14 @@ export function PopCart({isOpen}) {
       // show={true}
       onHide={closeCart}
       placement="top"
-      style={{width: "100%", height: "100%"}}
+      style={{ width: "100%", height: "100%" }}
     >
       <Offcanvas.Header closeButton>
         <Offcanvas.Title>Cart</Offcanvas.Title>
       </Offcanvas.Header>
       <Offcanvas.Body>
         <Stack gap={3}>
-          {cartItems.map(item => (
+          {cartItems.map((item) => (
             <CartItem key={crypto.randomUUID()} {...item} />
           ))}
           <hr />

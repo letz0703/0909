@@ -1,7 +1,7 @@
 {
   "tailwind-fold.autoFold": true,
   "editor.fontWeight": "400",
-  "workbench.colorTheme": "One Monokai",
+  "workbench.colorTheme": "Ayu Mirage",
   "workbench.colorCustomizations": {
     "tab.activeBackground": "#770b29"
   },
@@ -153,7 +153,7 @@
       "insertSnippet"
     ]
   },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "svipas.prettier-plus",
   "emmet.showSuggestionsAsSnippets": true,
   "[javascriptreact]": {
     "editor.defaultFormatter": "svipas.prettier-plus"
@@ -168,7 +168,16 @@
 
   "[jsonc]": {
     "editor.defaultFormatter": "svipas.prettier-plus"
-  }
+  },
+  "editor.inlineSuggest.suppressSuggestions": true,
+  "editor.snippetSuggestions": "inline",
+  "editor.suggest.snippetsPreventQuickSuggestions": true,
+  "editor.suggest.showSnippets": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.inlineSuggest.showToolbar": "onHover",
+  "audioCues.lineHasInlineSuggestion": "off",
+  "emmet.useInlineCompletions": false,
+  "editor.tabCompletion": "onlySnippets"
   // "github.copilot.advanced": {
 
   // }
