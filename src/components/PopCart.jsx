@@ -69,11 +69,14 @@ export function PopCart({isOpen}) {
       cartItems,
       currentAddress,
       phoneNumber,
-      total_ref.current
+      getTotal()
     )
 
-    setCartItems([])
-    window.location.replace("./shop")
+    /**
+     * 카트 비우기
+     */
+    //setCartItems([])
+    //window.location.replace("./shop")
   }
 
   function handleResetCart() {
@@ -167,7 +170,7 @@ export function PopCart({isOpen}) {
     const a = getRDB_user(user?.uid).deliveryTo
   }, [])
 
-  return [
+  return (
     <Offcanvas
       show={isOpen}
       // show={true}
@@ -185,7 +188,6 @@ export function PopCart({isOpen}) {
           ))}
           <hr />
           <div className="ms-auto font-bold text-2xl p-3">
-            Total {/* TODO:total 표시 */}
             {FormatCurrency(getTotal())}
             <div>+ 기본택배 {<span>{deleiveryCost}</span>}원</div>
             <p className="text-blue-400">
@@ -212,7 +214,7 @@ export function PopCart({isOpen}) {
         <div className="flex justify-center items-center pt-2">
           배송지:{currentAddress}
           <button className="btn green h-[1.8em]" onClick={changeAddress}>
-            수정
+            수정
           </button>
         </div>
         <div className="flex justify-center items-center pt-2">
@@ -231,5 +233,5 @@ export function PopCart({isOpen}) {
           `}</style>
       </Offcanvas.Body>
     </Offcanvas>
-  ]
+  )
 }
