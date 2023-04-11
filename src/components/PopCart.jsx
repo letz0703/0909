@@ -77,8 +77,8 @@ export function PopCart({isOpen}) {
     /**
      * 카트 비우기
      */
-    //setCartItems([])
-    //window.location.replace("./shop")
+    setCartItems([])
+    window.location.replace("./shop")
   }
 
   function handleResetCart() {
