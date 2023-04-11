@@ -57,7 +57,9 @@ export function PopCart({isOpen}) {
       setPhoneNumber("연락처 요망")
     }
   }, [localStorage.phoneNumber])
-
+  /**
+   * 카트 주문 처리
+   */
   const handleCart__Order = async cartItems => {
     const a = localStorage.getItem("ic-user")
     const parsed_a = JSON.parse(a)
