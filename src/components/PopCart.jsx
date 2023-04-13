@@ -153,16 +153,15 @@ export function PopCart({ isOpen }) {
   return (
     //prettier-ignore
     <Offcanvas
-      show={isOpen}
-      // show={true}
+    //show unshow
+      //show={isOpen}
+      show={true}
       onHide={closeCart} placement="top" style={{width: "100%", height: "100%"}} >
       <Offcanvas.Header closeButton> <Offcanvas.Title>Cart</Offcanvas.Title></Offcanvas.Header>
       <Offcanvas.Body>
         <Stack gap={3}>
           {cartItems.map(item => (
-            /**
-             * 카트 아템
-             */
+            /** * 카트아이템 */
             <CartItem key={crypto.randomUUID()} {...item} />
           ))}
           <hr />
