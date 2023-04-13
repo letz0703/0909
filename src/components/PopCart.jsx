@@ -160,6 +160,9 @@ export function PopCart({ isOpen }) {
       <Offcanvas.Body>
         <Stack gap={3}>
           {cartItems.map(item => (
+            /**
+             * 카트 아템
+             */
             <CartItem key={crypto.randomUUID()} {...item} />
           ))}
           <hr />
