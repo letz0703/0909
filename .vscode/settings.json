@@ -25,6 +25,9 @@
     }
   },
   "editor.tokenColorCustomizations": {
+    "comments": "",
+    "keywords": "#b3b4b7",
+    "variables": "#cca700",
     "textMateRules": [
       {
         "scope": [
@@ -45,12 +48,10 @@
           "foreground": "#af9cff"
         }
       },
-
       {
         "scope": ["source.tsx"],
         "settings": {
           "foreground": "#e8ad40"
-          // "fontStyle": " underline"
         }
       },
       {
@@ -156,7 +157,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "emmet.showSuggestionsAsSnippets": true,
   "[javascriptreact]": {
-    "editor.defaultFormatter": "svipas.prettier-plus"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.formatOnPaste": false,
   "bookmarks.useWorkaroundForFormatters": false,
