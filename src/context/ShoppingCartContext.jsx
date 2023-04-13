@@ -91,9 +91,9 @@ export function ShoppingCartProvider({ children }) {
 
   const ref_rdb_qty = useRef(0)
   function decreaseCartQuantity(id) {
-    console.log("rdb 수량은 100개입니다")
+    //console.log("rdb 수량은 100개입니다")
     const rdbt = getRDB_Japitem(id)
-    //rdbt.then((row) => console.log("row.qty:", row.qty))
+    rdbt.then((row) => console.log("row.qty:", row.qty))
     // row.qty: 2
 
     rdbt.then((row) => {
