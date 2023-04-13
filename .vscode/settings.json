@@ -1,4 +1,6 @@
 {
+  //"github.copilot.inlineSuggest.enable": false,
+  "github.copilot.inlineSuggest.enable": true,
   "tailwind-fold.autoFold": true,
   "editor.fontWeight": "400",
   "workbench.colorTheme": "One Monokai",
@@ -25,7 +27,7 @@
     }
   },
   "editor.tokenColorCustomizations": {
-    "comments": "#00000000",
+    "comments": "",
     "keywords": "#b3b4b7",
     "variables": "#cca700",
     "textMateRules": [
@@ -119,37 +121,6 @@
         "settings": {
           "foreground": "#c5c5c5"
         }
-      },
-      {
-        "scope": [
-          "hidecomments",
-          "comment",
-          "comment.block",
-          "comment.line",
-          "comment.line.double-slash",
-          "variable.other.jsdoc",
-          "storage.type.class.jsdoc",
-          "punctuation.definition.block.tag.jsdoc",
-          "punctuation.definition.bracket.curly.begin.jsdoc",
-          "punctuation.definition.bracket.curly.end.jsdoc",
-          "entity.name.type.instance.jsdoc",
-          "comment.block.documentation.ts",
-          "comment.block.documentation.js",
-          "comment.block.documentation.cs",
-          "comment.block.documentation.cs entity.other.attribute-name.localname.cs",
-          "comment.block.documentation.cs entity.other.attribute-name.cs",
-          "comment.block.documentation.cs punctuation.definition.tag.cs",
-          "comment.block.documentation.cs punctuation.definition.string.begin.cs",
-          "comment.block.documentation.cs punctuation.definition.string.end.cs",
-          "comment.block.documentation.cs punctuation.definition.bracket.curly.begin.cs",
-          "comment.block.documentation.cs punctuation.definition.bracket.curly.end.cs",
-          "comment.block.documentation.cs punctuation.definition.block.tag.cs",
-          "comment.block.documentation.cs string.quoted.double.cs",
-          "comment.block.documentation.cs entity.name.tag.localname.cs"
-        ],
-        "settings": {
-          "foreground": "#00000000"
-        }
       }
     ]
   },
@@ -170,18 +141,21 @@
       "editor.action.addCommentLine",
       "cursorDown"
     ],
-    "addSemicolon": ["cursorEnd", {"command": "type", "args": {"text": ";"}}],
+    "addSemicolon": [
+      "cursorEnd",
+      { "command": "type", "args": { "text": ";" } }
+    ],
     "classname": [
       "classname",
-      {"command": "type", "args": {"text": "cn"}},
+      { "command": "type", "args": { "text": "cn" } },
       "insertSnippet"
     ],
     "doMySnippet": [
-      {"command": "type", "args": {"text": "cl"}},
+      { "command": "type", "args": { "text": "cl" } },
       "insertSnippet"
     ],
     "callbackSnippet": [
-      {"command": "type", "args": {"text": "nj"}},
+      { "command": "type", "args": { "text": "nj" } },
       "insertSnippet"
     ]
   },
@@ -194,9 +168,6 @@
   "bookmarks.useWorkaroundForFormatters": false,
   "eslint.format.enable": true,
   "git-blame.gitWebUrl": "https://github.com/letz0703/0909/commit/$ID",
-
-  //"github.copilot.inlineSuggest.enable": false,
-  "github.copilot.inlineSuggest.enable": true,
 
   "[jsonc]": {
     "editor.defaultFormatter": "svipas.prettier-plus"

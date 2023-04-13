@@ -267,6 +267,10 @@ export async function getJorders() {
     })
     .catch(error => console.log(error))
 }
+/**
+ * q: who ar you ?
+ * a:
+ */
 export async function getJorder(uid) {
   get(ref(database, `customers/jorders/${uid}`)) //
     .then(snapshot => {
@@ -277,9 +281,15 @@ export async function getJorder(uid) {
 }
 
 export async function getRDB_Japitem(JapitemID) {
-  const snapshot = await get(ref(database, `japitems/${JapitemID}`))
-  const japitem = snapshot.val() || {}
-  return Object.values(japitem)
+  return get(ref(database, `japitems/${JapitemID}`))
+    .then(snapshot => {
+      if (snapshot.exists()) {
+        const item = snapshot.val()
+        return item
+      }
+      return []
+    })
+    .catch(error => console.log(error))
 }
 
 // export async function getRDB_Japitem(JapitemID) {
