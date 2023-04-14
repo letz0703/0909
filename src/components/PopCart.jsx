@@ -166,8 +166,8 @@ export function PopCart({ isOpen }) {
     //prettier-ignore
     <Offcanvas
     //show unshow
-      show={isOpen}
-      //show={true}
+      //show={isOpen}
+      show={true}
       onHide={closeCart} placement="top" style={{width: "100%", height: "100%"}} >
       <Offcanvas.Header closeButton> <Offcanvas.Title>Cart</Offcanvas.Title></Offcanvas.Header>
       <Offcanvas.Body>
