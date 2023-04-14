@@ -16,7 +16,8 @@ const deleiveryCost = parseInt(4000)
 
 export function PopCart({ isOpen }) {
   const [japitems] = useJapitems()
-  const { closeCart, openCart, cartItems, getTotal } = useShoppingCart()
+  const { closeCart, openCart, cartItems, getTotal, getItemQuantity } =
+    useShoppingCart()
   const [local__icCart, setCartItems] = useLocalStorage("ic-cart", {
     ...cartItems,
   })

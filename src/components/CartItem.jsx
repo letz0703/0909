@@ -9,14 +9,15 @@ import { useJapitems } from "../hooks/use-japitems"
 const ICON_BOX = "transition-all cursor-pointer hover:text-brand mx-1"
 
 export default function CartItem(props) {
-  const { cartItemID: id, quantity } = props
+  const { id, quantity } = props
   const [japitems, setJapitems] = useJapitems()
   const storeItems = japitems
   const item = storeItems.find((i) => i.id === id)
   if (item == null) return null
 
   //prettier-ignore
-  const { increaseCartQuantity, decreaseCartQuantity, handleDecreaseCartQty, removeFromCart, } = useShoppingCart()
+  const { increaseCartQuantity, decreaseCartQuantity, handleDecreaseCartQty, removeFromCart, getItemQuantity} = useShoppingCart()
+  const qty = getItemQuantity(id)
 
   return (
     //prettier-ignore
@@ -28,7 +29,8 @@ export default function CartItem(props) {
       <div className="me-auto">
         <div>
           {item.name}
-          {quantity >= 1 && (
+          {/*{quantity >= 1 && (*/}
+          {qty >= 1 && (
             <span className="text-muted" style={{ fontSize: ".65rem" }}>
               x{quantity}
             </span>
@@ -38,9 +40,7 @@ export default function CartItem(props) {
           {FormatCurrency(item.price)}
         </div>
         <div>
-          <button
-            className="btn-gradient red mini"
-            onClick={() => decreaseCartQuantity(item.id)}
+          <button className="btn-gradient red mini" onClick={() => decreaseCartQuantity(item.id)}
           > - </button>
           {quantity}
           <button className="btn-gradient blue mini" onClick={() => increaseCartQuantity(item.id)}
