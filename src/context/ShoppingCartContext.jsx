@@ -1,4 +1,5 @@
-import { createContext, useState, useContext, useRef } from "react"
+//https://youtu.be/lATafp15HWA?t=2021
+import { createContext, useState, useContext, useRef, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { usePop } from "../components/pop/pop"
 import { PopCart } from "../components/PopCart"
@@ -19,13 +20,12 @@ const ShoppingCartContext = createContext({})
 export function useShoppingCart() {
   return useContext(ShoppingCartContext)
 }
-
 export function ShoppingCartProvider({ children }) {
+  const [cartItems, setCartItems] = useLocalStorage("ic-cart", [])
   const cart_user = localStorage.getItem("ic-user")
   const parsed_cart_user = JSON.parse(cart_user)
   const cart_user_id = parsed_cart_user?.uid
   const navigate = useNavigate()
-  const [cartItems, setCartItems] = useLocalStorage("ic-cart", [])
   // const [isOpen] = usePop(false)
   const [isOpen, setIsOpen] = useState(false)
   // console.log(cartItems)
@@ -55,36 +55,59 @@ export function ShoppingCartProvider({ children }) {
   function getItemQuantity(id) {
     return cartItems.find((item) => item.id === id)?.quantity || 0
   }
-  function increaseCartQuantity(cartItemID) {
-    const res = japitems?.find((row) => row.id === cartItemID)
-    setCartItems((currItems) => {
-      const japitem = getRDB_Japitem(cartItemID)
 
-      if (currItems.find((item) => item.id === cartItemID) == null) {
+  const ref_cartItemQuantity = useRef(0)
+
+  function increaseCartQuantity(id) {
+    /**
+     * https://youtu.be/lATafp15HWA?t=2184
+     */
+    setCartItems((currItems) => {
+      if (currItems.find((i) => i.id === id) == null) {
         return [
           ...currItems,
           {
-            cartItemID,
+            id,
             quantity: 1,
-            name: res.name,
-            price: res.price,
-            amount: res.price * 1,
           },
         ]
       } else {
-        return currItems.map((item) => {
-          if (item.id === crypto.randomUUID()) {
-            return {
-              ...item,
-              quantity: item.quantity + 1,
-              amount: (item.quantity + 1) * item.price,
-            }
-          } else {
-            return item
-          }
-        })
+        return currItems.map((item) =>
+          item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+        )
       }
     })
+
+    // increae order quantity when button is clicked
+    //const res = japitems?.find((row) => row.id === cartItemID)
+    //const cart_quantity = res[0].qty
+    //console.log("cart_quantity:", cart_quantity)
+    //setCartItems((currItems) => {
+    //const japitem = getRDB_Japitem(cartItemID)
+    //if (currItems.find((item) => item.id === cartItemID) == null) {
+    //  return [
+    //    ...currItems,
+    //    {
+    //      cartItemID,
+    //      quantity: 1,
+    //      name: res.name,
+    //      price: res.price,
+    //      amount: res.price * 1,
+    //    },
+    //  ]
+    //} else {
+    //  return currItems.map((item) => {
+    //    if (item.id === crypto.randomUUID()) {
+    //      return {
+    //        ...item,
+    //        quantity: item.quantity + 1,
+    //        amount: (item.quantity + 1) * item.price,
+    //      }
+    //    } else {
+    //      return item
+    //    }
+    //  })
+    //}
   }
 
   // 빼기

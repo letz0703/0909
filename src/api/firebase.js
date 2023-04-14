@@ -207,7 +207,7 @@ export async function addNewCart(
   total
 ) {
   updateRDB_user(addressTo || "배송지요함")
-  return set(
+  return update(
     ref(database, `carts/${userId}/${cartId}`),
     // return set(ref(database, `carts/${userId}/${cartId}`),
     {
