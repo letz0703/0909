@@ -64,94 +64,36 @@ export function ShoppingCartProvider({ children }) {
      */
     setCartItems((currItems) => {
       if (currItems.find((i) => i.id === id) == null) {
-        return [
-          ...currItems,
-          {
-            id,
-            quantity: 1,
-          },
-        ]
+        return [...currItems, { id, quantity: 1 }]
       } else {
         return currItems.map((item) =>
           item.id === id ? { ...item, quantity: item.quantity + 1 } : item
         )
       }
     })
-
-    // increae order quantity when button is clicked
-    //const res = japitems?.find((row) => row.id === cartItemID)
-    //const cart_quantity = res[0].qty
-    //console.log("cart_quantity:", cart_quantity)
-    //setCartItems((currItems) => {
-    //const japitem = getRDB_Japitem(cartItemID)
-    //if (currItems.find((item) => item.id === cartItemID) == null) {
-    //  return [
-    //    ...currItems,
-    //    {
-    //      cartItemID,
-    //      quantity: 1,
-    //      name: res.name,
-    //      price: res.price,
-    //      amount: res.price * 1,
-    //    },
-    //  ]
-    //} else {
-    //  return currItems.map((item) => {
-    //    if (item.id === crypto.randomUUID()) {
-    //      return {
-    //        ...item,
-    //        quantity: item.quantity + 1,
-    //        amount: (item.quantity + 1) * item.price,
-    //      }
-    //    } else {
-    //      return item
-    //    }
-    //  })
-    //}
   }
 
   // 빼기
-
-  const ref_rdb_qty = useRef(0)
   function decreaseCartQuantity(id) {
-    //console.log("rdb 수량은 100개입니다")
-    const rdbt = getRDB_Japitem(id)
-    rdbt.then((row) => console.log("row.qty:", row.qty))
-    // row.qty: 2
-
-    rdbt.then((row) => {
-      ref_rdb_qty.current = row.qty
-      localStorage.setItem("rdb_qty", ref_rdb_qty.current)
+    setCartItems((currItems) => {
+      if (cartItems.find((i) => i.id === id)?.quantity === 1) {
+        return cartItems.filter((item) => item.id !== id)
+      } else {
+        return cartItems.map((item) => {
+          if (item.id === id) {
+            return { ...item, quantity: item.quantity - 1 }
+          } else {
+            return item
+          }
+        })
+      }
     })
 
-    //a.then((row) => console.log(row))
-    //get local ic-cart quantity
-    // get local cart quantity
-    //const a = localStorage.getItem("ic-cart")
-    //if (a.find((i) => i.id === id)?.quantity !== 1) {
-    //  return a.map((row) => {
-    //    if (row.id === id) {
-    //      return { ...row, quantity: row.quantity - 1 }
-    //    } else {
-    //      return row
-    //    }
-    //  })
-    //} else {
-    //  return { ...row, quantity: 0 }
-    //}
-    //console.log("ic-cart", JSON.parse(a))
-    //setCartItems((currItems) => {
-    //  if (currItems.find((item) => item.id === id)?.quantity === 1) {
-    //    return currItems.filter((item) => item.id !== id)
-    //  } else {
-    //    return currItems.map((item) => {
-    //      if (item.id === id) {
-    //        return { ...item, quantity: item.quantity - 1 }
-    //      } else {
-    //        return item
-    //      }
-    //    })
-    //  }
+    //const rdbt = getRDB_Japitem(id)
+    //rdbt.then((row) => console.log("row.qty:", row.qty))
+    //rdbt.then((row) => {
+    //  ref_rdb_qty.current = row.qty
+    //  localStorage.setItem("rdb_qty", ref_rdb_qty.current)
     //})
   }
 
@@ -161,12 +103,8 @@ export function ShoppingCartProvider({ children }) {
     })
   }
 
-  const getTotal = () => {
-    return cartItems.reduce(
-      (total, item) => total + item.price * item.quantity,
-      0
-    )
-  }
+  const getTotal = () =>
+    cartItems.reduce((total, item) => total + item.price * item.quantity, 0)
   // console.log('total', getTotal())
 
   const shoppingCartContextValue = {
