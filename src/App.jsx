@@ -1,24 +1,19 @@
+import { createContext } from "react"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { Container } from "react-bootstrap"
-import { useEffect, useState } from "react"
-import { Routes, Route, Outlet } from "react-router-dom"
+import { useState } from "react"
+import { Outlet } from "react-router-dom"
 import "./App.css"
 import Navbar from "./components/Navbar"
 import { AuthContextProvider } from "./context/AuthContext"
-import ShopHome from "./pages/ShopHome"
 import { ShoppingCartProvider } from "./context/ShoppingCartContext"
 import { v4 as uuidv4 } from "uuid"
-import { createContext } from "react"
-import { extraData } from "./data.js"
-import { collection, getDocs } from "firebase/firestore"
 import { db } from "./api/firebase"
 import SearchHeader from "./components/SearchHeader/SearchHeader"
-import styles from "./App2.module.css"
 import { YoutubeApiProvider } from "./context/YoutubeApi"
 import { DetailContextProvider } from "./context/DetailContext"
-import Detail from "./components/Detail"
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 import { useDeferredValue } from "react"
+import { useJapitems } from "./hooks/use-japitems"
 
 const queryClient = new QueryClient()
 export const JapitemContext = createContext()
@@ -26,15 +21,8 @@ const LOCAL_STORAGE_KEY = "icanmcartItemIDart.japitems"
 
 export const SearchContext = createContext()
 
-function name() {}
 function App() {
-  const japitemsRef = collection(db, "japitems")
-
-  const [japitems, setJapitems] = useState(() => {
-    const japitemJSON = localStorage.getItem(LOCAL_STORAGE_KEY)
-    return JSON.parse(japitemJSON)
-  })
-
+  const [japitems, setJapitems] = useJapitems()
   const [search, setSearch] = useState("")
 
   function handleSearch(e) {
@@ -62,15 +50,10 @@ function App() {
     japitems,
   }
 
-  //const search_def = useDeferredValue(search, {
-  //  timeoutMs: 1000,
-  //  timeToFallback: 2000
-  //})
-
-  if (location.pathname !== "/videos") {
-    const search_def = useDeferredValue(search)
-    return (
-      <>
+  const search_def = useDeferredValue(search)
+  return (
+    <>
+      {location.pathname !== "/videos" ? (
         <SearchContext.Provider value={searchContextValue}>
           <ShoppingCartProvider>
             <DetailContextProvider>
@@ -88,37 +71,18 @@ function App() {
             </DetailContextProvider>
           </ShoppingCartProvider>
         </SearchContext.Provider>
-      </>
-    )
-  } else {
-    return (
-      <>
-        <SearchHeader />
-        <YoutubeApiProvider>
-          <QueryClientProvider client={queryClient}>
-            <Outlet />
-          </QueryClientProvider>
-        </YoutubeApiProvider>
-      </>
-    )
-  }
+      ) : (
+        <>
+          <SearchHeader />
+          <YoutubeApiProvider>
+            <QueryClientProvider client={queryClient}>
+              <Outlet />
+            </QueryClientProvider>
+          </YoutubeApiProvider>
+        </>
+      )}
+    </>
+  )
 }
 
 export default App
-
-const sampleJapitems = [
-  {
-    id: uuidv4(),
-    code: 1234,
-    name: "샤론파스 80매",
-    price: 10000,
-    imgUrl: "/imgs/shron80.jpg",
-  },
-  {
-    id: uuidv4(),
-    code: 5678,
-    name: "동전파스 156매 2각",
-    price: 10000,
-    imgUrl: "/imgs/donjunpas156.jpg",
-  },
-]
