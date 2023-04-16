@@ -77,14 +77,6 @@ export function PopCart({ isOpen }) {
   function changeAddress() {
     const newAddress = prompt("배송지 입력")
     localStorage.setItem("addressTo", JSON.stringify(newAddress))
-
-    // localStorage.setItem (
-    //   "ic-user",
-    //   JSON.stringify((prev) => {
-    //     return {...prev, sendTo: newAddress}
-    //   }
-    // )
-
     updateRDB_user(newAddress)
     setCurrentAddress(newAddress)
     if (newAddress != "") {
@@ -107,15 +99,16 @@ export function PopCart({ isOpen }) {
     getRDB_user()
   }, [user])
 
-  // local storage 에 sendTo 가 있는지 확인 한다
+  // local storage 에 sendTo 가 있는지 확인 한다 ai__
   useEffect(() => {
-    const a = localStorage.getItem("ic-cart")
-    a.sentTo
-      ? setCurrentAddress(a?.sendTo)
-      : () => {
-          setCurrentAddress("배송지 없음")
-          localStorage.setItem("ic-user", JSON.stringify(""))
-        }
+    const json_icCart = localStorage.getItem("ic-cart")
+    if (json_icCart) {
+      const { sendTo } = JSON.parse(json_icCart)
+      setCurrentAddress(sendTo || "배송지 없음")
+    } else {
+      setCurrentAddress("배송지 없음")
+      localStorage.setItem("ic-user", JSON.stringify(""))
+    }
   }, [user])
 
   const [remitems, setRemitems] = useState(() => {
