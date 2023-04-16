@@ -29,7 +29,7 @@ export default function Jap09Form({ icUser }) {
     jName: "",
     jCell: "",
     jCsNo: "",
-    jProduct: "곤약젤리+동전파스",
+    jProduct: "곤약젤리+동전파스(150달러 미만 주문)",
     // jDeliveryTo: "",
     jEtc: "",
   }
