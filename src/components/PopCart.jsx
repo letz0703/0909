@@ -34,7 +34,6 @@ export function PopCart({ isOpen }) {
   })
   const [user] = useAuthState(auth)
 
-  //const icUserInPopCart = localStorage.getItem("ic-user")
   const [currentAddress, setCurrentAddress] = useState("배송지 요망")
   const [phoneNumber, setPhoneNumber] = useState("연락처요함")
   useEffect(() => {
@@ -86,8 +85,6 @@ export function PopCart({ isOpen }) {
     window.location.replace("./shop")
   }
 
-  // const [addressTo, setAddressTo] = useLocalStorage("ic-user", {})
-
   function changeAddress() {
     const newAddress = prompt("배송지 입력")
     localStorage.setItem("addressTo", JSON.stringify(newAddress))
@@ -109,13 +106,6 @@ export function PopCart({ isOpen }) {
   function changeNumber() {
     const newPhoneNumber = prompt("전화번호 입력")
     localStorage.setItem("phoneNumber", JSON.stringify(newPhoneNumber))
-
-    // localStorage.setItem (
-    //   "ic-user",
-    //   JSON.stringify((prev) => {
-    //     return {...prev, sendTo: newAddress}
-    //   }
-    // )
 
     setPhoneNumber(newPhoneNumber)
     updateRDB_user(phoneNumber)
@@ -173,6 +163,7 @@ export function PopCart({ isOpen }) {
   }, [])
 
   return (
+    //prettier-ignore
     <Offcanvas
       show={isOpen}
       // show={true}
@@ -192,47 +183,19 @@ export function PopCart({ isOpen }) {
           <div className="ms-auto font-bold text-2xl p-3">
             {FormatCurrency(getTotal())}
             <div>+ 기본택배 {<span>{deleiveryCost}</span>}원</div>
-            <p className="text-blue-400">
-              <span
-                onClick={() => window.location.replace("/jap")}
-                className="p-2 bg-pink-200 cursor-pointer"
-              >
-                택배비 없애기(공동구매 신청)
-              </span>
-            </p>
-          </div>
+            <p className="text-blue-400"><span onClick={() => window.location.replace("/jap")} className="p-2 bg-pink-200 cursor-pointer" >
+                택배비 없애기(공동구매 신청) </span></p></div>
         </Stack>
         <div className="flex justify-center">
-          <button
-            className="btn blue"
-            onClick={() => handleCart__Order(cartItems)}
-          >
-            주문하기
-          </button>
-          <button className="btn red" onClick={() => handleResetCart()}>
-            지우기
-          </button>
+          <button className="btn blue" onClick={() => handleCart__Order(cartItems)} > 주문하기 </button>
+          <button className="btn red" onClick={() => handleResetCart()}> 지우기 </button>
         </div>
-        <div className="flex justify-center items-center pt-2">
-          배송지:{currentAddress}
-          <button className="btn green h-[1.8em]" onClick={changeAddress}>
-            수정
-          </button>
-        </div>
-        <div className="flex justify-center items-center pt-2">
-          연락처:{phoneNumber}
-          <button className="btn green h-[1.8em]" onClick={changeNumber}>
-            수정
-          </button>
-        </div>
+        <div className="flex justify-center items-center pt-2"> 배송지:{currentAddress} <button className="btn green h-[1.8em]" onClick={changeAddress}> 수정 </button> </div>
+        <div className="flex justify-center items-center pt-2"> 연락처:{phoneNumber} <button className="btn green h-[1.8em]" onClick={changeNumber}> 수정 </button> </div>
         <style>{`
-            body {
-              background-color: powderblue; color: black
-            }
-            .btn {
-              display: inline-block;
-            }
-          `}</style>
+            body { background-color: powderblue; color: black }
+            .btn { display: inline-block; } `}
+        </style>
       </Offcanvas.Body>
     </Offcanvas>
   )
