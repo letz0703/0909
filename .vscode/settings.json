@@ -177,5 +177,9 @@
   "editor.inlineSuggest.showToolbar": "onHover",
   "audioCues.lineHasInlineSuggestion": "off",
   "emmet.useInlineCompletions": false,
-  "editor.tabCompletion": "onlySnippets"
+  "editor.tabCompletion": "onlySnippets",
+  "editor.lineNumbers": "off"
+  // "github.copilot.advanced": {
+
+  // }
 }
