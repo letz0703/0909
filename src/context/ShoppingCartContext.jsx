@@ -63,8 +63,12 @@ export function ShoppingCartProvider({ children }) {
      * https://youtu.be/lATafp15HWA?t=2184
      */
     setCartItems((currItems) => {
+      /**
+       * 현재 아이템의 정보 가져오기
+       */
       if (currItems.find((i) => i.id === id) == null) {
-        return [...currItems, { id, quantity: 1 }]
+        const price = japitems.find((i) => i.id === id)?.price
+        return [...currItems, { id, quantity: 1, price }]
       } else {
         return currItems.map((item) =>
           item.id === id ? { ...item, quantity: item.quantity + 1 } : item
@@ -104,7 +108,7 @@ export function ShoppingCartProvider({ children }) {
   }
 
   const getTotal = () =>
-    cartItems.reduce((total, item) => total + item.price * item.quantity, 0)
+    cartItems?.reduce((total, item) => total + item.price * item.quantity, 0)
   // console.log('total', getTotal())
 
   const shoppingCartContextValue = {
