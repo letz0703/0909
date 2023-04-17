@@ -1,7 +1,7 @@
 {
   "tailwind-fold.autoFold": true,
   "editor.fontWeight": "400",
-  "workbench.colorTheme": "Ayu Mirage",
+  "workbench.colorTheme": "One Monokai",
   "workbench.colorCustomizations": {
     "tab.activeBackground": "#770b29"
   },
@@ -25,6 +25,9 @@
     }
   },
   "editor.tokenColorCustomizations": {
+    "comments": "",
+    "keywords": "#b3b4b7",
+    "variables": "#cca700",
     "textMateRules": [
       {
         "scope": [
@@ -45,12 +48,10 @@
           "foreground": "#af9cff"
         }
       },
-
       {
         "scope": ["source.tsx"],
         "settings": {
           "foreground": "#e8ad40"
-          // "fontStyle": " underline"
         }
       },
       {
