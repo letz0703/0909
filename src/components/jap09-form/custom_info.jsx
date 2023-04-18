@@ -1,7 +1,6 @@
 import { useState } from "react"
 import FormWrapper from "./form-wrapper"
 import { Agree } from "./Agree"
-import { useRef } from "react"
 import { useEffect } from "react"
 
 export default function CustomInfo() {
