@@ -17,5 +17,5 @@ export const useJapitems = () => {
     })
   }, [])
 
-  return [japitems, setJapitems]
+  return [japitems_def, setJapitems]
 }
