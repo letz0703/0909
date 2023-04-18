@@ -37,7 +37,7 @@ export default function AddressForm({
       <div className="address-form__info pb-3">
         <div>고객님께는 주문하신 상품과 공동구매 상품을 미리 보내 드리므로</div>
         <div>일주일 후 통관 되는, 공동구매 품목은 저희 소유입니다</div>
-        <div>해당 품목만 150불 이하, 1회 한정 수입 합니다</div>
+        <div>상기 품목만 150불 이하, 1회 한정 수입 합니다</div>
       </div>
       <style>{`
         .address-form__info {

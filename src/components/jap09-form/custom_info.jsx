@@ -1,5 +1,7 @@
 import { useState } from "react"
 import FormWrapper from "./form-wrapper"
+import { Agree } from "./Agree"
+
 export default function CustomInfo() {
   let SpecialSelected = "special-selected.jsx"
 
@@ -12,8 +14,10 @@ export default function CustomInfo() {
       <p>본 상품은 오프라인 방문 고객분들을 위한 서비스 상품입니다.</p>
       <p>신청 → 개인통관번호 확인 → 주문 가능시점에 개별 통보 드립니다.</p>
       <p>다음 주문은 최단 전주문이 통관 완료된 이후 가능합니다</p>
-      <p>본 동의서 및 개인통관 번호은 통관 1개월 후 삭제 합니다</p>
-      <p>재주문 시에는 다시 동의, 신청 하셔야 합니다</p>
+      <p>공동구매 후 동의서를 유지하시려면 아래에 체크 하세요</p>
+      <p>체크가 없을 경우 개인통관 번호은 통관 1개월 내 삭제 하며</p>
+      <p>재주문 시 다시 동의 신청 하셔야 합니다</p>
+      <Agree isComplete />
       {/* <div className="bg-blue-200 p-2">기타 문의는 twitter로 트윗해주세요</div> */}
 
       <style>{`
