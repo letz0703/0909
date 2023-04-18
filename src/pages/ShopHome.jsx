@@ -16,7 +16,6 @@ import useUpdatedEffect from "../hooks/use-updated-effect"
 
 export default function ShopHome() {
   const { user, uid } = useAuthContext()
-
   return (
     <div>
       {!user && <Slide />}
