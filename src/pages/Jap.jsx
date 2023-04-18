@@ -39,7 +39,7 @@ export default function Jap() {
   if (specialsQuery.isError)
     return <pre>{JSON.stringify(specialsQuery.error)}</pre>
 
-  return [
+  return (
     <div className="jap__ flex flex-col align-items-start justify-start mt-[7vh]">
       <div className="jap__primary-header">
         <div className=" bg-pink-100 rounded-full">
@@ -63,21 +63,16 @@ export default function Jap() {
             다음 주문은 제품 통관 후 가능(7-10일)
           </div>
         </div>
-        {user || icUser ? (
-          <Jap09Form icUser={icUser} />
-        ) : (
-          <>
+        <div>
+          {user || icUser ? (
+            <Jap09Form icUser={icUser} />
+          ) : (
             <button className="btn btn--primary" onClick={login}>
               google 로그인 및 신청
             </button>
-          </>
-        )}
+          )}
+        </div>
       </div>
-      {isAdmin ? (
-        <button onClick={() => navigate("/jap/ic")}>admin page</button>
-      ) : (
-        ""
-      )}
       <style>{`
       .jap__{
         background-image:url('/imgs/bg_jap.jpg');
@@ -95,8 +90,7 @@ export default function Jap() {
           font-size: 1rem;
 
         }
-
       `}</style>
-    </div>,
-  ]
+    </div>
+  )
 }
