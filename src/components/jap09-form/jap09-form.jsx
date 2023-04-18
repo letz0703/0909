@@ -65,23 +65,16 @@ export default function Jap09Form({ icUser }) {
   }
 
   const create_rdb_jorders = (data) => {
-    // if (user || icUser) {
     set(ref(database, `jorders/${data.uid}`), {
       name: data.jName,
-      // user?.displayName,
       uid: data.uid,
-      // uid: data.uid,
       cell: data.jCell,
       customNo: data.jCsNo,
       jProduct: "곤약젤리+동전파스",
-      // jProduct: data.jProduct,
       orderDate: Date(),
-      // deliveryTo: data.jDeliveryTo,
       delivery: "not yet",
-    })
-      // .then(() => alert("data saved"))
-      .catch((error) => console.log(error))
-    // }
+      deleteRequest: localStorage.getItem("deleteRequest") || false,
+    }).catch((error) => console.log(error))
   }
 
   const create_rdb_customers = (e) => {
