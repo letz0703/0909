@@ -27,26 +27,25 @@ export default function MyOrders() {
   const [japitems] = useJapitems()
 
   async function get_rdb_my_orders(userId) {
-    return get(ref(database, `carts/${userId}`)).then((snapshot) => {
+    return get(ref(database, `carts/${userId}/`)).then((snapshot) => {
       if (snapshot.exists()) {
         const data = Object.values(snapshot.val())
         setOrders(data)
+        return data
       }
     })
   }
 
   useEffect(() => {
     get_rdb_my_orders(uid)
-    return localStorage.setItem("my-orders", JSON.stringify(""))
   }, [uid])
 
+  //TODO
   /**
-   * order history
-   * 1. set local storage for item infomation
+   * 1: get orders from firebase
    */
 
-  const name = () => {}
-
+  console.log("orders:", orders)
   return (
     <div className="내주문 mt-[10.5vh]  lg:mt-[8.5vh]">
       <h1 className="md:mt-[14vh] lg:mt-[9vh]">주문 내역</h1>
@@ -75,11 +74,10 @@ export default function MyOrders() {
                 >
                   <img
                     src={japitems.find((r) => r.id == row.id)?.imgUrl}
+                    //src={japitems.find((r) => r.id == row.id)?.imgUrl}
                     className="w-20 mr-3"
                   />
-                  {row.name}
-                  {console.log("row:", row)}
-                  {/* <span className="mx-4">id:{row.id}</span> */}
+                  {japitems.find((r) => r.id == row.id).name}
                   <span className="ml-2 text-blue-500 font-semibold">
                     {row.quantity} 개
                   </span>
@@ -91,9 +89,7 @@ export default function MyOrders() {
               <div className="font-semibold text-blue-500 text-2xl">
                 total : {FormatCurrency(order.total)}
               </div>
-
-              {/* )} */}
-              {/* <span>{id}</span> */}
+              <div>배송지:{order.addressTo}</div>
             </div>
           </div>
         ))}
