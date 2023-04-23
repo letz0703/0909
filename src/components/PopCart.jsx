@@ -164,6 +164,10 @@ export function PopCart({ isOpen }) {
             <div>+ 기본택배 {<span>{deleiveryCost}</span>}원</div>
             <p className="text-blue-400"><span onClick={() => window.location.replace("/jap")} className="p-2 bg-pink-200 cursor-pointer" >
                 택배비 없애기(공동구매 신청) </span></p></div>
+                <hr/>
+                <div>궁금한점, 송금후, 문자 주세요. 010.9876.1815</div>
+                <div>전화는 안받습니다.</div>
+
         </Stack>
         <div className="flex justify-center">
           <button className="btn blue" onClick={() => handleCart__Order(cartItems)} > 주문하기 </button>
