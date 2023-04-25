@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-globals */
+/* eslint-disable no-undef */
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { Container } from "react-bootstrap"
 import { useEffect, useState } from "react"
@@ -21,7 +23,6 @@ const LOCAL_STORAGE_KEY = "icanmcartItemIDart.japitems"
 
 export const SearchContext = createContext()
 
-function name() {}
 function App() {
   const [japitems, setJapitems] = useState(() => {
     const japitemJSON = localStorage.getItem(LOCAL_STORAGE_KEY)
@@ -55,8 +56,9 @@ function App() {
     japitems,
   }
 
+  const search_def = useDeferredValue(search)
+
   if (location.pathname !== "/videos") {
-    const search_def = useDeferredValue(search)
     return (
       <>
         <SearchContext.Provider value={searchContextValue}>
