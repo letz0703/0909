@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable jsx-a11y/alt-text */
 // import { useAuthContext } from "../../context/AuthContext"
 import { useContext, useEffect, useState, useCallback, useRef } from "react"
 import FormatCurrency from "../util/formatCurrency"
@@ -15,47 +17,31 @@ import { login } from "../api/firebase"
 import { useLogger } from "../hooks/use-logger"
 import useDebounce from "../hooks/use-debounce"
 
-export default function Products() {
+export default function Products(product) {
   // const { isOpen_Detail, open_Detail, close_Detail } = useDetail()
   const { search } = useContext(SearchContext)
   const [japitems, setJapitems] = useJapitems()
   const { user, uid } = useAuthContext()
   const navigate = useNavigate()
-  // const display_item = useRef(japitems)
-  const {
-    // getItemQuantity,
-    increaseCartQuantity,
-    // decreaseCartQuantity,
-    // removeFromCart,
-    setCartItems,
-  } = useShoppingCart()
+  const { increaseCartQuantity, setCartItems } = useShoppingCart()
+  const [mainItems, setMainItems] = useState(() => {
+    return Object.values(product)
+  })
 
-  // const increseCartQuantity_mem = useCallback(
-  // (id) => {
-  // increaseCartQuantity(id)
-  // }
-  //   [increaseCartQuantity]
-  // )
+  useEffect(() => {
+    setMainItems(japitems)
+  }, [uid])
 
-  // useDebounce(
-  //   () => {
-  //     console.log("hi")
-  //   },
-  //   1000,
-  //   [user]
-  // )
-  // // useEffect(() => {
-  //   // console.log(display_item.current)
-  // }, [japitems])
   return (
     <div className="shop-home grid grid-cols-2 lg:grid-cols-5 gap-2 md:mt-[10vh] lg:mt-[5vh]">
-      {japitems
+      {mainItems
         .filter((item) => {
           return search.toLowerCase() === ""
             ? item
             : item.name.toLowerCase().includes(search)
         })
         .map((japitem) => (
+          // eslint-disable-next-line no-undef
           <div key={crypto.randomUUID()}>
             <div className="product__ flex justify-center space-around align-items-center  card h-100">
               <span className="max-w-[80%] truncate">{japitem.name}</span>
@@ -70,7 +56,6 @@ export default function Products() {
                     navigate(`/japitems/${japitem.id}`, { state: { japitem } })
                   }}
                 />
-                {/* <img src={japitem.imgUrl} className="new-product__list-image" /> */}
               </span>
               <button
                 className="btn btn--primary mini text-xs"

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useContext, useEffect, useRef, useState } from "react"
 import { getRDB_user, getRDB_users } from "../api/firebase"
 // import { SearchContext } from "../App"
@@ -13,14 +14,14 @@ import useUpdatedEffect from "../hooks/use-updated-effect"
 // import useToggle from "../hooks/use-toggle"
 // import Store from "./Store"
 // import Test from "./Test"
+import product from "./data_product.json"
 
 export default function ShopHome() {
   const { user, uid } = useAuthContext()
   return (
     <div>
       {!user && <Slide />}
-      <Products />
-
+      <Products {...product} />
       <style>{`
           @media screen and (1280px>width> 768px){
           .slide{
