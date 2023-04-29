@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-restricted-globals */
 /* eslint-disable no-undef */
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
@@ -16,6 +17,7 @@ import { DetailContextProvider } from "./context/DetailContext"
 import Detail from "./components/Detail"
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 import { useDeferredValue } from "react"
+import icuser from "./icuser.json"
 
 const queryClient = new QueryClient()
 export const JapitemContext = createContext()
@@ -28,6 +30,10 @@ function App() {
     const japitemJSON = localStorage.getItem(LOCAL_STORAGE_KEY)
     return JSON.parse(japitemJSON)
   })
+
+  function isIcUser(code) {
+    return icuser.map((item) => item.code.includes(code))
+  }
 
   const [search, setSearch] = useState("")
 
@@ -59,6 +65,8 @@ function App() {
   const search_def = useDeferredValue(search)
 
   if (location.pathname !== "/videos") {
+    //const passcode = prompt("enter passcode")
+    //if (passcode) {
     return (
       <>
         <SearchContext.Provider value={searchContextValue}>
@@ -92,6 +100,7 @@ function App() {
       </>
     )
   }
+  //} else return
 }
 
 export default App
