@@ -6,8 +6,8 @@
     "price": 4500,
     "qty": 2,
     "description": "kracie poppin cookin",
-    "comment": "",
-    "imgUrl": "https://www.kracie.co.jp/foods/okashi/chiiku/assets/img/product/introduction_28/product.png",
+    "comment": "https://twitter.com/icanmart/status/1651442405781180417",
+    "imgUrl": "./imgs/nerican_world.png",
     "homeUrl": "https://www.kracie.co.jp/foods/okashi/chiiku/product/introduction_28.html"
   },
   {
@@ -18,7 +18,7 @@
     "qty": 2,
     "description": "kracie poppin cookin",
     "comment": "",
-    "imgUrl": "https://www.kracie.co.jp/foods/okashi/chiiku/assets/img/product/introduction_15/product.png",
+    "imgUrl": "./imgs/sushi.png",
     "homeUrl": "https://www.kracie.co.jp/foods/okashi/chiiku/product/introduction_15.html"
   },
   {
