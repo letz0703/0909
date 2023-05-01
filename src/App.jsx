@@ -43,6 +43,12 @@ function App() {
 
   const searchContextValue = { handleSearch, search }
 
+  useEffect(() => {
+    return () => {
+      setSearch("")
+    }
+  }, [])
+
   function handleJapitemAdd() {
     const newJapitem = {
       id: crypto.randomUUID(),
