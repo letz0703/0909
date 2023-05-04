@@ -42,6 +42,10 @@ export default function JapitemDetail() {
     window.history.back()
   }
 
+  useEffect(() => {
+    document.title = name
+  }, [])
+
   return (
     <div className="japitem-detail flex justify-center mt-[7vh]">
       <div className="">
