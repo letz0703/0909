@@ -71,42 +71,42 @@ function App() {
   const search_def = useDeferredValue(search)
 
   if (location.pathname !== "/videos") {
-    //const passcode = prompt("enter passcode")
-    //if (passcode) {
-    return (
-      <>
-        <SearchContext.Provider value={searchContextValue}>
-          <ShoppingCartProvider>
-            <DetailContextProvider>
-              <Container>
-                <QueryClientProvider client={queryClient}>
-                  <AuthContextProvider>
-                    <JapitemContext.Provider value={japitemContextValue}>
-                      <Navbar setSearch={setSearch} search={search_def} />
-                      <Outlet japitems={japitems} />
-                      {/* <ReactQueryDevtools /> */}
-                    </JapitemContext.Provider>
-                  </AuthContextProvider>
-                </QueryClientProvider>
-              </Container>
-            </DetailContextProvider>
-          </ShoppingCartProvider>
-        </SearchContext.Provider>
-      </>
-    )
-  } else {
-    return (
-      <>
-        <SearchHeader />
-        <YoutubeApiProvider>
-          <QueryClientProvider client={queryClient}>
-            <Outlet />
-          </QueryClientProvider>
-        </YoutubeApiProvider>
-      </>
-    )
-  }
-  //} else return
+    const passcode = prompt("enter passcode")
+    if (passcode) {
+      return (
+        <>
+          <SearchContext.Provider value={searchContextValue}>
+            <ShoppingCartProvider>
+              <DetailContextProvider>
+                <Container>
+                  <QueryClientProvider client={queryClient}>
+                    <AuthContextProvider>
+                      <JapitemContext.Provider value={japitemContextValue}>
+                        <Navbar setSearch={setSearch} search={search_def} />
+                        <Outlet japitems={japitems} />
+                        {/* <ReactQueryDevtools /> */}
+                      </JapitemContext.Provider>
+                    </AuthContextProvider>
+                  </QueryClientProvider>
+                </Container>
+              </DetailContextProvider>
+            </ShoppingCartProvider>
+          </SearchContext.Provider>
+        </>
+      )
+    } else {
+      return (
+        <>
+          <SearchHeader />
+          <YoutubeApiProvider>
+            <QueryClientProvider client={queryClient}>
+              <Outlet />
+            </QueryClientProvider>
+          </YoutubeApiProvider>
+        </>
+      )
+    }
+  } else return
 }
 
 export default App
