@@ -51,7 +51,7 @@ export default function JapitemDetail() {
       <div className="">
         <h1>{name}</h1>
       </div>
-      <div className="transition-all hover:scale-105 flex flex-col">
+      <div className="transition-all  flex flex-col">
         {/* <img src={imgUrl} className="japitem-detail__imageDetail " /> */}
         <div className="align-self-center">
           <img

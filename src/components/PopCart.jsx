@@ -1,4 +1,5 @@
 import { Offcanvas, Stack } from "react-bootstrap"
+import { CiTwitter } from "react-icons/ci"
 import { OffcanvasHeader } from "react-bootstrap"
 import { useShoppingCart } from "../context/ShoppingCartContext"
 import FormatCurrency from "../util/formatCurrency"
@@ -166,8 +167,11 @@ export function PopCart({ isOpen }) {
                 택배비 없애기(공동구매 신청) </span></p></div>
 
                 <hr/>
-                <div>궁금한점, 송금후, 문자 주세요. 010.9876.1815</div>
-                <div>전화는 안받습니다.</div>
+                <div className="ml-auto">
+                <div >궁금한점이 있으시면 문자 주세요: 010.9876.1815</div>
+                <button onClick={()=>window.location.replace("https://twitter.com/icanmart")}><CiTwitter className="text-blue-500 border-2 text-2xl"/></button>
+                <div >전화는 안받습니다.</div>
+                </div>
 
         </Stack>
         <div className="flex justify-center">

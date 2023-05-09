@@ -1,8 +1,15 @@
 import React from "react"
 import FormatCurrency from "../util/formatCurrency"
+import { useShoppingCart } from "../context/ShoppingCartContext"
+import { useAuthContext } from "../context/AuthContext"
+import { useNavigate } from "react-router-dom"
 //import styles from './Japitem.module.css'
 
 export function Japitem({ japitem }) {
+  const { increaseCartQuantity, setCartItems } = useShoppingCart()
+  const { user, uid } = useAuthContext()
+  const navigate = useNavigate()
+
   return (
     <div className="product__ flex justify-center space-around align-items-center  card h-100">
       <span className="max-w-[80%] truncate">{japitem.name}</span>

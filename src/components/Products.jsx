@@ -26,8 +26,6 @@ export default function Products(product) {
   const { search } = useContext(SearchContext)
   const [japitems, setJapitems] = useJapitems()
   const { user, uid } = useAuthContext()
-  const navigate = useNavigate()
-  const { increaseCartQuantity, setCartItems } = useShoppingCart()
   const [mainItems, setMainItems] = useState(() => {
     return Object.values(product)
   })
