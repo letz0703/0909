@@ -71,7 +71,7 @@ function App() {
   const search_def = useDeferredValue(search)
 
   if (location.pathname !== "/videos") {
-    const passcode = prompt("enter passcode")
+    //const passcode = prompt("enter passcode")
     //if (passcode) {
     return (
       <>

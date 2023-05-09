@@ -41,7 +41,6 @@ export default function Products(product) {
             : item.name.toLowerCase().includes(search)
         })
         .map((japitem) => (
-          // eslint-disable-next-line no-undef
           <div key={crypto.randomUUID()}>
             <div className="product__ flex justify-center space-around align-items-center  card h-100">
               <span className="max-w-[80%] truncate">{japitem.name}</span>
@@ -57,15 +56,7 @@ export default function Products(product) {
                   }}
                 />
               </span>
-              <button
-                className="btn btn--primary mini text-xs"
-                onClick={() => {
-                  !user && login()
-                  increaseCartQuantity(japitem.id)
-                }}
-              >
-                담기
-              </button>
+
               {japitem.qty <= 0 ? (
                 <button className="btn btn--danger mini text-xs ">품절</button>
               ) : (
