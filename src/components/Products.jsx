@@ -66,6 +66,19 @@ export default function Products(product) {
               >
                 담기
               </button>
+              {japitem.qty <= 0 ? (
+                <button className="btn btn--danger mini text-xs ">품절</button>
+              ) : (
+                <button
+                  className="btn btn--primary mini text-xs"
+                  onClick={() => {
+                    !user && login()
+                    increaseCartQuantity(japitem.id)
+                  }}
+                >
+                  담기
+                </button>
+              )}
             </div>
           </div>
         ))}
