@@ -57,8 +57,9 @@ export default function Jap() {
           <div className="underline">
             고객님의 개인통관 번호로 해외 공동 구매진행 합니다
           </div>
-          <div>단, 공동구매 진행시에만 가능합니다(2023년 4월 진행중)</div>
-          <div className="mb-3">신청순으로 개별 문자 드립니다.</div>
+          <div className="p-2 bg-blue-200 md:text-xl text-red-500">
+            신청후 통관 안내 문자 수령전 까지 해외 주문 금지.
+          </div>
           <div className="p-2 bg-blue-200 md:text-xl">
             다음 주문은 제품 통관 후 가능(7-10일)
           </div>

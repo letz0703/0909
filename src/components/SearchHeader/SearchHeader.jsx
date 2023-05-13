@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react"
+import { useState, useMemo, useEffect, useRef } from "react"
 //import styles from './SearchHeader.module.css'
 import { BsYoutube, BsSearch } from "react-icons/bs"
 import { Link, useNavigate, useParams } from "react-router-dom"
@@ -10,9 +10,13 @@ export default function SearchHeader() {
     e.preventDefault()
     navigate(`/videos/${text}`)
   }
-  useEffect(() => {
+
+  useMemo(() => {
     setText(keyword || "")
   }, [keyword])
+  //useEffect(() => {
+  //  setText(keyword || "")
+  //}, [keyword])
 
   const showHistory = () => {
     window.location.replace("https://www.youtube.com/feed/history")
