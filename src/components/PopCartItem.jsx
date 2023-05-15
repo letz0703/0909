@@ -1,4 +1,4 @@
-import {useState, useEffect, useRef} from "react"
+import { useState, useRef } from "react"
 //import styles from './PopCartItem.module.css'
 export default function PopCartItem(item) {
   return (
