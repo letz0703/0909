@@ -115,6 +115,12 @@ export default function Navbar({ search, setSearch }) {
       <nav className="flex item-center font-bold">
         <div className="flex justify-center items-center gap-3 me-auto">
           {/* <Link to="/can">Can</Link> */}
+          <CiTwitter
+            className="text-red-400 font-bold text-2xl"
+            onClick={() =>
+              window.location.replace("https://twitter.com/icanmart")
+            }
+          />
           {user && (
             <>
               {/* <Link to="/" className="md:hidden">
@@ -127,6 +133,15 @@ export default function Navbar({ search, setSearch }) {
                 shop
               </Link>
             </>
+          )}
+          {user && (
+            <Link
+              to="/my_orders"
+              className="hidden md:block"
+              style={{ width: "70px" }}
+            >
+              My Orders
+            </Link>
           )}
 
           {user && (
