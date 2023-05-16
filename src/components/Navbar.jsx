@@ -17,12 +17,16 @@ import { BsYoutube, BsSearch } from "react-icons/bs"
 import SearchInput from "./search-input/search-input"
 import styles from "./Navbar.module.css"
 import { useLocalStorage } from "../hooks/use-local-storage"
+//import { CiTwitter } from "react-icons/ci"
+import { CiTwitter } from "react-icons/ci"
 
 export default function Navbar({ search, setSearch }) {
   const { user, setUser, login, logout, isAdmin, isCustom } = useAuthContext()
   const { openCart, cartQuantity } = useShoppingCart()
+
   const { handleJapitemSearch } = useContext(JapitemContext)
   const navigate = useNavigate()
+
   // const navigate = useNavigate()
 
   const [icUser, setIcUser] = useLocalStorage("ic-user", {})
@@ -70,15 +74,7 @@ export default function Navbar({ search, setSearch }) {
           </div>
 
           {user && <User user={user} className="hidden md:block" />}
-          {user && (
-            <Link
-              to="/my_orders"
-              className="hidden md:block"
-              style={{ width: "70px" }}
-            >
-              My Orders
-            </Link>
-          )}
+
           {user && (
             <span
               onClick={logout}
@@ -119,7 +115,6 @@ export default function Navbar({ search, setSearch }) {
       <nav className="flex item-center font-bold">
         <div className="flex justify-center items-center gap-3 me-auto">
           {/* <Link to="/can">Can</Link> */}
-
           {user && (
             <>
               {/* <Link to="/" className="md:hidden">

@@ -15,7 +15,7 @@ export default function SearchInput({ setSearch }) {
             <input
               type="text"
               className={` ${styles.input} text-xl -mr-8 ml-2 pl-5 `}
-              placeholder="search..."
+              placeholder="Life is not a problem to solve."
               aria-label="search"
               autoFocus
               // onChange={(e) => console.log(e.target.value)}

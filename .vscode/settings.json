@@ -1,6 +1,6 @@
 {
   //"github.copilot.inlineSuggest.enable": false,
-  "github.copilot.inlineSuggest.enable": true,
+  //"github.copilot.inlineSuggest.enable": true,
   "tailwind-fold.autoFold": true,
   "editor.fontWeight": "400",
   "workbench.colorTheme": "One Monokai",
