@@ -1,7 +1,8 @@
-import {useEffect, useRef, useState} from "react"
-import {getCarts} from "../api/firebase"
+import { useEffect, useRef, useState } from "react"
+import { getCarts } from "../api/firebase"
+import { now } from "moment/moment"
 
-const FormatTIME = timestamp => {
+const FormatTIME = (timestamp) => {
   const date = new Date(timestamp)
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -21,18 +22,19 @@ export default function IcORders() {
   }, [])
   return (
     <div>
-      {orders.map(order => (
+      {orders.map((order) => (
         // <div key={order.cartId}>
         <div key={crypto.randomUUID()}>
           {/* <div>{FormatTIME(order.orderDate)}</div> */}
           <div>
-            {Object.values(order).map(val => (
+            {Object.values(order).map((val) => (
               <div key={crypto.randomUUID()}>
                 <div>{FormatTIME(val.orderDate)}</div>
+                <div>delivery date: {FormatTIME(new Date())}</div>
                 <div>금액: {val.total}</div>
                 <div>
                   금액:{" "}
-                  {val.cartItems.map(i => {
+                  {val.cartItems.map((i) => {
                     console.log(i)
                   })}
                 </div>
