@@ -1,3 +1,25 @@
 .shop_home {
-	scroll-snap-type: proximity;
+	/*scroll-behavior: smooth;*/
+	height: 100vh;
+	scroll-snap-type: y mandatory;
+	overflow-y: scroll;
+	/* mandatory proximity both */
+	/* block, inline */
+	&::-webkit-scrollbar {width:0; background: transparent;}
+  & > section {
+		scroll-snap-align: start;
+		height: 100vh;
+		scroll-snap-align: start;
+		/* start,center, end */
+		/*scroll-snap-stop: normal;*/
+		scroll-snap-stop: always;
+    scroll-margin-top: 72px;
+	}
 }
+
+/*
+@media screen and (1280px > width > 768px){
+	.slide {
+		display: none;
+	}
+}*/

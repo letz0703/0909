@@ -16,22 +16,34 @@ import useUpdatedEffect from "../hooks/use-updated-effect"
 // import Test from "./Test"
 import product from "./data_product.json"
 import styles from "./ShopHome.module.css"
+import Navbar from "../components/Navbar"
 
 export default function ShopHome() {
   const { user, uid } = useAuthContext()
   return (
-    <div className="shop_home lg:mt-[80px]">
-      {!user && <Slide />}
-      <Products {...product} />
-      <style>{`
-          @media screen and (1280px>width> 768px){
-          .slide{
-              display:none;
-            }
-          }
-        }
+    <div className={`${styles.shop_home} mt-[100px]`}>
+      <section>
+        {!user && <Slide />}
+        <h2>Section 1</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ipsa
+          quasi quisquam voluptas ipsam nobis iusto eaque fugit dolorem animi
+          reiciendis delectus veniam sunt, aliquam tempora eos odio! Nobis,
+          quasi!
+        </p>
+      </section>
+      <section>
+        <h2>Section 2</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ipsa
+          quasi quisquam voluptas ipsam nobis iusto eaque fugit dolorem animi
+          reiciendis delectus veniam sunt, aliquam tempora eos odio! Nobis,
+          quasi!
+        </p>
+      </section>
+      {/*
 
-      `}</style>
+      <Products {...product} />*/}
     </div>
   )
 }
