@@ -30,7 +30,7 @@ export default function JapitemDetail() {
   const { increaseCartQuantity } = useShoppingCart()
 
   const [itemQty, setItemQty] = useState(qty)
-  const [itemPrice, setItemPrice] = useState("")
+  const [itemPrice, setItemPrice] = useState(0)
   async function updateQty(prev) {
     updateQuantity(prev, itemQty)
   }
@@ -114,7 +114,6 @@ export default function JapitemDetail() {
 
         <br />
         <span className="ml-2 text-red-500 font-bold">
-          {FormatCurrency(price)}
         </span>
         <div>{homeUrl?.homeUrl || null}</div>
         <div>
@@ -124,7 +123,7 @@ export default function JapitemDetail() {
           <button
             className="btn red mini text-white"
             onClick={() => window.history.back()}
-            // onClick={() => window.location.replace(document.referrer)}
+            //onClick={() => window.location.replace(document.referrer)}
           >
             x
           </button>
