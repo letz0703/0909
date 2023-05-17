@@ -15,11 +15,12 @@ import useUpdatedEffect from "../hooks/use-updated-effect"
 // import Store from "./Store"
 // import Test from "./Test"
 import product from "./data_product.json"
+import styles from "./ShopHome.module.css"
 
 export default function ShopHome() {
   const { user, uid } = useAuthContext()
   return (
-    <div>
+    <div className="shop_home lg:mt-[80px]">
       {!user && <Slide />}
       <Products {...product} />
       <style>{`
