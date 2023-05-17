@@ -9,11 +9,10 @@
   & > section {
 		scroll-snap-align: start;
 		height: 100vh;
-		scroll-snap-align: start;
 		/* start,center, end */
-		/*scroll-snap-stop: normal;*/
-		scroll-snap-stop: always;
-    scroll-margin-top: 72px;
+		scroll-snap-stop: normal;
+		/*scroll-snap-stop: always;*/
+    /*scroll-margin-top: 72px;*/
 	}
 }
 

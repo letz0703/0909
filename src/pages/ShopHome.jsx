@@ -22,28 +22,31 @@ export default function ShopHome() {
   const { user, uid } = useAuthContext()
   return (
     <div className={`${styles.shop_home} mt-[100px]`}>
-      <section>
-        {!user && <Slide />}
-        <h2>Section 1</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ipsa
-          quasi quisquam voluptas ipsam nobis iusto eaque fugit dolorem animi
-          reiciendis delectus veniam sunt, aliquam tempora eos odio! Nobis,
-          quasi!
-        </p>
-      </section>
-      <section>
-        <h2>Section 2</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ipsa
-          quasi quisquam voluptas ipsam nobis iusto eaque fugit dolorem animi
-          reiciendis delectus veniam sunt, aliquam tempora eos odio! Nobis,
-          quasi!
-        </p>
-      </section>
-      {/*
+      <section className="flex flex-col justify-center -translate-y-1/4">
+        <h2>WizBox</h2>
+        <p className="text-red-700">010.9876.1815</p>
+        <h2>.shop</h2>
+        <pre className="w-1/4 align-self-center">Text Message ONLY</pre>
+        <div className="italic">google login for an ORDER</div>
 
-      <Products {...product} />*/}
+        <span className="text-gray-400">↓ scroll DOWN ↓</span>
+      </section>
+      <section>
+        <h2>제품을 검색하세요</h2>
+        <p>
+          전체 상품은
+          <span
+            className="cursor-pointer"
+            onClick={() => (window.location.href = "/shop")}
+          >
+            shop
+          </span>
+          메뉴에서 확인 하세요(google login)
+        </p>
+        <Products {...product} />
+      </section>
+      <section></section>
+      {/*{!user && <Slide />}*/}
     </div>
   )
 }
