@@ -32,17 +32,19 @@ export default function ShopHome() {
         <span className="text-gray-400">↓ scroll DOWN ↓</span>
       </section>
       <section>
-        <h2>제품을 검색하세요</h2>
+        <h2>깡통시장 상품 가격을 검색 해 보세요</h2>
         <p>
-          전체 상품은
+          🛍️ 전체 상품은
           <span
-            className="cursor-pointer"
+            className="cursor-pointer text-red-700 p-2"
             onClick={() => (window.location.href = "/shop")}
           >
             shop
           </span>
-          메뉴에서 확인 하세요(google login)
+          메뉴에서 확인 하세요(login 필요)
         </p>
+        <div> 🖱️ 주문을 하시려면 구글 로그인 하셔야 합니다.</div>
+        <span>✏️ 전화 문의 못 받으며, 문자와 트위터만 확인 합니다</span>
         <Products {...product} />
       </section>
       <section></section>
