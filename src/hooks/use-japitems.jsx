@@ -24,8 +24,6 @@ export const useJapitems = () => {
       .then((response) => response.json())
       .then(setJapitems)
       .finally(() => setIsLoading(false))
-
-    return updateRDB_japitem
   }, [])
 
   useEffect(() => {
@@ -34,6 +32,7 @@ export const useJapitems = () => {
         setJapitems(Object.values(snapshot.val()))
       }
     })
+    localStorage.setItem("japitems", JSON.stringify(japitems))
   }, [isLoading])
   return [japitems, setJapitems]
 }
