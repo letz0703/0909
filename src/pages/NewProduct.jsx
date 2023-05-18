@@ -1,7 +1,7 @@
 // import { useAuthContext } from "../../context/AuthContext"
-import {v4 as uuidv4} from "uuid"
-import {getOrders, database, db} from "../api/firebase"
-import {useEffect, useState} from "react"
+import { v4 as uuidv4 } from "uuid"
+import { getOrders, database, db } from "../api/firebase"
+import { useEffect, useState } from "react"
 // import {
 //   getDocs,
 //   addDoc,
@@ -11,10 +11,10 @@ import {useEffect, useState} from "react"
 //   deleteDoc,
 // } from "firebase/firestore"
 import FormatCurrency from "../util/formatCurrency"
-import {uploadImage} from "../api/uploader"
-import {useJapitems} from "../hooks/use-japitems"
-import {getDatabase, ref, set, get, remove, child} from "firebase/database"
-import {useLocalStorage} from "../hooks/use-local-storage"
+import { uploadImage } from "../api/uploader"
+import { useJapitems } from "../hooks/use-japitems"
+import { getDatabase, ref, set, get, remove, child } from "firebase/database"
+import { useLocalStorage } from "../hooks/use-local-storage"
 import IcORders from "../components/IcORders"
 const INITIAL_PRODUCT = {
   id: "",
@@ -24,7 +24,7 @@ const INITIAL_PRODUCT = {
   price: "",
   imgUrl: "",
   homeUrl: "",
-  qty: 0
+  qty: 0,
 }
 
 export default function NewProduct() {
@@ -37,12 +37,12 @@ export default function NewProduct() {
   const [addedJapitem, setAddedJapitem] = useState(INITIAL_PRODUCT)
 
   function updateFields(fields) {
-    setNewProduct(prev => {
-      return {...prev, ...fields}
+    setNewProduct((prev) => {
+      return { ...prev, ...fields }
     })
   }
 
-  const createJapitem = async data => {
+  const createJapitem = async (data) => {
     const id = crypto.randomUUID()
     set(ref(database, `japitems/${id}`), {
       id: id,
@@ -52,12 +52,12 @@ export default function NewProduct() {
       price: data.price,
       imgUrl: data.imgUrl,
       homeUrl: data.homeUrl || "",
-      qty: Number(data.qty) || 0
+      qty: Number(data.qty) || 0,
     })
       .then(() => {
         alert("data saved")
       })
-      .catch(error => console.log(error))
+      .catch((error) => console.log(error))
   }
 
   // const handleUpdateStock = async (id, qty) => {
@@ -72,10 +72,10 @@ export default function NewProduct() {
   //   })
   // }
 
-  const handleJapitemDelete = async id => {
+  const handleJapitemDelete = async (id) => {
     remove(ref(database, `japitems/${id}`))
       .then(() => console.log("data deleted"))
-      .catch(error => alert("error", error))
+      .catch((error) => alert("error", error))
   }
 
   // const handleJapitemDelete = async (id) => {
@@ -99,8 +99,8 @@ export default function NewProduct() {
 
   return (
     <form
-      className="new-product__form flex flex-col justify-center text-center gap-2 items-center pt-2 "
-      style={{margin: "0 auto", maxWidth: "300px"}}
+      className="new-product__form flex flex-col justify-center text-center gap-2 items-center pt-[100px] "
+      style={{ margin: "0 auto", maxWidth: "300px" }}
       onSubmit={onSubmit}
     >
       <div>
@@ -123,42 +123,44 @@ export default function NewProduct() {
                   id="code"
                   type="text"
                   placeholder="아이템코드"
-                  onChange={e => updateFields({code: e.target.value})}
+                  onChange={(e) => updateFields({ code: e.target.value })}
                 />
               </td>
               <td>
                 <input
                   type="text"
                   placeholder="item name"
-                  onChange={e => updateFields({name: e.target.value})}
+                  onChange={(e) => updateFields({ name: e.target.value })}
                 />
               </td>
               <td>
                 <input
                   type="number"
                   placeholder="price"
-                  onChange={e => updateFields({price: e.target.value})}
+                  onChange={(e) => updateFields({ price: e.target.value })}
                 />
               </td>
               <td>
                 <input
                   type="textarea"
                   placeholder="description"
-                  onChange={e => updateFields({description: e.target.value})}
+                  onChange={(e) =>
+                    updateFields({ description: e.target.value })
+                  }
                 />
               </td>
               <td>
                 <input
                   type="text"
                   placeholder="imgUrl"
-                  onChange={e => updateFields({imgUrl: e.target.value})}
+                  onChange={(e) => updateFields({ imgUrl: e.target.value })}
                 />
               </td>
               <td>
                 <input
                   type="text"
                   placeholder="homeUrl"
-                  onChange={e => updateFields({homeUrl: e.target.value})}
+                  onChange={(e) => updateFields({ homeUrl: e.target.value })}
                 />
               </td>
               <td>
@@ -170,7 +172,9 @@ export default function NewProduct() {
                   placeholder="product qty"
                   step={5}
                   // required
-                  onChange={e => updateFields({qty: Number(e.target.value)})}
+                  onChange={(e) =>
+                    updateFields({ qty: Number(e.target.value) })
+                  }
                 />
               </td>
             </tr>
@@ -197,7 +201,7 @@ export default function NewProduct() {
             <img
               src={addedJapitem?.imgUrl || null}
               className="new-product__list-image mx-auto"
-              style={{width: "96px"}}
+              style={{ width: "96px" }}
             />
             <span>&times;</span>
             <span>

@@ -32,7 +32,7 @@ export default function Products(product) {
 
   useEffect(() => {
     setMainItems(japitems)
-  }, [uid])
+  }, [uid, japitems])
 
   return (
     <div className="shop-home grid grid-cols-2 lg:grid-cols-5 gap-2 md:mt-[10vh] lg:mt-[5vh]">

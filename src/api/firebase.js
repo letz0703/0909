@@ -159,7 +159,6 @@ export async function addNewProduct(product, image) {
 
 export async function updateQuantity(prev, itemQty) {
   update(ref(database, `/japitems/${prev.id}`), {
-    ...prev,
     qty: itemQty
   })
   console.log("data qty updated")
@@ -173,7 +172,6 @@ export async function updateJapitemQty(prev, qty) {
 
 export async function updateFBPrice(prev, itemPrice) {
   update(ref(database, `/japitems/${prev.id}`), {
-    ...prev,
     price: itemPrice
   })
   console.log("data price updated")

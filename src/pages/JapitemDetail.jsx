@@ -39,7 +39,7 @@ export default function JapitemDetail() {
   }
   const handleDamGi = () => {
     increaseCartQuantity(japitem.id)
-    window.history.back()
+    window.location.replace("/shop")
   }
 
   useEffect(() => {
