@@ -35,9 +35,11 @@ export default function AddressForm({
         />*/}
       </FormWrapper>
       <div className="address-form__info pb-3">
-        <div>고객님께는 주문하신 상품과 공동구매 상품을 미리 보내 드리므로</div>
-        <div>일주일 후 통관 되는, 공동구매 품목은 저희 소유입니다</div>
-        <div>상기 품목만 150불 이하, 1회 한정 수입 합니다</div>
+        <div>
+          고객님께는 주문하신 상품과 곤약 2봉지를 바로 보냅니다.(선배송)
+        </div>
+        <div>일주일 후 통관되는 수입품은 저희가 소유합니다</div>
+        <div>공지된 품목만 150불 이하로 1회만 수입 합니다</div>
       </div>
       <style>{`
         .address-form__info {

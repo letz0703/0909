@@ -4,7 +4,11 @@ import { AccordionCard } from "./AccordionCard"
 
 export function Accordion() {
   const [list, setList] = useState([
-    { q: "what is your name?", a: "My Name Is Mani", active: true },
+    {
+      q: "6월 공동구매: 곤약젤리",
+      a: "주문 제품외 배송비, 곤약젤리 2개 무료(맛 랜덤)",
+      active: true,
+    },
     { q: "Your Name is mani?", a: "Yes I am" },
   ])
   return (
