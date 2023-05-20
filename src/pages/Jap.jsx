@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-//import styles from './Jap-page.module.css'
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"
 import { collection, getDoc, getDocs } from "firebase/firestore"
 import { db, database, auth } from "../api/firebase"
@@ -12,6 +11,7 @@ import Jap09Form from "../components/jap09-form/jap09-form"
 import JapEsp from "../components/jap___esp/jap___esp"
 import { login } from "../api/firebase"
 import { useNavigate, Navigate } from "react-router-dom"
+import { Accordion } from "./Accordion"
 
 const SPECIALS = [
   { id: 1, itemId: "2301-01", name: "JP-캬베진 300정", price: 10000, limit: 5 },
@@ -40,8 +40,9 @@ export default function Jap() {
     return <pre>{JSON.stringify(specialsQuery.error)}</pre>
 
   return (
-    <div className="jap__ flex flex-col align-items-start justify-start mt-[7vh]">
-      <div className="jap__primary-header">
+    <div className="jap__ flex flex-col align-items-center w-screen justify-start mt-[7vh]">
+      <Accordion />
+      {/*<div className="jap__primary-header">
         <div className=" bg-pink-100 rounded-full">
           <div className="text-2xl pt-5">공동구매</div>
           <p>- japan 09 -</p>
@@ -91,7 +92,7 @@ export default function Jap() {
           font-size: 1rem;
 
         }
-      `}</style>
+      `}</style>*/}
     </div>
   )
 }
