@@ -21,15 +21,16 @@ import Navbar from "../components/Navbar"
 export default function ShopHome() {
   const { user, uid } = useAuthContext()
   return (
-    <div className={`${styles.shop_home} mt-[100px] w-[100vw]`}>
-      <section className="flex flex-col justify-center -translate-y-1/2">
-        <h2>WizBox</h2>
-        <p className="text-red-700">010.9876.1815</p>
-        <h2>.shop</h2>
-        <pre className="w-1/4 align-self-center">Text Message ONLY</pre>
-        <div className="italic">google login for an ORDER</div>
-
-        <span className="text-gray-400">↓ scroll DOWN ↓</span>
+    <div className={`${styles.shop_home} w-[100vw] pt-[300px]`}>
+      <section>
+        <div className="flex flex-col justify-center translate-y-[50px]">
+          <h2>WizBox</h2>
+          <p className="text-red-700">010.9876.1815</p>
+          <h2>.shop</h2>
+          <pre className="w-1/4 align-self-center">Text Message ONLY</pre>
+          <div className="italic">google login for an ORDER</div>
+          <span className="text-gray-400">↓ scroll DOWN ↓</span>
+        </div>
       </section>
       <section>
         <h2>깡통시장 상품 가격을 검색 해 보세요</h2>
