@@ -22,7 +22,7 @@ export default function ShopHome() {
   const { user, uid } = useAuthContext()
   return (
     <div className={`${styles.shop_home} mt-[100px] w-[100vw]`}>
-      <section className="flex flex-col justify-center -translate-y-1/5">
+      <section className="flex flex-col justify-center -translate-y-1/2">
         <h2>WizBox</h2>
         <p className="text-red-700">010.9876.1815</p>
         <h2>.shop</h2>
