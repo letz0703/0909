@@ -28,12 +28,12 @@ export const SearchContext = createContext()
 function LayOut() {
   return (
     <>
-      <div className={`outlet `}>
+      <div className={`outlet flex w-100vw`}>
         <Outlet />
       </div>
       <style>{`
       body {
-        background-color: powderblue; color: black
+        background-color: #FF9681; color: black
       }
       .outlet {
 
