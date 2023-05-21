@@ -130,7 +130,7 @@
     "editor.defaultFormatter": "svipas.prettier-plus"
     // "editor.autoClosingBrackets": "never"
   },
-  "editor.acceptSuggestionOnEnter": "off",
+  "editor.acceptSuggestionOnEnter": "smart",
   "editor.formatOnSave": true,
   // "editor.autoClosingBrackets": "never"
   // "editor.autoSurronud": "never"
@@ -178,7 +178,8 @@
   "audioCues.lineHasInlineSuggestion": "off",
   "emmet.useInlineCompletions": false,
   "editor.tabCompletion": "onlySnippets",
-  "editor.lineNumbers": "off"
+  "editor.lineNumbers": "off",
+  "emmet.triggerExpansionOnTab": true
   // "github.copilot.advanced": {
 
   // }

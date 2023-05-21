@@ -17,11 +17,15 @@ import useUpdatedEffect from "../hooks/use-updated-effect"
 import product from "./data_product.json"
 import styles from "./ShopHome.module.css"
 import Navbar from "../components/Navbar"
+//import { Gallery } from "../components/Gallery/Gallery"
+import { Easy } from "../components/Easy/Easy"
 
 export default function ShopHome() {
   const { user, uid } = useAuthContext()
   return (
     <div className={`${styles.shop_home} w-[100vw] pt-[300px]`}>
+      {/*<section> <Easy /> </section>*/}
+      {/*<section><Gallery /></section>*/}
       <section>
         <div className="flex flex-col justify-center translate-y-[50px]">
           <h2>WizBox</h2>
@@ -32,6 +36,7 @@ export default function ShopHome() {
           <span className="text-gray-400">↓ scroll DOWN ↓</span>
         </div>
       </section>
+
       <section>
         <h2>깡통시장 상품 가격을 검색 해 보세요</h2>
         <p>
@@ -49,7 +54,7 @@ export default function ShopHome() {
         <Products {...product} />
       </section>
       <section></section>
-      {/*{!user && <Slide />}*/}
+      {!user && <Slide />}
     </div>
   )
 }

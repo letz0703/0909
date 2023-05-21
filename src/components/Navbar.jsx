@@ -44,7 +44,8 @@ export default function Navbar({ search, setSearch }) {
   }, [user])
 
   return (
-    <header className="h-[70px] Navbarjsx__header flex border-b justify-evenly p-1">
+    //<header className="h-[70px] Navbarjsx__header flex border-b justify-evenly p-1">
+    <header className={`${styles.header} h-[72px] flex py-2 justify-evenly `}>
       {/* <section className="icNavbar__sec1"> */}
       {/* <div className=" text-brand"> */}
       <div className="flex items-center align-items-center">

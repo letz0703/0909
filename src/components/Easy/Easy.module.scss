@@ -1,0 +1,21 @@
+.wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 2s ease-out;
+}
+
+.wrapper.isOpen {
+  grid-template-rows: 1fr;
+}
+.inner {
+  overflow: hidden;
+}
+
+.demoContainer {
+	position: relative;
+	margin-inline: calc(var(--spacer-md) * -1);
+	border: 2px solid var(--accent-bg-4);
+	border-radius: 1em;
+	padding: 2rem var(--spacer-md);
+	background-color: var(--background-neutral);
+}

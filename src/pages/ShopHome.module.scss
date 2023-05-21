@@ -7,13 +7,13 @@
 	/* block, inline */
 	&::-webkit-scrollbar {width:0; background: transparent;}
   & > section {
-		padding-top: 150px;
+		padding-top: 130px;
 		scroll-snap-align: start;
 		height: 100vh;
 		/* start,center, end */
 		scroll-snap-stop: normal;
 		/*scroll-snap-stop: always;*/
-    /*scroll-margin-top: 72px;*/
+    //scroll-margin-top: 72px;
 	}
 	width: 100vw;
 	padding-top: 300px;

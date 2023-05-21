@@ -25,6 +25,23 @@ const LOCAL_STORAGE_KEY = "icanmcartItemIDart.japitems"
 
 export const SearchContext = createContext()
 
+function LayOut() {
+  return (
+    <>
+      <div className={`outlet `}>
+        <Outlet />
+      </div>
+      <style>{`
+      body {
+        background-color: powderblue; color: black
+      }
+      .outlet {
+
+      }
+    `}</style>
+    </>
+  )
+}
 function App() {
   const [japitems, setJapitems] = useState(() => {
     const japitemJSON = localStorage.getItem(LOCAL_STORAGE_KEY)
@@ -83,7 +100,7 @@ function App() {
                   <AuthContextProvider>
                     <JapitemContext.Provider value={japitemContextValue}>
                       <Navbar setSearch={setSearch} search={search_def} />
-                      <Outlet japitems={japitems} />
+                      <LayOut japitems={japitems} className={`outlet`} />
                       {/* <ReactQueryDevtools /> */}
                     </JapitemContext.Provider>
                   </AuthContextProvider>
