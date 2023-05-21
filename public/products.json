@@ -17,7 +17,7 @@
     "price": 4500,
     "qty": 2,
     "description": "kracie poppin cookin",
-    "comment": "",
+    "comment": "https://arc.net/e/10A35DBD-A983-4DF8-A42F-1FCE4B2C6058",
     "imgUrl": "./imgs/sushi.png",
     "homeUrl": "https://www.kracie.co.jp/foods/okashi/chiiku/product/introduction_15.html"
   },
@@ -28,8 +28,8 @@
     "price": 4000,
     "qty": 2,
     "description": "kracie poppin cookin",
-    "comment": "",
-    "imgUrl": "https://www.kracie.co.jp/foods/okashi/chiiku/assets/img/product/introduction_12/product.png",
+    "comment": "https://arc.net/e/4CC98AFD-7E35-4385-9D59-598959560366",
+    "imgUrl": "./imgs/matsuri.png",
     "homeUrl": "https://www.kracie.co.jp/foods/okashi/chiiku/product/introduction_12.html"
   },
   {
@@ -39,8 +39,8 @@
     "price": 4000,
     "qty": 2,
     "description": "kracie poppin cookin",
-    "comment": "",
-    "imgUrl": "https://www.kracie.co.jp/foods/okashi/chiiku/assets/img/product/introduction_13/product.png",
+    "comment": "https://arc.net/e/C0EA0CAB-B84B-4586-AA69-59F319F86ED0",
+    "imgUrl": "./imgs/keki.png",
     "homeUrl": "https://www.kracie.co.jp/foods/okashi/chiiku/product/introduction_13.html"
   },
   {
@@ -50,8 +50,8 @@
     "price": 4500,
     "qty": 2,
     "description": "kracie poppin cookin",
-    "comment": "",
-    "imgUrl": "https://www.kracie.co.jp/foods/okashi/chiiku/assets/img/product/introduction_16/product.png",
+    "comment": "https://arc.net/e/4CD2D426-521A-436B-8CCB-61329856ED60",
+    "imgUrl": "./imgs/garu_ham.png",
     "homeUrl": "https://www.kracie.co.jp/foods/okashi/chiiku/product/introduction_16.html"
   },
   {
@@ -835,4 +835,4 @@
     "imgUrl": "https://pbs.twimg.com/media/FtAUVCKaIAAfcIU?format=jpg&name=medium",
     "homeUrl": ""
   }
-]
+ ]
