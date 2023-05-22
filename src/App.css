@@ -10,8 +10,8 @@
 
 .App {
   min-height: 100vh;
-  min-width: 100vw;
-  padding: 1em;
+  /*min-width: 100vw;*/
+  /*padding: 1em;*/
 }
 
 /* body {
