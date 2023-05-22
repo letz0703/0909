@@ -33,7 +33,7 @@ function LayOut() {
       </div>
       <style>{`
       body {
-        background-color: #c10002; color: black
+        //background-color: #c10002; color: black
       }
       .outlet {
 

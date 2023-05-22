@@ -234,6 +234,7 @@ pre .val {
   border-radius: 4px;
   text-align: center;
   margin-bottom: 40px;
+  max-width: 10002px;
 }
 /*
 .container h2 {
