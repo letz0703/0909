@@ -36,8 +36,7 @@ export default function ShopHome() {
           <span className="text-gray-400">↓ scroll DOWN ↓</span>
         </div>
       </section>
-
-      <section>
+      <section className={`h-auto`}>
         <h2>깡통시장 상품 가격을 검색 해 보세요</h2>
         <p>
           🛍️ 전체 상품은
@@ -53,8 +52,8 @@ export default function ShopHome() {
         <span>✏️ 전화 문의 못 받으며, 문자와 트위터만 확인 합니다</span>
         <Products {...product} />
       </section>
-      <section></section>
-      {!user && <Slide />}
+      <section>Footer</section>
+      {/*{!user && <Slide />}*/}
     </div>
   )
 }
