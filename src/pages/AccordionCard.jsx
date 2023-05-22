@@ -43,7 +43,7 @@ export function AccordionCard({ data }) {
             `}
               onClick={handleToggle}
             >
-              >
+              {">"}
             </div>
           </div>
           <div
