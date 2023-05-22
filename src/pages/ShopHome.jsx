@@ -31,8 +31,8 @@ export default function ShopHome() {
           <h2>WizBox</h2>
           <p className="text-red-700">010.9876.1815</p>
           <h2>.shop</h2>
-          <pre className="w-1/4 align-self-center">Text Message ONLY</pre>
-          <div className="italic">google login for an ORDER</div>
+          <pre className="w-1/4 mb-4 align-self-center">Text Message ONLY</pre>
+          <div className="italic mb-2">google login for an ORDER</div>
           <span className="text-gray-400">↓ scroll DOWN ↓</span>
         </div>
       </section>
