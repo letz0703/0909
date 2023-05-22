@@ -6,7 +6,7 @@ import useDebounce from "../../hooks/use-debounce"
 export default function SearchInput({ setSearch }) {
   return (
     // <div className={` ${styles.searchInput}`}>
-    <div className="">
+    <div className="bg-black mb-2">
       {/* <div className={styles.searchInput__content}> */}
       <div>
         <div className={styles.search_bar}>

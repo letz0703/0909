@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
 import { Nav, Navbar as NavbarBs, Col, Row } from "react-bootstrap"
 import { Link, Navigate, useNavigate } from "react-router-dom"
 import { BsFillPencilFill } from "react-icons/bs"
@@ -27,8 +25,6 @@ export default function Navbar({ search, setSearch }) {
   const { handleJapitemSearch } = useContext(JapitemContext)
   const navigate = useNavigate()
 
-  // const navigate = useNavigate()
-
   const [icUser, setIcUser] = useLocalStorage("ic-user", {})
 
   useEffect(() => {
@@ -44,8 +40,9 @@ export default function Navbar({ search, setSearch }) {
   }, [user])
 
   return (
-    //<header className="h-[70px] Navbarjsx__header flex border-b justify-evenly p-1">
-    <header className={`${styles.header} h-[72px] flex py-2 justify-evenly `}>
+    <header
+      className={`${styles.header} h-[72px] flex py-4 justify-evenly border-b `}
+    >
       {/* <section className="icNavbar__sec1"> */}
       {/* <div className=" text-brand"> */}
       <div className="flex items-center align-items-center">
@@ -110,7 +107,7 @@ export default function Navbar({ search, setSearch }) {
         <section className="sec2">
           {/* <div className={`${styles.nav_center} navbar__search-input`}> */}
           {/* {user && <SearchInput setSearch={setSearch} className="검색폼" />} */}
-          {<SearchInput setSearch={setSearch} className="검색폼" />}
+          {<SearchInput setSearch={setSearch} />}
         </section>
       )}
       <nav className="flex item-center font-bold">
@@ -162,16 +159,14 @@ export default function Navbar({ search, setSearch }) {
         )}
       </nav>
       <style>{`
-      .Navbarjsx__header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 72px;
-        background-color: #fff;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        z-index:1;
-      }
+      //.Navbarjsx__header {
+      //  //position: fixed;
+      //  top: 0;
+      //  left: 0;
+      //  width: 100%;
+      //  height: 72px;
+      //  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      //}
       .nav-bar__text-logo{
         display: flex;
         justify-content: space-between;
