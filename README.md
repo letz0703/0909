@@ -223,17 +223,6 @@ admins {"0":"uid"}
 DB 선택 : https://firebase.google.com/docs/database/rtdb-vs-firestore?hl=ko
 FB vs Realtime
 
-### show-Icons - only for Admin
-
-```js
-{
-  user && user.isAdmin && (
-    <Link to="/product/new" className="2xl">
-      <BsFillPencilFill />
-    </Link>
-  )
-}
-````
 
 ## hooks
 

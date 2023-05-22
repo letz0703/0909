@@ -69,17 +69,17 @@ a:hover {
   color: #ff0000;
 }
 
-body {
+/*body {*/
   /*margin: 0;*/
   //display: flex;
   //place-items: center;
-  width: 100vw;
-  height: 100vh;
-  min-width: 320px;
-  min-height: 100vh;
-  color: black;
-  background-color: white;
-}
+  /*width: 100vw;*/
+  /*height: 100vh;*/
+  /*min-width: 320px;*/
+  /*min-height: 100vh;*/
+  /*color: black;*/
+  /*background-color: white;*/
+/*}*/
 
 h1 {
   font-size: 3.2em;
@@ -190,7 +190,8 @@ h2 {
 .content-3d {
   margin: 40px auto;
 }
-/**
+
+/*
 .content {
   width: 80%;
   max-width: 700px;
