@@ -51,7 +51,7 @@ export default function UserForm({ jName, jCell, jCsNo, updateFields }) {
             에서 즉시 발급 됩니다
           </div>
           <div className="pb-3">
-            미화 150불 무관세 한도 내에서 공동구매 품목을을 1회 수입 합니다.
+            미화 150불 무관세 한도 내에서 공동구매 품목을 1회만 수입 합니다.
           </div>
         </div>
         <style>{`

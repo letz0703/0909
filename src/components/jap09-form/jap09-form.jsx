@@ -94,9 +94,6 @@ export default function Jap09Form({ icUser }) {
   return (
     <div className="jap09-formjsx ">
       <form onSubmit={onSubmit}>
-        <div style={{ position: "absolute", top: ".5rem", right: ".5rem" }}>
-          {currentStepIndex + 1}/{steps.length}
-        </div>
         {step}
         <div
           style={{
@@ -107,9 +104,14 @@ export default function Jap09Form({ icUser }) {
           }}
         >
           {!isFirstStep && (
-            <button className="btn btn--primary mini" onClick={back}>
-              back
-            </button>
+            <>
+              <div style={{ position: "absolute", right: ".5rem" }}>
+                {currentStepIndex + 1}/{steps.length}
+              </div>
+              <button className="btn btn--primary mini" onClick={back}>
+                back
+              </button>
+            </>
           )}
           <button className="btn btn--primary mini">
             {!isLastStep ? "next" : "동의 및 신청"}

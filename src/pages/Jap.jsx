@@ -38,9 +38,19 @@ export default function Jap() {
   //if (specialsQuery.isLoading) return <h1>Loading...</h1>
   //if (specialsQuery.isError)
   //  return <pre>{JSON.stringify(specialsQuery.error)}</pre>
+  /**
+   * Open HTML
+   */
+  function openPopupWindow() {
+    window.open(
+      "./japan09.html",
+      "일본현지공동구매",
+      "width=800rem, height=600rem"
+    )
+  }
 
   return (
-    <div className="jap__ flex flex-col align-items-center w-screen justify-start mt-[7vh] lg:mt-[100px]">
+    <div className="jap__ flex flex-col align-items-center w-screen justify-start">
       <div className="jap__primary-header">
         <div className=" bg-pink-100 rounded-full flex flex-col justify-center align-items-center ">
           <h2 className="text-2xl p-2 mx-3 my-0">일본 현지제품 공동구매</h2>
@@ -56,9 +66,16 @@ export default function Jap() {
             고객님의 개인통관로 공동 구매진행 합니다(150불 이하만)
           </div>
           <div className={`p-2`}>
-            주문한 깡통시장 상품들과 곤약젤리(오리히로) 2봉지를 무료로 당일
+            주문한 깡통시장 상품들과 곤약젤리(오리히로) 1봉지를 무료로 당일z
             발송해 드립니다.(랜덤 맛)
           </div>
+          <button
+            onClick={openPopupWindow}
+            className={`pointer btn--primary p-2`}
+          >
+            진행 단계 보기
+          </button>
+          <div>아래 동의서는 6장입니다</div>
           <div className="p-2 bg-blue-200 md:text-xl ">
             신청후 10일간 다른 해외 주문을 하지 않는 조건입니다.
             {/*<div className="p-2 bg-blue-200 md:text-xl">*/}

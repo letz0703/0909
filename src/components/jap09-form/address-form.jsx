@@ -36,10 +36,10 @@ export default function AddressForm({
       </FormWrapper>
       <div className="address-form__info pb-3">
         <div>
-          고객님께는 주문하신 상품과 곤약 2봉지를 바로 보냅니다.(선배송)
+          고객님께는 주문하신 상품과 곤약 1봉지를 바로 보냅니다.(선배송)
         </div>
         <div>일주일 후 통관되는 수입품은 저희가 소유합니다</div>
-        <div>공지된 품목만 150불 이하로 1회만 수입 합니다</div>
+        <div>공지된 품목만 150불( 무관세 한도 ) 이하로 1회만 수입 합니다</div>
       </div>
       <style>{`
         .address-form__info {
