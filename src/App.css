@@ -111,3 +111,8 @@ li {
   color: blue;
   font-size: 16px;
 }
+
+body {
+  vertical-align: baseline;
+  display: block;
+}

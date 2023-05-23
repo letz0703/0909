@@ -35,7 +35,7 @@ export default function Products(product) {
   }, [uid, japitems])
 
   return (
-    <div className="shop-home grid grid-cols-2 lg:grid-cols-5 gap-2 md:mt-[10vh] lg:mt-[5vh]">
+    <div className="shop-home grid grid-cols-2 lg:grid-cols-7 gap-2 md:mt-[10vh] lg:mt-[5vh] px-2">
       {mainItems
         .filter((item) => {
           return search.toLowerCase() === ""
