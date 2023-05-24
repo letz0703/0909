@@ -47,14 +47,14 @@ export default function ShopHome() {
       <section className={`h-auto`}>
         <h2>깡통시장 아이템</h2>
         <p>
-          🛍️ 전체 상품은
+          🛍️ 상품만 보시려면
           <button
             className="btn btn--primary blue cursor-pointer text-red-700 p-2"
             onClick={() => (window.location.href = "/shop")}
           >
             shop
           </button>
-          menu 확인 하세요
+          menu 를 이용 하세요
           <br />
         </p>
         <div>
@@ -67,8 +67,8 @@ export default function ShopHome() {
         </div>
         <div>
           <span className={`inline-block`}>
-            <FaSms color="red" className={`inline-block mr-2`} />
             문자와 트위터만 확인 합니다.
+            <FaSms color="red" className={`inline-block mr-2  `} size={50} />
           </span>
         </div>
         <Products {...product} />
