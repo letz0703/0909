@@ -115,4 +115,6 @@ li {
 body {
   vertical-align: baseline;
   display: block;
+  overflow-x: hidden;
+  width: 100vw;
 }

@@ -27,7 +27,7 @@ export default function ShopHome() {
       {/*<section> <Easy /> </section>*/}
       {/*<section><Gallery /></section>*/}
       <section>
-        <div className="flex flex-col justify-center translate-y-[50px]">
+        <div className="flex flex-col justify-center translate-y-[50px] sm:pt-2">
           <h2>WizBox</h2>
           <p className="text-red-700">010.9876.1815</p>
           <h2>.shop</h2>
