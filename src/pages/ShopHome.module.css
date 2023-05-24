@@ -1,1 +1,1 @@
-.shop_home{height:100vh;scroll-snap-type:y mandatory;overflow-y:scroll;width:100vw;padding-top:300px}.shop_home::-webkit-scrollbar{width:0;background:rgba(0,0,0,0)}.shop_home>section{padding-top:70px;scroll-snap-align:start;height:100vh;scroll-snap-stop:normal}
+.shop_home{height:100vh;scroll-snap-type:y mandatory;overflow-y:scroll;width:100vw}.shop_home::-webkit-scrollbar{width:0;background:rgba(0,0,0,0)}.shop_home>section{padding-top:70px;scroll-snap-align:start;height:100vh;scroll-snap-stop:normal}
