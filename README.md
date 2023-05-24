@@ -1,4 +1,6 @@
 🖥 WIP...
+#56 Input 위치 조정
+
 #54 휴대폰서 구글 로그인 추가 하기 : 2023.05.24/수
 https://arc.net/e/6DEED571-0F1C-45D9-9570-84D44EC1961D
 [] https://www.notion.so/AI-ca797d27af4f4a1db59f5a40fabc1a59?pvs=4 ai 연습 ,,ai

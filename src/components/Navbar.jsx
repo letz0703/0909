@@ -41,7 +41,7 @@ export default function Navbar({ search, setSearch }) {
 
   return (
     <header
-      className={`${styles.header} h-[72px] flex py-4 justify-evenly border-b `}
+      className={`${styles.header} h-[72px] flex items-center  justify-evenly border-b `}
     >
       {/* <section className="icNavbar__sec1"> */}
       {/* <div className=" text-brand"> */}
@@ -104,10 +104,10 @@ export default function Navbar({ search, setSearch }) {
       </div>
       {/* </section> */}
       {!window.location.href.includes("/jap") && (
-        <section className="sec2">
+        <section className="sec2 pt-3">
           {/* <div className={`${styles.nav_center} navbar__search-input`}> */}
           {/* {user && <SearchInput setSearch={setSearch} className="검색폼" />} */}
-          {<SearchInput setSearch={setSearch} />}
+          <SearchInput setSearch={setSearch} />
         </section>
       )}
       <nav className="flex item-center font-bold">

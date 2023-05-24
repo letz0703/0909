@@ -6,15 +6,14 @@ import useDebounce from "../../hooks/use-debounce"
 export default function SearchInput({ setSearch }) {
   return (
     // <div className={` ${styles.searchInput}`}>
-    <div className="bg-black mb-2">
+    <div className="">
       {/* <div className={styles.searchInput__content}> */}
       <div>
         <div className={styles.search_bar}>
-          {/* <form> */}
-          <div className="flex">
+          <div className="flex justify-center items-center">
             <input
               type="text"
-              className={` ${styles.input} text-xl -mr-8 ml-2 pl-5 `}
+              className={` ${styles.input} text-xl px-3 `}
               placeholder="Life is not a problem to solve."
               aria-label="search"
               autoFocus
@@ -23,8 +22,8 @@ export default function SearchInput({ setSearch }) {
             />
             <button aria-label="submit" className={styles.submit}>
               {/* <div className="search_icon pr-2"> */}
-              <div className={`${styles.search_icon} mr-2`}>
-                <BiSearch />
+              <div className={`${styles.search_icon}`}>
+                <BiSearch className={`pl-3`} size={30} />
               </div>
             </button>
           </div>
