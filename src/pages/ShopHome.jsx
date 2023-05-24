@@ -26,7 +26,7 @@ export default function ShopHome() {
     <div className={`${styles.shop_home} w-[100vw] pt-[300px] `}>
       {/*<section> <Easy /> </section>*/}
       {/*<section><Gallery /></section>*/}
-      {/*<section>
+      <section>
         <div className="flex flex-col justify-center translate-y-[50px] sm:pt-2">
           <h2>WizBox</h2>
           <p className="text-red-700">010.9876.1815</p>
@@ -43,7 +43,7 @@ export default function ShopHome() {
 
           <span className="text-gray-400">↓ scroll DOWN ↓</span>
         </div>
-      </section>*/}
+      </section>
       <section className={`h-auto`}>
         <h2>깡통시장 아이템</h2>
         <p>
