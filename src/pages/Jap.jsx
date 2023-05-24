@@ -63,11 +63,11 @@ export default function Jap() {
             </div>
           </div>
           <div className="underline">
-            고객님의 개인통관로 공동 구매진행 합니다(150불 이하만)
+            고객님의 개인 통관번호로 공동 구매진행 합니다(150불 이하만)
           </div>
           <div className={`p-2`}>
-            주문한 깡통시장 상품들과 곤약젤리(오리히로) 1봉지를 무료로 당일z
-            발송해 드립니다.(랜덤 맛)
+            주문하신 깡통시장 상품들외 곤약젤리(오리히로) 1봉지를 무료로 당일
+            발송해 드립니다(랜덤).
           </div>
           <button
             onClick={openPopupWindow}
