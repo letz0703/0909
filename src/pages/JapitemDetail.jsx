@@ -63,6 +63,13 @@ export default function JapitemDetail() {
         <div>{description}</div>
         <br />
         <span
+          className="btn btn--primary blue mini"
+          onClick={() => window.open(`${homeUrl}`, `_blank`)}
+          // onClick={() => window.location.replace(`${homeUrl}`)}
+        >
+          홈페이지
+        </span>
+        <span
           className="btn btn--primary red mini"
           // onClick={() =>
           //   window.open(
@@ -73,15 +80,9 @@ export default function JapitemDetail() {
           onClick={() => window.open(`${comment}`, `_blank`)}
           // onClick={() => window.location.replace(`${homeUrl}`)}
         >
-          제품 평가(twitter)
+          제품 설명
         </span>
-        <span
-          className="btn btn--primary blue mini"
-          onClick={() => window.open(`${homeUrl}`, `_blank`)}
-          // onClick={() => window.location.replace(`${homeUrl}`)}
-        >
-          상세 설명
-        </span>
+
         <div>
           <div className="mt-4">재고:{itemQty}</div>
           {isAdmin && (
