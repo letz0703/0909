@@ -115,7 +115,7 @@ export default function JapitemDetail() {
 
         <br />
         <span className="ml-2 text-red-500 font-bold">
-          {FormatCurrency(itemPrice)}
+          {FormatCurrency(japitem.price)}
         </span>
         <div>{homeUrl?.homeUrl || null}</div>
         <div>
