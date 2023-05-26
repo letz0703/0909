@@ -24,8 +24,6 @@ export default function ShopHome() {
   const { user, uid, login, logout } = useAuthContext()
   return (
     <div className={`${styles.shop_home} w-[100vw] pt-[300px] `}>
-      {/*<section> <Easy /> </section>*/}
-      {/*<section><Gallery /></section>*/}
       <section>
         <div className="flex flex-col justify-center translate-y-[50px] sm:pt-2">
           <h2>WizBox</h2>
@@ -46,6 +44,26 @@ export default function ShopHome() {
       </section>
       <section className={`h-auto`}>
         <h2>깡통시장 아이템</h2>
+        <span className={`text-[1.4em] p-1`}>
+          가장 신선한 제품을 최선의 가격으로
+        </span>
+        <p>일반 해외주문은 7~10 이상 배송기간이 걸립니다</p>
+        <p className={`underline`}>
+          어제 국내에 도착한 제품을 내일 받을 수 있다면 어떨까요?
+        </p>
+        <p>통관 완료 후 가장 최근 도착한 제품으로 바로 보내 드립니다</p>
+        자세한 내용은
+        <button
+          className="btn btn--primary red cursor-pointer text-red-700 p-2"
+          onClick={() => (window.location.href = "/jap")}
+        >
+          jap09
+        </button>
+        를 참조하세요
+        <p>
+          <span className={`text-2xl`}>*</span>공동구매 상품이 없을 경우,
+          깡통시장 상품을 보냅니다
+        </p>
         <p>
           🛍️ 상품만 보시려면
           <button
@@ -58,7 +76,6 @@ export default function ShopHome() {
           <br />
         </p>
         <div>
-          {" "}
           🖱️ 주문을 하시려면{" "}
           <button onClick={login} className={`btn btn--primary  `}>
             login

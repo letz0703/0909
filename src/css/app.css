@@ -20,5 +20,6 @@ body {
   /*background-color: white;*/
   display: flex;
   justify-content: center;
+  text-underline-position: under;
   //min-width: 1440px;
 }
