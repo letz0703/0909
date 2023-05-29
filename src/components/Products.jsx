@@ -35,7 +35,10 @@ export default function Products(product) {
   }, [uid, japitems])
 
   return (
-    <section className="product shop-home grid grid-cols-1 lg:grid-cols-7 gap-2 md:mt-[10vh] lg:mt-[20px] py-2">
+    <section
+      className="product shop-home grid grid-cols-1 lg:grid-cols-7 gap-2 md:mt-[10vh] lg:mt-[20px] py-2"
+      style={{ overflowY: "auto" }}
+    >
       {mainItems
         .filter((item) => {
           return search.toLowerCase() === ""
@@ -51,9 +54,7 @@ export default function Products(product) {
           .product {
             padding: 1em;
             background-color: powderblue; color: black
-            overflow-y: auto;
           }
-
         `}</style>
     </section>
   )
