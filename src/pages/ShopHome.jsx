@@ -29,9 +29,7 @@ export default function ShopHome() {
       <Intro user={user} />
       <Wizbox />
       <Info09 />
-      <section>
-        <Products {...product} />
-      </section>
+      <Products {...product} />
       <section>Footer</section>
       {/*{!user && <Slide />}*/}
     </div>

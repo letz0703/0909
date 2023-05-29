@@ -35,7 +35,7 @@ export default function Products(product) {
   }, [uid, japitems])
 
   return (
-    <div className="shop-home grid grid-cols-1 lg:grid-cols-7 gap-2 md:mt-[10vh] lg:mt-[5vh] px-2">
+    <section className="product shop-home grid grid-cols-1 lg:grid-cols-7 gap-2 md:mt-[10vh] lg:mt-[20px] py-2">
       {mainItems
         .filter((item) => {
           return search.toLowerCase() === ""
@@ -47,6 +47,14 @@ export default function Products(product) {
           <Japitem japitem={japitem} key={japitem.id} />
           //</Fragment>
         ))}
-    </div>
+      <style>{`
+          .product {
+            padding: 1em;
+            background-color: powderblue; color: black
+            overflow-y: auto;
+          }
+
+        `}</style>
+    </section>
   )
 }
