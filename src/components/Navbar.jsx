@@ -41,7 +41,11 @@ export default function Navbar({ search, setSearch }) {
 
   return (
     <header
-      className={`${styles.header} h-[72px] flex items-center  justify-evenly border-b `}
+      className={`${
+        styles.header
+      } h-[72px] flex items-center  justify-evenly border-b ${
+        !user && "hidden"
+      }`}
     >
       {/* <section className="icNavbar__sec1"> */}
       {/* <div className=" text-brand"> */}

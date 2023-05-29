@@ -20,10 +20,46 @@ import Navbar from "../components/Navbar"
 //import { Gallery } from "../components/Gallery/Gallery"
 import { Easy } from "../components/Easy/Easy"
 import { FaSms } from "react-icons/fa"
+import { BsTwitter } from "react-icons/bs"
 export default function ShopHome() {
   const { user, uid, login, logout } = useAuthContext()
   return (
     <div className={`${styles.shop_home} w-[100vw] pt-[300px] `}>
+      <section className={`${user && "hidden"} `}>
+        <h2>Life is not a problme to solve</h2>
+        <br />
+        <div className="heart"></div>
+        <div className={`mx-auto`} style={{ width: "50%" }}>
+          As of now, I only inform this site to those who have <br />
+          visited my physical store and our esteemed VIP customers.
+          <br />
+          Typically, products are sold on a first-come, first-served basis.
+          <br />
+          However, I want to provide a special privilege to our customers
+          <br /> who are part of this exclusive group. For you, I will
+          personally curate <br />
+          and send the most recent and fresh products at a special price. <br />
+          Please understand that I am unable to offer this service to a larger
+          customers due to the fact that I run the store independently.
+          <br />
+          As a result of managing the store single-handedly,
+          <br /> I regret to inform you that I won't be available <br />
+          to answer phone calls. However,
+          <br /> I encourage you to reach out
+          <br /> to me via Twitter <br />
+          <span className={`mt-0 ml-0 mr-auto flex justify-center`}>
+            <BsTwitter />.
+          </span>
+          <br />
+          I'll do my best to respond to your inquiryASAP
+          {/*<br /> thank you!*/}
+          <br />
+          further information? scroll down
+          <br />
+          <h3 className={`text-[#c10002] pb-3`}>↓ wizbox.shop ↓</h3>
+          ⌣⌣
+        </div>
+      </section>
       <section>
         <div className="flex flex-col justify-center translate-y-[50px] sm:pt-2">
           <h2>WizBox</h2>
@@ -32,18 +68,20 @@ export default function ShopHome() {
           <pre className="w-[300px]  mb-4 align-self-center">
             Text Message ONLY
           </pre>
-          <div>
-            <div className="italic mb-2">google login for an ORDER</div>
-            <button onClick={login} className={`btn btn--primary w-1/3 `}>
-              login
-            </button>
-          </div>
+          {!user && (
+            <div>
+              <div className="italic mb-2">google login for an ORDER</div>
+              <button onClick={login} className={`btn btn--primary w-1/3 `}>
+                login
+              </button>
+            </div>
+          )}
 
           <span className="text-gray-400">↓ scroll DOWN ↓</span>
         </div>
       </section>
-      <section className={`h-auto`}>
-        <h2>깡통시장 아이템</h2>
+      <section>
+        <h2>공동구매 안내</h2>
         <span className={`text-[1.4em] p-1`}>
           가장 신선한 제품을 최선의 가격으로
         </span>
@@ -88,6 +126,8 @@ export default function ShopHome() {
             <FaSms color="red" className={`inline-block mr-2  `} size={50} />
           </span>
         </div>
+      </section>
+      <section>
         <Products {...product} />
       </section>
       <section>Footer</section>
