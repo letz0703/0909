@@ -4,7 +4,7 @@ export function Intro({ user }) {
   let Intro = "Intro.jsx"
 
   return (
-    <section className={`${user && "hidden"} `}>
+    <section className={`${user && "hidden"}  `}>
       <h2>Life is not a problme to solve</h2>
       <br />
       <div className="heart"></div>
