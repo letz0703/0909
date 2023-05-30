@@ -181,7 +181,7 @@ export function PopCart({ isOpen }) {
         <div className="flex justify-center items-center pt-2"> 배송지:{currentAddress} <button className="btn green h-[1.8em]" onClick={changeAddress}> 수정 </button> </div>
         <div className="flex justify-center items-center pt-2"> 연락처:{phoneNumber} <button className="btn green h-[1.8em]" onClick={changeNumber}> 수정 </button> </div>
         <style>{`
-            body { background-color: powderblue; color: black }
+            //body { background-color: powderblue; color: black }
             .btn { display: inline-block; } `}
         </style>
       </Offcanvas.Body>

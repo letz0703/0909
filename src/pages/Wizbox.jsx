@@ -7,9 +7,9 @@ export function Wizbox() {
   return (
     <section>
       <div className="flex flex-col justify-center translate-y-[50px] sm:pt-2">
-        <h2>WizBox</h2>
+        <h2>WIZBOX</h2>
         <p className="text-red-700">010.9876.1815</p>
-        <h2>.shop</h2>
+        <div className={`text-[25px] pt-1`}>.shop</div>
         <pre className="w-[300px]  mb-4 align-self-center">
           Text Message ONLY
         </pre>

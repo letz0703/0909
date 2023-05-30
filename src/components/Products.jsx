@@ -53,7 +53,7 @@ export default function Products(product) {
       <style>{`
           .product {
             padding: 1em;
-            background-color: powderblue; color: black
+            //background-color: powderblue; color: black
           }
         `}</style>
     </section>
