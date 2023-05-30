@@ -83,6 +83,7 @@ export function PopCart({ isOpen }) {
 
   function handleResetCart() {
     setCartItems([])
+    localStorage.setItem("ic-cart", JSON.stringify([]))
     window.location.replace("./shop")
   }
 
