@@ -7,7 +7,7 @@ export default function Store() {
   const { search } = useContext(SearchContext)
   const [japitems, setJapitems] = useJapitems()
   return (
-    <div className={` mt-[82px]`}>
+    <div className={` `}>
       {/*<h1 className="text-red-600 hidden md:block">깡통시장 구매 대행(shop)</h1>*/}
       <Products />
     </div>
