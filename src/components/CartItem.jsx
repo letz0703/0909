@@ -5,6 +5,7 @@ import FormatCurrency from "../util/formatCurrency"
 import { useShoppingCart } from "../context/ShoppingCartContext"
 import { Button, Stack } from "react-bootstrap"
 import { useJapitems } from "../hooks/use-japitems"
+import { getRDB_Japitem } from "../api/firebase"
 
 const ICON_BOX = "transition-all cursor-pointer hover:text-brand mx-1"
 
@@ -18,6 +19,9 @@ export default function CartItem(props) {
   //prettier-ignore
   const { increaseCartQuantity, decreaseCartQuantity, handleDecreaseCartQty, removeFromCart, getItemQuantity} = useShoppingCart()
   const qty = getItemQuantity(id)
+
+  // 1. getRDB_japitem의 수량
+  // 2. 수량 표시하기
 
   return (
     //prettier-ignore
@@ -44,7 +48,9 @@ export default function CartItem(props) {
           > - </button>
           {quantity}
           <button className="btn-gradient blue mini" onClick={() => increaseCartQuantity(item.id)}
-          > + </button> </div> </div>
+          > + </button> </div>
+          <div>현재 잔량: {item.qty}</div>
+          </div>
       <div> {FormatCurrency(item.price * quantity)}</div>
       <Button variant="outline-danger" size="sm" onClick={() => removeFromCart(item.id)} >
         &times;

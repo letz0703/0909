@@ -7,13 +7,24 @@ import CartItem from "./CartItem"
 import { useJapitems } from "../hooks/use-japitems"
 import { useLocalStorage } from "../hooks/use-local-storage"
 //prettier-ignore
-import { getRDB_users, db, auth, addNewCart, updateRDB_user, getRDB_user, updateCartTotal, setRDB_user, updateJapitemQty } from "../api/firebase"
 import { useAuthState } from "react-firebase-hooks/auth"
 import { useRef, useState } from "react"
 import { useEffect } from "react"
 import { RiWindowLine } from "react-icons/ri"
 
 const deleiveryCost = parseInt(4000)
+
+import {
+  getRDB_users,
+  db,
+  auth,
+  addNewCart,
+  updateRDB_user,
+  getRDB_user,
+  updateCartTotal,
+  setRDB_user,
+  updateJapitemQty,
+} from "../api/firebase"
 
 export function PopCart({ isOpen }) {
   const [japitems] = useJapitems()
