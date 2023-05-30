@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import FormatCurrency from "../util/formatCurrency"
 import { useShoppingCart } from "../context/ShoppingCartContext"
 import { useAuthContext } from "../context/AuthContext"
@@ -8,6 +8,7 @@ import styles from "./Japitem.module.css"
 export function Japitem({ japitem }) {
   const { increaseCartQuantity, setCartItems } = useShoppingCart()
   const { user, uid } = useAuthContext()
+  const [temp_qty, setTemp_qty] = useState(japitem.qty)
   const navigate = useNavigate()
 
   return (
@@ -51,6 +52,7 @@ export function Japitem({ japitem }) {
             담기
           </button>
         )}
+        <div>현재재고: {temp_qty}</div>
       </div>
     </div>
   )
