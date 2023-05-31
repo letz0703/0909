@@ -1,4 +1,5 @@
 🖥 WIP...
+[] twitter link 수정 2023.06.01/목
 #31 detail page amount 0 problem
 
 #56 Input 위치 조정 295eb37094c3fdc33d9f5993a512645419b5e111

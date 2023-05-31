@@ -26,7 +26,12 @@ export function Intro({ user }) {
         to answer phone calls. However,
         <br /> I encourage you to reach out
         <br /> to me via Twitter <br />
-        <span className={`mt-0 ml-0 mr-auto flex justify-center`}>
+        <span
+          className={`mt-0 ml-0 mr-auto flex justify-center cursor-pointer`}
+          onClick={() =>
+            window.location.replace("https://twitter.com/wizbox051")
+          }
+        >
           <BsTwitter />
         </span>
         <br />
