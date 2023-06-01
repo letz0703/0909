@@ -2,11 +2,11 @@ import { useState } from "react"
 import { useFetch } from "./use-fetch"
 
 // If the API does not work use these local URLs
-// const URLS = {
-//   USERS: "users.json",
-//   POSTS: "posts.json",
-//   COMMENTS: "comments.json",
-// }
+//const URLS = {
+//  USERS: "users.json",
+//  POSTS: "posts.json",
+//  COMMENTS: "comments.json",
+//}
 
 const URLS = {
   USERS: "https://jsonplaceholder.typicode.com/users",
@@ -25,7 +25,7 @@ const URLS = {
 
 export default function WdsUseFetch() {
   const [url, setUrl] = useState(URLS.USERS)
-  const { data, isLoading, isError } = useFetch()
+  const { data, isLoading, isError } = useFetch(url)
   // BONUS:
   //const { data, isLoading, isError } = useFetch(url, OPTIONS)
 

@@ -144,7 +144,7 @@
   "todo-tree.tree.showBadges": true,
   "todo-tree.tree.scanMode": "open files",
   "[javascript]": {
-    "editor.defaultFormatter": "svipas.prettier-plus"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
     // "editor.autoClosingBrackets": "never"
   },
   "editor.acceptSuggestionOnEnter": "smart",
