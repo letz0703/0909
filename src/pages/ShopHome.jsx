@@ -26,11 +26,11 @@ export default function ShopHome() {
   const { user, uid, login, logout } = useAuthContext()
   return (
     <div className={`${styles.shop_home} w-[100vw] pt-[300px] `}>
-      <Intro user={user} />
-      <Wizbox />
-      <Info09 />
-      <Products {...product} />
-      <section>Footer</section>
+      {/*<Intro user={user} />*/}
+      {!user && <Wizbox />}
+      {user && <Info09 />}
+      {user && <Products {...product} />}
+      {/*<section>Footer</section>*/}
       {/*{!user && <Slide />}*/}
     </div>
   )

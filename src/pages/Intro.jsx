@@ -41,6 +41,7 @@ export function Intro({ user }) {
         need further information? scroll down
         <br />
         <h3 className={`text-[#c10002] pb-3`}>↓ wizbox.shop ↓</h3>
+        <h3 className={`text-[#c10002] pb-3 text-[1.4em]`}>open: 7pm to 7am</h3>
         ⌣⌣
       </div>
     </section>

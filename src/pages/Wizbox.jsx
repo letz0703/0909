@@ -10,18 +10,21 @@ export function Wizbox() {
         <h2>WIZBOX</h2>
         <p className="text-red-700">010.9876.1815</p>
         <div className={`text-[25px] pt-1`}>.shop</div>
-        <pre className="w-[300px]  mb-4 align-self-center">
+        <br />
+        <span className="bg-black text-white font-bold p-4 w-[300px]  mb-4 align-self-center w-1/6">
           Text Message ONLY
-        </pre>
+        </span>
         {!user && (
           <div>
             <div className="italic mb-2">google login for an ORDER</div>
-            <button onClick={login} className={`btn btn--primary w-1/3 `}>
+            <button
+              onClick={login}
+              className={`btn btn--primary w-1/7 red rounded-[12px] `}
+            >
               login
             </button>
           </div>
         )}
-
         <span className="text-gray-400">↓ scroll DOWN ↓</span>
       </div>
     </section>

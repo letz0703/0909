@@ -44,7 +44,7 @@ export default function Navbar({ search, setSearch }) {
       className={`${
         styles.header
       } h-[72px] flex items-center  justify-evenly border-b ${
-        !user && "hidden"
+        !user ? "hidden" : ""
       }`}
     >
       {/* <section className="icNavbar__sec1"> */}
@@ -120,7 +120,7 @@ export default function Navbar({ search, setSearch }) {
           <CiTwitter
             className="text-red-400 font-bold text-2xl"
             onClick={() =>
-              window.location.replace("https://twitter.com/icanmart")
+              window.location.replace("https://twitter.com/wizbox051")
             }
           />
           {user && (
