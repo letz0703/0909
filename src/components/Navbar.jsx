@@ -43,7 +43,7 @@ export default function Navbar({ search, setSearch }) {
     <header
       className={`${
         styles.header
-      } h-[72px] flex items-center  justify-evenly border-b ${
+      } h-[72px] w-[100vw ] flex items-center  justify-evenly border-b ${
         !user ? "hidden" : ""
       }`}
     >
