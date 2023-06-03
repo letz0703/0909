@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>시간별 페이지 변경</title>
+</head>
+
+<body>
+	<h1 id="pageContent">기본 페이지</h1>
+
+	<script>
+		// 현재 시간을 가져오는 함수
+		function getCurrentTime() {
+			var now = new Date();
+			var hours = now.getHours();
+			var minutes = now.getMinutes();
+			var seconds = now.getSeconds();
+
+			return hours + ":" + minutes + ":" + seconds;
+		}
+
+		// 페이지 변경 함수
+		function changePageByTime() {
+			var currentTime = getCurrentTime();
+
+			// 현재 시간에 따라 페이지를 변경
+			if (currentTime >= "09:00:00" && currentTime <= "17:00:00") {
+				document.getElementById("pageContent").innerHTML = "주간 페이지";
+			} else {
+				document.getElementById("pageContent").innerHTML = "야간 페이지";
+			}
+		}
+
+		// 일정 간격으로 페이지 변경 함수 호출
+		setInterval(changePageByTime, 1000); // 1초마다 호출
+	</script>
+</body>
+
+</html>
