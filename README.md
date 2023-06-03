@@ -1,6 +1,7 @@
 🖥 WIP...
-- [] twitter link 수정 2023.06.01/목
-![home][home]
+twitter link 수정 2023.06.01/목
+[1][icanmart]
+
 
 #31 detail page amount 0 problem
 
@@ -452,4 +453,7 @@ https://bit.ly/3hwLpOh tailwind youtube
 
 awesome components: https://github.com/brillout/awesome-react-components
 
-[home]: wizbox.shop
+
+[icanmart]: https://icanmart.co.kr
+[1]: https://www.naver.com
+
