@@ -16,6 +16,7 @@ import { useJapitems } from "../hooks/use-japitems"
 import { getDatabase, ref, set, get, remove, child } from "firebase/database"
 import { useLocalStorage } from "../hooks/use-local-storage"
 import IcORders from "../components/IcORders"
+import CSVtoJSONConverter from "../util/converter_json"
 const INITIAL_PRODUCT = {
   id: "",
   code: "",
@@ -180,6 +181,7 @@ export default function NewProduct() {
             </tr>
           </tbody>
         </table>
+        <CSVtoJSONConverter />
         <button className="btn btn--primary">아이템등록</button>
         <div className="new-product__Main  w-full text-center flex flex-col justify-center items-center">
           <div className="new-product__list place-content-center text-center w-full">
