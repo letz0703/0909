@@ -72,7 +72,7 @@
     "price": "8500",
     "qty": "10",
     "description": "오리지날 곤약젤리, 만난라이프",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/peach.png",
     "homeUrl": "https://www.mannanlife.co.jp/brand/konnyakubatake/"
   },
@@ -83,7 +83,7 @@
     "price": "7800",
     "qty": "10",
     "description": "오리지날 곤약젤리, 만난라이프",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/apple.png",
     "homeUrl": "https://www.mannanlife.co.jp/brand/konnyakubatake/"
   },
@@ -94,7 +94,7 @@
     "price": "7800",
     "qty": "10",
     "description": "오리지날 곤약젤리, 만난라이프",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/grape.png",
     "homeUrl": "https://www.mannanlife.co.jp/brand/konnyakubatake/"
   },
@@ -105,7 +105,7 @@
     "price": "3700",
     "qty": "10",
     "description": "snb",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/snb_hot.png",
     "homeUrl": "https://www.sbfoods-worldwide.com/ko/products/search/009.html"
   },
@@ -116,8 +116,8 @@
     "price": "3700",
     "qty": "10",
     "description": "snb",
-    "comment": "",
-    "imgs": "./imgs/d.png",
+    "comment": "https://via.placeholder.com/200x200",
+    "imgs": "./imgs/snb_soon.png",
     "homeUrl": "https://www.sbfoods-worldwide.com/ko/products/search/007.html"
   },
   {
@@ -127,7 +127,7 @@
     "price": "3700",
     "qty": "10",
     "description": "snb",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/snb_m.png",
     "homeUrl": "https://www.sbfoods-worldwide.com/ko/products/search/008.html"
   },
@@ -138,7 +138,7 @@
     "price": "7000",
     "qty": "10",
     "description": "동전파스 소 지름 2.8cm",
-    "comment": "https://twitter.com/icanmart/status/1636980759981588482/photo/1",
+    "comment": "https://twitter.com/icanmart/status/1636980759981588482/photo/1dpm",
     "imgs": "./imgs/dong156.png",
     "homeUrl": "https://www.roihi.com/tubokou.html"
   },
@@ -160,8 +160,8 @@
     "price": "6000",
     "qty": "10",
     "description": "",
-    "comment": "",
-    "imgs": "",
+    "comment": "https://via.placeholder.com/200x200",
+    "imgs": "https://via.placeholder.com/200x200",
     "homeUrl": ""
   },
   {
@@ -171,7 +171,7 @@
     "price": "9500",
     "qty": "10",
     "description": "85잔분 맥심 병 리필",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/maxim.jpg",
     "homeUrl": "https://www.agf.co.jp/lineup/maxim/71287.html"
   },
@@ -205,7 +205,7 @@
     "qty": "10",
     "description": "asahi",
     "comment": "https://twitter.com/icanmart/status/1637358902080843776/photo/1",
-    "imgs": "./imgs/aqua.jpg",
+    "imgs": "./imgs/mintia_aqua.jpg",
     "homeUrl": "https://www.mintia.jp/product/#mintia"
   },
   {
@@ -226,7 +226,7 @@
     "price": "3700",
     "qty": "10",
     "description": "사진과 약간 차이가 있을 수 있습니다",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/vermont_hot.jpg",
     "homeUrl": "https://www.housefoods.com/japanese-curry/en/products/vermont_curry/"
   },
@@ -237,7 +237,7 @@
     "price": "3700",
     "qty": "10",
     "description": "사진과 약간 차이가 있을 수 있습니다",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/vernont_mild.jpg",
     "homeUrl": "https://www.housefoods.com/japanese-curry/en/products/vermont_curry/"
   },
@@ -248,7 +248,7 @@
     "price": "3700",
     "qty": "10",
     "description": "사진과 약간 차이가 있을 수 있습니다",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/medium.jpg",
     "homeUrl": "https://www.housefoods.com/japanese-curry/en/products/vermont_curry/"
   },
@@ -270,7 +270,7 @@
     "price": "13000",
     "qty": "10",
     "description": "4.2 x 6.5cm",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/sharon80.jpg",
     "homeUrl": "https://www.salonpas.jp/lineup/salonpas_ae.html"
   },
@@ -281,7 +281,7 @@
     "price": "8000",
     "qty": "10",
     "description": "https://japandrug.jp/products/aneron",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/mul.jpg",
     "homeUrl": "https://www.ssp.co.jp/product/all/annys/"
   },
@@ -292,7 +292,7 @@
     "price": "15000",
     "qty": "10",
     "description": "잇몸질환 용,천연 허브 치주염 치약",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/access.jpg",
     "homeUrl": "https://search.sato-seiyaku.co.jp/pub/product/1806/"
   },
@@ -303,7 +303,7 @@
     "price": "2000",
     "qty": "10",
     "description": "UHA",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/azuki.jpg",
     "homeUrl": "https://www.uha-mikakuto.co.jp/catalog/hardcandy/ca92.html"
   },
@@ -325,7 +325,7 @@
     "price": "6500",
     "qty": "10",
     "description": "메가네 클리너",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/glasses.jpg",
     "homeUrl": "https://www.kobayashi.co.jp/seihin/menu/category_08_7.html"
   },
@@ -435,7 +435,7 @@
     "price": "11000",
     "qty": "2",
     "description": "용각산 20그램",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/young.jpg",
     "homeUrl": "https://www.ryukakusan.co.jp/top"
   },
@@ -446,7 +446,7 @@
     "price": "12000",
     "qty": "10",
     "description": "히가시마루 우동스프 48개입",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/woodong.jpg",
     "homeUrl": "https://www.higashimaru.co.jp/products/detail/pdt0024.html"
   },
@@ -457,7 +457,7 @@
     "price": "13500",
     "qty": "10",
     "description": "진통제",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/evequick.jpg",
     "homeUrl": ""
   },
@@ -468,7 +468,7 @@
     "price": "29000",
     "qty": "10",
     "description": "일본 참기름 1리터",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/cham.jpg",
     "homeUrl": "https://www.kadoya.com/products/page05.html"
   },
@@ -490,7 +490,7 @@
     "price": "5000",
     "qty": "10",
     "description": "가루쿡 짱구맥주",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/beer.jpg",
     "homeUrl": "https://heart-ltd.jp/product/95343/"
   },
@@ -501,7 +501,7 @@
     "price": "3500",
     "qty": "10",
     "description": "kracie poppin cookin (그림이 다를 수 있습니다)",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/gumiland.jpg",
     "homeUrl": "https://www.kracie.co.jp/foods/okashi/chiiku/product/introduction_07.html"
   },
@@ -512,7 +512,7 @@
     "price": "21000",
     "qty": "10",
     "description": "캬베진 300정",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/cabejin.jpg",
     "homeUrl": "https://hc.kowa.co.jp/otc/7469"
   },
@@ -534,7 +534,7 @@
     "price": "1300",
     "qty": "10",
     "description": "150그램",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/capu_s.jpg",
     "homeUrl": "https://www.mayora.com/en/our-brands/candy/kopiko"
   },
@@ -556,7 +556,7 @@
     "price": "1300",
     "qty": "10",
     "description": "150그램",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/copi_s.jpg",
     "homeUrl": "https://www.mayora.com/en/our-brands/candy/kopiko"
   },
@@ -578,7 +578,7 @@
     "price": "20000",
     "qty": "10",
     "description": "감기약",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/pav_al.jpg",
     "homeUrl": "https://www.taisho.co.jp/global/our_products/pabron_series.html"
   },
@@ -589,7 +589,7 @@
     "price": "4000",
     "qty": "10",
     "description": "아즈키 모나카",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/monaka.jpg",
     "homeUrl": "http://samkyoung.com/product/%ec%95%84%ec%a3%bc%eb%81%bc-%eb%aa%a8%eb%82%98%ec%b9%b4/"
   },
@@ -600,7 +600,7 @@
     "price": "1500",
     "qty": "10",
     "description": "",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/binu.jpg",
     "homeUrl": "http://303goodlife.com.tw/h/ProductDetail?key=621263289108&productId=78191"
   },
@@ -611,7 +611,7 @@
     "price": "500",
     "qty": "10",
     "description": "",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/apolo.jpg",
     "homeUrl": ""
   },
@@ -644,7 +644,7 @@
     "price": "1700",
     "qty": "10",
     "description": "",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/kasu_black.jpg",
     "homeUrl": "https://www.kasugai.co.jp/product/candy/"
   },
@@ -655,7 +655,7 @@
     "price": "5000",
     "qty": "10",
     "description": "카스가이",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/kasu_black_b.jpg",
     "homeUrl": "https://trungnguyenlegend.com/g7/?lang=en"
   },
@@ -666,7 +666,7 @@
     "price": "1700",
     "qty": "10",
     "description": "",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/kasu_soguem.jpg",
     "homeUrl": "https://www.kasugai.co.jp/product/candy/"
   },
@@ -677,7 +677,7 @@
     "price": "1700",
     "qty": "10",
     "description": "",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/kasu_bean.jpg",
     "homeUrl": "https://www.kasugai.co.jp/product/candy/"
   },
@@ -688,7 +688,7 @@
     "price": "1700",
     "qty": "10",
     "description": "",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/kasu_cina.jpg",
     "homeUrl": "https://www.kasugai.co.jp/product/candy/"
   },
@@ -710,7 +710,7 @@
     "price": "1700",
     "qty": "10",
     "description": "",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/kasu_milk.jpg",
     "homeUrl": "https://www.kasugai.co.jp/product/candy/"
   },
@@ -721,7 +721,7 @@
     "price": "8000",
     "qty": "10",
     "description": "",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/g7_100.jpg",
     "homeUrl": "https://trungnguyenlegend.com/g7/?lang=en"
   },
@@ -732,7 +732,7 @@
     "price": "8500",
     "qty": "10",
     "description": "",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/g7_mix_50.jpg",
     "homeUrl": "https://trungnguyenlegend.com/g7/?lang=en"
   },
@@ -754,7 +754,7 @@
     "price": "1800",
     "qty": "10",
     "description": "",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/g7_mix_18.jpg",
     "homeUrl": ""
   },
@@ -765,7 +765,7 @@
     "price": "1000",
     "qty": "10",
     "description": "",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/black_coffee.jpg",
     "homeUrl": ""
   },
@@ -776,7 +776,7 @@
     "price": "1000",
     "qty": "10",
     "description": "",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/black_capu.jpg",
     "homeUrl": ""
   },
@@ -809,7 +809,7 @@
     "price": "5000",
     "qty": "10",
     "description": "",
-    "comment": "",
+    "comment": "https://via.placeholder.com/200x200",
     "imgs": "./imgs/salt.jpg",
     "homeUrl": ""
   },
@@ -919,8 +919,8 @@
     "price": "5500",
     "qty": "10",
     "description": "",
-    "comment": "",
-    "imgs": "",
+    "comment": "https://via.placeholder.com/200x200",
+    "imgs": "https://via.placeholder.com/200x200",
     "homeUrl": ""
   }
 ]
