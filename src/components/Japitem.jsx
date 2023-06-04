@@ -30,7 +30,7 @@ export function Japitem({ japitem }) {
         </span>
         <span className="transition-all hover:scale-110 mt-auto ">
           <img
-            src={japitem.imgUrl}
+            src={japitem.imgs}
             className="max-h-[150px]"
             onClick={() => {
               navigate(`/japitems/${japitem.id}`, { state: { japitem } })
