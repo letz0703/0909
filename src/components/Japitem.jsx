@@ -28,7 +28,7 @@ export function Japitem({ japitem }) {
         <span className="text-orange-500 font-bold">
           {FormatCurrency(japitem.price)}
         </span>
-        <span className="transition-all hover:scale-110 mt-auto ">
+        <span className="transition-all hover:scale-110 mt-auto align-self-center">
           <img
             src={japitem.imgs}
             className="max-h-[150px]"
