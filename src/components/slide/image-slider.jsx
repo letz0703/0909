@@ -43,8 +43,8 @@ function ImageSlider({ slides }) {
   const { openCart } = useShoppingCart()
 
   return (
-    <>
-      <div className="image-slider__main h-100 relative sm:mt-[1.2em]">
+    <div className={`absolute`}>
+      <div className="image-slider__main h-[100vh] mt-auto relative sm:mt-[1.2em]">
         {/* <div className="arrow arrow-left">{<BsFillArrowLeftCircleFill />}</div> */}
         {/* <div className="arrow arrow-left" onClick={goToPrevious}>
           <img src="/imgs/left.svg" />
@@ -204,7 +204,7 @@ function ImageSlider({ slides }) {
         width: 3rem;
       }
       `}</style>
-    </>
+    </div>
   )
 }
 

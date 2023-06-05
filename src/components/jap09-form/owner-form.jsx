@@ -8,7 +8,7 @@ export default function OwnerForm({ updateFields }) {
         통관 물품의 소유권
       </h2>
       <p>고객님께는 깡통시장 물건을 선배송 해드리므로</p>
-      <p>통관된 물건의 소유권은 저희에게 있습니다</p>
+      <p>통관된 물건의 소유권은 다음 공동 구매 고객분들에게 있습니다</p>
     </div>
   )
 }

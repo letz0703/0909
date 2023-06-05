@@ -53,12 +53,11 @@ export default function Jap() {
     <div className="jap__ flex flex-col align-items-center w-screen justify-start">
       <div className="jap__primary-header">
         <div className=" bg-pink-100 rounded-full flex flex-col justify-center align-items-center ">
-          <h2 className="text-2xl p-2 mx-3 my-0">일본 현지제품 공동구매</h2>
+          <h3 className="text-2xl p-2 mt-5 my-0">일본현지 공동구매</h3>
           <div className="bg-white w-[50%] flex flex-col justify-center p-2 mb-2">
             {/*<div className="font-bold mb-2 p-2 text-xl bg-white w-[300px] flex flex-col ">*/}
-            공동 구매 품목
             <div className="mt-1">
-              2023년 6월:{" "}
+              공동 구매 품목:
               <span className={`text-red-500 text-2xl p-2 m-2`}>곤약젤리</span>
             </div>
           </div>
@@ -66,8 +65,9 @@ export default function Jap() {
             고객님의 개인 통관번호로 공동 구매진행 합니다(150불 이하만)
           </div>
           <div className={`p-2`}>
-            주문하신 깡통시장 상품들외 곤약젤리(오리히로) 1봉지를 무료로 당일
-            발송해 드립니다(랜덤).
+            주문하신 깡통시장 상품들(유료) + ORIHIRO 곤약젤리 1봉지(무료)
+            <br />
+            당일 발송(기본택배비 무료) 합니다(인기있는 순으로 랜덤 발송)
           </div>
           <button
             onClick={openPopupWindow}
@@ -75,9 +75,9 @@ export default function Jap() {
           >
             진행 단계 보기
           </button>
-          <div>아래 동의서는 6장입니다</div>
+          {/*<div>동의서는 6장입니다</div>*/}
           <div className="p-2 bg-blue-200 md:text-xl ">
-            신청후 10일간 다른 해외 주문을 하지 않는 조건입니다.
+            조건: 신청후 10일간 다른 해외 주문을 하지 않는 조건입니다.
             {/*<div className="p-2 bg-blue-200 md:text-xl">*/}
             {/*다음 주문은 제품 통관 후 가능(7-10일)*/}
             {/*</div>*/}
@@ -101,6 +101,7 @@ export default function Jap() {
         background-position: center;
         background-size: cover;
         max-height:max-content;
+        object-fit: cover;
         // min-height:50vw;
         // width: 97.2vw;
         display: flex;

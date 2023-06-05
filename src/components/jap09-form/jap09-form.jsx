@@ -29,7 +29,7 @@ export default function Jap09Form({ icUser }) {
     jName: "",
     jCell: "",
     jCsNo: "",
-    jProduct: "곤약젤리 일본현지 주문",
+    jProduct: "곤약젤리",
     // jDeliveryTo: "",
     jEtc: "",
   }
@@ -114,7 +114,7 @@ export default function Jap09Form({ icUser }) {
             </>
           )}
           <button className="btn btn--primary mini">
-            {!isLastStep ? "next" : "동의 및 신청"}
+            {!isLastStep ? `next ${5 - currentStepIndex}` : "동의 및 신청"}
           </button>
         </div>
       </form>

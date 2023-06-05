@@ -19,16 +19,30 @@ export default function Slide() {
   ]
 
   const containerStyle = {
+    position: "relative",
     objectFit: "cover",
     padding: "0.6rem",
-    aspectRatio: "16/9",
+    //aspectRatio: "16/9",
+  }
+
+  const imageStyle = {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
   }
 
   return (
-    <section className="mt-[8.5vh] md:mt-[11vh] lg:mt-[4vh]">
+    <section className="mt-[8.5vh] md:mt-[11vh] lg:mt-[100vh]">
       <div style={containerStyle} className="slide">
         <ImageSlider slides={slides} />
       </div>
+      <style>{`
+      .slide {
+        position: relative;
+      }
+      `}</style>
     </section>
   )
 }
