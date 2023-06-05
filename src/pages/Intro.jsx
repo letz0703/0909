@@ -5,7 +5,7 @@ export function Intro({ user }) {
 
   return (
     <section className={`${user && "hidden"}  `}>
-      <h2>Life is not a problme to solve</h2>
+      <h3>Life is !a problme to solve</h3>
       <br />
       <div className="heart"></div>
       <div className={`mx-auto`} style={{ width: "50%" }}>

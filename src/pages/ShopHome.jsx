@@ -22,14 +22,54 @@ import { Easy } from "../components/Easy/Easy"
 import { Intro } from "./Intro"
 import { Wizbox } from "./Wizbox"
 import { Info09 } from "./Info_09"
+import { UseOpenClose } from "../util/use_open_close"
 export default function ShopHome() {
   const { user, uid, login, logout } = useAuthContext()
+  const timeOpen = "19:00:00"
+  const timeClose = "07:00:00"
+  const [html_open, setHtml_open] = useState(true)
+  const [currentTime, setCurrentTime] = useState(() => getCurrentTime())
+
+  function getCurrentTime() {
+    let now = new Date()
+    let hours = now.getHours()
+    let minutes = now.getMinutes()
+    var seconds = now.getSeconds()
+    return hours + ":" + seconds
+  }
+
+  function changePageByTime() {
+    if (timeClose >= currentTime >= timeOpen) {
+      setHtml_open(true)
+    } else {
+      setHtml_open(false)
+    }
+    return html_open ? am : pm
+  }
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      changePageByTime()
+    }, 60)
+    return clearTimeout(timeout)
+  }, [])
+
   return (
     <div className={`${styles.shop_home} w-[100vw] pt-[300px] `}>
-      {/*<Intro user={user} />*/}
-      {!user && <Wizbox />}
-      {user && <Info09 />}
-      {user && <Products {...product} />}
+      {html_open ? (
+        <>
+          {!user && <Info09 />}
+          {/*<Info09 />*/}
+          <Products {...product} />
+          {/*<Slide />*/}
+        </>
+      ) : (
+        <Intro user={user} />
+      )}
+      {/*<Intro />*/}
+      {/*<Info09 />*/}
+      {/*<Products />*/}
+      {/*<Info09 />*/}
       {/*<section>Footer</section>*/}
       {/*{!user && <Slide />}*/}
     </div>

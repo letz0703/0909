@@ -25,6 +25,7 @@ export function Wizbox() {
             </button>
           </div>
         )}
+        <span>&</span>
         <span className="text-gray-400">↓ scroll DOWN ↓</span>
       </div>
     </section>
