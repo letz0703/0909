@@ -55,7 +55,8 @@ export default function JapitemDetail() {
         {/* <img src={imgUrl} className="japitem-detail__imageDetail " /> */}
         <div className="align-self-center">
           <img
-            src={imgUrl.includes("https") ? imgUrl : "../" + imgUrl}
+            //src={imgUrl.includes("https") ? imgUrl : "../" + imgUrl}
+            src="../../dist/imgs/nerican_world.png"
             className="japitem-detail__imageDetail "
             style={{ minWidth: "300px" }}
           />
