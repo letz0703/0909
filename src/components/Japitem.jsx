@@ -11,27 +11,16 @@ export function Japitem({ japitem }) {
   const navigate = useNavigate()
 
   return (
-    <div
-      className={`${styles.product}  flex flex-col items-center card `}
-      style={{ heigh: "100%" }}
-    >
-      <div
-        className="wrapper"
-        style={{
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-        }}
-      >
-        <span className="max-w-[80%] truncate">{japitem.name}</span>
+    <div className={`${styles.product}  flex flex-col items-stretch card `}>
+      <div className="wrapper">
+        <span className="max-w-[90%] truncate">{japitem.name}</span>
         <span className="text-orange-500 font-bold">
           {FormatCurrency(japitem.price)}
         </span>
-        <span className="transition-all hover:scale-110 mt-auto align-self-center">
+        <span className="transition-all hover:scale-110 mt-auto align-self-center self-stretch">
           <img
             src={japitem.imgs}
-            className="max-h-[150px]"
+            className="max-h-[150px] pt-3"
             onClick={() => {
               navigate(`/japitems/${japitem.id}`, { state: { japitem } })
             }}
