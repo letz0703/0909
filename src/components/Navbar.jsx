@@ -46,6 +46,7 @@ export default function Navbar({ search, setSearch }) {
       } h-[72px] w-[100vw ] flex items-center  justify-evenly border-b ${
         !user ? "hidden" : ""
       }`}
+      style={{ position: "fixed", top: 0, left: 0, width: "100%", zIndex: 100 }}
     >
       {/* <section className="icNavbar__sec1"> */}
       {/* <div className=" text-brand"> */}

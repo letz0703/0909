@@ -36,7 +36,7 @@ export default function Products(product) {
 
   return (
     <section
-      className="product shop-home w-[100vw] grid grid-cols-1 lg:grid-cols-7 gap-2 md:mt-[10vh] lg:mt-[20px] py-2"
+      className="product shop-home w-[100vw] grid grid-cols-1 lg:grid-cols-7 gap-2 md:mt-[10vh] lg:mt-[20px] py-4"
       style={{ overflowY: "auto" }}
     >
       {mainItems
