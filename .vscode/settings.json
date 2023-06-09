@@ -128,7 +128,6 @@
   "todo-tree.tree.showBadges": true,
   "todo-tree.tree.scanMode": "open files",
   "[javascript]": {
-    "editor.defaultFormatter": "svipas.prettier-plus"
     // "editor.autoClosingBrackets": "never"
   },
   "editor.acceptSuggestionOnEnter": "smart",
@@ -142,22 +141,25 @@
       "editor.action.addCommentLine",
       "cursorDown"
     ],
-    "addSemicolon": ["cursorEnd", {"command": "type", "args": {"text": ";"}}],
+    "addSemicolon": [
+      "cursorEnd",
+      { "command": "type", "args": { "text": ";" } }
+    ],
     "classname": [
       "classname",
-      {"command": "type", "args": {"text": "cn"}},
+      { "command": "type", "args": { "text": "cn" } },
       "insertSnippet"
     ],
     "doMySnippet": [
-      {"command": "type", "args": {"text": "cl"}},
+      { "command": "type", "args": { "text": "cl" } },
       "insertSnippet"
     ],
     "callbackSnippet": [
-      {"command": "type", "args": {"text": "nj"}},
+      { "command": "type", "args": { "text": "nj" } },
       "insertSnippet"
     ]
   },
-  "editor.defaultFormatter": "svipas.prettier-plus",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "emmet.showSuggestionsAsSnippets": true,
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
