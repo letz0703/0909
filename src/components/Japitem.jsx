@@ -17,10 +17,10 @@ export function Japitem({ japitem }) {
         <span className="text-orange-500 font-bold">
           {FormatCurrency(japitem.price)}
         </span>
-        <span className="transition-all hover:scale-110 mt-auto align-self-center self-stretch">
+        <span className="transition-all hover:scale-110 mt-auto self-stretch">
           <img
             src={japitem.imgs}
-            className="max-h-[150px] pt-3"
+            className="sm:max-h-[150px] lg:min-h-[150px] pt-3 mr-auto ml-auto"
             onClick={() => {
               navigate(`/japitems/${japitem.id}`, { state: { japitem } })
             }}

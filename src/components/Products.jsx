@@ -36,11 +36,11 @@ export default function Products(product) {
 
   return (
     <section
-      className="product shop-home w-[100vw] grid grid-cols-1 lg:grid-cols-7 gap-2 md:mt-[10vh] lg:mt-[20px] py-4"
+      className="product shop-home w-[100vw] grid grid-cols-1 lg:grid-cols-5 gap-2 md:mt-[10vh] lg:mt-[60px] "
       style={{ overflowY: "auto" }}
     >
       {mainItems
-        .filter((item) => {
+        ?.filter((item) => {
           return search.toLowerCase() === ""
             ? item
             : item.name.toLowerCase().includes(search)
