@@ -183,6 +183,7 @@ export default function NewProduct() {
         </table>
         <CSVtoJSONConverter />
         <button className="btn btn--primary">아이템등록</button>
+
         <div className="new-product__Main  w-full text-center flex flex-col justify-center items-center">
           <div className="new-product__list place-content-center text-center w-full">
             <span>code: {addedJapitem.code}</span>
@@ -222,6 +223,7 @@ export default function NewProduct() {
           <span className="font-semibold">
             TOTAL: {FormatCurrency(addedJapitem.qty * addedJapitem.price)}
           </span>
+
           <h1>전체 주문</h1>
           <IcORders />
 

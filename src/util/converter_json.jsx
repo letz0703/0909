@@ -37,7 +37,19 @@ const CSVtoJSONConverter = () => {
   return (
     <div>
       <input type="file" onChange={handleFileChange} />
-      <button onClick={convertCSVtoJSON}>Convert</button>
+      <button onClick={convertCSVtoJSON} className={`btn btn--primary`}>
+        Convert
+      </button>
+      <div
+        className={`btn btn--danger`}
+        onClick={() =>
+          window.open(
+            "https://console.firebase.google.com/u/0/project/project-631666835521049928/database/project-631666835521049928-default-rtdb/data/~2Fjapitems"
+          )
+        }
+      >
+        Fire Base
+      </div>
       {jsonData && <pre>{JSON.stringify(jsonData, null, 2)}</pre>}
     </div>
   )
