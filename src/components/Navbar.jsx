@@ -46,7 +46,13 @@ export default function Navbar({ search, setSearch }) {
       } h-[72px] w-[100vw ] flex items-center  justify-evenly border-b ${
         !user ? "hidden" : ""
       }`}
-      style={{ position: "fixed", top: 0, left: 0, width: "100%", zIndex: 100 }}
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        zIndex: 100,
+      }}
     >
       {/* <section className="icNavbar__sec1"> */}
       {/* <div className=" text-brand"> */}
@@ -113,6 +119,28 @@ export default function Navbar({ search, setSearch }) {
           {/* <div className={`${styles.nav_center} navbar__search-input`}> */}
           {/* {user && <SearchInput setSearch={setSearch} className="검색폼" />} */}
           <SearchInput setSearch={setSearch} />
+        </section>
+      )}
+      {window.location.href.includes("/jap") && (
+        <section className="sec2 pt-3 text-blue-100">
+          {/* <div className={`${styles.nav_center} navbar__search-input`}> */}
+          {/* {user && <SearchInput setSearch={setSearch} className="검색폼" />} */}
+          {/*<SearchInput setSearch={setSearch} />*/}
+          <h3
+            className={`btn red`}
+            onClick={
+              () =>
+                window.open(
+                  "https://www.figma.com/file/1l1NkHPEb4IQWd3t8G7dEB/wizbox.shop?type=whiteboard&node-id=0%3A1&t=3WZI5Sw6ZBLsaGSh-1",
+                  "_blank"
+                )
+              //</section>window.location.replace(
+              //"https://www.figma.com/file/1l1NkHPEb4IQWd3t8G7dEB/wizbox.shop?type=whiteboard&node-id=0%3A1&t=3WZI5Sw6ZBLsaGSh-1"
+              //)
+            }
+          >
+            wizbox.shop
+          </h3>
         </section>
       )}
       <nav className="flex item-center font-bold">

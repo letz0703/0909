@@ -11,8 +11,8 @@ export function Japitem({ japitem }) {
   const navigate = useNavigate()
 
   return (
-    <div className={`${styles.product}  flex flex-col items-stretch card `}>
-      <div className="wrapper">
+    <div className={`${styles.product}  flex flex-col items-stretch card`}>
+      <div className="wrapper min-h-[10em] items-stretch">
         <div className="max-w-[100%] truncate">{japitem.name}</div>
         <div className="text-orange-500 font-bold">
           {FormatCurrency(japitem.price)}
