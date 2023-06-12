@@ -237,9 +237,9 @@
     "price": "3700",
     "qty": "10",
     "description": "사진과 약간 차이가 있을 수 있습니다",
-    "comment": "https://via.placeholder.com/200x200",
-    "imgs": "../../imgs/vermont_hot.jpg",
-    "homeUrl": "https://www.housefoods.com/japanese-curry/en/products/vermont_curry/"
+    "comment": "https://arc.net/e/544E4113-86DD-4E51-9B1D-4093BB4134DF",
+    "imgs": "../../imgs/vermont_hot.png",
+    "homeUrl": "https://housefoods.jp/"
   },
   {
     "id": "22",
@@ -248,9 +248,9 @@
     "price": "3700",
     "qty": "10",
     "description": "사진과 약간 차이가 있을 수 있습니다",
-    "comment": "https://via.placeholder.com/200x200",
-    "imgs": "../../imgs/vernont_mild.jpg",
-    "homeUrl": "https://www.housefoods.com/japanese-curry/en/products/vermont_curry/"
+    "comment": "https://arc.net/e/544E4113-86DD-4E51-9B1D-4093BB4134DF",
+    "imgs": "../../imgs/vermont_mild.png",
+    "homeUrl": "https://housefoods.jp/"
   },
   {
     "id": "23",
@@ -259,9 +259,9 @@
     "price": "3700",
     "qty": "10",
     "description": "사진과 약간 차이가 있을 수 있습니다",
-    "comment": "https://via.placeholder.com/200x200",
-    "imgs": "../../imgs/medium.jpg",
-    "homeUrl": "https://www.housefoods.com/japanese-curry/en/products/vermont_curry/"
+    "comment": "https://arc.net/e/544E4113-86DD-4E51-9B1D-4093BB4134DF",
+    "imgs": "../../imgs/vermont_medium.png",
+    "homeUrl": "https://housefoods.jp/"
   },
   {
     "id": "24",
