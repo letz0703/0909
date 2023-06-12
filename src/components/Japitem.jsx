@@ -13,14 +13,14 @@ export function Japitem({ japitem }) {
   return (
     <div className={`${styles.product}  flex flex-col items-stretch card `}>
       <div className="wrapper">
-        <span className="max-w-[90%] truncate">{japitem.name}</span>
-        <span className="text-orange-500 font-bold">
+        <div className="max-w-[100%] truncate">{japitem.name}</div>
+        <div className="text-orange-500 font-bold">
           {FormatCurrency(japitem.price)}
-        </span>
+        </div>
         <span className="transition-all hover:scale-110 mt-auto self-stretch">
           <img
             src={japitem.imgs}
-            className="sm:max-h-[150px] lg:min-h-[150px] pt-3 mr-auto ml-auto"
+            className="sm:max-h-[180px] lg:min-h-[170px] pt-3 mr-auto ml-auto"
             onClick={() => {
               navigate(`/japitems/${japitem.id}`, { state: { japitem } })
             }}
