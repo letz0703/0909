@@ -149,7 +149,7 @@ export default function Navbar({ search, setSearch }) {
           <CiTwitter
             className="text-red-400 font-bold text-2xl"
             onClick={() =>
-              window.location.replace("https://twitter.com/wizbox051")
+              window.location.replace("https://twitter.com/icanmart")
             }
           />
           {user && (
@@ -157,15 +157,15 @@ export default function Navbar({ search, setSearch }) {
               {/* <Link to="/" className="md:hidden">
                 home
               </Link> */}
-              <Link to="/jap" className="hidden md:block">
+              {/*<Link to="/jap" className="hidden md:block">
                 japan09
-              </Link>
-              <Link to="/shop" className="ml-2 hidden md:block">
+              </Link>*/}
+              {/*<Link to="/shop" className="ml-2 hidden md:block">
                 shop
-              </Link>
+              </Link>*/}
             </>
           )}
-          {user && (
+          {icUser && (
             <Link
               to="/my_orders"
               className="hidden md:block"
@@ -181,7 +181,7 @@ export default function Navbar({ search, setSearch }) {
             </Link>
           )}
         </div>
-        {user && user.isAdmin ? (
+        {user && isAdmin ? (
           <BsYoutube
             className="navbar__youtube-icon fs-4 "
             style={{ width: "100%", color: "red" }}
