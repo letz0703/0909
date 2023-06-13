@@ -523,19 +523,19 @@
     "price": "5500",
     "qty": "10",
     "description": "800 그램",
-    "comment": "https://twitter.com/icanmart/status/1636574289431511041/photo/1",
-    "imgs": "../../imgs/capu.jpg",
+    "comment": "https://arc.net/e/25F50C61-16F4-4D32-81B0-2BC22FDFF493",
+    "imgs": "../../imgs/kopico.png",
     "homeUrl": "https://www.mayora.com/en/our-brands/candy/kopiko"
   },
   {
     "id": "48",
     "code": "8850580200244",
     "name": "코피코 카푸치노 사탕 소",
-    "price": "1300",
+    "price": "1400",
     "qty": "10",
     "description": "150그램",
-    "comment": "https://via.placeholder.com/200x200",
-    "imgs": "../../imgs/capu_s.jpg",
+    "comment": "https://arc.net/e/25F50C61-16F4-4D32-81B0-2BC22FDFF493",
+    "imgs": "../../imgs/kopico.png",
     "homeUrl": "https://www.mayora.com/en/our-brands/candy/kopiko"
   },
   {
@@ -545,19 +545,19 @@
     "price": "5500",
     "qty": "10",
     "description": "800 그램",
-    "comment": "https://twitter.com/icanmart/status/1636573839902806016/photo/1",
-    "imgs": "../../imgs/copi.jpg",
+    "comment": "https://arc.net/e/25F50C61-16F4-4D32-81B0-2BC22FDFF493",
+    "imgs": "../../imgs/kopico.png",
     "homeUrl": "http://www.imacro.co.kr/product/item/165"
   },
   {
     "id": "50",
     "code": "8886001200197",
     "name": "코피코 커피사탕 소 ",
-    "price": "1300",
+    "price": "1400",
     "qty": "10",
     "description": "150그램",
-    "comment": "https://via.placeholder.com/200x200",
-    "imgs": "../../imgs/copi_s.jpg",
+    "comment": "https://arc.net/e/25F50C61-16F4-4D32-81B0-2BC22FDFF493",
+    "imgs": "../../imgs/kopico.png",
     "homeUrl": "https://www.mayora.com/en/our-brands/candy/kopiko"
   },
   {
@@ -567,8 +567,8 @@
     "price": "19000",
     "qty": "10",
     "description": "감기약",
-    "comment": "https://twitter.com/icanmart/status/1636594564961304577/photo/1",
-    "imgs": "../../imgs/pav.jpg",
+    "comment": "https://arc.net/e/73BFD8EC-C82F-4BF1-AF38-EBA2E1A54165",
+    "imgs": "../../imgs/pabron.jpg",
     "homeUrl": "https://www.taisho.co.jp/global/our_products/pabron_series.html"
   },
   {
@@ -578,8 +578,8 @@
     "price": "20000",
     "qty": "10",
     "description": "감기약",
-    "comment": "https://via.placeholder.com/200x200",
-    "imgs": "../../imgs/pav_al.jpg",
+    "comment": "https://arc.net/e/73BFD8EC-C82F-4BF1-AF38-EBA2E1A54165",
+    "imgs": "../../imgs/pabron_al.jpg",
     "homeUrl": "https://www.taisho.co.jp/global/our_products/pabron_series.html"
   },
   {
@@ -590,7 +590,7 @@
     "qty": "10",
     "description": "아즈키 모나카",
     "comment": "https://via.placeholder.com/200x200",
-    "imgs": "../../imgs/monaka.jpg",
+    "imgs": "../../imgs/monaka.png",
     "homeUrl": "http://samkyoung.com/product/%ec%95%84%ec%a3%bc%eb%81%bc-%eb%aa%a8%eb%82%98%ec%b9%b4/"
   },
   {
@@ -599,9 +599,9 @@
     "name": "때비누",
     "price": "1500",
     "qty": "10",
-    "description": "",
-    "comment": "https://via.placeholder.com/200x200",
-    "imgs": "../../imgs/binu.jpg",
+    "description": "기름기 확제거",
+    "comment": "https://arc.net/e/59AF55ED-E659-429A-ACCC-34A7803183AC",
+    "imgs": "../../imgs/soap_dirt.jpg",
     "homeUrl": "http://303goodlife.com.tw/h/ProductDetail?key=621263289108&productId=78191"
   },
   {
@@ -610,9 +610,9 @@
     "name": "행주비누",
     "price": "1500",
     "qty": "10",
-    "description": "백설귀부인 https://twitter.com/icanmart/status/1636245639607771136/photo/1",
-    "comment": "",
-    "imgs": "../../imgs/hangju.jpg",
+    "description": "백설 귀부인",
+    "comment": "https://arc.net/e/59AF55ED-E659-429A-ACCC-34A7803183AC",
+    "imgs": "../../imgs/soap_hang.jpg",
     "homeUrl": "https://twitter.com/icanmart/status/1636245639607771136/photo/1"
   },
   {
@@ -710,7 +710,7 @@
     "price": "8000",
     "qty": "10",
     "description": "",
-    "comment": "https://via.placeholder.com/200x200",
+    "comment": "https://arc.net/e/4D23EC28-2340-4D9B-BAD9-C7C0F9D4AE64",
     "imgs": "../../imgs/g7_100.jpg",
     "homeUrl": "https://trungnguyenlegend.com/g7/?lang=en"
   },
@@ -721,7 +721,7 @@
     "price": "8500",
     "qty": "10",
     "description": "",
-    "comment": "https://via.placeholder.com/200x200",
+    "comment": "https://arc.net/e/4D23EC28-2340-4D9B-BAD9-C7C0F9D4AE64",
     "imgs": "../../imgs/g7_mix_50.jpg",
     "homeUrl": "https://trungnguyenlegend.com/g7/?lang=en"
   },
@@ -731,9 +731,9 @@
     "name": "g7 블랙 200개입",
     "price": "16000",
     "qty": "10",
-    "description": "박스포장",
-    "comment": "https://twitter.com/icanmart/status/1636495545106829312/photo/1",
-    "imgs": "../../imgs/g7_b_200.jpg",
+    "description": "",
+    "comment": "https://arc.net/e/4D23EC28-2340-4D9B-BAD9-C7C0F9D4AE64",
+    "imgs": "../../imgs/g7_200.jpg",
     "homeUrl": "https://trungnguyenlegend.com/g7/?lang=en"
   },
   {
@@ -743,23 +743,23 @@
     "price": "1800",
     "qty": "10",
     "description": "",
-    "comment": "https://via.placeholder.com/200x200",
+    "comment": "https://arc.net/e/4D23EC28-2340-4D9B-BAD9-C7C0F9D4AE64",
     "imgs": "../../imgs/g7_mix_18.jpg",
     "homeUrl": ""
   },
   {
-    "id": "69",
+    "id": "68",
     "code": "4571104586036",
     "name": "카푸치노 사탕",
     "price": "1000",
     "qty": "10",
-    "description": "",
-    "comment": "https://via.placeholder.com/200x200",
-    "imgs": "../../imgs/black_capu.jpg",
+    "description": "오성 커피사탕",
+    "comment": "",
+    "imgs": "../../imgs/cappuccino.jpg",
     "homeUrl": ""
   },
   {
-    "id": "70",
+    "id": "69",
     "code": "4903333232086",
     "name": "포켓 후니 ",
     "price": "3500",
@@ -770,7 +770,7 @@
     "homeUrl": "https://www.lotte.co.jp/products/catalogue/candy/22/detail06.html"
   },
   {
-    "id": "71",
+    "id": "70",
     "code": "4902104001142",
     "name": "사시미 간장 소 ",
     "price": "3100",
@@ -781,7 +781,7 @@
     "homeUrl": "https://www.nibishi.co.jp/about-company/en_products/"
   },
   {
-    "id": "72",
+    "id": "71",
     "code": "4901616005266",
     "name": "소금치약",
     "price": "5000",
@@ -792,29 +792,18 @@
     "homeUrl": ""
   },
   {
-    "id": "73",
+    "id": "72",
     "code": "",
     "name": "비겐 염색약 6g",
     "price": "7500",
     "qty": "10",
     "description": "",
-    "comment": "https://twitter.com/icanmart/status/1636605929969053696/photo/1",
-    "imgs": "../../imgs/bigen_6g.jpg",
+    "comment": "https://arc.net/e/547D627C-AE45-4ED6-9E28-4819224D747A",
+    "imgs": "../../imgs/bigen_6.jpg",
     "homeUrl": ""
   },
   {
     "id": "74",
-    "code": "",
-    "name": "비겐 염색약 7g",
-    "price": "7500",
-    "qty": "10",
-    "description": "",
-    "comment": "https://twitter.com/icanmart/status/1636582655537086465/photo/1",
-    "imgs": "../../imgs/bigen_7g.jpg",
-    "homeUrl": ""
-  },
-  {
-    "id": "75",
     "code": "",
     "name": "얼굴 각질 제거 젤",
     "price": "5000",
@@ -822,10 +811,10 @@
     "description": "로제트",
     "comment": "https://twitter.com/icanmart/status/1636736915507654656/photo/1",
     "imgs": "../../imgs/peeling.jpg",
-    "homeUrl": "https://www.haribo.com/en-gb/products/haribo"
+    "homeUrl": ""
   },
   {
-    "id": "76",
+    "id": "75",
     "code": "",
     "name": "하리보 젤리 200그램",
     "price": "2500",
@@ -836,18 +825,18 @@
     "homeUrl": ""
   },
   {
-    "id": "77",
+    "id": "76",
     "code": "",
     "name": "포켓몬 후리카케",
     "price": "5000",
     "qty": "10",
-    "description": "",
-    "comment": "https://twitter.com/icanmart/status/1638450788744974337/photo/1",
-    "imgs": "../../imgs/poke_huri.jpg",
+    "description": "https://www.marumiya.co.jp/",
+    "comment": "https://arc.net/e/B74B8D74-AE16-41C0-8C7E-DDCD1505A71A",
+    "imgs": "../../imgs/pokemon_huri.jpg",
     "homeUrl": ""
   },
   {
-    "id": "78",
+    "id": "77",
     "code": "",
     "name": "지팡이 초코",
     "price": "1000",
@@ -858,7 +847,7 @@
     "homeUrl": ""
   },
   {
-    "id": "79",
+    "id": "78",
     "code": "",
     "name": "감자칩 와사비맛",
     "price": "900",
@@ -869,7 +858,7 @@
     "homeUrl": ""
   },
   {
-    "id": "80",
+    "id": "79",
     "code": "",
     "name": "바셀린 106그램",
     "price": "3000",
@@ -880,7 +869,7 @@
     "homeUrl": ""
   },
   {
-    "id": "81",
+    "id": "80",
     "code": "",
     "name": "포켓몬 어린이 카레",
     "price": "2000",
@@ -891,18 +880,18 @@
     "homeUrl": "https://www.lotte.co.jp/products/catalogue/candy/22/detail06.html"
   },
   {
-    "id": "82",
+    "id": "81",
     "code": "",
     "name": "호빵맨 모기패치",
     "price": "5500",
     "qty": "10",
     "description": "",
-    "comment": "",
-    "imgs": "https://via.placeholder.com/200x200",
+    "comment": "https://arc.net/e/9B698095-DAEF-4E5B-8BD5-6C4BA604BB62",
+    "imgs": "../../imgs/anpangman.jpg",
     "homeUrl": "https://www.ikedamohando.co.jp/products/insect_bite/index.html"
   },
   {
-    "id": "83",
+    "id": "82",
     "code": "",
     "name": "슈퍼 마리오 젤리",
     "price": "3500",
