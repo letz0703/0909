@@ -23,6 +23,7 @@ import Store from "./pages/Store"
 import { PopCart } from "./components/PopCart"
 import MyOrders from "./pages/MyOrders-page"
 import JapAdmin from "./components/jap-admin/jap-admin"
+import VIP from "./pages/VIP"
 
 const router = createBrowserRouter([
   {
@@ -65,6 +66,7 @@ const router = createBrowserRouter([
         element: <PopCart />,
       },
       { path: "/shop", element: <Store /> },
+      { path: "/vip", element: <VIP /> },
       { path: "/my_orders", element: <MyOrders /> },
       { path: "/videos", element: <Videos /> },
       { path: "/videos/:keyword", element: <Videos /> },
