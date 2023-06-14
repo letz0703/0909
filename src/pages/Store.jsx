@@ -17,9 +17,9 @@ export default function Store() {
   }, [curUrl.includes("store")])
 
   return (
-    <div className={` `}>
+    <>
       {/*<h1 className="text-red-600 hidden md:block">깡통시장 구매 대행(shop)</h1>*/}
       <Products />
-    </div>
+    </>
   )
 }
