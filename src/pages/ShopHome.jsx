@@ -58,8 +58,8 @@ export default function ShopHome() {
     <div className={`${styles.shop_home} w-[100vw] pt-[300px] `}>
       {html_open ? (
         <>
-          {!user && <Intro />}
-          {user && <Info09 />}
+          {/*{!user && <Intro />}*/}
+          {/*{user && <Info09 />}*/}
           {/*<Info09 />*/}
           {user && <Products {...product} />}
           {/*<Products {...product} />*/}
