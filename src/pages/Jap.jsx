@@ -50,7 +50,7 @@ export default function Jap() {
   }
 
   return (
-    <div className="jap__ flex flex-col align-items-center w-screen justify-start">
+    <div className="jap__ flex flex-col align-items-center w-screen justify-start lg:mt-[7em]">
       <div className="jap__primary-header">
         <div className=" bg-pink-100 rounded-full flex flex-col justify-center align-items-center ">
           <h3 className="text-2xl p-2 mt-5 my-0">일본현지 공동구매</h3>
@@ -65,8 +65,17 @@ export default function Jap() {
             고객님의 개인 통관번호로 공동 구매진행 합니다(150불 이하만)
           </div>
           <div className={`p-2`}>
-            주문하신 깡통시장 상품들(유료) + 컵타입(만난라이프) 곤약젤리
-            1봉지(무료)
+            주문하신 깡통시장 상품들(유료) +{" "}
+            <span
+              onClick={() =>
+                window.open(
+                  "https://arc.net/e/26C13009-65DA-4A52-990C-AE13877FDE7A"
+                )
+              }
+              className={`cursor-pointer underline`}
+            >
+              컵타입(만난라이프) 곤약젤리 1봉지(무료)
+            </span>
             <br />
             당일 발송(기본택배비 무료) 합니다(인기있는 순으로 랜덤 발송)
           </div>

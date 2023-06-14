@@ -47,8 +47,8 @@ export default function JapitemDetail() {
   }, [])
 
   return (
-    <div className="japitem-detail flex justify-center mt-[7vh]">
-      <div className="">
+    <div className="japitem-detail flex justify-center">
+      <div className="mt-[5rem]">
         <h1>{name}</h1>
       </div>
       <div className="transition-all  flex flex-col">

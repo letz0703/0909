@@ -28,7 +28,7 @@ export const SearchContext = createContext()
 function LayOut() {
   return (
     <>
-      <div className={`outlet flex w-100vw`}>
+      <div className={`outlet flex w-100vw mt-[16px]`}>
         <Outlet />
       </div>
       <style>{`
