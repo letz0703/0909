@@ -69,7 +69,9 @@ export default function JapitemDetail() {
         <br />
         <span
           className="btn btn--primary blue mini"
-          onClick={() => window.open(`${homeUrl}`, `_blank`)}
+          onClick={() => {
+            homeUrl && window.open(`${homeUrl}`, `_blank`)
+          }}
           // onClick={() => window.location.replace(`${homeUrl}`)}
         >
           홈페이지
