@@ -32,7 +32,7 @@ export function Intro({ user }) {
             window.location.replace("https://twitter.com/wizbox051")
           }
         >
-          <BsTwitter />
+          <BsTwitter style={{ color: "purple" }} />
         </span>
         <br />
         I'll do my best to respond to your inquiryASAP
