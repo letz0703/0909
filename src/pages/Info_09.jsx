@@ -6,12 +6,12 @@ export function Info09() {
   return [
     //prettier-ignore
     <section style={{width:"maxContent"}}>
-        <h3 className={`text-[3rem]  `}>wizbox</h3>
-        <p className={`text-[1.1rem] text-[#c10002]`}>.shop <br/>by <br/>i.canmart</p>
-        <div className={`pt-1 text-xl pt-2`}>010.9876.1815</div>
-        <div className={`flex justify-center align-center`}>
+        <h3 className={`text-[3rem]  pb-[0.9rem]`}>wizbox</h3>
+        <p className={`text-[1.1rem] text-[#c10002]`}><span className={`text-[3rem]`}>.</span><br/>shop <br/>by <br/>i.canmart</p>
+        <div className={`pt-1 text-xl pb-1`}>010.9876.1815</div>
+        {/*<div className={`flex justify-center align-center`}>*/}
         {/*<pre className={`w-auto text-[1.4em] py-2 `}>다음날 받는 해외주문</pre>*/}
-        </div>
+        {/*</div>*/}
         <div className="text">
         {/*<p className={`pt-3`}>일반 해외주문 배송기간 =  7~10일</p>*/}
         {/*<p className={`pt-3`}>일본 주문 기본 배송료 = 6000원 이상</p>*/}
@@ -53,7 +53,7 @@ export function Info09() {
         </div>
         <div className={`text-slate-700 pt-3`}>본 사이트는 저희 단골고객님과 <br/>오프라인 가게 방문 고객님들 <br/>중 소수분들께만 알려드리는<br/>
         서비스 사이트 입니다</div>
-        <div className={`text-xl pt-3 font-bold`}>밤 7시 ~ 새벽 7시까지만 open 합니다.</div>
+        <div className={`text-xl pt-[3em] font-semibold text-gray-500`}>밤 7시 ~ 새벽 7시까지만 open 합니다.</div>
         <div>
           🛍️ 주문 하시려면
           <button onClick={login} className={`btn btn--primary  `}>
