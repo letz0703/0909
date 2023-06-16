@@ -39,34 +39,39 @@ export default function ShopHome() {
   }
 
   function changePageByTime() {
-    if (timeClose >= currentTime >= timeOpen) {
+    const now = getCurrentTime()
+    //if (timeClose >= currentTime >= timeOpen) {
+    if (timeOpen <= now && now <= timeClose) {
       setHtml_open(true)
     } else {
       setHtml_open(false)
     }
-    return html_open ? am : pm
+    //return html_open ? am : pm
   }
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       changePageByTime()
-    }, 60)
-    return clearTimeout(timeout)
-  }, [])
+    }, 60 * 1000)
+    return () => clearTimeout(timeout)
+  }, [currentTime])
 
   return (
     <div className={`${styles.shop_home} w-[100vw]  `}>
-      {html_open ? (
+      {/*{html_open ? (*/}
+      {true ? (
         <>
-          {!user && <Intro />}
-          {/*{!user && <Info09 />}*/}
+          {/*{!user && <Intro />}*/}
+          {!user && <Info09 />}
           {/*<Info09 />*/}
           {user && <Products {...product} />}
           {/*<Products {...product} />*/}
           {/*<Slide />*/}
         </>
       ) : (
-        !user && <Intro user={user} />
+        <>
+          !user && <Intro user={user} />
+        </>
       )}
       {/*<Intro />*/}
       {/*<Info09 />*/}
