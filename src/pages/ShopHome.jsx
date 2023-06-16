@@ -58,10 +58,10 @@ export default function ShopHome() {
     <div className={`${styles.shop_home} w-[100vw]  `}>
       {html_open ? (
         <>
-          {/*{!user && <Intro />}*/}
-          {!user && <Info09 />}
+          {!user && <Intro />}
+          {/*{!user && <Info09 />}*/}
           {/*<Info09 />*/}
-          {user && <Products {...product} />}
+          {/*{user && <Products {...product} />}*/}
           {/*<Products {...product} />*/}
           {/*<Slide />*/}
         </>
