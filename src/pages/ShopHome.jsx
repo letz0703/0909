@@ -61,7 +61,7 @@ export default function ShopHome() {
           {!user && <Intro />}
           {/*{!user && <Info09 />}*/}
           {/*<Info09 />*/}
-          {/*{user && <Products {...product} />}*/}
+          {user && <Products {...product} />}
           {/*<Products {...product} />*/}
           {/*<Slide />*/}
         </>
