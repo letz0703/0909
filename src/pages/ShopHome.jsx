@@ -20,6 +20,7 @@ import Navbar from "../components/Navbar"
 //import { Gallery } from "../components/Gallery/Gallery"
 import { Easy } from "../components/Easy/Easy"
 import { Intro } from "./Intro"
+import { Intro2 } from "./Intro2"
 import { Wizbox } from "./Wizbox"
 import { Info09 } from "./Info_09"
 import { UseOpenClose } from "../util/use_open_close"
@@ -58,7 +59,7 @@ export default function ShopHome() {
 
   return (
     <div className={`${styles.shop_home} w-[100vw]  `}>
-      {false ? (
+      {true ? (
         //{html_open ? (
         <>
           {/*{!user && <Intro />}*/}
@@ -70,8 +71,9 @@ export default function ShopHome() {
         </>
       ) : (
         <>
-          !user && <Intro user={user} />
-          {user && <Products {...product} />}
+          <Intro user={user} />
+          {/*!user && <Intro user={user} />*/}
+          {/*{user && <Products {...product} />}*/}
         </>
       )}
       {/*<Intro />*/}
