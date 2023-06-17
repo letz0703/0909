@@ -10,12 +10,14 @@ export function Intro2({ user }) {
         <br />
         <span>!a problem</span>
         <br />
-        to solve
+        <span className={`text-2xl`}> to solve</span>
       </h3>
       <br />
       <div className="heart"></div>
       <div className={`mx-auto`} style={{ width: "50%" }}>
-        As of now, I only inform this site to those who have <br />
+        As of now,I&nbsp;
+        <span className={`text-slate-400`}>only inform this site t</span> o
+        those who have <br />
         visited my physical store and our esteemed VIP customers.
         <br />
         Typically, products are sold on a first-come, first-served basis.
@@ -32,7 +34,13 @@ export function Intro2({ user }) {
         to answer phone calls. However,
         <br /> I encourage you to reach out
         <br /> to me via Twitter <br />
-        <span className={`mt-0 ml-0 mr-auto flex justify-center r`}>
+        <span
+          className={`mt-0 ml-0 mr-auto flex justify-center cursor-pointer`}
+          onClick={
+            () => window.location.replace("https://twitter.com/wizbox051")
+            //window.location.replace("")
+          }
+        >
           <BsTwitter style={{ color: "silver" }} />
         </span>
         <br />

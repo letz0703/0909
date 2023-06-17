@@ -59,7 +59,7 @@ export default function ShopHome() {
 
   return (
     <div className={`${styles.shop_home} w-[100vw]  `}>
-      {true ? (
+      {false ? (
         //{html_open ? (
         <>
           {/*{!user && <Intro />}*/}
@@ -70,11 +70,9 @@ export default function ShopHome() {
           {/*<Slide />*/}
         </>
       ) : (
-        <>
-          <Intro user={user} />
-          {/*!user && <Intro user={user} />*/}
-          {/*{user && <Products {...product} />}*/}
-        </>
+        <Intro2 user={user} />
+        //{/*!user && <Intro user={user} />*/}
+        //{/*{user && <Products {...product} />}*/}
       )}
       {/*<Intro />*/}
       {/*<Info09 />*/}
