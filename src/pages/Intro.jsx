@@ -28,12 +28,12 @@ export function Intro({ user }) {
         <br /> to me via Twitter <br />
         <span
           className={`mt-0 ml-0 mr-auto flex justify-center cursor-pointer`}
-          onClick={() =>
-            //window.location.replace("https://twitter.com/wizbox051")
-            window.location.replace("")
+          onClick={
+            () => window.location.replace("https://twitter.com/wizbox051")
+            //window.location.replace("")
           }
         >
-          <BsTwitter style={{ color: "purple" }} />
+          <BsTwitter style={{ color: "silver" }} />
         </span>
         <br />
         I'll do my best to respond to your inquiryASAP
