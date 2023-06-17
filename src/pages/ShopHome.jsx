@@ -58,8 +58,8 @@ export default function ShopHome() {
 
   return (
     <div className={`${styles.shop_home} w-[100vw]  `}>
-      {/*{html_open ? (*/}
-      {true ? (
+      {false ? (
+        //{html_open ? (
         <>
           {/*{!user && <Intro />}*/}
           {!user && <Info09 />}
