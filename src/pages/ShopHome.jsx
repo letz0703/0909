@@ -24,44 +24,39 @@ import { Intro2 } from "./Intro2"
 import { Wizbox } from "./Wizbox"
 import { Info09 } from "./Info_09"
 import { UseOpenClose } from "../util/use_open_close"
+import useArray from "../hooks/use-array"
+
+const INITIAL_ARRAY = ["am", "pm"]
+
 export default function ShopHome() {
   const { user, uid, login, logout } = useAuthContext()
-  const timeOpen = "19:00:00"
-  const timeClose = "07:00:00"
+  const timeOpen = 19 * 60 * 60 - 300 //6:56 PM
+  const timeClose = 7 * 60 * 60 // 7:00 AM
   const [html_open, setHtml_open] = useState(true)
-  const [currentTime, setCurrentTime] = useState(() => getCurrentTime())
+  //const { array, set } = useArray(INITIAL_ARRAY)
 
-  function getCurrentTime() {
-    let now = new Date()
-    let hours = now.getHours()
-    let minutes = now.getMinutes()
-    var seconds = now.getSeconds()
-    return hours + ":" + seconds
-  }
-
-  function changePageByTime() {
-    const now = getCurrentTime()
-    //if (timeClose >= currentTime >= timeOpen) {
-    if (timeOpen <= now && now <= timeClose) {
-      setHtml_open(true)
-    } else {
-      setHtml_open(false)
-    }
-    //return html_open ? am : pm
-  }
-
+  /**
+   * setInterval open close
+   */
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      changePageByTime()
+    const interval = setInterval(() => {
+      const now = new Date()
+      const hours = now.getHours()
+      if (hours >= 19 || hours < 7) {
+        setHtml_open(true)
+      } else {
+        setHtml_open(false)
+      }
     }, 60 * 1000)
-    return () => clearTimeout(timeout)
-  }, [currentTime])
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <div className={`${styles.shop_home} w-[100vw]  `}>
       {html_open ? (
         //{html_open ? (
         <>
+          {/*<div>{array.join(",")}</div>*/}
           {/*{!user && <Intro />}*/}
           {!user && <Info09 />}
           {/*<Info09 />*/}

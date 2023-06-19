@@ -1,13 +1,13 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 //function here
 
 export default function useArray(initialValue) {
   const [array, setArray] = useState(initialValue)
 
-  function push(element) {
-    setArray((a) => [...a, element])
-  }
+  //function push(element) {
+  //  setArray((a) => [...a, element])
+  //}
 
   function filter(callback) {
     setArray((a) => a.filter(callback))
@@ -29,6 +29,6 @@ export default function useArray(initialValue) {
     function clear() {
       setArray([])
     }
-    return { array, set: setArray, push, filter, update, remove, clear }
+    return { array, set: setArray /*, push, filter, update, remove, clear*/ }
   }
 }
