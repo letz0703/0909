@@ -15,8 +15,8 @@ export function Intro2({ user }) {
       <br />
       <div className="heart"></div>
       <div className={`mx-auto`} style={{ width: "50%" }}>
-        As of now,I&nbsp;
-        <span className={`text-slate-400`}>only inform this site t</span> o
+        As of now,I&nbsp;on
+        <span className={`text-slate-300`}>ly inform this site to </span>
         those who have <br />
         visited my physical store and our esteemed VIP customers.
         <br />
@@ -33,25 +33,25 @@ export function Intro2({ user }) {
         <br /> I regret to inform you that I won't be available <br />
         to answer phone calls. However,
         <br /> I encourage you to reach out
-        <br /> to me via Twitter <br />
-        <span
+        {/*<br /> to me via Twitter <br />*/}
+        {/*<span
           className={`mt-0 ml-0 mr-auto flex justify-center cursor-pointer`}
           onClick={
-            () => window.location.replace("https://twitter.com/wizbox051")
+            //() => window.location.replace("https://twitter.com/wizbox051")
             //window.location.replace("")
           }
         >
           <BsTwitter style={{ color: "silver" }} />
         </span>
-        <br />
-        I'll do my best to respond to your inquiryASAP
+        <br />*/}
+        {/*I'll do my best to respond to your inquiryASAP*/}
         {/*<br /> thank you!*/}
-        <br />
-        need further information? scroll down
-        <br />
-        <h3 className={`text-[#c10002] pb-3`}>↓ wizbox.shop ↓</h3>
-        <h3 className={`text-[#c10002] pb-3 text-[1.4em]`}>open: 7pm to 7am</h3>
-        ⌣⌣
+        {/*<br />*/}
+        {/*need further information? scroll down*/}
+        {/*<br />*/}
+        {/*<h3 className={`text-[#c10002] pb-3`}>↓ wizbox.shop ↓</h3>*/}
+        <h3 className={`text-[#c10002] pb-3 text-[1.2em]`}>open: 7pm to 7am</h3>
+        <span className={`text-red-900 font-bold`}>⌣⌣</span>
       </div>
     </section>
   )
