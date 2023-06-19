@@ -72,10 +72,9 @@ export default function ShopHome() {
       ) : (
         <>
           {user && <Intro user={user} />}
+          {user && <Products {...product} />}
           {!user && <Intro2 />}
         </>
-        //{/*!user && <Intro user={user} />*/}
-        //{/*{user && <Products {...product} />}*/}
       )}
       {/*<Intro />*/}
       {/*<Info09 />*/}
