@@ -41,6 +41,7 @@ export function Japitem({ japitem }) {
           </button>
         )}
       </div>
+      <div>재고잔량: {japitem.qty}</div>
     </div>
   )
 }
