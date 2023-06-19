@@ -32,7 +32,8 @@ export default function ShopHome() {
   const { user, uid, login, logout } = useAuthContext()
   const timeOpen = 19 * 60 * 60 - 300 //6:56 PM
   const timeClose = 7 * 60 * 60 // 7:00 AM
-  const [html_open, setHtml_open] = useState(true)
+  const [html_open, setHtml_open] = useState(false)
+  //const [html_open, setHtml_open] = useState(true)
   //const { array, set } = useArray(INITIAL_ARRAY)
 
   /**
