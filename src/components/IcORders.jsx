@@ -35,7 +35,7 @@ export default function IcORders() {
                 <div>
                   금액:{" "}
                   {val.cartItems.map((i) => {
-                    console.log(i)
+                    //console.log(i)
                   })}
                 </div>
                 <span>배송지:{val.addressTo}</span>

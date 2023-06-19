@@ -59,7 +59,7 @@ export default function ShopHome() {
 
   return (
     <div className={`${styles.shop_home} w-[100vw]  `}>
-      {false ? (
+      {html_open ? (
         //{html_open ? (
         <>
           {/*{!user && <Intro />}*/}
