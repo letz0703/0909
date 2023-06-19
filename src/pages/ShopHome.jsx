@@ -70,9 +70,11 @@ export default function ShopHome() {
           {/*<Slide />*/}
         </>
       ) : (
-        <Intro2 user={user} />
-        //{/*!user && <Intro user={user} />*/}
-        //{/*{user && <Products {...product} />}*/}
+        <>
+          <Intro2 user={user} />
+          //{/*!user && <Intro user={user} />*/}
+          {user && <Products {...product} />}
+        </>
       )}
       {/*<Intro />*/}
       {/*<Info09 />*/}
