@@ -48,13 +48,13 @@ export default function ShopHome() {
       } else {
         setHtml_open(false)
       }
-    }, 60 * 1000)
+    }, 10 * 1000)
     return () => clearInterval(interval)
   }, [])
 
   return (
     <div className={`${styles.shop_home} w-[100vw]  `}>
-      {false ? (
+      {true ? (
         //{html_open ? (
         <>
           {/*<div>{array.join(",")}</div>*/}
