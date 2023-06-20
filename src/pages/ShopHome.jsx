@@ -53,7 +53,7 @@ export default function ShopHome() {
 
   return (
     <div className={`${styles.shop_home} w-[100vw]  `}>
-      {html_open ? (
+      {false ? (
         //{html_open ? (
         <>
           {/*<div>{array.join(",")}</div>*/}
