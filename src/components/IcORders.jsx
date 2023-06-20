@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react"
-import { getCarts } from "../api/firebase"
+import { database, getCarts } from "../api/firebase"
 import { now } from "moment/moment"
+import { ref, update } from "firebase/database"
 
 const FormatTIME = (timestamp) => {
   const date = new Date(timestamp)
@@ -13,6 +14,17 @@ const FormatTIME = (timestamp) => {
 }
 export default function IcORders() {
   const [orders, setOrders] = useState([])
+
+  function handleUpdateDelivery(userId, cartId) {
+    const now = new Date()
+    const deliveryDate = now.getTime()
+    //const currentTime = now.toLocaleDateString()
+    //prompt("now:", currentTime)
+    update(ref(database, `carts/${userId}/${cartId}`), {
+      status: "배송완료",
+      deliveryDate: deliveryDate,
+    }).catch((error) => console.log(error))
+  }
   useEffect(() => {
     async function fetchCarts() {
       const data = await getCarts()
@@ -29,19 +41,26 @@ export default function IcORders() {
           <div>
             {Object.values(order).map((val) => (
               <div key={crypto.randomUUID()}>
-                <div>{FormatTIME(val.orderDate)}</div>
-                <div>delivery date: {FormatTIME(new Date())}</div>
-                <div>금액: {val.total}</div>
+                <div className={`bg-red-300`}>주문자ID: {val.userId}</div>
+                <div>주문일: {FormatTIME(val.orderDate)}</div>
+                <span>주문상태:{val.status}</span>
                 <div>
-                  금액:{" "}
-                  {val.cartItems.map((i) => {
-                    //console.log(i)
-                  })}
+                  delivery date:{" "}
+                  {val.deliveryDate ? FormatTIME(val.deliveryDate) : "N/A"}
+                  {/*{FormatTIME(val.deliveryDate && val.deliveryDate)}*/}
                 </div>
-                <span>배송지:{val.addressTo}</span>
-                <span>CartID:{val.cartId}</span>
-                <span>사용자ID:{val.userID}</span>
-                <span>현재:{val.status}</span>
+                {/*<div>delivery date: {FormatTIME(new Date())}</div>*/}
+                <div>금액: {val.total}</div>
+                <div>배송지:{val.addressTo}</div>
+                {/*<span>CartID:{val.cartId}</span>*/}
+                {/*<span>사용자ID:{val?.userId}</span>*/}
+                <button
+                  type="submit"
+                  className={`btn red`}
+                  onClick={() => handleUpdateDelivery(val.userId, val.cartId)}
+                >
+                  배송완료
+                </button>
               </div>
             ))}
           </div>

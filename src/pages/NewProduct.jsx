@@ -99,135 +99,131 @@ export default function NewProduct() {
   }
 
   return (
-    <form
-      className="new-product__form flex flex-col justify-center text-center gap-2 items-center pt-[100px] "
-      style={{ margin: "0 auto", maxWidth: "300px" }}
-      onSubmit={onSubmit}
-    >
-      <div>
-        <table className="newProduct__table">
-          <thead>
-            <tr>
-              <th scope="row">item code</th>
-              <th scope="row">name</th>
-              <th scope="row">price</th>
-              <th scope="row">description</th>
-              <th scope="row">imgUrl</th>
-              <th scope="row">homeUrl</th>
-              <th scope="row">qty</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <input
-                  id="code"
-                  type="text"
-                  placeholder="아이템코드"
-                  onChange={(e) => updateFields({ code: e.target.value })}
-                />
-              </td>
-              <td>
-                <input
-                  type="text"
-                  placeholder="item name"
-                  onChange={(e) => updateFields({ name: e.target.value })}
-                />
-              </td>
-              <td>
-                <input
-                  type="number"
-                  placeholder="price"
-                  onChange={(e) => updateFields({ price: e.target.value })}
-                />
-              </td>
-              <td>
-                <input
-                  type="textarea"
-                  placeholder="description"
-                  onChange={(e) =>
-                    updateFields({ description: e.target.value })
-                  }
-                />
-              </td>
-              <td>
-                <input
-                  type="text"
-                  placeholder="imgUrl"
-                  onChange={(e) => updateFields({ imgUrl: e.target.value })}
-                />
-              </td>
-              <td>
-                <input
-                  type="text"
-                  placeholder="homeUrl"
-                  onChange={(e) => updateFields({ homeUrl: e.target.value })}
-                />
-              </td>
-              <td>
-                <input
-                  type="number"
-                  // name="qty"
-                  // value={qty}
-                  // value={product.qty ?? Number(0)}
-                  placeholder="product qty"
-                  step={5}
-                  // required
-                  onChange={(e) =>
-                    updateFields({ qty: Number(e.target.value) })
-                  }
-                />
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <CSVtoJSONConverter />
-        <button className="btn btn--primary">아이템등록</button>
+    //<form
+    //  className="new-product__form flex flex-col justify-center text-center gap-2 items-center pt-[100px] "
+    //  style={{ margin: "0 auto", maxWidth: "300px" }}
+    //  //onSubmit={onSubmit}
+    //>
+    <div>
+      <table className="newProduct__table">
+        <thead>
+          <tr>
+            <th scope="row">item code</th>
+            <th scope="row">name</th>
+            <th scope="row">price</th>
+            <th scope="row">description</th>
+            <th scope="row">imgUrl</th>
+            <th scope="row">homeUrl</th>
+            <th scope="row">qty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <input
+                id="code"
+                type="text"
+                placeholder="아이템코드"
+                onChange={(e) => updateFields({ code: e.target.value })}
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                placeholder="item name"
+                onChange={(e) => updateFields({ name: e.target.value })}
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                placeholder="price"
+                onChange={(e) => updateFields({ price: e.target.value })}
+              />
+            </td>
+            <td>
+              <input
+                type="textarea"
+                placeholder="description"
+                onChange={(e) => updateFields({ description: e.target.value })}
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                placeholder="imgUrl"
+                onChange={(e) => updateFields({ imgUrl: e.target.value })}
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                placeholder="homeUrl"
+                onChange={(e) => updateFields({ homeUrl: e.target.value })}
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                // name="qty"
+                // value={qty}
+                // value={product.qty ?? Number(0)}
+                placeholder="product qty"
+                step={5}
+                // required
+                onChange={(e) => updateFields({ qty: Number(e.target.value) })}
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <CSVtoJSONConverter />
+      <button className="btn btn--primary">아이템등록</button>
 
-        <div className="new-product__Main  w-full text-center flex flex-col justify-center items-center">
-          <div className="new-product__list place-content-center text-center w-full">
-            <span>code: {addedJapitem.code}</span>
-            <span>
-              {addedJapitem.name}
-              <button
-                onClick={() => {
-                  handleJapitemDelete(addedJapitem.id)
-                }}
-                className="btn btn--danger mini"
-              >
-                del
-              </button>
-            </span>
-            <span className="text-orange-500 font-bold">
-              {FormatCurrency(addedJapitem.price)}
-            </span>
-            <img
-              src={addedJapitem?.imgUrl || null}
-              className="new-product__list-image mx-auto"
-              style={{ width: "96px" }}
-            />
-            <span>&times;</span>
-            <span>
-              {addedJapitem.qty}개{" "}
-              <button
-                onClick={() => {
-                  handleUpdateStock(addedJapitem.id, addedJapitem.qty)
-                }}
-                className="btn mini btn--primary"
-              >
-                +
-              </button>
-              <span className="text-xs text-gray-500">in qty</span>
-            </span>
-          </div>
-          <span className="font-semibold">
-            TOTAL: {FormatCurrency(addedJapitem.qty * addedJapitem.price)}
+      <div className="new-product__Main  w-full text-center flex flex-col justify-center items-center">
+        <div className="new-product__list place-content-center text-center w-full">
+          <span>code: {addedJapitem.code}</span>
+          <span>
+            {addedJapitem.name}
+            <button
+              onClick={() => {
+                handleJapitemDelete(addedJapitem.id)
+              }}
+              className="btn btn--danger mini"
+            >
+              del
+            </button>
           </span>
+          <span className="text-orange-500 font-bold">
+            {FormatCurrency(addedJapitem.price)}
+          </span>
+          <img
+            src={addedJapitem?.imgUrl || null}
+            className="new-product__list-image mx-auto"
+            style={{ width: "96px" }}
+          />
+          <span>&times;</span>
+          <span>
+            {addedJapitem.qty}개{" "}
+            <button
+              onClick={() => {
+                handleUpdateStock(addedJapitem.id, addedJapitem.qty)
+              }}
+              className="btn mini btn--primary"
+            >
+              +
+            </button>
+            <span className="text-xs text-gray-500">in qty</span>
+          </span>
+        </div>
+        <span className="font-semibold">
+          TOTAL: {FormatCurrency(addedJapitem.qty * addedJapitem.price)}
+        </span>
 
-          <h1>전체 주문</h1>
-          <IcORders />
+        <h1>전체 주문</h1>
+        <IcORders />
 
-          <style>{`
+        <style>{`
         .newProduct__table{
           // border-collapse: collapse;
           // text-align: left;
@@ -269,10 +265,10 @@ export default function NewProduct() {
             width: 10rem;
           }
           `}</style>
-          {/* </div> */}
-          {/* ))} */}
-        </div>
+        {/* </div> */}
+        {/* ))} */}
       </div>
-    </form>
+    </div>
+    //</form>
   )
 }
