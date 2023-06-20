@@ -26,9 +26,10 @@ export default function CartItem(props) {
   return (
     //prettier-ignore
     <Stack direction="horizontal" gap={2} className="d-flex align-items-center">
+      {/*{console.log(item)}*/}
       <img
-        src={item.imgUrl}
-        style={{ width: "125px", height: "125px", objectFit: "cover" }}
+        src={item.imgs}
+        style={{ width: "10em", objectFit: "cover" }}
       />
       <div className="me-auto">
         <div>
