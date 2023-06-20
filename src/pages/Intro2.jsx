@@ -52,6 +52,16 @@ export function Intro2({ user }) {
         {/*<h3 className={`text-[#c10002] pb-3`}>↓ wizbox.shop ↓</h3>*/}
         <h3 className={`text-[#c10002] pb-3 text-[1.2em]`}>open: 7pm to 7am</h3>
         <span className={`text-red-900 font-bold`}>⌣⌣</span>
+        <br />
+        <br />
+        <br />
+        <br />
+        <div
+          onClick={() => window.location.replace("/vip")}
+          className={`cursor-pointer text-sm text-white `}
+        >
+          wizbox.shop
+        </div>
       </div>
     </section>
   )
