@@ -47,7 +47,7 @@ export function Info09() {
         </p>*/}
         <div>
           <span className={`inline-block`}>
-            문자와 트윗만 확인 합니다.
+            문자와 <span onClick={() => window.open('http://twitter.com/wizbox051')} className={`cursor-pointer underline`}>트윗</span>만 확인 합니다.
             <FaSms color="#c10002" className={`inline-block mr-2  `} size={50} />
           </span>
         </div>
