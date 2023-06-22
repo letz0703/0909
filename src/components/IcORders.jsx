@@ -1,9 +1,10 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useId, useRef, useState } from "react"
 import { database, getCarts } from "../api/firebase"
 import { now } from "moment/moment"
 import { ref, update } from "firebase/database"
 import { useAuthContext } from "../context/AuthContext"
 import { useLocalStorage } from "../hooks/use-local-storage"
+import CartItem from "./CartItem"
 
 const FormatTIME = (timestamp) => {
   const date = new Date(timestamp)
@@ -28,6 +29,16 @@ export default function IcORders() {
       deliveryDate: deliveryDate,
     }).catch((error) => console.log(error))
   }
+  function calculateTotal(cartItems) {
+    let total = 0
+    orders?.forEach((order) => {
+      order.cartItems?.forEach((item) => {
+        total += item.price * item.quantity
+      })
+    })
+    return total
+  }
+
   useEffect(() => {
     async function fetchCarts() {
       const data = await getCarts()
@@ -35,6 +46,7 @@ export default function IcORders() {
     }
     fetchCarts()
   }, [])
+
   return (
     <div>
       {orders.map((order) => (
@@ -57,10 +69,16 @@ export default function IcORders() {
                   {/*{FormatTIME(val.deliveryDate && val.deliveryDate)}*/}
                 </div>
                 {/*<div>delivery date: {FormatTIME(new Date())}</div>*/}
-                <div>금액: {val.total}</div>
                 <div>배송지:{val.addressTo}</div>
                 {/*<span>CartID:{val.cartId}</span>*/}
                 {/*<span>사용자ID:{val?.userId}</span>*/}
+                <h3>배송상품</h3>
+                <div>
+                  {val.cartItems?.map((item) => (
+                    <CartItem {...item} key={crypto.randomUUID()} />
+                  ))}
+                </div>
+                <div>금액: {calculateTotal()}</div>
                 <button
                   type="submit"
                   className={`btn red`}
