@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react"
 import { database, getCarts } from "../api/firebase"
 import { now } from "moment/moment"
 import { ref, update } from "firebase/database"
+import { useAuthContext } from "../context/AuthContext"
+import { useLocalStorage } from "../hooks/use-local-storage"
 
 const FormatTIME = (timestamp) => {
   const date = new Date(timestamp)
@@ -14,6 +16,7 @@ const FormatTIME = (timestamp) => {
 }
 export default function IcORders() {
   const [orders, setOrders] = useState([])
+  const [icUser] = useLocalStorage("ic-user")
 
   function handleUpdateDelivery(userId, cartId) {
     const now = new Date()
@@ -41,7 +44,11 @@ export default function IcORders() {
           <div>
             {Object.values(order).map((val) => (
               <div key={crypto.randomUUID()}>
-                <div className={`bg-red-300`}>주문자ID: {val.userId}</div>
+                {/*<div className={`bg-red-300`}>주문자ID: {val.userId}</div>*/}
+                <div className={`bg-red-300`}>
+                  주문자: {icUser.displayName}
+                  <span>({icUser.phoneNumber})</span>
+                </div>
                 <div>주문일: {FormatTIME(val.orderDate)}</div>
                 <span>주문상태:{val.status}</span>
                 <div>
