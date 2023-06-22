@@ -18,7 +18,7 @@ export const useJapitems = () => {
   useEffect(() => {
     setIsLoading(true)
     const controller = new AbortController()
-    fetch("products.json", {
+    fetch("../../public/products.json", {
       signal: controller.signal,
     })
       .then((response) => response.json())
