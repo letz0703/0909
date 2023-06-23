@@ -4,7 +4,7 @@
     "code": "4902738254044",
     "name": "곤약젤리 복숭아 컵형",
     "price": "9000",
-    "qty": "10",
+    "qty": "1",
     "description": "오리지날 곤약젤리, 만난라이프",
     "comment": "https://arc.net/e/26C13009-65DA-4A52-990C-AE13877FDE7A",
     "imgs": "../../imgs/peach.png",
@@ -15,7 +15,7 @@
     "code": "4902738254020",
     "name": "곤약젤리 사과 컵형",
     "price": "9000",
-    "qty": "10",
+    "qty": "2",
     "description": "오리지날 곤약젤리, 만난라이프",
     "comment": "https://arc.net/e/26C13009-65DA-4A52-990C-AE13877FDE7A",
     "imgs": "../../imgs/apple.png",
@@ -26,7 +26,7 @@
     "code": "4902738254020",
     "name": "곤약젤리 포도 컵형",
     "price": "9000",
-    "qty": "10",
+    "qty": "1",
     "description": "오리지날 곤약젤리, 만난라이프",
     "comment": "https://arc.net/e/26C13009-65DA-4A52-990C-AE13877FDE7A",
     "imgs": "../../imgs/grape.png",
@@ -290,7 +290,7 @@
     "code": "4901111861756",
     "name": "맥심 리필 170그램",
     "price": "9500",
-    "qty": "10",
+    "qty": "2",
     "description": "85잔분 맥심 병 리필",
     "comment": "https://via.placeholder.com/200x200",
     "imgs": "../../imgs/maxim.jpg",
@@ -722,7 +722,7 @@
     "qty": "10",
     "description": "",
     "comment": "https://arc.net/e/4D23EC28-2340-4D9B-BAD9-C7C0F9D4AE64",
-    "imgs": "../../imgs/g7_mix_50.jpg",
+    "imgs": "../../imgs/g7_mix50.gif",
     "homeUrl": "https://trungnguyenlegend.com/g7/?lang=en"
   },
   {
@@ -827,7 +827,7 @@
   {
     "id": "75",
     "code": "4902820120387",
-    "name": "어린이 후리카케",
+    "name": "어린이 후리카케 포켓몬",
     "price": "5000",
     "qty": "10",
     "description": "https://www.marumiya.co.jp/",
@@ -837,6 +837,17 @@
   },
   {
     "id": "76",
+    "code": "4902820120387",
+    "name": "어린이 후리카케 귀칼",
+    "price": "5000",
+    "qty": "5",
+    "description": "https://www.marumiya.co.jp/",
+    "comment": "https://arc.net/e/B74B8D74-AE16-41C0-8C7E-DDCD1505A71A",
+    "imgs": "../../imgs/gui_huri.jpg",
+    "homeUrl": ""
+  },
+  {
+    "id": "77",
     "code": "8809271410103",
     "name": "지팡이 초코",
     "price": "1000",
@@ -847,7 +858,7 @@
     "homeUrl": ""
   },
   {
-    "id": "77",
+    "id": "78",
     "code": "6926768531171",
     "name": "감자칩 와사비맛",
     "price": "900",
@@ -858,7 +869,7 @@
     "homeUrl": ""
   },
   {
-    "id": "78",
+    "id": "79",
     "code": "6926768531171",
     "name": "감자칩 김맛",
     "price": "900",
@@ -869,7 +880,7 @@
     "homeUrl": ""
   },
   {
-    "id": "79",
+    "id": "80",
     "code": "6926768536206",
     "name": "바셀린 106그램",
     "price": "3000",
@@ -880,7 +891,7 @@
     "homeUrl": ""
   },
   {
-    "id": "80",
+    "id": "81",
     "code": "4902820922837",
     "name": "포켓몬 어린이 카레",
     "price": "2000",
@@ -891,7 +902,7 @@
     "homeUrl": "https://www.lotte.co.jp/products/catalogue/candy/22/detail06.html"
   },
   {
-    "id": "81",
+    "id": "82",
     "code": "4987426300227",
     "name": "호빵맨 모기패치",
     "price": "5500",
@@ -902,7 +913,7 @@
     "homeUrl": "https://www.ikedamohando.co.jp/products/insect_bite/index.html"
   },
   {
-    "id": "82",
+    "id": "83",
     "code": "4902124681898",
     "name": "슈퍼 마리오 젤리",
     "price": "3500",
@@ -913,14 +924,25 @@
     "homeUrl": ""
   },
   {
-    "id": "83",
+    "id": "84",
     "code": "",
     "name": "디즈니 막대 사탕",
     "price": "1000",
     "qty": "10",
     "description": "랜덤 발송",
     "comment": "https://arc.net/e/C83110E1-7945-4511-9A35-CF4B5490170B",
-    "imgs": "",
+    "imgs": "../../imgs/disney_candy.jpg",
+    "homeUrl": ""
+  },
+  {
+    "id": "85",
+    "code": "",
+    "name": "포켓몬 젤리",
+    "price": "3000",
+    "qty": "10",
+    "description": "furuta",
+    "comment": "https://arc.net/e/B34B32A3-BEC0-484F-92B3-9001E18DA250",
+    "imgs": "../../imgs/pokemon_jelly.jpg",
     "homeUrl": ""
   }
 ]
