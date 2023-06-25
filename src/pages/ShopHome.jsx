@@ -33,21 +33,13 @@ export default function ShopHome() {
   const timeOpen = 19 * 60 * 60 - 300 //6:56 PM
   const timeClose = 7 * 60 * 60 // 7:00 AM
   const [html_open, setHtml_open] = useState(true)
-  //const [html_open, setHtml_open] = useState(true)
   //const { array, set } = useArray(INITIAL_ARRAY)
 
-  /**
-   * setInterval open close
-   */
   useEffect(() => {
     const interval = setInterval(() => {
       const now = new Date()
-      const hours = now.getHours()
-      if (hours >= 19 || hours < 7) {
-        setHtml_open(true)
-      } else {
-        setHtml_open(false)
-      }
+      const isDayTime = now.getHours() >= 7 && now.getHours() < 19
+      setHtml_open(!isDayTime)
     }, 100)
     return () => clearInterval(interval)
   }, [])

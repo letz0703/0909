@@ -150,10 +150,7 @@
       { "command": "type", "args": { "text": "cn" } },
       "insertSnippet"
     ],
-    "doMySnippet": [
-      { "command": "type", "args": { "text": "cl" } },
-      "insertSnippet"
-    ],
+
     "callbackSnippet": [
       { "command": "type", "args": { "text": "nj" } },
       "insertSnippet"
@@ -182,7 +179,8 @@
   "emmet.useInlineCompletions": false,
   "editor.tabCompletion": "onlySnippets",
   "editor.lineNumbers": "off",
-  "emmet.triggerExpansionOnTab": true
+  "emmet.triggerExpansionOnTab": true,
+  "prettier.semi": true
   // "github.copilot.advanced": {
 
   // }
