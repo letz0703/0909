@@ -172,7 +172,7 @@ export async function updateFBPrice(prev, itemPrice) {
 export async function updateCartTotal(prev, value) {
   return
   prev &&
-    set(ref(database, `/carts/${prev.userId}/${prev.cartId}`), {
+    update(ref(database, `/carts/${prev.userId}/${prev.cartId}`), {
       ...prev,
       total: value,
     })
@@ -194,8 +194,8 @@ export async function addNewCart(
   local__icCart,
   addressTo,
   phoneNumber,
-  deliveryDate,
-  total
+  total,
+  deliveryDate
 ) {
   const address = addressTo || "배송지요함"
   const updatedUser = await updateRDB_user(address)
@@ -203,8 +203,9 @@ export async function addNewCart(
     userId,
     cartId,
     cartItems: local__icCart,
-    addressTo: address,
-    total: total || 0,
+    addressTo: address | null,
+    phoneNumber: phoneNumber | null,
+    total: total,
     status: "",
     orderDate: new Date(),
   }

@@ -27,6 +27,7 @@ import {
 } from "../api/firebase"
 
 export function PopCart({ isOpen }) {
+  const [total, setTotal] = useState(0)
   const [japitems] = useJapitems()
   const { closeCart, openCart, cartItems, getTotal, getItemQuantity } =
     useShoppingCart()
@@ -60,10 +61,17 @@ export function PopCart({ isOpen }) {
   /**
    * 카트 주문 처리
    */
+  useEffect(() => {
+    setTotal(getTotal())
+    // update rdb
+    updateCartTotal(total)
+  }, [cartItems])
+
   const handleCart__Order = async (cartItems) => {
     const a = localStorage.getItem("ic-user")
     const parsed_a = JSON.parse(a)
     setRDB_user(parsed_a.uid, parsed_a)
+    console.log(`total`, total)
 
     await addNewCart(
       user.uid,
@@ -71,14 +79,14 @@ export function PopCart({ isOpen }) {
       cartItems,
       currentAddress,
       phoneNumber,
-      getTotal()
+      total
     )
 
     /**
      * 카트 비우기
      */
-    setCartItems([])
-    window.location.replace("./shop")
+    //setCartItems([])
+    //window.location.replace("./shop")
   }
 
   function handleResetCart() {
