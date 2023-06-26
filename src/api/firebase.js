@@ -197,20 +197,18 @@ export async function addNewCart(
   deliveryDate,
   total
 ) {
-  updateRDB_user(addressTo || "배송지요함")
-  return update(
-    ref(database, `carts/${userId}/${cartId}`),
-    // return set(ref(database, `carts/${userId}/${cartId}`),
-    {
-      userId,
-      cartId,
-      cartItems: local__icCart,
-      addressTo: addressTo || "배송지요함",
-      total: total || 0,
-      status: "",
-      orderDate: Date(),
-    }
-  )
+  const address = addressTo || "배송지요함"
+  const updatedUser = await updateRDB_user(address)
+  const cartData = {
+    userId,
+    cartId,
+    cartItems: local__icCart,
+    addressTo: address,
+    total: total || 0,
+    status: "",
+    orderDate: new Date(),
+  }
+  return update(ref(database, `carts/${userId}/${cartId}`), cartData)
 }
 
 export async function getProducts() {
