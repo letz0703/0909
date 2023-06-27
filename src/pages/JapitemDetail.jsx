@@ -60,7 +60,6 @@ export default function JapitemDetail() {
                 ? japitem.imgs
                 : "../" + japitem.imgs
             }
-            //src="../../imgs/nerican_world.png"
             className="japitem-detail__imageDetail "
             style={{ minWidth: "300px" }}
           />

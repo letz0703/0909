@@ -26,7 +26,7 @@ export function Japitem({ japitem }) {
         <div className="text-orange-500 font-bold">
           {FormatCurrency(japitem.price)}
         </div>
-        {true && (
+        {user && (
           <span className="transition-all hover:scale-110  self-stretch">
             <img
               src={japitem.imgs}

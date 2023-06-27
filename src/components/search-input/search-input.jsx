@@ -13,6 +13,7 @@ export default function SearchInput({ setSearch }) {
           <div className="flex justify-center items-center">
             <input
               type="text"
+              id="searchInput"
               className={` ${styles.input} text-xl px-3 `}
               placeholder="Life is not a problem to solve."
               aria-label="search"

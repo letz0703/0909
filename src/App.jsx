@@ -2,6 +2,7 @@
 /* eslint-disable no-restricted-globals */
 /* eslint-disable no-undef */
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import "source-map-js"
 import { Container } from "react-bootstrap"
 import { useEffect, useState } from "react"
 import { Routes, Route, Outlet } from "react-router-dom"
