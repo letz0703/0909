@@ -36,6 +36,7 @@
     "papaparse": "latest",
     "react": "18.2.0",
     "react-bootstrap": "^2.8.0",
+    "react-cookie": "^4.1.1",
     "react-dom": "experimental",
     "react-firebase-hooks": "^5.1.1",
     "react-icons": "^4.7.1",
