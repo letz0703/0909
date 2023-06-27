@@ -3,7 +3,8 @@ import { createContext, useState, useContext, useRef, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { usePop } from "../components/pop/pop"
 import { PopCart } from "../components/PopCart"
-import { useLocalStorage } from "../hooks/use-local-storage"
+//import { useLocalStorage } from "../hooks/use-local-storage"
+import { useLocalStorage } from "../hooks/useLocalStorage"
 import { useAuthContext } from "./AuthContext"
 import {
   updateRDB_user,

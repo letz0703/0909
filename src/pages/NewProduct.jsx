@@ -14,7 +14,7 @@ import FormatCurrency from "../util/formatCurrency"
 import { uploadImage } from "../api/uploader"
 import { useJapitems } from "../hooks/use-japitems"
 import { getDatabase, ref, set, get, remove, child } from "firebase/database"
-import { useLocalStorage } from "../hooks/use-local-storage"
+import { useLocalStorage } from "../hooks/useLocalStorage"
 import IcORders from "../components/IcORders"
 import CSVtoJSONConverter from "../util/converter_json"
 const INITIAL_PRODUCT = {

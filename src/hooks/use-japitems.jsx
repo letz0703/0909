@@ -1,7 +1,7 @@
 import { database } from "../api/firebase"
 import { ref, get, set } from "firebase/database"
 import { useEffect } from "react"
-import { useLocalStorage } from "../hooks/use-local-storage"
+import { useLocalStorage } from "./useLocalStorage"
 import { useState } from "react"
 
 export const useJapitems = () => {

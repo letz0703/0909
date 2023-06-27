@@ -14,9 +14,10 @@ import { useContext, useEffect } from "react"
 import { BsYoutube, BsSearch } from "react-icons/bs"
 import SearchInput from "./search-input/search-input"
 import styles from "./Navbar.module.css"
-import { useLocalStorage } from "../hooks/use-local-storage"
+//import { useLocalStorage } from "../hooks/use-local-storage"
 //import { CiTwitter } from "react-icons/ci"
 import { CiTwitter } from "react-icons/ci"
+import { useLocalStorage } from "../hooks/useLocalStorage"
 
 export default function Navbar({ search, setSearch }) {
   const { user, setUser, login, logout, isAdmin, isCustom } = useAuthContext()

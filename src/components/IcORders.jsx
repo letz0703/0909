@@ -3,7 +3,8 @@ import { database, getCarts } from "../api/firebase"
 import { now } from "moment/moment"
 import { ref, update } from "firebase/database"
 import { useAuthContext } from "../context/AuthContext"
-import { useLocalStorage } from "../hooks/use-local-storage"
+//import { useLocalStorage } from "../hooks/use-local-storage"
+import { useLocalStorage } from "../hooks/useLocalStorage"
 import CartItem from "./CartItem"
 
 const FormatTIME = (timestamp) => {
