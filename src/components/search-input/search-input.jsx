@@ -14,7 +14,7 @@ export default function SearchInput({ setSearch }) {
             <input
               type="text"
               id="searchInput"
-              className={` ${styles.input} text-xl px-3 `}
+              className={` ${styles.input} text-xl px-3 bg-[#123456] text-white`}
               placeholder="Life is not a problem to solve."
               aria-label="search"
               autoFocus
