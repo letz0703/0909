@@ -215,7 +215,7 @@
     "price": "3700",
     "qty": "10",
     "description": "snb",
-    "comment": "https://via.placeholder.com/200x200",
+    "comment": "",
     "imgs": "../../imgs/snb_hot.png",
     "homeUrl": "https://www.sbfoods-worldwide.com/ko/products/search/009.html"
   },
@@ -226,7 +226,7 @@
     "price": "3700",
     "qty": "10",
     "description": "snb",
-    "comment": "https://via.placeholder.com/200x200",
+    "comment": "",
     "imgs": "../../imgs/snb_soon.png",
     "homeUrl": "https://www.sbfoods-worldwide.com/ko/products/search/007.html"
   },
@@ -237,7 +237,7 @@
     "price": "3700",
     "qty": "10",
     "description": "snb",
-    "comment": "https://via.placeholder.com/200x200",
+    "comment": "",
     "imgs": "../../imgs/snb_m.png",
     "homeUrl": "https://www.sbfoods-worldwide.com/ko/products/search/008.html"
   },
@@ -292,7 +292,7 @@
     "price": "9500",
     "qty": "2",
     "description": "85잔분 맥심 병 리필",
-    "comment": "https://via.placeholder.com/200x200",
+    "comment": "",
     "imgs": "../../imgs/maxim.jpg",
     "homeUrl": "https://www.agf.co.jp/lineup/maxim/71287.html"
   },
@@ -402,7 +402,7 @@
     "price": "8000",
     "qty": "10",
     "description": "https://japandrug.jp/products/aneron",
-    "comment": "https://via.placeholder.com/200x200",
+    "comment": "",
     "imgs": "../../imgs/aneron.png",
     "homeUrl": "https://www.ssp.co.jp/product/all/annys/"
   },
@@ -413,7 +413,7 @@
     "price": "14000",
     "qty": "10",
     "description": "잇몸질환 용,천연 허브 치주염 치약",
-    "comment": "https://via.placeholder.com/200x200",
+    "comment": "",
     "imgs": "../../imgs/access.jpg",
     "homeUrl": "https://search.sato-seiyaku.co.jp/pub/product/1806/"
   },
@@ -424,7 +424,7 @@
     "price": "2000",
     "qty": "10",
     "description": "UHA",
-    "comment": "https://via.placeholder.com/200x200",
+    "comment": "",
     "imgs": "../../imgs/azuki.jpg",
     "homeUrl": "https://www.uha-mikakuto.co.jp/catalog/hardcandy/ca92.html"
   },
@@ -435,7 +435,7 @@
     "price": "6500",
     "qty": "10",
     "description": "메가네 클리너",
-    "comment": "https://via.placeholder.com/200x200",
+    "comment": "",
     "imgs": "../../imgs/glasses.jpg",
     "homeUrl": "https://www.kobayashi.co.jp/seihin/menu/category_08_7.html"
   },
@@ -446,7 +446,7 @@
     "price": "11000",
     "qty": "2",
     "description": "용각산 20그램",
-    "comment": "https://via.placeholder.com/200x200",
+    "comment": "",
     "imgs": "../../imgs/young.jpg",
     "homeUrl": "https://www.ryukakusan.co.jp/top"
   },
@@ -457,7 +457,7 @@
     "price": "12000",
     "qty": "10",
     "description": "히가시마루 우동스프 48개입",
-    "comment": "https://via.placeholder.com/200x200",
+    "comment": "",
     "imgs": "../../imgs/woodong.jpg",
     "homeUrl": "https://www.higashimaru.co.jp/products/detail/pdt0024.html"
   },
@@ -479,7 +479,7 @@
     "price": "25000",
     "qty": "1",
     "description": "일본 참기름 1리터",
-    "comment": "https://via.placeholder.com/200x200",
+    "comment": "",
     "imgs": "../../imgs/cham.jpg",
     "homeUrl": "https://www.kadoya.com/products/page05.html"
   },
@@ -589,7 +589,7 @@
     "price": "4000",
     "qty": "10",
     "description": "아즈키 모나카",
-    "comment": "https://via.placeholder.com/200x200",
+    "comment": "",
     "imgs": "../../imgs/monaka.png",
     "homeUrl": "http://samkyoung.com/product/%ec%95%84%ec%a3%bc%eb%81%bc-%eb%aa%a8%eb%82%98%ec%b9%b4/"
   },
@@ -633,7 +633,7 @@
     "price": "1700",
     "qty": "10",
     "description": "",
-    "comment": "https://via.placeholder.com/200x200",
+    "comment": "",
     "imgs": "../../imgs/kasu_black.png",
     "homeUrl": "https://www.kasugai.co.jp/product/candy/"
   },
@@ -787,7 +787,7 @@
     "price": "5000",
     "qty": "10",
     "description": "",
-    "comment": "https://via.placeholder.com/200x200",
+    "comment": "",
     "imgs": "../../imgs/sunstar_salt.jpg",
     "homeUrl": ""
   },
@@ -931,8 +931,8 @@
     "qty": "10",
     "description": "랜덤 발송",
     "comment": "https://arc.net/e/C83110E1-7945-4511-9A35-CF4B5490170B",
-    "imgs": "../../imgs/disney_candy.jpg",
-    "homeUrl": ""
+    "imgs": "../../imgs/disney.jpg",
+    "homeUrl": "https://www.glicoshop.com/products/glico-%E6%A0%BC%E5%8A%9B%E9%AB%98pop-can%E9%80%A0%E5%9E%8B%E6%A3%92%E6%A3%92%E7%B3%96"
   },
   {
     "id": "85",
