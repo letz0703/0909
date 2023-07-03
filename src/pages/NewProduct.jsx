@@ -104,7 +104,7 @@ export default function NewProduct() {
     //  style={{ margin: "0 auto", maxWidth: "300px" }}
     //  //onSubmit={onSubmit}
     //>
-    <div>
+    <div className={`pt-[6rem]`}>
       <table className="newProduct__table">
         <thead>
           <tr>

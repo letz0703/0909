@@ -46,7 +46,7 @@ export default function ProductDetail() {
   }
   const itemQty = getItemQuantity(id)
   return (
-    <>
+    <Framgment>
       <p className="mx-12 mt-4 text-gray-700">category: {category}</p>
       <section className="flex flex-col md:flex-row p-4">
         <img src={image} alt={title} className="w-full px-4 basis-7/12" />
@@ -108,6 +108,6 @@ export default function ProductDetail() {
           )}
         </div>
       </section>
-    </>
+    </Framgment>
   )
 }
