@@ -168,7 +168,6 @@ export async function updateFBPrice(prev, itemPrice) {
   })
   console.log("data price updated")
 }
-
 export async function updateCartTotal(prev, value) {
   return
   prev &&
@@ -176,6 +175,11 @@ export async function updateCartTotal(prev, value) {
       ...prev,
       total: value,
     })
+}
+export async function getTotal(userId, cartId) {
+  const snapshot = await get(ref(database, `Total/${userId}/${cartId}`))
+  const cartTotal = snapshot.val().total || {}
+  return Object.values(cartTotal)
 }
 
 export async function addNewOrder(product, image) {

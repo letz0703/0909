@@ -71,8 +71,7 @@ export function PopCart({ isOpen }) {
     const a = localStorage.getItem("ic-user")
     const parsed_a = JSON.parse(a)
     setRDB_user(parsed_a.uid, parsed_a)
-    console.log(`total`, total)
-
+    console.log(`user`, user)
     await addNewCart(
       user.uid,
       crypto.randomUUID(),

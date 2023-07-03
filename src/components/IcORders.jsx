@@ -1,11 +1,12 @@
 import { useEffect, useId, useRef, useState } from "react"
-import { database, getCarts } from "../api/firebase"
+import { database, getCarts, getTotal } from "../api/firebase"
 import { now } from "moment/moment"
 import { ref, update } from "firebase/database"
 import { useAuthContext } from "../context/AuthContext"
 //import { useLocalStorage } from "../hooks/use-local-storage"
 import { useLocalStorage } from "../hooks/useLocalStorage"
 import CartItem from "./CartItem"
+import FormatCurrency from "../util/formatCurrency"
 
 const FormatTIME = (timestamp) => {
   const date = new Date(timestamp)
@@ -71,6 +72,7 @@ export default function IcORders() {
                 </div>
                 {/*<div>delivery date: {FormatTIME(new Date())}</div>*/}
                 <div>배송지:{val.addressTo}</div>
+                {/*{console.log(`order`, Object.values(order))}*/}
                 {/*<span>CartID:{val.cartId}</span>*/}
                 {/*<span>사용자ID:{val?.userId}</span>*/}
                 <h3>배송상품</h3>
@@ -79,7 +81,7 @@ export default function IcORders() {
                     <CartItem {...item} key={crypto.randomUUID()} />
                   ))}
                 </div>
-                <div>금액: {calculateTotal()}</div>
+                <div>금액: {FormatCurrency(val.total)}</div>
                 <button
                   type="submit"
                   className={`btn red`}
