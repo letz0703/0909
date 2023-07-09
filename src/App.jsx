@@ -24,7 +24,6 @@ export const JapitemContext = createContext()
 const LOCAL_STORAGE_KEY = "icanmcartItemIDart.japitems"
 
 export const SearchContext = createContext()
-
 function LayOut() {
   return (
     <>

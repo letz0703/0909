@@ -178,7 +178,7 @@
   "audioCues.lineHasInlineSuggestion": "off",
   "emmet.useInlineCompletions": false,
   "editor.tabCompletion": "onlySnippets",
-  "editor.lineNumbers": "off",
+  "editor.lineNumbers": "on",
   "emmet.triggerExpansionOnTab": true,
   "prettier.semi": true
   // "github.copilot.advanced": {
