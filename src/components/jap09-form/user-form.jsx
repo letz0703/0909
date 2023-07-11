@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react"
 import FormWrapper from "./form-wrapper"
 import { Link } from "react-router-dom"
+import "../SearchHeader/formstyle.css?inline"
 
 export default function UserForm({ jName, jCell, jCsNo, updateFields }) {
   let UserForm = "user-form.jsx"
@@ -9,29 +10,29 @@ export default function UserForm({ jName, jCell, jCsNo, updateFields }) {
     <div className="bg-blue-100 p-2 md:p-4 rounded-b-xl">
       <div>
         <FormWrapper title="구매대행 동의서">
-          <label>이름</label>
+          <label className={`label`}>이름</label>
           <input
             type="text"
             autoFocus
             required
-            className="w-5/6"
+            className="w-5/6 input"
             value={jName}
             onChange={(e) => updateFields({ jName: e.target.value })}
           />
-          <label>핸드폰 번호</label>
+          <label className={`label`}>핸드폰 번호</label>
           <input
             type="text"
             required
             min={7}
-            className="w-5/6"
+            className="w-5/6 input"
             value={jCell}
             onChange={(e) => updateFields({ jCell: e.target.value })}
           />
-          <label>개인 통관번호</label>
+          <label className={`label`}>개인 통관번호</label>
           <input
             type="text"
             required
-            className="w-5/6"
+            className="w-5/6 input"
             value={jCsNo}
             onChange={(e) => updateFields({ jCsNo: e.target.value })}
           />

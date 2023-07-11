@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect, useRef } from "react"
-//import styles from './SearchHeader.module.css'
 import { BsYoutube, BsSearch } from "react-icons/bs"
+import formstyle from "./formstyle.css"
 import { Link, useNavigate, useParams } from "react-router-dom"
 export default function SearchHeader() {
   const { keyword } = useParams()
@@ -26,7 +26,8 @@ export default function SearchHeader() {
   }
 
   return (
-    <header className="w-full flex justify-around p-4 text-2xl border-b border-zinc-600 mb-4">
+    //<header className="w-full flex justify-around p-4 text-2xl border-b border-zinc-600 mb-4">
+    <header>
       <Link to="/" className="flex items-center">
         <BsYoutube className="text-4xl text-youtube" />
         <h1 className="font-bold ml-2 text-3xl">Youtube</h1>

@@ -13,11 +13,12 @@ import { JapitemContext } from "../App"
 import { useContext, useEffect } from "react"
 import { BsYoutube, BsSearch } from "react-icons/bs"
 import SearchInput from "./search-input/search-input"
-import styles from "./Navbar.module.css"
+import styles from "./Navbar.module.css?inline"
 //import { useLocalStorage } from "../hooks/use-local-storage"
 //import { CiTwitter } from "react-icons/ci"
 import { CiTwitter } from "react-icons/ci"
 import { useLocalStorage } from "../hooks/useLocalStorage"
+import formstyles from "./SearchHeader/formstyle.css"
 
 export default function Navbar({ search, setSearch }) {
   const { user, setUser, login, logout, isAdmin, isCustom } = useAuthContext()
@@ -116,7 +117,7 @@ export default function Navbar({ search, setSearch }) {
       </div>
       {/* </section> */}
       {!window.location.href.includes("/jap") && (
-        <section className="sec2 pt-3">
+        <section className={`sec2 pt-3`}>
           {/* <div className={`${styles.nav_center} navbar__search-input`}> */}
           {/* {user && <SearchInput setSearch={setSearch} className="검색폼" />} */}
           <SearchInput setSearch={setSearch} />

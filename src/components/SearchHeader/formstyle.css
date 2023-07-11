@@ -1,18 +1,19 @@
 .form {
   display: flex;
   flex-direction: column;
+  margin-bottom: 10rem;
   gap: 1rem;
   max-width: 600px;
 }
 
-.form-group {
+.form_group {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
 }
 
 .label {
-  font-weight: bold;
+  font-weight: bolder;
   font-size: 1.1em;
 }
 
@@ -35,6 +36,7 @@
 
 .input:focus {
   border-color: hsl(200, 100%, 50%);
+  background-color: white;
 }
 
 .btn {
