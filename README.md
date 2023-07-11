@@ -1,12 +1,20 @@
-🖥 WIP...
-자동 open close hour 🛒
+# [wizbox](https://wizbox.shop)
 
-[home][wizbox]
+> Little things make me happy!
 
-[wizbox]: https://wizbox.shop
+### Free Mac Apps
 
-## form
+---
 
-### [wds form ref](https://courses.webdevsimplified.com/view/courses/react-simplified-beginner/1764773-forms/5836248-57-usestate-vs-useref)
+> emoji
+> [rocket](https://matthewpalmer.net/rocket/) `:` and emoji name
+> 2023.07.11/화
 
-2023.07.06/목 : useRef : 사용안하는게 더 빨라 보임. 검색 할 때 바로 반응함.
+## MD - markdown
+
+| didn't konw | contents              |
+| :---------: | --------------------- |
+|      ~      | H~2~O <sub>           |
+|      ^      | Script^super^ < sup > |
+|  emoji : :  | :smile:               |
+|   `mono`    | \`word \`             |
