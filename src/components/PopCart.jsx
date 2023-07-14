@@ -181,13 +181,14 @@ export function PopCart({ isOpen }) {
           <div className="ms-auto font-bold text-2xl p-3">
             {FormatCurrency(getTotal())}
             <div>+ 기본택배 {<span>{deleiveryCost}</span>}원</div>
-            <p className="text-blue-400"><span onClick={() => window.location.replace("/jap")} className="p-2 bg-pink-200 cursor-pointer" >
-                택배비 없애기(공동구매 신청) </span></p></div>
+            {/*<p className="text-blue-400"><span onClick={() => window.location.replace("/jap")} className="p-2 bg-pink-200 cursor-pointer" >
+                택배비 없애기(공동구매 신청) </span></p>*/}
+                </div>
 
                 <hr/>
                 <div className="ml-auto">
-                <div >궁금한점이 있으시면 문자 주세요: 010.9876.1815</div>
-                <button onClick={()=>window.location.replace("https://twitter.com/icanmart")}><CiTwitter className="text-blue-500 border-2 text-2xl"/></button>
+                <div >주문 후 문자 주시면 확인 후 입금 안내 드립니다: 010.9876.1815 </div>
+                <div> 궁금한 점은 트윗 부탁 드립니다 <button onClick={()=>window.location.replace("https://twitter.com/icanmart")}><CiTwitter className="text-blue-500 border-2 text-2xl"/></button></div>
                 <div >전화는 안받습니다.</div>
                 </div>
 

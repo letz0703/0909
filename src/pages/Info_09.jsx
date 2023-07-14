@@ -7,6 +7,7 @@ export function Info09() {
     //prettier-ignore
     <section key="info09" style={{width:"maxContent"}}>
         <h3 className={`text-[3rem]  pb-[0.9rem]`}>wizbox</h3>
+        <p className={`text-[1rem] mt-[1px] pb-[0.9rem]`}>1% 더 저렴하게</p>
         <p className={`text-[1.1rem] text-[#c10002]`}><span className={`text-[3rem]`}>.</span><br/>shop <br/>by <br/>i.canmart</p>
         <div className={`pt-1 text-xl pb-1`}>010.9876.1815</div>
         {/*<div className={`flex justify-center align-center`}>*/}
@@ -54,6 +55,7 @@ export function Info09() {
         <div className={`text-slate-700 pt-3`}>본 사이트는 저희 단골고객님과 <br/>오프라인 가게 방문 고객님들 <br/>중 소수분들께만 알려드리는<br/>
         서비스 사이트 입니다</div>
         <div className={`text-xl pt-[3em] font-semibold text-gray-500`}>밤 7시 ~ 새벽 7시까지만 open 합니다.</div>
+        <div className={`text-xl pt-[1em] font-semibold text-gray-500`}>오프라인 깡통시장 가격 보다 1% 더 저렴합니다</div>
         <div>
           🛍️ 주문 하시려면
           <button onClick={login} className={`btn btn--primary  `}>

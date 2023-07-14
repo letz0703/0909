@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect, useRef } from "react"
 import { BsYoutube, BsSearch } from "react-icons/bs"
-import formstyle from "./formstyle.css"
+import formstyle from "./formstyle.css?inline"
 import { Link, useNavigate, useParams } from "react-router-dom"
 export default function SearchHeader() {
   const { keyword } = useParams()
