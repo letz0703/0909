@@ -27,7 +27,7 @@ export default function SearchInput({ setSearch }) {
                 type="text"
                 id="searchInput"
                 className={` ${styles.input} text-xl px-3 `}
-                placeholder="1% 라도 더 저렴하게"
+                placeholder="save 1%"
                 aria-label="search"
                 autoFocus
                 // onChange={(e) => console.log(e.target.value)}

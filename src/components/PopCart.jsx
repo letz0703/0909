@@ -163,7 +163,7 @@ export function PopCart({ isOpen }) {
     const a = getRDB_user(user?.uid).deliveryTo
   }, [])
 
-  return (
+  return [
     //prettier-ignore
     <Offcanvas
     //show unshow
@@ -195,15 +195,25 @@ export function PopCart({ isOpen }) {
         </Stack>
         <div className="flex justify-center">
           <button className="btn blue" onClick={() => handleCart__Order(cartItems)} > 주문하기 </button>
-          <button className="btn red" onClick={() => handleResetCart()}> 지우기 </button>
+          <button className="btn red" onClick={() => handleResetCart()}> 주문삭제 </button>
         </div>
         <div className="flex justify-center items-center pt-2"> 배송지:{currentAddress} <button className="btn green h-[1.8em]" onClick={changeAddress}> 수정 </button> </div>
         <div className="flex justify-center items-center pt-2"> 연락처:{phoneNumber} <button className="btn green h-[1.8em]" onClick={changeNumber}> 수정 </button> </div>
         <style>{`
             //body { background-color: powderblue; color: black }
-            .btn { display: inline-block; } `}
+            .btn { display: inline-block;
+                transition: all .5s ease-in-out;
+            }
+            .btn.red {
+              color: black;
+            }
+            .btn:hover {
+              background: white;
+              color: #c10002;
+            }
+            `}
         </style>
       </Offcanvas.Body>
-    </Offcanvas>
-  )
+    </Offcanvas>,
+  ]
 }

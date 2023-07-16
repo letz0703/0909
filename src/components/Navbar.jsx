@@ -18,7 +18,7 @@ import styles from "./Navbar.module.css?inline"
 //import { CiTwitter } from "react-icons/ci"
 import { CiTwitter } from "react-icons/ci"
 import { useLocalStorage } from "../hooks/useLocalStorage"
-import formstyles from "./SearchHeader/formstyle.css"
+import formstyles from "./SearchHeader/formstyle.css?inline"
 
 export default function Navbar({ search, setSearch }) {
   const { user, setUser, login, logout, isAdmin, isCustom } = useAuthContext()
