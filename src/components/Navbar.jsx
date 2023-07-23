@@ -1,30 +1,30 @@
-import { Nav, Navbar as NavbarBs, Col, Row } from "react-bootstrap"
 import { Link, Navigate, useNavigate } from "react-router-dom"
+import observer from "../util/observer.jsx"
 import { BsFillPencilFill } from "react-icons/bs"
-import { HiLogin, HiLogout } from "react-icons/hi"
-import { login, logout, onUserStateChange } from "../api/firebase"
-import Button from "./ui/button"
+//import { HiLogin, HiLogout } from "react-icons/hi"
+//import { login, logout, onUserStateChange } from "../api/firebase"
+import { onUserStateChange } from "../api/firebase"
+//import Button from "./ui/button"
 import User from "./User"
 import { useAuthContext } from "../context/AuthContext"
 import CartStatus from "./CartStatus"
-import { NavLink } from "react-router-dom"
-import { useShoppingCart } from "../context/ShoppingCartContext"
-import { JapitemContext } from "../App"
-import { useContext, useEffect } from "react"
-import { BsYoutube, BsSearch } from "react-icons/bs"
+//import { NavLink } from "react-router-dom"
+//import { useShoppingCart } from "../context/ShoppingCartContext"
+//import { JapitemContext } from "../App"
+//import { useContext, useEffect } from "react"
+import { useEffect } from "react"
+//import { BsYoutube, BsSearch } from "react-icons/bs"
+import { BsYoutube } from "react-icons/bs"
 import SearchInput from "./search-input/search-input"
 import styles from "./Navbar.module.css?inline"
 //import { useLocalStorage } from "../hooks/use-local-storage"
 //import { CiTwitter } from "react-icons/ci"
 import { CiTwitter } from "react-icons/ci"
 import { useLocalStorage } from "../hooks/useLocalStorage"
-import formstyles from "./SearchHeader/formstyle.css?inline"
 
 export default function Navbar({ search, setSearch }) {
-  const { user, setUser, login, logout, isAdmin, isCustom } = useAuthContext()
-  const { openCart, cartQuantity } = useShoppingCart()
+  const { user, login, logout, isAdmin, isCustom } = useAuthContext()
 
-  const { handleJapitemSearch } = useContext(JapitemContext)
   const navigate = useNavigate()
 
   const [icUser, setIcUser] = useLocalStorage("ic-user", {})
@@ -43,9 +43,7 @@ export default function Navbar({ search, setSearch }) {
 
   return (
     <header
-      className={`${
-        styles.header
-      } h-[72px] w-[100vw ] flex items-center  justify-evenly border-b ${
+      className={`${styles.header} flex items-center  justify-evenly border-b ${
         !user ? "hidden" : ""
       }`}
       style={{
@@ -56,8 +54,6 @@ export default function Navbar({ search, setSearch }) {
         zIndex: 100,
       }}
     >
-      {/* <section className="icNavbar__sec1"> */}
-      {/* <div className=" text-brand"> */}
       <div className="flex items-center align-items-center">
         {user && user.isAdmin ? (
           <Link to="/products/new" className="2xl pr-1">
@@ -120,7 +116,7 @@ export default function Navbar({ search, setSearch }) {
         <section className={`sec2 pt-3`}>
           {/* <div className={`${styles.nav_center} navbar__search-input`}> */}
           {/* {user && <SearchInput setSearch={setSearch} className="검색폼" />} */}
-          <SearchInput setSearch={setSearch} />
+          <SearchInput setSearch={setSearch} className={`box`} />
         </section>
       )}
       {window.location.href.includes("/jap") && (
@@ -194,14 +190,6 @@ export default function Navbar({ search, setSearch }) {
         )}
       </nav>
       <style>{`
-      //.Navbarjsx__header {
-      //  //position: fixed;
-      //  top: 0;
-      //  left: 0;
-      //  width: 100%;
-      //  height: 72px;
-      //  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      //}
       .nav-bar__text-logo{
         display: flex;
         justify-content: space-between;
