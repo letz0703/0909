@@ -23,7 +23,7 @@
     "qty": "5",
     "description": "오리지날 곤약젤리, 만난라이프",
     "comment": "https://arc.net/e/26C13009-65DA-4A52-990C-AE13877FDE7A",
-    "imgs": "../../imgs/apple.png",
+    "imgs": "apple.png",
     "homeUrl": "https://www.mannanlife.co.jp/brand/konnyakubatake/",
     "enHome": "https://www.mannanlife.co.jp/export/"
   },
@@ -37,7 +37,7 @@
     "qty": "5",
     "description": "오리지날 곤약젤리, 만난라이프",
     "comment": "https://arc.net/e/26C13009-65DA-4A52-990C-AE13877FDE7A",
-    "imgs": "../../imgs/grape.png",
+    "imgs": "grape.png",
     "homeUrl": "https://www.mannanlife.co.jp/brand/konnyakubatake/",
     "enHome": "https://www.mannanlife.co.jp/export/"
   },
@@ -47,11 +47,11 @@
     "name": "오리히로 곤약 백도+거봉",
     "enName": "Orihiro konjac ielly",
     "price_off": "3500",
-    "price": "3400",
+    "price": "3300",
     "qty": "10",
     "description": "짜먹는 곤약젤리 ",
     "comment": "https://arc.net/e/0A4811FF-6C67-4849-ABE4-BB748FEC2EC5",
-    "imgs": "../../imgs/zero.jpg",
+    "imgs": "zero.jpg",
     "homeUrl": "http://health.orihiro.com/jelly/",
     "enHome": "http://health.orihiro.com/en/jelly/"
   },
@@ -61,11 +61,11 @@
     "name": "오리히로 곤약 레몬+백도",
     "enName": "Orihiro konjac ielly",
     "price_off": "3500",
-    "price": "3400",
+    "price": "3300",
     "qty": "10",
     "description": "짜먹는 곤약젤리 ",
     "comment": "https://arc.net/e/0A4811FF-6C67-4849-ABE4-BB748FEC2EC5",
-    "imgs": "../../imgs/lebok.jpg",
+    "imgs": "lebok.jpg",
     "homeUrl": "http://health.orihiro.com/jelly/",
     "enHome": "http://health.orihiro.com/en/jelly/"
   },
@@ -75,11 +75,11 @@
     "name": "오리히로 곤약 사과+포도",
     "enName": "Orihiro konjac ielly",
     "price_off": "3500",
-    "price": "3400",
+    "price": "3300",
     "qty": "10",
     "description": "짜먹는 곤약젤리 ",
     "comment": "https://arc.net/e/0A4811FF-6C67-4849-ABE4-BB748FEC2EC5",
-    "imgs": "../../imgs/sapo.jpg",
+    "imgs": "sapo.jpg",
     "homeUrl": "http://health.orihiro.com/jelly/",
     "enHome": "http://health.orihiro.com/en/jelly/"
   },
@@ -89,11 +89,11 @@
     "name": "오리히로 곤약포도+오렌지",
     "enName": "Orihiro konjac ielly",
     "price_off": "3500",
-    "price": "3400",
+    "price": "3300",
     "qty": "10",
     "description": "짜먹는 곤약젤리 ",
     "comment": "https://arc.net/e/0A4811FF-6C67-4849-ABE4-BB748FEC2EC5",
-    "imgs": "../../imgs/poo.jpg",
+    "imgs": "poo.jpg",
     "homeUrl": "http://health.orihiro.com/jelly/",
     "enHome": "http://health.orihiro.com/en/jelly/"
   },
@@ -103,11 +103,11 @@
     "name": "오리히로 사이다+콜라",
     "enName": "Orihiro konjac ielly",
     "price_off": "3500",
-    "price": "3400",
+    "price": "3300",
     "qty": "10",
     "description": "짜먹는 곤약젤리 ",
     "comment": "https://arc.net/e/0A4811FF-6C67-4849-ABE4-BB748FEC2EC5",
-    "imgs": "../../imgs/saco.jpg",
+    "imgs": "saco.jpg",
     "homeUrl": "http://health.orihiro.com/jelly/",
     "enHome": "http://health.orihiro.com/en/jelly/"
   },
@@ -117,11 +117,11 @@
     "name": "오리히로 곤약 레본+백도",
     "enName": "Orihiro konjac ielly",
     "price_off": "3500",
-    "price": "3400",
+    "price": "3300",
     "qty": "10",
     "description": "짜먹는 곤약젤리 ",
     "comment": "https://arc.net/e/0A4811FF-6C67-4849-ABE4-BB748FEC2EC5",
-    "imgs": "../../imgs/lebok.jpg",
+    "imgs": "lebok.jpg",
     "homeUrl": "http://health.orihiro.com/jelly/",
     "enHome": "http://health.orihiro.com/en/jelly/"
   },
@@ -135,7 +135,7 @@
     "qty": "10",
     "description": "캬베진 300정",
     "comment": "https://arc.net/e/358BE98A-15C2-47B0-9D2B-09651A44FD2A",
-    "imgs": "../../imgs/cabejin.jpg",
+    "imgs": "cabejin.jpg",
     "homeUrl": "https://hc.kowa.co.jp/otc/7469",
     "enHome": "https://hc.kowa.co.jp/en/document?category=cabagin"
   },
@@ -149,7 +149,7 @@
     "qty": "10",
     "description": "소화제",
     "comment": "https://arc.net/e/48ED98E0-AB62-45C7-AF19-490B351364A6",
-    "imgs": "../../imgs/ota_po.png",
+    "imgs": "ota_po.png",
     "homeUrl": "https://ohta-isan.co.jp/product/medicine/ohtaisanb/",
     "enHome": "https://global.ohta-isan.co.jp/en/"
   },
@@ -163,7 +163,7 @@
     "qty": "10",
     "description": "210그램",
     "comment": "https://arc.net/e/48ED98E0-AB62-45C7-AF19-490B351364A6",
-    "imgs": "../../imgs/ota_can.png",
+    "imgs": "ota_can.png",
     "homeUrl": "http://www.ohta-isan.co.jp/ohtaisan/",
     "enHome": "https://global.ohta-isan.co.jp/en/"
   },
@@ -177,7 +177,7 @@
     "qty": "10",
     "description": "300정",
     "comment": "https://arc.net/e/48ED98E0-AB62-45C7-AF19-490B351364A6",
-    "imgs": "../../imgs/ota_al.png",
+    "imgs": "ota_al.png",
     "homeUrl": "http://www.ohta-isan.co.jp/ohtaisan/",
     "enHome": "https://global.ohta-isan.co.jp/en/"
   },
@@ -191,7 +191,7 @@
     "qty": "10",
     "description": "kracie poppin cookin",
     "comment": "https://twitter.com/icanmart/status/1651442405781180417",
-    "imgs": "../../imgs/nerican.png",
+    "imgs": "nerican.png",
     "homeUrl": "https://www.kracie.co.jp/foods/okashi/chiiku/product/introduction_28.html",
     "enHome": "wip"
   },
@@ -205,7 +205,7 @@
     "qty": "10",
     "description": "kracie poppin cookin",
     "comment": "https://arc.net/e/10A35DBD-A983-4DF8-A42F-1FCE4B2C6058",
-    "imgs": "../../imgs/sushi.png",
+    "imgs": "sushi.png",
     "homeUrl": "https://www.kracie.co.jp/foods/okashi/chiiku/product/introduction_15.html",
     "enHome": "wip"
   },
@@ -214,12 +214,12 @@
     "code": "4901551355433",
     "name": "가루쿡 오마쯔리야 상",
     "enName": "wip",
-    "price_off": "4000",
-    "price": "3900",
-    "qty": "10",
+    "price_off": "4500",
+    "price": "4400",
+    "qty": "0",
     "description": "kracie poppin cookin",
     "comment": "https://arc.net/e/4CC98AFD-7E35-4385-9D59-598959560366",
-    "imgs": "../../imgs/matsuri.png",
+    "imgs": "matsuri.png",
     "homeUrl": "https://www.kracie.co.jp/foods/okashi/chiiku/product/introduction_12.html",
     "enHome": "wip"
   },
@@ -228,12 +228,12 @@
     "code": "4901551356201",
     "name": "가루쿡 케키야상",
     "enName": "wip",
-    "price_off": "4000",
-    "price": "3900",
+    "price_off": "4500",
+    "price": "4400",
     "qty": "10",
     "description": "kracie poppin cookin",
     "comment": "https://arc.net/e/C0EA0CAB-B84B-4586-AA69-59F319F86ED0",
-    "imgs": "../../imgs/keki.png",
+    "imgs": "keki.png",
     "homeUrl": "https://www.kracie.co.jp/foods/okashi/chiiku/product/introduction_13.html",
     "enHome": "wip"
   },
@@ -247,7 +247,7 @@
     "qty": "10",
     "description": "kracie poppin cookin",
     "comment": "https://arc.net/e/820D38F6-04AD-4ECF-B9C8-133E622313C6",
-    "imgs": "../../imgs/garu_ham.png",
+    "imgs": "garu_ham.png",
     "homeUrl": "https://www.kracie.co.jp/foods/okashi/chiiku/product/introduction_16.html",
     "enHome": "wip"
   },
@@ -261,7 +261,7 @@
     "qty": "10",
     "description": "100g",
     "comment": "https://twitter.com/icanmart/status/1636924091407171584/photo/1",
-    "imgs": "../../imgs/gepi.jpg",
+    "imgs": "gepi.jpg",
     "homeUrl": "https://irie-seika.co.jp/archives/341",
     "enHome": "wip"
   },
@@ -275,7 +275,7 @@
     "qty": "10",
     "description": "snb",
     "comment": "https://arc.net/e/85E2AD5A-945A-4898-889F-10D10A088A24",
-    "imgs": "../../imgs/snb_hot.png",
+    "imgs": "snb_hot.png",
     "homeUrl": "https://www.sbfoods-worldwide.com/ko/products/search/009.html",
     "enHome": "https://www.sbfoods-worldwide.com/products/index.html"
   },
@@ -289,7 +289,7 @@
     "qty": "10",
     "description": "snb",
     "comment": "https://arc.net/e/85E2AD5A-945A-4898-889F-10D10A088A24",
-    "imgs": "../../imgs/snb_soon.png",
+    "imgs": "snb_soon.png",
     "homeUrl": "https://www.sbfoods-worldwide.com/ko/products/search/007.html",
     "enHome": "https://www.sbfoods-worldwide.com/products/index.html"
   },
@@ -303,7 +303,7 @@
     "qty": "10",
     "description": "snb",
     "comment": "https://arc.net/e/85E2AD5A-945A-4898-889F-10D10A088A24",
-    "imgs": "../../imgs/snb_m.png",
+    "imgs": "snb_m.png",
     "homeUrl": "https://www.sbfoods-worldwide.com/ko/products/search/008.html",
     "enHome": "https://www.sbfoods-worldwide.com/products/index.html"
   },
@@ -317,7 +317,7 @@
     "qty": "10",
     "description": "동전파스 소 지름 2.8cm",
     "comment": "https://twitter.com/icanmart/status/1636980759981588482/photo/1dpm",
-    "imgs": "../../imgs/dong156.png",
+    "imgs": "dong156.png",
     "homeUrl": "https://www.roihi.com/tubokou.html",
     "enHome": "wip"
   },
@@ -331,7 +331,7 @@
     "qty": "10",
     "description": "동전파스 대 지름 소2.8 → 3.9cm",
     "comment": "https://twitter.com/icanmart/status/1636980760040325122/photo/1",
-    "imgs": "../../imgs/dong78.png",
+    "imgs": "dong78.png",
     "homeUrl": "https://www.roihi.com/tubokou-l.html",
     "enHome": "wip"
   },
@@ -345,7 +345,7 @@
     "qty": "10",
     "description": "wip",
     "comment": "https://arc.net/e/DE4B43F7-253F-4940-B576-50F37D483E43",
-    "imgs": "../../imgs/kaoring.jpg",
+    "imgs": "kaoring.jpg",
     "homeUrl": "KINCHO KAORI RING Insect Repellent Ring | Products | KINCHO",
     "enHome": "wip"
   },
@@ -359,7 +359,7 @@
     "qty": "10",
     "description": "wip",
     "comment": "https://arc.net/e/DE4B43F7-253F-4940-B576-50F37D483E43",
-    "imgs": "../../imgs/kaoring.jpg",
+    "imgs": "kaoring.jpg",
     "homeUrl": "KINCHO KAORI RING Insect Repellent Ring | Products | KINCHO",
     "enHome": "wip"
   },
@@ -373,7 +373,7 @@
     "qty": "2",
     "description": "85잔분 맥심 병 리필",
     "comment": "N/A",
-    "imgs": "../../imgs/maxim.jpg",
+    "imgs": "maxim.jpg",
     "homeUrl": "https://www.agf.co.jp/lineup/maxim/71287.html",
     "enHome": "wip"
   },
@@ -387,7 +387,7 @@
     "qty": "10",
     "description": "한천 믹스젤리",
     "comment": "https://twitter.com/icanmart/status/1636574740361129984/photo/1",
-    "imgs": "../../imgs/mix_jelly.jpg",
+    "imgs": "mix_jelly.jpg",
     "homeUrl": "http://kinjoseika.com/ic/100",
     "enHome": "wip"
   },
@@ -401,7 +401,7 @@
     "qty": "10",
     "description": "후지야 밀키 캔디",
     "comment": "https://twitter.com/icanmart/status/1636579545209008133/photo/1",
-    "imgs": "../../imgs/milky23.png",
+    "imgs": "milky23.png",
     "homeUrl": "",
     "enHome": "wip"
   },
@@ -415,7 +415,7 @@
     "qty": "10",
     "description": "asahi",
     "comment": "https://twitter.com/icanmart/status/1637358902080843776/photo/1",
-    "imgs": "../../imgs/mintia_aqua.jpg",
+    "imgs": "mintia_aqua.jpg",
     "homeUrl": "https://www.mintia.jp/product/#mintia",
     "enHome": "wip"
   },
@@ -429,7 +429,7 @@
     "qty": "10",
     "description": "후지야 팝 막대 사탕(충치방지)",
     "comment": "https://twitter.com/icanmart/status/1636579089107783680/photo/1",
-    "imgs": "../../imgs/peko_pop.png",
+    "imgs": "peko_pop.png",
     "homeUrl": "",
     "enHome": "wip"
   },
@@ -443,7 +443,7 @@
     "qty": "10",
     "description": "사진과 약간 차이가 있을 수 있습니다",
     "comment": "https://arc.net/e/544E4113-86DD-4E51-9B1D-4093BB4134DF",
-    "imgs": "../../imgs/vermont_hot.png",
+    "imgs": "vermont_hot.png",
     "homeUrl": "https://housefoods.jp/",
     "enHome": "wip"
   },
@@ -457,7 +457,7 @@
     "qty": "10",
     "description": "사진과 약간 차이가 있을 수 있습니다",
     "comment": "https://arc.net/e/544E4113-86DD-4E51-9B1D-4093BB4134DF",
-    "imgs": "../../imgs/vermont_mild.png",
+    "imgs": "vermont_mild.png",
     "homeUrl": "https://housefoods.jp/",
     "enHome": "wip"
   },
@@ -471,7 +471,7 @@
     "qty": "10",
     "description": "사진과 약간 차이가 있을 수 있습니다",
     "comment": "https://arc.net/e/544E4113-86DD-4E51-9B1D-4093BB4134DF",
-    "imgs": "../../imgs/vermont_medium.png",
+    "imgs": "vermont_medium.png",
     "homeUrl": "https://housefoods.jp/",
     "enHome": "wip"
   },
@@ -485,7 +485,7 @@
     "qty": "10",
     "description": "cm https://youtu.be/qO-rmVEh50w?t=6",
     "comment": "https://arc.net/e/839160C2-8C3A-4139-AA21-8DE49D434648",
-    "imgs": "../../imgs/sharon140.jpg",
+    "imgs": "sharon140.jpg",
     "homeUrl": "https://www.salonpas.jp/lineup/salonpas_ae.html",
     "enHome": "wip"
   },
@@ -499,7 +499,7 @@
     "qty": "10",
     "description": "4.2 x 6.5cm",
     "comment": "https://arc.net/e/839160C2-8C3A-4139-AA21-8DE49D434648",
-    "imgs": "../../imgs/sharon80.jpg",
+    "imgs": "sharon80.jpg",
     "homeUrl": "https://www.salonpas.jp/lineup/salonpas_ae.html",
     "enHome": "wip"
   },
@@ -513,7 +513,7 @@
     "qty": "10",
     "description": "15세 미만은 어린이용을...",
     "comment": "https://arc.net/e/5265EFD6-8AB9-4DCD-BB9F-E4D897EFEA14",
-    "imgs": "../../imgs/aneron.png",
+    "imgs": "aneron.png",
     "homeUrl": "https://www.ssp.co.jp/product/all/annys/",
     "enHome": "wip"
   },
@@ -527,7 +527,7 @@
     "qty": "10",
     "description": "잇몸질환 용,천연 허브 치주염 치약",
     "comment": "https://arc.net/e/C0B34DEE-767D-4902-B699-5DFC5F573FC9",
-    "imgs": "../../imgs/access.jpg",
+    "imgs": "access.jpg",
     "homeUrl": "https://search.sato-seiyaku.co.jp/pub/product/1806/",
     "enHome": "wip"
   },
@@ -541,7 +541,7 @@
     "qty": "10",
     "description": "UHA",
     "comment": "https://arc.net/e/63920736-47D3-4EDB-91E8-C7F1C08B5FE9",
-    "imgs": "../../imgs/azuki.jpg",
+    "imgs": "azuki.jpg",
     "homeUrl": "https://www.uha-mikakuto.co.jp/catalog/hardcandy/ca92.html",
     "enHome": "wip"
   },
@@ -555,7 +555,7 @@
     "qty": "10",
     "description": "메가네 클리너",
     "comment": "https://arc.net/e/35DA48E1-DFA5-41DF-91C6-E3E748E06FDB",
-    "imgs": "../../imgs/glasses.jpg",
+    "imgs": "glasses.jpg",
     "homeUrl": "https://www.kobayashi.co.jp/seihin/menu/category_08_7.html",
     "enHome": "wip"
   },
@@ -569,7 +569,7 @@
     "qty": "2",
     "description": "용각산 20그램",
     "comment": "https://arc.net/e/9CDD41D2-FC4B-43EF-9E24-F8B0D742B149",
-    "imgs": "../../imgs/young.jpg",
+    "imgs": "young.jpg",
     "homeUrl": "https://www.ryukakusan.co.jp/top",
     "enHome": "wip"
   },
@@ -583,7 +583,7 @@
     "qty": "10",
     "description": "히가시마루 우동스프 48개입",
     "comment": "https://arc.net/e/6E50D85C-F7A5-4108-8D9E-1961932298A6",
-    "imgs": "../../imgs/woodong.jpg",
+    "imgs": "woodong.jpg",
     "homeUrl": "https://www.higashimaru.co.jp/products/detail/pdt0024.html",
     "enHome": "wip"
   },
@@ -597,7 +597,7 @@
     "qty": "10",
     "description": "진통제",
     "comment": "https://arc.net/e/57A2CAC1-D48F-4265-BBCB-1BE728881228",
-    "imgs": "../../imgs/evequick.jpg",
+    "imgs": "evequick.jpg",
     "homeUrl": "https://www.ssp.co.jp/eve/products/eveq/",
     "enHome": "wip"
   },
@@ -611,7 +611,7 @@
     "qty": "1",
     "description": "일본 참기름 1리터",
     "comment": "https://arc.net/e/2813128A-4E5D-4A25-9968-9EC0F7AC8EBC",
-    "imgs": "../../imgs/cham.jpg",
+    "imgs": "cham.jpg",
     "homeUrl": "https://www.kadoya.com/products/page05.html",
     "enHome": "wip"
   },
@@ -625,7 +625,7 @@
     "qty": "10",
     "description": "20그램 국내 수입품 ",
     "comment": "https://twitter.com/icanmart/status/1636635801814720512/photo/1",
-    "imgs": "../../imgs/jjang.jpg",
+    "imgs": "jjang.jpg",
     "homeUrl": "https://www.tohato.jp/products/chocobi/",
     "enHome": "wip"
   },
@@ -639,7 +639,7 @@
     "qty": "10",
     "description": "가루쿡 짱구맥주",
     "comment": "https://arc.net/e/2ACCD692-0538-46D7-B35F-D5B2D6A77B1E",
-    "imgs": "../../imgs/beer.jpg",
+    "imgs": "beer.jpg",
     "homeUrl": "https://heart-ltd.jp/product/95343/",
     "enHome": "wip"
   },
@@ -653,7 +653,7 @@
     "qty": "10",
     "description": "kracie poppin cookin (그림이 다를 수 있습니다)",
     "comment": "https://arc.net/e/52F2E543-434E-45F7-B9C0-C44D10B3D77C",
-    "imgs": "../../imgs/gumiland.jpg",
+    "imgs": "gumiland.jpg",
     "homeUrl": "https://www.kracie.co.jp/foods/okashi/chiiku/product/introduction_07.html",
     "enHome": "wip"
   },
@@ -667,7 +667,7 @@
     "qty": "10",
     "description": "800 그램",
     "comment": "https://arc.net/e/25F50C61-16F4-4D32-81B0-2BC22FDFF493",
-    "imgs": "../../imgs/kopico.png",
+    "imgs": "kopico.png",
     "homeUrl": "https://www.mayora.com/en/our-brands/candy/kopiko",
     "enHome": "wip"
   },
@@ -681,7 +681,7 @@
     "qty": "10",
     "description": "150그램",
     "comment": "https://arc.net/e/25F50C61-16F4-4D32-81B0-2BC22FDFF493",
-    "imgs": "../../imgs/kopico.png",
+    "imgs": "kopico.png",
     "homeUrl": "https://www.mayora.com/en/our-brands/candy/kopiko",
     "enHome": "wip"
   },
@@ -695,7 +695,7 @@
     "qty": "10",
     "description": "800 그램",
     "comment": "https://arc.net/e/25F50C61-16F4-4D32-81B0-2BC22FDFF493",
-    "imgs": "../../imgs/kopico.png",
+    "imgs": "kopico.png",
     "homeUrl": "http://www.imacro.co.kr/product/item/165",
     "enHome": "wip"
   },
@@ -709,7 +709,7 @@
     "qty": "10",
     "description": "150그램",
     "comment": "https://arc.net/e/25F50C61-16F4-4D32-81B0-2BC22FDFF493",
-    "imgs": "../../imgs/kopico.png",
+    "imgs": "kopico.png",
     "homeUrl": "https://www.mayora.com/en/our-brands/candy/kopiko",
     "enHome": "wip"
   },
@@ -723,7 +723,7 @@
     "qty": "10",
     "description": "감기약",
     "comment": "https://arc.net/e/73BFD8EC-C82F-4BF1-AF38-EBA2E1A54165",
-    "imgs": "../../imgs/pabron.jpg",
+    "imgs": "pabron.jpg",
     "homeUrl": "https://www.taisho.co.jp/global/our_products/pabron_series.html",
     "enHome": "wip"
   },
@@ -737,7 +737,7 @@
     "qty": "10",
     "description": "감기약",
     "comment": "https://arc.net/e/73BFD8EC-C82F-4BF1-AF38-EBA2E1A54165",
-    "imgs": "../../imgs/pabron_al.jpg",
+    "imgs": "pabron_al.jpg",
     "homeUrl": "https://www.taisho.co.jp/global/our_products/pabron_series.html",
     "enHome": "wip"
   },
@@ -751,7 +751,7 @@
     "qty": "10",
     "description": "아즈키 모나카",
     "comment": "N/A",
-    "imgs": "../../imgs/monaka.png",
+    "imgs": "monaka.png",
     "homeUrl": "http://samkyoung.com/product/%ec%95%84%ec%a3%bc%eb%81%bc-%eb%aa%a8%eb%82%98%ec%b9%b4/",
     "enHome": "wip"
   },
@@ -765,7 +765,7 @@
     "qty": "10",
     "description": "기름기 확제거",
     "comment": "https://arc.net/e/59AF55ED-E659-429A-ACCC-34A7803183AC",
-    "imgs": "../../imgs/soap_dirt.jpg",
+    "imgs": "soap_dirt.jpg",
     "homeUrl": "http://303goodlife.com.tw/h/ProductDetail?key=621263289108&productId=78191",
     "enHome": "wip"
   },
@@ -779,7 +779,7 @@
     "qty": "10",
     "description": "백설 귀부인",
     "comment": "https://arc.net/e/59AF55ED-E659-429A-ACCC-34A7803183AC",
-    "imgs": "../../imgs/soap_hang.jpg",
+    "imgs": "soap_hang.jpg",
     "homeUrl": "https://twitter.com/icanmart/status/1636245639607771136/photo/1",
     "enHome": "wip"
   },
@@ -793,7 +793,7 @@
     "qty": "10",
     "description": "wip",
     "comment": "https://twitter.com/icanmart/status/1641397072552427523/photo/1",
-    "imgs": "../../imgs/kasu_coffee.png",
+    "imgs": "kasu_coffee.png",
     "homeUrl": "https://www.kasugai.co.jp/product/candy/",
     "enHome": "wip"
   },
@@ -807,7 +807,7 @@
     "qty": "10",
     "description": "400 그램",
     "comment": "https://arc.net/e/A2A08528-E584-4D29-AE7D-9319CC5F0288",
-    "imgs": "../../imgs/kasu_black.png",
+    "imgs": "kasu_black.png",
     "homeUrl": "https://www.kasugai.co.jp/product/candy/",
     "enHome": "wip"
   },
@@ -821,7 +821,7 @@
     "qty": "10",
     "description": "카스가이",
     "comment": "https://arc.net/e/A2A08528-E584-4D29-AE7D-9319CC5F0288",
-    "imgs": "../../imgs/kasu_black_b.png",
+    "imgs": "kasu_black_b.png",
     "homeUrl": "https://trungnguyenlegend.com/g7/?lang=en",
     "enHome": "wip"
   },
@@ -835,7 +835,7 @@
     "qty": "10",
     "description": "카스가이",
     "comment": "https://arc.net/e/A2A08528-E584-4D29-AE7D-9319CC5F0288",
-    "imgs": "../../imgs/kasu_salt.png",
+    "imgs": "kasu_salt.png",
     "homeUrl": "https://www.kasugai.co.jp/product/candy/",
     "enHome": "wip"
   },
@@ -849,7 +849,7 @@
     "qty": "10",
     "description": "카스가이",
     "comment": "https://arc.net/e/A2A08528-E584-4D29-AE7D-9319CC5F0288",
-    "imgs": "../../imgs/kasu_peanut.png",
+    "imgs": "kasu_peanut.png",
     "homeUrl": "https://www.kasugai.co.jp/product/candy/",
     "enHome": "wip"
   },
@@ -863,7 +863,7 @@
     "qty": "10",
     "description": "카스가이",
     "comment": "https://arc.net/e/A2A08528-E584-4D29-AE7D-9319CC5F0288",
-    "imgs": "../../imgs/kasu_cina.png",
+    "imgs": "kasu_cina.png",
     "homeUrl": "https://www.kasugai.co.jp/product/candy/",
     "enHome": "wip"
   },
@@ -877,7 +877,7 @@
     "qty": "10",
     "description": "카스가이",
     "comment": "https://arc.net/e/A2A08528-E584-4D29-AE7D-9319CC5F0288",
-    "imgs": "../../imgs/kasu_mint.png",
+    "imgs": "kasu_mint.png",
     "homeUrl": "https://www.kasugai.co.jp/product/candy/",
     "enHome": "wip"
   },
@@ -891,7 +891,7 @@
     "qty": "10",
     "description": "카스가이",
     "comment": "https://arc.net/e/A2A08528-E584-4D29-AE7D-9319CC5F0288",
-    "imgs": "../../imgs/kasu_milk.png",
+    "imgs": "kasu_milk.png",
     "homeUrl": "https://www.kasugai.co.jp/product/candy/",
     "enHome": "wip"
   },
@@ -905,7 +905,7 @@
     "qty": "10",
     "description": "wip",
     "comment": "https://arc.net/e/4D23EC28-2340-4D9B-BAD9-C7C0F9D4AE64",
-    "imgs": "../../imgs/g7_100.jpg",
+    "imgs": "g7_100.jpg",
     "homeUrl": "https://trungnguyenlegend.com/g7/?lang=en",
     "enHome": "wip"
   },
@@ -919,7 +919,7 @@
     "qty": "10",
     "description": "wip",
     "comment": "https://arc.net/e/4D23EC28-2340-4D9B-BAD9-C7C0F9D4AE64",
-    "imgs": "../../imgs/g7_mix50.gif",
+    "imgs": "g7_mix50.gif",
     "homeUrl": "https://trungnguyenlegend.com/g7/?lang=en",
     "enHome": "wip"
   },
@@ -933,7 +933,7 @@
     "qty": "10",
     "description": "wip",
     "comment": "https://arc.net/e/4D23EC28-2340-4D9B-BAD9-C7C0F9D4AE64",
-    "imgs": "../../imgs/g7_200.jpg",
+    "imgs": "g7_200.jpg",
     "homeUrl": "https://trungnguyenlegend.com/g7/?lang=en",
     "enHome": "wip"
   },
@@ -947,7 +947,7 @@
     "qty": "10",
     "description": "wip",
     "comment": "https://arc.net/e/4D23EC28-2340-4D9B-BAD9-C7C0F9D4AE64",
-    "imgs": "../../imgs/g7_mix_18.jpg",
+    "imgs": "g7_mix_18.jpg",
     "homeUrl": "wip",
     "enHome": "wip"
   },
@@ -961,7 +961,7 @@
     "qty": "10",
     "description": "오성 커피사탕",
     "comment": "https://arc.net/e/8F13EA1C-1CF8-4BA9-90FB-B9236055EAD0",
-    "imgs": "../../imgs/coffee_candy_capu.png",
+    "imgs": "coffee_candy_capu.png",
     "homeUrl": "wip",
     "enHome": "wip"
   },
@@ -975,7 +975,7 @@
     "qty": "10",
     "description": "360그램",
     "comment": "https://twitter.com/icanmart/status/1636330852140613632/photo/1",
-    "imgs": "../../imgs/sashimi_saurce.jpg",
+    "imgs": "sashimi_saurce.jpg",
     "homeUrl": "https://www.nibishi.co.jp/about-company/en_products/",
     "enHome": "wip"
   },
@@ -989,7 +989,7 @@
     "qty": "10",
     "description": "wip",
     "comment": "https://arc.net/e/FB280119-AF3D-4572-9625-9ED7C30C3F9D",
-    "imgs": "../../imgs/salt_toothpaste.jpg",
+    "imgs": "salt_toothpaste.jpg",
     "homeUrl": "https://www.sunstar.com/about/history/",
     "enHome": "wip"
   },
@@ -1003,7 +1003,7 @@
     "qty": "10",
     "description": "wip",
     "comment": "https://arc.net/e/547D627C-AE45-4ED6-9E28-4819224D747A",
-    "imgs": "../../imgs/bigen_6g.png",
+    "imgs": "bigen_6g.png",
     "homeUrl": "https://www.bigen.jp/cream_tone/",
     "enHome": "wip"
   },
@@ -1017,7 +1017,7 @@
     "qty": "10",
     "description": "로제트",
     "comment": "https://arc.net/e/60FCA2C4-51D4-49F9-A14E-4F8CD3B8C868",
-    "imgs": "../../imgs/peeling.jpg",
+    "imgs": "peeling.jpg",
     "homeUrl": "wip",
     "enHome": "wip"
   },
@@ -1031,7 +1031,7 @@
     "qty": "10",
     "description": "https://www.marumiya.co.jp/",
     "comment": "https://arc.net/e/B74B8D74-AE16-41C0-8C7E-DDCD1505A71A",
-    "imgs": "../../imgs/pokemon_huri.png",
+    "imgs": "pokemon_huri.png",
     "homeUrl": "wip",
     "enHome": "wip"
   },
@@ -1045,7 +1045,7 @@
     "qty": "5",
     "description": "https://www.marumiya.co.jp/",
     "comment": "https://arc.net/e/B74B8D74-AE16-41C0-8C7E-DDCD1505A71A",
-    "imgs": "../../imgs/gui_huri.jpg",
+    "imgs": "gui_huri.jpg",
     "homeUrl": "wip",
     "enHome": "wip"
   },
@@ -1059,7 +1059,7 @@
     "qty": "10",
     "description": "wip",
     "comment": "https://twitter.com/icanmart/status/1641333879662612485/photo/1",
-    "imgs": "../../imgs/jipange.jpg",
+    "imgs": "jipange.jpg",
     "homeUrl": "wip",
     "enHome": "wip"
   },
@@ -1073,7 +1073,7 @@
     "qty": "10",
     "description": "wip",
     "comment": "https://twitter.com/icanmart/status/1641329481582530561/photo/1",
-    "imgs": "../../imgs/gam_wasa.jpg",
+    "imgs": "gam_wasa.jpg",
     "homeUrl": "wip",
     "enHome": "wip"
   },
@@ -1087,7 +1087,7 @@
     "qty": "10",
     "description": "wip",
     "comment": "https://twitter.com/icanmart/status/1641329481582530561/photo/1",
-    "imgs": "../../imgs/gam_gim.jpg",
+    "imgs": "gam_gim.jpg",
     "homeUrl": "wip",
     "enHome": "wip"
   },
@@ -1101,7 +1101,7 @@
     "qty": "10",
     "description": "wip",
     "comment": "https://twitter.com/icanmart/status/1643836241522348033/photo/1",
-    "imgs": "../../imgs/vasel.jpg",
+    "imgs": "vasel.jpg",
     "homeUrl": "wip",
     "enHome": "wip"
   },
@@ -1115,7 +1115,7 @@
     "qty": "4",
     "description": "wip",
     "comment": "https://arc.net/e/C2810A1D-E59C-4B3D-95C1-D62FD8C305BF",
-    "imgs": "../../imgs/pokemon_curry.jpg",
+    "imgs": "pokemon_curry.jpg",
     "homeUrl": "https://www.lotte.co.jp/products/catalogue/candy/22/detail06.html",
     "enHome": "wip"
   },
@@ -1129,7 +1129,7 @@
     "qty": "10",
     "description": "wip",
     "comment": "https://arc.net/e/9B698095-DAEF-4E5B-8BD5-6C4BA604BB62",
-    "imgs": "../../imgs/anpangman.jpg",
+    "imgs": "anpangman.jpg",
     "homeUrl": "https://www.ikedamohando.co.jp/products/insect_bite/index.html",
     "enHome": "wip"
   },
@@ -1143,7 +1143,7 @@
     "qty": "10",
     "description": "wip",
     "comment": "https://arc.net/e/F983510B-1560-47F1-A70A-FDAC2A7174B2",
-    "imgs": "../../imgs/mario_jelly.jpg",
+    "imgs": "mario_jelly.jpg",
     "homeUrl": "wip",
     "enHome": "wip"
   },
@@ -1157,7 +1157,7 @@
     "qty": "10",
     "description": "랜덤 발송",
     "comment": "https://arc.net/e/C83110E1-7945-4511-9A35-CF4B5490170B",
-    "imgs": "../../imgs/disney.jpg",
+    "imgs": "disney.jpg",
     "homeUrl": "https://www.glicoshop.com/products/glico-%E6%A0%BC%E5%8A%9B%E9%AB%98pop-can%E9%80%A0%E5%9E%8B%E6%A3%92%E6%A3%92%E7%B3%96",
     "enHome": ""
   },
@@ -1171,7 +1171,7 @@
     "qty": "10",
     "description": "wip",
     "comment": "https://arc.net/e/8913282F-1780-457F-940F-0975829B3DBE",
-    "imgs": "../../imgs/dasinomoto.jpg",
+    "imgs": "dasinomoto.jpg",
     "homeUrl": "wip",
     "enHome": "wip"
   }

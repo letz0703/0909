@@ -57,7 +57,7 @@ export default function JapitemDetail() {
           <img
             src={
               !japitem.imgs.includes("https")
-                ? japitem.imgs
+                ? "../../imgs/" + japitem.imgs
                 : "../" + japitem.imgs
             }
             className="japitem-detail__imageDetail "

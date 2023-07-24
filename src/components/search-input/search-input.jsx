@@ -2,6 +2,7 @@ import { useState } from "react"
 import styles from "./search-input.module.css"
 import { BiSearch } from "react-icons/bi"
 //import useDebounce from "../../hooks/use-debounce"
+import "../../util/observer"
 
 export default function SearchInput({ setSearch }) {
   const [item_to_search, setItem_to_search] = useState("")
@@ -24,7 +25,7 @@ export default function SearchInput({ setSearch }) {
               <input
                 type="text"
                 id="searchInput"
-                className={` ${styles.input} text-xl px-3 box`}
+                className={` ${styles.input} text-xl px-3 box input`}
                 placeholder="save 1%"
                 aria-label="search"
                 autoFocus
