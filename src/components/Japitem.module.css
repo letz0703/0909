@@ -1,8 +1,51 @@
 .product {
-	height: fit-content;
+  height: fit-content;
 }
 .wrapper {
-	display: flex;
-	flex-direction: column;
-	max-height: 300px;
+  display: flex;
+  flex-direction: column;
+  max-height: 300px;
+}
+.grid {
+  display: grid;
+}
+img {
+  aspect-ratio: 1/-1;
+  display: block;
+}
+
+.blur_img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  animation: pulse 2.5s infinite;
+}
+.blur_img.loaded::before {
+  content: none;
+  animation: none;
+}
+@keyframes pulse {
+  0% {
+    background-color: rgb(255 255 255 /0);
+  }
+  50% {
+    background-color: rgb(255 255 255 /0.1);
+  }
+  100% {
+    background-color: rgb(255 255 255 /0);
+  }
+}
+
+.blur_img {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.blur_img.loaded > img {
+  opacity: 1;
+}
+.blur_img > img {
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
 }

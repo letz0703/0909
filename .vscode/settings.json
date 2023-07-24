@@ -4,7 +4,7 @@
   "editor.multiCursorModifier": "alt",
   "tailwind-fold.autoFold": true,
   "editor.fontWeight": "400",
-  "workbench.colorTheme": "GitHub Dark Dimmed",
+  "workbench.colorTheme": "One Monokai",
   "workbench.colorCustomizations": {
     "tab.activeBackground": "#770b29"
   },

@@ -1,8 +1,7 @@
 import { useState } from "react"
 import styles from "./search-input.module.css"
 import { BiSearch } from "react-icons/bi"
-import useDebounce from "../../hooks/use-debounce"
-import "./observer_resize"
+//import useDebounce from "../../hooks/use-debounce"
 
 export default function SearchInput({ setSearch }) {
   const [item_to_search, setItem_to_search] = useState("")

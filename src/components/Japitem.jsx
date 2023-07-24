@@ -19,6 +19,19 @@ export function Japitem({ japitem }) {
     }).catch((error) => console.log(error))
   }
 
+  const blurDivs = document.querySelectorAll(".blur_img")
+  blurDivs.forEach((div) => {
+    const img = div.querySelector("img")
+    function loaded() {
+      div.classList.add("loaded")
+    }
+    if (img.complete) {
+      loaded()
+    } else {
+      img.addEventListener("load", loaded)
+    }
+  })
+
   return (
     <div className={`${styles.product}  flex flex-col items-stretch card`}>
       <div className="wrapper min-h-[10em] items-stretch">
@@ -28,13 +41,23 @@ export function Japitem({ japitem }) {
         </div>
         {user && (
           <span className="transition-all hover:scale-110  self-stretch">
-            <img
-              src={japitem.imgs}
-              className="sm:max-h-[180px] lg:min-h-[170px] pt-3 mr-auto ml-auto"
-              onClick={() => {
-                navigate(`/japitems/${japitem.id}`, { state: { japitem } })
-              }}
-            />
+            <div className={`${styles.grid}`}>
+              <div
+                className={`styles.blur_img`}
+                styles={{
+                  backgroundImage: `url(/s/${japitem.img})`,
+                }}
+              >
+                <img
+                  src={japitem.imgs}
+                  className={`sm:max-h-[180px] lg:min-h-[170px] pt-3 mr-auto ml-auto ${styles.blur_img}`}
+                  onClick={() => {
+                    navigate(`/japitems/${japitem.id}`, { state: { japitem } })
+                  }}
+                  loading="lazy"
+                />
+              </div>
+            </div>
           </span>
         )}
         {japitem.qty <= 0 ? (

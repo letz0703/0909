@@ -18,3 +18,5 @@
 |      ^      | Script^super^ < sup > |
 |  emoji : :  | :smile:               |
 |   `mono`    | \`word \`             |
+
+#### [observer](https://www.youtube.com/watch?v=Mi4EF9K87aM&t=570s)
