@@ -45,11 +45,11 @@ export function Japitem({ japitem }) {
               <div
                 className={`styles.blur_img`}
                 styles={{
-                  backgroundImage: `url(/s/${japitem.img})`,
+                  backgroundImage: `url(../../imgs/s/${japitem.img})`,
                 }}
               >
                 <img
-                  src={japitem.imgs}
+                  src={`http://wizbox.shop/imgs/${japitem.imgs}`}
                   className={`sm:max-h-[180px] lg:min-h-[170px] pt-3 mr-auto ml-auto ${styles.blur_img}`}
                   onClick={() => {
                     navigate(`/japitems/${japitem.id}`, { state: { japitem } })
