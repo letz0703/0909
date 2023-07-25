@@ -204,14 +204,14 @@ export async function addNewCart(
   const address = addressTo || "배송지요함"
   const updatedUser = await updateRDB_user(address)
   const cartData = {
-    userId,
+    addressTo: address || null,
     cartId,
     cartItems: local__icCart,
-    addressTo: address | null,
-    phoneNumber: phoneNumber | null,
-    total: total,
-    status: "",
     orderDate: new Date(),
+    phoneNumber: phoneNumber || null,
+    status: "입금확인전",
+    total: total,
+    userId,
   }
   return update(ref(database, `carts/${userId}/${cartId}`), cartData)
 }
