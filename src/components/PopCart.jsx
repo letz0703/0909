@@ -71,7 +71,6 @@ export function PopCart({ isOpen }) {
     const a = localStorage.getItem("ic-user")
     const parsed_a = JSON.parse(a)
     setRDB_user(parsed_a.uid, parsed_a)
-    console.log(`user`, user)
     await addNewCart(
       user.uid,
       crypto.randomUUID(),
@@ -84,8 +83,8 @@ export function PopCart({ isOpen }) {
     /**
      * 카트 비우기
      */
-    //setCartItems([])
-    //window.location.replace("./shop")
+    setCartItems([])
+    window.location.replace("./shop")
   }
 
   function handleResetCart() {
