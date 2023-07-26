@@ -188,7 +188,7 @@ export function PopCart({ isOpen }) {
                 <div className="ml-auto">
                 <div >주문 후 문자 주시면 확인 후 입금 안내 드립니다: 010.9876.1815 </div>
                 <div> 궁금한 점은 트윗 부탁 드립니다 <button onClick={()=>window.location.replace("https://twitter.com/icanmart")}><CiTwitter className="text-blue-500 border-2 text-2xl"/></button></div>
-                <div >전화는 안받습니다.</div>
+                <div >전화는 못받는 경우가 많으니 문자 부탁드립니다.</div>
                 </div>
 
         </Stack>

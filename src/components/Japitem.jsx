@@ -35,7 +35,13 @@ export function Japitem({ japitem }) {
   return (
     <div className={`${styles.product}  flex flex-col items-stretch card`}>
       <div className="wrapper min-h-[10em] items-stretch">
-        <div className="max-w-[100%] truncate">{japitem.name}</div>
+        <div className="max-w-[100%] truncate my-2">
+          {japitem.enName
+            ? !japitem.enName.includes(["wip"])
+              ? japitem.enName
+              : japitem.name
+            : japitem.name}
+        </div>
         <div className="text-orange-500 font-bold">
           {FormatCurrency(japitem.price)}
         </div>
@@ -64,18 +70,18 @@ export function Japitem({ japitem }) {
           <button className="btn btn--danger mini text-xs ">품절</button>
         ) : (
           <button
-            className="btn btn--primary mini text-xs"
+            className="btn btn--primary mini text-sm"
             onClick={() => {
               !user && login()
               increaseCartQuantity(japitem.id)
               decrease_rdb_qty(japitem.id)
             }}
           >
-            담기
+            Add to cart
           </button>
         )}
       </div>
-      <div>재고잔량: {japitem.qty}</div>
+      <div>stock: {japitem.qty}</div>
     </div>
   )
 }
