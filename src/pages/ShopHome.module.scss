@@ -1,22 +1,25 @@
 .shop_home {
-	/*scroll-behavior: smooth;*/
-	height: 100vh;
-	scroll-snap-type: y mandatory;
-	overflow-y: scroll;
-	/* mandatory proximity both */
-	/* block, inline */
-	&::-webkit-scrollbar {width:0; background: transparent;}
+  /*scroll-behavior: smooth;*/
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  /* mandatory proximity both */
+  /* block, inline */
+  &::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
   & > section {
-		padding-top: 70px;
-		scroll-snap-align: start;
-		height: 100vh;
-		/* start,center, end */
-		scroll-snap-stop: normal;
-		/*scroll-snap-stop: always;*/
+    padding-top: 70px;
+    scroll-snap-align: start;
+    height: 100vh;
+    /* start,center, end */
+    scroll-snap-stop: normal;
+    /*scroll-snap-stop: always;*/
     //scroll-margin-top: 72px;
-	}
-	width: 100vw;
-	//padding-top: 300px;
+  }
+  width: 100vw;
+  //padding-top: 300px;
 }
 
 /*
