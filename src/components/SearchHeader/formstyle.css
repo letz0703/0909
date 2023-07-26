@@ -35,8 +35,8 @@
 }
 
 .input:focus {
-  border-color: hsl(200, 100%, 50%);
-  background-color: white;
+  //border-color: hsl(200, 100%, 50%);
+  //background-color: white;
 }
 
 .btn {

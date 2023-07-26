@@ -22,8 +22,8 @@ export default function SearchInput({ setSearch }) {
         <input
           type="text"
           id="searchInput"
-          className={`${styles.input} text-xl  `}
-          placeholder="save 1%"
+          className={`${styles.input}   ring-2 ring-slate-300 pl-4 text-xl `}
+          placeholder="Search"
           aria-label="search"
           autoFocus
           onChange={(e) => setSearch(e.target.value)}
