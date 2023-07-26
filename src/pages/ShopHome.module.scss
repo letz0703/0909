@@ -9,8 +9,8 @@
     width: 0;
     background: transparent;
   }
-  & > section {
-    padding-top: 70px;
+  & > section:first-child {
+    padding-top: 4em;
     scroll-snap-align: start;
     height: 100vh;
     /* start,center, end */

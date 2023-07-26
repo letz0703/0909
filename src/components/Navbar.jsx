@@ -113,14 +113,14 @@ export default function Navbar({ search, setSearch }) {
       </div>
       {/* </section> */}
       {!window.location.href.includes("/jap") && (
-        <section className={`sec2 pt-3`}>
+        <section className={`sec2 `}>
           {/* <div className={`${styles.nav_center} navbar__search-input`}> */}
           {/* {user && <SearchInput setSearch={setSearch} className="검색폼" />} */}
           <SearchInput setSearch={setSearch} className={`box`} />
         </section>
       )}
       {window.location.href.includes("/jap") && (
-        <section className="sec2 pt-3 text-blue-100">
+        <section className="sec2  text-blue-100">
           {/* <div className={`${styles.nav_center} navbar__search-input`}> */}
           {/* {user && <SearchInput setSearch={setSearch} className="검색폼" />} */}
           {/*<SearchInput setSearch={setSearch} />*/}
