@@ -65,21 +65,21 @@ function App() {
     }
   }, [])
 
-  function handleJapitemAdd() {
-    const newJapitem = {
-      id: crypto.randomUUID(),
-      name: "new item",
-      price: 10000,
-    }
-    setJapitems([...japitems, newJapitem])
-  }
+  //function handleJapitemAdd() {
+  //  const newJapitem = {
+  //    id: crypto.randomUUID(),
+  //    name: "new item",
+  //    price: 10000,
+  //  }
+  //  setJapitems([...japitems, newJapitem])
+  //}
 
   function handleJapitemDelete(id) {
     setJapitems(japitems.filter((japitem) => japitem.id !== id))
   }
 
   const japitemContextValue = {
-    handleJapitemAdd,
+    //handleJapitemAdd,
     handleJapitemDelete,
     japitems,
   }

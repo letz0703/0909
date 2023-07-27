@@ -46,6 +46,7 @@ export default function Products(product) {
     setMainItems([...special, ...japitems])
   }, [uid, japitems, icUserPhone])
 
+  console.log(japitems)
   return (
     <section
       className="product shop-home w-[100vw] grid grid-cols-1 lg:grid-cols-5 gap-2 mt-5"
@@ -55,7 +56,9 @@ export default function Products(product) {
         ?.filter((item) => {
           return search.toLowerCase() === ""
             ? item
-            : item.name.toLowerCase().includes(search)
+            : item.name.toLowerCase().includes(search) ||
+                item.enName.toLowerCase().includes(search) ||
+                item.description?.toLowerCase().includes(search)
         })
         .map((japitem) => (
           //<Fragment key={crypto.randomUUID()}>
