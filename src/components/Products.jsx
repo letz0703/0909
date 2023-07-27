@@ -46,7 +46,6 @@ export default function Products(product) {
     setMainItems([...special, ...japitems])
   }, [uid, japitems, icUserPhone])
 
-  console.log(japitems)
   return (
     <section
       className="product shop-home w-[100vw] grid grid-cols-1 lg:grid-cols-5 gap-2 mt-5"
