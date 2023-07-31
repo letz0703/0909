@@ -12,8 +12,8 @@ const ICON_BOX = "transition-all cursor-pointer hover:text-brand mx-1"
 export default function CartItem(props) {
   const { id, quantity } = props
   const [japitems, setJapitems] = useJapitems()
-  const storeItems = japitems
-  const item = storeItems.find((i) => i.id === id)
+  //const storeItems = japitems
+  const item = japitems.find((i) => i.id === id)
   if (item == null) return null
 
   //prettier-ignore
