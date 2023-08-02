@@ -33,6 +33,7 @@ export const useJapitems = () => {
       }
     })
     localStorage.setItem("japitems", JSON.stringify(japitems))
-  }, [isLoading])
+  }, [])
+  //}, [isLoading])
   return [japitems, setJapitems]
 }

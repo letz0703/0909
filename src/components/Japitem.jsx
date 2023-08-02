@@ -50,9 +50,9 @@ export function Japitem({ japitem }) {
             <div className={`${styles.grid}`}>
               <div
                 className={`styles.blur_img`}
-                styles={{
-                  backgroundImage: `url(../../imgs/s/${japitem.img})`,
-                }}
+                //styles={{
+                //  backgroundImage: `url(../../imgs/s/${japitem.img})`,
+                //}}
               >
                 <img
                   src={`http://wizbox.shop/imgs/${japitem.imgs}`}
@@ -60,7 +60,7 @@ export function Japitem({ japitem }) {
                   onClick={() => {
                     navigate(`/japitems/${japitem.id}`, { state: { japitem } })
                   }}
-                  loading="lazy"
+                  //loading="lazy"
                 />
               </div>
             </div>

@@ -26,32 +26,32 @@ export default function Products(product) {
   const { search } = useContext(SearchContext)
   const [japitems, setJapitems] = useJapitems()
   const { user, uid } = useAuthContext()
-  const [mainItems, setMainItems] = useState(() => {
-    return Object.values(product)
-  })
-  const [special, setSpecial] = useState([])
+  //const [mainItems, setMainItems] = useState(() => {
+  //  return Object.values(product)
+  //})
+  //const [special, setSpecial] = useState([])
 
-  async function getSpecial() {
-    await fetch("/products2.json", {
-      //signal: controller.signal,
-    })
-      .then((response) => response.json())
-      .then(setSpecial)
-    //.finally(() => setIsLoading(false))
-  }
+  //async function getSpecial() {
+  //  await fetch("/products2.json", {
+  //    //signal: controller.signal,
+  //  })
+  //    .then((response) => response.json())
+  //    .then(setSpecial)
+  //  //.finally(() => setIsLoading(false))
+  //}
 
-  const icUserPhone = localStorage.getItem("ic-user").phoneNumber
-  useEffect(() => {
-    icUserPhone && getSpecial()
-    setMainItems([...special, ...japitems])
-  }, [uid, japitems, icUserPhone])
+  //const icUserPhone = localStorage.getItem("ic-user").phoneNumber
+  //useEffect(() => {
+  //icUserPhone && getSpecial()
+  //setMainItems([...japitems])
+  //}, [uid, japitems])
 
   return (
     <section
       className="product shop-home w-[100vw] grid grid-cols-1 lg:grid-cols-5 gap-2 mt-5"
       style={{ overflowY: "auto" }}
     >
-      {mainItems
+      {japitems
         ?.filter((item) => {
           return search.toLowerCase() === ""
             ? item
