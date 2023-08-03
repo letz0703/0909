@@ -1,6 +1,6 @@
-import App from "./App"
+//import App from "./App"
 //import App from "./components/wds_use_fetch/wds_use_fetch.jsx"
-//import App from "./App2"
+import App from "./components/wds/form/AppForm.jsx"
 import "bootstrap/dist/css/bootstrap.min.css"
 import React from "react"
 import ReactDOM from "react-dom/client"

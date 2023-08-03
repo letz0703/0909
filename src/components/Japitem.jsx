@@ -19,18 +19,18 @@ export function Japitem({ japitem }) {
     }).catch((error) => console.log(error))
   }
 
-  const blurDivs = document.querySelectorAll(".blur_img")
-  blurDivs.forEach((div) => {
-    const img = div.querySelector("img")
-    function loaded() {
-      div.classList.add("loaded")
-    }
-    if (img.complete) {
-      loaded()
-    } else {
-      img.addEventListener("load", loaded)
-    }
-  })
+  //const blurDivs = document.querySelectorAll(".blur_img")
+  //blurDivs.forEach((div) => {
+  //  const img = div.querySelector("img")
+  //  function loaded() {
+  //    div.classList.add("loaded")
+  //  }
+  //  if (img.complete) {
+  //    loaded()
+  //  } else {
+  //    img.addEventListener("load", loaded)
+  //  }
+  //})
 
   return (
     <div className={`${styles.product}  flex flex-col items-stretch card`}>
@@ -50,9 +50,9 @@ export function Japitem({ japitem }) {
             <div className={`${styles.grid}`}>
               <div
                 className={`styles.blur_img`}
-                styles={{
-                  backgroundImage: `url(../../imgs/s/${japitem.img})`,
-                }}
+                //styles={{
+                //  backgroundImage: `url(../../imgs/s/${japitem.img})`,
+                //}}
               >
                 <img
                   src={`http://wizbox.shop/imgs/${japitem.imgs}`}
@@ -60,7 +60,7 @@ export function Japitem({ japitem }) {
                   onClick={() => {
                     navigate(`/japitems/${japitem.id}`, { state: { japitem } })
                   }}
-                  loading="lazy"
+                  //loading="lazy"
                 />
               </div>
             </div>

@@ -28,9 +28,8 @@ import {
 
 export function PopCart({ isOpen }) {
   const [total, setTotal] = useState(0)
-  const [japitems] = useJapitems()
-  const { closeCart, openCart, cartItems, getTotal, getItemQuantity } =
-    useShoppingCart()
+  //const [japitems] = useJapitems()
+  const { closeCart, cartItems, getTotal } = useShoppingCart()
   const [local__icCart, setCartItems] = useLocalStorage("ic-cart", {
     ...cartItems,
   })
@@ -39,25 +38,22 @@ export function PopCart({ isOpen }) {
   const [currentAddress, setCurrentAddress] = useState("배송지 요망")
   const [phoneNumber, setPhoneNumber] = useState("연락처요함")
   useEffect(() => {
+    // Combine redundant useEffect calls
     const a = localStorage.getItem("addressTo")
+    setCurrentAddress(a || "배송지 요망")
+    const phone = localStorage.getItem("phoneNumber")
+    setPhoneNumber(phone || "연락처 요망")
+  }, []) // Empty dependency array, runs only once
 
-    setCurrentAddress(a)
-    if (a) {
-      setCurrentAddress(a)
-    } else {
-      setCurrentAddress("배송지 요망")
-    }
-  }, [localStorage.addressTo])
-
-  useEffect(() => {
-    const a = localStorage.getItem("phoneNumber")
-    setPhoneNumber(a)
-    if (a) {
-      setPhoneNumber(a)
-    } else {
-      setPhoneNumber("연락처 요망")
-    }
-  }, [localStorage.phoneNumber])
+  //useEffect(() => {
+  //  const a = localStorage.getItem("phoneNumber")
+  //  setPhoneNumber(a)
+  //  if (a) {
+  //    setPhoneNumber(a)
+  //  } else {
+  //    setPhoneNumber("연락처 요망")
+  //  }
+  //}, [localStorage.phoneNumber])
   /**
    * 카트 주문 처리
    */
@@ -87,11 +83,6 @@ export function PopCart({ isOpen }) {
     window.location.replace("./shop")
   }
 
-  function handleResetCart() {
-    setCartItems([])
-    window.location.replace("./shop")
-  }
-
   function changeAddress() {
     const newAddress = prompt("배송지 입력")
     localStorage.setItem("addressTo", JSON.stringify(newAddress))
@@ -113,9 +104,9 @@ export function PopCart({ isOpen }) {
     }
   }
 
-  useEffect(() => {
-    getRDB_user()
-  }, [user])
+  //useEffect(() => {
+  //  getRDB_user()
+  //}, [user])
 
   // local storage 에 sendTo 가 있는지 확인 한다 ai__
   useEffect(() => {

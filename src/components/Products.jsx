@@ -31,20 +31,20 @@ export default function Products(product) {
   })
   const [special, setSpecial] = useState([])
 
-  async function getSpecial() {
-    await fetch("/products2.json", {
-      //signal: controller.signal,
-    })
-      .then((response) => response.json())
-      .then(setSpecial)
-    //.finally(() => setIsLoading(false))
-  }
+  //async function getSpecial() {
+  //  await fetch("/products2.json", {
+  //    //signal: controller.signal,
+  //  })
+  //    .then((response) => response.json())
+  //    .then(setSpecial)
+  //  //.finally(() => setIsLoading(false))
+  //}
 
   const icUserPhone = localStorage.getItem("ic-user").phoneNumber
   useEffect(() => {
-    icUserPhone && getSpecial()
-    setMainItems([...special, ...japitems])
-  }, [uid, japitems, icUserPhone])
+    //icUserPhone && getSpecial()
+    icUserPhone && setMainItems([...special, ...japitems])
+  }, [uid, japitems])
 
   return (
     <section
