@@ -8,8 +8,8 @@ import { ref, update } from "firebase/database"
 import { database } from "../api/firebase"
 
 export function Japitem({ japitem }) {
-  const { increaseCartQuantity, setCartItems } = useShoppingCart()
-  const { user, uid } = useAuthContext()
+  const { increaseCartQuantity } = useShoppingCart()
+  const { user } = useAuthContext()
   const navigate = useNavigate()
 
   function decrease_rdb_qty(japitem_id) {
@@ -55,8 +55,9 @@ export function Japitem({ japitem }) {
                 //}}
               >
                 <img
-                  src={`http://wizbox.shop/imgs/${japitem.imgs}`}
-                  className={`sm:max-h-[180px] lg:min-h-[170px] pt-3 mr-auto ml-auto ${styles.blur_img}`}
+                  src={`imgs/${japitem.imgs}`}
+                  className={`sm:max-h-[180px] lg:min-h-[170px] pt-3 mr-auto ml-auto
+                  `}
                   onClick={() => {
                     navigate(`/japitems/${japitem.id}`, { state: { japitem } })
                   }}
