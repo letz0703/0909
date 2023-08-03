@@ -40,11 +40,11 @@ export default function Products(product) {
   //  //.finally(() => setIsLoading(false))
   //}
 
-  //const icUserPhone = localStorage.getItem("ic-user").phoneNumber
-  //useEffect(() => {
-  //icUserPhone && getSpecial()
-  //setMainItems([...japitems])
-  //}, [uid, japitems])
+  const icUserPhone = localStorage.getItem("ic-user").phoneNumber
+  useEffect(() => {
+    //icUserPhone && getSpecial()
+    icUserPhone && setMainItems([...special, ...japitems])
+  }, [uid, japitems])
 
   return (
     <section

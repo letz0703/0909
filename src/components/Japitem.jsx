@@ -19,18 +19,18 @@ export function Japitem({ japitem }) {
     }).catch((error) => console.log(error))
   }
 
-  const blurDivs = document.querySelectorAll(".blur_img")
-  blurDivs.forEach((div) => {
-    const img = div.querySelector("img")
-    function loaded() {
-      div.classList.add("loaded")
-    }
-    if (img.complete) {
-      loaded()
-    } else {
-      img.addEventListener("load", loaded)
-    }
-  })
+  //const blurDivs = document.querySelectorAll(".blur_img")
+  //blurDivs.forEach((div) => {
+  //  const img = div.querySelector("img")
+  //  function loaded() {
+  //    div.classList.add("loaded")
+  //  }
+  //  if (img.complete) {
+  //    loaded()
+  //  } else {
+  //    img.addEventListener("load", loaded)
+  //  }
+  //})
 
   return (
     <div className={`${styles.product}  flex flex-col items-stretch card`}>
