@@ -72,22 +72,24 @@ export function Info09() {
         </div>
         <div className={`text-slate-700 pt-3`}>
           본 사이트는 저희 단골고객님과 <br />
-          오프라인 가게 방문 고객님들 <br />중 소수분들께만 알려드리는
+          오프라인 가게 방문 고객님분
           <br />
-          서비스 사이트 입니다
+          들께 알려드리고 있습니다.
+          <br />
+          가격정보 사이트 입니다.
         </div>
         <div className={`text-xl pt-[3em] font-semibold text-gray-500`}>
-          밤 7시 ~ 새벽 7시까지만 open 합니다.
+          {/*밤 7시 ~ 새벽 7시까지만 Open 합니다.*/}
         </div>
         <div className={`text-xl pt-[1em] font-semibold text-gray-500`}>
-          오프라인 깡통시장 가격 보다 1% 더 저렴합니다
+          {/*오프라인 깡통시장 가격 보다 1% 더 저렴합니다*/}
         </div>
         <div>
-          🛍️ 주문 하시려면
+          {/*🛍️ 주문 하시려면*/}
           <button onClick={login} className={`btn btn--primary  `}>
             login
           </button>
-          하세요!
+          {/*하세요!*/}
         </div>
       </section>
     </>
