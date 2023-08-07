@@ -94,21 +94,21 @@ function App() {
       <>
         <SearchContext.Provider value={searchContextValue}>
           <ShoppingCartProvider>
-            <DetailContextProvider>
-              <Container>
-                {/*<QueryClientProvider client={queryClient}>*/}
-                <AuthContextProvider>
-                  <JapitemContext.Provider value={japitemContextValue}>
-                    <header>
-                      <Navbar setSearch={setSearch} search={search_def} />
-                    </header>
-                    <LayOut japitems={japitems} className={`outlet`} />
-                    {/* <ReactQueryDevtools /> */}
-                  </JapitemContext.Provider>
-                </AuthContextProvider>
-                {/*</QueryClientProvider>*/}
-              </Container>
-            </DetailContextProvider>
+            {/*<DetailContextProvider>*/}
+            <Container>
+              {/*<QueryClientProvider client={queryClient}>*/}
+              <AuthContextProvider>
+                <JapitemContext.Provider value={japitemContextValue}>
+                  <header>
+                    <Navbar setSearch={setSearch} search={search_def} />
+                  </header>
+                  <LayOut japitems={japitems} className={`outlet`} />
+                  {/* <ReactQueryDevtools /> */}
+                </JapitemContext.Provider>
+              </AuthContextProvider>
+              {/*</QueryClientProvider>*/}
+            </Container>
+            {/*</DetailContextProvider>*/}
           </ShoppingCartProvider>
         </SearchContext.Provider>
       </>

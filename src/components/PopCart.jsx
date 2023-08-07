@@ -82,6 +82,10 @@ export function PopCart({ isOpen }) {
     setCartItems([])
     window.location.replace("./shop")
   }
+  function handleResetCart() {
+    setCartItems([])
+    window.location.replace("./shop")
+  }
 
   function changeAddress() {
     const newAddress = prompt("배송지 입력")
