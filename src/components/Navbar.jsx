@@ -1,10 +1,7 @@
 import { Link, Navigate, useNavigate } from "react-router-dom"
 import observer from "../util/observer.jsx"
 import { BsFillPencilFill } from "react-icons/bs"
-//import { HiLogin, HiLogout } from "react-icons/hi"
-//import { login, logout, onUserStateChange } from "../api/firebase"
 import { onUserStateChange } from "../api/firebase"
-//import Button from "./ui/button"
 import User from "./User"
 import { useAuthContext } from "../context/AuthContext"
 import CartStatus from "./CartStatus"
@@ -73,7 +70,7 @@ export default function Navbar({ search, setSearch }) {
             i.
           </span>
         )}
-        <div className="nav-bar__text-logo">
+        <div className="nav-bar__text-logo flex space-x-3 items-center xm:hidden">
           <div>
             <Link to="/" className="flex items-center text-2xl">
               canmart
@@ -145,7 +142,7 @@ export default function Navbar({ search, setSearch }) {
         <div className="flex justify-center items-center gap-3 me-auto">
           {/* <Link to="/can">Can</Link> */}
           <CiTwitter
-            className="text-red-400 font-bold text-2xl"
+            className="text-blue-700 font-bold text-2xl"
             onClick={() =>
               window.location.replace("https://twitter.com/icanmart")
             }
@@ -189,19 +186,6 @@ export default function Navbar({ search, setSearch }) {
           ""
         )}
       </nav>
-      <style>{`
-      .nav-bar__text-logo{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-      }
-      @media (width < 960px){
-        .nav-bar__text-logo{
-          display: none;
-        }
-      }
-      `}</style>
     </header>
   )
 }
