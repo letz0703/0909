@@ -15,20 +15,22 @@ export default function SearchInput({ setSearch }) {
 
   return (
     <div className={styles.inputGroup}>
-      <button aria-label="button" className={`styles.icon mx-2 my-3`}>
-        <BiSearch size={30} />
-      </button>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          id="searchInput"
-          className={`${styles.input}   ring-2 ring-slate-300 pl-4 text-xl `}
-          placeholder="Search"
-          aria-label="search"
-          autoFocus
-          onChange={(e) => setSearch(e.target.value)}
-        />
-      </form>
+      {/*<form onSubmit={handleSubmit}>*/}
+      <label htmlFor="search" style={{ width: "4em" }}>
+        <button aria-label="button" className={`styles.icon mx-1 my-3`}>
+          <BiSearch size={30} />
+        </button>
+      </label>
+      <input
+        type="text"
+        id="searchInput"
+        className={`${styles.input}   ring-2 ring-slate-300 pl-4 text-xl `}
+        //placeholder="Search"
+        //aria-label="search"
+        //autoFocus
+        onChange={(e) => setSearch(e.target.value)}
+      />
+      {/*</form>*/}
     </div>
   )
 }
