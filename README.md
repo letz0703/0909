@@ -20,3 +20,7 @@
 |   `mono`    | \`word \`             |
 
 #### [observer](https://www.youtube.com/watch?v=Mi4EF9K87aM&t=570s)
+
+#### isLoading
+
+    https://www.youtube.com/watch?v=_tUdtt6H5CE&t=2s
