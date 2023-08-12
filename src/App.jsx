@@ -22,31 +22,31 @@ import icuser from "./icuser.json"
 
 //const queryClient = new QueryClient()
 export const JapitemContext = createContext()
-const LOCAL_STORAGE_KEY = "icanmcartItemIDart.japitems"
 
 export const SearchContext = createContext()
+
 function LayOut() {
   return (
     <>
       <div className={`outlet flex w-100vw mt-[16px]`}>
         <Outlet />
       </div>
-      <style>{`
-      body {
-        //background-color: #c10002; color: black
-      }
-      .outlet {
-
-      }
-    `}</style>
     </>
   )
 }
+
+const LOCAL_STORAGE_KEY = "japitems"
+
 function App() {
   const [japitems, setJapitems] = useState(() => {
     const japitemJSON = localStorage.getItem(LOCAL_STORAGE_KEY)
+    if (japitemJSON == null) return []
     return JSON.parse(japitemJSON)
   })
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(""))
+  }, [japitems])
 
   function isIcUser(code) {
     return icuser.map((item) => item.code.includes(code))
