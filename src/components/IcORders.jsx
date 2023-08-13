@@ -7,7 +7,6 @@ import { useAuthContext } from "../context/AuthContext"
 import { useLocalStorage } from "../hooks/useLocalStorage"
 import CartItem from "./CartItem"
 import FormatCurrency from "../util/formatCurrency"
-import { useReducer } from "react"
 
 const FormatTIME = (timestamp) => {
   const date = new Date(timestamp)
@@ -18,44 +17,10 @@ const FormatTIME = (timestamp) => {
   const minutes = date.getMinutes()
   return `${year}년 ${month}월 ${day}일 ${hours}시 ${minutes}분`
 }
-const ACTIONS = {
-  GET_ORDERS: "GET_ORDERS",
-}
-
 export default function IcORders() {
-  //const [orders, setOrders] = useState([])
+  const [orders, setOrders] = useState([])
   const [icUser] = useLocalStorage("ic-user")
-  /**
-   * search Oders
-   */
-  //const initialState = []
-  const [searchInput_order, setSearchInput_order] = useState("")
-  function reducer(orders, { type, payload }) {
-    switch (type) {
-      case ACTIONS.GET_ORDERS:
-        //const carts = async function fetchCarts() {
-        const data = getCarts()
-        //}
-        console.log(data)
-        return [...orders, {}]
-      //fetchCarts()
-      default:
-        throw new Error(`No action Found for ${type}`)
-    }
-  }
-
-  const [orders, dispatch] = useReducer(reducer, [], (initialValue) => {
-    const value = localStorage.getItem("orders")
-    if (value == null) return initialValue
-    return JSON.parse(value)
-  })
-  /**
-   * search Orders End
-   */
-
-  function getOrders() {
-    orders && dispatch({ type: ACTIONS.GET_ORDERS, payload: {} })
-  }
+  const [completed, setCompleted] = useState(false)
 
   function handleUpdateDelivery(userId, cartId) {
     const now = new Date()
@@ -78,55 +43,61 @@ export default function IcORders() {
   }
 
   useEffect(() => {
-    //async function fetchCarts() {
-    //  const data = await getCarts()
-    //  setOrders(data)
-    //}
-    //fetchCarts()
+    async function fetchCarts() {
+      const data = await getCarts()
+      setOrders(data)
+    }
+    fetchCarts()
   }, [])
 
   return (
     <div>
-      {orders?.map((order) => (
+      {orders.map((order) => (
         // <div key={order.cartId}>
         <div key={crypto.randomUUID()}>
           {/* <div>{FormatTIME(order.orderDate)}</div> */}
           <div>
-            {Object.values(order).map((val) => (
-              <div key={crypto.randomUUID()}>
-                {/*<div className={`bg-red-300`}>주문자ID: {val.userId}</div>*/}
-                <div className={`bg-red-300`}>
-                  주문자: {icUser.displayName}
-                  <span>({icUser.phoneNumber})</span>
-                </div>
-                <div>주문일: {FormatTIME(val.orderDate)}</div>
-                <span>주문상태:{val.status}</span>
-                <div>
-                  delivery date:{" "}
-                  {val.deliveryDate ? FormatTIME(val.deliveryDate) : "N/A"}
-                  {/*{FormatTIME(val.deliveryDate && val.deliveryDate)}*/}
-                </div>
-                {/*<div>delivery date: {FormatTIME(new Date())}</div>*/}
-                <div>배송지:{val.addressTo}</div>
-                {/*{console.log(`order`, Object.values(order))}*/}
-                {/*<span>CartID:{val.cartId}</span>*/}
-                {/*<span>사용자ID:{val?.userId}</span>*/}
-                <h3>배송상품</h3>
-                <div>
-                  {val.cartItems?.map((item) => (
-                    <CartItem {...item} key={crypto.randomUUID()} />
-                  ))}
-                </div>
-                <div>금액: {FormatCurrency(val.total)}</div>
-                <button
-                  type="submit"
-                  className={`btn red`}
-                  onClick={() => handleUpdateDelivery(val.userId, val.cartId)}
-                >
-                  배송완료
-                </button>
-              </div>
-            ))}
+            {Object.values(order).map((val) => {
+              if (val.status !== "배송완료") {
+                return (
+                  <div key={crypto.randomUUID()}>
+                    {/*<div className={`bg-red-300`}>주문자ID: {val.userId}</div>*/}
+                    <div className={`bg-red-300`}>
+                      주문자: {icUser.displayName}
+                      <span>({icUser.phoneNumber})</span>
+                    </div>
+                    <div>주문일: {FormatTIME(val.orderDate)}</div>
+                    <span>주문상태:{val.status}</span>
+                    <div>
+                      delivery date:{" "}
+                      {val.deliveryDate ? FormatTIME(val.deliveryDate) : "N/A"}
+                      {/*{FormatTIME(val.deliveryDate && val.deliveryDate)}*/}
+                    </div>
+                    {/*<div>delivery date: {FormatTIME(new Date())}</div>*/}
+                    <div>배송지:{val.addressTo}</div>
+                    {/*{console.log(`order`, Object.values(order))}*/}
+                    {/*<span>CartID:{val.cartId}</span>*/}
+                    {/*<span>사용자ID:{val?.userId}</span>*/}
+                    <h3>배송상품</h3>
+                    <div>
+                      {val.cartItems?.map((item) => (
+                        <CartItem {...item} key={crypto.randomUUID()} />
+                      ))}
+                    </div>
+                    <div>금액: {FormatCurrency(val.total)}</div>
+                    <button
+                      type="submit"
+                      className={`btn red`}
+                      onClick={() =>
+                        handleUpdateDelivery(val.userId, val.cartId)
+                      }
+                    >
+                      배송완료
+                    </button>
+                  </div>
+                )
+              }
+            })}
           </div>
         </div>
       ))}
