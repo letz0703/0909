@@ -7,6 +7,7 @@ import { useAuthContext } from "../context/AuthContext"
 import { useLocalStorage } from "../hooks/useLocalStorage"
 import CartItem from "./CartItem"
 import FormatCurrency from "../util/formatCurrency"
+import { useReducer } from "react"
 
 const FormatTIME = (timestamp) => {
   const date = new Date(timestamp)
@@ -17,9 +18,44 @@ const FormatTIME = (timestamp) => {
   const minutes = date.getMinutes()
   return `${year}년 ${month}월 ${day}일 ${hours}시 ${minutes}분`
 }
+const ACTIONS = {
+  GET_ORDERS: "GET_ORDERS",
+}
+
 export default function IcORders() {
-  const [orders, setOrders] = useState([])
+  //const [orders, setOrders] = useState([])
   const [icUser] = useLocalStorage("ic-user")
+  /**
+   * search Oders
+   */
+  //const initialState = []
+  const [searchInput_order, setSearchInput_order] = useState("")
+  function reducer(orders, { type, payload }) {
+    switch (type) {
+      case ACTIONS.GET_ORDERS:
+        //const carts = async function fetchCarts() {
+        const data = getCarts()
+        //}
+        console.log(data)
+        return [...orders, {}]
+      //fetchCarts()
+      default:
+        throw new Error(`No action Found for ${type}`)
+    }
+  }
+
+  const [orders, dispatch] = useReducer(reducer, [], (initialValue) => {
+    const value = localStorage.getItem("orders")
+    if (value == null) return initialValue
+    return JSON.parse(value)
+  })
+  /**
+   * search Orders End
+   */
+
+  function getOrders() {
+    orders && dispatch({ type: ACTIONS.GET_ORDERS, payload: {} })
+  }
 
   function handleUpdateDelivery(userId, cartId) {
     const now = new Date()
@@ -42,16 +78,16 @@ export default function IcORders() {
   }
 
   useEffect(() => {
-    async function fetchCarts() {
-      const data = await getCarts()
-      setOrders(data)
-    }
-    fetchCarts()
+    //async function fetchCarts() {
+    //  const data = await getCarts()
+    //  setOrders(data)
+    //}
+    //fetchCarts()
   }, [])
 
   return (
     <div>
-      {orders.map((order) => (
+      {orders?.map((order) => (
         // <div key={order.cartId}>
         <div key={crypto.randomUUID()}>
           {/* <div>{FormatTIME(order.orderDate)}</div> */}

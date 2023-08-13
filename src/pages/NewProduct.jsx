@@ -17,6 +17,7 @@ import { getDatabase, ref, set, get, remove, child } from "firebase/database"
 import { useLocalStorage } from "../hooks/useLocalStorage"
 import IcORders from "../components/IcORders"
 import CSVtoJSONConverter from "../util/converter_json"
+import { useReducer } from "react"
 const INITIAL_PRODUCT = {
   id: "",
   code: "",
@@ -105,6 +106,10 @@ export default function NewProduct() {
     //  //onSubmit={onSubmit}
     //>
     <div className={`pt-[6rem]`}>
+      <div>
+        <label htmlFor="searchOrder">Oder Search</label>
+        <input type="text" id="searchOrder" />
+      </div>
       <table className="newProduct__table">
         <thead>
           <tr>

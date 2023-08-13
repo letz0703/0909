@@ -51,6 +51,10 @@ function App() {
     return icuser.map((item) => item.code.includes(code))
   }
 
+  function reducer(state, { type, payload }) {
+    return state
+  }
+
   const [search, setSearch] = useState("")
 
   function handleSearch(e) {
