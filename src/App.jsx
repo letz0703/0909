@@ -22,7 +22,6 @@ import icuser from "./icuser.json"
 
 //const queryClient = new QueryClient()
 export const JapitemContext = createContext()
-
 export const SearchContext = createContext()
 
 function LayOut() {
@@ -75,17 +74,17 @@ function App() {
   //  setJapitems([...japitems, newJapitem])
   //}
 
-  function handleJapitemDelete(id) {
-    setJapitems(japitems.filter((japitem) => japitem.id !== id))
-  }
+  //function handleJapitemDelete(id) {
+  //  setJapitems(japitems.filter((japitem) => japitem.id !== id))
+  //}
 
-  const japitemContextValue = {
-    //handleJapitemAdd,
-    handleJapitemDelete,
-    japitems,
-  }
+  //const japitemContextValue = {
+  //  //handleJapitemAdd,
+  //  handleJapitemDelete,
+  //  japitems,
+  //}
 
-  const search_def = useDeferredValue(search)
+  //const search_def = useDeferredValue(search)
 
   if (location.pathname !== "/videos") {
     //const passcode = prompt("enter passcode")
@@ -98,13 +97,14 @@ function App() {
             <Container>
               {/*<QueryClientProvider client={queryClient}>*/}
               <AuthContextProvider>
-                <JapitemContext.Provider value={japitemContextValue}>
-                  <header>
-                    <Navbar setSearch={setSearch} search={search_def} />
-                  </header>
-                  <LayOut japitems={japitems} className={`outlet`} />
-                  {/* <ReactQueryDevtools /> */}
-                </JapitemContext.Provider>
+                {/*<JapitemContext.Provider value={japitemContextValue}>*/}
+                {/*<header>*/}
+                <Navbar setSearch={setSearch} />
+                {/*<Navbar setSearch={setSearch} search={search_def} />*/}
+                {/*</header>*/}
+                <LayOut japitems={japitems} className={`outlet`} />
+                {/* <ReactQueryDevtools /> */}
+                {/*</JapitemContext.Provider>*/}
               </AuthContextProvider>
               {/*</QueryClientProvider>*/}
             </Container>
@@ -125,7 +125,6 @@ function App() {
       </>
     )
   }
-  //} else return
 }
 
 export default App
