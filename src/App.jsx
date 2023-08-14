@@ -3,7 +3,7 @@
 /* eslint-disable no-undef */
 //import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { Container } from "react-bootstrap"
-import { useEffect, useState, useDeferredValue } from "react"
+import { useEffect, useState, useDeferredValue, useRef } from "react"
 import { Outlet } from "react-router-dom"
 //import { Routes, Route, Outlet } from "react-router-dom"
 import "./App.css"
@@ -56,6 +56,7 @@ function App() {
   }
 
   const [search, setSearch] = useState("")
+  const searchRef = useRef()
 
   function handleSearch(e) {
     setSearch(e.target.value)

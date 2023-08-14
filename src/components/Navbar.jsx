@@ -86,11 +86,6 @@ export default function Navbar({ search, setSearch }) {
             >
               logout
             </span>
-            // <Button
-            //   text={"logout"}
-            //   onClick={logout}
-            //   style={{ point: "cursor" }}
-            // />
           )}
 
           {!user && (
@@ -100,19 +95,12 @@ export default function Navbar({ search, setSearch }) {
             >
               login
             </span>
-            // <button
-            //   text={"로그인"}
-            //   onClick={login}
-            //   className="btn btn--primary mini"
-            // />
           )}
         </div>
       </div>
       {/* </section> */}
       {!window.location.href.includes("/jap") && (
         <section className={`sec2 `}>
-          {/* <div className={`${styles.nav_center} navbar__search-input`}> */}
-          {/* {user && <SearchInput setSearch={setSearch} className="검색폼" />} */}
           <SearchInput setSearch={setSearch} className={`box`} />
         </section>
       )}
