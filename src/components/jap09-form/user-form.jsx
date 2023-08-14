@@ -4,8 +4,6 @@ import { Link } from "react-router-dom"
 import "../SearchHeader/formstyle.css?inline"
 
 export default function UserForm({ jName, jCell, jCsNo, updateFields }) {
-  let UserForm = "user-form.jsx"
-
   return (
     <div className="bg-blue-100 p-2 md:p-4 rounded-b-xl">
       <div>

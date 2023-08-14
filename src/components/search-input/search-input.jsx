@@ -15,7 +15,6 @@ export default function SearchInput({ setSearch }) {
 
   return (
     <div className={styles.inputGroup}>
-      {/*<form onSubmit={handleSubmit}>*/}
       <label htmlFor="search" style={{ width: "4em" }}>
         <button aria-label="button" className={`styles.icon mx-1 my-3`}>
           <BiSearch size={30} />
@@ -25,17 +24,14 @@ export default function SearchInput({ setSearch }) {
         type="text"
         id="searchInput"
         className={`${styles.input}   ring-2 ring-slate-300 pl-4 text-xl `}
-        //placeholder="Search"
-        //aria-label="search"
-        //autoFocus
         onChange={(e) => setSearch(e.target.value)}
+        autoFocus
       />
-      {/*</form>*/}
     </div>
   )
 }
 
 /**
- * ! expand search input
+ *  expand search input
  * * https://youtu.be/DonxmmWW7Tk?t=1185
  */

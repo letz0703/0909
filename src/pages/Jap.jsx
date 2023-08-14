@@ -29,18 +29,6 @@ export default function Jap() {
   const [icUser, setIcUser] = useState(false)
   const navigate = useNavigate()
 
-  const queryClient = useQueryClient()
-  //const specialsQuery = useQuery({
-  //  queryKey: ["specials"],
-  //  queryFn: () => Wait(300).then(() => [...SPECIALS]),
-  //})
-
-  //if (specialsQuery.isLoading) return <h1>Loading...</h1>
-  //if (specialsQuery.isError)
-  //  return <pre>{JSON.stringify(specialsQuery.error)}</pre>
-  /**
-   * Open HTML
-   */
   function openPopupWindow() {
     window.open(
       "./japan09.html",

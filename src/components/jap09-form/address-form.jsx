@@ -7,32 +7,16 @@ export default function AddressForm({
   jEtc,
   updateFields,
 }) {
-  // let UserForm = "user-form.jsx"
-  // const { user } = useAuthContext()
-
   return (
-    <div className="bg-blue-100 p-4 rounded-b-xl">
+    <div id="new-japOrder-form" className="bg-blue-100 p-4 rounded-b-xl">
       <FormWrapper title="공동구매 아이템">
         <label htmlFor="jProduct">해외주문 품목</label>
         <input
-          id="jProduct"
           type="text"
+          id="jProduct"
           value={jProduct}
           onChange={(e) => updateFields({ jProducts: e.target.value })}
         />
-        {/* <label>수령지 주소</label>
-        <input
-          type="text" autoFocus
-          value={jDeliveryTo}
-          onChange={(e) => updateFields({ jDeliveryTo: e.target.value })}
-        /> */}
-        {/*<label htmlFor="requset">요청사항(곤약 선택시)</label>
-        <input
-          id="requset"
-          type="text"
-          value={jEtc}
-          onChange={(e) => updateFields({ jEtc: e.target.value })}
-        />*/}
       </FormWrapper>
       <div className="address-form__info pb-3">
         <div>
