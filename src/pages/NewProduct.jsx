@@ -2,14 +2,6 @@
 import { v4 as uuidv4 } from "uuid"
 import { getOrders, database, db } from "../api/firebase"
 import { useEffect, useState } from "react"
-// import {
-//   getDocs,
-//   addDoc,
-//   collection,
-//   doc,
-//   updateDoc,
-//   deleteDoc,
-// } from "firebase/firestore"
 import FormatCurrency from "../util/formatCurrency"
 import { uploadImage } from "../api/uploader"
 import { useJapitems } from "../hooks/use-japitems"
@@ -17,26 +9,10 @@ import { getDatabase, ref, set, get, remove, child } from "firebase/database"
 import { useLocalStorage } from "../hooks/useLocalStorage"
 import IcORders from "../components/IcORders"
 import CSVtoJSONConverter from "../util/converter_json"
-import { useReducer } from "react"
-const INITIAL_PRODUCT = {
-  id: "",
-  code: "",
-  name: "",
-  description: "",
-  price: "",
-  imgUrl: "",
-  homeUrl: "",
-  qty: 0,
-}
 
 export default function NewProduct() {
-  const [products, setProducts] = useState({})
-  const [product, setProduct] = useState(INITIAL_PRODUCT)
-  const [japitems, setJapitems] = useJapitems()
-  const [newProduct, setNewProduct] = useState(INITIAL_PRODUCT)
-  const [successMsg, setSuccessMsg] = useState("success!!!")
-  const [qty, setQty] = useState(0)
-  const [addedJapitem, setAddedJapitem] = useState(INITIAL_PRODUCT)
+  const [newProduct, setNewProduct] = useState([])
+  const [addedJapitem, setAddedJapitem] = useState([])
 
   function updateFields(fields) {
     setNewProduct((prev) => {
@@ -62,36 +38,11 @@ export default function NewProduct() {
       .catch((error) => console.log(error))
   }
 
-  // const handleUpdateStock = async (id, qty) => {
-  //   const japitemsDoc = doc(db, "japitems", id)
-  //   const stock_step = 5
-  //   const newFields = { qty: Number(qty) + stock_step }
-  //   await updateDoc(japitemsDoc, newFields).then(() => {
-  //     setSuccessMsg("업데이트 완료!")
-  //     setTimeout(() => {
-  //       setSuccessMsg("null")
-  //     }, 4000)
-  //   })
-  // }
-
   const handleJapitemDelete = async (id) => {
     remove(ref(database, `japitems/${id}`))
       .then(() => console.log("data deleted"))
       .catch((error) => alert("error", error))
   }
-
-  // const handleJapitemDelete = async (id) => {
-  //   const japitemDoc = doc(db, "japitems", id)
-  //   await deleteDoc(japitemDoc)
-  // }
-
-  // useEffect(() => {
-  //   const getJapitems = async () => {
-  //     const data = await getDocs(japitemRef)
-  //     setJapitems(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-  //   }
-  //   getJapitems()
-  // }, [])
 
   function onSubmit(e) {
     e.preventDefault()
@@ -100,11 +51,6 @@ export default function NewProduct() {
   }
 
   return (
-    //<form
-    //  className="new-product__form flex flex-col justify-center text-center gap-2 items-center pt-[100px] "
-    //  style={{ margin: "0 auto", maxWidth: "300px" }}
-    //  //onSubmit={onSubmit}
-    //>
     <div className={`pt-[6rem]`}>
       <div>
         <label htmlFor="searchOrder">Oder Search</label>
@@ -170,12 +116,8 @@ export default function NewProduct() {
             <td>
               <input
                 type="number"
-                // name="qty"
-                // value={qty}
-                // value={product.qty ?? Number(0)}
                 placeholder="product qty"
                 step={5}
-                // required
                 onChange={(e) => updateFields({ qty: Number(e.target.value) })}
               />
             </td>
@@ -270,10 +212,7 @@ export default function NewProduct() {
             width: 10rem;
           }
           `}</style>
-        {/* </div> */}
-        {/* ))} */}
       </div>
     </div>
-    //</form>
   )
 }
