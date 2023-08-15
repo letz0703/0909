@@ -33,7 +33,6 @@ export default function NewProduct() {
       return { ...prev, ...fields }
     })
   }
-  const [japitems, setJapitems] = useJapitems()
 
   const createJapitem = (data) => {
     update(ref(database, `japitems/${data.id}`), {
