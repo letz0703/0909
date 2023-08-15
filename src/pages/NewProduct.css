@@ -1,0 +1,7 @@
+#new-product-form {
+  display: flex;
+  flex-direction: column;
+}
+#new-product-form > label {
+  width: max-content;
+}
