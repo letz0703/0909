@@ -56,76 +56,8 @@ export default function NewProduct() {
         <label htmlFor="searchOrder">Oder Search</label>
         <input type="text" id="searchOrder" />
       </div>
-      <table className="newProduct__table">
-        <thead>
-          <tr>
-            <th scope="row">item code</th>
-            <th scope="row">name</th>
-            <th scope="row">price</th>
-            <th scope="row">description</th>
-            <th scope="row">imgUrl</th>
-            <th scope="row">homeUrl</th>
-            <th scope="row">qty</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <input
-                id="code"
-                type="text"
-                placeholder="아이템코드"
-                onChange={(e) => updateFields({ code: e.target.value })}
-              />
-            </td>
-            <td>
-              <input
-                type="text"
-                placeholder="item name"
-                onChange={(e) => updateFields({ name: e.target.value })}
-              />
-            </td>
-            <td>
-              <input
-                type="number"
-                placeholder="price"
-                onChange={(e) => updateFields({ price: e.target.value })}
-              />
-            </td>
-            <td>
-              <input
-                type="textarea"
-                placeholder="description"
-                onChange={(e) => updateFields({ description: e.target.value })}
-              />
-            </td>
-            <td>
-              <input
-                type="text"
-                placeholder="imgUrl"
-                onChange={(e) => updateFields({ imgUrl: e.target.value })}
-              />
-            </td>
-            <td>
-              <input
-                type="text"
-                placeholder="homeUrl"
-                onChange={(e) => updateFields({ homeUrl: e.target.value })}
-              />
-            </td>
-            <td>
-              <input
-                type="number"
-                placeholder="product qty"
-                step={5}
-                onChange={(e) => updateFields({ qty: Number(e.target.value) })}
-              />
-            </td>
-          </tr>
-        </tbody>
-      </table>
+
       <CSVtoJSONConverter />
-      <button className="btn btn--primary">아이템등록</button>
 
       <div className="new-product__Main  w-full text-center flex flex-col justify-center items-center">
         <div className="new-product__list place-content-center text-center w-full">
