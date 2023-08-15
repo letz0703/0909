@@ -21,10 +21,11 @@ import CSVtoJSONConverter from "../util/converter_json"
 
 export default function NewProduct() {
   const [newProduct, setNewProduct] = useState({})
-  const refCode = useRef()
+  const [code, setCode] = useState("nocode")
   const [name, setName] = useState("")
   const [price, setPrice] = useState(0)
   const [qty, setQty] = useState(0)
+  console.log("code", code)
 
   const handleJapitemDelete = async (id) => {
     remove(ref(database, `japitems/${id}`))
@@ -58,7 +59,7 @@ export default function NewProduct() {
     e.preventDefault()
     if (e.target.value == "") return
     setNewProduct({
-      code: refCode.current.value,
+      code: code,
       name: name,
       price: price,
       qty: qty,
@@ -82,7 +83,11 @@ export default function NewProduct() {
         <h3>Add New Item</h3>
         <form id="new-product-form" onSubmit={handleSubmit}>
           <label htmlFor="code">new code</label>
-          <input type="text" id="code" ref={refCode} />
+          <input
+            type="text"
+            id="code"
+            onChange={(e) => setCode(e.target.value)}
+          />
           <label htmlFor="name">new Name</label>
           <input
             type="text"
