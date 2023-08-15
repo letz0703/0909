@@ -21,7 +21,10 @@ import CSVtoJSONConverter from "../util/converter_json"
 
 export default function NewProduct() {
   const [newProduct, setNewProduct] = useState({})
-  const refName = useRef()
+  const refCode = useRef()
+  const [name, setName] = useState("")
+  const [price, setPrice] = useState(0)
+  const [qty, setQty] = useState(0)
 
   const handleJapitemDelete = async (id) => {
     remove(ref(database, `japitems/${id}`))
@@ -34,12 +37,13 @@ export default function NewProduct() {
     })
   }
 
-  const createJapitem = (data) => {
-    update(ref(database, `japitems/${data.id}`), {
-      //id: data.id,
-      name: data.name,
-      //price: data.price,
-      //qty: Number(data.qty) || 0,
+  const createJapitem = ({ id, code, name, price, qty }) => {
+    update(ref(database, `japitems/${id}`), {
+      id: id,
+      code: code,
+      name: name,
+      price: price,
+      qty: Number(qty),
       //description: data.description,
       //imgUrl: data.imgUrl,
       //homeUrl: data.homeUrl || "",
@@ -52,9 +56,14 @@ export default function NewProduct() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    //if (e.target.value == "") return
-    setNewProduct({ id: crypto.randomUUID(), name: refName.current.value })
-    createJapitem(newProduct)
+    if (e.target.value == "") return
+    setNewProduct({
+      code: refCode.current.value,
+      name: name,
+      price: price,
+      qty: qty,
+    })
+    createJapitem({ id: crypto.randomUUID(), ...newProduct })
     //createJapitem(newProduct)
     //setAddedJapitem(newProduct)
   }
@@ -72,8 +81,26 @@ export default function NewProduct() {
       <section>
         <h3>Add New Item</h3>
         <form id="new-product-form" onSubmit={handleSubmit}>
-          <label htmlFor="name">new item</label>
-          <input type="text" id="name" ref={refName} />
+          <label htmlFor="code">new code</label>
+          <input type="text" id="code" ref={refCode} />
+          <label htmlFor="name">new Name</label>
+          <input
+            type="text"
+            id="name"
+            onChange={(e) => setName(e.target.value)}
+          />
+          <label htmlFor="price">new Price</label>
+          <input
+            type="text"
+            id="price"
+            onChange={(e) => setPrice(e.target.value)}
+          />
+          <label htmlFor="qty">new Qty</label>
+          <input
+            type="text"
+            id="qty"
+            onChange={(e) => setQty(e.target.value)}
+          />
           <button className={`btn btn--primary`}>add</button>
         </form>
       </section>
