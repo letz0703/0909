@@ -2,16 +2,19 @@ import { useState } from "react"
 import styles from "./search-input.module.css"
 import { BiSearch } from "react-icons/bi"
 import "../../util/observer"
+import { useContext } from "react"
+import { SearchContext } from "../../App"
 
-export default function SearchInput({ setSearch }) {
-  const [item_to_search, setItem_to_search] = useState("")
+export default function SearchInput() {
+  //const [item_to_search, setItem_to_search] = useState("")
+  const { setSearch } = useContext(SearchContext)
 
-  function handleSubmit(e) {
-    e.preventDefault()
+  //function handleSubmit(e) {
+  //  e.preventDefault()
 
-    if (item_to_search === "") return
-    setSearch(item_to_search)
-  }
+  //  if (item_to_search === "") return
+  //  setSearch(item_to_search)
+  //}
 
   return (
     <div className={styles.inputGroup}>

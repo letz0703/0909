@@ -46,11 +46,7 @@ function App() {
     return state
   }
 
-  function handleSearch(e) {
-    setSearch(e.target.value)
-  }
-
-  const searchContextValue = { handleSearch, search }
+  const searchContextValue = { search, setSearch }
 
   useEffect(() => {
     return () => {
