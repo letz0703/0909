@@ -1,7 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-restricted-globals */
-/* eslint-disable no-undef */
-//import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { Container } from "react-bootstrap"
 import { useEffect, useState, useDeferredValue, useRef } from "react"
 import { Outlet } from "react-router-dom"
@@ -20,7 +16,6 @@ import { DetailContextProvider } from "./context/DetailContext"
 //import { useDeferredValue } from "react"
 import icuser from "./icuser.json"
 
-//const queryClient = new QueryClient()
 export const JapitemContext = createContext()
 export const SearchContext = createContext()
 
@@ -42,6 +37,7 @@ function App() {
     if (japitemJSON == null) return []
     return JSON.parse(japitemJSON)
   })
+  const [search, setSearch] = useState("")
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(""))
@@ -55,7 +51,6 @@ function App() {
     return state
   }
 
-  const [search, setSearch] = useState("")
   const searchRef = useRef()
 
   function handleSearch(e) {
@@ -69,27 +64,6 @@ function App() {
       setSearch("")
     }
   }, [])
-
-  //function handleJapitemAdd() {
-  //  const newJapitem = {
-  //    id: crypto.randomUUID(),
-  //    name: "new item",
-  //    price: 10000,
-  //  }
-  //  setJapitems([...japitems, newJapitem])
-  //}
-
-  //function handleJapitemDelete(id) {
-  //  setJapitems(japitems.filter((japitem) => japitem.id !== id))
-  //}
-
-  //const japitemContextValue = {
-  //  //handleJapitemAdd,
-  //  handleJapitemDelete,
-  //  japitems,
-  //}
-
-  //const search_def = useDeferredValue(search)
 
   if (location.pathname !== "/videos") {
     //const passcode = prompt("enter passcode")

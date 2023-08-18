@@ -180,7 +180,8 @@
   "editor.tabCompletion": "onlySnippets",
   "editor.lineNumbers": "on",
   "emmet.triggerExpansionOnTab": true,
-  "prettier.semi": true
+  "prettier.semi": true,
+  "zenMode.hideLineNumbers": true
   // "github.copilot.advanced": {
 
   // }
