@@ -104,7 +104,7 @@ function App() {
               <AuthContextProvider>
                 {/*<JapitemContext.Provider value={japitemContextValue}>*/}
                 {/*<header>*/}
-                <Navbar setSearch={setSearch} />
+                <Navbar search={search} setSearch={setSearch} />
                 {/*<Navbar setSearch={setSearch} search={search_def} />*/}
                 {/*</header>*/}
                 <LayOut japitems={japitems} className={`outlet`} />

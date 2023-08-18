@@ -19,8 +19,9 @@ import styles from "./Navbar.module.css?inline"
 import { CiTwitter } from "react-icons/ci"
 import { useLocalStorage } from "../hooks/useLocalStorage"
 
-export default function Navbar({ search, setSearch }) {
+export default function Navbar(props) {
   const { user, login, logout, isAdmin, isCustom } = useAuthContext()
+  const { search, setSearch } = props
 
   const navigate = useNavigate()
 
@@ -98,7 +99,6 @@ export default function Navbar({ search, setSearch }) {
           )}
         </div>
       </div>
-      {/* </section> */}
       {!window.location.href.includes("/jap") && (
         <section className={`sec2 `}>
           <SearchInput setSearch={setSearch} className={`box`} />
@@ -106,20 +106,13 @@ export default function Navbar({ search, setSearch }) {
       )}
       {window.location.href.includes("/jap") && (
         <section className="sec2  text-blue-100">
-          {/* <div className={`${styles.nav_center} navbar__search-input`}> */}
-          {/* {user && <SearchInput setSearch={setSearch} className="검색폼" />} */}
-          {/*<SearchInput setSearch={setSearch} />*/}
           <h3
             className={`btn red`}
-            onClick={
-              () =>
-                window.open(
-                  "https://www.figma.com/file/1l1NkHPEb4IQWd3t8G7dEB/wizbox.shop?type=whiteboard&node-id=0%3A1&t=3WZI5Sw6ZBLsaGSh-1",
-                  "_blank"
-                )
-              //</section>window.location.replace(
-              //"https://www.figma.com/file/1l1NkHPEb4IQWd3t8G7dEB/wizbox.shop?type=whiteboard&node-id=0%3A1&t=3WZI5Sw6ZBLsaGSh-1"
-              //)
+            onClick={() =>
+              window.open(
+                "https://www.figma.com/file/1l1NkHPEb4IQWd3t8G7dEB/wizbox.shop?type=whiteboard&node-id=0%3A1&t=3WZI5Sw6ZBLsaGSh-1",
+                "_blank"
+              )
             }
           >
             wizbox.shop
