@@ -1,19 +1,14 @@
 import { Container } from "react-bootstrap"
 import { useEffect, useState, useDeferredValue, useRef } from "react"
 import { Outlet } from "react-router-dom"
-//import { Routes, Route, Outlet } from "react-router-dom"
 import "./App.css"
 import Navbar from "./components/Navbar"
 import { AuthContextProvider } from "./context/AuthContext"
-//import ShopHome from "./pages/ShopHome"
 import { ShoppingCartProvider } from "./context/ShoppingCartContext"
 import { createContext } from "react"
 import SearchHeader from "./components/SearchHeader/SearchHeader"
 import { YoutubeApiProvider } from "./context/YoutubeApi"
 import { DetailContextProvider } from "./context/DetailContext"
-//import Detail from "./components/Detail"
-//import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
-//import { useDeferredValue } from "react"
 import icuser from "./icuser.json"
 
 export const JapitemContext = createContext()
@@ -51,8 +46,6 @@ function App() {
     return state
   }
 
-  const searchRef = useRef()
-
   function handleSearch(e) {
     setSearch(e.target.value)
   }
@@ -66,8 +59,6 @@ function App() {
   }, [])
 
   if (location.pathname !== "/videos") {
-    //const passcode = prompt("enter passcode")
-    //if (passcode) {
     return (
       <>
         <SearchContext.Provider value={searchContextValue}>
@@ -97,9 +88,7 @@ function App() {
       <>
         <SearchHeader />
         <YoutubeApiProvider>
-          {/*<QueryClientProvider client={queryClient}>*/}
           <Outlet />
-          {/*</QueryClientProvider>*/}
         </YoutubeApiProvider>
       </>
     )
