@@ -13,6 +13,9 @@
   transform: scale(var(--scale, 1));
 }
 .input {
+  font-family: "Noto Sans KR";
+  font-weight: 600;
+  letter-spacing: 0.2em;
   width: 25vw;
   margin-right: 0.5em;
 }
