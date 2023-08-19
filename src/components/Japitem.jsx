@@ -36,11 +36,12 @@ export function Japitem({ japitem }) {
     <div className={`${styles.product}  flex flex-col items-stretch card`}>
       <div className="wrapper min-h-[10em] items-stretch">
         <div className="max-w-[100%] truncate my-2">
-          {japitem.enName
+          {/*{japitem.enName
             ? !japitem.enName.includes(["wip"])
               ? japitem.enName
               : japitem.name
-            : japitem.name}
+            : japitem.name}*/}
+          {japitem.name}
         </div>
         <div className="text-orange-500 font-bold">
           {FormatCurrency(japitem.price)}

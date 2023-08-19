@@ -35,7 +35,7 @@ function App() {
   const [search, setSearch] = useState("")
 
   useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(""))
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(japitems))
   }, [japitems])
 
   function isIcUser(code) {
