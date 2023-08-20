@@ -1,32 +1,24 @@
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
-import { addOrUpdateToCart, getCart, removeFromCart } from "../api/firebase"
+import { useState, useEffect } from "react"
 import { useAuthContext } from "../context/AuthContext"
+import { getCart, addOrUpdateToCart, removeFromCart } from "../api/firebase"
 
 export default function useCart() {
   const { uid } = useAuthContext()
-  const queryClient = useQueryClient()
+  const [cart, setCart] = useState(null)
 
-  const cartQuery = useQuery(["carts", uid || ""], () => getCart(uid), {
-    enabled: !!uid,
-    // ※ https://www.codingem.com/javascript-double-exclamation-operator/ double exclamation mark
-    // object to boolean
-  })
-
-  const addOrUpdateItem = useMutation(
-    (product) => addOrUpdateToCart(uid, product),
-    {
-      onSuccess: () => {
-        queryClient.invalidateQueries(["carts", uid])
-        // login사용자의 cache만 invalidate ↑
-      },
+  useEffect(() => {
+    if (uid) {
+      getCart(uid).then((cart) => setCart(cart))
     }
-  )
+  }, [uid])
 
-  const removeItem = useMutation((id) => removeFromCart(uid, id), {
-    onSuccess: () => {
-      queryClient.invalidateQueries(["carts", uid])
-    },
-  })
+  const addOrUpdateItem = (product) => {
+    addOrUpdateToCart(uid, product).then((cart) => setCart(cart))
+  }
 
-  return { cartQuery, addOrUpdateItem, removeItem }
+  const removeItem = (id) => {
+    removeFromCart(uid, id).then((cart) => setCart(cart))
+  }
+
+  return { cart, addOrUpdateItem, removeItem }
 }

@@ -24,3 +24,8 @@
 #### isLoading
 
     https://www.youtube.com/watch?v=_tUdtt6H5CE&t=2s
+
+## Design
+
+Font
+/_ https://fonts.google.com/noto/specimen/Noto+Sans+KR _/
