@@ -8,30 +8,37 @@ export const useJapitems = () => {
   const [isLoading, setIsLoading] = useState(true)
   const [japitems, setJapitems] = useLocalStorage("japitems", [])
 
-  function updateRDB_japitem() {
-    //prompt("update rdb japitem")
-    set(ref(database, `/japitems`), {
-      ...japitems,
-    }).catch((error) => console.log(error))
-  }
+  //function updateRDB_japitem() {
+  //  //prompt("update rdb japitem")
+  //  set(ref(database, `/japitems`), {
+  //    ...japitems,
+  //  }).catch((error) => console.log(error))
+  //}
 
-  useEffect(() => {
-    setIsLoading(true)
-    const controller = new AbortController()
-    fetch("/products.json", {
-      signal: controller.signal,
-    })
+  function getLocalJapitems() {
+    fetch("/products.json", {})
       .then((response) => response.json())
       .then(setJapitems)
       .finally(() => setIsLoading(false))
-  }, [])
+  }
 
-  useEffect(() => {
-    get(ref(database, "japitems")).then((snapshot) => {
+  async function getJapitem() {
+    await get(ref(database, "japitems")).then((snapshot) => {
       if (snapshot.exists()) {
         setJapitems(Object.values(snapshot.val()))
       }
     })
+  }
+
+  useEffect(() => {
+    setIsLoading(true)
+  }, [])
+
+  useEffect(() => {
+    if (japitems === "") getLocalJapitems()
+    else {
+      getJapitem()
+    }
     localStorage.setItem("japitems", JSON.stringify(japitems))
   }, [])
   //}, [isLoading])
