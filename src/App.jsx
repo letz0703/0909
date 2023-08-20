@@ -46,8 +46,6 @@ function App() {
     return state
   }
 
-  const searchContextValue = { search, setSearch }
-
   useEffect(() => {
     return () => {
       setSearch("")
@@ -57,7 +55,7 @@ function App() {
   if (location.pathname !== "/videos") {
     return (
       <>
-        <SearchContext.Provider value={searchContextValue}>
+        <SearchContext.Provider value={{ search, setSearch }}>
           <ShoppingCartProvider>
             {/*<DetailContextProvider>*/}
             <Container>
