@@ -38,13 +38,7 @@ function App() {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(japitems))
   }, [japitems])
 
-  function isIcUser(code) {
-    return icuser.map((item) => item.code.includes(code))
-  }
-
-  function reducer(state, { type, payload }) {
-    return state
-  }
+  //function isIcUser(code) { return icuser.map((item) => item.code.includes(code)) }
 
   useEffect(() => {
     return () => {
