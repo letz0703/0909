@@ -1,29 +1,22 @@
 import { Offcanvas, Stack } from "react-bootstrap"
 import { CiTwitter } from "react-icons/ci"
-import { OffcanvasHeader } from "react-bootstrap"
 import { useShoppingCart } from "../context/ShoppingCartContext"
 import FormatCurrency from "../util/formatCurrency"
 import CartItem from "./CartItem"
-import { useJapitems } from "../hooks/use-japitems"
 import { useLocalStorage } from "../hooks/use-local-storage"
-//prettier-ignore
 import { useAuthState } from "react-firebase-hooks/auth"
 import { useRef, useState } from "react"
 import { useEffect } from "react"
-import { RiWindowLine } from "react-icons/ri"
 
 const deleiveryCost = parseInt(4000)
 
 import {
-  getRDB_users,
-  db,
   auth,
   addNewCart,
   updateRDB_user,
   getRDB_user,
   updateCartTotal,
   setRDB_user,
-  updateJapitemQty,
 } from "../api/firebase"
 
 export function PopCart({ isOpen }) {
@@ -59,7 +52,6 @@ export function PopCart({ isOpen }) {
    */
   useEffect(() => {
     setTotal(getTotal())
-    // update rdb
     updateCartTotal(total)
   }, [cartItems])
 
@@ -169,7 +161,8 @@ export function PopCart({ isOpen }) {
         <Stack gap={3}>
           {cartItems.map(item => (
             /** * 카트아이템 */
-            <CartItem key={crypto.randomUUID()} {...item} />
+            //<CartItem key={crypto.randomUUID()} {...item} />
+            <CartItem key={item.id} {...item} />
           ))}
           <hr />
           <div className="ms-auto font-bold text-2xl p-3">

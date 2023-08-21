@@ -4,17 +4,10 @@ import { BiSearch } from "react-icons/bi"
 import "../../util/observer"
 import { useContext } from "react"
 import { SearchContext } from "../../App"
+import { useEffect } from "react"
 
 export default function SearchInput() {
-  //const [item_to_search, setItem_to_search] = useState("")
   const { setSearch } = useContext(SearchContext)
-
-  //function handleSubmit(e) {
-  //  e.preventDefault()
-
-  //  if (item_to_search === "") return
-  //  setSearch(item_to_search)
-  //}
 
   return (
     <div className={styles.inputGroup}>
@@ -26,7 +19,7 @@ export default function SearchInput() {
       <input
         type="text"
         id="searchInput"
-        className={`${styles.input}   ring-2 ring-slate-300 pl-4 text-xl `}
+        className={`${styles.input} ring-2 ring-slate-300 pl-4 text-xl`}
         onChange={(e) => setSearch(e.target.value)}
         autoFocus
       />
