@@ -25,6 +25,7 @@ import { Intro } from "./Intro"
 import { Intro2 } from "./Intro2"
 //import { Wizbox } from "./Wizbox"
 import { Info09 } from "./Info_09"
+import Navbar from "../components/Navbar"
 //import { UseOpenClose } from "../util/use_open_close"
 //import useArray from "../hooks/use-array"
 
@@ -47,31 +48,34 @@ export default function ShopHome() {
   }, [])
 
   return (
-    <div className={`${styles.shop_home} w-[100vw]  `}>
-      {true ? (
-        //{html_open ? (
-        <>
-          {/*<div>{array.join(",")}</div>*/}
-          {/*{!user && <Intro />}*/}
-          {!user && <Info09 />}
-          {/*<Info09 />*/}
-          {user && <Products {...product} />}
-          {/*<Products {...product} />*/}
-          {/*<Slide />*/}
-        </>
-      ) : (
-        <>
-          {user && <Intro user={user} />}
-          {user && <Products {...product} />}
-          {!user && <Intro2 />}
-        </>
-      )}
-      {/*<Intro />*/}
-      {/*<Info09 />*/}
-      {/*<Products />*/}
-      {/*<Info09 />*/}
-      {/*<section>Footer</section>*/}
-      {/*{!user && <Slide />}*/}
-    </div>
+    <>
+      <Navbar />
+      <div className={`${styles.shop_home} w-[100vw]  `}>
+        {true ? (
+          //{html_open ? (
+          <>
+            {/*<div>{array.join(",")}</div>*/}
+            {/*{!user && <Intro />}*/}
+            {!user && <Info09 />}
+            {/*<Info09 />*/}
+            {user && <Products {...product} />}
+            {/*<Products {...product} />*/}
+            {/*<Slide />*/}
+          </>
+        ) : (
+          <>
+            {user && <Intro user={user} />}
+            {user && <Products {...product} />}
+            {!user && <Intro2 />}
+          </>
+        )}
+        {/*<Intro />*/}
+        {/*<Info09 />*/}
+        {/*<Products />*/}
+        {/*<Info09 />*/}
+        {/*<section>Footer</section>*/}
+        {/*{!user && <Slide />}*/}
+      </div>
+    </>
   )
 }
