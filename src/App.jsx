@@ -28,11 +28,6 @@ function LayOut() {
 const LOCAL_STORAGE_KEY = "japitems"
 
 function App() {
-  //const [japitems, setJapitems] = useState(() => {
-  //  const japitemJSON = localStorage.getItem(LOCAL_STORAGE_KEY)
-  //  if (japitemJSON == null) return []
-  //  return JSON.parse(japitemJSON)
-  //})
   const [search, setSearch] = useState("")
 
   const { japitems, setJapitems } = useJapitems()
