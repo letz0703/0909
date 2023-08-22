@@ -10,6 +10,7 @@ import SearchHeader from "./components/SearchHeader/SearchHeader"
 import { YoutubeApiProvider } from "./context/YoutubeApi"
 import { DetailContextProvider } from "./context/DetailContext"
 import icuser from "./icuser.json"
+import { useJapitems } from "./hooks/use-japitems"
 
 export const JapitemContext = createContext()
 export const SearchContext = createContext()
@@ -27,18 +28,13 @@ function LayOut() {
 const LOCAL_STORAGE_KEY = "japitems"
 
 function App() {
-  const [japitems, setJapitems] = useState(() => {
-    const japitemJSON = localStorage.getItem(LOCAL_STORAGE_KEY)
-    if (japitemJSON == null) return []
-    return JSON.parse(japitemJSON)
-  })
   const [search, setSearch] = useState("")
+
+  const { japitems, setJapitems } = useJapitems()
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(japitems))
   }, [japitems])
-
-  //function isIcUser(code) { return icuser.map((item) => item.code.includes(code)) }
 
   useEffect(() => {
     return () => {
@@ -53,7 +49,6 @@ function App() {
           <ShoppingCartProvider>
             {/*<DetailContextProvider>*/}
             <Container>
-              {/*<QueryClientProvider client={queryClient}>*/}
               <AuthContextProvider>
                 {/*<JapitemContext.Provider value={japitemContextValue}>*/}
                 {/*<header>*/}
@@ -64,7 +59,6 @@ function App() {
                 {/* <ReactQueryDevtools /> */}
                 {/*</JapitemContext.Provider>*/}
               </AuthContextProvider>
-              {/*</QueryClientProvider>*/}
             </Container>
             {/*</DetailContextProvider>*/}
           </ShoppingCartProvider>
