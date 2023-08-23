@@ -19,7 +19,7 @@ import Navbar from "./components/Navbar"
 
 export const router = createBrowserRouter([
   {
-    element: <NavLayout />,
+    //element: <NavLayout />,
     //path: "/",
     element: <App />,
     errorElement: <NotFound />,
@@ -58,7 +58,7 @@ export const router = createBrowserRouter([
         path: "/carts",
         element: <PopCart />,
       },
-      { path: "/shop", element: <Store /> },
+      { path: "/store", element: <Store /> },
       { path: "/vip", element: <VIP /> },
       { path: "/my_orders", element: <MyOrders /> },
       { path: "/videos", element: <Videos /> },
