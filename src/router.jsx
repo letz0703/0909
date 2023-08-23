@@ -22,7 +22,7 @@ export const router = createBrowserRouter([
     element: <App />,
     errorElement: <NotFound />,
     children: [
-      { index: true, path: "/", element: <ShopHome /> },
+      { index: true, element: <ShopHome /> },
       {
         path: "/jap",
         element: <Jap />,
