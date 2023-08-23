@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom"
+import { Outlet, createBrowserRouter } from "react-router-dom"
 import App from "./App"
 import NotFound from "./pages/NotFound"
 import ShopHome from "./pages/ShopHome"
@@ -15,14 +15,16 @@ import VIP from "./pages/VIP"
 import MyOrders from "./pages/MyOrders-page"
 import Videos from "./pages/Videos"
 import VideoDetail from "./pages/VideoDetail"
+import Navbar from "./components/Navbar"
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    element: <NavLayout />,
+    //path: "/",
     element: <App />,
     errorElement: <NotFound />,
     children: [
-      { index: true, element: <ShopHome /> },
+      { path: "/", element: <ShopHome /> },
       {
         path: "/jap",
         element: <Jap />,
@@ -65,3 +67,12 @@ export const router = createBrowserRouter([
     ],
   },
 ])
+
+function NavLayout() {
+  return (
+    <>
+      <Navbar />
+      <Outlet />
+    </>
+  )
+}
