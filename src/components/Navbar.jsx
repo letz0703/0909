@@ -164,10 +164,10 @@ export default function Navbar(props) {
             />
           </svg>*/}
         {/*</div>*/}
-        <div className={`space-y-2 py-3`}>
-          <span className={`block h-0.5 w-8 bg-black`}></span>
-          <span className={`block h-0.5 w-8 bg-black`}></span>
-          <span className={`block h-0.5 w-8 bg-black`}></span>
+        <div className={`md:hidden space-y-2 py-3`}>
+          <span className={`block h-0.5 w-7 bg-[#282828]`}></span>
+          <span className={`block h-0.5 w-7 bg-[#282828]`}></span>
+          <span className={`block h-0.5 w-7 bg-[#282828]`}></span>
         </div>
       </nav>
     </header>
