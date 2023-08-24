@@ -1,4 +1,5 @@
 import { Link, Navigate, useNavigate } from "react-router-dom"
+import { motion } from "framer-motion"
 import { BsFillPencilFill } from "react-icons/bs"
 import { onUserStateChange } from "../api/firebase"
 import User from "./User"
@@ -111,7 +112,7 @@ export default function Navbar(props) {
           </h3>
         </section>
       )}
-      <nav className="flex item-center font-bold">
+      <nav className="flex item-center font-bold relative   ">
         <div className="flex justify-center items-center gap-3 me-auto">
           {/* <Link to="/can">Can</Link> */}
           <CiTwitter
@@ -120,19 +121,7 @@ export default function Navbar(props) {
               window.location.replace("https://twitter.com/icanmart")
             }
           />
-          {user && (
-            <>
-              {/* <Link to="/" className="md:hidden">
-                home
-              </Link> */}
-              {/*<Link to="/jap" className="hidden md:block">
-                japan09
-              </Link>*/}
-              {/*<Link to="/shop" className="ml-2 hidden md:block">
-                shop
-              </Link>*/}
-            </>
-          )}
+
           {icUser && (
             <Link
               to="/my_orders"
@@ -158,6 +147,22 @@ export default function Navbar(props) {
         ) : (
           ""
         )}
+        <div>
+          <svg
+            width="250"
+            height="4"
+            viewBox="0 0 250 4"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 2L428 2"
+              stroke="#282828"
+              strokeLinecap="round"
+              strokeWidth={2}
+            />
+          </svg>
+        </div>
       </nav>
     </header>
   )
