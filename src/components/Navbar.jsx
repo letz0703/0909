@@ -92,12 +92,11 @@ export default function Navbar(props) {
           )}
         </div>
       </div>
-      {!window.location.href.includes("/jap") && (
+      {window.location.pathname !== "/jap" ? (
         <section className={`sec2 `}>
           <SearchInput setSearch={setSearch} className={`box`} />
         </section>
-      )}
-      {window.location.href.includes("/jap") && (
+      ) : (
         <section className="sec2  text-blue-100">
           <h3
             className={`btn red`}
@@ -112,7 +111,7 @@ export default function Navbar(props) {
           </h3>
         </section>
       )}
-      <nav className=" flex item-center font-bold relative justify-between   ">
+      <nav className=" flex item-center font-bold relative justify-between md:mx-16 lg:mx-32 ">
         <div className="flex justify-center items-center gap-3 me-auto">
           {/* <Link to="/can">Can</Link> */}
           <CiTwitter
