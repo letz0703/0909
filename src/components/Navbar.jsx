@@ -11,10 +11,12 @@ import SearchInput from "./search-input/search-input"
 import styles from "./Navbar.module.css?inline"
 import { CiTwitter } from "react-icons/ci"
 import { useLocalStorage } from "../hooks/useLocalStorage"
+import { useMediaQuery } from "usehooks-ts"
 
 export default function Navbar(props) {
   const { user, login, logout, isAdmin, isCustom } = useAuthContext()
   const { search, setSearch } = props
+  const size = useMediaQuery("(min-width:800px)")
 
   const navigate = useNavigate()
 
@@ -65,11 +67,13 @@ export default function Navbar(props) {
           </span>
         )}
         <div className="nav-bar__text-logo flex space-x-3 items-center xm:hidden">
-          <div>
-            <Link to="/" className="flex items-center text-2xl">
-              canmart
-            </Link>
-          </div>
+          {size && (
+            <div>
+              <Link to="/" className="flex items-center text-2xl">
+                canmart
+              </Link>
+            </div>
+          )}
 
           {user && <User user={user} className="hidden md:block" />}
 
@@ -163,7 +167,7 @@ export default function Navbar(props) {
             />
           </svg>*/}
         {/*</div>*/}
-        <div className={`md:hidden space-y-2 py-3`}>
+        <div className={`space-y-2 py-3 cursor-pointer`}>
           <span className={`block h-0.5 w-7 bg-[#282828]`}></span>
           <span className={`block h-0.5 w-7 bg-[#282828]`}></span>
           <span className={`block h-0.5 w-7 bg-[#282828]`}></span>
