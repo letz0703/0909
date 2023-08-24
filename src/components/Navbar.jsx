@@ -112,7 +112,7 @@ export default function Navbar(props) {
           </h3>
         </section>
       )}
-      <nav className="flex item-center font-bold relative   ">
+      <nav className=" flex item-center font-bold relative justify-between   ">
         <div className="flex justify-center items-center gap-3 me-auto">
           {/* <Link to="/can">Can</Link> */}
           <CiTwitter
@@ -147,8 +147,9 @@ export default function Navbar(props) {
         ) : (
           ""
         )}
-        <div>
-          <svg
+        {/*<div>*/}
+        {/*<svg
+            className={`absolute bottom-0 left-1/2 -translate-x-1/2`}
             width="250"
             height="4"
             viewBox="0 0 250 4"
@@ -161,7 +162,12 @@ export default function Navbar(props) {
               strokeLinecap="round"
               strokeWidth={2}
             />
-          </svg>
+          </svg>*/}
+        {/*</div>*/}
+        <div className={`space-y-2 py-3`}>
+          <span className={`block h-0.5 w-8 bg-black`}></span>
+          <span className={`block h-0.5 w-8 bg-black`}></span>
+          <span className={`block h-0.5 w-8 bg-black`}></span>
         </div>
       </nav>
     </header>
