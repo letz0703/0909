@@ -39,3 +39,4 @@ https://bit.ly/3EdHVb7
 
 - media query : https://bit.ly/45n58np
 - dvw, dvh 2023.08.26/토
+- scroll https://www.youtube.com/watch?v=ytl6TrroGis

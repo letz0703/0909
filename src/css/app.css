@@ -12,14 +12,14 @@
 
 html {
   font-size: 62.5%;
-  scroll-snap-type: y mandatory;
-  scroll-padding-top: 30px;
+  /*scroll-snap-type: y mandatory;
+  scroll-padding-top: 30px;*/
 }
-
+/*
 section {
-  scroll-snap-align: start;
-  /*scroll-snap-stop: normal; // always*/
-}
+  scroll-snap-align: start;*/
+/*scroll-snap-stop: normal; // always*/
+/*}*/
 
 body {
   font-size: 1.4rem;
