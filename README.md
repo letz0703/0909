@@ -36,3 +36,5 @@ react-router-dom
 
 <Link to="">
 https://bit.ly/3EdHVb7
+
+- media query : https://bit.ly/45n58np

@@ -16,8 +16,16 @@
   font-family: "Noto Sans KR";
   font-weight: 600;
   letter-spacing: 0.2em;
-  width: 25vw;
+  max-width: 40vw;
+  width: 50vw;
   margin-right: 0.5em;
+  max-height: 40px;
+}
+
+@media (max-width: 768) {
+  .icon.twitter {
+    display: none;
+  }
 }
 
 .search_bar {

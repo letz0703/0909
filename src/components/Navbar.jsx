@@ -75,7 +75,7 @@ export default function Navbar(props) {
             </div>
           )}
 
-          {user && <User user={user} className="hidden md:block" />}
+          {size && user && <User user={user} className="hidden md:block" />}
 
           {user && (
             <span
@@ -118,12 +118,14 @@ export default function Navbar(props) {
       <nav className=" flex item-center font-bold relative justify-between md:mx-16 lg:mx-32 ">
         <div className="flex justify-center items-center gap-3 me-auto">
           {/* <Link to="/can">Can</Link> */}
-          <CiTwitter
-            className="text-blue-700 font-bold text-2xl"
-            onClick={() =>
-              window.location.replace("https://twitter.com/icanmart")
-            }
-          />
+          {size && (
+            <CiTwitter
+              className="text-blue-700 font-bold text-2xl"
+              onClick={() =>
+                window.location.replace("https://twitter.com/icanmart")
+              }
+            />
+          )}
 
           {icUser && (
             <Link
@@ -167,11 +169,13 @@ export default function Navbar(props) {
             />
           </svg>*/}
         {/*</div>*/}
-        <div className={`space-y-2 py-3 cursor-pointer`}>
-          <span className={`block h-0.5 w-7 bg-[#282828]`}></span>
-          <span className={`block h-0.5 w-7 bg-[#282828]`}></span>
-          <span className={`block h-0.5 w-7 bg-[#282828]`}></span>
-        </div>
+        {!size && (
+          <div className={`space-y-2 py-3 cursor-pointer`}>
+            <span className={`block h-0.5 w-7 bg-[#282828]`}></span>
+            <span className={`block h-0.5 w-7 bg-[#282828]`}></span>
+            <span className={`block h-0.5 w-7 bg-[#282828]`}></span>
+          </div>
+        )}
       </nav>
     </header>
   )
