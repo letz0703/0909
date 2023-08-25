@@ -12,14 +12,26 @@
 
 html {
   font-size: 62.5%;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 30px;
+}
+
+section {
+  scroll-snap-align: start;
+  /*scroll-snap-stop: normal; // always*/
 }
 
 body {
   font-size: 1.4rem;
-  font-family: "Gotham Rounded", "Roboto", "Noto Sans KR", "PingFang SC", "Apple SD Gothic Neo", "Microsoft YaHei UI", "Malgun Gothic", sans-serif;
+  font-family: "Gotham Rounded", "Roboto", "Noto Sans KR", "PingFang SC",
+    "Apple SD Gothic Neo", "Microsoft YaHei UI", "Malgun Gothic", sans-serif;
   /*background-color: white;*/
   display: flex;
   justify-content: center;
   text-underline-position: under;
   //min-width: 1440px;
+}
+
+nav {
+  height: 30px;
 }
