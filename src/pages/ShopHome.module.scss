@@ -1,6 +1,6 @@
 .shop_home {
   /*scroll-behavior: smooth;*/
-  height: 100vh;
+  height: 100dvh;
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   /* mandatory proximity both */
@@ -18,7 +18,7 @@
     /*scroll-snap-stop: always;*/
     //scroll-margin-top: 72px;
   }
-  width: 100vw;
+  width: 100dvw;
   //padding-top: 300px;
 }
 
