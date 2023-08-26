@@ -12,11 +12,13 @@ import styles from "./Navbar.module.css?inline"
 import { CiTwitter } from "react-icons/ci"
 import { useLocalStorage } from "../hooks/useLocalStorage"
 import { useMediaQuery } from "usehooks-ts"
+import { useState } from "react"
 
 export default function Navbar(props) {
   const { user, login, logout, isAdmin, isCustom } = useAuthContext()
   const { search, setSearch } = props
   const size = useMediaQuery("(min-width:800px)")
+  const [toggle, setToggle] = useState(false)
 
   const navigate = useNavigate()
 
@@ -170,11 +172,45 @@ export default function Navbar(props) {
           </svg>*/}
         {/*</div>*/}
         {!size && (
-          <div className={`space-y-2 py-3 cursor-pointer`}>
-            <span className={`block h-0.5 w-7 bg-[#282828]`}></span>
-            <span className={`block h-0.5 w-7 bg-[#282828]`}></span>
-            <span className={`block h-0.5 w-7 bg-[#282828]`}></span>
+          <div
+            //햄버거
+            className={`space-y-2 py-3 cursor-pointer z-10`}
+            onClick={() => setToggle((prev) => !prev)}
+          >
+            <motion.span
+              animate={{
+                rotateZ: toggle ? 45 : 0,
+                translateY: toggle ? 12 : 0,
+              }}
+              className={`block h-0.5 w-7 bg-[#c10002]`}
+            ></motion.span>
+            <motion.span
+              animate={{ width: toggle ? 0 : "" }}
+              className={`block h-0.5 w-7 bg-green-200`}
+            ></motion.span>
+            <motion.span
+              animate={{
+                rotateZ: toggle ? -45 : 0,
+                translateY: toggle ? -8 : 0,
+              }}
+              className={`block h-0.5 w-7 bg-blue-300`}
+            ></motion.span>
           </div>
+        )}
+        {/* 햄버거 */}
+        {toggle && (
+          <motion.div
+            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -25 }}
+            transition={{ duration: 0.5 }}
+            className={`flex fixed bg-white bottom-0 left-0 w-full h-screen items-center justify-center`}
+          >
+            <div className={`flex flex-col gap-20`}>
+              <a href="/">home</a>
+              <a href="/my_orders">my order</a>
+              <a href="http://twitter.com/icanmart">twitter</a>
+            </div>
+          </motion.div>
         )}
       </nav>
     </header>

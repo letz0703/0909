@@ -150,16 +150,21 @@ export function PopCart({ isOpen }) {
   }, [])
 
   return [
-    //prettier-ignore
     <Offcanvas
-    //show unshow
+      //show unshow
       show={isOpen}
       //show={true}
-      onHide={closeCart} placement="top" style={{width: "100%", height: "100%"}} >
-      <Offcanvas.Header closeButton> <Offcanvas.Title>Cart</Offcanvas.Title></Offcanvas.Header>
+      onHide={closeCart}
+      placement="top"
+      style={{ width: "100%", height: "100%" }}
+    >
+      <Offcanvas.Header closeButton>
+        {" "}
+        <Offcanvas.Title>Cart</Offcanvas.Title>
+      </Offcanvas.Header>
       <Offcanvas.Body>
         <Stack gap={3}>
-          {cartItems.map(item => (
+          {cartItems.map((item) => (
             /** * 카트아이템 */
             //<CartItem key={crypto.randomUUID()} {...item} />
             <CartItem key={item.id} {...item} />
@@ -170,23 +175,58 @@ export function PopCart({ isOpen }) {
             <div>+ 기본택배 {<span>{deleiveryCost}</span>}원</div>
             {/*<p className="text-blue-400"><span onClick={() => window.location.replace("/jap")} className="p-2 bg-pink-200 cursor-pointer" >
                 택배비 없애기(공동구매 신청) </span></p>*/}
-                </div>
+          </div>
 
-                <hr/>
-                <div className="ml-auto">
-                <div >주문 후 문자 주시면 확인 후 입금 안내 드립니다: 010.9876.1815 </div>
-                <div> 궁금한 점은 트윗 부탁 드립니다 <button onClick={()=>window.location.replace("https://twitter.com/icanmart")}><CiTwitter className="text-blue-500 border-2 text-2xl"/></button></div>
-                <div >전화는 못받는 경우가 많으니 문자 부탁드립니다.</div>
-                </div>
-
+          <hr />
+          <div className="ml-auto">
+            <div>
+              주문 후 문자 주시면 확인 후 입금 안내 드립니다: 010.9876.1815{" "}
+            </div>
+            <div>
+              {" "}
+              궁금한 점은 트윗 부탁 드립니다{" "}
+              <button
+                onClick={() =>
+                  window.location.replace("https://twitter.com/icanmart")
+                }
+              >
+                <CiTwitter className="text-blue-500 border-2 text-2xl" />
+              </button>
+            </div>
+            <div>전화는 못받는 경우가 많으니 문자 부탁드립니다.</div>
+          </div>
         </Stack>
         <div className="flex justify-center">
-          <button className="btn blue" onClick={() => handleCart__Order(cartItems)} > 주문하기 </button>
-          <button className="btn red" onClick={() => handleResetCart()}> 주문삭제 </button>
+          <button
+            className="btn blue"
+            onClick={() => handleCart__Order(cartItems)}
+          >
+            {" "}
+            주문하기{" "}
+          </button>
+          <button className="btn red" onClick={() => handleResetCart()}>
+            {" "}
+            주문삭제{" "}
+          </button>
         </div>
-        <div className="flex justify-center items-center pt-2"> 배송지:{currentAddress} <button className="btn green h-[1.8em]" onClick={changeAddress}> 수정 </button> </div>
-        <div className="flex justify-center items-center pt-2"> 연락처:{phoneNumber} <button className="btn green h-[1.8em]" onClick={changeNumber}> 수정 </button> </div>
-        <style>{`
+        <div className="flex justify-center items-center pt-2">
+          {" "}
+          배송지:{currentAddress}{" "}
+          <button className="btn green h-[1.8em]" onClick={changeAddress}>
+            {" "}
+            수정{" "}
+          </button>{" "}
+        </div>
+        <div className="flex justify-center items-center pt-2">
+          {" "}
+          연락처:{phoneNumber}{" "}
+          <button className="btn green h-[1.8em]" onClick={changeNumber}>
+            {" "}
+            수정{" "}
+          </button>{" "}
+        </div>
+        <style>
+          {`
             //body { background-color: powderblue; color: black }
             .btn { display: inline-block;
                 transition: all .5s ease-in-out;

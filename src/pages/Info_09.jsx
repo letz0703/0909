@@ -5,7 +5,6 @@ export function Info09() {
   const { user, uid, login, logout } = useAuthContext()
   return (
     <>
-      //prettier-ignore
       <section key="info09" style={{ width: "maxContent" }}>
         <h3 className={`text-[3rem]  pb-[0.9rem]`}>wizbox</h3>
         <p className={`text-[1.1rem] text-[#c10002]`}>

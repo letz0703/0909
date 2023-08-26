@@ -16,19 +16,23 @@ export default function CartItem(props) {
   const item = japitems.find((i) => i.id === id)
   if (item == null) return null
 
-  //prettier-ignore
-  const { increaseCartQuantity, decreaseCartQuantity, handleDecreaseCartQty, removeFromCart, getItemQuantity} = useShoppingCart()
+  const {
+    increaseCartQuantity,
+    decreaseCartQuantity,
+    handleDecreaseCartQty,
+    removeFromCart,
+    getItemQuantity,
+  } = useShoppingCart()
   const qty = getItemQuantity(id)
 
   // 1. getRDB_japitem의 수량
   // 2. 수량 표시하기
 
   return (
-    //prettier-ignore
     <Stack direction="horizontal" gap={2} className="d-flex align-items-center">
       {/*{console.log(item)}*/}
       <img
-        src={`/imgs/`+item.imgs}
+        src={`/imgs/` + item.imgs}
         style={{ width: "10em", objectFit: "cover" }}
       />
       <div className="me-auto">
@@ -45,15 +49,30 @@ export default function CartItem(props) {
           {FormatCurrency(item.price)}
         </div>
         <div>
-          <button className="btn-gradient red mini" onClick={() => decreaseCartQuantity(item.id)}
-          > - </button>
+          <button
+            className="btn-gradient red mini"
+            onClick={() => decreaseCartQuantity(item.id)}
+          >
+            {" "}
+            -{" "}
+          </button>
           {quantity}
-          <button className="btn-gradient blue mini" onClick={() => increaseCartQuantity(item.id)}
-          > + </button> </div>
-          <div>현재 잔량: {item.qty}</div>
-          </div>
+          <button
+            className="btn-gradient blue mini"
+            onClick={() => increaseCartQuantity(item.id)}
+          >
+            {" "}
+            +{" "}
+          </button>{" "}
+        </div>
+        <div>현재 잔량: {item.qty}</div>
+      </div>
       <div> {FormatCurrency(item.price * quantity)}</div>
-      <Button variant="outline-danger" size="sm" onClick={() => removeFromCart(item.id)} >
+      <Button
+        variant="outline-danger"
+        size="sm"
+        onClick={() => removeFromCart(item.id)}
+      >
         &times;
       </Button>
     </Stack>
