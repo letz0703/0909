@@ -31,10 +31,6 @@
   -webkit-text-size-adjust: 100%;
 }
 
-#root {
-  /* padding: 0; */
-}
-
 .header {
   height: var(--header-height);
   position: sticky;

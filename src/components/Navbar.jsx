@@ -36,15 +36,15 @@ export default function Navbar(props) {
 
   return (
     <header
-      className={`${styles.header} flex items-center  justify-evenly border-b ${
+      className={`${
+        styles.header
+      } flex justify-around items-center  border-b fixed z-10 ${
         !user ? "hidden" : ""
       }`}
       style={{
-        position: "fixed",
         top: 0,
         left: 0,
-        width: "100%",
-        zIndex: 100,
+        width: "100dvw",
       }}
     >
       <div className="flex items-center align-items-center">
@@ -116,7 +116,7 @@ export default function Navbar(props) {
         </section>
       )}
       <nav className=" flex item-center font-bold relative justify-between md:mx-16 lg:mx-32 ">
-        <div className="flex justify-center items-center gap-3 me-auto">
+        <div className="flex justify-center item-center gap-3 me-auto items-cener">
           {/* <Link to="/can">Can</Link> */}
           {size && (
             <CiTwitter
