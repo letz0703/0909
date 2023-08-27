@@ -14,6 +14,16 @@ import { useLocalStorage } from "../hooks/useLocalStorage"
 import { useMediaQuery } from "usehooks-ts"
 import { useState } from "react"
 
+const navMotion = {
+  visible: {},
+  hidden: {},
+}
+
+const itemMotion = {
+  visible: {},
+  hidden: {},
+}
+
 export default function Navbar(props) {
   const { user, login, logout, isAdmin, isCustom } = useAuthContext()
   const { search, setSearch } = props
