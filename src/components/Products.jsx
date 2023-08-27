@@ -24,7 +24,7 @@ import { Japitem } from "./Japitem"
 export default function Products(product) {
   // const { isOpen_Detail, open_Detail, close_Detail } = useDetail()
   const { search } = useContext(SearchContext)
-  const [japitems, setJapitems] = useJapitems()
+  const [japitems, setJapitems] = useJapitems([])
   const { user, uid } = useAuthContext()
   //const [mainItems, setMainItems] = useState(() => {
   //  return Object.values(product)
@@ -45,6 +45,10 @@ export default function Products(product) {
     //icUserPhone && getSpecial()
     icUserPhone && setMainItems([...special, ...japitems])
   }, [uid, japitems])
+
+  useEffect(() => {
+    localStorage.setItem("japitems", JSON.stringify(""))
+  }, [user])
 
   return (
     <section

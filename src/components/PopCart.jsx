@@ -72,11 +72,12 @@ export function PopCart({ isOpen }) {
      * 카트 비우기
      */
     setCartItems([])
-    window.location.replace("./shop")
+    //window.location.replace("./shop")
+    window.history.back()
   }
   function handleResetCart() {
     setCartItems([])
-    window.location.replace("./shop")
+    window.location.replace("/")
   }
 
   function changeAddress() {
@@ -205,7 +206,6 @@ export function PopCart({ isOpen }) {
             주문하기{" "}
           </button>
           <button className="btn red" onClick={() => handleResetCart()}>
-            {" "}
             주문삭제{" "}
           </button>
         </div>

@@ -6,7 +6,7 @@ import { useState } from "react"
 
 export const useJapitems = () => {
   const [isLoading, setIsLoading] = useState(true)
-  const [japitems, setJapitems] = useLocalStorage("japitems", [])
+  const [japitems, setJapitems] = useState([])
 
   //function updateRDB_japitem() {
   //  //prompt("update rdb japitem")
@@ -16,7 +16,7 @@ export const useJapitems = () => {
   //}
 
   function getLocalJapitems() {
-    fetch("/products.json", {})
+    fetch("/products.json", [])
       .then((response) => response.json())
       .then(setJapitems)
       .finally(() => setIsLoading(false))
