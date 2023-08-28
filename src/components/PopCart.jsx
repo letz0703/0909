@@ -77,7 +77,7 @@ export function PopCart({ isOpen }) {
   }
   function handleResetCart() {
     setCartItems([])
-    window.location.replace("/")
+    window.location.replace("/shop")
   }
 
   function changeAddress() {

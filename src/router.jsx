@@ -25,6 +25,7 @@ export const router = createBrowserRouter([
     errorElement: <NotFound />,
     children: [
       { path: "/", element: <ShopHome /> },
+      { path: "/shop", element: <AllProducts /> },
       {
         path: "/jap",
         element: <Jap />,
