@@ -216,9 +216,9 @@ export default function Navbar(props) {
             className={`flex fixed bg-white bottom-0 left-0 w-full h-screen items-center justify-center`}
           >
             <div className={`flex flex-col gap-20`}>
-              <a href="/">home</a>
-              <a href="/my_orders">my order</a>
-              <a href="http://twitter.com/icanmart">twitter</a>
+              <link to="/">home</link>
+              <Link to="/my_orders">my order</Link>
+              <Link to="http://twitter.com/icanmart">twitter</Link>
             </div>
           </motion.div>
         )}
