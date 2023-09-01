@@ -88,7 +88,6 @@ export default function JapitemDetail() {
         >
           제품 설명
         </span>
-
         <div>
           <div className="mt-4">재고:{itemQty}</div>
           {isAdmin && (
@@ -118,7 +117,6 @@ export default function JapitemDetail() {
             </>
           )}
         </div>
-
         <br />
         <span className="ml-2 text-red-500 font-bold">
           {FormatCurrency(japitem.price)}
@@ -131,6 +129,7 @@ export default function JapitemDetail() {
           <button
             className="btn red mini text-white"
             onClick={() => window.history.back()}
+            //onClick={() => <Link to=".." relative="path" />}
             //onClick={() => window.location.replace(document.referrer)}
           >
             x

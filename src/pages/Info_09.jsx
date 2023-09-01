@@ -14,7 +14,7 @@ export function Info09() {
           japan
         </p>
         <div className="relative">
-          <div class=" absolute right-[50%] w-[40px] translate-x-[130px] -translate-y-2">
+          <div className=" absolute right-[50%] w-[40px] translate-x-[130px] -translate-y-2">
             <img src="/public/stroke_red.png" alt="stroke" />
           </div>
         </div>

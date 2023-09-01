@@ -216,7 +216,7 @@ export default function Navbar(props) {
             className={`flex fixed bg-white bottom-0 left-0 w-full h-screen items-center justify-center`}
           >
             <div className={`flex flex-col gap-20`}>
-              <link to="/">home</link>
+              <Link to="/">home</Link>
               <Link to="/my_orders">my order</Link>
               <Link to="http://twitter.com/icanmart">twitter</Link>
             </div>
