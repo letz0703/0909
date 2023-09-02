@@ -15,7 +15,7 @@ import {
   addNewCart,
   updateRDB_user,
   getRDB_user,
-  updateCartTotal,
+  //updateCartTotal,
   setRDB_user,
 } from "../api/firebase"
 
@@ -52,7 +52,7 @@ export function PopCart({ isOpen }) {
    */
   useEffect(() => {
     setTotal(getTotal())
-    updateCartTotal(total)
+    //updateCartTotal(total)
   }, [cartItems])
 
   const handleCart__Order = async (cartItems) => {
@@ -120,9 +120,9 @@ export function PopCart({ isOpen }) {
   const [remitems, setRemitems] = useState(() => {
     return JSON.parse(localStorage.getItem("ic-cart"))
   })
-  useEffect(() => {
-    remitems && updateCartTotal(cartItems)
-  }, [remitems])
+  //useEffect(() => {
+  //  remitems && updateCartTotal(cartItems)
+  //}, [remitems])
 
   function calTotal() {
     const totalAmount = remitems?.reduce((acc, item) => {

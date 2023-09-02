@@ -4,7 +4,7 @@
   align-items: center;
   align-self: center;
   justify-content: center;
-  font-family: "Poppings", "Gotham Rouded", "Inter", system-ui, -apple-system,
+  font-family: "Gotham Rouded", "Inter", "Poppings", system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
     "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -13,12 +13,13 @@
   transform: scale(var(--scale, 1));
 }
 .input {
-  font-family: "Noto Sans KR";
-  font-weight: 600;
-  letter-spacing: 0.2em;
+  /*font-family: "Noto Sans KR";*/
+  /*font-weight: 600;*/
+  /*font-weight: bold;*/
+  letter-spacing: 0.13em;
   max-width: 40vw;
   width: 50vw;
-  margin-right: 0.5em;
+  /*margin-right: 0.2em;*/
   max-height: 40px;
 }
 

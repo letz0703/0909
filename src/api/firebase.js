@@ -168,14 +168,15 @@ export async function updateFBPrice(prev, itemPrice) {
   })
   console.log("data price updated")
 }
-export async function updateCartTotal(prev, value) {
-  return
-  prev &&
-    update(ref(database, `/carts/${prev.userId}/${prev.cartId}`), {
-      ...prev,
-      total: value,
-    })
-}
+
+//export async function updateCartTotal(value) {
+//  console.log("wow")
+//  //update(ref(database, `/carts/${prev.userId}/${prev.cartId}`), {
+//  //  ...prev,
+//  //  total: value,
+//  //})
+//}
+
 export async function getTotal(userId, cartId) {
   const snapshot = await get(ref(database, `Total/${userId}/${cartId}`))
   const cartTotal = snapshot.val().total || {}
