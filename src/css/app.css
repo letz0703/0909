@@ -10,10 +10,13 @@
   box-sizing: border-box;
 }
 
+.active {
+  color: #c10002;
+}
+
 html {
   font-size: 62.5%;
-  /*scroll-snap-type: y mandatory;
-  scroll-padding-top: 30px;*/
+  scroll-padding-top: 50px;
 }
 /*
 section {

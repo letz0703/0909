@@ -57,6 +57,7 @@ export default function Navbar(props) {
         top: 0,
         left: 0,
         width: "100dvw",
+        marginTop: "2em",
       }}
     >
       <div className="flex items-center align-items-center">
