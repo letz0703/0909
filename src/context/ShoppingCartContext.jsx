@@ -128,7 +128,6 @@ export function ShoppingCartProvider({ children }) {
   return (
     <ShoppingCartContext.Provider value={shoppingCartContextValue}>
       {children}
-      {/* <PopCart /> */}
       <PopCart isOpen={isOpen} cartItems={cartItems} />
     </ShoppingCartContext.Provider>
   )

@@ -160,15 +160,14 @@ export function PopCart({ isOpen }) {
       style={{ width: "100%", height: "100%" }}
     >
       <Offcanvas.Header closeButton>
-        {" "}
         <Offcanvas.Title>Cart</Offcanvas.Title>
       </Offcanvas.Header>
       <Offcanvas.Body>
         <Stack gap={3}>
-          {cartItems.map((item) => (
+          {cartItems.map((row) => (
             /** * 카트아이템 */
-            //<CartItem key={crypto.randomUUID()} {...item} />
-            <CartItem key={item.id} {...item} />
+            //<CartItem key={crypto.randomUUID()} {...row} />
+            <CartItem key={row.id} {...row} />
           ))}
           <hr />
           <div className="ms-auto font-bold text-2xl p-3">

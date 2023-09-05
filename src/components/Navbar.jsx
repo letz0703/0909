@@ -1,4 +1,4 @@
-import { Link, Navigate, useNavigate } from "react-router-dom"
+import { NavLink, Navigate, useNavigate } from "react-router-dom"
 import { motion } from "framer-motion"
 import { BsFillPencilFill } from "react-icons/bs"
 import { onUserStateChange } from "../api/firebase"
@@ -61,9 +61,9 @@ export default function Navbar(props) {
     >
       <div className="flex items-center align-items-center">
         {user && user.isAdmin ? (
-          <Link to="/products/new" className="2xl pr-1">
+          <NavLink to="/products/new" className="2xl pr-1">
             <BsFillPencilFill />
-          </Link>
+          </NavLink>
         ) : (
           <span
             style={{
@@ -81,9 +81,9 @@ export default function Navbar(props) {
         <div className="nav-bar__text-logo flex space-x-3 items-center xm:hidden">
           {size && (
             <div>
-              <Link to="/" className="flex items-center text-2xl">
+              <NavLink to="/" className="flex items-center text-2xl">
                 canmart
-              </Link>
+              </NavLink>
             </div>
           )}
 
@@ -129,7 +129,7 @@ export default function Navbar(props) {
       )}
       <nav className=" flex item-center font-bold relative justify-between md:mx-16 lg:mx-32 ">
         <div className="flex justify-center item-center gap-3 me-auto items-cener">
-          {/* <Link to="/can">Can</Link> */}
+          {/* <NavLink to="/can">Can</NavLink> */}
           {size && (
             <CiTwitter
               className="text-blue-700 font-bold text-2xl"
@@ -140,19 +140,19 @@ export default function Navbar(props) {
           )}
 
           {icUser && (
-            <Link
+            <NavLink
               to="/my_orders"
               className="hidden md:block"
               style={{ width: "70px" }}
             >
               My Orders
-            </Link>
+            </NavLink>
           )}
 
           {user && (
-            <Link to="/carts">
+            <NavLink to="/carts">
               <CartStatus />
-            </Link>
+            </NavLink>
           )}
         </div>
         {user && isAdmin ? (
@@ -216,13 +216,13 @@ export default function Navbar(props) {
             className={`flex fixed bg-white bottom-0 left-0 w-full h-screen items-center justify-center`}
           >
             <div className={`flex flex-col gap-20`}>
-              <Link to="/" onClick={() => setToggle(false)}>
+              <NavLink to="/" onClick={() => setToggle(false)}>
                 home
-              </Link>
-              <Link to="/my_orders" onClick={() => setToggle(false)}>
+              </NavLink>
+              <NavLink to="/my_orders" onClick={() => setToggle(false)}>
                 my order
-              </Link>
-              <Link to="http://twitter.com/icanmart">twitter</Link>
+              </NavLink>
+              <NavLink to="http://twitter.com/icanmart">twitter</NavLink>
             </div>
           </motion.div>
         )}

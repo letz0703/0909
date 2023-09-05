@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect, useRef } from "react"
 import { BsYoutube, BsSearch } from "react-icons/bs"
 import formstyle from "./formstyle.css?inline"
-import { Link, useNavigate, useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 export default function SearchHeader() {
   const { keyword } = useParams()
   const navigate = useNavigate()
@@ -28,10 +28,10 @@ export default function SearchHeader() {
   return (
     //<header className="w-full flex justify-around p-4 text-2xl border-b border-zinc-600 mb-4">
     <header className={`styles.header`}>
-      <Link to="/" className="flex items-center">
+      <LavLink to="/" className="flex items-center">
         <BsYoutube className="text-4xl text-youtube" />
         <h1 className="font-bold ml-2 text-3xl">Youtube</h1>
-      </Link>
+      </LavLink>
       <form onSubmit={handleSubmit} className="w-full flex justify-center">
         <input
           type="text"
