@@ -55,29 +55,31 @@ export default function Navbar(props) {
       }`}
       style={{
         top: 0,
-        left: 0,
-        width: "100dvw",
+        //left: 0,
+        width: "98dvw",
         marginTop: "2em",
       }}
     >
       <div className="flex items-center align-items-center">
         {user && user.isAdmin ? (
-          <NavLink to="/products/new" className="2xl pr-1">
+          <NavLink to="/products/new" className="2xl pr-1 mx-2">
             <BsFillPencilFill />
           </NavLink>
         ) : (
-          <span
-            style={{
-              fontSize: "1.3rem",
-              paddingRight: ".1rem",
-              fontWeight: "bold",
-              color: "black",
-            }}
-            onClick={() => navigate("/")}
-            className="cursor-pointer"
-          >
-            i.
-          </span>
+          <div className="mx-2">
+            <span
+              style={{
+                fontSize: "1.3rem",
+                paddingRight: ".1rem",
+                fontWeight: "bold",
+                color: "black",
+              }}
+              onClick={() => navigate("/")}
+              className="cursor-pointer "
+            >
+              i.
+            </span>
+          </div>
         )}
         <div className="nav-bar__text-logo flex space-x-3 items-center xm:hidden">
           {size && (

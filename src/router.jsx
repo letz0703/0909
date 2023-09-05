@@ -1,4 +1,9 @@
-import { Outlet, createBrowserRouter } from "react-router-dom"
+import {
+  Navigate,
+  Outlet,
+  createBrowserRouter,
+  useNavigate,
+} from "react-router-dom"
 import App from "./App"
 import NotFound from "./pages/NotFound"
 import ShopHome from "./pages/ShopHome"
@@ -24,6 +29,7 @@ export const router = createBrowserRouter([
     element: <App />,
     errorElement: <NotFound />,
     children: [
+      { path: "*", element: <Navigate to="/" /> },
       { path: "/", element: <ShopHome /> },
       { path: "/shop", element: <AllProducts /> },
       {
