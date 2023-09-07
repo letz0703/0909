@@ -16,53 +16,50 @@ export const JapitemContext = createContext()
 export const SearchContext = createContext()
 
 function LayOut() {
-  return (
-    <>
-      <div className={`outlet flex w-100vw mt-[16px]`}>
-        <Outlet />
-      </div>
-    </>
-  )
-}
-
-const LOCAL_STORAGE_KEY = "japitems"
-
-function App() {
   const [search, setSearch] = useState("")
-
-  const { japitems, setJapitems } = useJapitems()
-
-  useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(japitems))
-  }, [japitems])
 
   useEffect(() => {
     return () => {
       setSearch("")
     }
   }, [])
+  return (
+    <SearchContext.Provider value={{ search, setSearch }}>
+      <Navbar search={search} setSearch={setSearch} />
+      <div className={`outlet flex w-100vw mt-[16px]`}>
+        <Outlet />
+      </div>
+    </SearchContext.Provider>
+  )
+}
+
+const LOCAL_STORAGE_KEY = "japitems"
+
+function App() {
+  const { japitems, setJapitems } = useJapitems()
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(japitems))
+  }, [japitems])
 
   if (location.pathname !== "/videos") {
     return (
       <>
-        <SearchContext.Provider value={{ search, setSearch }}>
-          <ShoppingCartProvider>
-            {/*<DetailContextProvider>*/}
-            <Container>
-              <AuthContextProvider>
-                {/*<JapitemContext.Provider value={japitemContextValue}>*/}
-                {/*<header>*/}
-                <Navbar search={search} setSearch={setSearch} />
-                {/*<Navbar setSearch={setSearch} search={search_def} />*/}
-                {/*</header>*/}
-                <LayOut japitems={japitems} className={`outlet`} />
-                {/* <ReactQueryDevtools /> */}
-                {/*</JapitemContext.Provider>*/}
-              </AuthContextProvider>
-            </Container>
-            {/*</DetailContextProvider>*/}
-          </ShoppingCartProvider>
-        </SearchContext.Provider>
+        <ShoppingCartProvider>
+          {/*<DetailContextProvider>*/}
+          <Container>
+            <AuthContextProvider>
+              {/*<JapitemContext.Provider value={japitemContextValue}>*/}
+              {/*<header>*/}
+              {/*<Navbar setSearch={setSearch} search={search_def} />*/}
+              {/*</header>*/}
+              <LayOut japitems={japitems} className={`outlet`} />
+              {/* <ReactQueryDevtools /> */}
+              {/*</JapitemContext.Provider>*/}
+            </AuthContextProvider>
+          </Container>
+          {/*</DetailContextProvider>*/}
+        </ShoppingCartProvider>
       </>
     )
   } else {

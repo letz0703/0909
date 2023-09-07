@@ -24,9 +24,7 @@ import Navbar from "./components/Navbar"
 
 export const router = createBrowserRouter([
   {
-    //element: <NavLayout />,
-    //path: "/",
-    element: <App />,
+    element: <NavLayout />,
     errorElement: <NotFound />,
     children: [
       { path: "*", element: <Navigate to="/" /> },
@@ -76,10 +74,5 @@ export const router = createBrowserRouter([
 ])
 
 function NavLayout() {
-  return (
-    <>
-      <Navbar />
-      <Outlet />
-    </>
-  )
+  return <App />
 }
