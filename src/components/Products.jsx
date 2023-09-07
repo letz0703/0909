@@ -52,7 +52,7 @@ export default function Products(product) {
 
   return (
     <section
-      className="product shop-home w-[100vw] grid grid-cols-1 lg:grid-cols-5 gap-2 mt-5"
+      className="product shop-home w-[100vw] grid grid-cols-1 lg:grid-cols-5 gap-2"
       style={{ overflowY: "auto" }}
     >
       {japitems

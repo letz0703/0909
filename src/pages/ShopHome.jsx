@@ -50,7 +50,7 @@ export default function ShopHome() {
   return (
     <>
       {/*<Navbar />*/}
-      <div className={`${styles.shop_home} w-[100vw]  mt-4 `}>
+      <div className={`${styles.shop_home} w-[100vw]  `}>
         {/*{true ? (*/}
         {html_open ? (
           <>

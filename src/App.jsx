@@ -26,7 +26,7 @@ function LayOut() {
   return (
     <SearchContext.Provider value={{ search, setSearch }}>
       <Navbar search={search} setSearch={setSearch} />
-      <div className={`outlet flex w-100vw mt-[16px]`}>
+      <div className={`outlet flex w-100vw `}>
         <Outlet />
       </div>
     </SearchContext.Provider>
