@@ -13,10 +13,10 @@ export default function SearchInput() {
 
   return (
     //<div className={styles.inputGroup}>
-    <div className={styles.inputGroup}>
+    <div className={`${styles.inputGroup} sm:hidden`}>
       {size && (
         <label htmlFor="search" style={{ width: "4em" }}>
-          <button aria-label="button" className={`styles.icon mx-1 my-3 x`}>
+          <button aria-label="button" className={`styles.icon mx-1 my-3 `}>
             <BiSearch size={30} />
           </button>
         </label>
@@ -25,7 +25,7 @@ export default function SearchInput() {
       <input
         type="text"
         id="searchInput"
-        className={`${styles.input} ring-2 ring-slate-300 pl-4 text-xl h-[100%] lg:w-[30dvw] sm:w-[50vw]`}
+        className={`${styles.input}  ring-2 ring-slate-300 pl-4 text-xl h-[100%] lg:w-[30dvw] `}
         onChange={(e) => setSearch(e.target.value)}
         autoFocus
       />

@@ -26,8 +26,7 @@ export default function SearchHeader() {
   }
 
   return (
-    //<header className="w-full flex justify-around p-4 text-2xl border-b border-zinc-600 mb-4">
-    <header className={`styles.header`}>
+    <header className={`${styles.header}`}>
       <NavLink to="/" className="flex items-center">
         <BsYoutube className="text-4xl text-youtube" />
         <h1 className="font-bold ml-2 text-3xl">Youtube</h1>

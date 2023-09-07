@@ -49,15 +49,13 @@ export default function Navbar(props) {
   return (
     <header
       className={`${styles.header}
-      flex justify-evenly items-center  border-b  z-10 ${
-        !user ? "hidden" : ""
-      }`}
+      flex justify-evenly items-center  border-b  ${!user ? "hidden" : ""}`}
       style={{
         top: 0,
         //left: 0,
         //width: "98dvw",
-        //marginTop: "2em",
-        height: "7dvh",
+        marginTop: "1em",
+        //height: "7dvh",
       }}
     >
       <div className="flex items-center align-items-center">
@@ -187,7 +185,7 @@ export default function Navbar(props) {
         {!size && (
           <div
             //햄버거
-            className={`space-y-2 py-3 cursor-pointer z-10`}
+            className={`space-y-2 my-3 cursor-pointer z-10`}
             onClick={() => setToggle((prev) => !prev)}
           >
             <motion.span
@@ -195,7 +193,7 @@ export default function Navbar(props) {
                 rotateZ: toggle ? 45 : 0,
                 translateY: toggle ? 12 : 0,
               }}
-              className={`block h-0.5 w-7 bg-[#c10002]`}
+              className={` block h-0.5 w-7 bg-[#c10002]`}
             ></motion.span>
             <motion.span
               animate={{ width: toggle ? 0 : "" }}
@@ -216,7 +214,8 @@ export default function Navbar(props) {
             animate={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -25 }}
             transition={{ duration: 0.5 }}
-            className={`flex  bg-white bottom-0 left-0 w-full h-screen items-center justify-center`}
+            //className={`flex   bg-white w-[100%] bottom-0 left-0 h-screen items-center justify-center`}
+            className={`flex bg-white bottom-0 left-0 w-full h-screen items-center justify-center`}
           >
             <div className={`flex flex-col gap-20`}>
               <NavLink to="/" onClick={() => setToggle(false)}>
