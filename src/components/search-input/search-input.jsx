@@ -12,6 +12,7 @@ export default function SearchInput() {
   const size = useMediaQuery("(min-width:768px)")
 
   return (
+    //<div className={styles.inputGroup}>
     <div className={styles.inputGroup}>
       {size && (
         <label htmlFor="search" style={{ width: "4em" }}>
@@ -24,7 +25,7 @@ export default function SearchInput() {
       <input
         type="text"
         id="searchInput"
-        className={`${styles.input} ring-2 ring-slate-300 pl-4 text-xl`}
+        className={`${styles.input} ring-2 ring-slate-300 pl-4 text-xl h-[100%] lg:w-[30dvw] sm:w-[50vw]`}
         onChange={(e) => setSearch(e.target.value)}
         autoFocus
       />

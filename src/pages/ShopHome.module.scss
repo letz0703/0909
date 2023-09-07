@@ -1,6 +1,6 @@
 .shop_home {
   /*scroll-behavior: smooth;*/
-  height: 100dvh;
+  /*height: 100dvh;*/
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   /* mandatory proximity both */
@@ -10,7 +10,6 @@
     background: transparent;
   }
   & > section:first-child {
-    padding-top: 4em;
     scroll-snap-align: start;
     height: 100vh;
     /* start,center, end */

@@ -49,7 +49,6 @@ export default function Navbar(props) {
   return (
     <header
       className={`${styles.header}
-      h-[7vh]
       flex justify-evenly items-center  border-b  z-10 ${
         !user ? "hidden" : ""
       }`}
@@ -58,6 +57,7 @@ export default function Navbar(props) {
         //left: 0,
         //width: "98dvw",
         //marginTop: "2em",
+        height: "7dvh",
       }}
     >
       <div className="flex items-center align-items-center">

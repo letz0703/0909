@@ -69,12 +69,6 @@ export default function ShopHome() {
             {!user && <Intro2 />}
           </>
         )}
-        {/*<Intro />*/}
-        {/*<Info09 />*/}
-        {/*<Products />*/}
-        {/*<Info09 />*/}
-        {/*<section>Footer</section>*/}
-        {/*{!user && <Slide />}*/}
       </div>
     </>
   )

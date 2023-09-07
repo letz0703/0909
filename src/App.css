@@ -13,7 +13,7 @@
 }
 
 .App {
-  min-height: 100dvh;
+  /*min-height: 100dvh;*/
   /*min-width: 100vw;*/
   /*padding: 1em;*/
 }
@@ -117,8 +117,7 @@ li {
 }
 
 body {
-  vertical-align: baseline;
+  /*vertical-align: baseline;*/
   display: block;
   overflow-x: hidden;
-  width: 100vw;
 }
