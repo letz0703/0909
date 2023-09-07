@@ -50,13 +50,13 @@ export default function Navbar(props) {
     <header
       className={`${
         styles.header
-      } flex justify-around items-center  border-b fixed z-10 ${
+      } flex justify-evenly items-center  border-b  z-10 ${
         !user ? "hidden" : ""
       }`}
       style={{
         top: 0,
         //left: 0,
-        width: "98dvw",
+        //width: "98dvw",
         marginTop: "2em",
       }}
     >
@@ -216,7 +216,7 @@ export default function Navbar(props) {
             animate={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -25 }}
             transition={{ duration: 0.5 }}
-            className={`flex fixed bg-white bottom-0 left-0 w-full h-screen items-center justify-center`}
+            className={`flex  bg-white bottom-0 left-0 w-full h-screen items-center justify-center`}
           >
             <div className={`flex flex-col gap-20`}>
               <NavLink to="/" onClick={() => setToggle(false)}>
