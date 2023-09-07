@@ -47,7 +47,6 @@ export function Info09() {
           <br />
           께만 알려드리는 깡통시장
           <br />
-          특별가 사이트 입니다.
         </div>
         <div className={`text-xl pt-[3em] font-semibold text-gray-500`}>
           {/*밤 7시 ~ 새벽 7시까지만 Open 합니다.*/}
