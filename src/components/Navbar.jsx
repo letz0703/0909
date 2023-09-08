@@ -8,7 +8,8 @@ import CartStatus from "./CartStatus"
 import { useEffect } from "react"
 import { BsYoutube } from "react-icons/bs"
 import SearchInput from "./search-input/search-input"
-import styles from "./Navbar.module.css?inline"
+//import styles from "./Navbar.module.css?inline"
+import styles from "./Navbar.module.css"
 import { CiTwitter } from "react-icons/ci"
 import { useLocalStorage } from "../hooks/useLocalStorage"
 import { useMediaQuery } from "usehooks-ts"
@@ -48,23 +49,19 @@ export default function Navbar(props) {
 
   return (
     <header
-      className={`${styles.header}
-      flex justify-around items-center  border-b  ${!user ? "hidden" : ""}`}
-      style={{
-        top: 0,
-        //left: 0,
-        //width: "98dvw",
-        marginTop: "1em",
-        //height: "7dvh",
-      }}
+      className={`
+      ${styles.header}
+      py-2 flex items-center justify-around border-b
+      ${!user ? "hidden" : ""}
+      `}
     >
-      <div className="flex items-center align-items-center">
+      <div className="flex justify-center items-center align-items-center">
         {user && user.isAdmin ? (
-          <NavLink to="/products/new" className="2xl pr-1 mx-2">
+          <NavLink to="/products/new" className="2xl ">
             <BsFillPencilFill />
           </NavLink>
         ) : (
-          <div className="mx-2">
+          <div className="">
             <span
               style={{
                 fontSize: "1.3rem",
@@ -185,7 +182,7 @@ export default function Navbar(props) {
         {!size && (
           <div
             //햄버거
-            className={`space-y-2 my-3 cursor-pointer z-10`}
+            className={`space-y-2 my-3 cursor-pointer z-30`}
             onClick={() => setToggle((prev) => !prev)}
           >
             <motion.span
@@ -215,9 +212,9 @@ export default function Navbar(props) {
             initial={{ opacity: 0, x: -25 }}
             transition={{ duration: 0.5 }}
             //className={`flex   bg-white w-[100%] bottom-0 left-0 h-screen items-center justify-center`}
-            className={`flex bg-white bottom-0 left-0 w-full h-screen items-center justify-center`}
+            className={`fixed flex z-20 bg-white bottom-0 left-0 w-full h-screen items-center justify-center`}
           >
-            <div className={`flex flex-col gap-20`}>
+            <div className={`fixed flex flex-col gap-20`}>
               <NavLink to="/" onClick={() => setToggle(false)}>
                 home
               </NavLink>

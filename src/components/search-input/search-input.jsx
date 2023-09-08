@@ -24,7 +24,7 @@ export default function SearchInput() {
       <input
         type="text"
         id="searchInput"
-        className={`${styles.input}  ring-2 ring-slate-300 pl-4 text-xl h-[100%] lg:w-[30dvw] `}
+        className={`${styles.input}  ring-2 ring-slate-300 pl-4 text-xl h-[100%] w-[40dvw] lg:w-[50dvw] `}
         onChange={(e) => setSearch(e.target.value)}
         autoFocus
       />
