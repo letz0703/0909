@@ -49,7 +49,7 @@ export default function Navbar(props) {
   return (
     <header
       className={`${styles.header}
-      flex justify-evenly items-center  border-b  ${!user ? "hidden" : ""}`}
+      flex justify-around items-center  border-b  ${!user ? "hidden" : ""}`}
       style={{
         top: 0,
         //left: 0,
@@ -109,25 +109,25 @@ export default function Navbar(props) {
           )}
         </div>
       </div>
-      {window.location.pathname !== "/jap" ? (
-        <section className={`sec2 `}>
-          <SearchInput setSearch={setSearch} className={`box`} />
-        </section>
-      ) : (
-        <section className="sec2  text-blue-100">
-          <h3
-            className={`btn red`}
-            onClick={() =>
-              window.open(
-                "https://www.figma.com/file/1l1NkHPEb4IQWd3t8G7dEB/wizbox.shop?type=whiteboard&node-id=0%3A1&t=3WZI5Sw6ZBLsaGSh-1",
-                "_blank"
-              )
-            }
-          >
-            wizbox.shop
-          </h3>
-        </section>
-      )}
+      <div>
+        {window.location.pathname !== "/jap" ? (
+          <SearchInput setSearch={setSearch} />
+        ) : (
+          <section className="sec2  text-blue-100">
+            <h3
+              className={`btn red`}
+              onClick={() =>
+                window.open(
+                  "https://www.figma.com/file/1l1NkHPEb4IQWd3t8G7dEB/wizbox.shop?type=whiteboard&node-id=0%3A1&t=3WZI5Sw6ZBLsaGSh-1",
+                  "_blank"
+                )
+              }
+            >
+              wizbox.shop
+            </h3>
+          </section>
+        )}
+      </div>
       <nav className=" flex item-center font-bold relative justify-between md:mx-16 lg:mx-32 ">
         <div className="flex justify-center item-center gap-3 me-auto items-cener">
           {/* <NavLink to="/can">Can</NavLink> */}
@@ -156,7 +156,7 @@ export default function Navbar(props) {
             </NavLink>
           )}
         </div>
-        {user && isAdmin ? (
+        {/*{user && isAdmin ? (
           <BsYoutube
             className="navbar__youtube-icon fs-4 "
             style={{ width: "100%", color: "red" }}
@@ -164,7 +164,7 @@ export default function Navbar(props) {
           />
         ) : (
           ""
-        )}
+        )}*/}
         {/*<div>*/}
         {/*<svg
             className={`absolute bottom-0 left-1/2 -translate-x-1/2`}

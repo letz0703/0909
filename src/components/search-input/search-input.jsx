@@ -13,7 +13,7 @@ export default function SearchInput() {
 
   return (
     //<div className={styles.inputGroup}>
-    <div className={`${styles.inputGroup} sm:hidden`}>
+    <div className={`${styles.inputGroup}`}>
       {size && (
         <label htmlFor="search" style={{ width: "4em" }}>
           <button aria-label="button" className={`styles.icon mx-1 my-3 `}>
@@ -21,7 +21,6 @@ export default function SearchInput() {
           </button>
         </label>
       )}
-
       <input
         type="text"
         id="searchInput"

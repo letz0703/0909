@@ -48,10 +48,8 @@ export default function ShopHome() {
   }, [])
 
   return (
-    <>
-      {/*<Navbar />*/}
+    <div className={`flex`}>
       <div className={`${styles.shop_home} w-[100vw]  `}>
-        {/*{true ? (*/}
         {html_open ? (
           <>
             {/*<div>{array.join(",")}</div>*/}
@@ -70,6 +68,6 @@ export default function ShopHome() {
           </>
         )}
       </div>
-    </>
+    </div>
   )
 }
