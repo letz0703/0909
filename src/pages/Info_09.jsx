@@ -18,7 +18,7 @@ export function Info09() {
       </p>
       <div className="relative">
         <div className=" absolute right-[50%] w-[40px] translate-x-[130px] -translate-y-2">
-          <img src="/public/stroke_red.png" alt="stroke" />
+          <img src="/stroke_red.png" alt="stroke" />
         </div>
       </div>
       <div className={`pt-1 text-xl pb-1`}>010.9876.1815</div>
