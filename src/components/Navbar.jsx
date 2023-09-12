@@ -1,4 +1,9 @@
-import { NavLink, Navigate, useNavigate } from "react-router-dom"
+import {
+  NavLink,
+  Navigate,
+  ScrollRestoration,
+  useNavigate,
+} from "react-router-dom"
 import { motion } from "framer-motion"
 import { BsFillPencilFill } from "react-icons/bs"
 import { onUserStateChange } from "../api/firebase"
@@ -226,6 +231,7 @@ export default function Navbar(props) {
           </motion.div>
         )}
       </nav>
+      <ScrollRestoration />
     </header>
   )
 }
