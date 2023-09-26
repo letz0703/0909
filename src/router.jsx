@@ -25,6 +25,14 @@ export const router = createBrowserRouter([
         errorElement: <NotFound />,
         children: [
           { path: "/", element: <ShopHome /> },
+          {
+            path: "/japitems",
+            //element: <AllProducts />,
+            children: [
+              { index: true, element: <AllProducts /> },
+              { path: ":id", element: <JapitemDetail /> },
+            ],
+          },
           { path: "/shop", element: <AllProducts /> },
           {
             path: "/jap",
@@ -40,11 +48,7 @@ export const router = createBrowserRouter([
           },
           {
             path: "/products",
-            element: (
-              // <ProtectedRoute requireAdmin>
-              <AllProducts />
-              // </ProtectedRoute>
-            ),
+            element: <AllProducts />,
           },
           {
             path: "/products/new",
@@ -54,7 +58,6 @@ export const router = createBrowserRouter([
               </ProtectedRoute>
             ),
           },
-          { path: "/japitems/:id", element: <JapitemDetail /> },
           {
             path: "/carts",
             element: <PopCart />,
