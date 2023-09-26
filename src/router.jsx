@@ -1,10 +1,4 @@
-import {
-  Navigate,
-  Outlet,
-  createBrowserRouter,
-  useNavigate,
-} from "react-router-dom"
-import App from "./App"
+import { createBrowserRouter } from "react-router-dom"
 import "./components/wds/form/styles.css"
 import NotFound from "./pages/NotFound"
 import ShopHome from "./pages/ShopHome"
@@ -21,11 +15,11 @@ import VIP from "./pages/VIP"
 import MyOrders from "./pages/MyOrders-page"
 import Videos from "./pages/Videos"
 import VideoDetail from "./pages/VideoDetail"
-import Navbar from "./components/Navbar"
+import { RootLayout } from "./layouts/RootLayout"
 
 export const router = createBrowserRouter([
   {
-    element: <NavLayout />,
+    element: <RootLayout />,
     children: [
       {
         errorElement: <NotFound />,
@@ -77,7 +71,3 @@ export const router = createBrowserRouter([
     ],
   },
 ])
-
-function NavLayout() {
-  return <App />
-}
