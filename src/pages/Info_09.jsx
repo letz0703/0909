@@ -16,27 +16,25 @@ export function Info09() {
         🛍 <br />
         japan
       </p>
-      <div className="relative">
+      {/*<div className="relative">
         <div className=" absolute right-[50%] w-[40px] translate-x-[130px] -translate-y-2">
           <img src="/stroke_red.png" alt="stroke" />
         </div>
-      </div>
+      </div>*/}
       <div className={`pt-1 text-xl pb-1`}>010.9876.1815</div>
       <div>
-        <span className={`inline-block`}>
-          문자만 확인 합니다.
-          <FaSms color="#c10002" className={`inline-block mr-2  `} size={50} />
-        </span>
+        <span className={`inline-block`}>문자만 확인 합니다.</span>
+        <FaSms
+          color="#c10002"
+          className={`inline-block mr-2 w-[2em] `}
+          size={50}
+        />
       </div>
       <div className={`text-slate-700 pt-3`}>
-        본 사이트는 저희 단골고객과 <br />
-        오프라인 가게 방문 고객분들
-        <br />
-        께만 알려드리는 깡통시장
         <br />
       </div>
       <div className={`text-xl pt-[3em] font-semibold text-gray-500`}>
-        {/*밤 7시 ~ 새벽 7시까지만 Open 합니다.*/}
+        밤 7시 ~ 새벽 7시까지만 Open 합니다.
       </div>
       <div className={`text-xl pt-[1em] font-semibold text-gray-500`}>
         {/*오프라인 깡통시장 가격 보다 1% 더 저렴합니다*/}
