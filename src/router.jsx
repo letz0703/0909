@@ -25,50 +25,54 @@ import Navbar from "./components/Navbar"
 export const router = createBrowserRouter([
   {
     element: <NavLayout />,
-    errorElement: <NotFound />,
     children: [
-      { path: "*", element: <Navigate to="/" /> },
-      { path: "/", element: <ShopHome /> },
-      { path: "/shop", element: <AllProducts /> },
       {
-        path: "/jap",
-        element: <Jap />,
+        errorElement: <NotFound />,
+        children: [
+          { path: "/", element: <ShopHome /> },
+          { path: "/shop", element: <AllProducts /> },
+          {
+            path: "/jap",
+            element: <Jap />,
+          },
+          {
+            path: "/jap/ic",
+            element: <JapAdmin />,
+          },
+          {
+            path: "/can",
+            element: <Can />,
+          },
+          {
+            path: "/products",
+            element: (
+              // <ProtectedRoute requireAdmin>
+              <AllProducts />
+              // </ProtectedRoute>
+            ),
+          },
+          {
+            path: "/products/new",
+            element: (
+              <ProtectedRoute requireAdmin>
+                <NewProduct />
+              </ProtectedRoute>
+            ),
+          },
+          { path: "/japitems/:id", element: <JapitemDetail /> },
+          {
+            path: "/carts",
+            element: <PopCart />,
+          },
+          { path: "/store", element: <Store /> },
+          { path: "/vip", element: <VIP /> },
+          { path: "/my_orders", element: <MyOrders /> },
+          { path: "/videos", element: <Videos /> },
+          { path: "/videos/:keyword", element: <Videos /> },
+          { path: "/videos/watch/:videoId", element: <VideoDetail /> },
+          { path: "*", element: <NotFound /> },
+        ],
       },
-      {
-        path: "/jap/ic",
-        element: <JapAdmin />,
-      },
-      {
-        path: "/can",
-        element: <Can />,
-      },
-      {
-        path: "/products",
-        element: (
-          // <ProtectedRoute requireAdmin>
-          <AllProducts />
-          // </ProtectedRoute>
-        ),
-      },
-      {
-        path: "/products/new",
-        element: (
-          <ProtectedRoute requireAdmin>
-            <NewProduct />
-          </ProtectedRoute>
-        ),
-      },
-      { path: "/japitems/:id", element: <JapitemDetail /> },
-      {
-        path: "/carts",
-        element: <PopCart />,
-      },
-      { path: "/store", element: <Store /> },
-      { path: "/vip", element: <VIP /> },
-      { path: "/my_orders", element: <MyOrders /> },
-      { path: "/videos", element: <Videos /> },
-      { path: "/videos/:keyword", element: <Videos /> },
-      { path: "/videos/watch/:videoId", element: <VideoDetail /> },
     ],
   },
 ])
