@@ -1,3 +1,9 @@
+.top-nav {
+  top: 0;
+  display: flex;
+  justify-content: between;
+  z-index: 10002;
+}
 .form {
   display: flex;
   flex-direction: column;

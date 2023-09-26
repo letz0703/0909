@@ -5,6 +5,7 @@ import {
   useNavigate,
 } from "react-router-dom"
 import App from "./App"
+import "./components/wds/form/styles.css"
 import NotFound from "./pages/NotFound"
 import ShopHome from "./pages/ShopHome"
 import Jap from "./pages/Jap"

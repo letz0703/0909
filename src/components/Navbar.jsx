@@ -58,6 +58,7 @@ export default function Navbar(props) {
       ${styles.header}
       py-2 flex items-center justify-around border-b
       ${!user ? "hidden" : ""}
+      top-nav
       `}
     >
       <div className="flex justify-center items-center align-items-center">
