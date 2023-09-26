@@ -5,7 +5,6 @@ export function RootLayout() {
   return (
     <>
       <App />
-      <Outlet />
     </>
   )
 }

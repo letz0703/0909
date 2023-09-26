@@ -1,5 +1,5 @@
 2023.09.12/화
-<ScrollRestoratio/>
+<ScrollRestoration/>
 z-index : 10002 ; 2023.09.26/화
 
 # [wizbox](https://wizbox.shop)
