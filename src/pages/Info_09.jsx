@@ -32,10 +32,8 @@ export function Info09() {
       </div>
       <div className={`text-slate-700 pt-3`}>
         본 사이트는 저희 단골고객과 <br />
-        오프라인 가게 방문 고객분들
-        <br />
-        께만 알려 드리고 있습니다.
-        <br />
+        가게 방문 고객분들께만 <br />
+        알려드리고 있습니다.
       </div>
       <div className={`text-xl pt-[3em] font-semibold text-gray-500`}>
         밤 7시 ~ 새벽 7시까지만 Open 합니다.
