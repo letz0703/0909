@@ -22,21 +22,21 @@ export function Info09() {
         </div>
       </div>*/}
       <div className={`pt-1 text-xl pb-1`}>010.9876.1815</div>
-      <div>
-        <span className={`inline-block`}>문자만 확인 합니다.</span>
-        <FaSms
-          color="#c10002"
-          className={`inline-block mr-2 w-[2em] `}
-          size={50}
-        />
+      <div className={`text-xl pt-[1em] font-semibold text-gray-500 mb-1`}>
+        OPEN : 7PM ~ 7AM
+        <div>
+          <span className={`inline-block`}>문자만 확인 합니다.</span>
+          <FaSms
+            color="#c10002"
+            className={`inline-block mr-2 w-[2em] `}
+            size={50}
+          />
+        </div>
       </div>
-      <div className={`text-slate-700 pt-3`}>
+      <div className={`text-slate-700 `}>
         본 사이트는 저희 단골고객과 <br />
         가게 방문 고객분들께만 <br />
         알려드리고 있습니다.
-      </div>
-      <div className={`text-xl pt-[3em] font-semibold text-gray-500`}>
-        밤 7시 ~ 새벽 7시까지만 Open 합니다.
       </div>
 
       <div>

@@ -16,7 +16,6 @@ import MyOrders from "./pages/MyOrders-page"
 import Videos from "./pages/Videos"
 import VideoDetail from "./pages/VideoDetail"
 import { RootLayout } from "./layouts/RootLayout"
-import { postListRoute } from "./pages/PostList"
 
 export const router = createBrowserRouter([
   {
@@ -26,13 +25,6 @@ export const router = createBrowserRouter([
         errorElement: <NotFound />,
         children: [
           { path: "/", element: <ShopHome /> },
-          {
-            path: "/posts",
-            children: [
-              { index: true, ...postListRoute },
-              { path: ":postId", element: <h1>hi</h1> },
-            ],
-          },
           {
             path: "/japitems",
             //element: <AllProducts />,
