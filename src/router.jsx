@@ -42,6 +42,7 @@ export const router = createBrowserRouter([
                 index: true,
                 ...japRoute,
               },
+              { path: ":japId", element: <h1>Jap09</h1> },
             ],
           },
           {
