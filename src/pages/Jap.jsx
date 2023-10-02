@@ -1,4 +1,6 @@
-export default function Jap() {
+import axios from "axios"
+
+function Jap() {
   return (
     <>
       <h1>Jap</h1>
@@ -6,4 +8,12 @@ export default function Jap() {
   )
 }
 
-export function loader() {}
+async function loader({ request: { signal } }) {
+  const res = await axios.get(`http://localhost:3000/japitems`, { signal })
+  return res.data
+}
+
+export const japRoute = {
+  loader,
+  element: <Jap />,
+}

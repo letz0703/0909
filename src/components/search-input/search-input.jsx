@@ -15,11 +15,12 @@ export default function SearchInput() {
     //<div className={styles.inputGroup}>
     <div className={`${styles.inputGroup}`}>
       {size && (
-        <label htmlFor="search" style={{ width: "4em" }}>
-          <button aria-label="button" className={`styles.icon mx-1 my-3 `}>
-            <BiSearch size={30} />
-          </button>
-        </label>
+        <button
+          aria-label="button"
+          className={`styles.icon mx-1 my-3 w-[2em] search__width`}
+        >
+          <BiSearch size={30} />
+        </button>
       )}
       <input
         type="text"

@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom"
 import "./components/wds/form/styles.css"
 import NotFound from "./pages/NotFound"
 import ShopHome from "./pages/ShopHome"
-import Jap from "./pages/Jap"
+import { japRoute } from "./pages/Jap"
 import JapAdmin from "./components/jap-admin/jap-admin"
 import Can from "./pages/Can"
 import AllProducts from "./pages/AllProducts"
@@ -16,6 +16,7 @@ import MyOrders from "./pages/MyOrders-page"
 import Videos from "./pages/Videos"
 import VideoDetail from "./pages/VideoDetail"
 import { RootLayout } from "./layouts/RootLayout"
+import axios from "axios"
 
 export const router = createBrowserRouter([
   {
@@ -35,13 +36,13 @@ export const router = createBrowserRouter([
           },
           { path: "/shop", element: <AllProducts /> },
           {
-            path: "/jap",
-            loader: ({ request: { signal } }) => {
-              return axios
-                .get(`http://localhost:3000/japitems`, { signal })
-                .then((res) => res.data)
-            },
-            element: <Jap />,
+            path: "jap",
+            children: [
+              {
+                index: true,
+                ...japRoute,
+              },
+            ],
           },
           {
             path: "/jap/ic",
