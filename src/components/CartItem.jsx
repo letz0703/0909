@@ -25,9 +25,6 @@ export default function CartItem(props) {
   } = useShoppingCart()
   const qty = getItemQuantity(id)
 
-  // 1. getRDB_japitem의 수량
-  // 2. 수량 표시하기
-
   return (
     <Stack direction="horizontal" gap={2} className="d-flex align-items-center">
       <img

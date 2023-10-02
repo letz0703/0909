@@ -150,7 +150,7 @@ export function PopCart({ isOpen }) {
     const a = getRDB_user(user?.uid).deliveryTo
   }, [])
 
-  return [
+  return (
     <Offcanvas
       //show unshow
       show={isOpen}
@@ -164,10 +164,8 @@ export function PopCart({ isOpen }) {
       </Offcanvas.Header>
       <Offcanvas.Body>
         <Stack gap={3}>
-          {cartItems.map((row) => (
-            /** * 카트아이템 */
-            //<CartItem key={crypto.randomUUID()} {...row} />
-            <CartItem key={row.id} {...row} />
+          {cartItems.map((cartItem) => (
+            <CartItem {...row} key={cartItem.id} />
           ))}
           <hr />
           <div className="ms-auto font-bold text-2xl p-3">
@@ -240,6 +238,6 @@ export function PopCart({ isOpen }) {
             `}
         </style>
       </Offcanvas.Body>
-    </Offcanvas>,
-  ]
+    </Offcanvas>
+  )
 }

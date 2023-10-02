@@ -36,6 +36,11 @@ export const router = createBrowserRouter([
           { path: "/shop", element: <AllProducts /> },
           {
             path: "/jap",
+            loader: ({ request: { signal } }) => {
+              return axios
+                .get(`http://localhost:3000/japitems`, { signal })
+                .then((res) => res.data)
+            },
             element: <Jap />,
           },
           {
