@@ -10,9 +10,10 @@ function Jap() {
   )
 }
 
-async function loader({ request: { signal } }) {
-  const res = await axios.get(`http://localhost:3000/j09`, { signal })
-  return res.data
+const loader = ({ request: { signal } }) => {
+  return axios
+    .get(`http://localhost:3000/j09`, { signal })
+    .then((res) => res.data)
 }
 
 export const japRoute = {
