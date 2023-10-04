@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useLoaderData } from "react-router-dom"
+import { getJ09 } from "../api/j09"
 
 function Jap() {
   const j09 = useLoaderData()
@@ -11,9 +12,7 @@ function Jap() {
 }
 
 const loader = ({ request: { signal } }) => {
-  return axios
-    .get(`http://localhost:3000/j09`, { signal })
-    .then((res) => res.data)
+  return getJ09({ signal })
 }
 
 export const japRoute = {
