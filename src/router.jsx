@@ -16,7 +16,7 @@ import MyOrders from "./pages/MyOrders-page"
 import Videos from "./pages/Videos"
 import VideoDetail from "./pages/VideoDetail"
 import { RootLayout } from "./layouts/RootLayout"
-import { J09 } from "./pages/J09"
+import { J09List } from "./pages/J09List"
 
 export const router = createBrowserRouter([
   {
@@ -26,7 +26,7 @@ export const router = createBrowserRouter([
         errorElement: <NotFound />,
         children: [
           { path: "/", element: <ShopHome /> },
-          { path: "/j09", element: <J09 /> },
+          { path: "/j09", element: <J09List /> },
           {
             path: "/japitems",
             //element: <AllProducts />,
