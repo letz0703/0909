@@ -4,6 +4,7 @@ import { getJ09 } from "../api/j09"
 
 function Jap() {
   const j09 = useLoaderData()
+  console.log(j09)
   return (
     <>
       <h1>Jap {j09.length}</h1>

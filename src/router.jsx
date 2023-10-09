@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom"
+import { Navigate, createBrowserRouter } from "react-router-dom"
 import "./components/wds/form/styles.css"
 import NotFound from "./pages/NotFound"
 import ShopHome from "./pages/ShopHome"
@@ -17,6 +17,7 @@ import Videos from "./pages/Videos"
 import VideoDetail from "./pages/VideoDetail"
 import { RootLayout } from "./layouts/RootLayout"
 import { J09List } from "./pages/J09List"
+import axios from "axios"
 
 export const router = createBrowserRouter([
   {
@@ -26,7 +27,21 @@ export const router = createBrowserRouter([
         errorElement: <NotFound />,
         children: [
           { path: "/", element: <ShopHome /> },
-          { path: "/j09", element: <J09List /> },
+          {
+            path: "/j09",
+            children: [
+              {
+                index: true,
+                loader: ({ request: { signal } }) => {
+                  return axios
+                    .get(`http://localhost:3000/j09`, { signal })
+                    .then((res) => res.data)
+                },
+                element: <J09List />,
+              },
+              { path: ":j09Id", element: <h1>J09 Detail</h1> },
+            ],
+          },
           {
             path: "/japitems",
             //element: <AllProducts />,
