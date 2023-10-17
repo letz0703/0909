@@ -28,7 +28,11 @@ export const router = createBrowserRouter([
         errorElement: <NotFound />,
         children: [
           { path: "/", element: <ShopHome /> },
-          { path: "/todos", ...todoRoute },
+          {
+            path: "/todos",
+            ...todoRoute,
+            children: [{ path: ":todoId", element: <h1>Todo Detail</h1> }],
+          },
           //{ path: "/todos", ...todoRoute },
           {
             path: "/j09",

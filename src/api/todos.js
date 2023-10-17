@@ -1,7 +1,5 @@
-import axios from "axios"
+import { baseAPI } from "./base"
 
 export function getTodos(options) {
-  return axios
-    .get("http://localhost:3000/posts", options)
-    .then((res) => res.data)
+  return baseAPI.get(`todos`, options).then((res) => res.data)
 }
