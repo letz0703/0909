@@ -23,7 +23,7 @@ z-index : 10002 ; 2023.09.26/화
 
 ## MD - markdown
 
-| didn't konw | contents              |
+| didn't know | contents              |
 | :---------: | --------------------- |
 |      ~      | H~2~O <sub>           |
 |      ^      | Script^super^ < sup > |
