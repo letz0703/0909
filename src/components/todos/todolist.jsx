@@ -1,7 +1,9 @@
 import axios from "axios"
+import { useLoaderData } from "react-router-dom"
 
 function TodoList() {
-  return <h1>TodoList</h1>
+  const todos = useLoaderData()
+  return <h1>TodoList {todos.length}</h1>
 }
 
 function loader({ request: { signal } }) {
