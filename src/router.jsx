@@ -18,7 +18,7 @@ import VideoDetail from "./pages/VideoDetail"
 import { RootLayout } from "./layouts/RootLayout"
 import { J09List } from "./pages/J09List"
 import axios from "axios"
-import { TodoList } from "./components/todos/todolist"
+import { todoRoute } from "./components/todos/todolist"
 
 export const router = createBrowserRouter([
   {
@@ -28,7 +28,8 @@ export const router = createBrowserRouter([
         errorElement: <NotFound />,
         children: [
           { path: "/", element: <ShopHome /> },
-          { path: "/todos", element: <TodoList /> },
+          { path: "/todos", ...todoRoute },
+          //{ path: "/todos", ...todoRoute },
           {
             path: "/j09",
             children: [

@@ -1,4 +1,6 @@
-export function TodoList() {
+import { getTodos } from "../../api/todos"
+
+function TodoList() {
   return <h1>TodoList</h1>
 }
 
@@ -6,7 +8,7 @@ export function TodoList() {
 //  return getTodos({ signal })
 //}
 
-//export const todoRoute = {
-//  loader,
-//  element: <TodoList />,
-//}
+export const todoRoute = {
+  //loader,
+  element: <TodoList />,
+}
