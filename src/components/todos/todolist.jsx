@@ -3,7 +3,21 @@ import { useLoaderData } from "react-router-dom"
 
 function TodoList() {
   const todos = useLoaderData()
-  return <h1>TodoList {todos.length}</h1>
+  return (
+    <div className={`flex-row`}>
+      <h1 className={`page-title`}>Todos</h1>
+      <ul>
+        {todos.map((todo, key) => (
+          <li
+            key={todo.id}
+            className={todo.completed ? "strike-through" : undefined}
+          >
+            {todo.id} {todo.title}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
 }
 
 function loader({ request: { signal } }) {

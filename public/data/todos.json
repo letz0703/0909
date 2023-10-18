@@ -1,1 +1,1 @@
-[{"id":1, "title":"good"},{"id":2, "title":"bad"}]
+[{"id":1, "title":"good", "completed":true},{"id":2, "title":"bad", "completed":false}]

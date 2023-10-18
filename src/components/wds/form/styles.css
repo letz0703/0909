@@ -34,9 +34,18 @@
   color: hsl(0, 100%, 70%);
   background: hsl(0, 100%, 95%);
 }
+.strike-through {
+  text-decoration: line-through;
+  color: slategray;
+}
 
 .form-group.error .label {
   color: hsl(0, 100%, 70%);
+}
+
+.page-title {
+  font-style: bold;
+  font-weight: 700;
 }
 
 .input:focus {
