@@ -1,5 +1,6 @@
 import axios from "axios"
-import { useLoaderData } from "react-router-dom"
+import { Link, useLoaderData } from "react-router-dom"
+import { getTodos } from "../../api/todos"
 
 function TodoList() {
   const todos = useLoaderData()
@@ -13,6 +14,10 @@ function TodoList() {
             className={todo.completed ? "strike-through" : undefined}
           >
             {todo.id} {todo.title}
+            <Link className={`btn btn-sm`} to={todo.id.toString()}>
+              {/*<Link className={`btn btn-sm`} to={`/todos/${todo.id}`}>*/}
+              view
+            </Link>
           </li>
         ))}
       </ul>
@@ -20,10 +25,8 @@ function TodoList() {
   )
 }
 
-function loader({ request: { signal } }) {
-  const todos = axios
-    .get("http://localhost:5173/data/todos.json")
-    .then((res) => res.data)
+function loader({ request: { signal }, params }) {
+  const todos = getTodos(params.todoId, { signal })
 
   return todos
 }

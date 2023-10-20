@@ -1,4 +1,4 @@
-import { Navigate, createBrowserRouter } from "react-router-dom"
+import { Navigate, createBrowserRouter, useRouteError } from "react-router-dom"
 import "./components/wds/form/styles.css"
 import NotFound from "./pages/NotFound"
 import ShopHome from "./pages/ShopHome"
@@ -19,21 +19,25 @@ import { RootLayout } from "./layouts/RootLayout"
 import { J09List } from "./pages/J09List"
 import axios from "axios"
 import { todoRoute } from "./components/todos/todolist"
+import { tRoute } from "./pages/todo"
 
 export const router = createBrowserRouter([
   {
+    path: "/",
     element: <RootLayout />,
     children: [
       {
-        errorElement: <NotFound />,
+        //errorElement: <NotFound />,
+        errorElement: <ErrorPage />,
         children: [
-          { path: "/", element: <ShopHome /> },
+          { index: true, element: <ShopHome /> },
           {
-            path: "/todos",
-            ...todoRoute,
-            children: [{ path: ":todoId", element: <h1>Todo Detail</h1> }],
+            path: "todos",
+            children: [
+              { index: true, ...todoRoute },
+              { path: ":todoId", ...tRoute },
+            ],
           },
-          //{ path: "/todos", ...todoRoute },
           {
             path: "/j09",
             children: [
@@ -52,6 +56,7 @@ export const router = createBrowserRouter([
               { path: ":j09Id", element: <h1>J09 Detail</h1> },
             ],
           },
+
           {
             path: "/japitems",
             //element: <AllProducts />,
@@ -107,3 +112,19 @@ export const router = createBrowserRouter([
     ],
   },
 ])
+
+function ErrorPage() {
+  const error = useRouteError()
+
+  return (
+    <>
+      <h1>Damn</h1>
+      {import.meta.env.MODE !== "production" && (
+        <>
+          <pre>{error.message}</pre>
+          <pre>{error.stack}</pre>
+        </>
+      )}
+    </>
+  )
+}
