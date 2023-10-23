@@ -39,7 +39,7 @@ export const router = createBrowserRouter([
             ],
           },
           {
-            path: "/j09",
+            path: "/0909",
             children: [
               {
                 index: true,
