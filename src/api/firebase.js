@@ -230,7 +230,18 @@ export async function getProducts() {
 }
 
 export async function getOrders() {
-  return get(ref(database, "orders"))
+  return get(ref(database, "carts"))
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        return Object.values(snapshot.val())
+      }
+      return []
+    })
+    .catch((error) => console.log(error))
+}
+
+export async function getMyOrder(userId) {
+  return get(ref(database, `carts/${userId}/`))
     .then((snapshot) => {
       if (snapshot.exists()) {
         return Object.values(snapshot.val())
