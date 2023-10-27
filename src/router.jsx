@@ -28,85 +28,88 @@ export const router = createBrowserRouter([
     children: [
       {
         //errorElement: <NotFound />,
-        errorElement: <ErrorPage />,
         children: [
-          { index: true, element: <ShopHome /> },
           {
-            path: "todos",
+            errorElement: <ErrorPage />,
             children: [
-              { index: true, ...todoRoute },
-              { path: ":todoId", ...tRoute },
-            ],
-          },
-          {
-            path: "/0909",
-            children: [
+              { index: true, element: <ShopHome /> },
               {
-                index: true,
-                loader: ({ request: { signal } }) => {
-                  const j09 = axios
-                    //.get(`http://localhost:5173/data/j09.json`, { signal })
-                    .get(`http://wizbox.shop/data/j09.json`, { signal })
-                    .then((res) => res.data)
-
-                  return j09
-                },
-                element: <J09List />,
+                path: "todos",
+                children: [
+                  { index: true, ...todoRoute },
+                  { path: ":todoId", ...tRoute },
+                ],
               },
-              { path: ":j09Id", element: <h1>J09 Detail</h1> },
-            ],
-          },
-
-          {
-            path: "/japitems",
-            //element: <AllProducts />,
-            children: [
-              { index: true, element: <AllProducts /> },
-              { path: ":id", element: <JapitemDetail /> },
-            ],
-          },
-          { path: "/shop", element: <AllProducts /> },
-          {
-            path: "jap",
-            children: [
               {
-                index: true,
-                ...japRoute,
+                path: "/0909",
+                children: [
+                  {
+                    index: true,
+                    loader: ({ request: { signal } }) => {
+                      const j09 = axios
+                        //.get(`http://localhost:5173/data/j09.json`, { signal })
+                        .get(`http://wizbox.shop/data/j09.json`, { signal })
+                        .then((res) => res.data)
+
+                      return j09
+                    },
+                    element: <J09List />,
+                  },
+                  { path: ":j09Id", element: <h1>J09 Detail</h1> },
+                ],
               },
-              { path: ":japId", element: <h1>Jap09</h1> },
+              {
+                path: "/japitems",
+                //element: <AllProducts />,
+                children: [
+                  { index: true, element: <AllProducts /> },
+                  { path: ":id", element: <JapitemDetail /> },
+                ],
+              },
+              { path: "/shop", element: <AllProducts /> },
+              {
+                path: "jap",
+                children: [
+                  {
+                    index: true,
+                    ...japRoute,
+                  },
+                  { path: ":japId", element: <h1>Jap09</h1> },
+                ],
+              },
+              {
+                path: "/jap/ic",
+                element: <JapAdmin />,
+              },
+              {
+                path: "/can",
+                element: <Can />,
+              },
+              {
+                path: "/products",
+                element: <AllProducts />,
+              },
+              {
+                path: "/products/new",
+                element: (
+                  <ProtectedRoute requireAdmin>
+                    <NewProduct />
+                  </ProtectedRoute>
+                ),
+              },
+              {
+                path: "/carts",
+                element: <PopCart />,
+              },
+              { path: "/store", element: <Store /> },
+              { path: "/vip", element: <VIP /> },
+              { path: "/my_orders", element: <MyOrders /> },
+              { path: "/videos", element: <Videos /> },
+              { path: "/videos/:keyword", element: <Videos /> },
+              { path: "/videos/watch/:videoId", element: <VideoDetail /> },
+              { path: "*", element: <NotFound /> },
             ],
           },
-          {
-            path: "/jap/ic",
-            element: <JapAdmin />,
-          },
-          {
-            path: "/can",
-            element: <Can />,
-          },
-          {
-            path: "/products",
-            element: <AllProducts />,
-          },
-          {
-            path: "/products/new",
-            element: (
-              <ProtectedRoute requireAdmin>
-                <NewProduct />
-              </ProtectedRoute>
-            ),
-          },
-          {
-            path: "/carts",
-            element: <PopCart />,
-          },
-          { path: "/store", element: <Store /> },
-          { path: "/vip", element: <VIP /> },
-          { path: "/my_orders", element: <MyOrders /> },
-          { path: "/videos", element: <Videos /> },
-          { path: "/videos/:keyword", element: <Videos /> },
-          { path: "/videos/watch/:videoId", element: <VideoDetail /> },
-          { path: "*", element: <NotFound /> },
         ],
       },
     ],
@@ -118,12 +121,11 @@ function ErrorPage() {
 
   return (
     <>
-      <h1>Damn</h1>
       {import.meta.env.MODE !== "production" && (
-        <>
+        <div className={`flex flex-col`}>
           <pre>{error.message}</pre>
           <pre>{error.stack}</pre>
-        </>
+        </div>
       )}
     </>
   )
