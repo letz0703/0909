@@ -152,6 +152,15 @@ export default function Navbar(props) {
               My Orders
             </NavLink>
           )}
+          {/*{icUser && (
+            <NavLink
+              to="/jap"
+              className="hidden md:block"
+              style={{ width: "70px" }}
+            >
+              공동구매
+            </NavLink>
+          )}*/}
 
           {user && (
             <NavLink to="/carts">

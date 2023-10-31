@@ -41,16 +41,14 @@ export const router = createBrowserRouter([
                 ],
               },
               {
-                path: "/0909",
+                path: "/jap",
                 children: [
                   {
                     index: true,
                     loader: ({ request: { signal } }) => {
                       const j09 = axios
-                        //.get(`http://localhost:5173/data/j09.json`, { signal })
-                        .get(`http://wizbox.shop/data/j09.json`, { signal })
+                        .get(`/data/j09.json`, { signal })
                         .then((res) => res.data)
-
                       return j09
                     },
                     element: <J09List />,
@@ -67,16 +65,6 @@ export const router = createBrowserRouter([
                 ],
               },
               { path: "/shop", element: <AllProducts /> },
-              {
-                path: "jap",
-                children: [
-                  {
-                    index: true,
-                    ...japRoute,
-                  },
-                  { path: ":japId", element: <h1>Jap09</h1> },
-                ],
-              },
               {
                 path: "/jap/ic",
                 element: <JapAdmin />,

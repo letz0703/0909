@@ -171,8 +171,14 @@ export function PopCart({ isOpen }) {
           <div className="ms-auto font-bold text-2xl p-3">
             {FormatCurrency(getTotal())}
             <div>+ 기본택배 {<span>{deleiveryCost}</span>}원</div>
-            {/*<p className="text-blue-400"><span onClick={() => window.location.replace("/jap")} className="p-2 bg-pink-200 cursor-pointer" >
-                택배비 없애기(공동구매 신청) </span></p>*/}
+            <p className="text-blue-400">
+              <span
+                onClick={() => window.location.replace("/jap")}
+                className="p-2 bg-pink-200 cursor-pointer"
+              >
+                택배비 없애기(공동구매 신청){" "}
+              </span>
+            </p>
           </div>
 
           <hr />
