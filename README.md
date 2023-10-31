@@ -1,6 +1,5 @@
-18:47
-
-#94
+https://courses.webdevsimplified.com/view/courses/react-simplified-beginner/1764775-routing/5836399-77-actions
+1:48 > react <Form> component
 
 <!--todo 2023.10.09/월 RK: recover scroll-->
 

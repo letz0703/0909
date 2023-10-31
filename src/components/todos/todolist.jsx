@@ -26,8 +26,10 @@ function TodoList() {
 }
 
 function loader({ request: { signal }, params }) {
-  const todos = getTodos(params.todoId, { signal })
-
+  //const todos = getTodos(params.todoId, { signal })
+  const todos = ({ request: { signal } }) => {
+    return fetch("http://localhost:3000/todos", { signal })
+  }
   return todos
 }
 
