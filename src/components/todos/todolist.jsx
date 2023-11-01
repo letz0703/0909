@@ -6,7 +6,7 @@ function TodoList() {
   const todos = useLoaderData()
   return (
     <div className={`flex-row`}>
-      <h1 className={`page-title`}>Todos</h1>
+      <h1 className={`page-title`}>to</h1>
       <ul>
         {todos.map((todo, key) => (
           <li

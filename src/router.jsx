@@ -42,8 +42,12 @@ export const router = createBrowserRouter([
                   {
                     index: true,
                     element: <TodoList />,
-                    loader: ({ request: { signal } }) => {
-                      return fetch("http://localhost:3000/todos", { signal })
+                    loader: ({ request: { signal, url } }) => {
+                      const query = new URL(url).searchParams.get("query")
+                      console.log(query)
+                      return fetch(`http://localhost:3000/todos?q=${query}`, {
+                        signal,
+                      })
                     },
                   },
                   {

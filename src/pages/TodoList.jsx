@@ -12,8 +12,8 @@ export function TodoList() {
       <Form className="form">
         <div className="form-row">
           <div className="form-group">
-            <label htm1For="query">Searchs</label>
-            <input type="search" name="query" id="query"></input>
+            <label htmlFor="query">Search</label>
+            <input type="search" name="query" id="query" />
           </div>
           <button className="btn">search</button>
         </div>
