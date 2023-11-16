@@ -20,6 +20,7 @@ import { J09List } from "./pages/J09List"
 import axios from "axios"
 import { todoRoute } from "./components/todos/todolist"
 import { tRoute } from "./pages/todo"
+import { NewTodo } from "./pages/NewTodo"
 
 export const router = createBrowserRouter([
   {
@@ -37,6 +38,7 @@ export const router = createBrowserRouter([
                 path: "todos",
                 children: [
                   { index: true, ...todoRoute },
+                  { path: "new", element: <NewTodo /> },
                   { path: ":todoId", ...tRoute },
                 ],
               },
