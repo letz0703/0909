@@ -7,6 +7,9 @@ export default defineConfig({
     devSourcemap: true,
   },
   plugins: [react()],
+  optimizeDeps: {
+    exclude: ["js-big-decimal"],
+  },
   build: {
     sourcemap: true,
     rollupOptions: {
