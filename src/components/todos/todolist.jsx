@@ -6,7 +6,7 @@ function TodoList() {
   const todos = useLoaderData()
   return (
     <div className={`flex-row`}>
-      <h1 className={`page-title`}>Todos</h1>
+      <h1 className={`page-title`}>to</h1>
       <ul>
         {todos.map((todo, key) => (
           <li
@@ -26,8 +26,10 @@ function TodoList() {
 }
 
 function loader({ request: { signal }, params }) {
-  const todos = getTodos(params.todoId, { signal })
-
+  //const todos = getTodos(params.todoId, { signal })
+  const todos = ({ request: { signal } }) => {
+    return fetch("http://localhost:3000/todos", { signal })
+  }
   return todos
 }
 

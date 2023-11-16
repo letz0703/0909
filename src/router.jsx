@@ -20,6 +20,7 @@ import { J09List } from "./pages/J09List"
 import axios from "axios"
 import { todoRoute } from "./components/todos/todolist"
 import { tRoute } from "./pages/todo"
+import { TodoList } from "./pages/TodoList"
 
 export const router = createBrowserRouter([
   {
@@ -35,9 +36,25 @@ export const router = createBrowserRouter([
               { index: true, element: <ShopHome /> },
               {
                 path: "todos",
+                //...todoRoute,
+
                 children: [
-                  { index: true, ...todoRoute },
-                  { path: ":todoId", ...tRoute },
+                  {
+                    index: true,
+                    element: <TodoList />,
+                    loader: ({ request: { signal, url } }) => {
+                      const query = new URL(url).searchParams.get("query")
+                      console.log(query)
+                      return fetch(`http://localhost:3000/todos?q=${query}`, {
+                        signal,
+                      })
+                    },
+                  },
+                  {
+                    path: "new",
+                    element: <h1>New ToDo</h1>,
+                  },
+                  //{ path: ":todoId", ...tRoute },
                 ],
               },
               {
