@@ -1,6 +1,7 @@
 import axios from "axios"
 import { Form, Link, useLoaderData, useNavigation } from "react-router-dom"
 import { getTodos } from "../../api/todos"
+import { useEffect, useRef } from "react"
 
 function TodoList() {
   const {
@@ -8,6 +9,12 @@ function TodoList() {
     searchParams: { query },
   } = useLoaderData()
   const { state } = useNavigation()
+  const queryRef = useRef()
+
+  useEffect(() => {
+    queryRef.current.value = query
+  }, [query])
+
   return (
     <div className={`flex-row`}>
       <h1 className={`page-title`}>
@@ -22,7 +29,7 @@ function TodoList() {
         <div className={`form-row`}>
           <div className="form-group">
             <label htmlFor="query">Search</label>
-            <input type="search" name="query" id="query" defaultVAlue={query} />
+            <input type="search" name="query" id="query" ref={queryRef} />
           </div>
           <button className="btn">Search</button>
         </div>
@@ -55,7 +62,7 @@ function TodoList() {
 //  return todos
 //}
 async function loader({ request: { signal, url } }) {
-  const query = new URL(url).searchParams.get("query")
+  const query = new URL(url).searchParams.get("query") || ""
   return {
     searchParams: { query },
     todos: await fetch(`http://localhost:3000/todos?q=${query}`, {
