@@ -3,7 +3,10 @@ import { Form, Link, useLoaderData, useNavigation } from "react-router-dom"
 import { getTodos } from "../../api/todos"
 
 function TodoList() {
-  const todos = useLoaderData()
+  const {
+    todos,
+    searchParams: { query },
+  } = useLoaderData()
   const { state } = useNavigation()
   return (
     <div className={`flex-row`}>
@@ -19,7 +22,7 @@ function TodoList() {
         <div className={`form-row`}>
           <div className="form-group">
             <label htmlFor="query">Search</label>
-            <input type="search" name="query" id="query" />
+            <input type="search" name="query" id="query" defaultVAlue={query} />
           </div>
           <button className="btn">Search</button>
         </div>
@@ -51,9 +54,15 @@ function TodoList() {
 
 //  return todos
 //}
-function loader({ request: { signal, url } }) {
+async function loader({ request: { signal, url } }) {
   const query = new URL(url).searchParams.get("query")
-  return fetch(`http://localhost:3000/todos?q=${query}`, { signal })
+  return {
+    searchParams: { query },
+    todos: await fetch(`http://localhost:3000/todos?q=${query}`, {
+      signal,
+    }).then((res) => res.json()),
+  }
+  //return fetch(`http://localhost:3000/todos?q=${query}`, { signal })
 }
 
 export const todoRoute = {
