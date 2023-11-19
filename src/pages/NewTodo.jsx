@@ -1,7 +1,10 @@
-import { Form, Link } from "react-router-dom"
+import { Form, Link, useActionData, useNavigation } from "react-router-dom"
 
 export function NewTodo() {
-  const errorMessage = use()
+  const errorMessage = useActionData()
+  const { state } = useNavigation()
+  const isSubmitting = state === "submitting" || state === "loading"
+
   return (
     <div className={`container`}>
       <h1 className="page-title">New Todo</h1>
@@ -17,7 +20,9 @@ export function NewTodo() {
           <Link to=".." className={`btn btn-outline`}>
             Back
           </Link>
-          <button className="btn">Create</button>
+          <button disabled={isSubmitting} className="btn">
+            {isSubmitting ? "Loading" : "Create"}
+          </button>
         </div>
       </Form>
     </div>
