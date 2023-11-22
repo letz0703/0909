@@ -1,4 +1,9 @@
-import { Navigate, createBrowserRouter, useRouteError } from "react-router-dom"
+import {
+  Navigate,
+  createBrowserRouter,
+  redirect,
+  useRouteError,
+} from "react-router-dom"
 import "./components/wds/form/styles.css"
 import NotFound from "./pages/NotFound"
 import ShopHome from "./pages/ShopHome"
@@ -20,6 +25,7 @@ import { J09List } from "./pages/J09List"
 import axios from "axios"
 import { todoRoute } from "./components/todos/todolist"
 import { tRoute } from "./pages/todo"
+import { NewTodo } from "./pages/NewTodo"
 
 export const router = createBrowserRouter([
   {
@@ -37,6 +43,38 @@ export const router = createBrowserRouter([
                 path: "todos",
                 children: [
                   { index: true, ...todoRoute },
+                  {
+                    path: "new",
+                    element: <NewTodo />,
+                    action: async ({ request }) => {
+                      const formData = await request.formData()
+                      const title = formData.get("title")
+                      if (title === "") {
+                        return "Title is required"
+                      }
+
+                      const todo = await fetch("http://localhost:3000/todos", {
+                        method: "POST",
+                        signal: request.signal,
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ title, completed: false }),
+                      }).then((res) => res.json())
+                      return redirect("/todos")
+                    },
+
+                    //action: async ({ request }) => {
+                    //  const title = await request.formData().get("title")
+                    //  const todo = await fetch("http://localhost:3000/todos", {
+                    //    method: "POST",
+                    //    signal: request.signal,
+                    //    headers: {
+                    //      "Content-Type": "application/json",
+                    //    },
+                    //    body: JSON.stringify({ title }),
+                    //  })
+                    //  console.log("hi")
+                    //},
+                  },
                   { path: ":todoId", ...tRoute },
                 ],
               },
