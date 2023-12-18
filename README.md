@@ -1,3 +1,6 @@
+"react/prop-types": "off" @.eslintrc.cjs
+2023.12.15/금
+
 18:47
 
 #94
