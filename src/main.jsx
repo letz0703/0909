@@ -24,9 +24,17 @@ import MyOrders from "./pages/MyOrders-page"
 import JapAdmin from "./components/jap-admin/jap-admin"
 import VIP from "./pages/VIP"
 import { router } from "./router"
+import ErrorBoundary from "./ErrorBoundary"
+import { Child } from "./Child"
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ErrorBoundary fallback={<h1>Error in child</h1>}>
+      <RouterProvider router={router} />
+      {/*<>
+        <h1>Parent</h1>
+        <Child />
+      </>*/}
+    </ErrorBoundary>
   </React.StrictMode>
 )
