@@ -175,13 +175,15 @@
   "editor.suggest.showSnippets": true,
   "editor.inlineSuggest.enabled": true,
   "editor.inlineSuggest.showToolbar": "onHover",
-  "audioCues.lineHasInlineSuggestion": "off",
   "emmet.useInlineCompletions": false,
   "editor.tabCompletion": "onlySnippets",
   "editor.lineNumbers": "on",
   "emmet.triggerExpansionOnTab": true,
   "prettier.semi": true,
-  "zenMode.hideLineNumbers": true
+  "zenMode.hideLineNumbers": true,
+  "accessibility.signals.lineHasInlineSuggestion": {
+    "sound": "off"
+  }
   // "github.copilot.advanced": {
 
   // }
