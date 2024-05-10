@@ -20,6 +20,7 @@ import { J09List } from "./pages/J09List"
 import axios from "axios"
 import { todoRoute } from "./components/todos/todolist"
 import { tRoute } from "./pages/todo"
+import { Home } from "./pages/Home"
 
 export const router = createBrowserRouter([
   {
@@ -32,7 +33,8 @@ export const router = createBrowserRouter([
           {
             errorElement: <ErrorPage />,
             children: [
-              { index: true, element: <ShopHome /> },
+              //{ index: true, element: <ShopHome /> },
+              { index: true, element: <Home /> },
               {
                 path: "todos",
                 children: [
