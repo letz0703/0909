@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react"
 import { useNavigate, useNavigationType } from "react-router-dom"
 import { useAuthContext } from "../../context/AuthContext"
-import { FcGoogle } from "react-icons/fc"
+//import { FcGoogle } from "react-icons/fc"
 import { useShoppingCart } from "../../context/ShoppingCartContext"
 
 function ImageSlider({ slides }) {

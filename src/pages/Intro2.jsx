@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { BsTwitter } from "react-icons/bs"
+//import { BsTwitter } from "react-icons/bs"
 export function Intro2({ user }) {
   let Intro = "Intro.jsx"
 

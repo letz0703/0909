@@ -1,6 +1,6 @@
 import CartItem from "../components/CartItem"
 import { BsFillPlusCircleFill } from "react-icons/bs"
-import { TiEquals } from "react-icons/ti"
+//import { TiEquals } from "react-icons/ti"
 import PriceCard from "../components/PriceCard"
 import Button from "../components/ui/button"
 import useCart from "../hooks/use-cart"

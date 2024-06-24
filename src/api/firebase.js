@@ -1,4 +1,4 @@
-import { initializeApp } from "firebase/app"
+import {initializeApp} from "firebase/app"
 import {
   GoogleAuthProvider,
   getAuth,
@@ -6,24 +6,24 @@ import {
   signInWithPopup,
   signOut,
 } from "firebase/auth"
-import { get, getDatabase, ref, remove, set, update } from "firebase/database"
-import { getFirestore } from "firebase/firestore"
-import { v4 as uuid } from "uuid"
+import {get, getDatabase, ref, remove, set, update} from "firebase/database"
+import {getFirestore} from "firebase/firestore"
+import {v4 as uuid} from "uuid"
 
 const {
-  VITE_FIREBASE_API_KEY,
-  VITE_FIREBASE_DOMAIN,
-  VITE_FIREBASE_DATABASE_URL,
-  VITE_FIREBASE_PROJECTID,
-  VITE_FIREBASE_STORAGE_BUCKET,
-} = import.meta.env
+  NEXT_PUBLIC_FIREBASE_API_KEY,
+  NEXT_PUBLIC_FIREBASE_DOMAIN,
+  NEXT_PUBLIC_FIREBASE_DATABASE_URL,
+  NEXT_PUBLIC_FIREBASE_PROJECTID,
+  NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+} = process.env
 
 const firebaseConfig = {
-  apiKey: VITE_FIREBASE_API_KEY,
-  authDomain: VITE_FIREBASE_DOMAIN,
-  databaseURL: VITE_FIREBASE_DATABASE_URL,
-  projectId: VITE_FIREBASE_PROJECTID,
-  // storageBucket: VITE_FIREBASE_STORAGE_BUCKET
+  apiKey: NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: NEXT_PUBLIC_FIREBASE_DOMAIN,
+  databaseURL: NEXT_PUBLIC_FIREBASE_DATABASE_URL,
+  projectId: NEXT_PUBLIC_FIREBASE_PROJECTID,
+  // storageBucket: NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
 }
 
 // Initialize Firebase

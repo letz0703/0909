@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useAuthContext } from "../context/AuthContext"
-import { FaSms } from "react-icons/fa"
+//import { FaSms } from "react-icons/fa"
 export function Info09() {
   const { user, uid, login, logout } = useAuthContext()
   return (

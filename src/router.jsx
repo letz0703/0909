@@ -111,7 +111,7 @@ function ErrorPage() {
 
   return (
     <>
-      {import.meta.env.MODE !== "production" && (
+      {process.env.MODE !== "production" && (
         <div className={`flex flex-col`}>
           <pre>{error.message}</pre>
           <pre>{error.stack}</pre>

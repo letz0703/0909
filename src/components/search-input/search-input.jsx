@@ -1,6 +1,6 @@
 import { useState } from "react"
 import styles from "./search-input.module.css"
-import { BiSearch } from "react-icons/bi"
+//import { BiSearch } from "react-icons/bi"
 import "../../util/observer"
 import { useContext } from "react"
 import { SearchContext } from "../../App"

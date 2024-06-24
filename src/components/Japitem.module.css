@@ -9,10 +9,10 @@
 .grid {
   display: grid;
 }
-img {
+/*img {
   aspect-ratio: 1/-1;
   display: block;
-}
+}*/
 
 .blur_img::before {
   content: "";

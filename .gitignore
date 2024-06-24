@@ -1,5 +1,9 @@
 # production
 /build
+.next
+next-env.d.js
+next-env.d.ts
+dist
 
 # Logs
 old/

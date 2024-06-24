@@ -1,5 +1,5 @@
 import { Offcanvas, Stack } from "react-bootstrap"
-import { CiTwitter } from "react-icons/ci"
+//import { CiTwitter } from "react-icons/ci"
 import { useShoppingCart } from "../context/ShoppingCartContext"
 import FormatCurrency from "../util/formatCurrency"
 import CartItem from "./CartItem"

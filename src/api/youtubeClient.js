@@ -1,13 +1,13 @@
 import axios from 'axios';
 
-const {VITE_YOUTUBE_API_KEY} = import.meta.env;
+const {NEXT_PUBLIC_YOUTUBE_API_KEY} = process.env;
 
 export default class YoutubeClient {
   constructor() {
     /**기본 URL과 key 설정 */
     this.httpClient = axios.create({
       baseURL: 'https://www.googleapis.com/youtube/v3',
-      params: {key: VITE_YOUTUBE_API_KEY},
+      params: {key: NEXT_PUBLIC_YOUTUBE_API_KEY},
     });
   }
 

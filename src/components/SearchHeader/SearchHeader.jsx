@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect, useRef } from "react"
-import { BsYoutube, BsSearch } from "react-icons/bs"
+//import { BsYoutube, BsSearch } from "react-icons/bs"
 import formstyle from "./formstyle.css?inline"
 import styles from "../search-input/search-input.module.css"
 import { useNavigate, useParams } from "react-router-dom"
